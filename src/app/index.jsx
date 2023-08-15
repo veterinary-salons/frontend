@@ -1,11 +1,12 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Provider } from 'react-redux';
+import { RouterProvider } from 'react-router-dom';
 import store from './store/index';
+import router from '../routes';
 
 function App() {
   return (
     <Provider store={store}>
-      <h1>Здесь фронтенд сервиса заказа услуг и товаров для животных</h1>
+      <RouterProvider router={router} />
     </Provider>
   );
 }
