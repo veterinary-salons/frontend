@@ -1,0 +1,14 @@
+.button-eye {
+  width: 1.5em;
+  height: 1.5em;
+  background-image: url(../../assets/image/icon24/Eye-false.svg);
+  background-size: cover;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+
+  &_action {
+    background-image: url(../../assets/image/icon24/Eye-true.svg);
+    background-size: 1.5em 1.5em;
+  }
+}

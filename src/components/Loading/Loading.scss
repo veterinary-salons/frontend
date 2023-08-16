@@ -1,0 +1,23 @@
+.background {
+  width: 80px;
+  height: 107px;
+  background: #9384b7;
+  display: flex;
+  border-radius: 8px;
+}
+
+.loading {
+  margin: auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-size: cover;
+  background-image: url(../../assets/image/icon40/loading.svg);
+  background-repeat: no-repeat;
+  animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
