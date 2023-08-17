@@ -66,6 +66,7 @@
     "prettier": "3.0.1",
     "prop-types": "^15.8.1",
     "storybook": "^7.3.0",
-    "webpack": "^5.88.2"
+    "webpack": "^5.88.2",
+    "react-simple-star-rating": "^5.1.7"
   }
 }
