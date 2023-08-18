@@ -10,7 +10,6 @@
   /* Добавляем transition для тени */
   width: fit-content;
   box-shadow: none;
-  box-sizing: border-box !important;
 
   &:hover {
     /* Отображение наведения только для активных кнопок */
@@ -57,17 +56,20 @@
   box-sizing: border-box !important;
   background-color: $background-color;
   color: $primary-purple-color;
-  border: 1.5px solid $primary-purple-color;
+  // border: 1.5px solid $primary-purple-color;
+  outline: 1.5px solid $primary-purple-color;
+  outline-offset: -1.5px;
 
   &:active {
-    border-color: $purple-pushed-color;
+    outline-color: $purple-pushed-color;
     color: $purple-pushed-color;
     box-shadow: none !important;
   }
 }
 
 .outlined.large {
-  border-width: 3px !important;
+  outline-width: 3px !important;
+  outline-offset: -3px !important;
 }
 
 .disabled.purple-filled {
