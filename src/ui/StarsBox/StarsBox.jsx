@@ -5,12 +5,7 @@ import style from './StarsBox.module.scss';
 const StarsBox = ({ rating }) =>
   rating > 0 ? (
     <section className={style.container}>
-      <Rating
-        initialValue={rating}
-        fillColor="#9384B7"
-        readonly
-        allowFraction={true}
-      />
+      <Rating initialValue={rating} fillColor="#9384B7" readonly />
       <p className={style.text}>{rating}</p>
     </section>
   ) : (

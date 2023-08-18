@@ -184,6 +184,7 @@ textarea {
   /* 1 */
   margin: 0;
   /* 2 */
+  box-sizing: border-box;
 }
 
 /**
@@ -195,6 +196,11 @@ button,
 input {
   /* 1 */
   overflow: visible;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }
 
 /**

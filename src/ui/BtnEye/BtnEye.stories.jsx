@@ -10,5 +10,6 @@ const Template = (arg) => <BtnEye {...arg} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  clikeBtnEye: false,
+  btnStatus: false,
+  position: '',
 };

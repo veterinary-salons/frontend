@@ -12,8 +12,7 @@
     "airbnb",
     "plugin:react/jsx-runtime",
     "prettier",
-    "plugin:storybook/recommended",
-    "plugin:react-simple-star-rating/recommended"
+    "plugin:storybook/recommended"
   ],
   "overrides": [],
   "parserOptions": {
