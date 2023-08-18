@@ -4,7 +4,6 @@
   margin: 0;
   border: none;
   cursor: pointer;
-  border-radius: 8px;
   font-family: 'Montserrat';
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   /* Добавляем transition для тени */
@@ -73,11 +72,11 @@
     outline-color: $purple-disabled-color;
     /* Изменил border-color на outline-color */
   }
-}
-
-.outlined.large {
-  outline-width: 3px !important;
-  outline-offset: -3px !important;
+  
+  &.large {
+    outline-width: 3px !important;
+    outline-offset: -3px !important;
+  }
 }
 
 .large {
@@ -114,16 +113,13 @@
   visibility: hidden;
 }
 
-.circle.large, .circle.small {
-  padding: 23px;
-}
 
+// класс кнопки "добавить" с +
 .circle {
   background-image: url(../../assets/image/icon40/plus.svg);
   background-color: $primary-purple-color;
   background-position: center center;
   background-repeat: no-repeat;
-  border-radius: 50%;
 
   &:active {
     background-color: $purple-pushed-color;
@@ -133,4 +129,28 @@
   &.disabled {
     background-color: $purple-disabled-color; /* Добавьте эту строку */
   }
+
+  &.load{
+    background-image: none;
+  }
+
+  &.small{
+    padding: 23px !important;
+    width: 70px;
+    height: 70px;
+  }
+
+  &.large {
+    padding: 12px !important;
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.square{
+  border-radius: 8px;
+}
+
+.round{
+  border-radius: 50%;
 }

@@ -95,7 +95,9 @@ export const AddButton = Template.bind({});
 AddButton.args={
     children: '',
     variant: 'circle',
+    size: 'small',
     type: 'button',
-    active: false,
+    active: true,
     loading: false,
+    shape: 'round',
 }

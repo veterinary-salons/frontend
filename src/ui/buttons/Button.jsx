@@ -27,7 +27,8 @@ export const Button = ({
   // Определение цвета на основе варианта с использованием объекта
   const colorMap = {
     'purple-filled': 'reverse',
-    'outlined': 'primary',
+    outlined: 'primary',
+    circle: 'reverse',
     // Дополнительные варианты и их цвета могут быть добавлены здесь
   };
   const color = colorMap[variant] || 'primary';
@@ -46,10 +47,8 @@ export const Button = ({
       {loading && (
         // скрыть текст кнопки, оставив ширину для кнопки и отобразить только иконку
         <>
-          <div className={classes.hide}>
-            {children}
-          </div>
-          <LoadingIcon size={size} color={color}/>
+          <div className={classes.hide}>{children}</div>
+          <LoadingIcon size={size} color={color} />
         </>
       )}
     </button>
