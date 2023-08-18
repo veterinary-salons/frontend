@@ -7,6 +7,7 @@ export const Button = ({
   onClick,
   variant,
   size,
+  shape,
   type,
   children,
   active,
@@ -15,6 +16,7 @@ export const Button = ({
   const buttonClasses = classnames(
     classes.button,
     classes[size],
+    classes[shape],
     classes[variant],
     classes[loading ? 'load' : ''],
     {
@@ -37,9 +39,12 @@ export const Button = ({
       type={type}
       disabled={!active}
     >
-      {!loading && children}
+      {
+        // вывести текст кнопки в отсутсвии режима загрузки и типа кнопки "добавить"
+        !loading && variant !== 'circle' && children
+      }
       {loading && (
-        // скрыть текст, оставив ширину для кнопки и отобразить только иконку
+        // скрыть текст кнопки, оставив ширину для кнопки и отобразить только иконку
         <>
           <div className={classes.hide}>
             {children}
@@ -56,6 +61,7 @@ Button.propTypes = {
   variant: PropTypes.oneOf(['purple-filled', 'outlined']),
   size: PropTypes.oneOf(['small', 'large']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
+  shape: PropTypes.oneOf(['square', 'round']),
   children: PropTypes.node.isRequired,
   active: PropTypes.bool,
   loading: PropTypes.bool,
@@ -64,6 +70,7 @@ Button.propTypes = {
 Button.defaultProps = {
   variant: 'purple-filled',
   size: 'large',
+  shape: 'square',
   type: 'button',
   active: true,
   loading: false,

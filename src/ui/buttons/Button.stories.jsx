@@ -8,7 +8,7 @@ export default {
             description: 'Вид кнопки',
             type: 'string',
             defaultValue: 'purple-filled',
-            options: ['purple-filled', 'outlined'],
+            options: ['purple-filled', 'outlined', 'circle'],
             control: {
                 type: 'radio'
             }
@@ -18,6 +18,15 @@ export default {
             description: 'Тип кнопки',
             defaultValue: 'button',
             options: ['button', 'submit'],
+            control: {
+                type: 'radio'
+            }
+        },
+        shape: {
+            type: 'string',
+            description: 'Форма кнопки',
+            defaultValue: 'square',
+            options: [ 'square', 'round'],
             control: {
                 type: 'radio'
             }
@@ -80,4 +89,13 @@ SubmitLoadingButton.args={
     type: 'submit',
     active: false,
     loading: true,
+}
+
+export const AddButton = Template.bind({});
+AddButton.args={
+    children: '',
+    variant: 'circle',
+    type: 'button',
+    active: false,
+    loading: false,
 }

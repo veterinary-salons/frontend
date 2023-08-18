@@ -28,16 +28,14 @@
     /* Стиль для кнопок в режиме загрузки */
     cursor: wait;
     pointer-events: none; /* Отключение событий мыши */
-    
+
     &.disabled {
       /* Стиль для кнопок в режиме загрузки и неактивных */
       cursor: not-allowed;
     }
   }
-  
+
   &.load.disabled:not(.load) {
-    /* Стиль для кнопок в режиме загрузки и неактивных, но сохраняем фон */
-    background-color: $primary-purple-color;
     box-shadow: none;
   }
 }
@@ -50,13 +48,17 @@
     background-color: $purple-pushed-color;
     box-shadow: none !important;
   }
+
+  &.disabled {
+    background-color: $purple-disabled-color;
+    cursor: none;
+  }
 }
 
 .outlined {
   box-sizing: border-box !important;
   background-color: $background-color;
   color: $primary-purple-color;
-  // border: 1.5px solid $primary-purple-color;
   outline: 1.5px solid $primary-purple-color;
   outline-offset: -1.5px;
 
@@ -65,22 +67,17 @@
     color: $purple-pushed-color;
     box-shadow: none !important;
   }
+    &.disabled {
+    cursor: none;
+    color: $purple-disabled-color;
+    outline-color: $purple-disabled-color;
+    /* Изменил border-color на outline-color */
+  }
 }
 
 .outlined.large {
   outline-width: 3px !important;
   outline-offset: -3px !important;
-}
-
-.disabled.purple-filled {
-  background-color: $purple-disabled-color;
-  cursor: none;
-}
-
-.disabled.outlined {
-  cursor: none;
-  color: $purple-disabled-color;
-  border-color: $purple-disabled-color;
 }
 
 .large {
@@ -115,4 +112,25 @@
 .hide {
   height: 0px;
   visibility: hidden;
+}
+
+.circle.large, .circle.small {
+  padding: 23px;
+}
+
+.circle {
+  background-image: url(../../assets/image/icon40/plus.svg);
+  background-color: $primary-purple-color;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+
+  &:active {
+    background-color: $purple-pushed-color;
+    box-shadow: none !important;
+  }
+
+  &.disabled {
+    background-color: $purple-disabled-color; /* Добавьте эту строку */
+  }
 }
