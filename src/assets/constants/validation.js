@@ -1,67 +1,75 @@
-import { regexEmail, regexName } from './constants';
+import { regexEmail, regexPossword, regexPhone } from './constants';
 
 function validateEmail(email) {
   if (email !== undefined) {
+    console.log(regexEmail.test(email.toLowerCase()));
     if (email.length === 0) {
-      return { invalid: true, message: 'Это поле не должно быть пустым!' };
+      return { invalid: false, message: 'Это поле не должно быть пустым!' };
     }
     if (!regexEmail.test(email.toLowerCase())) {
-      return { invalid: true, message: 'Неверный формат почты!' };
+      return { invalid: false, message: 'Неверный формат почты!' };
     }
     if (regexEmail.test(email.toLowerCase())) {
-      return { invalid: false, message: '' };
+      return { invalid: true, message: 'Почта верна!' };
     }
   }
-  return { invalid: true, message: '' };
+  return { invalid: false, message: 'Заполните поле' };
 }
 
 function validateText(text) {
   if (text !== undefined) {
     if (text.length === 0) {
-      return { invalid: true, message: 'Это поле не должно быть пустым!' };
+      return { invalid: false, message: 'Это поле не должно быть пустым!' };
     }
-    if (!regexName.test(text.toLowerCase())) {
-      return {
-        invalid: true,
-        message:
-          'Поле должно содержать только латиницу, кириллицу, пробел или дефис!',
-      };
-    }
-    if (regexName.test(text.toLowerCase())) {
-      return { invalid: false, message: '' };
+    if (text.length > 5) {
+      return { invalid: true, message: '' };
     }
   }
-  return { invalid: true, message: '' };
+  return { invalid: false, message: 'Заполните поле' };
 }
 
 function validatePassword(password) {
   if (password !== undefined) {
     if (password.length === 0) {
-      return { invalid: true, message: 'Это поле не должно быть пустым!' };
+      return { invalid: false, message: 'Это поле не должно быть пустым!' };
     }
-    if (password.length < 0) {
+    if (!regexPossword.test(password)) {
+      return {
+        invalid: false,
+        message:
+          'Пароль должен состоять из восемь символов, минимум одна буква и одна цифра',
+      };
+    }
+
+    if (regexPossword.test(password)) {
       return {
         invalid: true,
-        message: 'Пароль должен содержать более восьми символов',
+        message: 'Отличный пароль',
       };
     }
   }
-  return { invalid: true, message: '' };
+  return { invalid: false, message: 'Заполните поле' };
 }
 
-function validateNumber(number) {
-  if (number !== undefined) {
-    if (number.length === 0) {
-      return { invalid: true, message: 'Это поле не должно быть пустым!' };
+function validatePhone(phone) {
+  if (phone !== undefined) {
+    if (phone.length === 0) {
+      return { invalid: false, message: 'Введите номер телефона' };
     }
-    if (number.length < 11) {
+    if (!regexPhone.test(phone)) {
       return {
-        invalid: true,
+        invalid: false,
         message: 'Введите корректный номер',
       };
     }
+    if (regexPhone.test(phone)) {
+      return {
+        invalid: true,
+        message: 'Номер верный',
+      };
+    }
   }
-  return { invalid: true, message: '' };
+  return { invalid: false, message: 'Заполните поле' };
 }
 
 const validateInput = (type, item) => {
@@ -74,8 +82,8 @@ const validateInput = (type, item) => {
   if (type === 'password') {
     return validatePassword(item);
   }
-  if (type === 'number') {
-    return validateNumber(item);
+  if (type === 'tel') {
+    return validatePhone(item);
   }
   return '';
 };

@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import style from './BtnEye.module.scss';
+import btnEye from '../../assets/image/icon/btn-eye/Eye-false.svg';
+import hideBtnEye from '../../assets/image/icon/btn-eye/Eye-true.svg';
 
 const BtnEye = ({ onClike, btnStatus, position }) => (
   <button
@@ -14,7 +16,9 @@ const BtnEye = ({ onClike, btnStatus, position }) => (
     onClick={onClike}
     aria-label="Mute volume"
     type="button"
-  />
+  >
+    <img src={btnStatus ? hideBtnEye : btnEye} alt="глаз" />
+  </button>
 );
 
 BtnEye.propTypes = {
