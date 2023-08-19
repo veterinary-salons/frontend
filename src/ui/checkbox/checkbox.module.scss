@@ -22,17 +22,17 @@
   clip-path: inset(0 0 0 0);
 
   &:checked + .checkbox {
-    background: #9384B7;
+    background: var(--primary-purple-color);
   }
   &:checked + .switch {
-    background: #9384B7;
+    background: var(--primary-purple-color);
     &::after {
       left: 26px;
     }
   }
   &:checked + .radio {
     &::after {
-      background: #9384B7;
+      background: var(--primary-purple-color);
     }
   }
 }
@@ -41,7 +41,7 @@
   width: 16px;
   height: 16px;
   border-radius: 1.25px;
-  border: 1.5px solid #9384B7;
+  border: 1.5px solid var(--primary-purple-color);
   display: inline-block;
   cursor: pointer;
 }
@@ -72,7 +72,7 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1.5px solid #9384B7;
+  border: 1.5px solid var(--primary-purple-color);
   cursor: pointer;
   display: flex;
   justify-content: center;
