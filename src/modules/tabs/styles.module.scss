@@ -1,0 +1,23 @@
+.nav {
+  display: inline-flex;
+  border-radius: 50px;
+  border: 2px solid #9384b7;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  position: relative;
+}
+
+.glider {
+  position: absolute;
+  color: #fff;
+  background: #9384b7;
+  display: block;
+  height: 100%;
+  border-radius: 50px;
+  z-index: -11;
+  left: 0;
+  transition: all 0.25s ease-in;
+  width: 210px;
+}
