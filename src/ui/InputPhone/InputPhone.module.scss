@@ -1,6 +1,5 @@
 .container {
   width: 80%;
-  height: 30px;
   margin: 0 auto;
   position: relative;
 }
@@ -11,7 +10,7 @@
   padding: 15px 12px;
   margin: auto;
   border-radius: 8px;
-  border: 2px solid #d4d4d4;
+  border: 2px solid var(--light-color);
   font-family: 'Montserrat';
   font-size: 16px;
   font-style: normal;
