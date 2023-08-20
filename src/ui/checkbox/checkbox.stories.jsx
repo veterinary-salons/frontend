@@ -1,4 +1,5 @@
 import Checkbox from './checkbox';
+import '../../assets/styles/common.css';
 
 export default {
   title: 'Form/Checkbox',
