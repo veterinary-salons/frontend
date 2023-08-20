@@ -2,10 +2,12 @@
   position: relative;
   display: flex;
   align-items: center;
-  color: var(--primary-text-color, #0F0F0F);
+  justify-content: space-between;
+  color: var(--primary-text-color, #0f0f0f);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
+  width: fit-content;
   // font-family: inherit;
 }
 
@@ -49,7 +51,7 @@
 .switch {
   width: 48px;
   height: 24px;
-  background: #D1D1D6;
+  background: #d1d1d6;
   border-radius: 12px;
   position: relative;
   cursor: pointer;
