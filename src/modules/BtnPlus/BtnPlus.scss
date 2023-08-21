@@ -1,0 +1,12 @@
+.btn-plus {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background: url(../../assets/image/icon40/BtnPlus.svg)
+    rgba($color: #000, $alpha: 0);
+  cursor: pointer;
+}
+
+.btn-plus:hover {
+  opacity: 0.8;
+}

@@ -1,0 +1,21 @@
+.tab {
+  width: 210px;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  color: #9c9c9c;
+  padding: 10px 0;
+  border-radius: 50px;
+  min-width: 190px;
+  display: block;
+  box-sizing: border-box;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+  position: relative;
+  &_active {
+    color: #fff;
+  }
+}
