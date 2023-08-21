@@ -3,12 +3,13 @@ import {Button} from './Button';
 export default {
     title: 'UI/Elements/Button',
     component: Button,
+    tags: ['autodocs'],
     argTypes: {
         variant: {
             description: 'Вид кнопки',
             type: 'string',
             defaultValue: 'purple-filled',
-            options: ['purple-filled', 'outlined', 'circle'],
+            options: ['purple-filled', 'outlined', 'add'],
             control: {
                 type: 'radio'
             }
@@ -55,7 +56,12 @@ export default {
             control: {
                 type: 'radio'
             }
-        }
+        },
+        isFiltered: {
+            description: 'Тип кнопки: фильтр (с крестиком)',
+            control: { type: 'boolean' },
+            defaultValue: false,
+        },
     }
 }
 
@@ -69,6 +75,7 @@ SubmitButton.args={
     type: 'submit',
     active: true,
     loading: false,
+    isFiltered: false,
 }
 
 export const NextButton = Template.bind({});
@@ -79,6 +86,7 @@ NextButton.args={
     type: 'submit',
     active: true,
     loading: false,
+    isFiltered: false,
 }
 
 export const SubmitLoadingButton = Template.bind({});
@@ -88,16 +96,30 @@ SubmitLoadingButton.args={
     size: 'large',
     type: 'submit',
     active: false,
-    loading: true,
+    loading: true,   
+    isFiltered: false,
 }
 
 export const AddButton = Template.bind({});
 AddButton.args={
     children: '',
-    variant: 'circle',
+    variant: 'add',
     size: 'small',
     type: 'button',
     active: true,
     loading: false,
     shape: 'round',
+    isFiltered: false,
+}
+
+export const FilterButton = Template.bind({});
+FilterButton.args={
+    children: 'Для кошек',
+    variant: 'purple-filled',
+    size: 'small',
+    type: 'button',
+    active: true,
+    loading: false,
+    shape: 'round',
+    isFiltered: true,
 }

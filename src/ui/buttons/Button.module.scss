@@ -1,5 +1,3 @@
-@import '../../assets/scss/variables/colors.scss';
-
 .button {
   margin: 0;
   border: none;
@@ -13,7 +11,7 @@
   &:hover {
     /* Отображение наведения только для активных кнопок */
     &:not([disabled]) {
-      box-shadow: 0px 4px 18px 0px rgba($primary-purple-color, 0.5);
+      box-shadow: 0px 4px 18px 0px rgba(var(--primary-purple-color), 0.5);
       /* Применяем тень при ховере */
     }
   }
@@ -39,37 +37,53 @@
   }
 }
 
+.button__container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+   &.small {
+    padding: 8px 12px !important;
+   }
+
+   outline-width: 2px !important;
+   outline-offset: -2px !important;
+
+   gap: 18px;
+}
+
+
 .purple-filled {
-  background-color: $primary-purple-color;
+  background-color: var(--primary-purple-color);
   color: white;
 
   &:active {
-    background-color: $purple-pushed-color;
+    background-color: var(--purple-pushed-color);
     box-shadow: none !important;
   }
 
   &.disabled {
-    background-color: $purple-disabled-color;
+    background-color: var(--purple-disabled-color);
     cursor: none;
   }
 }
 
 .outlined {
   box-sizing: border-box !important;
-  background-color: $background-color;
-  color: $primary-purple-color;
-  outline: 1.5px solid $primary-purple-color;
+  background-color: var(--background-color);
+  color: var(--primary-purple-color);
+  outline: 1.5px solid var(--primary-purple-color);
   outline-offset: -1.5px;
 
   &:active {
-    outline-color: $purple-pushed-color;
-    color: $purple-pushed-color;
+    outline-color: var(--purple-pushed-color);
+    color: var(--purple-pushed-color);
     box-shadow: none !important;
   }
     &.disabled {
     cursor: none;
-    color: $purple-disabled-color;
-    outline-color: $purple-disabled-color;
+    color: var(--purple-disabled-color);
+    outline-color: var(--purple-disabled-color);
     /* Изменил border-color на outline-color */
   }
   
@@ -115,19 +129,19 @@
 
 
 // класс кнопки "добавить" с +
-.circle {
+.add {
   background-image: url(../../assets/image/icon40/plus.svg);
-  background-color: $primary-purple-color;
+  background-color: var(--primary-purple-color);
   background-position: center center;
   background-repeat: no-repeat;
 
   &:active {
-    background-color: $purple-pushed-color;
+    background-color: var(--purple-pushed-color);
     box-shadow: none !important;
   }
 
   &.disabled {
-    background-color: $purple-disabled-color; /* Добавьте эту строку */
+    background-color: var(--purple-disabled-color); /* Добавьте эту строку */
   }
 
   &.load{
@@ -152,5 +166,5 @@
 }
 
 .round{
-  border-radius: 50%;
+  border-radius: 25rem;
 }

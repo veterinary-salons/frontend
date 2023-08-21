@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import classes from './Button.module.scss';
 import LoadingIcon from '../loadingIcon/LoadingIcon';
+import CrossIcon from '../crossIcon/CrossIcon';
 
 export const Button = ({
   onClick,
@@ -12,6 +13,7 @@ export const Button = ({
   children,
   active,
   loading,
+  isFiltered,
 }) => {
   const buttonClasses = classnames(
     classes.button,
@@ -22,13 +24,16 @@ export const Button = ({
     {
       [classes.disabled]: !active && !loading,
     },
+    {
+      [classes.button__container]: isFiltered,
+    },
   );
 
   // Определение цвета на основе варианта с использованием объекта
   const colorMap = {
     'purple-filled': 'reverse',
     outlined: 'primary',
-    circle: 'reverse',
+    add: 'reverse',
     // Дополнительные варианты и их цвета могут быть добавлены здесь
   };
   const color = colorMap[variant] || 'primary';
@@ -42,15 +47,22 @@ export const Button = ({
     >
       {
         // вывести текст кнопки в отсутсвии режима загрузки и типа кнопки "добавить"
-        !loading && variant !== 'circle' && children
+        !loading && variant !== 'add' && 
+        
+        <div className={classes.button__container}>
+          {children}
+          {isFiltered && <CrossIcon color={color === 'primary' ? 'reverse' : 'primary'} />}
+        </div> 
       }
       {loading && (
         // скрыть текст кнопки, оставив ширину для кнопки и отобразить только иконку
-        <>
+        <div>
           <div className={classes.hide}>{children}</div>
           <LoadingIcon size={size} color={color} />
-        </>
+        </div>
       )}
+      {
+      }
     </button>
   );
 };
@@ -64,6 +76,7 @@ Button.propTypes = {
   children: PropTypes.node.isRequired,
   active: PropTypes.bool,
   loading: PropTypes.bool,
+  isFiltered: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -73,6 +86,7 @@ Button.defaultProps = {
   type: 'button',
   active: true,
   loading: false,
+  isFiltered: false,
 };
 
 export default Button;
