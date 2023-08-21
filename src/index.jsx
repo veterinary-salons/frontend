@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './app/index';
-import './assets/styles/normolize.css';
+import './assets/styles/normalize.css';
 import './assets/styles/common.css';
 import './assets/fonts/fonts.css';
 
