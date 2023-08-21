@@ -1,0 +1,12 @@
+.background {
+  display: flex;
+  max-width: fit-content;
+}
+
+.primary.background {
+  background: var(--primary-purple-color);
+}
+
+.reverse.background {
+  background: var(--reverse-color);
+}
