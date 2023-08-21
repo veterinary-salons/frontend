@@ -10,7 +10,7 @@
   &:hover {
     /* Отображение наведения только для активных кнопок */
     &:not([disabled]) {
-      box-shadow: 0px 4px 18px 0px rgba(var(--primary-purple-color), 0.5);
+      box-shadow: 0px 4px 18px 0px var(--primary-purple-color-rgba);
       /* Применяем тень при ховере */
     }
   }
