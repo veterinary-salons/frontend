@@ -1,0 +1,169 @@
+.button {
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  /* Добавляем transition для тени */
+  width: fit-content;
+  box-shadow: none;
+
+  &:hover {
+    /* Отображение наведения только для активных кнопок */
+    &:not([disabled]) {
+      box-shadow: 0px 4px 18px 0px var(--primary-purple-color-rgba);
+      /* Применяем тень при ховере */
+    }
+  }
+
+  &[disabled]:not(.load) {
+    /* Отключение курсора для неактивных кнопок, но не в режиме загрузки */
+    cursor: not-allowed;
+  }
+
+  &.load {
+    /* Стиль для кнопок в режиме загрузки */
+    cursor: wait;
+    pointer-events: none; /* Отключение событий мыши */
+
+    &.disabled {
+      /* Стиль для кнопок в режиме загрузки и неактивных */
+      cursor: not-allowed;
+    }
+  }
+
+  &.load.disabled:not(.load) {
+    box-shadow: none;
+  }
+}
+
+.button__container {
+   display: flex;
+   flex-direction: row;
+   align-items: center;
+
+   &.small {
+    padding: 8px 12px !important;
+   }
+
+   outline-width: 2px !important;
+   outline-offset: -2px !important;
+
+   gap: 18px;
+}
+
+
+.purple-filled {
+  background-color: var(--primary-purple-color);
+  color: white;
+
+  &:active {
+    background-color: var(--purple-pushed-color);
+    box-shadow: none !important;
+  }
+
+  &.disabled {
+    background-color: var(--purple-disabled-color);
+    cursor: none;
+  }
+}
+
+.outlined {
+  box-sizing: border-box !important;
+  background-color: var(--background-color);
+  color: var(--primary-purple-color);
+  outline: 1.5px solid var(--primary-purple-color);
+  outline-offset: -1.5px;
+
+  &:active {
+    outline-color: var(--purple-pushed-color);
+    color: var(--purple-pushed-color);
+    box-shadow: none !important;
+  }
+    &.disabled {
+    cursor: none;
+    color: var(--purple-disabled-color);
+    outline-color: var(--purple-disabled-color);
+    /* Изменил border-color на outline-color */
+  }
+  
+  &.large {
+    outline-width: 3px !important;
+    outline-offset: -3px !important;
+  }
+}
+
+.large {
+  font-family: 'Montserrat';
+  font-size: 26px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 29px;
+  /* 111.538% */
+  letter-spacing: 0.78px;
+  padding: 24px 59.5px;
+}
+
+.load.large {
+  padding: 18.5px 59.5px;
+}
+
+.small {
+  font-family: 'Montserrat';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  /* 125% */
+  padding: 12px 32px;
+}
+
+.load.small {
+  padding: 11px 32px;
+}
+
+.hide {
+  height: 0px;
+  visibility: hidden;
+}
+
+
+// класс кнопки "добавить" с +
+.add {
+  background-image: url(../../assets/image/icon40/plus.svg);
+  background-color: var(--primary-purple-color);
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &:active {
+    background-color: var(--purple-pushed-color);
+    box-shadow: none !important;
+  }
+
+  &.disabled {
+    background-color: var(--purple-disabled-color); /* Добавьте эту строку */
+  }
+
+  &.load{
+    background-image: none;
+  }
+
+  &.small{
+    padding: 23px !important;
+    width: 70px;
+    height: 70px;
+  }
+
+  &.large {
+    padding: 12px !important;
+    width: 90px;
+    height: 90px;
+  }
+}
+
+.square{
+  border-radius: 8px;
+}
+
+.round{
+  border-radius: 25rem;
+}

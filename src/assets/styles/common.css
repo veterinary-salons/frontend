@@ -1,6 +1,7 @@
 :root {
-        /* // Основные цвета */
+    /* // Основные цвета */
     --primary-purple-color: #9384B7;
+    --primary-purple-color-rgba: rgba(143, 129, 177, 0.20);
     --purple-light-color: #B8ACD4;
     --purple-pushed-color: #615779;
     --purple-disabled-color: #D2C9E8;
@@ -20,6 +21,7 @@
 
     /* //Дополнительные цвета */
     --link-color: var(--primary-purple-color);
+    --reverse-color: var(--background-color);
     --search-color: #BEBEBE;
     --grey-color: #F8F8F8;
     --light-color: #D4D4D4; 
