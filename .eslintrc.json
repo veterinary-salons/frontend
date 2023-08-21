@@ -40,6 +40,7 @@
         "unnamedComponents": ["function-expression", "arrow-function"]
       }
     ],
-    "react/jsx-props-no-spreading": [0, {}]
+    "react/jsx-props-no-spreading": [0, {}],
+    "react/button-has-type": [0, {}]
   }
 }
