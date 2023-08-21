@@ -1,0 +1,82 @@
+.rating {
+  margin: 0 0 1em 0;
+  padding: 0;
+  border: none;
+
+  &__caption {
+    margin-bottom: 0.5em;
+    padding: 0;
+  }
+
+  /* Group */
+
+  &__group {
+    position: relative;
+    width: 10em;
+    height: 2em;
+    background-image: url(../../assets/image/icon40/bytesize-defalt.svg);
+    background-size: 2em auto;
+    background-repeat: repeat-x;
+  }
+
+  &__group:focus-within {
+    outline: 0.2em solid;
+    outline-offset: 0.2em;
+    outline: none;
+  }
+
+  &__star {
+    outline: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    height: 2em;
+    font-size: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-size: 2em auto;
+    background-repeat: repeat-x;
+  }
+
+  &__star:focus {
+    outline: none;
+  }
+
+  &__star:hover,
+  &__star:checked {
+    background-image: url(../../assets/image/icon40/bytesize-action.svg);
+  }
+
+  &__star:hover ~ &__star {
+    background-image: url(../../assets/image/icon40/bytesize-defalt.svg);
+  }
+
+  /* Options */
+
+  &__star:nth-of-type(1) {
+    z-index: 5;
+    width: 2em;
+  }
+
+  &__star:nth-of-type(2) {
+    z-index: 4;
+    width: 4em;
+  }
+
+  &__star:nth-of-type(3) {
+    z-index: 3;
+    width: 6em;
+  }
+
+  &__star:nth-of-type(4) {
+    z-index: 2;
+    width: 8em;
+  }
+
+  &__star:nth-of-type(5) {
+    z-index: 1;
+    width: 10em;
+  }
+}

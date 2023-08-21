@@ -1,0 +1,48 @@
+.like {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(../../assets/image/icon40/Like-default.svg);
+  cursor: pointer;
+  animation: dislike 0.5s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &_action {
+    background-image: url(../../assets/image/icon40/Like-liked.svg);
+    animation: action-like 0.5s;
+  }
+
+  @keyframes action-like {
+    0% {
+      transform: scale(0);
+    }
+
+    25% {
+      transform: scale(1.2);
+    }
+
+    50% {
+      transform: scale(1);
+      filter: brightness(1.5);
+    }
+  }
+
+  @keyframes dislike {
+    0% {
+      transform: scale(0);
+    }
+
+    25% {
+      transform: scale(1.2);
+    }
+
+    50% {
+      transform: scale(1);
+      filter: brightness(1.5);
+    }
+  }
+}
