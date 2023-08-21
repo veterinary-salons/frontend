@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import MaskedInput from 'react-text-mask';
+import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import style from './InputPhone.module.scss';

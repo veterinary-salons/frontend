@@ -10,7 +10,7 @@
   padding: 15px 12px;
   margin: auto;
   border-radius: 8px;
-  border: 2px solid #d4d4d4;
+  border: 2px solid var(--light-color);
   font-family: 'Montserrat';
   font-size: 16px;
   font-style: normal;
@@ -21,21 +21,21 @@
 }
 
 .input:hover {
-  border: 2px solid #9384b7;
+  border: 2px solid var(--primary-purple-color);
   color: #9c9c9c;
 }
 
 .input:focus-visible {
-  border: 1px solid #9384b7;
+  border: 1px solid var(--primary-purple-color);
   background: #f9f7fc;
 }
 
 .input:disabled {
-  border: 1px solid #d4d4d4;
+  border: 1px solid var(--light-color);
 }
 
 .input-success {
-  border: 2px solid #03a600;
+  border: 2px solid var(--texe-success-input);
 }
 
 .input-span-error {
@@ -48,12 +48,12 @@
   width: 100%;
   height: 14px;
   margin: 8px auto 0;
-  color: #ee3465;
+  color: var(--text-input-err-color);
   opacity: 0;
 }
 
 .input-error {
-  border: 1px solid red;
+  border: 1px solid var(--text-input-err-color);
 }
 
 .input-error_activ {
@@ -61,5 +61,5 @@
 }
 
 .input-span-true {
-  color: #03a600;
+  color: var(--texe-success-input);
 }

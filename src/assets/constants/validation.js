@@ -2,7 +2,6 @@ import { regexEmail, regexPossword, regexPhone } from './constants';
 
 function validateEmail(email) {
   if (email !== undefined) {
-    console.log(regexEmail.test(email.toLowerCase()));
     if (email.length === 0) {
       return { invalid: false, message: 'Это поле не должно быть пустым!' };
     }

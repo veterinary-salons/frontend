@@ -14,8 +14,8 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background-image: var(--green-color);
-  color: var(--green-color);
+  background-color: var(--green-color, #8fd6bf);
+  color: var(--primary-text-color);
   position: absolute;
   right: 0px;
   bottom: 0px;
