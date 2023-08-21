@@ -15,6 +15,7 @@
     /* // Цвет текста */
     --primary-text-color: #000;
     --primary-text-span-color: #9C9C9C;
+    --font-colors-white: #fff;
     --text-button-color: var(--purple-pushed-color);
 
     /* //Дополнительные цвета */
