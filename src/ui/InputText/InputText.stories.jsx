@@ -15,7 +15,7 @@ export const Disabled = Template.bind({});
 
 Text.args = {
   type: 'text',
-  placeholder: 'Tекст',
+  placeholder: 'Текст',
   name: 'text',
   maxLength: 30,
   minLength: 2,
