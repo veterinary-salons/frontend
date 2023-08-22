@@ -1,4 +1,4 @@
-import MaskedInput from 'react-text-mask';
+import TextMaskInput from 'react-text-mask';
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
@@ -32,7 +32,7 @@ const InputPhone = ({ infoInput }) => {
 
   return (
     <section className={style.container}>
-      <MaskedInput
+      <TextMaskInput 
         placeholder={placeholderPhone}
         className={styleInput}
         mask={maskPhone}

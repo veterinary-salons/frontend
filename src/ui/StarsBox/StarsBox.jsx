@@ -1,4 +1,4 @@
-import { Rating } from 'react-simple-star-rating';
+import Rating from 'react-simple-star-rating';
 import PropTypes from 'prop-types';
 import style from './StarsBox.module.scss';
 
