@@ -1,4 +1,4 @@
-// TODO: назвать heart. посмотреть в фигму. есть heart for header, heart for like - две вариации.
+// TODO: назвать favourite. посмотреть в фигму. есть heart for favourite, favourite for like - две вариации.
 
 import PropTypes from 'prop-types';
 import cn from 'classnames';
