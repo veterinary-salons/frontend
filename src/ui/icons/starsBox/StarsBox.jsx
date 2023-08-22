@@ -1,6 +1,6 @@
 // TODO: Проверить работает ли у вас. Я установила зависимости пакетов. Но звезды не загружаются. Ошибка. Проверить
 
-import Rating from 'react-simple-star-rating';
+import { Rating } from 'react-simple-star-rating';
 import PropTypes from 'prop-types';
 import style from './StarsBox.module.scss';
 
