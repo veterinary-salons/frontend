@@ -1,0 +1,11 @@
+.social-btn {
+  margin: 0;
+  border: none;
+  cursor: pointer;
+  background-color: var(--primary-text-color);
+
+  &__social {
+    width: 40px;
+    height: 40px;
+  }
+}

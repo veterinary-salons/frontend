@@ -11,13 +11,16 @@
 
     /* // Дополнительные цвета */
     --background-color: #fff;
-    --background-section-color: #F8F8F8;
+    --background-section-color: #f8f8f8;
+    --background-color-dropdown: #f9f7fc;
 
     /* // Цвет текста */
     --primary-text-color: #000;
     --primary-text-span-color: #9C9C9C;
     --font-colors-white: #fff;
     --text-button-color: var(--purple-pushed-color);
+    --text-input-err-color: #ee3465;
+    --texe-success-input: #03a600;
 
     /* //Дополнительные цвета */
     --link-color: var(--primary-purple-color);
