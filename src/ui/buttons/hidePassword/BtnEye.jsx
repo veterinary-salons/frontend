@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import style from './BtnEye.module.scss';
-import btnEye from '../../../assets/images/icon/btn-eye/Eye-false.svg';
-import hideBtnEye from '../../../assets/images/icon/btn-eye/Eye-true.svg';
+import btnEye from '../../../assets/images/icon/btn-eye/eye-false.svg';
+import hideBtnEye from '../../../assets/images/icon/btn-eye/eye-true.svg';
 
 const BtnEye = ({ onClike, btnStatus, position }) => (
   <button
