@@ -3,7 +3,7 @@
   height: 40px;
   border: none;
   background-color: rgba(var(--primary-text-color), 0);
-  background-image: url(../../../assets/images/icon40/Like-default.svg);
+  background-image: url(../../../assets/images/icon/btn-like/like-default.svg);
   cursor: pointer;
   animation: dislike 0.5s;
 
@@ -43,6 +43,6 @@
 }
 
 .action {
-  background-image: url(../../../assets/images/icon40/Like-liked.svg);
+  background-image: url(../../../assets/images/icon/btn-like/like-liked.svg);
   animation: action-like 0.5s;
 }
