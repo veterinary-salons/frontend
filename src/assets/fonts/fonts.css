@@ -32,23 +32,6 @@
     local('montserrat semi bold'),
     local('montserratsemibold'),
     local('montserrat-semi-bold'),
-    url(./Montserrat-ExtraBold.woff2) format('woff2'),
-    url(./Montserrat-ExtraBold.woff) format('woff');
-  font-weight: 800;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Montserrat';
-  src:
-    local('Montserrat'),
-    local('montserrat'),
-    local('Montserrat Semi Bold'),
-    local('MontserratSemiBold'),
-    local('Montserrat-Semi-Bold'),
-    local('montserrat semi bold'),
-    local('montserratsemibold'),
-    local('montserrat-semi-bold'),
     url(./Montserrat-Bold.woff2) format('woff2'),
     url(./Montserrat-Bold.woff) format('woff');
   font-weight: 700;
