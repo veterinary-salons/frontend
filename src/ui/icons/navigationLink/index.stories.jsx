@@ -9,7 +9,7 @@ export default {
     variant: {
       type: 'string',
       description:
-        'Выбираем какое изображение будем получать, если ничего не передавать, то будет avatar',
+        'Выбираем какое изображение будем получать, если ничего не передавать, то будет profile',
       defaultValue: 'profile',
       options: ['profile', 'wishlist', 'basket'],
       control: {
@@ -24,16 +24,6 @@ export default {
     img: {
       defaultValue: null,
       description: 'Передаем через prop изображение для аватара',
-      type: 'string',
-    },
-    width: {
-      defaultValue: '',
-      description: 'Ширина иконки, пишем c px',
-      type: 'string',
-    },
-    height: {
-      defaultValue: '',
-      description: 'Высота иконки, пишем c px',
       type: 'string',
     },
   },
