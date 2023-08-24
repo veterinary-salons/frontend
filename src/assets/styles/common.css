@@ -13,22 +13,22 @@
     --blue-color: #BED2EA;
     --blue-light-color: #D8E4F2;
 
-    /* // Дополнительные цвета */
-    --background-color: #FFF;
-    --background-section-color: #F8F8F8;
-
     /* // Цвет текста */
     --primary-text-color: #0F0F0F;
-    --primary-text-span-color: #9C9C9C;
-    --font-colors-white: #FFF;
+    --text-grey-color: #9C9C9C;
+    --text-white-color: #FFF;
     --text-button-color: var(--purple-pushed-color);
-    --text-err-color: #D80000;
-    --text-success-color: #03A600;
 
     /* //Дополнительные цвета */
+    --background-white-color: #FFF;
+
     --link-color: var(--primary-purple-color);
-    --reverse-color: var(--background-color);
-    --search-color: #BEBEBE;
-    --grey-color: #F8F8F8;
-    --light-color: #D4D4D4; 
+    --reverse-color: var(--background-white-color);
+
+    --grey-search-color: #BEBEBE;
+    --grey-light-color: #F8F8F8;
+    --grey-color: #D4D4D4;
+
+    --error-color: #D80000;
+    --success-color: #03A600;
 }
