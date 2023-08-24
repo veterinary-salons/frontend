@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import classes from './index.module.scss';
+import classes from './style.module.scss';
 import imgAvatar from '../../../assets/images/icon/avatar/avatar.svg';
 
 const NavigationLink = ({ variant, counter, img }) => {
