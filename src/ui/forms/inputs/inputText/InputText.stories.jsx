@@ -1,9 +1,49 @@
 import InputText from './InputText';
-import './InputText.module.scss';
 
 export default {
   title: 'Forms/Inputs/InputText',
   component: InputText,
+  tags: ['autodocs'],
+  argTypes: {
+    type: {
+      type: 'string',
+      description: 'Варианты инпутов',
+      defaultValue: 'text',
+      options: ['text', 'email', 'password'],
+      control: {
+        type: 'radio',
+      },
+    },
+    placeholder: {
+      type: 'string',
+      description: 'Текст внутри поля',
+      defaultValue: 'Text',
+    },
+    name: {
+      type: 'string',
+      description: 'Уникальное имя элемента',
+    },
+    maxLength: {
+      type: 'number',
+      description: 'Максимальное число символов',
+    },
+    minLength: {
+      type: 'number',
+      description: 'Минимальное число символов',
+    },
+    required: {
+      type: 'boolean',
+      description: 'Обязательное поле',
+    },
+    infoInput: {
+      type: 'func',
+      description: 'Callback функция, получает value',
+    },
+    id: {
+      type: 'string',
+      description: 'Задает стилевой идентификатор',
+    },
+  },
 };
 
 const Template = (arg) => <InputText {...arg} />;
@@ -15,12 +55,11 @@ export const Disabled = Template.bind({});
 
 Text.args = {
   type: 'text',
-  placeholder: 'Текст',
+  placeholder: 'Text',
   name: 'text',
   maxLength: 30,
   minLength: 2,
   required: true,
-  autoComplete: 'true',
   id: 'text',
 };
 
@@ -31,7 +70,6 @@ Email.args = {
   maxLength: 20,
   minLength: 2,
   required: true,
-  autoComplete: 'true',
   infoInput: () => {},
   id: 'email',
 };
@@ -43,7 +81,6 @@ Password.args = {
   maxLength: 20,
   minLength: 2,
   required: true,
-  autoComplete: 'true',
   infoInput: () => {},
   id: 'password',
   position: 'button-eye_position',
