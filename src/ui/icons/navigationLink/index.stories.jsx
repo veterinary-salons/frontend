@@ -8,8 +8,7 @@ export default {
   argTypes: {
     variant: {
       type: 'string',
-      description:
-        'Выбираем какое изображение будем получать, если ничего не передавать, то будет profile',
+      description: 'Варианты кнопки',
       defaultValue: 'profile',
       options: ['profile', 'wishlist', 'basket'],
       control: {
@@ -23,7 +22,7 @@ export default {
     },
     img: {
       defaultValue: null,
-      description: 'Передаем через prop изображение для аватара',
+      description: 'Изображение профиля',
       type: 'string',
     },
   },
