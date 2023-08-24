@@ -13,7 +13,7 @@ const NavigationLink = ({ variant, counter, img }) => {
   const spanClass = classnames(
     [classes['nav-link__span']],
     {
-      [classes['nav-link__counter-min']]: counter < 99,
+      [classes['nav-link__counter-min']]: counter <= 99,
     },
     {
       [classes['nav-link__counter-max']]: counter > 99,
