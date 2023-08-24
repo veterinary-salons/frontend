@@ -10,32 +10,32 @@
   padding: 15px 12px;
   margin: auto;
   border-radius: 8px;
-  border: 2px solid var(--light-color, #9384b7);
+  border: 2px solid var(--grey-color);
   font-family: 'Montserrat';
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
-  color: var(--primary-text-color, #000);
+  color: #000;
   outline: 0;
 }
 
 .input:hover {
-  border: 2px solid var(--primary-purple-color, #b8acd4);
+  border: 2px solid var(--primary-purple-color);
   color: #9c9c9c;
 }
 
 .input:focus-visible {
-  border: 2px solid var(--primary-purple-color, #b8acd4);
-  background: var(--background-color-dropdown, #f9f7fc);
+  border: 1px solid var(--primary-purple-color);
+  background: #f9f7fc;
 }
 
 .input:disabled {
-  border: 2px solid var(--light-color, #9384b7);
+  border: 1px solid var(--grey-color);
 }
 
 .input-success {
-  border: 2px solid var(--success-color, #03a600);
+  border: 2px solid var(--success-color);
 }
 
 .input-span-error {
@@ -48,12 +48,12 @@
   width: 100%;
   height: 14px;
   margin: 8px auto 0;
-  color: var(--error-color, #ee3465);
+  color: var(--error-color);
   opacity: 0;
 }
 
 .input-error {
-  border: 2px solid var(--error-color, #ee3465);
+  border: 1px solid var(--error-color);
 }
 
 .input-error_activ {
@@ -61,5 +61,5 @@
 }
 
 .input-span-true {
-  color: var(--success-color, #03a600);
+  color: var(--success-color);
 }

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
+import style from './InputText.module.scss';
 import validateInput from '../../../../assets/constants/validation';
 import useFormAndValidation from '../../../../hooks/validation';
 import BtnEye from '../../../buttons/hidePassword/BtnEye';
-import style from './index.module.scss';
 
 const InputText = ({
   type,
@@ -13,6 +13,7 @@ const InputText = ({
   maxLength,
   minLength,
   required,
+  autoComplete,
   infoInput,
   disabled,
   id,
@@ -49,7 +50,7 @@ const InputText = ({
   );
 
   return (
-    <div className={style.container}>
+    <section className={style.container}>
       <input
         className={getClassItem}
         type={getType}
@@ -60,6 +61,7 @@ const InputText = ({
         required={required}
         onChange={handleChange}
         value={values[name] || ''}
+        autoComplete={autoComplete}
         disabled={disabled}
         id={id}
       />
@@ -75,7 +77,7 @@ const InputText = ({
           {validateInput(type, values[name]).message}
         </span>
       )}
-    </div>
+    </section>
   );
 };
 
@@ -86,6 +88,7 @@ InputText.propTypes = {
   maxLength: PropTypes.number,
   minLength: PropTypes.number,
   required: PropTypes.bool,
+  autoComplete: PropTypes.string,
   infoInput: PropTypes.func,
   disabled: PropTypes.bool,
   id: PropTypes.string,
@@ -94,11 +97,12 @@ InputText.propTypes = {
 
 InputText.defaultProps = {
   type: 'text',
-  placeholder: 'Текст',
+  placeholder: 'Tекст',
   name: 'input',
   maxLength: 8,
   minLength: 2,
   required: true,
+  autoComplete: 'true',
   infoInput: () => {},
   disabled: false,
   id: 'id',
