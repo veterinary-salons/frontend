@@ -3,29 +3,32 @@
     --primary-purple-color: #9384B7;
     --primary-purple-color-rgba: rgba(143, 129, 177, 0.20);
     --purple-light-color: #B8ACD4;
+    --purple-pale-color: #F9F7FC;
     --purple-pushed-color: #615779;
     --purple-disabled-color: #D2C9E8;
     --green-color: #8FD6BF;
+    --green-light-color: #BCE6D9;
     --yellow-color: #F9D279;
+    --yellow-light-color: #FBE4AF;
     --blue-color: #BED2EA;
-
-    /* // Дополнительные цвета */
-    --background-color: #fff;
-    --background-section-color: #f8f8f8;
-    --background-color-dropdown: #f9f7fc;
+    --blue-light-color: #D8E4F2;
 
     /* // Цвет текста */
-    --primary-text-color: #000;
-    --primary-text-span-color: #9C9C9C;
-    --font-colors-white: #fff;
+    --primary-text-color: #0F0F0F;
+    --text-grey-color: #9C9C9C;
+    --text-white-color: #FFF;
     --text-button-color: var(--purple-pushed-color);
-    --text-input-err-color: #ee3465;
-    --texe-success-input: #03a600;
 
     /* //Дополнительные цвета */
+    --background-white-color: #FFF;
+
     --link-color: var(--primary-purple-color);
-    --reverse-color: var(--background-color);
-    --search-color: #BEBEBE;
-    --grey-color: #F8F8F8;
-    --light-color: #D4D4D4; 
+    --reverse-color: var(--background-white-color);
+
+    --grey-search-color: #BEBEBE;
+    --grey-light-color: #F8F8F8;
+    --grey-color: #D4D4D4;
+
+    --error-color: #D80000;
+    --success-color: #03A600;
 }

@@ -69,7 +69,7 @@
 
 .outlined {
   box-sizing: border-box !important;
-  background-color: var(--background-color);
+  background-color: var(--background-white-color);
   color: var(--primary-purple-color);
   outline: 1.5px solid var(--primary-purple-color);
   outline-offset: -1.5px;
@@ -96,7 +96,7 @@
   font-family: 'Montserrat';
   font-size: 26px;
   font-style: normal;
-  font-weight: 800;
+  font-weight: 500;
   line-height: 29px;
   /* 111.538% */
   letter-spacing: 0.78px;

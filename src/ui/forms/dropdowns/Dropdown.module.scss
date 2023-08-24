@@ -23,13 +23,13 @@
   padding: 16px;
   color: var(--primary-text-color);
   border-radius: 8px;
-  border: 1px solid var(--additional-colors-grey, var(--light-color));
+  border: 1px solid var(--additional-colors-grey, var(--grey-color));
   cursor: pointer;
-  background-color: var(--background-color-dropdown);
+  background-color: var(--purple-pale-color);
 }
 
 .select_action {
-  background-color: var(--background-color-dropdown);
+  background-color: var(--purple-pale-color);
 }
 
 .select:hover {
@@ -42,11 +42,11 @@
   width: 100%;
   padding: 0;
   border-radius: 0 0 8px 8px;
-  border-right: 1px solid var(--light-color);
-  border-bottom: 1px solid var(--light-color);
-  border-left: 1px solid var(--light-color);
+  border-right: 1px solid var(--grey-color);
+  border-bottom: 1px solid var(--grey-color);
+  border-left: 1px solid var(--grey-color);
   cursor: pointer;
-  background-color: var(--background-color-dropdown);
+  background-color: var(--purple-pale-color);
   opacity: 0;
   display: none;
   position: absolute;
@@ -66,7 +66,7 @@
   font-weight: 500;
   line-height: 20px;
   text-align: start;
-  background-color: var(--background-color-dropdown);
+  background-color: var(--purple-pale-color);
 }
 
 .menu-btn:last-child {
