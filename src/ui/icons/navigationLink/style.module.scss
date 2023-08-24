@@ -3,6 +3,7 @@
   height: 40px;
   position: relative;
   cursor: pointer;
+  font-family: 'Montserrat', Arial, sans-serif;
 
   &:hover {
     opacity: 0.9;
@@ -32,7 +33,6 @@
     position: absolute;
     bottom: 2px;
     right: 2px;
-    font-family: 'Montserrat';
     text-align: center;
     font-size: 12px;
     font-style: normal;
