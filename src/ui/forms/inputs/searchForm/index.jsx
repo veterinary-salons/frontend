@@ -34,7 +34,7 @@ const SearchForm = ({
         minLength={minLength}
         onChange={(e) => setValue(e.target.value)}
       />
-      <Magnifier position="search" disabled={disabled} />
+      <Magnifier disabled={disabled} />
     </form>
   );
 };

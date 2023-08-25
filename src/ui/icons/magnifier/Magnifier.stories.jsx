@@ -5,15 +5,6 @@ export default {
   component: Magnifier,
   tags: ['autodocs'],
   argTypes: {
-    position: {
-      type: 'string',
-      description: 'Варианты позиционирования',
-      defaultValue: 'text',
-      options: ['', 'search'],
-      control: {
-        type: 'radio',
-      },
-    },
     disabled: {
       type: 'boolean',
       description: 'Варианты активности',
@@ -30,5 +21,5 @@ const Template = (arg) => <Magnifier {...arg} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  position: '',
+  disabled: false,
 };

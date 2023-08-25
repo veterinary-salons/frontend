@@ -1,12 +1,9 @@
 .magnifier {
   width: 24px;
   height: 24px;
-
-  &__position-search {
-    position: absolute;
-    top: 14px;
-    right: 15px;
-  }
+  margin-top: 14px;
+  margin-right: 14px;
+  order: 1;
 
   &__disabled {
     opacity: 0.5;
