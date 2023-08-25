@@ -1,4 +1,15 @@
 .magnifier {
   width: 24px;
   height: 24px;
+
+  &__position-search {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+  }
+
+  &__disabled {
+    opacity: 0.5;
+    background: var(--grey-light-color, #f8f8f8);
+  }
 }
