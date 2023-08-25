@@ -2,16 +2,26 @@
   width: 40px;
   height: 40px;
   border: none;
-  background-color: rgba(var(--primary-text-color), 0);
-  background-image: url(../../../assets/images/icon/btn-like/like-default.svg);
+  background: none;
+  border-radius: 100%;
+  background: url(../../../assets/images/icon/btn-like/like-default.svg) center
+    center/cover no-repeat;
+  background-size: 70%;
+  background-color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
-  transition: background-image .3s linear;
+  transition: all 0.3s linear;
 
   &:hover {
-      background-image: url(../../../assets/images/icon/btn-like/like-hover.svg);
+    background-color: unset;
+    background: url(../../../assets/images/icon/btn-like/like-hover.svg) center
+      center/cover no-repeat;
+    background-size: 100%;
   }
 }
 
 .action {
-  background-image: url(../../../assets/images/icon/btn-like/like-liked.svg);
+  background-color: unset;
+  background: url(../../../assets/images/icon/btn-like/like-liked.svg) center
+    center/cover no-repeat;
+  background-size: 100%;
 }
