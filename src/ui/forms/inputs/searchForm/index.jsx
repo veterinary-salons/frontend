@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
+import classNames from 'classnames';
 import Magnifier from '../../../icons/magnifier/Magnifier';
 import classStyle from './style.module.scss';
 
@@ -19,7 +20,13 @@ const SearchForm = ({
   };
 
   return (
-    <form className={classStyle['search-container']} onSubmit={handelSubmit}>
+    <form
+      className={classNames(
+        classStyle['search-container'],
+        disabled ? classStyle.disabled : null,
+      )}
+      onSubmit={handelSubmit}
+    >
       <input
         onClick={() => {
           setValue(value.replace('Поиск:', ''));
@@ -34,7 +41,13 @@ const SearchForm = ({
         minLength={minLength}
         onChange={(e) => setValue(e.target.value)}
       />
-      <Magnifier disabled={disabled} />
+      <button
+        type="submit"
+        className={classStyle['search-container__submit']}
+        disabled={disabled}
+      >
+        <Magnifier />
+      </button>
     </form>
   );
 };

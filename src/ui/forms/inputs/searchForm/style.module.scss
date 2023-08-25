@@ -16,9 +16,10 @@ input[type='search']::-webkit-search-results-decoration {
   border-radius: 8px;
   padding: 14px 15px;
   background-color: var(--grey-light-color, #f8f8f8);
+  box-sizing: border-box;
 
   &__input {
-    width: 280px;
+    width: 100%;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
@@ -27,19 +28,40 @@ input[type='search']::-webkit-search-results-decoration {
     padding: 0;
     border-radius: 8px;
     background-color: var(--grey-light-color, #f8f8f8);
+
+    &:hover::-webkit-input-placeholder {
+      color: var(--primary-purple-color, #9384b7);
+    }
+
+    &:focus {
+      outline: none;
+      color: var(--primary-text-color, #0f0f0f);
+    }
+
+    &:focus + .search-container__submit {
+      opacity: 1;
+    }
   }
 
-  &__input:hover::-webkit-input-placeholder {
-    color: var(--primary-purple-color, #9384b7);
-  }
-
-  &__input:focus {
-    outline: none;
-    color: var(--primary-text-color, #0f0f0f);
-  }
-
-  &__input:disabled {
+  &__submit {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    width: 24px;
+    height: 24px;
     opacity: 0.5;
-    background: var(--grey-light-color, #f8f8f8);
+
+    &:disabled {
+      cursor: auto;
+    }
   }
+
+  &:hover &__submit {
+    opacity: 1;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
 }
