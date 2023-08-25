@@ -21,6 +21,7 @@ export default {
     },
     maxLength: {
       type: 'number',
+      defaultValue: 100,
       description: 'Максимальное число символов',
     },
     disabled: {

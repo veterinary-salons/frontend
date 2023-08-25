@@ -51,7 +51,7 @@ SearchForm.propTypes = {
 SearchForm.defaultProps = {
   placeholder: 'Чем вам помочь?',
   name: 'search',
-  maxLength: 20,
+  maxLength: 100,
   minLength: 2,
   disabled: false,
   infoInput: () => {},
