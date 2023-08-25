@@ -15,13 +15,13 @@ export default {
       type: 'string',
       description: 'Уникальное имя элемента',
     },
-    maxLength: {
-      type: 'number',
-      description: 'Максимальное число символов',
-    },
     minLength: {
       type: 'number',
       description: 'Минимальное число символов',
+    },
+    maxLength: {
+      type: 'number',
+      description: 'Максимальное число символов',
     },
     disabled: {
       type: 'boolean',
@@ -32,6 +32,10 @@ export default {
         type: 'radio',
       },
     },
+    infoInput: {
+      type: 'func',
+      description: 'Callback функция, получает value',
+    },
   },
 };
 
@@ -40,4 +44,9 @@ const Template = (arg) => <SearchForm {...arg} />;
 export const Default = Template.bind({});
 Default.args = {
   position: '',
+  name: 'search',
+  minLength: 2,
+  maxLength: 20,
+  disabled: false,
+  infoInput: () => {},
 };

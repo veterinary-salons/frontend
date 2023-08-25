@@ -3,12 +3,19 @@ import { useState } from 'react';
 import Magnifier from '../../../icons/magnifier/Magnifier';
 import classStyle from './style.module.scss';
 
-const SearchForm = ({ placeholder, name, maxLength, minLength, disabled }) => {
+const SearchForm = ({
+  placeholder,
+  name,
+  maxLength,
+  minLength,
+  disabled,
+  infoInput,
+}) => {
   const [value, setValue] = useState('');
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    setValue(`Поиск: ${value}`);
+    infoInput(value);
   };
 
   return (
@@ -38,6 +45,7 @@ SearchForm.propTypes = {
   maxLength: PropTypes.number,
   minLength: PropTypes.number,
   disabled: PropTypes.bool,
+  infoInput: PropTypes.func,
 };
 
 SearchForm.defaultProps = {
@@ -46,6 +54,7 @@ SearchForm.defaultProps = {
   maxLength: 20,
   minLength: 2,
   disabled: false,
+  infoInput: () => {},
 };
 
 export default SearchForm;
