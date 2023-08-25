@@ -1,7 +1,7 @@
 import Heart from './Heart';
 
 export default {
-  title: 'Buttons/Header/Heart',
+  title: 'Buttons/Heart',
   component: Heart,
 };
 

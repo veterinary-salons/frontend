@@ -1,13 +1,11 @@
-.basket {
-  margin: 0;
-  display: block;
+.like {
   width: 40px;
   height: 40px;
   border: none;
-  background: url(../../../assets/images/icon/basket/basket.svg)
-    rgba($color: #000000, $alpha: 0);
+  background-color: rgba(var(--primary-text-color), 0);
+  background-image: url(../../../assets/images/icon/favourite/favourite.svg);
   cursor: pointer;
-  position: relative;
+  animation: dislike 0.5s;
 
   &:hover {
     opacity: 0.7;

@@ -5,44 +5,13 @@
   background-color: rgba(var(--primary-text-color), 0);
   background-image: url(../../../assets/images/icon/btn-like/like-default.svg);
   cursor: pointer;
-  animation: dislike 0.5s;
+  transition: background-image .3s linear;
 
   &:hover {
-    opacity: 0.7;
-  }
-
-  @keyframes action-like {
-    0% {
-      transform: scale(0);
-    }
-
-    25% {
-      transform: scale(1.2);
-    }
-
-    50% {
-      transform: scale(1);
-      filter: brightness(1.5);
-    }
-  }
-
-  @keyframes dislike {
-    0% {
-      transform: scale(0);
-    }
-
-    25% {
-      transform: scale(1.2);
-    }
-
-    50% {
-      transform: scale(1);
-      filter: brightness(1.5);
-    }
+      background-image: url(../../../assets/images/icon/btn-like/like-hover.svg);
   }
 }
 
 .action {
   background-image: url(../../../assets/images/icon/btn-like/like-liked.svg);
-  animation: action-like 0.5s;
 }
