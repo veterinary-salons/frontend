@@ -10,7 +10,7 @@ const Footer = () => (
         {new Date().getFullYear()}
       </p>
       <Link
-        to="purrfectcare.ru"
+        to="hepl@yandex.ru"
         target="_blank"
         className={classes.footer__link}
       >
