@@ -3,19 +3,21 @@ import classes from './style.module.scss';
 
 const Footer = () => (
   <footer className={classes.footer}>
-    <p className={classes.footer__title}>
-      Purrfect care / Перрфект Кэа &copy; {new Date().getFullYear()}
-    </p>
+    <div className={classes.footer__info}>
+      <p className={classes.footer__title}>
+        Purrfect care / Перрфект Кэа
+        <span className={classes.footer__copyright}>&copy;</span>
+        {new Date().getFullYear()}
+      </p>
+      <Link
+        to="hepl@yandex.ru"
+        target="_blank"
+        className={classes.footer__link}
+      >
+        hepl@yandex.ru
+      </Link>
+    </div>
     <ul className={classes.footer__links}>
-      <li className={classes.footer__item}>
-        <Link
-          to="purrfectcare.ru"
-          target="_blank"
-          className={classes.footer__link}
-        >
-          purrfectcare.ru
-        </Link>
-      </li>
       <li>
         <Link
           to="purrfectcare.ru"
