@@ -10,13 +10,9 @@ const Footer = () => (
         {new Date().getFullYear()}
       </p>
       <Link
-        to=" "
+        to="purrfectcare.ru"
         target="_blank"
         className={classes.footer__link}
-        onClick={(e) => {
-          window.location.href = "mailto:purrfectcare.ru";
-          e.preventDefault();
-        }}
       >
         purrfectcare.ru
       </Link>
