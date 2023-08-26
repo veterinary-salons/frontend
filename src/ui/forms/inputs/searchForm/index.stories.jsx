@@ -44,10 +44,9 @@ const Template = (arg) => <SearchForm {...arg} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  position: '',
   name: 'search',
   minLength: 2,
-  maxLength: 20,
+  maxLength: 30,
   disabled: false,
   infoInput: () => {},
 };
