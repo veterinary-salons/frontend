@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 import classNames from 'classnames';
-import Magnifier from '../../../icons/magnifier/Magnifier';
 import classStyle from './style.module.scss';
 
 const SearchForm = ({
@@ -45,9 +44,8 @@ const SearchForm = ({
         type="submit"
         className={classStyle['search-container__submit']}
         disabled={disabled}
-      >
-        <Magnifier />
-      </button>
+        aria-label='Подтвердить поиск'
+      />
     </form>
   );
 };
