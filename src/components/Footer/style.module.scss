@@ -1,7 +1,6 @@
 .footer {
-  padding: 40px 100px 50px;
+  padding: 40px 100px 51px;
   display: flex;
-  min-height: 50px;
   justify-content: space-between;
   border-radius: 20px 20px 0px 0px;
   background-color: var(--primary-purple-color);
@@ -9,7 +8,7 @@
   &__info {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
+    row-gap: 9px;
   }
   &__title {
     display: flex;
@@ -19,7 +18,7 @@
     font-weight: 500;
     line-height: 20px;
     margin: 0;
-    gap: 8px;
+    gap: 10px;
   }
   &__copyright {
     font-size: 20px;

@@ -14,7 +14,7 @@ const Footer = () => (
         target="_blank"
         className={classes.footer__link}
       >
-        purrfectcare.ru
+        hepl@yandex.ru
       </Link>
     </div>
     <ul className={classes.footer__links}>
