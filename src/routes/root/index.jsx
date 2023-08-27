@@ -1,5 +1,13 @@
+import { Outlet } from 'react-router-dom';
+import BreadCrumbs from '../../modules/breabCrumbs';
+
 function Root() {
-  return <h1>Здесь фронтенд сервиса заказа услуг и товаров для животных</h1>;
+  return (
+    <>
+      <BreadCrumbs />
+      <Outlet />
+    </>
+  );
 }
 
 export default Root;

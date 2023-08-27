@@ -1,0 +1,32 @@
+.link-crumb {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22px;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text-grey-color, #9c9c9c);
+  text-decoration: none;
+  &::before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    background: url(../../../assets/images/icon/arrow-right/arrow-right.svg)
+      center center/cover no-repeat;
+  }
+  &:hover {
+    text-decoration-line: underline;
+    color: var(--primary-text-color, #0f0f0f);
+  }
+  &_active {
+    pointer-events: none;
+    color: var(--primary-text-color, #0f0f0f);
+  }
+}
+
+.start::before {
+  display: none;
+}
