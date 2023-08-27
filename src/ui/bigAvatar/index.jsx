@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classes from './style.module.scss';
 
-const BigAvatar = ({ src, alt, bigSize }) => (
+const ProfileAvatar = ({ src, alt, bigSize }) => (
   <div
     className={classNames(
       classes['big-avatar'],
@@ -15,15 +15,15 @@ const BigAvatar = ({ src, alt, bigSize }) => (
   </div>
 );
 
-BigAvatar.defaultProps = {
+ProfileAvatar.defaultProps = {
   src: null,
   alt: null,
   bigSize: false,
 };
 
-BigAvatar.propTypes = {
+ProfileAvatar.propTypes = {
   src: PropTypes.string,
   alt: PropTypes.string,
   bigSize: PropTypes.bool,
 };
-export default BigAvatar;
+export default ProfileAvatar;

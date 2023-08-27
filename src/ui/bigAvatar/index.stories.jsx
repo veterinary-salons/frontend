@@ -1,9 +1,9 @@
-import BigAvatar from '.';
+import ProfileAvatar from '.';
 import avatar from '../../assets/images/icon/avatar/img-avatar.svg';
 
 export default {
-  title: 'Avatar/BigAvatar',
-  component: BigAvatar,
+  title: 'Avatar/ProfileAvatar',
+  component: ProfileAvatar,
   tags: ['autodocs'],
   argTypes: {
     src: {
@@ -21,7 +21,7 @@ export default {
   },
 };
 
-const Template = (args) => <BigAvatar {...args} />;
+const Template = (args) => <ProfileAvatar {...args} />;
 
 export const Default = Template.bind({});
 
