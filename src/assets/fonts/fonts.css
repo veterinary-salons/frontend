@@ -2,20 +2,10 @@
 
 @font-face {
   font-family: 'Century Gothic';
-  src:
-    local('Century Gothic'),
-    local('century gothic'),
-    local('CenturyGothic'),
-    local('centurygothic'),
-    local('Century Gothic Bold'),
-    local('CenturyGothicBold'),
-    local('Century-Gothic-Bold'),
-    local('century gothic bold'),
-    local('centurygothicbold'),
-    local('century-gothic-bold'),
-    url(./CenturyGothic-Bold.woff2) format('woff2'),
-    url(./CenturyGothic-Bold.woff) format('woff');
-  font-weight: 700;
+  src: local('Century Gothic Bold'), local('CenturyGothic-Bold'),
+        url('CenturyGothic-Bold.woff2') format('woff2'),
+        url('CenturyGothic-Bold.woff') format('woff');
+  font-weight: bold;
   font-style: normal;
 }
 
