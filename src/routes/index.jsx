@@ -7,6 +7,7 @@ import Root from './root';
 import ErrorBoundary from './error_pages/PageNotFound';
 
 import Tabs from '../modules/tabs';
+import Profile from '../components/Profile';
 
 const dataLinks = [
   {
@@ -26,7 +27,7 @@ const dataLinks = [
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
-      <Route index element={<h2>Здесь будет Главная страница</h2>} />
+      <Route index element={<Profile />} />
       <Route path="profile" element={<Tabs dataLinks={dataLinks} />}>
         <Route index element={<h2>Здесь будет Профиль</h2>} />
         <Route path="services" element={<h2>Здесь будут услуги</h2>} />
