@@ -70,7 +70,7 @@ const Button = ({
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
-  variant: PropTypes.oneOf(['purple-filled', 'outlined']),
+  variant: PropTypes.oneOf(['purple-filled', 'outlined', 'add']),
   size: PropTypes.oneOf(['small', 'large']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   shape: PropTypes.oneOf(['square', 'round']),

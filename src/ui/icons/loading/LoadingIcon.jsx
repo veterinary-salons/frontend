@@ -15,8 +15,8 @@ const Loading = ({ size, color }) => {
 };
 
 Loading.propTypes = {
-  size: PropTypes.oneOfType(['small', 'large']),
-  color: PropTypes.oneOfType(['primary', 'reverse']),
+  size: PropTypes.oneOf(['small', 'large']),
+  color: PropTypes.oneOf(['primary', 'reverse']),
 };
 
 Loading.defaultProps = {

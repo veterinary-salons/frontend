@@ -28,7 +28,7 @@ const CrossIcon = ({ color }) => {
 };
 
 CrossIcon.propTypes = {
-  color: PropTypes.oneOfType(['primary', 'reverse']),
+  color: PropTypes.oneOf(['primary', 'reverse']),
 };
 
 CrossIcon.defaultProps = {
