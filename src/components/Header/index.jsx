@@ -7,7 +7,7 @@ import NavigationPages from '../../modules/navigation/navigatePages/index';
 import NavigationLink from '../../ui/icons/navigationLink/index';
 import classes from './style.module.scss';
 
-const Header = ({ autarization }) => (
+const Header = ({ authorization }) => (
   <header className={classes.header}>
     <div className={[classes.header__container]}>
       <Link to="/">
@@ -21,7 +21,7 @@ const Header = ({ autarization }) => (
       <NavigationPages />
     </div>
 
-    {autarization ? (
+    {authorization ? (
       <div className={[classes['header__container-btn']]}>
         <Link to="/wishlist">
           <NavigationLink variant="wishlist" />
@@ -68,11 +68,11 @@ const Header = ({ autarization }) => (
 );
 
 Header.propTypes = {
-  autarization: PropTypes.bool,
+  authorization: PropTypes.bool,
 };
 
 Header.defaultProps = {
-  autarization: false,
+  authorization: false,
 };
 
 export default Header;
