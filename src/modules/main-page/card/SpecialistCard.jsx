@@ -18,7 +18,6 @@ const SpecialistCard = ({ color, title, children}) => (
     </div>
 )
 
-
 SpecialistCard.propTypes = {
   color: PropTypes.string,
   title: PropTypes.string,

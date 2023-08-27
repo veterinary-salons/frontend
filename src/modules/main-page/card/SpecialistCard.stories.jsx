@@ -1,6 +1,9 @@
 import SpecialistCard from './SpecialistCard';
+import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
+import imgVets from '../../../assets/images/icon/specialists/vets.svg';
+import imgPetSitters from '../../../assets/images/icon/specialists/pet-sitters.svg';
+import imgDogHandlers from '../../../assets/images/icon/specialists/dog-handlers.svg';
 
-// eslint-disable-next-line storybook/story-exports
 export default {
   title: 'Modules/Mainpage/Card',
   copmonent: SpecialistCard,
@@ -25,10 +28,43 @@ export default {
       },
     },
     children: {
-      defaultValue: '../../../assets/images/icon/specialists/groomers.svg',
-      description: 'Изображение специалиста',
       type: 'string',
+      description: 'Изображение специалиста',
+      defaultValue: imgGroomer,
+      options: [imgGroomer, imgVets, imgPetSitters, imgDogHandlers],
+      control: {
+        type: 'radio',
+      },
     },
   },
 };
 
+const Template = (args) => <SpecialistCard {...args} />
+
+export const DefaultGroomers = () => Template.bind({});
+DefaultGroomers.args = {
+  title: 'Грумеры',
+  color: 'blue',
+  children: imgGroomer
+}
+
+export const Vets = () => Template.bind({});
+Vets.args = {
+  title: 'Ветеринары',
+  color: 'yellow',
+  children: imgVets
+}
+
+export const PetSitters = () => Template.bind({});
+PetSitters.args = {
+  title: 'Зооняни',
+  color: 'green',
+  children: imgPetSitters
+}
+
+export const DogHandlers = () => Template.bind({});
+DogHandlers.args = {
+  title: 'Кинологи',
+  color: 'violet',
+  children: imgDogHandlers
+}
