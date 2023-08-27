@@ -11,7 +11,7 @@ export default {
       type: 'string',
     },
     alt: {
-      description: 'Альтарнативный текст',
+      description: 'Альтернативный текст',
       type: 'string',
     },
     bigSize: {
