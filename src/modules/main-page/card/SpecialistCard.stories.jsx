@@ -27,7 +27,7 @@ export default {
         type: 'radio',
       },
     },
-    children: {
+    img: {
       type: 'string',
       description: 'Изображение специалиста',
       defaultValue: imgGroomer,
@@ -45,26 +45,26 @@ export const DefaultGroomers = () => Template.bind({});
 DefaultGroomers.args = {
   title: 'Грумеры',
   color: 'blue',
-  children: imgGroomer
+  img: imgGroomer
 }
 
 export const Vets = () => Template.bind({});
 Vets.args = {
   title: 'Ветеринары',
   color: 'yellow',
-  children: imgVets
+  img: imgVets
 }
 
 export const PetSitters = () => Template.bind({});
 PetSitters.args = {
   title: 'Зооняни',
   color: 'green',
-  children: imgPetSitters
+  img: imgPetSitters
 }
 
 export const DogHandlers = () => Template.bind({});
 DogHandlers.args = {
   title: 'Кинологи',
   color: 'violet',
-  children: imgDogHandlers
+  img: imgDogHandlers
 }

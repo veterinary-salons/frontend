@@ -1,33 +1,33 @@
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import style from './SpecialistCard.module.scss';
 import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
-// import imgVets from '../../../assets/images/icon/specialists/vets.svg';
-// mport imgPetSitters from '../../../assets/images/icon/specialists/pet-sitters.svg';
-// import imgDogHandlers from '../../../assets/images/icon/specialists/dog-handlers.svg';
 
-const SpecialistCard = ({ color, title, children}) => (
-    <div className={style.card}>
+const SpecialistCard = ({ color, title, img }) => (
+  <li className={style.card}>
+    <Link to='/' className={style.card__container}>
       <div className={style[`card__background_${color}`]}>
         <img
           className={style.card__img}
           alt={title}
-          src={children}
+          src={img}
         />
         <h3 className={style.card__header}>{title}</h3>
       </div>
-    </div>
+    </Link>
+  </li>
 )
 
 SpecialistCard.propTypes = {
   color: PropTypes.string,
   title: PropTypes.string,
-  children: PropTypes.string,
+  img: PropTypes.string,
 };
 
 SpecialistCard.defaultProps = {
   color: 'blue',
   title: 'Грумеры',
-  children: imgGroomer,
+  img: imgGroomer,
 };
 
 export default SpecialistCard;

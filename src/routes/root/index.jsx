@@ -1,8 +1,8 @@
-import SpecialistCard from "../../modules/main-page/card/SpecialistCard";
+import SpecialistCardList from "../../modules/main-page/cardList/SpecialistCardList";
 
 function Root() {
   // return <h1>Здесь фронтенд сервиса заказа услуг и товаров для животных</h1>;
-  return (<SpecialistCard />)
+  return (<SpecialistCardList />)
 }
 
 export default Root;

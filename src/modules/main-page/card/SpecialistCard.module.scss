@@ -1,4 +1,6 @@
 .card {
+  display: flex;
+  flex-direction: column;
   width: 295px;
   height: 339px;
   position: relative;
@@ -6,7 +8,13 @@
   cursor: pointer;
 }
 
-.card:hover {
+.card__container {
+  text-decoration: none;
+  color: #0F0F0F;
+  transition: 1s;
+}
+
+.card__container:hover {
   color: #9384B7;
 }
 
@@ -15,6 +23,7 @@
   height: 280px;
   background: var(--main-colors-blue, #BED2EA);
   border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
 }
 
 .card__background_blue:hover {
@@ -26,6 +35,7 @@
   height: 280px;
   background: var(--main-colors-yellow, #F9D279);
   border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
 }
 
 .card__background_yellow:hover {
@@ -37,6 +47,7 @@
   height: 280px;
   background: var(--main-colors-green, #8FD6BF);
   border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
 }
 
 .card__background_green:hover {
@@ -48,6 +59,7 @@
   height: 280px;
   background: var(--main-colors-light-purple, #B8ACD4);
   border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
 }
 
 .card__background_violet:hover {
