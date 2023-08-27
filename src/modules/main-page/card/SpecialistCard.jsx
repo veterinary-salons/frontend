@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import style from './SpecialistCard.module.scss';
-// import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
-import imgVets from '../../../assets/images/icon/specialists/vets.svg';
+import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
+// import imgVets from '../../../assets/images/icon/specialists/vets.svg';
 // mport imgPetSitters from '../../../assets/images/icon/specialists/pet-sitters.svg';
 // import imgDogHandlers from '../../../assets/images/icon/specialists/dog-handlers.svg';
 
@@ -13,8 +13,8 @@ const SpecialistCard = ({ color, title, children}) => (
           alt={title}
           src={children}
         />
+        <h3 className={style.card__header}>{title}</h3>
       </div>
-      <h3 className={style.card__header}>{title}</h3>
     </div>
 )
 
@@ -26,9 +26,9 @@ SpecialistCard.propTypes = {
 };
 
 SpecialistCard.defaultProps = {
-  color: 'green',
-  title: 'Ветеринары',
-  children: imgVets,
+  color: 'blue',
+  title: 'Грумеры',
+  children: imgGroomer,
 };
 
 export default SpecialistCard;
