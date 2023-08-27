@@ -10,7 +10,7 @@ input[type='search']::-webkit-search-results-decoration {
 .search-container {
   font-family: 'Montserrat', Arial, sans-serif;
   width: 300px;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   justify-content: space-between;
   gap: 15px;
@@ -42,7 +42,7 @@ input[type='search']::-webkit-search-results-decoration {
 
     &:focus + .search-container__submit {
       opacity: 1;
-       }
+    }
   }
 
   &__submit {
