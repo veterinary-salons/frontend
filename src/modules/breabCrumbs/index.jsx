@@ -13,7 +13,7 @@ const BreadCrumbs = () => {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
 
-  const createCrumbs = pathnames.map((value, index) => {
+  const createCrumbs = pathnames.map((_value, index) => {
     const to = `/${pathnames.slice(0, index + 1).join('/')}`;
     return <LinkCrumb to={to} key={to} title={breadcrumbNameMap[to]} />;
   });
