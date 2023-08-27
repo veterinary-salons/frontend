@@ -1,10 +1,10 @@
+// Добавить компонент меню по готовности
+
 import { NavLink } from 'react-router-dom';
 import classes from './style.module.scss';
 import Logo from '../../ui/icons/logo/Logo';
 
-import image from '../../assets/images/images/notification-images/11.svg';
-
-function PageNotFound() {
+function NotFoundError() {
   return (
     <section className={classes.error}>
       <NavLink
@@ -14,10 +14,8 @@ function PageNotFound() {
         <Logo />
       </NavLink>
       <div className={classes.error__info}>
-        <img
+        <div
           className={classes.error__image}
-          src={image}
-          alt="Page not found"
         />
         <h1 className={classes.error__title}>Ошибка 404</h1>
         <div>
@@ -55,4 +53,4 @@ function PageNotFound() {
   )
 };
 
-export default PageNotFound;
+export default NotFoundError;
