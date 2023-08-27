@@ -19,7 +19,7 @@ export default {
       type: 'string',
       description: 'Тип кнопки',
       defaultValue: 'button',
-      options: ['button', 'submit'],
+      options: ['button', 'submit', 'reset'],
       control: {
         type: 'radio',
       },
