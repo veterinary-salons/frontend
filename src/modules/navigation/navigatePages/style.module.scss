@@ -1,0 +1,25 @@
+.navigation-pages {
+  font-family: 'Montserrat', Arial, sans-serif;
+  display: flex;
+  gap: 36px;
+  list-style-type: none;
+  padding: 0;
+
+  &__link {
+    text-decoration: none;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    color: var(--primary-text-color);
+  }
+
+  &__link_action {
+    color: var(--primary-purple-color);
+    text-decoration: underline;
+  }
+
+  &__link:hover {
+    opacity: 0.8;
+  }
+}
