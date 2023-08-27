@@ -1,26 +1,24 @@
-// TODO: назвать favourite. посмотреть в фигму. есть heart for favourite, favourite for like - две вариации.
-
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import style from './Heart.module.scss';
 
-const Heart = ({ conditionHeart, onClick }) => (
+const Heart = ({ isActive, onClick }) => (
   <button
-    className={cn(style.like, { [style.action]: conditionHeart })}
+    className={cn(style.like, isActive ? style.action : null)}
     type="button"
-    onClick={() => onClick(conditionHeart)}
+    onClick={() => onClick(isActive)}
     aria-label="лайк"
   />
 );
 
 Heart.propTypes = {
-  conditionHeart: PropTypes.bool,
+  isActive: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
 Heart.defaultProps = {
-  conditionHeart: false,
-  onClick: (conditionHeart) => !conditionHeart,
+  isActive: false,
+  onClick: (isActive) => !isActive,
 };
 
 export default Heart;
