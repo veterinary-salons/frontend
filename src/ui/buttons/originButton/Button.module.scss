@@ -75,7 +75,7 @@
 
 .outlined {
   box-sizing: border-box !important;
-  background-color: var(--background-white-color, #fff);
+  background-color: transparent !important;
   color: var(--primary-purple-color, #9384B7);
   outline: 2px solid var(--primary-purple-color, #9384B7);
   outline-offset: -2px;
