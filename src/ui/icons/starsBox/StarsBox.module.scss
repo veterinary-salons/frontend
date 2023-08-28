@@ -1,12 +1,21 @@
-.container {
+.stars {
+  font-family: 'Montserrat', Times, serif;
+  width: 100%;
   display: flex;
-  gap: 10px;
-}
+  align-items: center;
+  margin: auto;
+  gap: 5px;
 
-.text {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: 38px;
-  font-weight: 400;
-  margin: 0;
-  text-align: center;
+  &__rating {
+    height: 20.3px;
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+  }
 }
