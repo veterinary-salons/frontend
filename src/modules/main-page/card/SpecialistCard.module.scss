@@ -1,0 +1,83 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 295px;
+  height: 339px;
+  position: relative;
+  margin: 0;
+  cursor: pointer;
+}
+
+.card__container {
+  text-decoration: none;
+  color: #0F0F0F;
+  transition: 1s;
+}
+
+.card__container:hover {
+  color: #9384B7;
+}
+
+.card__background_blue {
+  width: 295px;
+  height: 280px;
+  background: var(--main-colors-blue, #BED2EA);
+  border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
+}
+
+.card__background_blue:hover {
+  background: transparent;
+}
+
+.card__background_yellow {
+  width: 295px;
+  height: 280px;
+  background: var(--main-colors-yellow, #F9D279);
+  border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
+}
+
+.card__background_yellow:hover {
+  background: transparent;
+}
+
+.card__background_green {
+  width: 295px;
+  height: 280px;
+  background: var(--main-colors-green, #8FD6BF);
+  border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
+}
+
+.card__background_green:hover {
+  background: transparent;
+}
+
+.card__background_violet {
+  width: 295px;
+  height: 280px;
+  background: var(--main-colors-light-purple, #B8ACD4);
+  border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
+}
+
+.card__background_violet:hover {
+  background: transparent;
+}
+
+.card__img {
+  display: flex;
+  margin: auto;
+}
+
+.card__header {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 35px;
+  display: flex;
+  justify-content: center;
+  margin: 24px auto 0;
+}

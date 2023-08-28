@@ -9,14 +9,12 @@ const Loading = ({ size, color }) => {
     classes[color],
   );
 
-  return (
-      <div className={loadingIconClasses} />
-  );
+  return <div className={loadingIconClasses} />;
 };
 
 Loading.propTypes = {
-  size: PropTypes.oneOfType(['small', 'large']),
-  color: PropTypes.oneOfType(['primary', 'reverse']),
+  size: PropTypes.oneOf(['small', 'large']),
+  color: PropTypes.oneOf(['primary', 'reverse']),
 };
 
 Loading.defaultProps = {
