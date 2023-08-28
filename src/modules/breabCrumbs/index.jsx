@@ -4,9 +4,9 @@ import classes from './style.module.scss';
 
 // для примера потом надо будет сделать динамически
 const breadcrumbNameMap = {
-  '/1': 'Первая',
-  '/1/2': 'Вторая',
-  '/3': 'Третья',
+  '/profile': 'Профиль',
+  '/profile/services': 'Услуги',
+  '/profile/goods': 'Товары',
 };
 
 const BreadCrumbs = () => {
