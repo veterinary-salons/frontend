@@ -32,17 +32,3 @@
     --error-color: #D80000;
     --success-color: #03A600;
 }
-
-.root {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.main {
-    width: 100%;
-    /* display: flex; */
-}

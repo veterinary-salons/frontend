@@ -27,12 +27,18 @@ const dataLinks = [
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
-      <Route index element={<Profile />} />
-      <Route path="profile" element={<Tabs dataLinks={dataLinks} />}>
-        <Route index element={<h2>Здесь будет Профиль</h2>} />
+      <Route index element={<h2>Здесь будет главная</h2>} />
+      <Route
+        path="profile"
+        element={<Tabs dataLinks={dataLinks} style={{ marginTop: '48px' }} />}
+      >
+        <Route index element={<Profile />} />
         <Route path="services" element={<h2>Здесь будут услуги</h2>} />
         <Route path="goods" element={<h2>Здесь будут товары</h2>} />
       </Route>
+      <Route path="services" element={<h2>Здесь будут услуги</h2>} />
+      <Route path="goods" element={<h2>Здесь будут товары</h2>} />
+      <Route path="magazine" element={<h2>Здесь будет журнал</h2>} />
     </Route>,
   ),
 );
