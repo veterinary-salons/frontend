@@ -5,8 +5,8 @@ import classes from './style.module.scss';
 const CartProductQuantityBox = ({ variant, counter, infoCounter }) => {
   const [count, setCount] = useState(counter);
 
-  const handleCalculation = (sum, calculation) =>
-    calculation === 'plus' ? setCount(() => sum + 1) : setCount(() => sum - 1);
+  const handleCalculator = (sign) =>
+    sign === '+' ? setCount((a) => a + 1) : setCount((a) => a - 1);
 
   useEffect(() => {
     infoCounter(count);
@@ -17,7 +17,7 @@ const CartProductQuantityBox = ({ variant, counter, infoCounter }) => {
       <button
         className={classes[`quantity-box__btn`]}
         type="button"
-        onClick={() => handleCalculation(count, 'plus')}
+        onClick={() => handleCalculator('+')}
       >
         <div className={classes[`quantity-box__plus-${variant}`]} />
       </button>
@@ -28,7 +28,7 @@ const CartProductQuantityBox = ({ variant, counter, infoCounter }) => {
         disabled={count === 0}
         className={classes[`quantity-box__btn`]}
         type="button"
-        onClick={() => handleCalculation(count)}
+        onClick={() => handleCalculator()}
       >
         <div className={classes[`quantity-box__minus-${variant}`]} />
       </button>
