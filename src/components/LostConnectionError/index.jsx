@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import classes from './style.module.scss';
 import Logo from '../../ui/icons/logo/Logo';
-import { Button } from '../../ui/buttons/originButton/Button';
+import Button from '../../ui/buttons/originButton/Button';
 
 function LostConnectionError() {
   function refreshPage() {
