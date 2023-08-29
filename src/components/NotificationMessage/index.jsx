@@ -26,7 +26,7 @@ NotificationMessage.propTypes = {
   imageNumber: PropTypes.string,
   title: PropTypes.string,
   text: PropTypes.string,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   buttonText: PropTypes.string,
 };
 
@@ -34,6 +34,7 @@ NotificationMessage.defaultProps = {
   imageNumber: '10',
   title: 'Тут пусто как в миске этого котика',
   text: 'Неужели вы ещё не видели как много у нас полезного и интересного?',
+  onClick: () => {},
   buttonText: 'Выбрать товары'
 };
 
