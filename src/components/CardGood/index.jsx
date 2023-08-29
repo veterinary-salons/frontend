@@ -7,7 +7,7 @@ import CartProductQuantityBox from '../../ui/buttons/cartProductQuantityBox/inde
 import classes from './style.module.scss';
 
 const CardGood = ({
-  prise,
+  price,
   image,
   rating,
   weightProduct,
@@ -26,10 +26,10 @@ const CardGood = ({
       ) : (
         <div className={[classes['card__default-img']]} />
       )}
-      <h2 className={classes.card__prise}>{`${prise} р/шт`}</h2>
+      <h2 className={classes.card__price}>{`${price} р/шт`}</h2>
       <p className={classes.card__weight}>{`${weightProduct} г.`}</p>
       <p className={classes.card__description}>{descriptionProduct}</p>
-      <StarsBox rating={rating} color="#F9D279" size="20px" />
+      <StarsBox rating={rating} color="var(--yellow-color)" size="22px" />
       <p className={classes.card__reviews}>{`${reviews} отзывов`}</p>
       {sumCounter === 0 ? (
         <Button
@@ -53,7 +53,7 @@ const CardGood = ({
 };
 
 CardGood.propTypes = {
-  prise: PropTypes.string,
+  price: PropTypes.string,
   weightProduct: PropTypes.string,
   descriptionProduct: PropTypes.string,
   reviews: PropTypes.number,
@@ -63,7 +63,7 @@ CardGood.propTypes = {
 };
 
 CardGood.defaultProps = {
-  prise: '353',
+  price: '353',
   weightProduct: '600',
   descriptionProduct:
     'Сухой корм для кошек Royal Conin для Стерилизованных Индейка для взрослых',

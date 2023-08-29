@@ -28,7 +28,7 @@ StarsBox.propTypes = {
 
 StarsBox.defaultProps = {
   rating: '0',
-  color: '#9384B7',
+  color: 'var(--yellow-color)',
   size: '20px',
 };
 

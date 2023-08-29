@@ -16,7 +16,7 @@ export default {
       },
     },
     color: {
-      defaultValue: '#9384B7',
+      defaultValue: 'var(--primary-purple-color)',
       description: 'Цвет звезд',
       type: 'string',
     },
@@ -40,6 +40,6 @@ EditableRating.args = {
 export const ViewOnlyRating = Template.bind({});
 ViewOnlyRating.args = {
   rating: '4.2',
-  color: '#F9D279',
+  color: 'var(--yellow-color)',
   size: '20px',
 };
