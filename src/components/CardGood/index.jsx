@@ -35,11 +35,13 @@ const CardGood = ({
         <Button
           type="button"
           size="medium"
+          isMaxWidth
           onClick={() => {
             setSumCounter(1);
-          }}
+          }
+          }
         >
-          <span className={classes.card__span}>В корзину</span>
+          В корзину
         </Button>
       ) : (
         <CartProductQuantityBox
