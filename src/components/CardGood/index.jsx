@@ -45,7 +45,7 @@ const CardGood = ({
         <CartProductQuantityBox
           variant="primary"
           counter={sumCounter}
-          infoCounter={setSumCounter}
+          getCounterNum={setSumCounter}
         />
       )}
     </div>

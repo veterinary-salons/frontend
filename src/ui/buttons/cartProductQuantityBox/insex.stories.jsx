@@ -14,7 +14,7 @@ export default {
         type: 'radio',
       },
     },
-    infoCounter: {
+    getCounterNum: {
       description: 'Получение количества товара',
       type: 'function',
     },
@@ -26,11 +26,11 @@ const Template = (args) => <CartProductQuantityBox {...args} />;
 export const Primary = Template.bind({});
 Primary.args = {
   variant: 'primary',
-  infoCounter: () => {},
+  getCounterNum: () => {},
 };
 
 export const Alternative = Template.bind({});
 Alternative.args = {
   variant: 'alternative',
-  infoCounter: () => {},
+  getCounterNum: () => {},
 };

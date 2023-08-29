@@ -2,14 +2,14 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 
-const CartProductQuantityBox = ({ variant, counter, infoCounter }) => {
+const CartProductQuantityBox = ({ variant, counter, getCounterNum }) => {
   const [count, setCount] = useState(counter);
 
   const handleCalculator = (sign) =>
     sign === '+' ? setCount((a) => a + 1) : setCount((a) => a - 1);
 
   useEffect(() => {
-    infoCounter(count);
+    getCounterNum(count);
   }, [count]);
 
   return (
@@ -39,13 +39,13 @@ const CartProductQuantityBox = ({ variant, counter, infoCounter }) => {
 CartProductQuantityBox.propTypes = {
   variant: PropTypes.string,
   counter: PropTypes.number,
-  infoCounter: PropTypes.func,
+  getCounterNum: PropTypes.func,
 };
 
 CartProductQuantityBox.defaultProps = {
   variant: 'alternative',
   counter: 0,
-  infoCounter: () => {},
+  getCounterNum: () => {},
 };
 
 export default CartProductQuantityBox;
