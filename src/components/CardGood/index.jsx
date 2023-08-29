@@ -39,7 +39,7 @@ const CardGood = ({
             setSumCounter(1);
           }}
         >
-          В корзину
+          <span className={classes.card__span}>В корзину</span>
         </Button>
       ) : (
         <CartProductQuantityBox
