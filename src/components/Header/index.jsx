@@ -40,7 +40,7 @@ const Header = ({ authorization }) => (
         <Link to="/sign-in">
           <Button
             variant="outlined"
-            size="small"
+            size="medium"
             type="button"
             shape="square"
             label="Вход"
@@ -53,7 +53,7 @@ const Header = ({ authorization }) => (
         <Link to="/sign-up">
           <Button
             variant="outlined"
-            size="small"
+            size="medium"
             type="button"
             shape="square"
             label="Регистрация"
