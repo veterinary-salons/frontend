@@ -47,13 +47,13 @@
 
   &__description {
     width: 100%;
-    height: 54px;
+    height: 59px;
+    line-height: 20px;
     margin: 0;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
     color: var(--primary-text-color);
-    text-overflow: ellipsis;
     white-space: normal;
     overflow: hidden; /* Скрывает текст, который не помещается */
     text-overflow: ellipsis; /* Добавляет троеточие в конце текста */

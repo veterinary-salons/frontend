@@ -11,13 +11,13 @@ const StarsBox = ({ rating, color, size }) =>
       <Rating
         className={style.stars__rating}
         initialValue={rating}
-        fillColor={color || '#9384B7'}
+        fillColor={color || 'var(--primary-purple-color)'}
         readonly
         size={size || '22px'}
       />
     </div>
   ) : (
-    <Rating fillColor={color || '#9384B7'} />
+    <Rating fillColor={color || 'var(--primary-purple-color)'} />
   );
 
 StarsBox.propTypes = {

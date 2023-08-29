@@ -34,7 +34,7 @@ const CardGood = ({
       {sumCounter === 0 ? (
         <Button
           type="button"
-          size="small"
+          size="medium"
           onClick={() => {
             setSumCounter(1);
           }}
