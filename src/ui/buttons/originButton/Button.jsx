@@ -17,7 +17,7 @@ const Button = ({
 }) => {
   const buttonClasses = classnames(
     cn.button,
-    cn[size],
+    cn[variant !== 'add' ? size : 'medium' ],
     cn[shape],
     cn[variant],
     cn[loading ? 'load' : ''],

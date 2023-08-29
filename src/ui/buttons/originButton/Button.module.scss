@@ -46,6 +46,7 @@
    display: flex;
    flex-direction: row;
    align-items: center;
+   justify-content: center;
 
    &.small, &.medium, &.large {
     padding: 10px 12px !important;
@@ -60,7 +61,7 @@
 
 .purple-filled {
   background-color: var(--primary-purple-color, #9384B7);
-  color: white;
+  color:  var(--text-white-colo, #fff);
 
   &:active {
     background-color: var(--purple-pushed-color, #615779);
@@ -104,6 +105,7 @@
   /* 111.538% */
   letter-spacing: 0.78px;
   padding: 20.5px 62.5px;
+  min-width: 230px;
 }
 
 .load.large {
@@ -112,6 +114,7 @@
 
 .medium {
   padding: 12px 30px;
+  min-width: 117px;
 }
 
 .load.medium {
@@ -120,6 +123,7 @@
 
 .small{
     padding: 10px 20px;
+    min-width: 0;
 }
 
 .hide {
@@ -133,6 +137,7 @@
   background-color: var(--primary-purple-color, #9384B7);
   background-position: center center;
   background-repeat: no-repeat;
+  min-width: 70px !important;
 
   &:active {
     background-color: var(--purple-pushed-color, #615779);
@@ -151,12 +156,6 @@
     padding: 23px !important;
     width: 70px;
     height: 70px;
-  }
-
-  &.large {
-    padding: 12px !important;
-    width: 90px;
-    height: 90px;
   }
 }
 
