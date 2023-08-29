@@ -1,0 +1,73 @@
+// TODO: Отредактировать hover.
+
+input[type='search']::-webkit-search-decoration,
+input[type='search']::-webkit-search-cancel-button,
+input[type='search']::-webkit-search-results-button,
+input[type='search']::-webkit-search-results-decoration {
+  display: none;
+}
+
+.search-container {
+  font-family: 'Montserrat', Arial, sans-serif;
+  width: 300px;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  border-radius: 8px;
+  padding: 14px 15px;
+  background-color: var(--grey-light-color, #f8f8f8);
+  box-sizing: border-box;
+
+  &__input {
+    width: 100%;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    border: none;
+    padding: 0;
+    border-radius: 8px;
+    background-color: var(--grey-light-color, #f8f8f8);
+
+    &:hover::-webkit-input-placeholder {
+      color: var(--primary-purple-color, #9384b7);
+    }
+
+    &:focus {
+      outline: none;
+      color: var(--primary-text-color, #0f0f0f);
+    }
+
+    &:focus + .search-container__submit {
+      opacity: 1;
+    }
+  }
+
+  &__submit {
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    opacity: 0.5;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../../../assets/images/icon/magnifier/magnifier.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    object-fit: cover;
+
+    &:disabled {
+      cursor: auto;
+    }
+  }
+
+  &:hover &__submit {
+    opacity: 1;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}

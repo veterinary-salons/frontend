@@ -4,7 +4,7 @@ import classes from './Button.module.scss';
 import LoadingIcon from '../../icons/loading/LoadingIcon';
 import CrossIcon from '../../icons/cross/CrossIcon';
 
-export const Button = ({
+const Button = ({
   onClick,
   variant,
   size,
@@ -47,12 +47,14 @@ export const Button = ({
     >
       {
         // вывести текст кнопки в отсутсвии режима загрузки и типа кнопки "добавить"
-        !loading && variant !== 'add' && 
-        
-        <div className={classes.button__container}>
-          {children}
-          {isFiltered && <CrossIcon color={color === 'primary' ? 'reverse' : 'primary'} />}
-        </div> 
+        !loading && variant !== 'add' && (
+          <div className={classes.button__container}>
+            {children}
+            {isFiltered && (
+              <CrossIcon color={color === 'primary' ? 'reverse' : 'primary'} />
+            )}
+          </div>
+        )
       }
       {loading && (
         // скрыть текст кнопки, оставив ширину для кнопки и отобразить только иконку
@@ -61,15 +63,14 @@ export const Button = ({
           <LoadingIcon size={size} color={color} />
         </div>
       )}
-      {
-      }
+      {}
     </button>
   );
 };
 
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
-  variant: PropTypes.oneOf(['purple-filled', 'outlined']),
+  variant: PropTypes.oneOf(['purple-filled', 'outlined', 'add']),
   size: PropTypes.oneOf(['small', 'large']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   shape: PropTypes.oneOf(['square', 'round']),

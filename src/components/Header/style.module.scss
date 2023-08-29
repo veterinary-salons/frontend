@@ -1,0 +1,25 @@
+.header {
+  width: 100%;
+  padding: 20px 100px;
+  display: flex;
+  justify-content: space-between;
+  background-color: transparent;
+
+  &__link {
+    display: flex;
+    margin: 0 4px;
+    align-items: center;
+  }
+
+  &__container {
+    display: flex;
+    gap: 26px;
+    align-items: center;
+  }
+
+  &__container-btn {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+  }
+}

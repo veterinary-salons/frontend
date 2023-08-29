@@ -31,7 +31,7 @@ const InputPhone = ({ infoInput }) => {
   }, [tel]);
 
   return (
-    <section className={style.container}>
+    <div className={style.container}>
       <TextMaskInput 
         placeholder={placeholderPhone}
         className={styleInput}
@@ -39,7 +39,7 @@ const InputPhone = ({ infoInput }) => {
         onChange={(e) => setTel(e.target.value)}
       />
       <span className={styleSpan}>{validateInput(typeTel, tel).message}</span>
-    </section>
+    </div>
   );
 };
 

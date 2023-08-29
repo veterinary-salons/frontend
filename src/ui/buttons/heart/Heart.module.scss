@@ -2,47 +2,26 @@
   width: 40px;
   height: 40px;
   border: none;
-  background-color: rgba(var(--primary-text-color), 0);
-  background-image: url(../../../assets/images/icon/btn-like/like-default.svg);
+  background: none;
+  border-radius: 100%;
+  background: url(../../../assets/images/icon/btn-like/like-default.svg) center
+    center/cover no-repeat;
+  background-size: 70%;
+  background-color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
-  animation: dislike 0.5s;
+  transition: all 0.3s linear;
 
   &:hover {
-    opacity: 0.7;
-  }
-
-  @keyframes action-like {
-    0% {
-      transform: scale(0);
-    }
-
-    25% {
-      transform: scale(1.2);
-    }
-
-    50% {
-      transform: scale(1);
-      filter: brightness(1.5);
-    }
-  }
-
-  @keyframes dislike {
-    0% {
-      transform: scale(0);
-    }
-
-    25% {
-      transform: scale(1.2);
-    }
-
-    50% {
-      transform: scale(1);
-      filter: brightness(1.5);
-    }
+    background-color: unset;
+    background: url(../../../assets/images/icon/btn-like/like-hover.svg) center
+      center/cover no-repeat;
+    background-size: 100%;
   }
 }
 
 .action {
-  background-image: url(../../../assets/images/icon/btn-like/like-liked.svg);
-  animation: action-like 0.5s;
+  background-color: unset;
+  background: url(../../../assets/images/icon/btn-like/like-liked.svg) center
+    center/cover no-repeat;
+  background-size: 100%;
 }
