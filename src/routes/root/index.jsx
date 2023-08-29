@@ -4,18 +4,18 @@ import classes from './style.module.scss';
 
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-import BreadCrumbs from '../../modules/breabCrumbs';
+import BreadCrumbs from '../../modules/breadCrumbs';
 
 // Роуты при которых не должны отображаться крошки, добавлять по мере разработки, потом вынести в отдельный файл
-const dataPathCrumbs = ['/'];
+const dataPathWithoutCrumbs = ['/'];
 
 function Root() {
   const location = useLocation();
-  const crumbsPath = dataPathCrumbs.includes(location.pathname);
+  const crumbsPath = dataPathWithoutCrumbs.includes(location.pathname);
 
   return (
     <div className={classes.root}>
-      <Header />
+      <Header authorization />
       <main
         className={classNames(
           classes.main,

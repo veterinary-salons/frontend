@@ -4,15 +4,7 @@ import classNames from 'classnames';
 import LinkCrumb from './linkCrumb';
 import classes from './style.module.scss';
 
-// для примера потом надо будет сделать динамически
-const breadcrumbNameMap = {
-  '/profile': 'Профиль',
-  '/profile/services': 'Услуги',
-  '/profile/goods': 'Товары',
-  '/services': 'Улсуги',
-  '/goods': 'Товары',
-  '/magazine': 'Журнал',
-};
+import { breadcrumbNameMap } from '../../assets/constants/dataPath';
 
 const BreadCrumbs = ({ className }) => {
   const location = useLocation();
