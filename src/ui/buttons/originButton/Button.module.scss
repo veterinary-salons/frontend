@@ -2,7 +2,9 @@
   margin: 0;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
   /* Добавляем transition для тени */
   width: fit-content;
   box-shadow: none;
@@ -12,12 +14,14 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+  height: min-content;
 
   &:hover {
     /* Отображение наведения только для активных кнопок */
     &:not([disabled]) {
-        box-shadow: 4px 4px 8px 0px var(--primary-purple-color-rgba, rgba(143, 129, 177, 0.20));
-        /* Применяем тень при ховере */
+      box-shadow: 4px 4px 8px 0px
+        var(--primary-purple-color-rgba, rgba(143, 129, 177, 0.2));
+      /* Применяем тень при ховере */
     }
   }
 
@@ -43,25 +47,26 @@
 }
 
 .button__container {
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
-   &.small, &.medium, &.large {
+  &.small,
+  &.medium,
+  &.large {
     padding: 10px 12px !important;
-   }
+  }
 
-   outline-width: 2px !important;
-   outline-offset: -2px !important;
+  outline-width: 2px !important;
+  outline-offset: -2px !important;
 
-   gap: 18px;
+  gap: 18px;
 }
 
-
 .purple-filled {
-  background-color: var(--primary-purple-color, #9384B7);
-  color:  var(--text-white-colo, #fff);
+  background-color: var(--primary-purple-color, #9384b7);
+  color: var(--text-white-colo, #fff);
 
   &:active {
     background-color: var(--purple-pushed-color, #615779);
@@ -69,7 +74,7 @@
   }
 
   &.disabled {
-    background-color: var(--purple-disabled-color, #D2C9E8);
+    background-color: var(--purple-disabled-color, #d2c9e8);
     cursor: none;
   }
 }
@@ -77,8 +82,8 @@
 .outlined {
   box-sizing: border-box !important;
   background-color: transparent !important;
-  color: var(--primary-purple-color, #9384B7);
-  outline: 2px solid var(--primary-purple-color, #9384B7);
+  color: var(--primary-purple-color, #9384b7);
+  outline: 2px solid var(--primary-purple-color, #9384b7);
   outline-offset: -2px;
 
   &:active {
@@ -86,13 +91,13 @@
     color: var(--purple-pushed-color, #615779);
     box-shadow: none !important;
   }
-    &.disabled {
+  &.disabled {
     cursor: none;
-    color: var(--purple-disabled-color, #D2C9E8);
-    outline-color: var(--purple-disabled-color, #D2C9E8);
+    color: var(--purple-disabled-color, #d2c9e8);
+    outline-color: var(--purple-disabled-color, #d2c9e8);
     /* Изменил border-color на outline-color */
   }
-  
+
   &.large {
     outline-width: 3px !important;
     outline-offset: -3px !important;
@@ -121,9 +126,9 @@
   padding: 12.8px 30px;
 }
 
-.small{
-    padding: 10px 20px;
-    min-width: 0;
+.small {
+  padding: 10px 20px;
+  min-width: 0;
 }
 
 .hide {
@@ -134,7 +139,7 @@
 // класс кнопки "добавить" с +
 .add {
   background-image: url(../../../assets/images/icon/btn-plus/btn-plus-white.svg);
-  background-color: var(--primary-purple-color, #9384B7);
+  background-color: var(--primary-purple-color, #9384b7);
   background-position: center center;
   background-repeat: no-repeat;
   min-width: 70px !important;
@@ -145,24 +150,27 @@
   }
 
   &.disabled {
-    background-color: var(--purple-disabled-color, #D2C9E8); /* Добавьте эту строку */
+    background-color: var(
+      --purple-disabled-color,
+      #d2c9e8
+    ); /* Добавьте эту строку */
   }
 
-  &.load{
+  &.load {
     background-image: none;
   }
 
-  &.medium{
+  &.medium {
     padding: 23px !important;
     width: 70px;
     height: 70px;
   }
 }
 
-.square{
+.square {
   border-radius: 8px;
 }
 
-.round{
+.round {
   border-radius: 25rem;
 }
