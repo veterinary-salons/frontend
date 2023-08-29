@@ -28,7 +28,7 @@ const CartProductQuantityBox = ({ variant, counter, getCounterNum }) => {
         disabled={count === 0}
         className={classes[`quantity-box__btn`]}
         type="button"
-        onClick={() => handleCalculator()}
+        onClick={() => handleCalculator('-')}
       >
         <div className={classes[`quantity-box__minus-${variant}`]} />
       </button>
