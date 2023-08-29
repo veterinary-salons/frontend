@@ -9,8 +9,8 @@ export default {
     size: {
       type: 'string',
       description: 'Размер иконки загрузки',
-      defaultValue: 'small',
-      options: ['small', 'large'],
+      defaultValue: 'medium',
+      options: ['medium', 'large'],
       control: {
         type: 'radio',
       },
@@ -34,10 +34,10 @@ const Template = (arg) => (
     </div>
   );
 
-export const SmallLoadingIcon = Template.bind({});
+export const mediumLoadingIcon = Template.bind({});
 
-SmallLoadingIcon.args = {
-  size: 'small',
+mediumLoadingIcon.args = {
+  size: 'medium',
   color: 'primary',
 };
 

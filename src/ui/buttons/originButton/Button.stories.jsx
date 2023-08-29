@@ -51,14 +51,14 @@ export default {
     },
     size: {
       type: 'string',
-      description: 'Размер кнопки',
+      description: 'Размер кнопки (высоты верхнего и нижнего паддингов)',
       defaultValue: 'medium',
-      options: ['small', 'large'],
+      options: ['small', 'large', 'medium'],
       control: {
         type: 'radio',
       },
     },
-    isFiltered: {
+    isChips: {
       description: 'Тип кнопки: фильтр (c крестиком)',
       control: { type: 'boolean' },
       defaultValue: false,
@@ -110,7 +110,7 @@ AddButton.args = {
   active: true,
   loading: false,
   shape: 'round',
-  isFiltered: false,
+  isChips: false,
 };
 
 export const FilterButton = Template.bind({});
@@ -122,5 +122,5 @@ FilterButton.args = {
   active: true,
   loading: false,
   shape: 'round',
-  isFiltered: true,
+  isChips: true,
 };

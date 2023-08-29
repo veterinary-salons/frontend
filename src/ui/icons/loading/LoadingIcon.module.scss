@@ -19,6 +19,7 @@
   background-repeat: no-repeat;
   animation: rotate 5s linear infinite;
   box-sizing: border-box;
+  padding: 3.33px;
 }
 
 .primary.loading {
@@ -30,13 +31,17 @@
 }
 
 .large{
-  width: 40px;
-  height: 40px;
+  width: 33.333px;
+  height: 33.333px;
 }
 
-.small{
-  width: 22px;
-  height: 22px;
+.medium{
+  width: 19.333px;
+  height: 19.333px;
+
+  &.loading{
+    padding: 1.83px;
+  }
 }
 
 @keyframes rotate {
