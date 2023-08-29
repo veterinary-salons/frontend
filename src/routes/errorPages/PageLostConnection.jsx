@@ -1,4 +1,4 @@
-import LostConnectionError from "../../components/LostConnectionError";
+import LostConnectionError from "../../components/Errors/LostConnectionError";
 
 function PageLostConnection() {
   return (<LostConnectionError />)
