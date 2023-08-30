@@ -17,10 +17,16 @@ const CardGood = ({
   counter,
 }) => {
   const [sumCounter, setSumCounter] = useState(counter);
+  const [isLike, setIsLike] = useState(false);
+
+  const handleClickLike = () => {
+    setIsLike((state) => !state);
+  };
+
   return (
     <div className={classes.card}>
       <div className={[classes['card__container-heart']]}>
-        <Heart />
+        <Heart isActive={isLike} onClick={handleClickLike} />
       </div>
       {image ? (
         <img className={classes.card__image} alt="фото продукта" src={image} />
@@ -54,8 +60,7 @@ const CardGood = ({
           isMaxWidth
           onClick={() => {
             setSumCounter(1);
-          }
-          }
+          }}
         >
           В корзину
         </Button>
@@ -76,7 +81,7 @@ CardGood.propTypes = {
   descriptionProduct: PropTypes.string,
   reviews: PropTypes.number,
   image: PropTypes.string,
-  rating: PropTypes.string,
+  rating: PropTypes.number,
   counter: PropTypes.number,
 };
 
