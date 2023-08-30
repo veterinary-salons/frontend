@@ -6,7 +6,7 @@ import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
 const SpecialistCard = ({ color, title, img }) => (
   <li className={style.card}>
     <Link to='/' className={style.card__container}>
-      <div className={style[`card__background_${color}`]}>
+        <div className={`${style[`card__background_${color}`]} ${style.card__background}`}>
         <img
           className={style.card__img}
           alt={title}

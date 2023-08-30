@@ -10,20 +10,22 @@
 
 .card__container {
   text-decoration: none;
-  color: #0F0F0F;
+  color: var(--primary-text-color);
   transition: 1s;
 }
 
 .card__container:hover {
-  color: #9384B7;
+  color: var(--primary-purple-color);
+}
+
+.card__background{
+  height: 280px;
+  border-radius: 40px 40px 8px 8px;
+  transition: background-color 1s
 }
 
 .card__background_blue {
-  width: 295px;
-  height: 280px;
-  background: var(--main-colors-blue, #BED2EA);
-  border-radius: 40px 40px 8px 8px;
-  transition: background-color 1s
+  background: var(--blue-color, #BED2EA);
 }
 
 .card__background_blue:hover {
@@ -31,11 +33,7 @@
 }
 
 .card__background_yellow {
-  width: 295px;
-  height: 280px;
-  background: var(--main-colors-yellow, #F9D279);
-  border-radius: 40px 40px 8px 8px;
-  transition: background-color 1s
+  background: var(--yellow-color, #F9D279);
 }
 
 .card__background_yellow:hover {
@@ -43,11 +41,7 @@
 }
 
 .card__background_green {
-  width: 295px;
-  height: 280px;
-  background: var(--main-colors-green, #8FD6BF);
-  border-radius: 40px 40px 8px 8px;
-  transition: background-color 1s
+  background: var(--green-color, #8FD6BF);
 }
 
 .card__background_green:hover {
@@ -55,11 +49,7 @@
 }
 
 .card__background_violet {
-  width: 295px;
-  height: 280px;
-  background: var(--main-colors-light-purple, #B8ACD4);
-  border-radius: 40px 40px 8px 8px;
-  transition: background-color 1s
+  background: var(--purple-light-color, #B8ACD4);
 }
 
 .card__background_violet:hover {
