@@ -6,14 +6,19 @@ export default {
   component: StarsBox,
   tags: ['autodocs'],
   argTypes: {
-    rating: {
+    action: {
       defaultValue: '',
-      description: 'Рейтинг',
+      description: 'Активность элемента',
       type: 'string',
-      options: ['0', '3.5'],
+      options: ['filled', 'outline'],
       control: {
         type: 'radio',
       },
+    },
+    rating: {
+      defaultValue: '4.5',
+      description: 'Рейтинг',
+      type: 'string',
     },
     color: {
       defaultValue: 'var(--primary-purple-color)',
@@ -32,14 +37,16 @@ const Template = (arg) => <StarsBox {...arg} />;
 
 export const EditableRating = Template.bind({});
 EditableRating.args = {
-  rating: '',
+  action: 'filled',
+  rating: '2.4',
   color: '',
   size: '',
 };
 
 export const ViewOnlyRating = Template.bind({});
 ViewOnlyRating.args = {
-  rating: '4.2',
+  action: 'outline',
+  rating: '0',
   color: 'var(--yellow-color)',
   size: '20px',
 };
