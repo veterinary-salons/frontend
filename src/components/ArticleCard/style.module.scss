@@ -1,0 +1,48 @@
+.article-card {
+  font-family: 'Montserrat', Arial, sans-serif;
+  color: var(--primary-text-color);
+  max-width: 400px;
+  border-bottom: 1px solid var(--purple-light-color);
+  display: flex;
+  flex-wrap: wrap;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--primary-purple-color);
+  }
+
+  &__img {
+    width: 100%;
+    height: 267px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  &__title {
+    margin: 0;
+    width: 70%;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    white-space: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+  }
+
+  &__container-heart {
+    padding: 0 15px 0 0;
+  }
+
+  &__container{
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: space-between;
+    margin: 12px 0 16px;
+    width: 100%;
+  }
+}
