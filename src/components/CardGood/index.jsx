@@ -4,6 +4,7 @@ import StarsBox from '../../ui/icons/starsBox/StarsBox';
 import Button from '../../ui/buttons/originButton/Button';
 import Heart from '../../ui/buttons/heart/Heart';
 import CartProductQuantityBox from '../../ui/buttons/cartProductQuantityBox/index';
+import defaultImg from '../../assets/images/icon/paw/paw-img-card.svg';
 import classes from './style.module.scss';
 
 const CardGood = ({
@@ -24,13 +25,28 @@ const CardGood = ({
       {image ? (
         <img className={classes.card__image} alt="фото продукта" src={image} />
       ) : (
-        <div className={[classes['card__default-img']]} />
+        <div className={[classes['card__default-img']]}>
+          <img
+            className={[classes['card__img-paw']]}
+            src={defaultImg}
+            alt="лапка"
+          />
+        </div>
       )}
       <h2 className={classes.card__price}>{`${price} р/шт`}</h2>
       <p className={classes.card__weight}>{`${weightProduct} г.`}</p>
       <p className={classes.card__description}>{descriptionProduct}</p>
-      <StarsBox rating={rating} color="var(--yellow-color)" size="22px" />
-      <p className={classes.card__reviews}>{`${reviews} отзывов`}</p>
+      <div className={classes.card__container}>
+        <StarsBox
+          action="filled"
+          rating={rating}
+          color="var(--yellow-color)"
+          size="22px"
+        />
+        <p className={classes.card__reviews}>
+          {reviews > 0 ? `${reviews} отзывов` : 'пока нет отзывов'}
+        </p>
+      </div>
       {sumCounter === 0 ? (
         <Button
           type="button"

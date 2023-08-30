@@ -1,17 +1,16 @@
-// TODO: Проверить работает ли у вас. Я установила зависимости пакетов. Но звезды не загружаются. Ошибка. Проверить
-
 import { Rating } from 'react-simple-star-rating';
 import PropTypes from 'prop-types';
 import style from './StarsBox.module.scss';
 
-const StarsBox = ({ rating, color, size }) =>
-  rating > 0 ? (
+const StarsBox = ({ action, rating, color, size }) =>
+  action === 'filled' ? (
     <div className={style.stars}>
-      <p className={style.stars__text}>{rating}</p>
+      {rating > 0 && <p className={style.stars__text}>{rating}</p>}
       <Rating
         className={style.stars__rating}
         initialValue={rating}
         fillColor={color || 'var(--primary-purple-color)'}
+        allowFraction
         readonly
         size={size || '22px'}
       />
@@ -21,13 +20,15 @@ const StarsBox = ({ rating, color, size }) =>
   );
 
 StarsBox.propTypes = {
-  rating: PropTypes.string,
+  action: PropTypes.string,
+  rating: PropTypes.number,
   color: PropTypes.string,
   size: PropTypes.string,
 };
 
 StarsBox.defaultProps = {
-  rating: '0',
+  action: 'filled',
+  rating: 0,
   color: 'var(--yellow-color)',
   size: '20px',
 };

@@ -25,7 +25,12 @@
     height: 190px;
     margin: 0 auto;
     border-radius: 10px;
-    background-color: var(--grey-color);
+    display: flex;
+    background-color: var(--grey-light-color);
+  }
+
+  &__img-paw {
+    margin: auto;
   }
 
   &__price {
@@ -39,7 +44,7 @@
 
   &__weight {
     margin: 0;
-    font-size: 16px;
+    font-size: 15px;
     font-style: normal;
     font-weight: 500;
     color: var(--text-grey-color);
@@ -70,7 +75,13 @@
     color: var(--text-grey-color);
   }
 
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
   &__span {
-    width: 150px;
+    width: 130px;
   }
 }
