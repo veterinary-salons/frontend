@@ -4,7 +4,7 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 
   &__container-heart {
     position: absolute;
@@ -39,6 +39,7 @@
     font-style: normal;
     font-weight: 700;
     letter-spacing: 1px;
+    line-height: 30px;
     color: var(--purple-pushed-color);
   }
 
@@ -65,10 +66,11 @@
     -webkit-line-clamp: 3; /* Количество строк */
     -webkit-box-orient: vertical;
     display: -webkit-box;
+    margin-bottom: 4px;
   }
 
   &__reviews {
-    margin: 0;
+    margin: 4px 0 0;
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
