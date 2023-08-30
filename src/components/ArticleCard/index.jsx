@@ -8,7 +8,7 @@ const ArticleCard = ({ img, title, isActive, onClick }) => (
     <img
       className={classes['article-card__img']}
       src={img || defaultImg}
-      alt="фото"
+      alt="статьи"
     />
     <div className={classes['article-card__container']}>
       <h4 className={classes['article-card__title']}>{title}</h4>
