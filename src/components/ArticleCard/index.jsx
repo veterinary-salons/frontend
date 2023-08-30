@@ -10,9 +10,11 @@ const ArticleCard = ({ img, title, isActive, onClick }) => (
       src={img || defaultImg}
       alt="фото"
     />
-    <h4 className={classes['article-card__title']}>{title}</h4>
-    <div className={classes['article-card__container-heart']}>
-      <Heart isActive={isActive} onClick={onClick} />
+    <div className={classes['article-card__container']}>
+      <h4 className={classes['article-card__title']}>{title}</h4>
+      <div className={classes['article-card__container-heart']}>
+        <Heart isActive={isActive} onClick={onClick} />
+      </div>
     </div>
   </div>
 );
