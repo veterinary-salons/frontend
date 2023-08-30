@@ -6,7 +6,7 @@ import imgDogHandlers from '../../../assets/images/icon/specialists/dog-handlers
 
 export default {
   title: 'Modules/Mainpage/Card',
-  copmonent: SpecialistCard,
+  component: SpecialistCard,
   tags: ['autodocs'],
   argTypes: {
     title: {

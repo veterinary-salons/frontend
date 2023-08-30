@@ -8,13 +8,13 @@ export default {
   argTypes: {
     isActive: {
       type: Boolean,
-      description: 'Состояние активности', 
+      description: 'Состояние активности',
       defaultValue: false,
       options: [true, false],
       control: {
-        type: 'radio'
-      }
-    }
+        type: 'radio',
+      },
+    },
   },
 };
 
@@ -32,7 +32,7 @@ export const WithState = () => {
   const [isActive, setIsActive] = useState(false);
 
   const handleHeartClick = () => {
-    setIsActive(!isActive);
+    setIsActive((state) => !state);
   };
 
   return (

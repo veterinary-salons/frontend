@@ -44,6 +44,11 @@
   &.load.disabled:not(.load) {
     box-shadow: none;
   }
+
+}
+
+.max-width{
+  width: 100% !important;
 }
 
 .button__container {
