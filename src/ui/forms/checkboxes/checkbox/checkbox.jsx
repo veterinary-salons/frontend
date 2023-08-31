@@ -37,7 +37,7 @@ Checkbox.defaultProps = {
   label: '',
   htmlType: 'checkbox',
   reverse: false,
-  gap: '12px',
+  gap: '8px',
   width: '',
 };
 

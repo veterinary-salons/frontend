@@ -6,7 +6,7 @@ const Heart = ({ isActive, onClick }) => (
   <button
     className={cn(style.like, isActive ? style.action : null)}
     type="button"
-    onClick={() => onClick(isActive)}
+    onClick={onClick}
     aria-label="лайк"
   />
 );

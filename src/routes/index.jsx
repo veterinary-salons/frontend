@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import Root from './root';
-import ErrorBoundary from './error_pages/PageNotFound';
+import ErrorBoundary from './errorPages/PageNotFound';
 
 const router = createBrowserRouter(
   createRoutesFromElements(

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import classes from './Button.module.scss';
+import cn from './Button.module.scss';
 import LoadingIcon from '../../icons/loading/LoadingIcon';
 import CrossIcon from '../../icons/cross/CrossIcon';
 
@@ -13,20 +13,22 @@ const Button = ({
   children,
   active,
   loading,
-  isFiltered,
+  isChips,
+  isMaxWidth,
 }) => {
   const buttonClasses = classnames(
-    classes.button,
-    classes[size],
-    classes[shape],
-    classes[variant],
-    classes[loading ? 'load' : ''],
+    cn.button,
+    cn[variant !== 'add' ? size : 'medium' ],
+    cn[shape],
+    cn[variant],
+    cn[loading ? 'load' : ''],
     {
-      [classes.disabled]: !active && !loading,
+      [cn.disabled]: !active && !loading,
     },
     {
-      [classes.button__container]: isFiltered,
+      [cn.button__container]: isChips,
     },
+    cn[isMaxWidth ? 'max-width' : ''],
   );
 
   // Определение цвета на основе варианта с использованием объекта
@@ -48,9 +50,9 @@ const Button = ({
       {
         // вывести текст кнопки в отсутсвии режима загрузки и типа кнопки "добавить"
         !loading && variant !== 'add' && (
-          <div className={classes.button__container}>
+          <div className={cn.button__container}>
             {children}
-            {isFiltered && (
+            {isChips && (
               <CrossIcon color={color === 'primary' ? 'reverse' : 'primary'} />
             )}
           </div>
@@ -59,11 +61,10 @@ const Button = ({
       {loading && (
         // скрыть текст кнопки, оставив ширину для кнопки и отобразить только иконку
         <div>
-          <div className={classes.hide}>{children}</div>
+          <div className={cn.hide}>{children}</div>
           <LoadingIcon size={size} color={color} />
         </div>
       )}
-      {}
     </button>
   );
 };
@@ -71,13 +72,14 @@ const Button = ({
 Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   variant: PropTypes.oneOf(['purple-filled', 'outlined', 'add']),
-  size: PropTypes.oneOf(['small', 'large']),
+  size: PropTypes.oneOf(['small', 'large', 'medium']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   shape: PropTypes.oneOf(['square', 'round']),
   children: PropTypes.node.isRequired,
   active: PropTypes.bool,
   loading: PropTypes.bool,
-  isFiltered: PropTypes.bool,
+  isChips: PropTypes.bool,
+  isMaxWidth: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -87,7 +89,8 @@ Button.defaultProps = {
   type: 'button',
   active: true,
   loading: false,
-  isFiltered: false,
+  isChips: false,
+  isMaxWidth: false,
 };
 
 export default Button;

@@ -6,12 +6,18 @@
   /* Добавляем transition для тени */
   width: fit-content;
   box-shadow: none;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
 
   &:hover {
     /* Отображение наведения только для активных кнопок */
     &:not([disabled]) {
-      box-shadow: 0px 4px 18px 0px var(--primary-purple-color-rgba);
-      /* Применяем тень при ховере */
+        box-shadow: 4px 4px 8px 0px var(--primary-purple-color-rgba, rgba(143, 129, 177, 0.20));
+        /* Применяем тень при ховере */
     }
   }
 
@@ -34,15 +40,21 @@
   &.load.disabled:not(.load) {
     box-shadow: none;
   }
+
+}
+
+.max-width{
+  width: 100% !important;
 }
 
 .button__container {
    display: flex;
    flex-direction: row;
    align-items: center;
+   justify-content: center;
 
-   &.small {
-    padding: 8px 12px !important;
+   &.small, &.medium, &.large {
+    padding: 10px 12px !important;
    }
 
    outline-width: 2px !important;
@@ -53,36 +65,36 @@
 
 
 .purple-filled {
-  background-color: var(--primary-purple-color);
-  color: white;
+  background-color: var(--primary-purple-color, #9384B7);
+  color:  var(--text-white-colo, #fff);
 
   &:active {
-    background-color: var(--purple-pushed-color);
+    background-color: var(--purple-pushed-color, #615779);
     box-shadow: none !important;
   }
 
   &.disabled {
-    background-color: var(--purple-disabled-color);
+    background-color: var(--purple-disabled-color, #D2C9E8);
     cursor: none;
   }
 }
 
 .outlined {
   box-sizing: border-box !important;
-  background-color: var(--background-white-color);
-  color: var(--primary-purple-color);
-  outline: 1.5px solid var(--primary-purple-color);
-  outline-offset: -1.5px;
+  background-color: transparent !important;
+  color: var(--primary-purple-color, #9384B7);
+  outline: 2px solid var(--primary-purple-color, #9384B7);
+  outline-offset: -2px;
 
   &:active {
-    outline-color: var(--purple-pushed-color);
-    color: var(--purple-pushed-color);
+    outline-color: var(--purple-pushed-color, #615779);
+    color: var(--purple-pushed-color, #615779);
     box-shadow: none !important;
   }
     &.disabled {
     cursor: none;
-    color: var(--purple-disabled-color);
-    outline-color: var(--purple-disabled-color);
+    color: var(--purple-disabled-color, #D2C9E8);
+    outline-color: var(--purple-disabled-color, #D2C9E8);
     /* Изменил border-color на outline-color */
   }
   
@@ -93,32 +105,30 @@
 }
 
 .large {
-  font-family: 'Montserrat';
   font-size: 26px;
-  font-style: normal;
-  font-weight: 500;
   line-height: 29px;
   /* 111.538% */
   letter-spacing: 0.78px;
-  padding: 24px 59.5px;
+  padding: 20.5px 62.5px;
+  min-width: 230px;
 }
 
 .load.large {
-  padding: 18.5px 59.5px;
+  padding: 18.33px 62.5px;
 }
 
-.small {
-  font-family: 'Montserrat';
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  /* 125% */
-  padding: 12px 32px;
+.medium {
+  padding: 12px 30px;
+  min-width: 117px;
 }
 
-.load.small {
-  padding: 11px 32px;
+.load.medium {
+  padding: 12.8px 30px;
+}
+
+.small{
+    padding: 10px 20px;
+    min-width: 0;
 }
 
 .hide {
@@ -126,37 +136,31 @@
   visibility: hidden;
 }
 
-
 // класс кнопки "добавить" с +
 .add {
-  background-image: url(../../../assets/images/icon/btn-plus/btn-plus.svg);
-  background-color: var(--primary-purple-color);
+  background-image: url(../../../assets/images/icon/btn-plus/btn-plus-white.svg);
+  background-color: var(--primary-purple-color, #9384B7);
   background-position: center center;
   background-repeat: no-repeat;
+  min-width: 70px !important;
 
   &:active {
-    background-color: var(--purple-pushed-color);
+    background-color: var(--purple-pushed-color, #615779);
     box-shadow: none !important;
   }
 
   &.disabled {
-    background-color: var(--purple-disabled-color); /* Добавьте эту строку */
+    background-color: var(--purple-disabled-color, #D2C9E8); /* Добавьте эту строку */
   }
 
   &.load{
     background-image: none;
   }
 
-  &.small{
+  &.medium{
     padding: 23px !important;
     width: 70px;
     height: 70px;
-  }
-
-  &.large {
-    padding: 12px !important;
-    width: 90px;
-    height: 90px;
   }
 }
 

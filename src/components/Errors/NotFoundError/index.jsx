@@ -2,7 +2,7 @@
 
 import { NavLink } from 'react-router-dom';
 import classes from './style.module.scss';
-import Logo from '../../ui/icons/logo/Logo';
+import Logo from '../../../ui/icons/logo/Logo';
 
 function NotFoundError() {
   return (
