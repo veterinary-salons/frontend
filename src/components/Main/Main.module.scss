@@ -1,0 +1,160 @@
+.promo {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    min-height: 671px;
+    background-image: url(../../assets/images/images/background-dog.png);
+    margin-top: -100px;
+}
+
+.promo__title {
+    color: var(--font-colors-black, #0F0F0F);
+    font-family: Century Gothic;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 66px;
+    max-width: 578px;
+    margin: 220px auto 40px 100px;
+}
+
+.promo__text {
+    color: var(--font-colors-black, #0F0F0F);
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    max-width: 498px;
+    margin: 0 auto 60px 100px;
+}
+
+.promo__button {
+    display: inline-flex;
+    height: 70px;
+    min-width: 230px;
+    padding: 30px 20px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 8px;
+    background: var(--main-colors-purple, #9384B7);
+    border: none;
+    color: var(--font-colors-white, #FFF);
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 29px; 
+    letter-spacing: 0.78px;
+    margin: 0 auto 135px 100px;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+.promo__button:hover {
+    background-color: var(--background-white-color, #FFF);
+    color: var(--main-colors-purple, #9384B7);
+    border: 3px solid var(--main-colors-purple,#9384B7);
+}
+
+.specialists {
+    padding: 120px 100px;
+}
+
+.specialists__title {
+    color: var(--primary-text-color, #0F0F0F);
+    font-family: Century Gothic;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 66px;
+    max-width: 670px;
+    margin: 0 auto 60px 0;
+}
+
+.facts {
+    padding-right: 100px;
+}
+
+.facts__title {
+    color: var(--primary-text-color, #0F0F0F);
+    font-family: Century Gothic;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 66px;
+    max-width: 1113px;
+    margin: 0 auto 60px 100px;
+}
+
+.facts__wrap {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.facts__cat {
+    background-image: url(../../assets/images/images/background-cat.png);
+    background-repeat: no-repeat;
+    object-fit: cover;
+    width: 432px;
+    height: 470px;
+    flex-shrink: 0;
+}
+
+.facts__table {
+    width: 715px;
+    display: flex;
+    margin: 0 105px 108px auto;
+    flex-direction: row;
+    list-style-type: none;
+    flex-wrap: wrap;
+    padding-left: 0;
+    justify-content: space-between;
+    row-gap: 60px;
+}
+
+.facts__cell {
+    width: 295px;
+    height: 151px;
+}
+
+.facts__heading {
+    text-align: center;
+    font-family: Century Gothic;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 95%;
+    margin: 0 auto 20px;
+}
+
+.facts__text {
+    color: var(--primary-text-color, #0F0F0F);
+    text-align: center;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
+    width: 100%;
+}
+
+.services {
+    padding: 120px 100px;
+}
+
+.services__title {
+    color: var(--primary-text-color, #0F0F0F);
+    font-family: Century Gothic;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 66px;
+    max-width: 670px;
+    margin: 0 auto 60px 0;
+}
