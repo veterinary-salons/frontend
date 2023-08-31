@@ -1,3 +1,7 @@
+import ImgOne from '../images/images/order-card/one.png';
+import ImgTwo from '../images/images/order-card/two.png';
+import ImgThree from '../images/images/order-card/three.png';
+
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexPossword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
@@ -118,6 +122,12 @@ const arrayTimeList = [
   },
 ];
 
+const arrImgOrderCard = [
+  { img: ImgOne, id: 1 },
+  { img: ImgTwo, id: 2 },
+  { img: ImgThree, id: 3 },
+];
+
 export {
   regexEmail,
   regexText,
@@ -128,4 +138,5 @@ export {
   arrayAnimals,
   arrayFilterList,
   arrayTimeList,
+  arrImgOrderCard,
 };
