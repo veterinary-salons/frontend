@@ -60,5 +60,14 @@
 }
 
 .input-span-true {
-  color: var(--success-color, #03a600);
+  display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-text-fill-color: inherit;
+  -webkit-box-shadow: none;
+  transition: background-color 5000s ease-in-out 0s; 
 }

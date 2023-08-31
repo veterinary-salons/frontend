@@ -17,6 +17,7 @@ const InputText = ({
   disabled,
   id,
   position,
+  autoComplete
 }) => {
   const { values, handleChange } = useFormAndValidation();
   const [isClick, setIsClick] = useState(false);
@@ -34,17 +35,17 @@ const InputText = ({
   const getClassItem = cn(
     style.input,
     {
-      [style['input-success']]: validateInput(type, values[name]).invalid,
+      [style['input-success']]: validateInput(type, name, values[name]).invalid,
     },
-    { [style['input-error']]: !validateInput(type, values[name]).invalid },
+    { [style['input-error']]: !validateInput(type, name, values[name]).invalid },
   );
   const getClassSpan = cn(
     style['input-span-error'],
     {
-      [style['input-error_activ']]: !validateInput(type, values[name]).invalid,
+      [style['input-error_activ']]: !validateInput(type, name, values[name]).invalid,
     },
     {
-      [style['input-span-true']]: validateInput(type, values[name]).invalid,
+      [style['input-span-true']]: validateInput(type, name, values[name]).invalid,
     },
   );
 
@@ -62,6 +63,7 @@ const InputText = ({
         value={values[name] || ''}
         disabled={disabled}
         id={id}
+        autoComplete={autoComplete}
       />
       {type === 'password' && (
         <BtnEye
@@ -72,7 +74,7 @@ const InputText = ({
       )}
       {!disabled && (
         <span className={getClassSpan}>
-          {validateInput(type, values[name]).message}
+          {validateInput(type, name, values[name]).message}
         </span>
       )}
     </div>
@@ -90,6 +92,7 @@ InputText.propTypes = {
   disabled: PropTypes.bool,
   id: PropTypes.string,
   position: PropTypes.string,
+  autoComplete: PropTypes.string
 };
 
 InputText.defaultProps = {
@@ -103,6 +106,7 @@ InputText.defaultProps = {
   disabled: false,
   id: 'id',
   position: 'button-eye_position',
+  autoComplete: ''
 };
 
 export default InputText;

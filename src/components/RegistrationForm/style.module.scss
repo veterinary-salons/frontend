@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 500px;
+  margin: auto;
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    margin: 0;
+  }
+  &__section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__label {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
+  }
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &__agreement {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    
+  }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+    color: var(--link-color, #9384B7);
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

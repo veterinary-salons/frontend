@@ -6,18 +6,27 @@ const Checkbox = ({
   onChange,
   type,
   checked,
-  label,
   htmlType,
   value,
+  name,
   reverse,
   gap,
   width,
+  disabled,
+  children
 }) => {
   const visibleCN = classNames(classes[type]);
-  const wrapperCN = classNames(classes.label, reverse ? classes.reverse : null);
+  const wrapperCN = classNames(
+    classes.label, reverse ? classes.reverse : null,
+    type==='radio' ? classes['label-radio'] : null,
+    value==='registration-agreement' && !disabled ? classes['label-agreement'] : null,
+    value==='registration-agreement' && disabled ? classes['label-agreement_disabled'] : null
+  );
 
   return (
-    <label htmlFor={value} className={wrapperCN} style={{ gap, width }}>
+    <label htmlFor={value} className={wrapperCN}
+    style={{ gap, width}}
+    >
       <input
         id={value}
         onChange={onChange}
@@ -25,32 +34,38 @@ const Checkbox = ({
         type={htmlType}
         className={classes.checkboxButton}
         value={value}
+        name={name}
+        disabled={disabled}
       />
       <span className={visibleCN} />
-      {label}
+      {children}
     </label>
   );
 };
 
 Checkbox.defaultProps = {
   type: 'checkbox',
-  label: '',
   htmlType: 'checkbox',
+  name: '',
   reverse: false,
   gap: '8px',
   width: '',
+  disabled: false,
+  children: null
 };
 
 Checkbox.propTypes = {
   onChange: PropTypes.func.isRequired,
   type: PropTypes.string,
   checked: PropTypes.bool.isRequired,
-  label: PropTypes.string,
   htmlType: PropTypes.string,
   value: PropTypes.string.isRequired,
+  name: PropTypes.string,
   reverse: PropTypes.bool,
   gap: PropTypes.string,
   width: PropTypes.string,
+  disabled: PropTypes.bool,
+  children: PropTypes.node
 };
 
 export default Checkbox;

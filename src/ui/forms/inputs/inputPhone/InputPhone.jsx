@@ -12,17 +12,17 @@ const InputPhone = ({ infoInput }) => {
   const styleInput = cn(
     style.input,
     {
-      [style['input-success']]: validateInput(typeTel, tel).invalid,
+      [style['input-success']]: validateInput(typeTel, undefined, tel).invalid,
     },
-    { [style['input-error']]: !validateInput(typeTel, tel).invalid },
+    { [style['input-error']]: !validateInput(typeTel, undefined, tel).invalid },
   );
   const styleSpan = cn(
     style['input-span-error'],
     {
-      [style['input-error_activ']]: !validateInput(typeTel, tel).invalid,
+      [style['input-error_activ']]: !validateInput(typeTel, undefined, tel).invalid,
     },
     {
-      [style['input-span-true']]: validateInput(typeTel, tel).invalid,
+      [style['input-span-true']]: validateInput(typeTel, undefined, tel).invalid,
     },
   );
 
@@ -32,13 +32,13 @@ const InputPhone = ({ infoInput }) => {
 
   return (
     <div className={style.container}>
-      <TextMaskInput 
+      <TextMaskInput autoComplete='tel'
         placeholder={placeholderPhone}
         className={styleInput}
         mask={maskPhone}
         onChange={(e) => setTel(e.target.value)}
       />
-      <span className={styleSpan}>{validateInput(typeTel, tel).message}</span>
+      <span className={styleSpan}>{validateInput(typeTel, undefined, tel).message}</span>
     </div>
   );
 };
