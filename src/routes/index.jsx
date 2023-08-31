@@ -18,9 +18,7 @@ const router = createBrowserRouter(
       <Route index element={<h2>Здесь будет главная</h2>} />
       <Route
         path="profile"
-        element={
-          <Tabs dataLinks={dataLinksProfile} style={{ marginTop: '48px' }} />
-        }
+        element={<Tabs dataLinks={dataLinksProfile} marginT />}
       >
         <Route index element={<Profile />} />
         <Route path="services" element={<h2>Здесь будут услуги</h2>} />

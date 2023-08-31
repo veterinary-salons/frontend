@@ -5,7 +5,7 @@ import { dataLinksFavourites } from '../../assets/constants/dataPath';
 const Favourites = () => (
   <>
     <h3 className={classes.favourites__title}>Избранное</h3>
-    <Tabs dataLinks={dataLinksFavourites} style={{ marginTop: '48px' }} />
+    <Tabs dataLinks={dataLinksFavourites} marginT />
   </>
 );
 

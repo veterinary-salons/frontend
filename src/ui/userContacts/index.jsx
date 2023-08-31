@@ -3,7 +3,7 @@ import classes from './style.module.scss';
 
 const UserContacts = ({ title, subtitle }) => (
   <div className={classes.contacts}>
-    <p className={classes.contacts__title}>{title}</p>
+    <h3 className={classes.contacts__title}>{title}</h3>
     <p className={classes.contacts__subtitle}>{subtitle}</p>
   </div>
 );
