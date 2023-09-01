@@ -20,20 +20,14 @@
 
 .label-agreement {
   align-items: flex-start;
-  color: inherit;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
 }
 
-.label-agreement_disabled {
-  align-items: flex-start;
-  color: var(--text-grey-color, #9C9C9C);
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 18px;
+.label_disabled {
+  opacity: .5;
 }
 
 .checkboxButton {
@@ -59,7 +53,6 @@
     }
   }
   &:disabled + .checkbox {
-    opacity: .5;
     cursor: auto;
   }
 }

@@ -18,10 +18,11 @@ const Checkbox = ({
 }) => {
   const visibleCN = classNames(classes[type]);
   const wrapperCN = classNames(
-    classes.label, reverse ? classes.reverse : null,
+    classes.label,
+    reverse ? classes.reverse : null,
     type==='radio' ? classes['label-radio'] : null,
-    agreement && !disabled ? classes['label-agreement'] : null,
-    agreement && disabled ? classes['label-agreement_disabled'] : null
+    agreement ? classes['label-agreement'] : null,
+    disabled ? classes.label_disabled : null,
   );
 
   return (
