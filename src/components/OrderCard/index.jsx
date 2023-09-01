@@ -10,14 +10,10 @@ const OrderCard = ({
   orderDate,
   orderNumber,
   dateDelivery,
-  courier,
+  deliveryMethod,
   amountDelivery,
   images,
 }) => {
-  /**
-   * интересна мысль реализации данной задачи
-   * в зависимости от слова применяется стиль в title
-   */
   const getClassTitle = classnames(
     classes.product__title,
     {
@@ -45,7 +41,7 @@ const OrderCard = ({
       <div className={classes.product__container}>
         <p className={classes.product__text}>{`Доставлен: ${dateDelivery}`}</p>
         <p className={(classes.product__text, classes.product__text_color)}>
-          {courier}
+          {deliveryMethod}
         </p>
       </div>
 
@@ -57,20 +53,23 @@ const OrderCard = ({
       </div>
 
       <div className={classes['product__container-img']}>
-        {images.map((item) => (
-          <img
-            className={classes.product__img}
-            key={item.id}
-            // на случай, если нет в arr карточки товара
-            src={item.img || defaultImg}
-            alt="картика тавара"
-          />
-        ))}
+        {images.map(
+          (item, index) =>
+            index < 3 && (
+              <img
+                className={classes.product__img}
+                key={item.id}
+                // на случай, если нет в arr карточки товара
+                src={item.img || defaultImg}
+                alt="картика товара"
+              />
+            ),
+        )}
       </div>
 
       <Button
         variant="outlined"
-        size="small"
+        size="medium"
         type="button"
         isMaxWidth
         onClick={() => {}}
@@ -85,13 +84,13 @@ const OrderCard = ({
  * т.к. мы не знаем какие данные буду приходить с бэка
  */
 OrderCard.propTypes = {
-  title: PropTypes.string,
+  title: PropTypes.oneOf(['Доставлен', 'В пути', 'Отменён']),
   orderDate: PropTypes.string,
   orderNumber: PropTypes.number,
   dateDelivery: PropTypes.string,
-  courier: PropTypes.string,
+  deliveryMethod: PropTypes.string,
   amountDelivery: PropTypes.string,
-  // нужно мнение по поводу реализации img
+  // если прописать PropTypes.arrayOf(PropTypes.string), то ругается на тип в консоли
   images: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
 };
 
@@ -100,7 +99,7 @@ OrderCard.defaultProps = {
   orderDate: '26.07.2023',
   orderNumber: 67894,
   dateDelivery: '27.07.2023',
-  courier: 'Курьером',
+  deliveryMethod: 'Курьером',
   amountDelivery: '5 980',
   images: arrImgOrderCard,
 };
