@@ -1,6 +1,6 @@
 import style from './Main.module.scss';
 import Header from '../Header';
-import SpecialistCardList from '../../modules/main-page/cardList/SpecialistCardList';
+import SpecialistCardList from '../../modules/mainPage/cardList/SpecialistCardList';
 import Footer from '../Footer';
 
 function Main() {
