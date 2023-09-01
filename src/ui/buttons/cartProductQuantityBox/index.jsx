@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 
-const ProductCardQuantityBox = ({ variant, counter, getCounterNum }) => {
+const CartProductQuantityBox = ({ variant, counter, getCounterNum }) => {
   const [count, setCount] = useState(counter);
 
   const handleCalculator = (i) => setCount((a) => a + i);
@@ -35,16 +35,16 @@ const ProductCardQuantityBox = ({ variant, counter, getCounterNum }) => {
   );
 };
 
-ProductCardQuantityBox.propTypes = {
+CartProductQuantityBox.propTypes = {
   variant: PropTypes.string,
   counter: PropTypes.number,
   getCounterNum: PropTypes.func,
 };
 
-ProductCardQuantityBox.defaultProps = {
+CartProductQuantityBox.defaultProps = {
   variant: 'alternative',
   counter: 0,
   getCounterNum: () => {},
 };
 
-export default ProductCardQuantityBox;
+export default CartProductQuantityBox;
