@@ -1,8 +1,8 @@
-import CartProductQuantityBox from '.';
+import ProductCardQuantityBox from '.';
 
 export default {
-  title: 'Buttons/CartProductQuantityBox',
-  component: CartProductQuantityBox,
+  title: 'Buttons/ProductCardQuantityBox',
+  component: ProductCardQuantityBox,
   tags: ['autodocs'],
   argTypes: {
     variant: {
@@ -21,7 +21,7 @@ export default {
   },
 };
 
-const Template = (args) => <CartProductQuantityBox {...args} />;
+const Template = (args) => <ProductCardQuantityBox {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
