@@ -13,14 +13,15 @@ const Checkbox = ({
   gap,
   width,
   disabled,
+  agreement,
   children
 }) => {
   const visibleCN = classNames(classes[type]);
   const wrapperCN = classNames(
     classes.label, reverse ? classes.reverse : null,
     type==='radio' ? classes['label-radio'] : null,
-    value==='registration-agreement' && !disabled ? classes['label-agreement'] : null,
-    value==='registration-agreement' && disabled ? classes['label-agreement_disabled'] : null
+    agreement && !disabled ? classes['label-agreement'] : null,
+    agreement && disabled ? classes['label-agreement_disabled'] : null
   );
 
   return (
@@ -51,6 +52,7 @@ Checkbox.defaultProps = {
   gap: '8px',
   width: '',
   disabled: false,
+  agreement: false,
   children: null
 };
 
@@ -65,6 +67,7 @@ Checkbox.propTypes = {
   gap: PropTypes.string,
   width: PropTypes.string,
   disabled: PropTypes.bool,
+  agreement: PropTypes.bool,
   children: PropTypes.node
 };
 

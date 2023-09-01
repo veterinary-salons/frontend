@@ -103,6 +103,7 @@ function RegistrationForm() {
             value='registration-agreement'
             gap='8px'
             disabled
+            agreement
           >
             <span>
               Я&nbsp;даю свое согласие на&nbsp;обработку моей персональной информации в&nbsp;соответствии с&nbsp;
