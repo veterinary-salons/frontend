@@ -8,7 +8,7 @@ import BreadCrumbs from '../../modules/breadCrumbs';
 
 import Button from '../../ui/buttons/originButton/Button';
 
-// Роуты при которых не должны отображаться крошки, добавлять по мере разработки, потом вынести в отдельный файл
+//  TODO: Роуты при которых не должны отображаться крошки, добавлять по мере разработки, потом вынести в отдельный файл
 const dataPathWithoutCrumbs = ['/'];
 
 function Root() {
