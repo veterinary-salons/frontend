@@ -102,7 +102,6 @@ function RegistrationForm() {
             htmlType='checkbox'
             value='registration-agreement'
             gap='8px'
-            disabled
             agreement
           >
             <span>

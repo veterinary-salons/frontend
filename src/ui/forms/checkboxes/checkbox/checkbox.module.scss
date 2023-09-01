@@ -20,6 +20,7 @@
 
 .label-agreement {
   align-items: flex-start;
+  color: var(--text-grey-color, #9C9C9C);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -51,9 +52,6 @@
     &::after {
       background: var(--primary-purple-color);
     }
-  }
-  &:disabled + .checkbox {
-    cursor: auto;
   }
 }
 
