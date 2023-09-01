@@ -21,7 +21,7 @@
 
     /* //Дополнительные цвета */
     --background-white-color: #FFF;
-    --background-white-color-rgba: rgba(255, 255, 255, 0.7);
+    --background-white-color-opacity-7: rgba(255, 255, 255, 0.7);
 
     --link-color: var(--primary-purple-color);
     --reverse-color: var(--background-white-color);

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classes from './style.module.scss';
 
-import Button from '../buttons/originButton/Button';
+import Button from '../../ui/buttons/originButton/Button';
 
 const PetCard = ({ src, title, age, months, add, onClick }) => {
   const unitAgeArr = ['год', 'года', 'лет'];
