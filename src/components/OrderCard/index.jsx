@@ -61,7 +61,7 @@ const OrderCard = ({
                 key={item.id}
                 // на случай, если нет в arr карточки товара
                 src={item.img || defaultImg}
-                alt="картика товара"
+                alt="товара"
               />
             ),
         )}
@@ -90,8 +90,7 @@ OrderCard.propTypes = {
   dateDelivery: PropTypes.string,
   deliveryMethod: PropTypes.string,
   amountDelivery: PropTypes.string,
-  // если прописать PropTypes.arrayOf(PropTypes.string), то ругается на тип в консоли
-  images: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
+  images: PropTypes.arrayOf([PropTypes.string]),
 };
 
 OrderCard.defaultProps = {
