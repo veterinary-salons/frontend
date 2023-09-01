@@ -10,7 +10,7 @@ const navigationPages = () => {
   return (
     <ul className={classStyle['navigation-pages']}>
       <li>
-        <NavLink className={className} to="/products">
+        <NavLink className={className} to="/goods">
           Товары
         </NavLink>
       </li>
@@ -20,7 +20,7 @@ const navigationPages = () => {
         </NavLink>
       </li>
       <li>
-        <NavLink className={className} to="/journal">
+        <NavLink className={className} to="/magazine">
           Журнал
         </NavLink>
       </li>

@@ -81,7 +81,7 @@ CardGood.propTypes = {
   descriptionProduct: PropTypes.string,
   reviews: PropTypes.number,
   image: PropTypes.string,
-  rating: PropTypes.number,
+  rating: PropTypes.string,
   counter: PropTypes.number,
 };
 
