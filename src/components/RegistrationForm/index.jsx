@@ -24,7 +24,7 @@ function RegistrationForm() {
           name='registration-subject'
           gap='8px'
         >
-          <span>Пользоваться услугами</span>
+          Пользоваться услугами
         </Checkbox>
         <Checkbox
           onChange={() => {}}
@@ -35,7 +35,7 @@ function RegistrationForm() {
           name='registration-subject'
           gap='8px'
         >
-          <span>Предлагать услуги</span>
+          Предлагать услуги
         </Checkbox>
       </div>
       <div className={classes.form__section}>
@@ -104,7 +104,7 @@ function RegistrationForm() {
             gap='8px'
             agreement
           >
-            <span>
+            <p className={classes.form__agreement}>
               Я&nbsp;даю свое согласие на&nbsp;обработку моей персональной информации в&nbsp;соответствии с&nbsp;
               <Link
                 to="purrfectcare.ru"
@@ -121,7 +121,7 @@ function RegistrationForm() {
               >
                 Пользовательского соглашения
               </Link>
-            </span>
+            </p>
           </Checkbox>
         </div>
       </div>
