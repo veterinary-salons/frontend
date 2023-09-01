@@ -1,0 +1,54 @@
+.profile {
+  padding-top: 48px;
+
+  &__header {
+    display: flex;
+    gap: 98px;
+  }
+
+  &__data-wrapper {
+    max-width: 918px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  &__avatar-wrapper {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  &__data-title {
+    margin: 0;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    color: var(--primary-text-color, #0f0f0f);
+  }
+
+  &__contacts-wrapper {
+    padding-top: 16px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+.pets {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px; /* 125% */
+    color: var(--primary-text-color, #0f0f0f);
+    margin: 0;
+  }
+}

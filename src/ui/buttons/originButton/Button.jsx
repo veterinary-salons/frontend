@@ -18,7 +18,7 @@ const Button = ({
 }) => {
   const buttonClasses = classnames(
     cn.button,
-    cn[variant !== 'add' ? size : 'medium' ],
+    cn[variant !== 'add' ? size : 'medium'],
     cn[shape],
     cn[variant],
     cn[loading ? 'load' : ''],
@@ -75,7 +75,7 @@ Button.propTypes = {
   size: PropTypes.oneOf(['small', 'large', 'medium']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
   shape: PropTypes.oneOf(['square', 'round']),
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   active: PropTypes.bool,
   loading: PropTypes.bool,
   isChips: PropTypes.bool,
@@ -91,6 +91,7 @@ Button.defaultProps = {
   loading: false,
   isChips: false,
   isMaxWidth: false,
+  children: null,
 };
 
 export default Button;

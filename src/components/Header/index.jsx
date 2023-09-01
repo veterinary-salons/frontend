@@ -23,7 +23,7 @@ const Header = ({ authorization }) => (
 
     {authorization ? (
       <div className={[classes['header__container-btn']]}>
-        <Link to="/wishlist">
+        <Link to="/favourites/goods">
           <NavigationLink variant="wishlist" />
         </Link>
 
