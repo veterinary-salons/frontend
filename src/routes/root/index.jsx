@@ -1,5 +1,8 @@
+import ServiceCard from "../../modules/mainPage/serviceCard/ServiceCard";
+
 function Root() {
-  return <h1>Здесь фронтенд сервиса заказа услуг и товаров для животных</h1>;
+  // return <h1>Здесь фронтенд сервиса заказа услуг и товаров для животных</h1>;
+  return <ServiceCard />
 }
 
 export default Root;
