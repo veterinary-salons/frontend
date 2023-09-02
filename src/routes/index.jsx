@@ -9,7 +9,7 @@ import ErrorBoundary from './errorPages/PageNotFound';
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
-import Main from '../components/Main/Main';
+import Main from '../pages/Main/Main';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 
