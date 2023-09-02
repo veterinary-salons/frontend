@@ -118,6 +118,12 @@ const arrayTimeList = [
   },
 ];
 
+const arrImgOrderCard = [
+  { img: 'https://i.ibb.co/3vFLLJq/Rectangle-7.png', id: 1 },
+  { img: 'https://i.ibb.co/yYDpgb2/Rectangle-8.png', id: 2 },
+  { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
+];
+
 export {
   regexEmail,
   regexText,
@@ -128,4 +134,5 @@ export {
   arrayAnimals,
   arrayFilterList,
   arrayTimeList,
+  arrImgOrderCard,
 };

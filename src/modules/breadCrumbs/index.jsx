@@ -1,15 +1,12 @@
+import PropTypes from 'prop-types';
 import { useLocation } from 'react-router-dom';
+import classNames from 'classnames';
 import LinkCrumb from './linkCrumb';
 import classes from './style.module.scss';
 
-// для примера потом надо будет сделать динамически
-const breadcrumbNameMap = {
-  '/1': 'Первая',
-  '/1/2': 'Вторая',
-  '/3': 'Третья',
-};
+import { breadcrumbNameMap } from '../../assets/constants/dataPath';
 
-const BreadCrumbs = () => {
+const BreadCrumbs = ({ className }) => {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
 
@@ -19,11 +16,19 @@ const BreadCrumbs = () => {
   });
 
   return (
-    <ol className={classes['bread-crumbs']}>
+    <ol className={classNames(className, classes['bread-crumbs'])}>
       <LinkCrumb start title="Главная" />
       {createCrumbs}
     </ol>
   );
+};
+
+BreadCrumbs.defaultProps = {
+  className: '',
+};
+
+BreadCrumbs.propTypes = {
+  className: PropTypes.string,
 };
 
 export default BreadCrumbs;
