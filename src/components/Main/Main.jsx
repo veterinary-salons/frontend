@@ -21,28 +21,28 @@ function Main() {
           <div className={classes.facts__cat} />
           <ul className={classes.facts__table}>
             <li className={classes.facts__cell}>
-              <h3 className={(classes.facts__heading, classes.facts__heading_yellow)}>131</h3>
+              <h3 className={classes.facts__heading}>131</h3>
               <p className={classes.facts__text}>
                 кошка вернулась с передержки в отличном настроении
               </p>
             </li>
 
             <li className={classes.facts__cell}>
-              <h3 className={(classes.facts__heading, classes.facts__heading_green)}>28</h3>
+              <h3 className={classes.facts__heading}>28</h3>
               <p className={classes.facts__text}>
                 кроликов и 1 хорёк остались довольны приёмом у ветеринара
               </p>
             </li>
 
             <li className={classes.facts__cell}>
-              <h3 className={(classes.facts__heading, classes.facts__heading_violet)}>70</h3>
+              <h3 className={classes.facts__heading}>70</h3>
               <p className={classes.facts__text}>
                 щенков сдали экзамен ОКД и теперь ведут себя лучше хоязев
               </p>
             </li>
 
             <li className={classes.facts__cell}>
-              <h3 className={(classes.facts__heading, classes.facts__heading_color)}>52</h3>
+              <h3 className={classes.facts__heading}>52</h3>
               <p className={classes.facts__text}>
                 собаки порадовали своих хозяев шелковистой шерстью после
                 груминга
@@ -51,10 +51,7 @@ function Main() {
           </ul>
         </div>
       </section>
-      <section className={classes.services}>
-        <h2 className={classes.services__title}>Товары для питомцев</h2>
-        <h3>здесь будут карточки услуг</h3>
-      </section>
+      <h3>здесь будут карточки услуг</h3>
     </main>
   );
 }
