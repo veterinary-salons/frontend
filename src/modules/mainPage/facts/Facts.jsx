@@ -10,7 +10,7 @@ const Facts = () => (
       <ul className={classes.facts__table}>
         <li className={classes.facts__cell}>
           <h3
-            className={(classes.facts__heading, classes.facts__heading_yellow)}
+            className={`${classes.facts__heading} ${classes.facts__heading_yellow}`}
           >
             131
           </h3>
@@ -21,7 +21,7 @@ const Facts = () => (
 
         <li className={classes.facts__cell}>
           <h3
-            className={(classes.facts__heading, classes.facts__heading_green)}
+            className={`${classes.facts__heading} ${classes.facts__heading_green}`}
           >
             28
           </h3>
@@ -32,7 +32,7 @@ const Facts = () => (
 
         <li className={classes.facts__cell}>
           <h3
-            className={(classes.facts__heading, classes.facts__heading_violet)}
+            className={`${classes.facts__heading} ${classes.facts__heading_violet}`}
           >
             70
           </h3>
@@ -43,7 +43,7 @@ const Facts = () => (
 
         <li className={classes.facts__cell}>
           <h3
-            className={(classes.facts__heading, classes.facts__heading_orange)}
+            className={`${classes.facts__heading} ${classes.facts__heading_orange}`}
           >
             52
           </h3>

@@ -8,7 +8,7 @@
         font-style: normal;
         font-weight: 700;
         line-height: 66px;
-        max-width: 1113px;
+        width: 1113px;
         margin: 0 auto 60px 100px;
     }
 
@@ -19,7 +19,7 @@
     }
 
     &__cat {
-        // background-image: url(../../../assets/images/images/);
+        background-image: url(../../../assets/images/images/main-page-background/background-cat.png);
         background-repeat: no-repeat;
         object-fit: cover;
         width: 432px;
@@ -54,9 +54,21 @@
         line-height: 95%;
         margin: 0 auto 20px;
     }
+
+    &__heading_yellow {
+        color: #FEAD2C;
+    }
     
     &__heading_green {
         color: #5FA88C;
+    }
+
+    &__heading_violet {
+        color: var(--primary-purple-color, #9384B7)
+    }
+    
+    &__heading_orange {
+        color: #E57B42;
     }
 
     &__text {
