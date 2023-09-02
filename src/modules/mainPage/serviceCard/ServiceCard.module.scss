@@ -6,68 +6,58 @@
   position: relative;
   margin: 0;
   cursor: pointer;
-}
 
-.card__container {
-  text-decoration: none;
-  color: var(--primary-text-color);
-  transition: 1s;
-}
+  &__container {
+    text-decoration: none;
+    color: var(--primary-text-color);
+    transition: 1s;
+  }
 
-.card__container:hover {
-  color: var(--primary-purple-color);
-}
+  &__container:hover {
+    color: var(--primary-purple-color);
+  }
+  
+  &__service-background{
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    border-radius: 40px;
+    transition: background-color 1s
+  }
 
-.card__background{
-  height: 280px;
-  border-radius: 40px 40px 8px 8px;
-  transition: background-color 1s
-}
-
-.card__background_blue {
-  background: var(--blue-color, #BED2EA);
-}
-
-.card__background_blue:hover {
-  background: transparent;
-}
-
-.card__background_yellow {
-  background: var(--yellow-color, #F9D279);
-}
-
-.card__background_yellow:hover {
-  background: transparent;
-}
-
-.card__background_green {
-  background: var(--green-color, #8FD6BF);
-}
-
-.card__background_green:hover {
-  background: transparent;
-}
-
-.card__background_violet {
-  background: var(--purple-light-color, #B8ACD4);
-}
-
-.card__background_violet:hover {
-  background: transparent;
-}
-
-.card__img {
-  display: flex;
-  margin: auto;
-}
-
-.card__header {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 35px;
-  display: flex;
-  justify-content: center;
-  margin: 24px auto 0;
+  &__service-background:hover{
+    box-shadow: 0px 4px 15px 0px rgba(147, 132, 183, 0.30);
+  }
+  
+  &__service-background_blue {
+    background: var(--blue-color, #BED2EA);
+  }
+  
+  &__service-background_yellow {
+    background: var(--yellow-color, #F9D279);
+  }
+  
+  &__service-background_green {
+    background: var(--green-color, #8FD6BF);
+  }
+  
+  &__service-background_violet {
+    background: var(--purple-light-color, #B8ACD4);
+  }
+  
+  &__img {
+    display: flex;
+    margin: auto;
+  }
+  
+  &__header {
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    display: flex;
+    justify-content: center;
+    margin: 24px auto 0;
+  }
 }
