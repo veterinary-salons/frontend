@@ -1,6 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
+  list-style-type: none;
   width: 295px;
   height: 339px;
   position: relative;
@@ -15,6 +16,12 @@
 
   &__container:hover {
     color: var(--primary-purple-color);
+  }
+
+  &__container_disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    cursor: no-;
   }
   
   &__service-background{
@@ -32,17 +39,34 @@
   &__service-background_blue {
     background: var(--blue-color, #BED2EA);
   }
+
+  &__service-background_blue_disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
   
   &__service-background_yellow {
     background: var(--yellow-color, #F9D279);
+  }
+
+  &__service-background_yellow_disabled {
+    background: var(--yellow-light-color, #FBE4AF);
   }
   
   &__service-background_green {
     background: var(--green-color, #8FD6BF);
   }
+
+  &__service-background_green_disabled {
+    background: var(--green-light-color, #BCE6D9);
+  }
   
   &__service-background_violet {
     background: var(--purple-light-color, #B8ACD4);
+  }
+
+  &__service-background_violet_disabled {
+    background: var(--purple-disabled-color, #D2C9E8);
   }
   
   &__img {
