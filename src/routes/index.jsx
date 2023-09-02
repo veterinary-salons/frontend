@@ -9,6 +9,9 @@ import ErrorBoundary from './errorPages/PageNotFound';
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
+// import ServiceCardList from '../modules/mainPage/serviceCardList/ServiceCardList'
+import SpecialistCardList from '../modules/mainPage/specialistCardList/SpecialistCardList';
+
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 
@@ -43,7 +46,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<SpecialistCardList />}
       />
     </Route>,
   ),

@@ -11,69 +11,70 @@
   &__container {
     text-decoration: none;
     color: var(--primary-text-color);
-    transition: 1s;
-  }
+    transition: 0.5s;
 
-  &__container:hover {
-    color: var(--primary-purple-color);
-  }
-
-  &__container_disabled {
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: no-;
-  }
+    &:hover {
+      color: var(--primary-purple-color);
+    }
   
-  &__service-background{
+    &:hover .card__service-background {
+      box-shadow: 0px 4px 15px 0px rgba(147, 132, 183, 0.3);
+    }
+  
+    &_disabled .card__service-background {
+      opacity: 0.5;
+      pointer-events: none;
+      cursor: no-;
+    }
+  }
+
+  &__service-background {
     display: flex;
     flex-direction: column;
     height: 280px;
     border-radius: 40px;
-    transition: background-color 1s
+    transition: background-color 0.5s;
+
+    &_blue {
+      background: var(--blue-color, #BED2EA);
+  
+      &_disabled {
+        opacity: 0.5;
+        pointer-events: none;
+      }
+    }
+
+    &_yellow {
+      background: var(--yellow-color, #f9d279);
+  
+      &_disabled {
+        background: var(--yellow-light-color, #fbe4af);
+      }
+    }
+  
+    &_green {
+      background: var(--green-color, #8fd6bf);
+  
+      &_disabled {
+        background: var(--green-light-color, #bce6d9);
+      }
+    }
+  
+    &_violet {
+      background: var(--purple-light-color, #b8acd4);
+  
+      &_disabled {
+        background: var(--purple-disabled-color, #d2c9e8);
+      }
+    }
+
   }
 
-  &__service-background:hover{
-    box-shadow: 0px 4px 15px 0px rgba(147, 132, 183, 0.30);
-  }
-  
-  &__service-background_blue {
-    background: var(--blue-color, #BED2EA);
-  }
-
-  &__service-background_blue_disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-  
-  &__service-background_yellow {
-    background: var(--yellow-color, #F9D279);
-  }
-
-  &__service-background_yellow_disabled {
-    background: var(--yellow-light-color, #FBE4AF);
-  }
-  
-  &__service-background_green {
-    background: var(--green-color, #8FD6BF);
-  }
-
-  &__service-background_green_disabled {
-    background: var(--green-light-color, #BCE6D9);
-  }
-  
-  &__service-background_violet {
-    background: var(--purple-light-color, #B8ACD4);
-  }
-
-  &__service-background_violet_disabled {
-    background: var(--purple-disabled-color, #D2C9E8);
-  }
-  
   &__img {
     display: flex;
     margin: auto;
   }
-  
+
   &__header {
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 28px;
