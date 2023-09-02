@@ -31,12 +31,15 @@ const InputText = ({
 
   const hendelEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
   const getType = type === 'password' ? hendelEyePassword(isClick, type) : type;
+
   const getClassItem = cn(
     style.input,
     {
+      [style.input]: validateInput(type, values[name]).default,
+    },
+    {
       [style['input-success']]: validateInput(type, values[name]).invalid,
     },
-    { [style['input-error']]: !validateInput(type, values[name]).invalid },
   );
   const getClassSpan = cn(
     style['input-span-error'],
