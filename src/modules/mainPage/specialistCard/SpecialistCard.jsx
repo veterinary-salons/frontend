@@ -38,7 +38,7 @@ SpecialistCard.defaultProps = {
   color: 'blue',
   title: 'Грумеры',
   img: imgGroomer,
-  disable: true,
+  disable: false,
 };
 
 export default SpecialistCard;

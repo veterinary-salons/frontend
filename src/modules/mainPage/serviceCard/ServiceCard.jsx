@@ -38,7 +38,7 @@ ServiceCard.defaultProps = {
   color: 'blue',
   title: 'Игрушки',
   img: toysImg,
-  disable: true,
+  disable: false,
 };
 
 export default ServiceCard;
