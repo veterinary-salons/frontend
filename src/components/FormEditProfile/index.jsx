@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
 import classNames from 'classnames';
 import classes from './style.module.scss';
 import img from '../../assets/images/icon/avatar/img-avatar.svg';
@@ -9,17 +8,13 @@ import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import ProfileAvatar from '../../ui/profileAvatar';
 import Button from '../../ui/buttons/originButton/Button';
 
-const FormEditProfile = ({ handleSubmitForm }) => {
-  const [values, setValues] = useState({});
-
+const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
   const getInputValue = (value) => {
-    setValues({
-      ...values,
-      value,
+    setUserData({
+      ...userData,
+      ...value,
     });
   };
-
-  console.log(values);
 
   return (
     <form noValidate className={classes.form} onSubmit={handleSubmitForm}>
@@ -53,47 +48,56 @@ const FormEditProfile = ({ handleSubmitForm }) => {
         <legend className={classes.form__legend}>Имя и фамилия</legend>
         <InputText
           infoInput={getInputValue}
+          minLength={2}
           maxLength={30}
           name="name"
           placeholder="Имя"
           id="name"
+          initialValue={userData}
         />
         <InputText
+          infoInput={getInputValue}
           maxLength={30}
           name="surname"
           placeholder="Фамилия"
           id="surname"
+          initialValue={userData}
         />
       </fieldset>
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>Номер телефона</legend>
-        <InputPhone infoInput={() => {}} />
+        <InputPhone infoInput={getInputValue} initialValue={userData} />
       </fieldset>
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>Адрес</legend>
         <InputText
+          infoInput={getInputValue}
           maxLength={200}
           name="address"
           placeholder="Адрес"
           id="address"
+          initialValue={userData}
         />
       </fieldset>
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>Почта</legend>
         <InputText
+          infoInput={getInputValue}
           id="text"
           maxLength={30}
           name="email"
           placeholder="Email"
           type="email"
+          initialValue={userData}
         />
         <InputText
+          infoInput={getInputValue}
           id="password"
-          infoInput={() => {}}
           maxLength={20}
           name="password"
           placeholder="Password"
           type="password"
+          initialValue={userData}
         />
       </fieldset>
       <Button onClick={() => {}} size="medium" variant="outlined" type="submit">
@@ -105,6 +109,8 @@ const FormEditProfile = ({ handleSubmitForm }) => {
 
 FormEditProfile.propTypes = {
   handleSubmitForm: PropTypes.func.isRequired,
+  userData: PropTypes.objectOf(PropTypes.string).isRequired,
+  setUserData: PropTypes.func.isRequired,
 };
 
 export default FormEditProfile;

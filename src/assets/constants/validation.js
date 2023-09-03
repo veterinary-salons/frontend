@@ -20,7 +20,7 @@ function validateText(text) {
     if (text.length === 0) {
       return { invalid: false, message: 'Это поле не должно быть пустым!' };
     }
-    if (text.length > 5) {
+    if (text.length > 2) {
       return { invalid: true, message: '' };
     }
   }
