@@ -6,7 +6,7 @@ import Button from '../../ui/buttons/originButton/Button';
 
 function Main() {
   return (
-    <main className={classes.main}>
+    <>
       <section className={classes.promo}>
         <h1 className={classes.promo__title}>Ваш питомец — наша забота</h1>
         <p className={classes.promo__text}>
@@ -19,7 +19,7 @@ function Main() {
       <SpecialistCardList />
       <Facts />
       <ServiceCardList />
-    </main>
+    </>
   );
 }
 
