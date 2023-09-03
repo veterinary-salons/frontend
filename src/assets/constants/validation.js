@@ -23,6 +23,9 @@ function validateText(text) {
     if (text.length > 4) {
       return { invalid: true };
     }
+    if (text.length <= 4) {
+      return { invalid: false };
+    }
   }
   return { default: true };
 }

@@ -38,6 +38,10 @@
   border: 2px solid var(--success-color, #03a600);
 }
 
+.input-error {
+  border: 2px solid var(--error-color, #d80000);
+}
+
 .input-span-error {
   font-size: 12px;
   font-style: normal;
@@ -57,4 +61,9 @@
 
 .input-span-true {
   color: var(--success-color, #03a600);
+}
+
+.input-default {
+  border: 2px solid var(--grey-color, #8fd6bf);
+  color: var(--primary-text-color, #0f0f0f);
 }
