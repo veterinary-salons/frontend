@@ -29,7 +29,7 @@ function Root() {
       </main>
 
       {location.pathname === '/' ? (
-        <Link to="/test" style={{ margin: '50px' }}>
+        <Link to="/test" style={{ margin: '50px', flex: '0 0 auto' }}>
           <Button size="large">Страница с тестовым компонентом</Button>
         </Link>
       ) : null}

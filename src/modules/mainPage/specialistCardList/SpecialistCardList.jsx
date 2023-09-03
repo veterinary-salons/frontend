@@ -1,5 +1,5 @@
 import style from './SpecialistCardList.module.scss';
-import SpecialistCard from '../card/SpecialistCard';
+import SpecialistCard from '../specialistCard/SpecialistCard';
 import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
 import imgVets from '../../../assets/images/icon/specialists/vets.svg';
 import imgPetSitters from '../../../assets/images/icon/specialists/pet-sitters.svg';
