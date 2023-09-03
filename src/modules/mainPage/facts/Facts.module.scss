@@ -1,15 +1,14 @@
 .facts {
-  padding-right: 100px;
 
     &__title {
         color: var(--primary-text-color, #0F0F0F);
-        font-family: Century Gothic;
+        font-family: Century Gothic, Arial, sans-serif;;
         font-size: 44px;
         font-style: normal;
         font-weight: 700;
         line-height: 66px;
         width: 1113px;
-        margin: 0 auto 60px 100px;
+        margin: 0 auto 60px 0;
     }
 
     &__wrap {
@@ -25,6 +24,7 @@
         width: 432px;
         height: 470px;
         flex-shrink: 0;
+        margin-left: -100px;
     }
 
 
@@ -36,18 +36,19 @@
         list-style-type: none;
         flex-wrap: wrap;
         padding-left: 0;
+        align-items: flex-start;
+        align-content: flex-start;
         justify-content: space-between;
         row-gap: 60px;
     }
 
     &__cell {
         width: 295px;
-        height: 151px;
     }
     
     &__heading {
         text-align: center;
-        font-family: Century Gothic;
+        font-family: Century Gothic, Arial, sans-serif;
         font-size: 60px;
         font-style: normal;
         font-weight: 700;
@@ -79,8 +80,8 @@
         font-style: normal;
         font-weight: 500;
         line-height: 30px;
-        margin: 0;
-        width: 100%;
+        margin: 0 auto;
+        height: 74px;
     }
 
 }
