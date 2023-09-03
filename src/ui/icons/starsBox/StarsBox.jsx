@@ -21,14 +21,14 @@ const StarsBox = ({ action, rating, color, size }) =>
 
 StarsBox.propTypes = {
   action: PropTypes.string,
-  rating: PropTypes.number,
+  rating: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.string,
 };
 
 StarsBox.defaultProps = {
   action: 'filled',
-  rating: 0,
+  rating: '0',
   color: 'var(--yellow-color)',
   size: '20px',
 };

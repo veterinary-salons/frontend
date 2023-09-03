@@ -3,7 +3,7 @@ import { useState } from 'react';
 import StarsBox from '../../ui/icons/starsBox/StarsBox';
 import Button from '../../ui/buttons/originButton/Button';
 import Heart from '../../ui/buttons/heart/Heart';
-import ProductCardQuantityBox from '../../ui/buttons/ProductCardQuantityBox/index';
+import CartProductQuantityBox from '../../ui/buttons/cartProductQuantityBox/index';
 import defaultImg from '../../assets/images/icon/paw/paw-img-card.svg';
 import classes from './style.module.scss';
 
@@ -65,7 +65,7 @@ const CardGood = ({
           В корзину
         </Button>
       ) : (
-        <ProductCardQuantityBox
+        <CartProductQuantityBox
           variant="primary"
           counter={sumCounter}
           getCounterNum={setSumCounter}
@@ -81,7 +81,7 @@ CardGood.propTypes = {
   descriptionProduct: PropTypes.string,
   reviews: PropTypes.number,
   image: PropTypes.string,
-  rating: PropTypes.number,
+  rating: PropTypes.string,
   counter: PropTypes.number,
 };
 
