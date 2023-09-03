@@ -15,7 +15,7 @@ function Main() {
         </p>
         <Button>Найти специалиста</Button>
       </section>
-      <div className={classes.main__gap} />
+      <div className={classes.gap} />
       <SpecialistCardList />
       <Facts />
       <ServiceCardList />
