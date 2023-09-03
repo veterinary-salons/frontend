@@ -199,6 +199,21 @@ const dataSelectedProducts = [
   },
 ];
 
+const dataArticle = [
+  {
+    id: 1,
+    img: '',
+    title: 'Как подружить питомцев?',
+    isActive: true,
+  },
+  {
+    id: 2,
+    img: 'https://i.ibb.co/VMF37w6/photo-1.png',
+    title: 'Как правильно стричь когти?',
+    isActive: true,
+  },
+];
+
 export {
   regexEmail,
   regexText,
@@ -211,4 +226,5 @@ export {
   arrayTimeList,
   arrImgOrderCard,
   dataSelectedProducts,
+  dataArticle,
 };

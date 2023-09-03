@@ -10,9 +10,14 @@ import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
 import SelectedProducts from '../pages/SelectedProducts';
+import SelectedServices from '../pages/SelectedServices/index';
+import SelectedArticles from '../pages/SelectedArticles';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import { dataSelectedProducts } from '../assets/constants/constants';
+import {
+  dataSelectedProducts,
+  dataArticle,
+} from '../assets/constants/constants';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -32,15 +37,12 @@ const router = createBrowserRouter(
       <Route path="favourites" element={<Favourites />}>
         <Route
           path="goods"
-          element={<SelectedProducts dataCrds={dataSelectedProducts} />}
+          element={<SelectedProducts dataProducts={dataSelectedProducts} />}
         />
-        <Route
-          path="services"
-          element={<h2>Здесь будут сохраненные услуги</h2>}
-        />
+        <Route path="services" element={<SelectedServices />} />
         <Route
           path="articles"
-          element={<h2>Здесь будут сохраненные статьи</h2>}
+          element={<SelectedArticles dataArticle={dataArticle} />}
         />
       </Route>
       <Route path="basket" element={<h2>Здесь будет корзина</h2>} />

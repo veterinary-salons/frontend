@@ -4,7 +4,7 @@ import CardGood from '../../components/CardGood/index';
 import NotificationMessage from '../../components/NotificationMessage/index';
 import classes from './style.module.scss';
 
-const SelectedProducts = ({ dataCrds }) => {
+const SelectedProducts = ({ dataProducts }) => {
   const navigate = useNavigate();
 
   const handleNvigate = () => {
@@ -13,9 +13,7 @@ const SelectedProducts = ({ dataCrds }) => {
 
   return (
     <section className={classes['selected-products']}>
-      {dataCrds ? (
-        dataCrds.map((i) => <CardGood {...i} key={i.id} />)
-      ) : (
+      {dataProducts.length === 0 ? (
         <NotificationMessage
           imageNumber="10"
           title="Тут пусто как в миске этого котика"
@@ -24,13 +22,15 @@ const SelectedProducts = ({ dataCrds }) => {
           onClick={handleNvigate}
           buttonText="Выбрать товары"
         />
+      ) : (
+        dataProducts.map((i) => <CardGood {...i} key={i.id} />)
       )}
     </section>
   );
 };
 
 SelectedProducts.propTypes = {
-  dataCrds: PropTypes.arrayOf(
+  dataProducts: PropTypes.arrayOf(
     PropTypes.shape({
       price: PropTypes.string,
       title: PropTypes.string,
@@ -41,7 +41,11 @@ SelectedProducts.propTypes = {
       counter: PropTypes.number,
       likes: PropTypes.bool,
     }),
-  ).isRequired,
+  ),
+};
+
+SelectedProducts.defaultProps = {
+  dataProducts: [],
 };
 
 export default SelectedProducts;
