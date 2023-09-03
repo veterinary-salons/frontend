@@ -29,8 +29,8 @@ const InputText = ({
     infoInput(values);
   }, [values]);
 
-  const hendelEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
-  const getType = type === 'password' ? hendelEyePassword(isClick, type) : type;
+  const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
+  const getType = type === 'password' ? handleEyePassword(isClick, type) : type;
   const getClassItem = cn(
     style.input,
     {
