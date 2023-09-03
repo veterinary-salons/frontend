@@ -4,11 +4,14 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import style from './InputPhone.module.scss';
 import validateInput from '../../../../assets/constants/validation';
-import { maskPhone, placeholderPhone } from '../../../../assets/constants/constants';
+import {
+  maskPhone,
+  placeholderPhone,
+} from '../../../../assets/constants/constants';
 
 const InputPhone = ({ infoInput }) => {
   const typeTel = 'tel';
-  const [tel, setTel] = useState('');
+  const [tel, setTel] = useState({});
   const styleInput = cn(
     style.input,
     {
@@ -32,11 +35,11 @@ const InputPhone = ({ infoInput }) => {
 
   return (
     <div className={style.container}>
-      <TextMaskInput 
+      <TextMaskInput
         placeholder={placeholderPhone}
         className={styleInput}
         mask={maskPhone}
-        onChange={(e) => setTel(e.target.value)}
+        onChange={(e) => setTel({ ...tel, [typeTel]: e.target.value })}
       />
       <span className={styleSpan}>{validateInput(typeTel, tel).message}</span>
     </div>
