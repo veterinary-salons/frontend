@@ -1,5 +1,5 @@
 import PetCard from '.';
-import photo from '../../assets/images/images/pet-card-background/dog.jpg';
+import photo from '../../../assets/images/images/pet-card-background/dog.jpg';
 
 export default {
   title: 'Card/PetCard',

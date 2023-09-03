@@ -9,15 +9,19 @@ import BreadCrumbs from '../../modules/breadCrumbs';
 import Button from '../../ui/buttons/originButton/Button';
 
 //  TODO: Роуты при которых не должны отображаться крошки, добавлять по мере разработки, потом вынести в отдельный файл
-const dataPathWithoutCrumbs = ['/'];
+const dataPathWithoutCrumbs = ['/', '/signin', '/signup'];
+const dataPathWithoutHeader = ['/signin'];
+const dataPathWithoutFooter = ['/signin'];
 
 function Root() {
   const location = useLocation();
   const crumbsPath = dataPathWithoutCrumbs.includes(location.pathname);
+  const isRenderHeader = dataPathWithoutHeader.includes(location.pathname);
+  const isRenderFooter = dataPathWithoutFooter.includes(location.pathname);
 
   return (
     <div className={classes.root}>
-      <Header authorization />
+      {!isRenderHeader ? <Header authorization /> : null}
       <main
         className={classNames(
           classes.main,
@@ -29,12 +33,12 @@ function Root() {
       </main>
 
       {location.pathname === '/' ? (
-        <Link to="/test" style={{ margin: '50px',  flex: '0 0 auto' }}>
+        <Link to="/test" style={{ margin: '50px', flex: '0 0 auto' }}>
           <Button size="large">Страница с тестовым компонентом</Button>
         </Link>
       ) : null}
 
-      <Footer />
+      {!isRenderFooter ? <Footer /> : null}
     </div>
   );
 }
