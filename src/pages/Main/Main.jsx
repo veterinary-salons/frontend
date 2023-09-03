@@ -1,6 +1,8 @@
 import classes from './Main.module.scss';
 import SpecialistCardList from '../../modules/mainPage/specialistCardList/SpecialistCardList';
 import ServiceCardList from '../../modules/mainPage/serviceCardList/ServiceCardList';
+import Facts from '../../modules/mainPage/facts/Facts';
+// import Button from '../../ui/buttons/originButton/Button';
 
 function Main() {
   return (
@@ -13,8 +15,9 @@ function Main() {
         </p>
         <button className={classes.promo__button}>Найти специалиста</button>
       </section>
+      <div className={classes.main__gap} />
       <SpecialistCardList />
-      <h2>Здесь будет кот с фактами</h2>
+      <Facts />
       <ServiceCardList />
     </main>
   );
