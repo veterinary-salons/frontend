@@ -24,7 +24,7 @@ function validateText(text) {
       return { invalid: true };
     }
     if (text.length <= 4) {
-      return { invalid: false };
+      return { invalid: false, message: 'Должно быть больше четырех символов' };
     }
   }
   return { default: true };
@@ -73,12 +73,12 @@ function validatePhone(phone) {
   return { default: true };
 }
 
-const validateInput = (type, item) => {
+const validateInput = (type, item, minLength) => {
   if (type === 'email') {
     return validateEmail(item);
   }
   if (type === 'text') {
-    return validateText(item);
+    return validateText(item, minLength);
   }
   if (type === 'password') {
     return validatePassword(item);
