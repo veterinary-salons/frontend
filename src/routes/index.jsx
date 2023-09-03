@@ -9,13 +9,14 @@ import ErrorBoundary from './errorPages/PageNotFound';
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
+import Main from '../pages/Main/Main';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
-      <Route index element={<h2>Здесь будет главная</h2>} />
+      <Route index element={<Main />} />
       <Route
         path="profile"
         element={<Tabs dataLinks={dataLinksProfile} marginT />}
@@ -41,10 +42,10 @@ const router = createBrowserRouter(
       <Route path="basket" element={<h2>Здесь будет корзина</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
+      {/* <Route
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-      />
+      /> */}
     </Route>,
   ),
 );
