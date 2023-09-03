@@ -19,6 +19,7 @@ input[type='search']::-webkit-search-results-decoration {
   padding: 14px 15px;
   background-color: var(--grey-light-color, #f8f8f8);
   box-sizing: border-box;
+  z-index: 1;
 
   &__input {
     width: 100%;
