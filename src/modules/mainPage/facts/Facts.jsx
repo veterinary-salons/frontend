@@ -18,7 +18,6 @@ const Facts = () => (
             кошка вернулась с&nbsp;передержки в&nbsp;отличном настроении
           </p>
         </li>
-
         <li className={classes.facts__cell}>
           <h3
             className={`${classes.facts__heading} ${classes.facts__heading_green}`}
@@ -30,7 +29,6 @@ const Facts = () => (
             у&nbsp;ветеринара
           </p>
         </li>
-
         <li className={classes.facts__cell}>
           <h3
             className={`${classes.facts__heading} ${classes.facts__heading_violet}`}
@@ -41,7 +39,6 @@ const Facts = () => (
             щенков сдали экзамен ОКД и&nbsp;теперь ведут себя лучше хоязев
           </p>
         </li>
-
         <li className={classes.facts__cell}>
           <h3
             className={`${classes.facts__heading} ${classes.facts__heading_orange}`}
