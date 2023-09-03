@@ -9,8 +9,10 @@ import ErrorBoundary from './errorPages/PageNotFound';
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
+import SelectedProducts from '../pages/SelectedProducts';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
+import { dataSelectedProducts } from '../assets/constants/constants';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -28,7 +30,10 @@ const router = createBrowserRouter(
       <Route path="goods" element={<h2>Здесь будут товары</h2>} />
       <Route path="magazine" element={<h2>Здесь будет журнал</h2>} />
       <Route path="favourites" element={<Favourites />}>
-        <Route path="goods" element={<h2>Здесь будут сохраненные товары</h2>} />
+        <Route
+          path="goods"
+          element={<SelectedProducts dataCrds={dataSelectedProducts} />}
+        />
         <Route
           path="services"
           element={<h2>Здесь будут сохраненные услуги</h2>}
