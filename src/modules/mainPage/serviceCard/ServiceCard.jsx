@@ -8,14 +8,15 @@ const ServiceCard = ({ link, color, title, img, disable }) => {
   const getCardServiceBackground = classnames(
     classes[`card__service-background_${color}`],
     classes['card__service-background'],
-    {
-      [classes[`card__service-background_${color}_disabled`]]: disable,
-    },
   );
+
+  const containerCN = classnames(classes.card__container, {
+    [classes.card__container_disabled]: disable,
+  });
 
   return (
     <li className={classes.card}>
-      <Link to={link} className={classes.card__container}>
+      <Link to={link} className={containerCN}>
         <div className={getCardServiceBackground}>
           <img className={classes.card__img} alt={title} src={img} />
         </div>

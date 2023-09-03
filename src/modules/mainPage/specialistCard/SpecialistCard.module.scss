@@ -5,21 +5,23 @@
   height: 339px;
   position: relative;
   margin: 0;
-  cursor: pointer;
 
   &__container {
     text-decoration: none;
     color: var(--primary-text-color);
     transition: 0.7s;
-  
+
     &:hover {
       color: var(--primary-purple-color);
     }
-  
+
+    &:hover .card__background {
+      background: transparent;
+    }
+
     &_disabled {
       opacity: 0.5;
       pointer-events: none;
-      cursor: no-;
     }
   }
 
@@ -29,55 +31,19 @@
     transition: background-color 0.7s;
 
     &_blue {
-      background: var(--blue-color, #BED2EA);
-
-      &:hover {
-        background: transparent;
-      }
-
-      &_disabled {
-        opacity: 0.5;
-        pointer-events: none;
-      }
+      background: var(--blue-color, #bed2ea);
     }
 
     &_yellow {
-      background: var(--yellow-color, #F9D279);
-
-      &:hover {
-        background: transparent;
-      }
-
-      &_disabled {
-        opacity: 0.5;
-        pointer-events: none;
-      }
+      background: var(--yellow-color, #f9d279);
     }
 
     &_green {
-      background: var(--green-color, #8FD6BF);
-
-      &:hover {
-        background: transparent;
-      }
-
-      &_disabled {
-        opacity: 0.5;
-        pointer-events: none;
-      }
+      background: var(--green-color, #8fd6bf);
     }
 
     &_violet {
-      background: var(--purple-light-color, #B8ACD4);
-
-      &:hover {
-        background: transparent;
-      }
-
-      &_disabled {
-        opacity: 0.5;
-        pointer-events: none;
-      }
+      background: var(--purple-light-color, #b8acd4);
     }
   }
 
@@ -85,7 +51,7 @@
     display: flex;
     margin: auto;
   }
-  
+
   &__header {
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 28px;
@@ -96,5 +62,4 @@
     justify-content: center;
     margin: 24px auto 0;
   }
-
 }

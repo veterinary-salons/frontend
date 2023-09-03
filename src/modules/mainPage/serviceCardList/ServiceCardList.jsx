@@ -5,7 +5,7 @@ import foodImg from '../../../assets/images/images/services-card/food.png';
 import treatsImg from '../../../assets/images/images/services-card/treats.png';
 import pillsImg from '../../../assets/images/images/services-card/pills.png';
 
-const ServiceCardList = () => (
+const SpecialistCardList = () => (
   <section className={classes.services}>
     <h2 className={classes.services__title}>Товары для питомцев</h2>
     <ul className={classes.services__cards}>
@@ -17,4 +17,4 @@ const ServiceCardList = () => (
   </section>
 );
 
-export default ServiceCardList;
+export default SpecialistCardList;

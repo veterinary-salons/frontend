@@ -8,14 +8,15 @@ const SpecialistCard = ({ link, color, title, img, disable }) => {
   const getCardBackground = classnames(
     classes[`card__background_${color}`],
     classes.card__background,
-    {
-      [classes[`card__background_${color}_disabled`]]: disable,
-    },
   );
+
+  const containerCN = classnames(classes.card__container, {
+    [classes.card__container_disabled]: disable,
+  });
 
   return (
     <li className={classes.card}>
-      <Link to={link} className={classes.card__container}>
+      <Link to={link} className={containerCN}>
         <div className={getCardBackground}>
           <img className={classes.card__img} alt={title} src={img} />
         </div>
@@ -27,7 +28,7 @@ const SpecialistCard = ({ link, color, title, img, disable }) => {
 
 SpecialistCard.propTypes = {
   link: PropTypes.string,
-  color: PropTypes.string,
+  color: PropTypes.oneOf(['blue', 'yellow', 'green', 'violet']),
   title: PropTypes.string,
   img: PropTypes.string,
   disable: PropTypes.bool,
