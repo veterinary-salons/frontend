@@ -9,6 +9,7 @@ import ErrorBoundary from './errorPages/PageNotFound';
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
+import Main from '../pages/Main/Main';
 import SelectedProducts from '../pages/SelectedProducts';
 import SelectedServices from '../pages/SelectedServices/index';
 import SelectedArticles from '../pages/SelectedArticles';
@@ -22,7 +23,7 @@ import {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
-      <Route index element={<h2>Здесь будет главная</h2>} />
+      <Route index element={<Main />} />
       <Route
         path="profile"
         element={<Tabs dataLinks={dataLinksProfile} marginT />}

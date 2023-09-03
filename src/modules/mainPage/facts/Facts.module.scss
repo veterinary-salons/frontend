@@ -1,4 +1,6 @@
 .facts {
+    padding: 0 100px;
+
     &__title {
         color: var(--primary-text-color, #0F0F0F);
         font-family: Century Gothic, Arial, sans-serif;;
@@ -34,7 +36,7 @@
         align-items: flex-start;
         align-content: flex-start;
         justify-content: space-between;
-        row-gap: 60px;
+        row-gap: 55px;
     }
     &__cell {
         width: 295px;
@@ -46,7 +48,7 @@
         font-style: normal;
         font-weight: 700;
         line-height: 57px;
-        margin: 0 auto 20px;
+        margin: 0 auto 5px;
         &_yellow {
             color: #FEAD2C;
         }
@@ -68,7 +70,7 @@
         font-style: normal;
         font-weight: 500;
         line-height: 30px;
-        margin: 0 auto;
+        margin: 9px auto 0;
         min-height: 74px;
     }
 }
