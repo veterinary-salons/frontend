@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import classes from './Main.module.scss';
 import SpecialistCardList from '../../modules/mainPage/specialistCardList/SpecialistCardList';
 import ServiceCardList from '../../modules/mainPage/serviceCardList/ServiceCardList';
@@ -13,7 +14,9 @@ function Main() {
           Purrfect care&nbsp;&mdash; сервис подбора специалистов для ухода,
           присмотра, лечения и&nbsp;воспитания ваших питомцев
         </p>
-        <Button>Найти специалиста</Button>
+        <Link to="/services">
+          <Button>Найти специалиста</Button>
+        </Link>
       </section>
       <SpecialistCardList />
       <Facts />
