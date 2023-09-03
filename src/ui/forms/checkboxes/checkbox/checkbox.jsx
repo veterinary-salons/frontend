@@ -26,7 +26,7 @@ const Checkbox = ({
   );
 
   return (
-    <label htmlFor={value} className={wrapperCN}
+    <label htmlFor={name} className={wrapperCN}
     style={{ gap, width}}
     >
       <input
@@ -48,7 +48,6 @@ const Checkbox = ({
 Checkbox.defaultProps = {
   type: 'checkbox',
   htmlType: 'checkbox',
-  name: '',
   reverse: false,
   gap: '8px',
   width: '',
@@ -63,7 +62,7 @@ Checkbox.propTypes = {
   checked: PropTypes.bool.isRequired,
   htmlType: PropTypes.string,
   value: PropTypes.string.isRequired,
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   reverse: PropTypes.bool,
   gap: PropTypes.string,
   width: PropTypes.string,

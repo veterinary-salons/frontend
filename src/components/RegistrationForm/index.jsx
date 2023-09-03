@@ -13,8 +13,17 @@ function RegistrationForm() {
   return (
     <form className={classes.form}>
       <h2 className={classes.form__title}>Регистрация</h2>
-      <div className={classes.form__section}>
-        <h3 className={classes.form__label}>Вы хотите</h3>
+      <div
+        role='group'
+        aria-labelledby="fake-legend"
+        className={classes.form__section}
+      >
+        <h3
+          id="fake-legend"
+          className={classes.form__label}
+        >
+          Вы хотите
+        </h3>
         <Checkbox
           onChange={() => {}}
           type='radio'
@@ -38,8 +47,17 @@ function RegistrationForm() {
           Предлагать услуги
         </Checkbox>
       </div>
-      <div className={classes.form__section}>
-        <h3 className={classes.form__label}>Как вас зовут?</h3>
+      <div
+        role='group'
+        aria-labelledby="fake-legend"
+        className={classes.form__section}
+      >
+        <h3
+          id="fake-legend"
+          className={classes.form__label}
+        >
+          Как вас зовут?
+        </h3>
         <div className={classes.form__inputs}>
           <InputText
             type='text'
@@ -68,8 +86,17 @@ function RegistrationForm() {
         <InputPhone
         />
       </div>
-      <div className={classes.form__section}>
-        <h3 className={classes.form__label}>Введите почту и придумайте пароль</h3>
+      <div
+        role='group'
+        aria-labelledby="fake-legend"
+        className={classes.form__section}
+      >
+        <h3
+          id="fake-legend"
+          className={classes.form__label}
+        >
+          Введите почту и придумайте пароль
+        </h3>
         <div className={classes.form__inputs}>
           <InputText
             type='email'
@@ -94,36 +121,35 @@ function RegistrationForm() {
             autoComplete='current-password'
           />
         </div>
-        <div>
-          <Checkbox
-            onChange={() => {}}
-            type='checkbox'
-            checked={false}
-            htmlType='checkbox'
-            value='registration-agreement'
-            gap='8px'
-            agreement
-          >
-            <p className={classes.form__agreement}>
-              Я&nbsp;даю свое согласие на&nbsp;обработку моей персональной информации в&nbsp;соответствии с&nbsp;
-              <Link
-                to="purrfectcare.ru"
-                target="_blank"
-                className={classes.form__link}
-              >
-                Политикой конфиденциальности
-              </Link>
-              &nbsp;и&nbsp;принимаю условия&nbsp;
-              <Link
-                to="purrfectcare.ru"
-                target="_blank"
-                className={classes.form__link}
-              >
-                Пользовательского соглашения
-              </Link>
-            </p>
-          </Checkbox>
-        </div>
+        <Checkbox
+          onChange={() => {}}
+          type='checkbox'
+          checked={false}
+          htmlType='checkbox'
+          value='registration-agreement'
+          name='registration-agreement'
+          gap='8px'
+          agreement
+        >
+          <p className={classes.form__agreement}>
+            Я&nbsp;даю свое согласие на&nbsp;обработку моей персональной информации в&nbsp;соответствии с&nbsp;
+            <Link
+              to="purrfectcare.ru"
+              target="_blank"
+              className={classes.form__link}
+            >
+              Политикой конфиденциальности
+            </Link>
+            &nbsp;и&nbsp;принимаю условия&nbsp;
+            <Link
+              to="purrfectcare.ru"
+              target="_blank"
+              className={classes.form__link}
+            >
+              Пользовательского соглашения
+            </Link>
+          </p>
+        </Checkbox>
       </div>
       <div className={classes.form__buttons}>
         <Button
