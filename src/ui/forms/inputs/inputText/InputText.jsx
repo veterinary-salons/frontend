@@ -3,7 +3,6 @@ import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import style from './InputText.module.scss';
 import validateInput from '../../../../assets/constants/validation';
-import useFormAndValidation from '../../../../hooks/validation';
 import BtnEye from '../../../buttons/hidePassword/BtnEye';
 
 const InputText = ({
@@ -17,8 +16,9 @@ const InputText = ({
   disabled,
   id,
   position,
+  initialValue,
 }) => {
-  const { values, handleChange } = useFormAndValidation();
+  const [values, setValues] = useState(initialValue);
   const [isClick, setIsClick] = useState(false);
 
   const handleClick = () => {
@@ -63,8 +63,8 @@ const InputText = ({
         maxLength={maxLength}
         minLength={minLength}
         required={required}
-        onChange={handleChange}
-        value={values[name] || ''}
+        onChange={(e) => setValues({ ...values, [name]: e.target.value })}
+        value={values[name]}
         disabled={disabled}
         id={id}
       />
@@ -95,6 +95,7 @@ InputText.propTypes = {
   disabled: PropTypes.bool,
   id: PropTypes.string,
   position: PropTypes.string,
+  initialValue: PropTypes.objectOf(PropTypes.string),
 };
 
 InputText.defaultProps = {
@@ -108,6 +109,7 @@ InputText.defaultProps = {
   disabled: false,
   id: 'id',
   position: 'button-eye_position',
+  initialValue: {},
 };
 
 export default InputText;

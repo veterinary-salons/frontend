@@ -12,7 +12,9 @@ const BreadCrumbs = ({ className }) => {
 
   const createCrumbs = pathnames.map((_value, index) => {
     const to = `/${pathnames.slice(0, index + 1).join('/')}`;
-    return <LinkCrumb to={to} key={to} title={breadcrumbNameMap[to]} />;
+    return breadcrumbNameMap[to] ? (
+      <LinkCrumb to={to} key={to} title={breadcrumbNameMap[to]} />
+    ) : null;
   });
 
   return (

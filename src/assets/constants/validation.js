@@ -20,11 +20,8 @@ function validateText(text) {
     if (text.length === 0) {
       return { invalid: false, message: 'Это поле не должно быть пустым!' };
     }
-    if (text.length > 4) {
-      return { invalid: true };
-    }
-    if (text.length <= 4) {
-      return { invalid: false, message: 'Должно быть больше четырех символов' };
+    if (text.length > 2) {
+      return { invalid: true, message: '' };
     }
   }
   return { default: true };
