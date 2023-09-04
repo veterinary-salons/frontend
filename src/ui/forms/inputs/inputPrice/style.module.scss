@@ -1,0 +1,55 @@
+.container {
+  font-family: 'Montserrat', Arial, sans-serif;
+  max-width: 144px;
+  margin: 0;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  background: var(--grey-light-color, #f8f8f8);
+  border: 1px solid var(--grey-light-color, #f8f8f8);
+  justify-content: space-between;
+
+  &_disabel {
+    opacity: 0.5;
+  }
+  &_success {
+    border: 1px solid var(--success-color, #03a600);
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 0;
+  background: var(--grey-light-color, #f8f8f8);
+  border: none;
+  outline: 0;
+  transition: width 1s ease;
+  color: #000;
+}
+
+.span {
+  margin-left: 12px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.span-one {
+  margin-left: 6px;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.currency {
+  margin: 0 10px;
+  width: 16px;
+  height: 16px;
+}

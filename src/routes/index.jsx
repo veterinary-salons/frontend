@@ -16,6 +16,7 @@ import ProfileGoods from '../pages/ProfileGoods';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import petList from '../assets/constants/petList';
+import InputPrice from '../ui/forms/inputs/inputPrice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -52,7 +53,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h1>test</h1>} />
+      <Route path="test" element={<InputPrice />} />
     </Route>,
   ),
 );
