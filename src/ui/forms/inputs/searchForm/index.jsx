@@ -9,13 +9,13 @@ const SearchForm = ({
   maxLength,
   minLength,
   disabled,
-  infoInput,
+  getInput,
 }) => {
   const [value, setValue] = useState('');
 
   const handelSubmit = (e) => {
     e.preventDefault();
-    infoInput(value);
+    getInput(value);
   };
 
   return (
@@ -56,7 +56,7 @@ SearchForm.propTypes = {
   maxLength: PropTypes.number,
   minLength: PropTypes.number,
   disabled: PropTypes.bool,
-  infoInput: PropTypes.func,
+  getInput: PropTypes.func,
 };
 
 SearchForm.defaultProps = {
@@ -65,7 +65,7 @@ SearchForm.defaultProps = {
   maxLength: 100,
   minLength: 2,
   disabled: false,
-  infoInput: () => {},
+  getInput: () => {},
 };
 
 export default SearchForm;

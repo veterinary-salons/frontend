@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 48px;
+  gap: 40px;
   width: 500px;
   margin: auto;
   &__title {
@@ -9,7 +9,7 @@
     font-style: normal;
     font-weight: 600;
     line-height: 35px;
-    margin: 0;
+    margin: 0 0 8px;
   }
   &__fieldset {
     display: flex;
@@ -18,32 +18,32 @@
     border: none;
     margin: 0;
     padding: 0;
-    &_type_checkbox {
-      gap: 20px;
-    }
-  }
-  &__legend {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 30px;
-    margin: 0 0 40px;
-    &_type_checkbox {
-      margin-bottom: 20px;
-    }
-  }
-  &__agreement {
-    margin: 0;
   }
   &__link {
-    text-decoration: none;
-    color: var(--link-color, #9384B7);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+    color: inherit;
     &:hover {
       opacity: 0.6;
     }
   }
-  &__buttons {
+  &__button-wrapper {
+    max-width: 235px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__navbox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__navtext {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
   }
 }

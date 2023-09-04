@@ -71,7 +71,7 @@ function validatePassword(value) {
     }
     return { invalid: true, message: '' };
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 function validatePhone(value) {
