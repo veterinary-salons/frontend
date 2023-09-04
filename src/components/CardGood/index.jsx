@@ -15,10 +15,10 @@ const CardGood = ({
   descriptionProduct,
   reviews,
   counter,
-  likes,
+  isLiked,
 }) => {
   const [sumCounter, setSumCounter] = useState(counter);
-  const [isLike, setIsLike] = useState(likes);
+  const [isLike, setIsLike] = useState(isLiked);
 
   const handleClickLike = () => {
     setIsLike((state) => !state);
@@ -84,7 +84,7 @@ CardGood.propTypes = {
   image: PropTypes.string,
   rating: PropTypes.string,
   counter: PropTypes.number,
-  likes: PropTypes.bool,
+  isLiked: PropTypes.bool,
 };
 
 CardGood.defaultProps = {
@@ -96,7 +96,7 @@ CardGood.defaultProps = {
   image: '',
   rating: '5.0',
   counter: 0,
-  likes: true,
+  isLiked: true,
 };
 
 export default CardGood;
