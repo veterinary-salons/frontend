@@ -4,6 +4,8 @@
   display: flex;
   justify-content: space-between;
   background-color: transparent;
+  height: 100px;
+  z-index: 1;
 
   &__link {
     display: flex;
