@@ -1,19 +1,22 @@
+import { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import classes from './checkbox.module.scss';
 
 const Checkbox = ({
-  onChange,
   type,
   checked,
   htmlType,
   value,
   name,
   reverse,
+  gap,
   width,
   disabled,
   agreement,
-  children
+  children,
+  required,
+  getCheckbox
 }) => {
   const visibleCN = classNames(classes[type]);
   const wrapperCN = classNames(
@@ -23,20 +26,28 @@ const Checkbox = ({
     agreement ? classes['label-agreement'] : null,
     disabled ? classes.label_disabled : null,
   );
+  const [isChecked, setIsChecked] = useState(checked);
+
+  const handleCheckboxChange = (evt) => {
+    console.log(evt);
+    getCheckbox(evt, {[name]: isChecked ? value : undefined})
+    setIsChecked(state => !state)
+  }
 
   return (
     <label htmlFor={name} className={wrapperCN}
-    style={{width}}
+    style={{ gap, width}}
     >
       <input
         id={value}
-        onChange={onChange}
-        checked={checked}
+        onChange={(evt) => handleCheckboxChange(evt)}
+        checked={isChecked}
         type={htmlType}
         className={classes.checkboxButton}
         value={value}
         name={name}
         disabled={disabled}
+        required={required}
       />
       <span className={visibleCN} />
       {children}
@@ -46,26 +57,31 @@ const Checkbox = ({
 
 Checkbox.defaultProps = {
   type: 'checkbox',
+  checked: false,
   htmlType: 'checkbox',
   reverse: false,
+  gap: '8px',
   width: '',
   disabled: false,
   agreement: false,
-  children: null
+  children: null,
+  required: false
 };
 
 Checkbox.propTypes = {
-  onChange: PropTypes.func.isRequired,
   type: PropTypes.string,
-  checked: PropTypes.bool.isRequired,
+  checked: PropTypes.bool,
   htmlType: PropTypes.string,
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   reverse: PropTypes.bool,
+  gap: PropTypes.string,
   width: PropTypes.string,
   disabled: PropTypes.bool,
   agreement: PropTypes.bool,
-  children: PropTypes.node
+  children: PropTypes.node,
+  required: PropTypes.bool,
+  getCheckbox: PropTypes.func.isRequired
 };
 
 export default Checkbox;

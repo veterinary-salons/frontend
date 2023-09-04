@@ -6,14 +6,18 @@ import Checkbox from '../../../../ui/forms/checkboxes/checkbox/checkbox';
 import { animals } from '../../../../assets/constants/filters';
 
 function GoodsFilterMain() {
-  const [isChecked, setIsChecked] = useState(false);
+  const [values, setValues] = useState({});
 
-  const handleCheck = () => {
-    setIsChecked((state) => !state);
+  const handleFormChange = (evt, value) => {
+    setValues({
+      ...values,
+      ...value,
+    });
+    console.log(values, evt)
   };
 
   return (
-    <form className={classes.filter}>
+    <form className={classes.filter} id='goods-filter'>
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>Животное</legend>
         {animals.map((item) => (
@@ -22,18 +26,18 @@ function GoodsFilterMain() {
           </Link>
         ))}
       </fieldset>
-
-      <CheckboxFilter type="deliveryTime"/>
+      <CheckboxFilter type="deliveryTime" getCheckbox={(evt) => handleFormChange(evt)}/>
       <CheckboxFilter type='age' />
       <CheckboxFilter type="TypeForAll" />
       <CheckboxFilter type="brands" isActiveShowAllButton/>
       <Checkbox
-        onChange={handleCheck}
+        // onChange={handleCheck}
         type="switch"
-        checked={isChecked}
+        checked={false}
         htmlType="checkbox"
         value="holistics"
         name="holistics"
+        getCheckbox={handleFormChange}
       >
         Холистики
       </Checkbox>

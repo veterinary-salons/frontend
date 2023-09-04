@@ -28,6 +28,7 @@ const animals = [
 const filterData = {
   deliveryTime: {
     legend: 'Сроки доставки',
+    checkboxType: 'radio',
     options: [
       { value: 'today', label: 'Сегодня' },
       { value: 'tomorrow', label: 'Завтра' },
@@ -37,6 +38,7 @@ const filterData = {
   },
   age: {
     legend: 'Возрастной диапазон',
+    checkboxType: 'checkbox',
     options: [
       { value: 'young', label: 'Для маленьких' },
       { value: 'adult', label: 'Для взрослых' },
@@ -45,6 +47,7 @@ const filterData = {
   },
   TypeForAll: {
     legend: 'Тип',
+    checkboxType: 'checkbox',
     options: [
       { value: 'feed-goodies', label: 'Корм, лакомства' },
       { value: 'toys-ammunition', label: 'Игрушки, амуниция' },
@@ -56,6 +59,7 @@ const filterData = {
   },
   TypeForFood: {
     legend: 'Тип',
+    checkboxType: 'checkbox',
     options: [
       { value: 'dry', label: 'Сухой' },
       { value: 'wet', label: 'Влажный' },
@@ -64,6 +68,7 @@ const filterData = {
   },
   TypeForCare: {
     legend: 'Тип',
+    checkboxType: 'checkbox',
     options: [
       { value: 'shampoos-conditioners', label: 'Шампуни и бальзамы' },
       { value: 'lotions-sprays', label: 'Лосьоны и спреи' },
@@ -77,6 +82,7 @@ const filterData = {
   },
   TypeForToilet: {
     legend: 'Тип',
+    checkboxType: 'checkbox',
     options: [
       { value: 'litter-boxes', label: 'Лотки, туалеты' },
       { value: 'litter', label: 'Наполнители' },
@@ -88,6 +94,7 @@ const filterData = {
   },
   TypeForToysAndClothes: {
     legend: 'Тип',
+    checkboxType: 'checkbox',
     options: [
       { value: 'teasers', label: 'Дразнилки' },
       { value: 'food-dispensing-toys', label: 'Игры с едой' },
@@ -98,6 +105,7 @@ const filterData = {
   },
   brands: {
     legend: 'Бренды',
+    checkboxType: 'checkbox',
     options: [
       { value: 'Royal Conin', label: 'Royal Conin' },
       { value: 'Pro Plan', label: 'Pro Plan' },
@@ -108,6 +116,7 @@ const filterData = {
   },
   needs: {
     legend: 'Потребности',
+    checkboxType: 'checkbox',
     options: [
         {
           label: 'Для стерилизованных',
@@ -133,6 +142,7 @@ const filterData = {
   },
   feedTypes: {
     legend: 'Тип корма',
+    checkboxType: 'checkbox',
     options: [
         {
           label: 'Сухой',
@@ -150,6 +160,7 @@ const filterData = {
   },
   petSize: {
     legend: 'Размер питомца',
+    checkboxType: 'checkbox',
     options: [
         {
           label: 'До 5 кг',
