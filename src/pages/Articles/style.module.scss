@@ -1,0 +1,29 @@
+.articles {
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  &__title {
+    margin: 48px 0 12px;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+  }
+
+  &__paragraph {
+    margin: 0 0 48px;
+    color: var(--text-grey-color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__container {
+    display: flex;
+    width: 1240px;
+    margin: auto;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+  }
+}
