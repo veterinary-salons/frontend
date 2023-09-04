@@ -10,10 +10,6 @@ export default {
       description: 'Путь к изображению аватара',
       type: 'string',
     },
-    alt: {
-      description: 'Альтернативный текст',
-      type: 'string',
-    },
     bigSize: {
       description: 'Наличие этого атрибута делает аватар размером 190px/190px',
       type: 'boolean',

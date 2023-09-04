@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { Link } from 'react-router-dom';
 import classes from './style.module.scss';
 
-import Button from '../../ui/buttons/originButton/Button';
+import Button from '../../../ui/buttons/originButton/Button';
 
-const PetCard = ({ src, title, age, months, add, onClick }) => {
+const PetCard = ({ src, title, age, months, add, id }) => {
   const unitAgeArr = ['год', 'года', 'лет'];
   const unitMonthsArr = ['месяц', 'месяца', 'месяцев'];
 
@@ -35,7 +36,9 @@ const PetCard = ({ src, title, age, months, add, onClick }) => {
     <div className={classNames(classes['pet-card'], add ? classes.add : null)}>
       {add ? (
         <>
-          <Button onClick={onClick} shape="round" size="small" variant="add" />
+          <Link to="addpet">
+            <Button shape="round" size="small" variant="add" />
+          </Link>
           <p className={classes.add__title}>Добавить питомца</p>
         </>
       ) : (
@@ -47,12 +50,7 @@ const PetCard = ({ src, title, age, months, add, onClick }) => {
               alt={`тут должно быть фото ${title}, но оно не загрузилось`}
             />
           ) : null}
-          <button
-            onClick={onClick}
-            type="button"
-            className={classes['pet-card__edit']}
-            aria-label="изменить"
-          />
+          <Link to={id} className={classes['pet-card__edit']} />
           <div className={classes['pet-card__content-wrapper']}>
             <p className={classes['pet-card__title']}>{title}</p>
             <p className={classes['pet-card__subtitle']}>{createSubtitle}</p>
@@ -69,6 +67,7 @@ PetCard.defaultProps = {
   age: 4,
   months: 5,
   add: false,
+  id: null,
 };
 
 PetCard.propTypes = {
@@ -77,7 +76,7 @@ PetCard.propTypes = {
   age: PropTypes.number,
   months: PropTypes.number,
   add: PropTypes.bool,
-  onClick: PropTypes.func.isRequired,
+  id: PropTypes.string,
 };
 
 export default PetCard;

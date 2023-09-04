@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 // Link, добавить выше для теста компонента
 import classNames from 'classnames';
 import classes from './style.module.scss';
@@ -7,18 +7,22 @@ import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import BreadCrumbs from '../../modules/breadCrumbs';
 
-// import Button from '../../ui/buttons/originButton/Button';
+import Button from '../../ui/buttons/originButton/Button';
 
 //  TODO: Роуты при которых не должны отображаться крошки, добавлять по мере разработки, потом вынести в отдельный файл
-const dataPathWithoutCrumbs = ['/'];
+const dataPathWithoutCrumbs = ['/', '/signin', '/signup'];
+const dataPathWithoutHeader = ['/signin'];
+const dataPathWithoutFooter = ['/signin'];
 
 function Root() {
   const location = useLocation();
   const crumbsPath = dataPathWithoutCrumbs.includes(location.pathname);
+  const isRenderHeader = dataPathWithoutHeader.includes(location.pathname);
+  const isRenderFooter = dataPathWithoutFooter.includes(location.pathname);
 
   return (
     <div className={classes.root}>
-      <Header authorization />
+      {!isRenderHeader ? <Header authorization /> : null}
       <main
         className={classNames(
           classes.main,
@@ -29,13 +33,13 @@ function Root() {
         <Outlet />
       </main>
 
-      {/* {location.pathname === '/' ? (
+      {location.pathname === '/' ? (
         <Link to="/test" style={{ margin: '50px', flex: '0 0 auto' }}>
           <Button size="large">Страница с тестовым компонентом</Button>
         </Link>
-      ) : null} */}
+      ) : null}
 
-      <Footer />
+      {!isRenderFooter ? <Footer /> : null}
     </div>
   );
 }
