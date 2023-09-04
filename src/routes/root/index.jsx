@@ -1,4 +1,5 @@
 import { Link, Outlet, useLocation } from 'react-router-dom';
+// Link, добавить выше для теста компонента
 import classNames from 'classnames';
 import classes from './style.module.scss';
 

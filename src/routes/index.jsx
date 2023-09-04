@@ -9,6 +9,7 @@ import ErrorBoundary from './errorPages/PageNotFound';
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
+import Main from '../pages/Main/Main';
 import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
@@ -19,7 +20,7 @@ import petList from '../assets/constants/petList';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
-      <Route index element={<h2>Здесь будет главная</h2>} />
+      <Route index element={<Main />} />
       <Route
         path="profile"
         element={<Tabs dataLinks={dataLinksProfile} marginT />}
@@ -51,10 +52,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
-        path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-      />
+      <Route path="test" element={<h1>test</h1>} />
     </Route>,
   ),
 );

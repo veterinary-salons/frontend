@@ -15,9 +15,14 @@ const InputPhone = ({ infoInput, initialValue }) => {
   const styleInput = cn(
     style.input,
     {
+      [style['input-default']]: validateInput(typeTel, tel.tel).default,
+    },
+    {
+      [style['input-error']]: !validateInput(typeTel, tel.tel).invalid,
+    },
+    {
       [style['input-success']]: validateInput(typeTel, tel.tel).invalid,
     },
-    { [style['input-error']]: !validateInput(typeTel, tel.tel).invalid },
   );
   const styleSpan = cn(
     style['input-span-error'],

@@ -9,10 +9,10 @@ function validateEmail(email) {
       return { invalid: false, message: 'Неверный формат почты!' };
     }
     if (regexEmail.test(email.toLowerCase())) {
-      return { invalid: true, message: 'Почта верна!' };
+      return { invalid: true };
     }
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 function validateText(text) {
@@ -24,7 +24,7 @@ function validateText(text) {
       return { invalid: true, message: '' };
     }
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 function validatePassword(password) {
@@ -43,17 +43,16 @@ function validatePassword(password) {
     if (regexPossword.test(password)) {
       return {
         invalid: true,
-        message: 'Отличный пароль',
       };
     }
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 function validatePhone(phone) {
   if (phone !== undefined) {
     if (phone.length === 0) {
-      return { invalid: false, message: 'Введите номер телефона' };
+      return { default: true };
     }
     if (!regexPhone.test(phone)) {
       return {
@@ -68,15 +67,15 @@ function validatePhone(phone) {
       };
     }
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
-const validateInput = (type, item) => {
+const validateInput = (type, item, minLength) => {
   if (type === 'email') {
     return validateEmail(item);
   }
   if (type === 'text') {
-    return validateText(item);
+    return validateText(item, minLength);
   }
   if (type === 'password') {
     return validatePassword(item);
