@@ -14,35 +14,42 @@ function EnterForm() {
       ...values,
       ...value,
     });
-    setIsValid(document.getElementById('enter-form').checkValidity());
-    console.log(values, isValid)
+    console.log(values, isValid);
+  };
+
+  const handleFormValidChange = (e) => {
+    setIsValid(e.target.closest('form').checkValidity());
   };
 
   return (
-    <form className={classes.form} id='enter-form'>
+    <form
+      onChange={handleFormValidChange}
+      className={classes.form}
+      id="enter-form"
+    >
       <h2 className={classes.form__title}>Войдите в аккаунт</h2>
       <fieldset className={classes.form__fieldset}>
         <InputText
-          type='email'
-          placeholder='Почта'
-          name='email'
+          type="email"
+          placeholder="Почта"
+          name="email"
           maxLength={50}
           minLength={5}
           required
           getInput={handleFormChange}
-          id='email-input'
-          autoComplete='email'
+          id="email-input"
+          autoComplete="email"
         />
         <InputText
-          type='password'
-          placeholder='Пароль'
-          name='password'
+          type="password"
+          placeholder="Пароль"
+          name="password"
           maxLength={20}
           minLength={6}
           required
           getInput={handleFormChange}
-          id='password-input'
-          autoComplete='current-password'
+          id="password-input"
+          autoComplete="current-password"
         />
         <Link
           to="purrfectcare.ru"
@@ -76,9 +83,8 @@ function EnterForm() {
           </Button>
         </div>
       </div>
-      
     </form>
-  )
-};
+  );
+}
 
 export default EnterForm;

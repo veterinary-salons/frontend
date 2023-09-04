@@ -17,123 +17,125 @@ function RegistrationForm() {
       ...values,
       ...value,
     });
-    setIsValid(document.getElementById('registration-form').checkValidity());
-    console.log(values, isValid)
+    console.log(values, isValid);
+  };
+
+  const handleFormValidChange = (e) => {
+    setIsValid(e.target.closest('form').checkValidity());
   };
 
   return (
-    <form className={classes.form} id='registration-form'>
+    <form
+      onChange={handleFormValidChange}
+      className={classes.form}
+      id="registration-form"
+    >
       <h2 className={classes.form__title}>Регистрация</h2>
       <fieldset
         className={classNames(
           classes.form__fieldset,
-          classes.form__fieldset_type_checkbox
+          classes.form__fieldset_type_checkbox,
         )}
       >
         <legend
           className={classNames(
             classes.form__legend,
-            classes.form__legend_type_checkbox
+            classes.form__legend_type_checkbox,
           )}
         >
           Вы хотите
         </legend>
         <Checkbox
-          type='radio'
+          type="radio"
           checked
-          htmlType='radio'
-          value='consumer-registration'
-          name='registration-subject'
-          gap='8px'
+          htmlType="radio"
+          value="consumer-registration"
+          name="registration-subject"
+          gap="8px"
           getCheckbox={handleFormChange}
         >
           Пользоваться услугами
         </Checkbox>
         <Checkbox
-          type='radio'
+          type="radio"
           checked={false}
-          htmlType='radio'
-          value='provider-registration'
-          name='registration-subject'
-          gap='8px'
+          htmlType="radio"
+          value="provider-registration"
+          name="registration-subject"
+          gap="8px"
           getCheckbox={handleFormChange}
         >
           Предлагать услуги
         </Checkbox>
       </fieldset>
       <fieldset className={classes.form__fieldset}>
-        <legend className={classes.form__legend}>
-          Как вас зовут?
-        </legend>
+        <legend className={classes.form__legend}>Как вас зовут?</legend>
         <InputText
-          type='text'
-          placeholder='Имя'
-          name='userName'
+          type="text"
+          placeholder="Имя"
+          name="userName"
           maxLength={15}
           minLength={2}
           required
           getInput={handleFormChange}
-          id='name-input'
+          id="name-input"
         />
         <InputText
-          type='text'
-          placeholder='Фамилия'
-          name='userSurname'
+          type="text"
+          placeholder="Фамилия"
+          name="userSurname"
           maxLength={15}
           minLength={2}
           required
           getInput={handleFormChange}
-          id='surname-input'
+          id="surname-input"
         />
       </fieldset>
       <fieldset className={classes.form__fieldset}>
-        <legend className={classes.form__legend}>
-          Введите номер телефона
-        </legend>
-        <InputPhone
-          getInput={handleFormChange}
-        />
+        <legend className={classes.form__legend}>Введите номер телефона</legend>
+        <InputPhone getInput={handleFormChange} />
       </fieldset>
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>
           Введите почту и придумайте пароль
         </legend>
         <InputText
-          type='email'
-          placeholder='Почта'
-          name='email'
+          type="email"
+          placeholder="Почта"
+          name="email"
           maxLength={50}
           minLength={5}
           required
           getInput={handleFormChange}
-          id='email-input'
-          autoComplete='email'
+          id="email-input"
+          autoComplete="email"
         />
         <InputText
-          type='password'
-          placeholder='Пароль'
-          name='password'
+          type="password"
+          placeholder="Пароль"
+          name="password"
           maxLength={20}
           minLength={6}
           required
           getInput={handleFormChange}
-          id='password-input'
-          autoComplete='current-password'
+          id="password-input"
+          autoComplete="current-password"
         />
       </fieldset>
       <Checkbox
-        type='checkbox'
+        type="checkbox"
         checked={false}
-        htmlType='checkbox'
-        value='registration-agreement'
-        name='registration-agreement'
-        gap='8px'
+        htmlType="checkbox"
+        value="registration-agreement"
+        name="registration-agreement"
+        gap="8px"
         agreement
         required
         getCheckbox={handleFormChange}
       >
         <p className={classes.form__agreement}>
-          Я&nbsp;даю свое согласие на&nbsp;обработку моей персональной информации в&nbsp;соответствии с&nbsp;
+          Я&nbsp;даю свое согласие на&nbsp;обработку моей персональной
+          информации в&nbsp;соответствии с&nbsp;
           <Link
             to="purrfectcare.ru"
             target="_blank"
@@ -171,7 +173,7 @@ function RegistrationForm() {
         </Button>
       </div>
     </form>
-  )
-};
+  );
+}
 
 export default RegistrationForm;

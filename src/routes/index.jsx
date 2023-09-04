@@ -58,8 +58,8 @@ const router = createBrowserRouter(
         path="test"
         element={
           <>
-          {/* <RegistrationForm/> */}
-          <EnterForm/>
+            {/* <RegistrationForm/> */}
+            <EnterForm />
           </>
         }
       />

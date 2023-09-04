@@ -19,12 +19,18 @@ const InputText = ({
   autoComplete,
   initialValue,
 }) => {
-  const [values, setValues] = useState(initialValue);
+  const [values, setValues] = useState({ [name]: '' });
   const [isClick, setIsClick] = useState(false);
 
   const handleClick = () => {
     setIsClick(!isClick);
   };
+
+  useEffect(() => {
+    if (initialValue) {
+      setValues(initialValue);
+    }
+  }, []);
 
   useEffect(() => {
     getInput(values);
@@ -48,10 +54,12 @@ const InputText = ({
   const getClassSpan = cn(
     style['input-span-error'],
     {
-      [style['input-error_activ']]: !validateInput(type, name, values[name]).invalid,
+      [style['input-error_activ']]: !validateInput(type, name, values[name])
+        .invalid,
     },
     {
-      [style['input-span-true']]: validateInput(type, name, values[name]).invalid,
+      [style['input-span-true']]: validateInput(type, name, values[name])
+        .invalid,
     },
   );
 
@@ -114,7 +122,7 @@ InputText.defaultProps = {
   id: 'id',
   position: 'button-eye_position',
   autoComplete: '',
-  initialValue: {},
+  initialValue: null,
 };
 
 export default InputText;
