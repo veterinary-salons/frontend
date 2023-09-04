@@ -37,10 +37,10 @@
     padding: 0 15px 0 0;
   }
 
-  &__container{
+  &__container {
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
     justify-content: space-between;
     margin: 12px 0 16px;
     width: 100%;

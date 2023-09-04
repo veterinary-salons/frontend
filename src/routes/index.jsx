@@ -13,8 +13,10 @@ import Main from '../pages/Main/Main';
 import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
+import Articles from '../pages/Articles/index';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
+import { dataArticlePage } from '../assets/constants/constants';
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
@@ -35,7 +37,10 @@ const router = createBrowserRouter(
       </Route>
       <Route path="services" element={<h2>Здесь будут услуги</h2>} />
       <Route path="goods" element={<h2>Здесь будут товары</h2>} />
-      <Route path="magazine" element={<h2>Здесь будет журнал</h2>} />
+      <Route
+        path="magazine"
+        element={<Articles dataArticle={dataArticlePage} />}
+      />
       <Route path="favourites" element={<Favourites />}>
         <Route path="goods" element={<h2>Здесь будут сохраненные товары</h2>} />
         <Route
