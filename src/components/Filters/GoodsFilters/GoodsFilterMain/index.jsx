@@ -1,173 +1,209 @@
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 import Checkbox from '../../../../ui/forms/checkboxes/checkbox/checkbox';
-import InputPhone from '../../../../ui/forms/inputs/inputPhone/InputPhone';
-import InputText from '../../../../ui/forms/inputs/inputText/InputText';
-import Button from '../../../../ui/buttons/originButton/Button';
+import {
+  animals,
+  deliveryTime,
+  age,
+  types,
+  brands,
+  needs,
+  feedTypes,
+  petSize
+} from '../../../../assets/constants/filters';
 import classes from './style.module.scss';
 
-function RegistrationForm() {
+function GoodsFilterMain() {
+  const [isChecked, setIsChecked] = useState(false);
+
+  const handleCheck = () => {
+    setIsChecked(state => !state)
+  }
 
   return (
-    <form className={classes.form}>
-      <h2 className={classes.form__title}>Регистрация</h2>
-      <div
-        role='group'
-        aria-labelledby="fake-legend"
-        className={classes.form__section}
+    <form className={classes.filter}>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Животное
+        </legend>
+        {animals.map((item) =>
+          <Link
+            key={item.value}
+            to='/'
+            className={classes.filter__link}
+          >
+            {item.label}
+          </Link>
+        )}
+      </fieldset>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Сроки доставки
+        </legend>
+        {deliveryTime.map((item) =>
+          <Checkbox
+            key={item.value}
+            onChange={handleCheck}
+            type='radio'
+            checked={isChecked}
+            htmlType='radio'
+            value={item.value}
+            name='delivery-time'
+          >
+            {item.label}
+          </Checkbox>
+        )}
+      </fieldset>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Возрастной диапазон
+        </legend>
+        {age.map((item) =>
+          <Checkbox
+            key={item.value}
+            onChange={() => {}}
+            type='checkbox'
+            checked={false}
+            htmlType='checkbox'
+            value={item.value}
+            name='age'
+          >
+            {item.label}
+          </Checkbox>
+        )}
+      </fieldset>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Тип
+        </legend>
+        {types.map((item) =>
+          <Checkbox
+            key={item.value}
+            onChange={() => {}}
+            type='checkbox'
+            checked={false}
+            htmlType='checkbox'
+            value={item.value}
+            name='types'
+          >
+            {item.label}
+          </Checkbox>
+        )}
+      </fieldset>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Бренды
+        </legend>
+        {brands.map((item) =>
+          <Checkbox
+            key={item.value}
+            onChange={() => {}}
+            type='checkbox'
+            checked={false}
+            htmlType='checkbox'
+            value={item.value}
+            name='brands'
+          >
+            {item.label}
+          </Checkbox>
+        )}
+        <button
+          className={[classes['filter__add-btn']]}
+          type='button'
+          onClick={() => {}}
+        >
+          Посмотреть все
+        </button>
+      </fieldset>
+      <Checkbox
+        onChange={handleCheck}
+        type='switch'
+        checked={isChecked}
+        htmlType='checkbox'
+        value='holistics'
+        name='holistics'
       >
-        <h3
-          id="fake-legend"
-          className={classes.form__label}
-        >
-          Вы хотите
-        </h3>
-        <Checkbox
-          onChange={() => {}}
-          type='radio'
-          checked
-          htmlType='radio'
-          value='consumer-registration'
-          name='registration-subject'
-          gap='8px'
-        >
-          Пользоваться услугами
-        </Checkbox>
-        <Checkbox
-          onChange={() => {}}
-          type='radio'
-          checked={false}
-          htmlType='radio'
-          value='provider-registration'
-          name='registration-subject'
-          gap='8px'
-        >
-          Предлагать услуги
-        </Checkbox>
-      </div>
-      <div
-        role='group'
-        aria-labelledby="fake-legend"
-        className={classes.form__section}
-      >
-        <h3
-          id="fake-legend"
-          className={classes.form__label}
-        >
-          Как вас зовут?
-        </h3>
-        <div className={classes.form__inputs}>
-          <InputText
-            type='text'
-            placeholder='Имя'
-            name='userName'
-            maxLength={15}
-            minLength={2}
-            required
-            infoInput={() => {}}
-            id='name-input'
-          />
-          <InputText
-            type='text'
-            placeholder='Фамилия'
-            name='userSurname'
-            maxLength={15}
-            minLength={2}
-            required
-            infoInput={() => {}}
-            id='surname-input'
-          />
-        </div>
-      </div>
-      <div className={classes.form__section}>
-        <h3 className={classes.form__label}>Введите номер телефона</h3>
-        <InputPhone
-        />
-      </div>
-      <div
-        role='group'
-        aria-labelledby="fake-legend"
-        className={classes.form__section}
-      >
-        <h3
-          id="fake-legend"
-          className={classes.form__label}
-        >
-          Введите почту и придумайте пароль
-        </h3>
-        <div className={classes.form__inputs}>
-          <InputText
-            type='email'
-            placeholder='Почта'
-            name='email'
-            maxLength={50}
-            minLength={5}
-            required
-            infoInput={() => {}}
-            id='email-input'
-            autoComplete='email'
-          />
-          <InputText
-            type='password'
-            placeholder='Пароль'
-            name='password'
-            maxLength={20}
-            minLength={6}
-            required
-            infoInput={() => {}}
-            id='password-input'
-            autoComplete='current-password'
-          />
-        </div>
+        Холистики
+      </Checkbox>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Потребности
+        </legend>
+        {needs.map((item) =>
+          <Checkbox
+            key={item.value}
+            onChange={() => {}}
+            type='checkbox'
+            checked={false}
+            htmlType='checkbox'
+            value={item.value}
+            name='needs'
+          >
+            {item.label}
+          </Checkbox>
+        )}
+      </fieldset>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Тип корма
+        </legend>
+        {feedTypes.map((item) =>
+          <Checkbox
+            key={item.value}
+            onChange={() => {}}
+            type='checkbox'
+            checked={false}
+            htmlType='checkbox'
+            value={item.value}
+            name='feedTypes'
+          >
+            {item.label}
+          </Checkbox>
+        )}
+      </fieldset>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Размер питомца
+        </legend>
+        {petSize.map((item) =>
+          <Checkbox
+            key={item.value}
+            onChange={() => {}}
+            type='checkbox'
+            checked={false}
+            htmlType='checkbox'
+            value={item.value}
+            name='petSize'
+          >
+            {item.label}
+          </Checkbox>
+        )}
+      </fieldset>
+      <fieldset className={classes.filter__fieldset}>
+        <legend className={classes.filter__legend}>
+          Цена
+        </legend>
+        {/* TODO: Inputs with price */}
         <Checkbox
           onChange={() => {}}
           type='checkbox'
           checked={false}
           htmlType='checkbox'
-          value='registration-agreement'
-          name='registration-agreement'
-          gap='8px'
-          agreement
+          value='sales'
+          name='sales'
         >
-          <p className={classes.form__agreement}>
-            Я&nbsp;даю свое согласие на&nbsp;обработку моей персональной информации в&nbsp;соответствии с&nbsp;
-            <Link
-              to="purrfectcare.ru"
-              target="_blank"
-              className={classes.form__link}
-            >
-              Политикой конфиденциальности
-            </Link>
-            &nbsp;и&nbsp;принимаю условия&nbsp;
-            <Link
-              to="purrfectcare.ru"
-              target="_blank"
-              className={classes.form__link}
-            >
-              Пользовательского соглашения
-            </Link>
-          </p>
+          Только со скидками
         </Checkbox>
-      </div>
-      <div className={classes.form__buttons}>
-        <Button
-          onClick={() => navigate('/')}
-          variant="outlined"
-          size="medium"
-          type="button"
-        >
-          На главную
-        </Button>
-        <Button
+        <button
+          className={[classes['filter__add-btn']]}
+          type='button'
           onClick={() => {}}
-          variant="purple-filled"
-          size="medium"
-          type="submit"
-          // active={isValid}
         >
-          Зарегистрироваться
-        </Button>
-      </div>
+          Убрать все
+        </button>
+      </fieldset>
     </form>
   )
 };
 
-export default RegistrationForm;
+export default GoodsFilterMain;
