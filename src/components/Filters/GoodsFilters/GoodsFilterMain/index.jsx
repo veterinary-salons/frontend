@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import Checkbox from '../../../../ui/forms/checkboxes/checkbox/checkbox';
+import CheckboxFilter from '../../CheckboxFilter'; // Импортируем CheckboxFilter компонент
 import {
   animals,
   deliveryTime,
@@ -12,6 +12,7 @@ import {
   petSize
 } from '../../../../assets/constants/filters';
 import classes from './style.module.scss';
+import Checkbox from '../../../../ui/forms/checkboxes/checkbox/checkbox';
 
 function GoodsFilterMain() {
   const [isChecked, setIsChecked] = useState(false);
@@ -36,85 +37,15 @@ function GoodsFilterMain() {
           </Link>
         )}
       </fieldset>
-      <fieldset className={classes.filter__fieldset}>
-        <legend className={classes.filter__legend}>
-          Сроки доставки
-        </legend>
-        {deliveryTime.map((item) =>
-          <Checkbox
-            key={item.value}
-            onChange={handleCheck}
-            type='radio'
-            checked={isChecked}
-            htmlType='radio'
-            value={item.value}
-            name='delivery-time'
-          >
-            {item.label}
-          </Checkbox>
-        )}
-      </fieldset>
-      <fieldset className={classes.filter__fieldset}>
-        <legend className={classes.filter__legend}>
-          Возрастной диапазон
-        </legend>
-        {age.map((item) =>
-          <Checkbox
-            key={item.value}
-            onChange={() => {}}
-            type='checkbox'
-            checked={false}
-            htmlType='checkbox'
-            value={item.value}
-            name='age'
-          >
-            {item.label}
-          </Checkbox>
-        )}
-      </fieldset>
-      <fieldset className={classes.filter__fieldset}>
-        <legend className={classes.filter__legend}>
-          Тип
-        </legend>
-        {types.map((item) =>
-          <Checkbox
-            key={item.value}
-            onChange={() => {}}
-            type='checkbox'
-            checked={false}
-            htmlType='checkbox'
-            value={item.value}
-            name='types'
-          >
-            {item.label}
-          </Checkbox>
-        )}
-      </fieldset>
-      <fieldset className={classes.filter__fieldset}>
-        <legend className={classes.filter__legend}>
-          Бренды
-        </legend>
-        {brands.map((item) =>
-          <Checkbox
-            key={item.value}
-            onChange={() => {}}
-            type='checkbox'
-            checked={false}
-            htmlType='checkbox'
-            value={item.value}
-            name='brands'
-          >
-            {item.label}
-          </Checkbox>
-        )}
-        <button
-          className={[classes['filter__add-btn']]}
-          type='button'
-          onClick={() => {}}
-        >
-          Посмотреть все
-        </button>
-      </fieldset>
+
+      <CheckboxFilter legend='Сроки доставки' options={deliveryTime} />
+
+      <CheckboxFilter legend='Возрастной диапазон' options={age} />
+
+      <CheckboxFilter legend='Тип' options={types} />
+
+      <CheckboxFilter legend='Бренды' options={brands} />
+
       <Checkbox
         onChange={handleCheck}
         type='switch'
@@ -125,60 +56,13 @@ function GoodsFilterMain() {
       >
         Холистики
       </Checkbox>
-      <fieldset className={classes.filter__fieldset}>
-        <legend className={classes.filter__legend}>
-          Потребности
-        </legend>
-        {needs.map((item) =>
-          <Checkbox
-            key={item.value}
-            onChange={() => {}}
-            type='checkbox'
-            checked={false}
-            htmlType='checkbox'
-            value={item.value}
-            name='needs'
-          >
-            {item.label}
-          </Checkbox>
-        )}
-      </fieldset>
-      <fieldset className={classes.filter__fieldset}>
-        <legend className={classes.filter__legend}>
-          Тип корма
-        </legend>
-        {feedTypes.map((item) =>
-          <Checkbox
-            key={item.value}
-            onChange={() => {}}
-            type='checkbox'
-            checked={false}
-            htmlType='checkbox'
-            value={item.value}
-            name='feedTypes'
-          >
-            {item.label}
-          </Checkbox>
-        )}
-      </fieldset>
-      <fieldset className={classes.filter__fieldset}>
-        <legend className={classes.filter__legend}>
-          Размер питомца
-        </legend>
-        {petSize.map((item) =>
-          <Checkbox
-            key={item.value}
-            onChange={() => {}}
-            type='checkbox'
-            checked={false}
-            htmlType='checkbox'
-            value={item.value}
-            name='petSize'
-          >
-            {item.label}
-          </Checkbox>
-        )}
-      </fieldset>
+
+      <CheckboxFilter legend='Потребности' options={needs} />
+
+      <CheckboxFilter legend='Тип корма' options={feedTypes} />
+
+      <CheckboxFilter legend='Размер питомца' options={petSize} />
+
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>
           Цена

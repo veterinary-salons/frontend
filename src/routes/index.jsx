@@ -15,7 +15,7 @@ import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodFilterMain';
+import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain';
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
