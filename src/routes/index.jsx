@@ -11,6 +11,7 @@ import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
+import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodFilterMain';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -43,7 +44,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<GoodsFilterMain/>}
       />
     </Route>,
   ),
