@@ -3,7 +3,6 @@ import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import style from './InputText.module.scss';
 import validateInput from '../../../../assets/constants/validation';
-import useFormAndValidation from '../../../../hooks/validation';
 import BtnEye from '../../../buttons/hidePassword/BtnEye';
 
 const InputText = ({
@@ -17,9 +16,10 @@ const InputText = ({
   disabled,
   id,
   position,
-  autoComplete
+  autoComplete,
+  initialValue,
 }) => {
-  const { values, handleChange } = useFormAndValidation();
+  const [values, setValues] = useState(initialValue);
   const [isClick, setIsClick] = useState(false);
 
   const handleClick = () => {
@@ -30,14 +30,19 @@ const InputText = ({
     setInput(values);
   }, [values]);
 
-  const hendelEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
-  const getType = type === 'password' ? hendelEyePassword(isClick, type) : type;
+  const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
+  const getType = type === 'password' ? handleEyePassword(isClick, type) : type;
   const getClassItem = cn(
     style.input,
     {
+      [style['input-default']]: validateInput(type, name, values[name]).default,
+    },
+    {
+      [style['input-error']]: !validateInput(type, name, values[name]).invalid,
+    },
+    {
       [style['input-success']]: validateInput(type, name, values[name]).invalid,
     },
-    { [style['input-error']]: !validateInput(type, name, values[name]).invalid },
   );
   const getClassSpan = cn(
     style['input-span-error'],
@@ -59,8 +64,8 @@ const InputText = ({
         maxLength={maxLength}
         minLength={minLength}
         required={required}
-        onChange={handleChange}
-        value={values[name] || ''}
+        onChange={(e) => setValues({ ...values, [name]: e.target.value })}
+        value={values[name]}
         disabled={disabled}
         id={id}
         autoComplete={autoComplete}
@@ -92,7 +97,8 @@ InputText.propTypes = {
   disabled: PropTypes.bool,
   id: PropTypes.string,
   position: PropTypes.string,
-  autoComplete: PropTypes.string
+  autoComplete: PropTypes.string,
+  initialValue: PropTypes.objectOf(PropTypes.string),
 };
 
 InputText.defaultProps = {
@@ -106,7 +112,8 @@ InputText.defaultProps = {
   disabled: false,
   id: 'id',
   position: 'button-eye_position',
-  autoComplete: ''
+  autoComplete: '',
+  initialValue: {},
 };
 
 export default InputText;

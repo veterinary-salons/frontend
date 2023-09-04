@@ -11,7 +11,7 @@ function validateEmail(value) {
     return { invalid: true, message: '' };
 
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 function validateText(value) {
@@ -19,11 +19,11 @@ function validateText(value) {
     if (value.length === 0) {
       return { invalid: false, message: 'Это поле не должно быть пустым' };
     }
-    if (value.length > 5) {
+    if (value.length > 2) {
       return { invalid: true, message: '' };
     }
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 function validateUserName(value) {
@@ -47,7 +47,7 @@ function validateUserName(value) {
     }
     return { invalid: true, message: '' };
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 function validatePassword(value) {
@@ -89,7 +89,7 @@ function validatePhone(value) {
       return { invalid: true, message: '' };
     }
   }
-  return { invalid: false, message: 'Заполните поле' };
+  return { default: true };
 }
 
 const validateInput = (type, name, value) => {
