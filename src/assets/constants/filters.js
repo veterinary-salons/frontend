@@ -25,158 +25,160 @@ const animals = [
   }
 ];
 
-const deliveryTime = [
-  {
-    label: 'Сегодня',
-    value: 'today'
+const filterData = {
+  deliveryTime: {
+    legend: 'Сроки доставки',
+    options: [
+      { value: 'today', label: 'Сегодня' },
+      { value: 'tomorrow', label: 'Завтра' },
+      { value: '3days', label: 'До 3 дней' },
+      { value: '7days', label: 'До 7 дней' },
+    ],
   },
-  {
-    label: 'Завтра',
-    value: 'tomorrow'
+  age: {
+    legend: 'Возрастной диапазон',
+    options: [
+      { value: 'young', label: 'Для маленьких' },
+      { value: 'adult', label: 'Для взрослых' },
+      { value: 'elderly', label: 'Для пожилых' },
+    ],
   },
-  {
-    label: 'До 3 дней',
-    value: '3days'
+  TypeForAll: {
+    legend: 'Тип',
+    options: [
+      { value: 'feed-goodies', label: 'Корм, лакомства' },
+      { value: 'toys-ammunition', label: 'Игрушки, амуниция' },
+      { value: 'toilet', label: 'Для туалета' },
+      { value: 'hygiene', label: 'Гигиена и уход' },
+      { value: 'bowls-beds-houses', label: 'Миски, лежанки, домики' },
+      { value: 'vetpharmacy', label: 'Ветаптека' },
+    ],
   },
-  {
-    label: 'До 7 дней',
-    value: '7days'
-  }
-];
+  TypeForFood: {
+    legend: 'Тип',
+    options: [
+      { value: 'dry', label: 'Сухой' },
+      { value: 'wet', label: 'Влажный' },
+      { value: 'goodies', label: 'Лакомства' },
+    ],
+  },
+  TypeForCare: {
+    legend: 'Тип',
+    options: [
+      { value: 'shampoos-conditioners', label: 'Шампуни и бальзамы' },
+      { value: 'lotions-sprays', label: 'Лосьоны и спреи' },
+      { value: 'brushes-combs', label: 'Расчески и дешеддеры' },
+      { value: 'clippers', label: 'Машинки для стрижки' },
+      { value: 'grooming-kits', label: 'Наборы для груминга' },
+      { value: 'toothbrushes', label: 'Зубные щётки' },
+      { value: 'nail-clippers', label: 'Ножницы для стрижки когтей' },
+      { value: 'view-all', label: 'Посмотреть все' },
+    ],
+  },
+  TypeForToilet: {
+    legend: 'Тип',
+    options: [
+      { value: 'litter-boxes', label: 'Лотки, туалеты' },
+      { value: 'litter', label: 'Наполнители' },
+      { value: 'scoops-mats', label: 'Совки, коврики' },
+      { value: 'pads-diapers', label: 'Пелёнки и подгузники' },
+      { value: 'cleaning-supplies', label: 'Средства для уборки' },
+      { value: 'potty-training', label: 'Средства приучения' },
+    ],
+  },
+  TypeForToysAndClothes: {
+    legend: 'Тип',
+    options: [
+      { value: 'teasers', label: 'Дразнилки' },
+      { value: 'food-dispensing-toys', label: 'Игры с едой' },
+      { value: 'clothes', label: 'Одежда' },
+      { value: 'leashes-collars', label: 'Поводки и ошейники' },
+      { value: 'accessories', label: 'Аксессуары' },
+    ],
+  },
+  brands: {
+    legend: 'Бренды',
+    options: [
+      { value: 'Royal Conin', label: 'Royal Conin' },
+      { value: 'Pro Plan', label: 'Pro Plan' },
+      { value: 'Purina One', label: 'Purina One' },
+      { value: 'Farmina', label: 'Farmina' },
+      { value: 'Alpha Pet', label: 'Alpha Pet' },
+    ],
+  },
+  needs: {
+    legend: 'Потребности',
+    options: [
+        {
+          label: 'Для стерилизованных',
+          value: 'sterilized'
+        },
+        {
+          label: 'Для чувствительного пищеварения',
+          value: 'sensitive-digestion'
+        },
+        {
+          label: 'Для котят',
+          value: 'kittens'
+        },
+        {
+          label: 'С избыточным весом',
+          value: 'overweight'
+        },
+        {
+          label: 'Для взрослых и пожилых',
+          value: 'Adult'
+        }
+      ],
+  },
+  feedTypes: {
+    legend: 'Тип корма',
+    options: [
+        {
+          label: 'Сухой',
+          value: 'dry'
+        },
+        {
+          label: 'Влажный',
+          value: 'wet'
+        },
+        {
+          label: 'Лакомства',
+          value: 'goodies'
+        }
+      ],
+  },
+  petSize: {
+    legend: 'Размер питомца',
+    options: [
+        {
+          label: 'До 5 кг',
+          value: 'under5'
+        },
+        {
+          label: 'От 5 до 10 кг',
+          value: '5-10'
+        },
+        {
+          label: '10 -15 кг',
+          value: '10-15'
+        },
+        {
+          label: '15 -20 кг',
+          value: '15-20'
+        },
+        {
+          label: 'От 20 кг',
+          value: 'over20'
+        }
+      ],
+  },
+  // Добавьте другие типы фильтров по аналогии
+};
 
-const age = [
-  {
-    label: 'Для маленьких',
-    value: 'young'
-  },
-  {
-    label: 'Для взрослых',
-    value: 'adult'
-  },
-  {
-    label: 'Для пожилых',
-    value: 'elderly'
-  }
-];
-
-const types = [
-  {
-    label: 'Корм, лакомства',
-    value: 'feed-goodies'
-  },
-  {
-    label: 'Игрушки, амуниция',
-    value: 'toys-ammunition'
-  },
-  {
-    label: 'Для туалета',
-    value: 'toilet'
-  },
-  {
-    label: 'Гигиена и уход',
-    value: 'hygiene'
-  },
-  {
-    label: 'Миски, лежанки, домики',
-    value: 'bowls-beds-houses'
-  },
-  {
-    label: 'Ветаптека',
-    value: 'vetpharmacy'
-  }
-];
-
-const brands = [
-  {
-    label: 'Royal Conin',
-    value: 'Royal Conin'
-  },
-  {
-    label: 'Pro Plan',
-    value: 'Pro Plan'
-  },
-  {
-    label: 'Purina One',
-    value: 'Purina One'
-  },
-  {
-    label: 'Farmina',
-    value: 'Farmina'
-  },
-  {
-    label: 'Alpha Pet',
-    value: 'Alpha Pet'
-  }
-];
-
-const needs = [
-  {
-    label: 'Для стерилизованных',
-    value: 'sterilized'
-  },
-  {
-    label: 'Для чувствительного пищеварения',
-    value: 'sensitive-digestion'
-  },
-  {
-    label: 'Для котят',
-    value: 'kittens'
-  },
-  {
-    label: 'С избыточным весом',
-    value: 'overweight'
-  },
-  {
-    label: 'Для взрослых и пожилых',
-    value: 'Adult'
-  }
-];
-
-const feedTypes = [
-  {
-    label: 'Сухой',
-    value: 'dry'
-  },
-  {
-    label: 'Влажный',
-    value: 'wet'
-  },
-  {
-    label: 'Лакомства',
-    value: 'goodies'
-  }
-];
-
-const petSize = [
-  {
-    label: 'До 5 кг',
-    value: 'under5'
-  },
-  {
-    label: 'От 5 до 10 кг',
-    value: '5-10'
-  },
-  {
-    label: '10 -15 кг',
-    value: '10-15'
-  },
-  {
-    label: '15 -20 кг',
-    value: '15-20'
-  },
-  {
-    label: 'От 20 кг',
-    value: 'over20'
-  }
-];
 
 export {
   animals,
-  deliveryTime,
-  age,
-  types,
-  brands,
-  needs,
-  feedTypes,
-  petSize
+  filterData
 }
+
