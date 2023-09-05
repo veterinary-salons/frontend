@@ -35,7 +35,7 @@ export default {
       type: 'boolean',
       description: 'Обязательное поле',
     },
-    setInput: {
+    getInput: {
       type: 'func',
       description: 'Callback функция, получает value',
     },
@@ -70,7 +70,7 @@ Email.args = {
   maxLength: 20,
   minLength: 2,
   required: true,
-  setInput: () => {},
+  getInput: () => {},
   id: 'email',
 };
 
@@ -81,7 +81,7 @@ Password.args = {
   maxLength: 20,
   minLength: 2,
   required: true,
-  setInput: () => {},
+  getInput: () => {},
   id: 'password',
   position: 'button-eye_position',
 };
