@@ -1,20 +1,24 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
-
 function NotificationMessage({ imageNumber, title, text, to, buttonText }) {
+  const navigate = useNavigate();
+
   return (
     <div className={classes.notification}>
       <div className={classes[`notification__image-${imageNumber}`]} />
       <h1 className={classes.notification__title}>{title}</h1>
       <p className={classes.notification__message}>{text}</p>
-      <Link to={to}>
-        <Button variant="purple-filled" size="small" type="button">
+        <Button
+          variant="purple-filled"
+          size="medium"
+          type="button"
+          onClick={() => navigate(to)}
+        >
           {buttonText}
         </Button>
-      </Link>
     </div>
   );
 }

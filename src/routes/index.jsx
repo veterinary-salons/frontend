@@ -22,7 +22,7 @@ import {
   dataSelectedProducts,
   dataArticle,
 } from '../assets/constants/temporaryData';
-import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain'
+// import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain'
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(

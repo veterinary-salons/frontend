@@ -1,33 +1,24 @@
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 import CardGood from '../../components/CardGood/index';
 import NotificationMessage from '../../components/NotificationMessage/index';
 import classes from './style.module.scss';
 
-const SelectedProducts = ({ dataProducts }) => {
-  const navigate = useNavigate();
-
-  const handleNvigate = () => {
-    navigate('/goods', { relative: 'path' });
-  };
-
-  return (
-    <section className={classes['selected-products']}>
-      {dataProducts.length === 0 ? (
-        <NotificationMessage
-          imageNumber="10"
-          title="Тут пусто как в миске этого котика"
-          text="Неужели вы ещё не видели как много у нас 
-    полезного и интересного?"
-          onClick={handleNvigate}
-          buttonText="Выбрать товары"
-        />
-      ) : (
-        dataProducts.map((i) => <CardGood {...i} key={i.id} />)
-      )}
-    </section>
-  );
-};
+const SelectedProducts = ({ dataProducts }) => (
+  <section className={classes['selected-products']}>
+    {dataProducts.length === 0 ? (
+      <NotificationMessage
+        imageNumber="10"
+        title="Тут пусто как в миске этого котика"
+        text="Неужели вы ещё не видели как много у нас 
+        полезного и интересного?"
+        to="/goods"
+        buttonText="Выбрать товары"
+      />
+    ) : (
+      dataProducts.map((i) => <CardGood {...i} key={i.id} />)
+    )}
+  </section>
+);
 
 SelectedProducts.propTypes = {
   dataProducts: PropTypes.arrayOf(
