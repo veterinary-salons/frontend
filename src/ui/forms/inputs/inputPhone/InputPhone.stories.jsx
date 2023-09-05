@@ -10,7 +10,7 @@ export default {
       type: 'tel',
       description: 'Вариант инпута',
     },
-    infoInput: {
+    setInput: {
       type: 'func',
       description: 'Callback функция, получает value',
     },
@@ -23,5 +23,5 @@ export const Default = Template.bind({});
 
 Default.args = {
   type: 'text',
-  infoInput: () => {},
+  setInput: () => {},
 };
