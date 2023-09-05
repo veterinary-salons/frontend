@@ -8,11 +8,13 @@ const Articles = ({ dataArticle }) => (
     <p className={classes.articles__paragraph}>
       Тут мы собираем самые полезные и интересные статьи про питомцев
     </p>
-    <div className={classes.articles__container}>
+    <ul className={classes.articles__container}>
       {dataArticle.map((i) => (
-        <ArticleCard {...i} key={i.id} />
+        <li className={classes.articles__li} key={i.id}>
+          <ArticleCard {...i} key={i.id} />
+        </li>
       ))}
-    </div>
+    </ul>
   </section>
 );
 
