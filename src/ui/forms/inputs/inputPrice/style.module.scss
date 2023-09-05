@@ -1,0 +1,30 @@
+.input {
+  font-family: 'Montserrat', Arial, sans-serif;
+  max-width: 144px;
+  height: 44px;
+  margin: 0;
+  border-radius: 8px;
+  width: 100%;
+  padding: 12px;
+  background: var(--grey-light-color, #9c9c9c);
+  border: 1px solid var(--success-color, #9c9c9c);
+  border: none;
+  outline: 0;
+  color: var(--text-grey-color, #9c9c9c);
+  border-radius: 8px;
+
+  &:focus {
+    color: var(--primary-text-color, #0f0f0f);
+  }
+
+  &_color {
+    color: var(--primary-text-color, #0f0f0f);
+  }
+
+  &_disabel {
+    opacity: 0.5;
+  }
+  &_success {
+    border: 1px solid var(--success-color, #03a600);
+  }
+}
