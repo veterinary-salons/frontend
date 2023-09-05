@@ -13,16 +13,8 @@ import Main from '../pages/Main/Main';
 import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
-import SelectedProducts from '../pages/SelectedProducts';
-import SelectedServices from '../pages/SelectedServices/index';
-import SelectedArticles from '../pages/SelectedArticles';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import {
-  dataSelectedProducts,
-  dataArticle,
-} from '../assets/constants/temporaryData';
-import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain'
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
@@ -45,14 +37,14 @@ const router = createBrowserRouter(
       <Route path="goods" element={<h2>Здесь будут товары</h2>} />
       <Route path="magazine" element={<h2>Здесь будет журнал</h2>} />
       <Route path="favourites" element={<Favourites />}>
+        <Route path="goods" element={<h2>Здесь будут сохраненные товары</h2>} />
         <Route
-          path="goods"
-          element={<SelectedProducts dataProducts={dataSelectedProducts} />}
+          path="services"
+          element={<h2>Здесь будут сохраненные услуги</h2>}
         />
-        <Route path="services" element={<SelectedServices />} />
         <Route
           path="articles"
-          element={<SelectedArticles dataArticle={dataArticle} />}
+          element={<h2>Здесь будут сохраненные статьи</h2>}
         />
       </Route>
       <Route path="basket" element={<h2>Здесь будет корзина</h2>} />
