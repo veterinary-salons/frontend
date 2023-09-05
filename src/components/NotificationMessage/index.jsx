@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
+
 function NotificationMessage({ imageNumber, title, text, to, buttonText }) {
   return (
     <div className={classes.notification}>
