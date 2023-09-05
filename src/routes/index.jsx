@@ -22,7 +22,7 @@ import {
   dataSelectedProducts,
   dataArticle,
 } from '../assets/constants/temporaryData';
-import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain';
+import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain'
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
@@ -60,10 +60,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
-        path="test"
-        element={<GoodsFilterMain/>}
-      />
+      <Route path="test" element={<h2>Тест</h2>} />
     </Route>,
   ),
 );

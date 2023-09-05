@@ -70,18 +70,30 @@ function validatePhone(phone) {
   return { default: true };
 }
 
-const validateInput = (type, item, minLength) => {
+function validatePrice(text) {
+  if (text !== undefined) {
+    if (text.length > 1) {
+      return { invalid: true };
+    }
+  }
+  return { invalid: false };
+}
+
+const validateInput = (type, item) => {
   if (type === 'email') {
     return validateEmail(item);
   }
   if (type === 'text') {
-    return validateText(item, minLength);
+    return validateText(item);
   }
   if (type === 'password') {
     return validatePassword(item);
   }
   if (type === 'tel') {
     return validatePhone(item);
+  }
+  if (type === 'price') {
+    return validatePrice(item);
   }
   return '';
 };
