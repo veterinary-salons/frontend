@@ -9,7 +9,7 @@ import {
   placeholderPhone,
 } from '../../../../assets/constants/constants';
 
-const InputPhone = ({ setInput, initialValue }) => {
+const InputPhone = ({ getInput, initialValue }) => {
   const typeTel = 'tel';
   const [tel, setTel] = useState(initialValue);
   const styleInput = cn(
@@ -35,7 +35,7 @@ const InputPhone = ({ setInput, initialValue }) => {
   );
 
   useEffect(() => {
-    setInput(tel);
+    getInput(tel);
   }, [tel]);
 
   return (
@@ -55,12 +55,12 @@ const InputPhone = ({ setInput, initialValue }) => {
 };
 
 InputPhone.propTypes = {
-  setInput: PropTypes.func,
+  getInput: PropTypes.func,
   initialValue: PropTypes.objectOf(PropTypes.string),
 };
 
 InputPhone.defaultProps = {
-  setInput: () => {},
+  getInput: () => {},
   initialValue: {},
 };
 

@@ -32,6 +32,12 @@
       color: var(--purple-pushed-color, #615779)
     }
   }
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
   &__add-btn {
     border: none;
     padding: 0;

@@ -12,7 +12,7 @@ const InputText = ({
   maxLength,
   minLength,
   required,
-  setInput,
+  getInput,
   disabled,
   id,
   position,
@@ -26,7 +26,7 @@ const InputText = ({
   };
 
   useEffect(() => {
-    setInput(values);
+    getInput(values);
   }, [values]);
 
   const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
@@ -91,7 +91,7 @@ InputText.propTypes = {
   maxLength: PropTypes.number,
   minLength: PropTypes.number,
   required: PropTypes.bool,
-  setInput: PropTypes.func,
+  getInput: PropTypes.func,
   disabled: PropTypes.bool,
   id: PropTypes.string,
   position: PropTypes.string,
@@ -105,7 +105,7 @@ InputText.defaultProps = {
   maxLength: 8,
   minLength: 2,
   required: true,
-  setInput: () => {},
+  getInput: () => {},
   disabled: false,
   id: 'id',
   position: 'button-eye_position',
