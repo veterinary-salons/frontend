@@ -90,6 +90,64 @@ const arrayFilterList = [
   },
 ];
 
+const arrayServicesVet = [
+  {
+    id: 1,
+    text: 'консультация',
+  },
+  {
+    id: 2,
+    text: 'диагностика заболевания и лечение',
+  },
+  {
+    id: 3,
+    text: 'введение инъекции',
+  },
+  {
+    id: 4,
+    text: 'вакцинация',
+  },
+  {
+    id: 5,
+    text: 'стерилизация',
+  },
+  {
+    id: 6,
+    text: 'оформление ветпаспорта',
+  },
+  {
+    id: 7,
+    text: 'усыпление',
+  },
+  {
+    id: 8,
+    text: 'другая',
+  },
+];
+
+const arrayServicesDate = [
+  {
+    id: 1,
+    text: 'выбрать дату',
+  },
+  {
+    id: 2,
+    text: 'выбрать дату',
+  },
+  {
+    id: 3,
+    text: 'выбрать дату',
+  },
+  {
+    id: 4,
+    text: 'выбрать дату',
+  },
+  {
+    id: 5,
+    text: 'выбрать дату',
+  }
+];
+
 const arrayTimeList = [
   {
     id: 1,
@@ -133,6 +191,8 @@ export {
   placeholderPhone,
   arrayAnimals,
   arrayFilterList,
+  arrayServicesVet,
+  arrayServicesDate,
   arrayTimeList,
   arrImgOrderCard,
 };

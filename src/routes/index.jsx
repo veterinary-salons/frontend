@@ -15,8 +15,9 @@ import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain';
+// import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain';
 import petList from '../assets/constants/petList';
+import ServicesFilterMain from '../components/Filters/ServicesFilters/ServicesFilterMain';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -55,7 +56,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<GoodsFilterMain/>}
+        element={<ServicesFilterMain/>}
       />
     </Route>,
   ),

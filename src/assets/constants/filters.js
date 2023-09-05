@@ -184,6 +184,42 @@ const filterData = {
         }
       ],
   },
+  specialists: {
+    legend: 'Выберите специалиста',
+    checkboxType: 'radio',
+    options: [
+        {
+          label: 'Ветеринар',
+          value: 'vet'
+        },
+        {
+          label: 'Грумер',
+          value: 'groomer'
+        },
+        {
+          label: 'Кинолог',
+          value: 'cynologist'
+        },
+        {
+          label: 'Зоо-няня',
+          value: 'pet-sitter'
+        }
+      ],
+  },
+  servicePlace: {
+    legend: 'Где хотите получить услугу',
+    checkboxType: 'checkbox',
+    options: [
+        {
+          label: 'Я приеду к специалисту',
+          value: 'specialists-place'
+        },
+        {
+          label: 'Специалист приедет ко мне',
+          value: 'my-place'
+        }
+      ],
+  },
   // Добавьте другие типы фильтров по аналогии
 };
 
