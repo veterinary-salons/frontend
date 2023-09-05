@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-// import { useState } from 'react';
 import classes from './style.module.scss';
 import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
 import { filterData } from '../../../assets/constants/filters';
@@ -8,12 +7,13 @@ import { filterData } from '../../../assets/constants/filters';
 const availableTypes = [...Object.keys(filterData)];
 
 function CheckboxFilter({
-    // selectedFilters,
-    // onFilterChange, 
-    type,
-    isActiveShowAllButton,
-    getCheckbox
-  }) {
+  // selectedFilters,
+  // onFilterChange,
+  type,
+  isActiveShowAllButton,
+  getCheckbox,
+  values,
+}) {
   const { legend, checkboxType, options } = filterData[type] || {};
   // const [selectedOptions, setSelectedOptions] = useState(selectedFilters);
 
@@ -47,24 +47,29 @@ function CheckboxFilter({
           // onChange={() => handleOptionChange(item.value)}
           type={checkboxType}
           htmlType={checkboxType}
-          checked={false}
+          checked={
+            item.name
+              ? values[item.name] === item.value
+              : values[item.value] === item.value
+          }
           value={item.value}
-          name={type}
-          getCheckbox={(evt) => {getCheckbox(evt); console.log(evt)}}
+          name={item.name ? item.name : item.value}
+          getCheckbox={getCheckbox}
         >
           {item.label}
         </Checkbox>
       ))}
-      {isActiveShowAllButton && <div key="show-all">
-        <button
-          className={[classes['filter__add-btn']]}
-          type="button"
-          onClick={() => {}}
-        >
-          Посмотреть все
-        </button>
-      </div>
-      }
+      {isActiveShowAllButton && (
+        <div key="show-all">
+          <button
+            className={[classes['filter__add-btn']]}
+            type="button"
+            onClick={() => {}}
+          >
+            Посмотреть все
+          </button>
+        </div>
+      )}
     </fieldset>
   );
 }
@@ -74,12 +79,14 @@ CheckboxFilter.propTypes = {
   // onFilterChange: PropTypes.func,
   isActiveShowAllButton: PropTypes.bool,
   type: PropTypes.oneOf(availableTypes).isRequired, // Пропс для выбора типа типа
-  getCheckbox: PropTypes.func.isRequired
+  getCheckbox: PropTypes.func.isRequired,
+  values: PropTypes.objectOf(PropTypes.string),
 };
 
 CheckboxFilter.defaultProps = {
   // selectedFilters: [],
   isActiveShowAllButton: false,
+  values: {},
   // onFilterChange: () => {},
 };
 

@@ -30,10 +30,10 @@ const filterData = {
     legend: 'Сроки доставки',
     checkboxType: 'radio',
     options: [
-      { value: 'today', label: 'Сегодня' },
-      { value: 'tomorrow', label: 'Завтра' },
-      { value: '3days', label: 'До 3 дней' },
-      { value: '7days', label: 'До 7 дней' },
+      {name: 'delivery', value: 'today', label: 'Сегодня' },
+      {name: 'delivery', value: 'tomorrow', label: 'Завтра' },
+      {name: 'delivery', value: '3days', label: 'До 3 дней' },
+      {name: 'delivery', value: '7days', label: 'До 7 дней' },
     ],
   },
   age: {
@@ -188,19 +188,23 @@ const filterData = {
     legend: 'Выберите специалиста',
     checkboxType: 'radio',
     options: [
-        {
+      {
+          name: 'test',
           label: 'Ветеринар',
           value: 'vet'
         },
-        {
+      {
+          name: 'test',
           label: 'Грумер',
           value: 'groomer'
         },
-        {
+      {
+          name: 'test',
           label: 'Кинолог',
           value: 'cynologist'
         },
-        {
+      {
+          name: 'test',
           label: 'Зоо-няня',
           value: 'pet-sitter'
         }

@@ -3,7 +3,6 @@
   width: 500px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
   font-family: 'Montserrat';
   font-weight: 500;
 }
@@ -22,16 +21,16 @@
   padding: 0 10px 0 16px;
   color: var(--primary-text-color);
   border-radius: 8px;
-  border: 1px solid var(--grey-color, #D4D4D4);
+  border: 1px solid var(--grey-color, #d4d4d4);
   cursor: pointer;
   background-color: transparent;
   &:hover {
-    color: var(--primary-text-color-opacity-7, rgba(15, 15, 15, .7));
+    color: var(--primary-text-color-opacity-7, rgba(15, 15, 15, 0.7));
   }
 }
 
 .select_action {
-  background-color: var(--purple-pale-color, #F9F7FC);
+  background-color: var(--purple-pale-color, #f9f7fc);
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   border-bottom: none;
@@ -52,6 +51,7 @@
   position: absolute;
   top: 45px;
   box-shadow: 0 10px 10px 0 rgba(147, 132, 183, 0.3);
+  z-index: 1;
 }
 
 .menu-btn {
@@ -70,7 +70,7 @@
 }
 
 .menu-btn:hover {
-  color: var(--primary-text-color-opacity-7, rgba(15, 15, 15, .7));
+  color: var(--primary-text-color-opacity-7, rgba(15, 15, 15, 0.7));
 }
 
 .menu-open {

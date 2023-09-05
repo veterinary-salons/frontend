@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import classes from './checkbox.module.scss';
@@ -16,32 +15,27 @@ const Checkbox = ({
   agreement,
   children,
   required,
-  getCheckbox
+  getCheckbox,
 }) => {
   const visibleCN = classNames(classes[type]);
   const wrapperCN = classNames(
     classes.label,
     reverse ? classes.reverse : null,
-    type==='radio' ? classes['label-radio'] : null,
+    type === 'radio' ? classes['label-radio'] : null,
     agreement ? classes['label-agreement'] : null,
     disabled ? classes.label_disabled : null,
   );
-  const [isChecked, setIsChecked] = useState(checked);
 
-  const handleCheckboxChange = (evt) => {
-    console.log(evt);
-    getCheckbox(evt, {[name]: isChecked ? value : undefined})
-    setIsChecked(state => !state)
-  }
+  const handleCheckboxChange = (e) => {
+    getCheckbox(!checked ? { [name]: e.target.value } : { [name]: null });
+  };
 
   return (
-    <label htmlFor={name} className={wrapperCN}
-    style={{ gap, width}}
-    >
+    // eslint-disable-next-line jsx-a11y/label-has-associated-control
+    <label className={wrapperCN} style={{ gap, width }}>
       <input
-        id={value}
-        onChange={(evt) => handleCheckboxChange(evt)}
-        checked={isChecked}
+        onChange={handleCheckboxChange}
+        checked={checked}
         type={htmlType}
         className={classes.checkboxButton}
         value={value}
@@ -65,7 +59,7 @@ Checkbox.defaultProps = {
   disabled: false,
   agreement: false,
   children: null,
-  required: false
+  required: false,
 };
 
 Checkbox.propTypes = {
@@ -81,7 +75,7 @@ Checkbox.propTypes = {
   agreement: PropTypes.bool,
   children: PropTypes.node,
   required: PropTypes.bool,
-  getCheckbox: PropTypes.func.isRequired
+  getCheckbox: PropTypes.func.isRequired,
 };
 
 export default Checkbox;
