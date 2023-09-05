@@ -7,6 +7,7 @@ import {
   arrayServicesVet,
   arrayServicesDate,
 } from '../../../../assets/constants/constants';
+import InputPrice from '../../../../ui/forms/inputs/inputPrice';
 
 function ServicesFilterMain() {
   const [values, setValues] = useState({});
@@ -54,7 +55,10 @@ function ServicesFilterMain() {
       </fieldset>
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>Цена</legend>
-        {/* TODO: Inputs with price */}
+        <div className={classes.filter__inputs}>
+          <InputPrice />
+          <InputPrice prefix="до" />
+        </div>
         <Button
           onClick={() => {}}
           variant="purple-filled"

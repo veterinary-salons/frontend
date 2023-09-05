@@ -4,6 +4,7 @@ import CheckboxFilter from '../../CheckboxFilter';
 import classes from './style.module.scss';
 import Checkbox from '../../../../ui/forms/checkboxes/checkbox/checkbox';
 import { animals } from '../../../../assets/constants/filters';
+import InputPrice from '../../../../ui/forms/inputs/inputPrice';
 
 function GoodsFilterMain() {
   const [values, setValues] = useState({});
@@ -46,7 +47,10 @@ function GoodsFilterMain() {
       <CheckboxFilter type="petSize" />
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>Цена</legend>
-        {/* TODO: Inputs with price */}
+        <div className={classes.filter__inputs}>
+          <InputPrice/>
+          <InputPrice prefix='до'/>
+        </div>
         <Checkbox
           onChange={() => {}}
           type="checkbox"
