@@ -15,6 +15,7 @@
 
     /* // Цвет текста */
     --primary-text-color: #0F0F0F;
+    --primary-text-color-opacity-7: rgba(15, 15, 15, .7);
     --text-grey-color: #9C9C9C;
     --text-white-color: #FFF;
     --text-button-color: var(--purple-pushed-color);

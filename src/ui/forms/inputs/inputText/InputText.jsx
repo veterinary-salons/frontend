@@ -30,6 +30,7 @@ const InputText = ({
     if (initialValue) {
       setValues(initialValue);
     }
+    // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
