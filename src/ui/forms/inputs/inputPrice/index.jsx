@@ -1,50 +1,57 @@
-import { useState } from 'react';
+import CurrencyInput from 'react-currency-input-field';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import validateInput from '../../../../assets/constants/validation';
-import currency from '../../../../assets/images/icon/currency/currency.png';
+import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
+import validateInput from '../../../../assets/constants/validation';
 
-const InputPrice = ({ disabel, initialValue, name }) => {
+const InputPrice = ({ prefix, name, initialValue, disabled, setInput }) => {
   const [values, setValues] = useState(initialValue);
   const getClassContainer = classNames(
-    classes.container,
+    classes.input,
     {
-      [classes.container_disabel]: disabel,
+      [classes.input_disabel]: disabled,
     },
     {
-      [classes.container_success]: validateInput('text', values[name]).invalid,
+      [classes.input_success]: validateInput('price', values).invalid,
     },
   );
 
-  const getClassInput = classNames(classes.input);
+  useEffect(() => {
+    setInput(values);
+  }, [values]);
 
   return (
-    <div className={getClassContainer}>
-      <span className={classes.span}>от</span>
-      <input
-        maxLength={6}
-        type="text"
-        disabled={disabel}
-        className={getClassInput}
-        onChange={(e) => setValues({ ...values, [name]: e.target.value })}
-        value={values[name]}
-      />
-      <img className={classes.currency} src={currency} alt="рубль" />
-    </div>
+    <CurrencyInput
+      className={getClassContainer}
+      id="input-example"
+      name={name}
+      placeholder={`${prefix} 0 ₽`}
+      prefix={`${prefix} `}
+      suffix=" ₽"
+      maxLength={6}
+      defaultValue={0}
+      decimalsLimit={1}
+      onValueChange={(value) => setValues(value)}
+      disabled={disabled}
+    />
   );
 };
 
 InputPrice.propTypes = {
-  disabel: PropTypes.bool,
-  initialValue: PropTypes.objectOf(PropTypes.string),
+  prefix: PropTypes.string,
+  disabled: PropTypes.bool,
   name: PropTypes.string,
+  initialValue: PropTypes.objectOf(PropTypes.string),
+  setInput: PropTypes.func,
 };
 
 InputPrice.defaultProps = {
-  disabel: false,
-  initialValue: {},
+  prefix: 'от',
+  disabled: false,
   name: 'input-price',
+  initialValue: {},
+  setInput: () => {},
 };
 
 export default InputPrice;
