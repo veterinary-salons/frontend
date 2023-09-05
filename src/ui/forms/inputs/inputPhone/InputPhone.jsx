@@ -9,38 +9,40 @@ import {
   placeholderPhone,
 } from '../../../../assets/constants/constants';
 
-const InputPhone = ({ setInput, initialValue }) => {
+const InputPhone = ({ getInput, initialValue }) => {
   const typeTel = 'tel';
   const [tel, setTel] = useState(initialValue);
   const styleInput = cn(
     style.input,
     {
-      [style['input-default']]: validateInput(typeTel, tel.tel).default,
+      [style['input-default']]: validateInput(typeTel, undefined, tel.tel).default,
     },
     {
-      [style['input-error']]: !validateInput(typeTel, tel.tel).invalid,
+      [style['input-error']]: !validateInput(typeTel, undefined, tel.tel).invalid,
     },
     {
-      [style['input-success']]: validateInput(typeTel, tel.tel).invalid,
+      [style['input-success']]: validateInput(typeTel, undefined, tel.tel).invalid,
     },
   );
   const styleSpan = cn(
     style['input-span-error'],
     {
-      [style['input-error_activ']]: !validateInput(typeTel, tel.tel).invalid,
+      [style['input-error_activ']]: !validateInput(typeTel, undefined, tel.tel).invalid,
     },
     {
-      [style['input-span-true']]: validateInput(typeTel, tel.tel).invalid,
+      [style['input-span-true']]: validateInput(typeTel, undefined, tel.tel).invalid,
     },
   );
 
   useEffect(() => {
-    setInput(tel);
+    getInput(tel);
+    // eslint-disable-next-line
   }, [tel]);
 
   return (
     <div className={style.container}>
       <TextMaskInput
+        autoComplete='tel'
         placeholder={placeholderPhone}
         className={styleInput}
         mask={maskPhone}
@@ -48,19 +50,19 @@ const InputPhone = ({ setInput, initialValue }) => {
         value={tel.tel}
       />
       <span className={styleSpan}>
-        {validateInput(typeTel, tel.tel).message}
+        {validateInput(typeTel, undefined, tel.tel).message}
       </span>
     </div>
   );
 };
 
 InputPhone.propTypes = {
-  setInput: PropTypes.func,
+  getInput: PropTypes.func,
   initialValue: PropTypes.objectOf(PropTypes.string),
 };
 
 InputPhone.defaultProps = {
-  setInput: () => {},
+  getInput: () => {},
   initialValue: {},
 };
 

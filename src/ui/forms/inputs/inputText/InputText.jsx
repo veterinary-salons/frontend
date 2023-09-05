@@ -12,13 +12,14 @@ const InputText = ({
   maxLength,
   minLength,
   required,
-  setInput,
+  getInput,
   disabled,
   id,
   position,
+  autoComplete,
   initialValue,
 }) => {
-  const [values, setValues] = useState(initialValue);
+  const [values, setValues] = useState({ [name]: '' });
   const [isClick, setIsClick] = useState(false);
 
   const handleClick = () => {
@@ -26,7 +27,14 @@ const InputText = ({
   };
 
   useEffect(() => {
-    setInput(values);
+    if (initialValue) {
+      setValues(initialValue);
+    }
+  }, []);
+
+  useEffect(() => {
+    getInput(values);
+    // eslint-disable-next-line
   }, [values]);
 
   const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
@@ -34,22 +42,24 @@ const InputText = ({
   const getClassItem = cn(
     style.input,
     {
-      [style['input-default']]: validateInput(type, values[name]).default,
+      [style['input-default']]: validateInput(type, name, values[name]).default,
     },
     {
-      [style['input-error']]: !validateInput(type, values[name]).invalid,
+      [style['input-error']]: !validateInput(type, name, values[name]).invalid,
     },
     {
-      [style['input-success']]: validateInput(type, values[name]).invalid,
+      [style['input-success']]: validateInput(type, name, values[name]).invalid,
     },
   );
   const getClassSpan = cn(
     style['input-span-error'],
     {
-      [style['input-error_activ']]: !validateInput(type, values[name]).invalid,
+      [style['input-error_activ']]: !validateInput(type, name, values[name])
+        .invalid,
     },
     {
-      [style['input-span-true']]: validateInput(type, values[name]).invalid,
+      [style['input-span-true']]: validateInput(type, name, values[name])
+        .invalid,
     },
   );
 
@@ -67,6 +77,7 @@ const InputText = ({
         value={values[name]}
         disabled={disabled}
         id={id}
+        autoComplete={autoComplete}
       />
       {type === 'password' && (
         <BtnEye
@@ -77,7 +88,7 @@ const InputText = ({
       )}
       {!disabled && (
         <span className={getClassSpan}>
-          {validateInput(type, values[name]).message}
+          {validateInput(type, name, values[name]).message}
         </span>
       )}
     </div>
@@ -91,10 +102,11 @@ InputText.propTypes = {
   maxLength: PropTypes.number,
   minLength: PropTypes.number,
   required: PropTypes.bool,
-  setInput: PropTypes.func,
+  getInput: PropTypes.func,
   disabled: PropTypes.bool,
   id: PropTypes.string,
   position: PropTypes.string,
+  autoComplete: PropTypes.string,
   initialValue: PropTypes.objectOf(PropTypes.string),
 };
 
@@ -105,11 +117,12 @@ InputText.defaultProps = {
   maxLength: 8,
   minLength: 2,
   required: true,
-  setInput: () => {},
+  getInput: () => {},
   disabled: false,
   id: 'id',
   position: 'button-eye_position',
-  initialValue: {},
+  autoComplete: '',
+  initialValue: null,
 };
 
 export default InputText;
