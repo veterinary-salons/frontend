@@ -92,6 +92,15 @@ function validatePhone(value) {
   return { default: true };
 }
 
+function validatePrice(value) {
+  if (value !== undefined) {
+    if (value.length > 1) {
+      return { invalid: true };
+    }
+  }
+  return { invalid: false };
+}
+
 const validateInput = (type, name, value) => {
   if (type === 'email') {
     return validateEmail(value);
@@ -107,6 +116,9 @@ const validateInput = (type, name, value) => {
   }
   if (type === 'tel') {
     return validatePhone(value);
+  }
+  if (type === 'price') {
+    return validatePrice(value);
   }
   return '';
 };

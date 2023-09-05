@@ -16,8 +16,6 @@ import ProfileGoods from '../pages/ProfileGoods';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import petList from '../assets/constants/petList';
-// import RegistrationForm from '../components/RegistrationForm';
-import EnterForm from '../components/EnterForm';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -54,15 +52,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
-        path="test"
-        element={
-          <>
-            {/* <RegistrationForm/> */}
-            <EnterForm />
-          </>
-        }
-      />
+      <Route path="test" element={<h2>Тест</h2>} />
     </Route>,
   ),
 );

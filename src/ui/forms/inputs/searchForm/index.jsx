@@ -44,7 +44,7 @@ const SearchForm = ({
         type="submit"
         className={classStyle['search-container__submit']}
         disabled={disabled}
-        aria-label='Подтвердить поиск'
+        aria-label="Подтвердить поиск"
       />
     </form>
   );
