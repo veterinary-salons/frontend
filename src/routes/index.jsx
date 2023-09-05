@@ -15,6 +15,7 @@ import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
+import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain';
 import petList from '../assets/constants/petList';
 import InputPrice from '../ui/forms/inputs/inputPrice';
 
@@ -53,7 +54,10 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<InputPrice />} />
+      <Route
+        path="test"
+        element={<GoodsFilterMain/>}
+      />
     </Route>,
   ),
 );
