@@ -44,7 +44,6 @@ function CheckboxFilter({
       {options.map((item) => (
         <Checkbox
           key={item.value}
-          // onChange={() => handleOptionChange(item.value)}
           type={checkboxType}
           htmlType={checkboxType}
           checked={

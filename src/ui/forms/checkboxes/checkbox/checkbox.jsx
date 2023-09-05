@@ -9,7 +9,6 @@ const Checkbox = ({
   value,
   name,
   reverse,
-  gap,
   width,
   disabled,
   agreement,
@@ -32,7 +31,7 @@ const Checkbox = ({
 
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={wrapperCN} style={{ gap, width }}>
+    <label className={wrapperCN} style={{width}}>
       <input
         onChange={handleCheckboxChange}
         checked={checked}
@@ -54,12 +53,11 @@ Checkbox.defaultProps = {
   checked: false,
   htmlType: 'checkbox',
   reverse: false,
-  gap: '8px',
   width: '',
   disabled: false,
   agreement: false,
   children: null,
-  required: false,
+  required: false
 };
 
 Checkbox.propTypes = {
@@ -69,13 +67,12 @@ Checkbox.propTypes = {
   value: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   reverse: PropTypes.bool,
-  gap: PropTypes.string,
   width: PropTypes.string,
   disabled: PropTypes.bool,
   agreement: PropTypes.bool,
   children: PropTypes.node,
   required: PropTypes.bool,
-  getCheckbox: PropTypes.func.isRequired,
+  getCheckbox: PropTypes.func.isRequired
 };
 
 export default Checkbox;

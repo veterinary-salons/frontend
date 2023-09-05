@@ -1,6 +1,7 @@
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
-const regexPossword = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+const regexUserName = /^[а-яА-Я\sё-]+$/;
+const regexPassword = /^[A-Za-z\d-.]+$/;
 const regexPhone =
   /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
 const maskPhone = [
@@ -185,7 +186,8 @@ const arrImgOrderCard = [
 export {
   regexEmail,
   regexText,
-  regexPossword,
+  regexUserName,
+  regexPassword,
   regexPhone,
   maskPhone,
   placeholderPhone,
@@ -196,3 +198,5 @@ export {
   arrayTimeList,
   arrImgOrderCard,
 };
+
+// /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/

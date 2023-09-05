@@ -47,7 +47,7 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>Имя и фамилия</legend>
         <InputText
-          infoInput={getInputValue}
+          getInput={getInputValue}
           minLength={2}
           maxLength={30}
           name="name"
@@ -56,7 +56,7 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
           initialValue={userData}
         />
         <InputText
-          infoInput={getInputValue}
+          getInput={getInputValue}
           maxLength={30}
           name="surname"
           placeholder="Фамилия"
@@ -66,12 +66,12 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
       </fieldset>
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>Номер телефона</legend>
-        <InputPhone infoInput={getInputValue} initialValue={userData} />
+        <InputPhone getInput={getInputValue} initialValue={userData} />
       </fieldset>
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>Адрес</legend>
         <InputText
-          infoInput={getInputValue}
+          getInput={getInputValue}
           maxLength={200}
           name="address"
           placeholder="Адрес"
@@ -82,7 +82,7 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
       <fieldset className={classes.form__fieldset}>
         <legend className={classes.form__legend}>Почта</legend>
         <InputText
-          infoInput={getInputValue}
+          getInput={getInputValue}
           id="text"
           maxLength={30}
           name="email"
@@ -91,7 +91,7 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
           initialValue={userData}
         />
         <InputText
-          infoInput={getInputValue}
+          getInput={getInputValue}
           id="password"
           maxLength={20}
           name="password"

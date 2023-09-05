@@ -1,99 +1,124 @@
-import { regexEmail, regexPossword, regexPhone } from './constants';
+import { regexEmail, regexUserName, regexPassword, regexPhone } from './constants';
 
-function validateEmail(email) {
-  if (email !== undefined) {
-    if (email.length === 0) {
-      return { invalid: false, message: 'Это поле не должно быть пустым!' };
+function validateEmail(value) {
+  if (value !== undefined) {
+    if (value.length === 0) {
+      return { invalid: false, message: 'Это поле не должно быть пустым' };
     }
-    if (!regexEmail.test(email.toLowerCase())) {
-      return { invalid: false, message: 'Неверный формат почты!' };
+    if (!regexEmail.test(value.toLowerCase())) {
+      return { invalid: false, message: 'Введите корректную почту' };
     }
-    if (regexEmail.test(email.toLowerCase())) {
-      return { invalid: true };
-    }
+    return { invalid: true, message: '' };
+
   }
   return { default: true };
 }
 
-function validateText(text) {
-  if (text !== undefined) {
-    if (text.length === 0) {
-      return { invalid: false, message: 'Это поле не должно быть пустым!' };
+function validateText(value) {
+  if (value !== undefined) {
+    if (value.length === 0) {
+      return { invalid: false, message: 'Это поле не должно быть пустым' };
     }
-    if (text.length > 2) {
+    if (value.length > 2) {
       return { invalid: true, message: '' };
     }
   }
   return { default: true };
 }
 
-function validatePassword(password) {
-  if (password !== undefined) {
-    if (password.length === 0) {
-      return { invalid: false, message: 'Это поле не должно быть пустым!' };
+function validateUserName(value) {
+  if (value !== undefined) {
+    if (value.length === 0) {
+      return { invalid: false, message: 'Заполните поле' };
     }
-    if (!regexPossword.test(password)) {
+    if (!regexUserName.test(value)) {
       return {
         invalid: false,
         message:
-          'Пароль должен состоять из восемь символов, минимум одна буква и одна цифра',
+          'Используйте только кириллицу, пробел и -'
       };
     }
-
-    if (regexPossword.test(password)) {
+    if (value.length < 2 || value.length > 15) {
       return {
-        invalid: true,
+        invalid: false,
+        message:
+          'Поле должно содержать от 2 до 15 символов'
       };
     }
+    return { invalid: true, message: '' };
   }
   return { default: true };
 }
 
-function validatePhone(phone) {
-  if (phone !== undefined) {
-    if (phone.length === 0) {
-      return { default: true };
+function validatePassword(value) {
+  if (value !== undefined) {
+    if (value.length === 0) {
+      return { invalid: false, message: 'Это поле не должно быть пустым' };
     }
-    if (!regexPhone.test(phone)) {
+    if (!regexPassword.test(value)) {
+      return {
+        invalid: false,
+        message:
+          'Используйте только латинские буквы, цифры, . и -',
+      };
+    }
+    if (value.length < 6 || value.length > 20) {
+      return {
+        invalid: false,
+        message:
+          'Пароль должен содержать от 6 до 20 символов'
+      };
+    }
+    return { invalid: true, message: '' };
+  }
+  return { default: true };
+}
+
+function validatePhone(value) {
+  if (value !== undefined) {
+    if (value.length === 0) {
+      return { invalid: false, message: 'Введите номер телефона' };
+    }
+    if (!regexPhone.test(value)) {
       return {
         invalid: false,
         message: 'Введите корректный номер',
       };
     }
-    if (regexPhone.test(phone)) {
-      return {
-        invalid: true,
-        message: 'Номер верный',
-      };
+    if (regexPhone.test(value)) {
+      return { invalid: true, message: '' };
     }
   }
   return { default: true };
 }
 
-function validatePrice(text) {
-  if (text !== undefined) {
-    if (text.length > 1) {
+function validatePrice(value) {
+  if (value !== undefined) {
+    if (value.length > 1) {
       return { invalid: true };
     }
   }
   return { invalid: false };
 }
 
-const validateInput = (type, item) => {
+const validateInput = (type, name, value) => {
   if (type === 'email') {
-    return validateEmail(item);
+    return validateEmail(value);
+  }
+  if (type === 'text' && (name==='userName' || name==='userSurname')) {
+    return validateUserName(value);
   }
   if (type === 'text') {
-    return validateText(item);
+    return validateText(value);
   }
   if (type === 'password') {
-    return validatePassword(item);
+    return validatePassword(value);
   }
   if (type === 'tel') {
-    return validatePhone(item);
+    return validatePhone(value);
   }
   if (type === 'price') {
-    return validatePrice(item);
+    return validatePrice(value);
   }
   return '';
 };

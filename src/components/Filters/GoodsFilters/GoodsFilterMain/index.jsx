@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import CheckboxFilter from '../../CheckboxFilter';
 import classes from './style.module.scss';
 import Checkbox from '../../../../ui/forms/checkboxes/checkbox/checkbox';
@@ -9,13 +9,15 @@ import InputPrice from '../../../../ui/forms/inputs/inputPrice';
 function GoodsFilterMain() {
   const [values, setValues] = useState({});
 
-  const handleFormChange = (evt, value) => {
-    setValues({
-      ...values,
-      ...value,
-    });
-    console.log(values, evt)
-  };
+  const handleFormChange = useCallback(
+    (value) => {
+      setValues({
+        ...values,
+        ...value,
+      });
+    },
+    [setValues, values],
+  );
 
   return (
     <form className={classes.filter} id='goods-filter'>
@@ -27,12 +29,28 @@ function GoodsFilterMain() {
           </Link>
         ))}
       </fieldset>
-      <CheckboxFilter type="deliveryTime" getCheckbox={(evt) => handleFormChange(evt)}/>
-      <CheckboxFilter type='age' />
-      <CheckboxFilter type="TypeForAll" />
-      <CheckboxFilter type="brands" isActiveShowAllButton/>
+      <CheckboxFilter
+        type="deliveryTime"
+        getCheckbox={handleFormChange}
+        values={values}
+      />
+      <CheckboxFilter
+        type='age'
+        getCheckbox={handleFormChange}
+        values={values}
+      />
+      <CheckboxFilter
+        type="TypeForAll"
+        getCheckbox={handleFormChange}
+        values={values}
+      />
+      <CheckboxFilter
+        type="brands"
+        getCheckbox={handleFormChange}
+        values={values}
+        isActiveShowAllButton
+      />
       <Checkbox
-        // onChange={handleCheck}
         type="switch"
         checked={false}
         htmlType="checkbox"
@@ -42,9 +60,21 @@ function GoodsFilterMain() {
       >
         Холистики
       </Checkbox>
-      <CheckboxFilter type="needs" />
-      <CheckboxFilter type="feedTypes" />
-      <CheckboxFilter type="petSize" />
+      <CheckboxFilter
+        type="needs"
+        getCheckbox={handleFormChange}
+        values={values}
+      />
+      <CheckboxFilter
+        type="feedTypes"
+        getCheckbox={handleFormChange}
+        values={values}
+      />
+      <CheckboxFilter
+        type="petSize"
+        getCheckbox={handleFormChange}
+        values={values}
+      />
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>Цена</legend>
         <div className={classes.filter__inputs}>
@@ -52,12 +82,12 @@ function GoodsFilterMain() {
           <InputPrice prefix='до'/>
         </div>
         <Checkbox
-          onChange={() => {}}
           type="checkbox"
           checked={false}
           htmlType="checkbox"
           value="sales"
           name="sales"
+          getCheckbox={handleFormChange}
         >
           Только со скидками
         </Checkbox>
