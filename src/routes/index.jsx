@@ -17,6 +17,7 @@ import Articles from '../pages/Articles/index';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
+import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain';
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
@@ -57,7 +58,10 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h1>test</h1>} />
+      <Route
+        path="test"
+        element={<GoodsFilterMain/>}
+      />
     </Route>,
   ),
 );
