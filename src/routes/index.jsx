@@ -21,6 +21,9 @@ import SelectedProducts from '../pages/SelectedProducts';
 import SelectedServices from '../pages/SelectedServices/index';
 import SelectedArticles from '../pages/SelectedArticles';
 
+// import PopupWithForm from '../components/PopupWithForm';
+import ServiceConfirmPopup from '../components/ServiceConfirmPopup';
+
 import {
   dataSelectedProducts,
   dataArticle,
@@ -67,7 +70,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>TEST</h2>}
+        element={<ServiceConfirmPopup />}
       />
     </Route>,
   ),
