@@ -68,11 +68,11 @@ const Header = ({ authorization }) => (
 );
 
 Header.propTypes = {
-  authorization: PropTypes.bool,
+  authorization: PropTypes.string,
 };
 
 Header.defaultProps = {
-  authorization: false,
+  authorization: '',
 };
 
 export default Header;

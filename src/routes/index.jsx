@@ -64,6 +64,10 @@ const router = createBrowserRouter(
       <Route path="basket" element={<h2>Здесь будет корзина</h2>} />
       <Route path="signin" element={<Login />} />
       <Route path="signup" element={<h2>Здесь будет регистрация</h2>} />
+      <Route
+        path="recovery"
+        element={<h2>Здесь будет восстановление аккаунта</h2>}
+      />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route path="test" element={<h2>TEST</h2>} />

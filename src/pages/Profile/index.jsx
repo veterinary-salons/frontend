@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 
 import ProfileUserData from '../../components/ProfileUserData';
@@ -7,6 +7,7 @@ import FormEditProfile from '../../components/FormEditProfile';
 
 const Profile = () => {
   const [isEditProfile, setIsEditProfile] = useState(false);
+  const navigate = useNavigate();
   // для демонстрации работы изменения данных профиля
   const [userData, setUserData] = useState({
     name: 'Ася',
@@ -21,7 +22,10 @@ const Profile = () => {
     setIsEditProfile(true);
   };
 
-  const handleClicExitProfile = () => {};
+  const handleClicExitProfile = () => {
+    localStorage.clear('auth');
+    navigate('/', { replace: true });
+  };
 
   const handleSubmitForm = () => {
     setIsEditProfile(false);

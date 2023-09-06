@@ -6,6 +6,9 @@ import {
 } from './constants';
 
 function validateEmail(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
   if (value !== undefined) {
     if (value.length === 0) {
       return { invalid: false, message: 'Это поле не должно быть пустым' };
@@ -13,46 +16,50 @@ function validateEmail(value) {
     if (!regexEmail.test(value.toLowerCase())) {
       return { invalid: false, message: 'Введите корректную почту' };
     }
-    return { invalid: true, message: '' };
   }
-  return { default: true };
+  return { invalid: true, message: '' };
 }
 
 function validateText(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
   if (value !== undefined) {
     if (value.length === 0) {
-      return { invalid: false, message: 'Это поле не должно быть пустым' };
+      return { invalid: true, message: 'Это поле не должно быть пустым' };
     }
     if (value.length > 2) {
       return { invalid: true, message: '' };
     }
   }
-  return { default: true };
+  return '';
 }
 
 function validateUserName(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
   if (value !== undefined) {
-    if (value.length === 0) {
-      return { invalid: false, message: 'Заполните поле' };
-    }
     if (!regexUserName.test(value)) {
       return {
-        invalid: false,
+        err: true,
         message: 'Используйте только кириллицу, пробел и -',
       };
     }
     if (value.length < 2 || value.length > 15) {
       return {
-        invalid: false,
+        err: false,
         message: 'Поле должно содержать от 2 до 15 символов',
       };
     }
-    return { invalid: true, message: '' };
   }
-  return { default: true };
+  return { invalid: true, message: '' };
 }
 
 function validatePassword(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
   if (value !== undefined) {
     if (value.length === 0) {
       return { invalid: false, message: 'Это поле не должно быть пустым' };
@@ -75,13 +82,16 @@ function validatePassword(value) {
 }
 
 function validatePhone(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
   if (value !== undefined) {
     if (value.length === 0) {
       return { invalid: false, message: 'Введите номер телефона' };
     }
     if (!regexPhone.test(value)) {
       return {
-        invalid: false,
+        err: true,
         message: 'Введите корректный номер',
       };
     }
@@ -89,7 +99,7 @@ function validatePhone(value) {
       return { invalid: true, message: '' };
     }
   }
-  return { default: true };
+  return '';
 }
 
 function validatePrice(value) {
