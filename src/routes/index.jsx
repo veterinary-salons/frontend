@@ -17,7 +17,6 @@ import Articles from '../pages/Articles/index';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
-import GoodsFilterMain from '../components/Filters/GoodsFilters/GoodsFilterMain';
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
