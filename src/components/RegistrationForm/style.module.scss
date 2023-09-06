@@ -1,0 +1,49 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  width: 500px;
+  margin: auto;
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    margin: 0;
+  }
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: none;
+    margin: 0;
+    padding: 0;
+    &_type_checkbox {
+      gap: 20px;
+    }
+  }
+  &__legend {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0 0 40px;
+    &_type_checkbox {
+      margin-bottom: 20px;
+    }
+  }
+  &__agreement {
+    margin: 0;
+  }
+  &__link {
+    text-decoration: none;
+    color: var(--link-color, #9384B7);
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

@@ -17,6 +17,15 @@ import Articles from '../pages/Articles/index';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
+import SelectedProducts from '../pages/SelectedProducts';
+import SelectedServices from '../pages/SelectedServices/index';
+import SelectedArticles from '../pages/SelectedArticles';
+
+import { dataLinksProfile } from '../assets/constants/dataPath';
+import {
+  dataSelectedProducts,
+  dataArticle,
+} from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
@@ -42,14 +51,14 @@ const router = createBrowserRouter(
         element={<Articles dataArticle={dataArticlePage} />}
       />
       <Route path="favourites" element={<Favourites />}>
-        <Route path="goods" element={<h2>Здесь будут сохраненные товары</h2>} />
         <Route
-          path="services"
-          element={<h2>Здесь будут сохраненные услуги</h2>}
+          path="goods"
+          element={<SelectedProducts dataProducts={dataSelectedProducts} />}
         />
+        <Route path="services" element={<SelectedServices />} />
         <Route
           path="articles"
-          element={<h2>Здесь будут сохраненные статьи</h2>}
+          element={<SelectedArticles dataArticle={dataArticle} />}
         />
       </Route>
       <Route path="basket" element={<h2>Здесь будет корзина</h2>} />
@@ -57,7 +66,10 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h2>Тест</h2>} />
+      <Route
+        path="test"
+        element={<h2>TEST</h2>}
+      />
     </Route>,
   ),
 );

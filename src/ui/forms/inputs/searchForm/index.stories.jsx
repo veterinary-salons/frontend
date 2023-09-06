@@ -33,7 +33,7 @@ export default {
         type: 'radio',
       },
     },
-    setInput: {
+    getInput: {
       type: 'func',
       description: 'Callback функция, получает value',
     },
@@ -48,5 +48,5 @@ Default.args = {
   minLength: 2,
   maxLength: 30,
   disabled: false,
-  setInput: () => {},
+  getInput: () => {},
 };

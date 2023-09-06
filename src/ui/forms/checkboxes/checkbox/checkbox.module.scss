@@ -3,12 +3,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8px;
   color: var(--primary-text-color, #0f0f0f);
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   width: fit-content;
+  gap: 8px;
 }
 
 .reverse {

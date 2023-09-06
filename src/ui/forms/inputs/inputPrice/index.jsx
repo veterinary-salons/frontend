@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import validateInput from '../../../../assets/constants/validation';
 
-const InputPrice = ({ prefix, name, initialValue, disabled, setInput }) => {
+const InputPrice = ({ prefix, name, initialValue, disabled, getInput }) => {
   const [values, setValues] = useState(initialValue);
   const getClassContainer = classNames(
     classes.input,
@@ -21,7 +21,7 @@ const InputPrice = ({ prefix, name, initialValue, disabled, setInput }) => {
   );
 
   useEffect(() => {
-    setInput(values);
+    getInput(values);
   }, [values]);
 
   return (
@@ -46,7 +46,7 @@ InputPrice.propTypes = {
   disabled: PropTypes.bool,
   name: PropTypes.string,
   initialValue: PropTypes.objectOf(PropTypes.string),
-  setInput: PropTypes.func,
+  getInput: PropTypes.func,
 };
 
 InputPrice.defaultProps = {
@@ -54,7 +54,7 @@ InputPrice.defaultProps = {
   disabled: false,
   name: 'input-price',
   initialValue: {},
-  setInput: () => {},
+  getInput: () => {},
 };
 
 export default InputPrice;

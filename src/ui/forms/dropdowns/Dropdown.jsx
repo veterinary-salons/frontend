@@ -51,7 +51,7 @@ const Dropdown = ({ array, width }) => {
             ),
         )}
       </ul>
-      <ArrowUp positionDropdown="ture" />
+      <ArrowUp positionDropdown="true" />
       <ArrowDown positionDropdown="true" dropdownClick={dropdownClick} />
     </section>
   );
