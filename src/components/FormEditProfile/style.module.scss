@@ -1,0 +1,36 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 40px;
+  &__fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &_avatar {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  &__legend {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px; /* 125% */
+    margin-bottom: 20px;
+  }
+
+  &__wrapper-button {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 140px;
+    justify-content: center;
+  }
+}

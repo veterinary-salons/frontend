@@ -3,7 +3,6 @@ import cn from 'classnames';
 import { useEffect, useState } from 'react';
 import style from './InputText.module.scss';
 import validateInput from '../../../../assets/constants/validation';
-import useFormAndValidation from '../../../../hooks/validation';
 import BtnEye from '../../../buttons/hidePassword/BtnEye';
 
 const InputText = ({
@@ -13,12 +12,14 @@ const InputText = ({
   maxLength,
   minLength,
   required,
-  infoInput,
+  getInput,
   disabled,
   id,
   position,
+  autoComplete,
+  initialValue,
 }) => {
-  const { values, handleChange } = useFormAndValidation();
+  const [values, setValues] = useState({ [name]: '' });
   const [isClick, setIsClick] = useState(false);
 
   const handleClick = () => {
@@ -26,25 +27,40 @@ const InputText = ({
   };
 
   useEffect(() => {
-    infoInput(values);
+    if (initialValue) {
+      setValues(initialValue);
+    }
+    // eslint-disable-next-line
+  }, []);
+
+  useEffect(() => {
+    getInput(values);
+    // eslint-disable-next-line
   }, [values]);
 
-  const hendelEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
-  const getType = type === 'password' ? hendelEyePassword(isClick, type) : type;
+  const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
+  const getType = type === 'password' ? handleEyePassword(isClick, type) : type;
   const getClassItem = cn(
     style.input,
     {
-      [style['input-success']]: validateInput(type, values[name]).invalid,
+      [style['input-default']]: validateInput(type, name, values[name]).default,
     },
-    { [style['input-error']]: !validateInput(type, values[name]).invalid },
+    {
+      [style['input-error']]: !validateInput(type, name, values[name]).invalid,
+    },
+    {
+      [style['input-success']]: validateInput(type, name, values[name]).invalid,
+    },
   );
   const getClassSpan = cn(
     style['input-span-error'],
     {
-      [style['input-error_activ']]: !validateInput(type, values[name]).invalid,
+      [style['input-error_activ']]: !validateInput(type, name, values[name])
+        .invalid,
     },
     {
-      [style['input-span-true']]: validateInput(type, values[name]).invalid,
+      [style['input-span-true']]: validateInput(type, name, values[name])
+        .invalid,
     },
   );
 
@@ -58,10 +74,11 @@ const InputText = ({
         maxLength={maxLength}
         minLength={minLength}
         required={required}
-        onChange={handleChange}
-        value={values[name] || ''}
+        onChange={(e) => setValues({ ...values, [name]: e.target.value })}
+        value={values[name]}
         disabled={disabled}
         id={id}
+        autoComplete={autoComplete}
       />
       {type === 'password' && (
         <BtnEye
@@ -72,7 +89,7 @@ const InputText = ({
       )}
       {!disabled && (
         <span className={getClassSpan}>
-          {validateInput(type, values[name]).message}
+          {validateInput(type, name, values[name]).message}
         </span>
       )}
     </div>
@@ -86,10 +103,12 @@ InputText.propTypes = {
   maxLength: PropTypes.number,
   minLength: PropTypes.number,
   required: PropTypes.bool,
-  infoInput: PropTypes.func,
+  getInput: PropTypes.func,
   disabled: PropTypes.bool,
   id: PropTypes.string,
   position: PropTypes.string,
+  autoComplete: PropTypes.string,
+  initialValue: PropTypes.objectOf(PropTypes.string),
 };
 
 InputText.defaultProps = {
@@ -99,10 +118,12 @@ InputText.defaultProps = {
   maxLength: 8,
   minLength: 2,
   required: true,
-  infoInput: () => {},
+  getInput: () => {},
   disabled: false,
   id: 'id',
   position: 'button-eye_position',
+  autoComplete: '',
+  initialValue: null,
 };
 
 export default InputText;

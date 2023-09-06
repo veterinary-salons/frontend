@@ -32,7 +32,7 @@ export const breadcrumbNameMap = {
   '/profile': 'Профиль',
   '/profile/services': 'Услуги',
   '/profile/goods': 'Товары',
-  '/services': 'Улсуги',
+  '/services': 'Услуги',
   '/goods': 'Товары',
   '/magazine': 'Журнал',
   '/favourites': 'Избранное',

@@ -8,11 +8,28 @@
   font-style: normal;
   font-weight: 500;
   width: fit-content;
-  // font-family: inherit;
+  gap: 8px;
 }
 
 .reverse {
   flex-direction: row-reverse;
+}
+
+.label-radio {
+  align-items: baseline;
+}
+
+.label-agreement {
+  align-items: flex-start;
+  color: var(--text-grey-color, #9C9C9C);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+.label_disabled {
+  opacity: .5;
 }
 
 .checkboxButton {
@@ -40,6 +57,7 @@
 }
 
 .checkbox {
+  min-width: 16px;
   width: 16px;
   height: 16px;
   margin: 4px;

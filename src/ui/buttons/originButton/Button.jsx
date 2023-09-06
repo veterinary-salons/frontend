@@ -70,7 +70,7 @@ const Button = ({
 };
 
 Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
   variant: PropTypes.oneOf(['purple-filled', 'outlined', 'add']),
   size: PropTypes.oneOf(['small', 'large', 'medium']),
   type: PropTypes.oneOf(['button', 'submit', 'reset']),
@@ -92,6 +92,7 @@ Button.defaultProps = {
   isChips: false,
   isMaxWidth: false,
   children: null,
+  onClick: null,
 };
 
 export default Button;

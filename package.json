@@ -13,7 +13,8 @@
     "react-simple-star-rating": "^5.1.7",
     "react-text-mask": "^5.5.0",
     "sass": "^1.65.1",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "react-currency-input-field": "^3.6.11"
   },
   "scripts": {
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
@@ -67,6 +68,7 @@
     "eslint-plugin-storybook": "^0.6.13",
     "prettier": "3.0.1",
     "prop-types": "^15.8.1",
+    "react-currency-input-field": "^3.6.11",
     "react-simple-star-rating": "^5.1.7",
     "react-text-mask": "^5.5.0",
     "storybook": "^7.3.0",
