@@ -1,4 +1,9 @@
-import { regexEmail, regexUserName, regexPassword, regexPhone } from './constants';
+import {
+  regexEmail,
+  regexUserName,
+  regexPassword,
+  regexPhone,
+} from './constants';
 
 function validateEmail(value) {
   if (value !== undefined) {
@@ -9,7 +14,6 @@ function validateEmail(value) {
       return { invalid: false, message: 'Введите корректную почту' };
     }
     return { invalid: true, message: '' };
-
   }
   return { default: true };
 }
@@ -34,15 +38,13 @@ function validateUserName(value) {
     if (!regexUserName.test(value)) {
       return {
         invalid: false,
-        message:
-          'Используйте только кириллицу, пробел и -'
+        message: 'Используйте только кириллицу, пробел и -',
       };
     }
     if (value.length < 2 || value.length > 15) {
       return {
         invalid: false,
-        message:
-          'Поле должно содержать от 2 до 15 символов'
+        message: 'Поле должно содержать от 2 до 15 символов',
       };
     }
     return { invalid: true, message: '' };
@@ -58,15 +60,13 @@ function validatePassword(value) {
     if (!regexPassword.test(value)) {
       return {
         invalid: false,
-        message:
-          'Используйте только латинские буквы, цифры, . и -',
+        message: 'Используйте только латинские буквы, цифры, . и -',
       };
     }
     if (value.length < 6 || value.length > 20) {
       return {
         invalid: false,
-        message:
-          'Пароль должен содержать от 6 до 20 символов'
+        message: 'Пароль должен содержать от 6 до 20 символов',
       };
     }
     return { invalid: true, message: '' };
@@ -105,7 +105,7 @@ const validateInput = (type, name, value) => {
   if (type === 'email') {
     return validateEmail(value);
   }
-  if (type === 'text' && (name==='userName' || name==='userSurname')) {
+  if (type === 'text' && (name === 'userName' || name === 'userSurname')) {
     return validateUserName(value);
   }
   if (type === 'text') {

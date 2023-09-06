@@ -22,7 +22,7 @@ function Root() {
 
   return (
     <div className={classes.root}>
-      {!isRenderHeader ? <Header authorization /> : null}
+      {!isRenderHeader ? <Header authorization={false} /> : null}
       <main
         className={classNames(
           classes.main,

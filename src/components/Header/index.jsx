@@ -37,7 +37,7 @@ const Header = ({ authorization }) => (
       </div>
     ) : (
       <div className={[classes['header__container-btn']]}>
-        <Link to="/sign-in">
+        <Link to="/signin">
           <Button
             variant="outlined"
             size="medium"
@@ -50,7 +50,7 @@ const Header = ({ authorization }) => (
           </Button>
         </Link>
 
-        <Link to="/sign-up">
+        <Link to="/signup">
           <Button
             variant="outlined"
             size="medium"
