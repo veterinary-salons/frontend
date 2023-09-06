@@ -34,7 +34,6 @@ const PopupWithForm = ({
 
     <section className={getPopupClasses} >
       <div className={classes.popup__container}>
-        <div className={classes.popup__content}>
           <form
             className={classes.popup__form}
             name={name}
@@ -43,7 +42,6 @@ const PopupWithForm = ({
             <h2 className={classes.popup__title}>{title}</h2>
             {children}
           </form>
-        </div>
       </div>
     </section>
   )
