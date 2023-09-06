@@ -21,7 +21,6 @@ import SelectedProducts from '../pages/SelectedProducts';
 import SelectedServices from '../pages/SelectedServices/index';
 import SelectedArticles from '../pages/SelectedArticles';
 
-import { dataLinksProfile } from '../assets/constants/dataPath';
 import {
   dataSelectedProducts,
   dataArticle,
