@@ -1,6 +1,6 @@
 // TODO: добавить ссылки на грумерови других...
-import style from './SpecialistCardList.module.scss';
-import SpecialistCard from '../specialistCard/SpecialistCard';
+import style from './style.module.scss';
+import SpecialistCard from '../specialistCard';
 import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
 import imgVets from '../../../assets/images/icon/specialists/vets.svg';
 import imgPetSitters from '../../../assets/images/icon/specialists/pet-sitters.svg';

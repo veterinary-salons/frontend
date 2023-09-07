@@ -1,4 +1,4 @@
-import ServiceCard from './ServiceCard';
+import GoodsCardMainPage from './index';
 import toysImg from '../../../assets/images/images/services-card/toys.png';
 import foodImg from '../../../assets/images/images/services-card/food.png';
 import treatsImg from '../../../assets/images/images/services-card/treats.png';
@@ -6,7 +6,7 @@ import pillsImg from '../../../assets/images/images/services-card/pills.png';
 
 export default {
   title: 'Modules/Mainpage/Card',
-  component: ServiceCard,
+  component: GoodsCardMainPage,
   tags: ['autodocs'],
   argTypes: {
     title: {
@@ -39,7 +39,7 @@ export default {
   },
 };
 
-const Template = (args) => <ServiceCard {...args} />
+const Template = (args) => <GoodsCardMainPage {...args} />
 
 export const DefaultToys = () => Template.bind({});
 DefaultToys.args = {

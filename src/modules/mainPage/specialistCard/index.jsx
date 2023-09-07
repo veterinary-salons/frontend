@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import classes from './SpecialistCard.module.scss';
+import classes from './style.module.scss';
 import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
 
 const SpecialistCard = ({ link, color, title, img, disable }) => {
