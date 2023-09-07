@@ -7,51 +7,6 @@
     display: block;
     width: 150px;
     padding: 20px 0;
-  }
-
-  &__title {
-    margin: 66px 0 48px 420px;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 35px;
-  }
-
-  &__form {
-    width: 500px;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin: 0 0 0 420px;
-  }
-
-  &__link-recovery {
-    display: block;
-    width: 145px;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    text-decoration-line: underline;
-    color: var(--primary-text-color);
-  }
-
-  &__container-submit {
-    margin-top: 23px;
-    width: 235px;
-  }
-
-  &__subtitle {
-    margin: 40px 0 20px 420px;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 30px;
-  }
-
-  &__btn-signup {
-    display: block;
-    width: 235px;
-    margin-left: 420px;
+    margin-bottom: 60px;
   }
 }

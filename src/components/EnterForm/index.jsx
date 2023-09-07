@@ -14,11 +14,11 @@ function EnterForm() {
       ...values,
       ...value,
     });
-    console.log(values, isValid);
   };
 
   const handleFormValidChange = (e) => {
     setIsValid(e.target.closest('form').checkValidity());
+    localStorage.setItem('auth', true);
   };
 
   return (
@@ -61,7 +61,7 @@ function EnterForm() {
       </fieldset>
       <div className={classes['form__button-wrapper']}>
         <Button
-          onClick={() => {}}
+          onClick={() => navigate('/')}
           variant="purple-filled"
           size="medium"
           type="submit"

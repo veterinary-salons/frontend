@@ -33,10 +33,7 @@ const InputText = ({
     // eslint-disable-next-line
   }, []);
   useEffect(() => {
-    getInput({
-      values,
-      isValid: validateInput(type, name, values[name]).invalid,
-    });
+    getInput(values);
     // eslint-disable-next-line
   }, [values]);
 
