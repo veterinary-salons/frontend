@@ -3,9 +3,8 @@ import classes from '../PopupWithForm/style.module.scss';
 import PopupWithForm from '../PopupWithForm';
 import Button from '../../ui/buttons/originButton/Button';
 
-const ServiceConfirmPopup = ({ isOpen, onClose }) => (
+const BookingCancellationPopup = ({ isOpen, onClose }) => (
   <PopupWithForm
-    name="infotool"
     title="Ничего, будем рады помочь вам в другой раз"
     isOpen={isOpen}
     onClose={onClose}
@@ -25,14 +24,14 @@ const ServiceConfirmPopup = ({ isOpen, onClose }) => (
   </PopupWithForm>
 );
 
-ServiceConfirmPopup.propTypes = {
+BookingCancellationPopup.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.bool,
 };
 
-ServiceConfirmPopup.defaultProps = {
+BookingCancellationPopup.defaultProps = {
   isOpen: true,
   onClose: false,
 };
 
-export default ServiceConfirmPopup;
+export default BookingCancellationPopup;
