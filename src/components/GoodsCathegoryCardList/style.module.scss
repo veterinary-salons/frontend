@@ -1,0 +1,9 @@
+.goods {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(fit-content);
+  gap: 20px;
+  margin: 0 auto;
+  padding: 0;
+  width: fit-content;
+}

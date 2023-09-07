@@ -26,6 +26,7 @@ import {
   dataArticle,
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
+import GoodsCathegoryCardList from '../components/GoodsCathegoryCardList';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -67,7 +68,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>TEST</h2>}
+        element={<GoodsCathegoryCardList/>}
       />
     </Route>,
   ),
