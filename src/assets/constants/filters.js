@@ -49,8 +49,8 @@ const filterData = {
     legend: 'Тип',
     checkboxType: 'checkbox',
     options: [
-      { value: 'feed-goodies', label: 'Корм, лакомства' },
-      { value: 'toys-ammunition', label: 'Игрушки, амуниция' },
+      { value: 'feed-goodies', label: 'Корм и лакомства' },
+      { value: 'toys-ammunition', label: 'Игрушки и амуниция' },
       { value: 'toilet', label: 'Для туалета' },
       { value: 'hygiene', label: 'Гигиена и уход' },
       { value: 'bowls-beds-houses', label: 'Миски, лежанки, домики' },
