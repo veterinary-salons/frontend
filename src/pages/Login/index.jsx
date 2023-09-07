@@ -8,8 +8,9 @@ const Login = () => (
     <Link className={classes['login__container-logo']} to="/">
       <Logo />
     </Link>
-
+    <section className={classes.login__form}>
     <EnterForm />
+    </section>
   </section>
 );
 

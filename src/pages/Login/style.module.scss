@@ -1,12 +1,16 @@
 .login {
-  font-family: 'Montserrat', Arial, sans-serif;
   max-width: 1440px;
-  min-height: 671px;
 
   &__container-logo {
-    display: block;
-    width: 150px;
-    padding: 20px 0;
-    margin-bottom: 60px;
+    display: flex;
+    width: fit-content;
+    margin-top: 20px;
+  }
+
+  &__form {
+    position: absolute;
+    translate: -50% -50%;
+    top: 50%;
+    left: 50%;
   }
 }

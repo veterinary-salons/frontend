@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Logo from '../../ui/icons/logo/Logo';
 import Button from '../../ui/buttons/originButton/Button';
-import SerchForm from '../../ui/forms/inputs/searchForm/index';
+import SearchForm from '../../ui/forms/inputs/searchForm/index';
 import NavigationPages from '../../modules/navigation/navigatePages/index';
 import NavigationLink from '../../ui/icons/navigationLink/index';
 import classes from './style.module.scss';
@@ -14,7 +14,7 @@ const Header = ({ authorization }) => (
         <Logo />
       </Link>
 
-      <SerchForm />
+      <SearchForm />
     </div>
 
     <div className={[classes.header__container]}>

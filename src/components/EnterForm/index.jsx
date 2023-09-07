@@ -18,8 +18,13 @@ function EnterForm() {
 
   const handleFormValidChange = (e) => {
     setIsValid(e.target.closest('form').checkValidity());
-    localStorage.setItem('auth', true);
   };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem('auth', true);
+    navigate('/')
+  }
 
   return (
     <form
@@ -61,7 +66,7 @@ function EnterForm() {
       </fieldset>
       <div className={classes['form__button-wrapper']}>
         <Button
-          onClick={() => navigate('/')}
+          onClick={handleFormSubmit}
           variant="purple-filled"
           size="medium"
           type="submit"
@@ -73,7 +78,7 @@ function EnterForm() {
         <div className={classes.form__navbox}>
           <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
           <Button
-            onClick={() => navigate('/signup')}
+            onClick={() => {}}
             variant="outlined"
             size="medium"
             type="button"
