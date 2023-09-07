@@ -4,7 +4,7 @@ import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
 
-function EnterForm() {
+function SignInForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
   const [values, setValues] = useState({});
@@ -92,4 +92,4 @@ function EnterForm() {
   );
 }
 
-export default EnterForm;
+export default SignInForm;

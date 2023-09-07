@@ -18,11 +18,11 @@ const Profile = () => {
     password: '1234567f',
   });
 
-  const handleClicEditProfile = () => {
+  const handleEditProfile = () => {
     setIsEditProfile(true);
   };
 
-  const handleClicExitProfile = () => {
+  const handleExitProfile = () => {
     localStorage.clear('auth');
     navigate('/', { replace: true });
   };
@@ -35,8 +35,8 @@ const Profile = () => {
     <section className={classes.profile}>
       {!isEditProfile ? (
         <ProfileUserData
-          handleEditProfile={handleClicEditProfile}
-          handleExitProfile={handleClicExitProfile}
+          handleEditProfile={handleEditProfile}
+          handleExitProfile={handleExitProfile}
           userData={userData}
         />
       ) : (
