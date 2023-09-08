@@ -4,9 +4,12 @@ import classes from './style.module.scss';
 
 import ProfileUserData from '../../components/ProfileUserData';
 import FormEditProfile from '../../components/FormEditProfile';
+import LogoutConfirmationPopup from '../../components/LogoutConfirmationPopup';
 
 const Profile = () => {
   const [isEditProfile, setIsEditProfile] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
   // для демонстрации работы изменения данных профиля
   const [userData, setUserData] = useState({
     name: 'Ася',
@@ -17,33 +20,40 @@ const Profile = () => {
     password: '1234567f',
   });
 
-  const handleClicEditProfile = () => {
+  const handleClickEditProfile = () => {
     setIsEditProfile(true);
   };
 
-  const handleClicExitProfile = () => {};
+  const handleClickExitProfile = () => {
+    setIsOpen(true);
+  };
+
+  const handleCloseConfirmPopup = () => {
+    setIsOpen(false);
+  };
 
   const handleSubmitForm = () => {
     setIsEditProfile(false);
   };
 
   return (
-    <section className={classes.profile}>
-      {!isEditProfile ? (
-        <ProfileUserData
-          handleEditProfile={handleClicEditProfile}
-          handleExitProfile={handleClicExitProfile}
-          userData={userData}
-        />
-      ) : (
-        <FormEditProfile
-          handleSubmitForm={handleSubmitForm}
-          userData={userData}
-          setUserData={setUserData}
-        />
-      )}
-      <Outlet />
-    </section>
+      <section className={classes.profile}>
+      <LogoutConfirmationPopup isOpen={isOpen} onClose={handleCloseConfirmPopup}/>
+        {!isEditProfile ? (
+          <ProfileUserData
+            handleEditProfile={handleClickEditProfile}
+            handleExitProfile={handleClickExitProfile}
+            userData={userData}
+          />
+        ) : (
+          <FormEditProfile
+            handleSubmitForm={handleSubmitForm}
+            userData={userData}
+            setUserData={setUserData}
+          />
+        )}
+        <Outlet />
+      </section>
   );
 };
 

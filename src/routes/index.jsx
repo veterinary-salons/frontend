@@ -70,7 +70,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<ServiceConfirmPopup />}
+        element={<ServiceConfirmPopup isOpen/>}
       />
     </Route>,
   ),
