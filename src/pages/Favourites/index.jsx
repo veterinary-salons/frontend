@@ -1,10 +1,10 @@
-import classes from './style.module.scss';
+import SectionHeader from '../../components/SectionHeader';
 import Tabs from '../../modules/tabs';
 import { dataLinksFavourites } from '../../assets/constants/dataPath';
 
 const Favourites = () => (
   <>
-    <h3 className={classes.favourites__title}>Избранное</h3>
+    <SectionHeader title='Избранное' />
     <Tabs dataLinks={dataLinksFavourites} marginT />
   </>
 );

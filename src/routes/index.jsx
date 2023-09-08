@@ -27,11 +27,16 @@ import {
   dataArticle,
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
+import SectionHeader from '../components/SectionHeader';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
+
+      {/* Main */}
       <Route index element={<Main />} />
+
+      {/* Profile */}
       <Route
         path="profile"
         element={<Tabs dataLinks={dataLinksProfile} marginT />}
@@ -44,12 +49,24 @@ const router = createBrowserRouter(
         <Route path="services" element={<ProfileServices />} />
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
-      <Route path="services" element={<h2>Здесь будут услуги</h2>} />
-      <Route path="goods" element={<h2>Здесь будут товары</h2>} />
+
+      {/* Services */}
+      <Route path="services" element={<SectionHeader title='Наши услуги'/>}>
+        <Route element={<h2>Здесь будут услуги</h2>} />
+      </Route>
+
+      {/* Goods */}
+      <Route path="goods" element={<SectionHeader title='Товары'/>}>
+        <Route element={<h2>Здесь будут товары</h2>} />
+      </Route>
+
+      {/* Articles */}
       <Route
         path="magazine"
         element={<Articles dataArticle={dataArticlePage} />}
       />
+
+      {/* Favourites */}
       <Route path="favourites" element={<Favourites />}>
         <Route
           path="goods"
@@ -61,16 +78,24 @@ const router = createBrowserRouter(
           element={<SelectedArticles dataArticle={dataArticle} />}
         />
       </Route>
+
+      {/* Basket */}
       <Route path="basket" element={<h2>Здесь будет корзина</h2>} />
+
+      {/* Login */}
       <Route path="signin" element={<Login />} />
+
+      {/* SignUp */}
       <Route path="signup" element={<h2>Здесь будет регистрация</h2>} />
+
+      {/* Recovery */}
       <Route
         path="recovery"
         element={<h2>Здесь будет восстановление аккаунта</h2>}
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h2>TEST</h2>} />
+      <Route path="test" element={<h1>TEST</h1>} />
     </Route>,
   ),
 );
