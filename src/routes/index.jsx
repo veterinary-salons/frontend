@@ -4,7 +4,7 @@ import {
   createRoutesFromElements,
 } from 'react-router-dom';
 import Root from './root';
-import ErrorBoundary from './errorPages/PageNotFound';
+import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
