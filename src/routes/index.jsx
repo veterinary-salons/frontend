@@ -27,7 +27,7 @@ import {
   dataArticle,
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
-import SectionHeader from '../components/SectionHeader';
+import SectionTitle from '../components/SectionTitle';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,12 +51,12 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route path="services" element={<SectionHeader title='Наши услуги'/>}>
+      <Route path="services" element={<SectionTitle title='Наши услуги'/>}>
         <Route element={<h2>Здесь будут услуги</h2>} />
       </Route>
 
       {/* Goods */}
-      <Route path="goods" element={<SectionHeader title='Товары'/>}>
+      <Route path="goods" element={<SectionTitle title='Товары'/>}>
         <Route element={<h2>Здесь будут товары</h2>} />
       </Route>
 

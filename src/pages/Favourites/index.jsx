@@ -1,12 +1,12 @@
-import SectionHeader from '../../components/SectionHeader';
+import SectionTitle from '../../components/SectionTitle';
 import Tabs from '../../modules/tabs';
 import { dataLinksFavourites } from '../../assets/constants/dataPath';
 
 const Favourites = () => (
-  <>
-    <SectionHeader title='Избранное' />
+  <section>
+    <SectionTitle title='Избранное' withFilter/>
     <Tabs dataLinks={dataLinksFavourites} marginT />
-  </>
+  </section>
 );
 
 export default Favourites;
