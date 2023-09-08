@@ -1,3 +1,4 @@
+import { Offline, Online } from 'react-detect-offline';
 import {
   Route,
   createBrowserRouter,
@@ -30,7 +31,20 @@ import petList from '../assets/constants/petList';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
+    <Route
+      path="/"
+      element={
+        <>
+        <Online>
+          <Root />
+        </Online>
+        <Offline>
+          <ErrorBoundary errorType404={false} />
+        </Offline>
+        </>
+      }
+      errorElement={<ErrorBoundary />}
+    >
       <Route index element={<Main />} />
       <Route
         path="profile"

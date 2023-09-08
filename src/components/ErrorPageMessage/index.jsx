@@ -19,7 +19,7 @@ function ErrorPageMessage({ width, title, msg, error404}) {
         <ul className={classes.error__links}>
           <li>
             <Link
-              to="purrfectcare.ru"
+              to="/goods"
               className={classes.error__link}
             >
               Товары
@@ -27,7 +27,7 @@ function ErrorPageMessage({ width, title, msg, error404}) {
           </li>
           <li>
             <Link
-              to="purrfectcare.ru"
+              to="/services"
               className={classes.error__link}
             >
               Услуги
@@ -35,7 +35,7 @@ function ErrorPageMessage({ width, title, msg, error404}) {
           </li>
           <li>
             <Link
-              to="purrfectcare.ru"
+              to="/magazine"
               className={classes.error__link}
             >
               Журнал
