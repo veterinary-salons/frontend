@@ -14,6 +14,7 @@ import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
+import Login from '../pages/Login';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
@@ -62,8 +63,12 @@ const router = createBrowserRouter(
         />
       </Route>
       <Route path="basket" element={<h2>Здесь будет корзина</h2>} />
-      <Route path="signin" element={<h2>Здесь будет регистрация</h2>} />
-      <Route path="signup" element={<h2>Здесь будет вход</h2>} />
+      <Route path="signin" element={<Login />} />
+      <Route path="signup" element={<h2>Здесь будет регистрация</h2>} />
+      <Route
+        path="recovery"
+        element={<h2>Здесь будет восстановление аккаунта</h2>}
+      />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route

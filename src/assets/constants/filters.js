@@ -1,3 +1,10 @@
+import feedImg from '../images/images/goods-cathegories-catalog/feed-goodies.svg';
+import toysImg from '../images/images/goods-cathegories-catalog/toys-ammunition.svg';
+import toiletImg from '../images/images/goods-cathegories-catalog/toilet.svg';
+import hygieneImg from '../images/images/goods-cathegories-catalog/hygiene.svg';
+import bowlsImg from '../images/images/goods-cathegories-catalog/bowls-beds-houses.svg';
+import vetImg from '../images/images/goods-cathegories-catalog/vetpharmacy.svg';
+
 const animals = [
   {
     label: 'Для собак',
@@ -49,12 +56,12 @@ const filterData = {
     legend: 'Тип',
     checkboxType: 'checkbox',
     options: [
-      { value: 'feed-goodies', label: 'Корм и лакомства' },
-      { value: 'toys-ammunition', label: 'Игрушки и амуниция' },
-      { value: 'toilet', label: 'Для туалета' },
-      { value: 'hygiene', label: 'Гигиена и уход' },
-      { value: 'bowls-beds-houses', label: 'Миски, лежанки, домики' },
-      { value: 'vetpharmacy', label: 'Ветаптека' },
+      { value: 'feed-goodies', label: 'Корм и лакомства', img: feedImg },
+      { value: 'toys-ammunition', label: 'Игрушки и амуниция', img: toysImg },
+      { value: 'toilet', label: 'Для туалета', img: toiletImg },
+      { value: 'hygiene', label: 'Гигиена и уход', img: hygieneImg },
+      { value: 'bowls-beds-houses', label: 'Миски, лежанки, домики', img: bowlsImg },
+      { value: 'vetpharmacy', label: 'Ветаптека', img: vetImg },
     ],
   },
   TypeForFood: {

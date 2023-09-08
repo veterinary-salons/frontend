@@ -1,17 +1,13 @@
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import classes from './style.module.scss';
+import feedImg from '../../assets/images/images/goods-cathegories-catalog/feed-goodies.svg';
 
 const GoodsCathegoryCard = ({ link, title, img }) => (
   <li className={classes.card}>
     <Link to={link} className={classes.card__container}>
-      <div
-        className={classnames(
-          classes.card__img,
-          classes[`card__img-${img}`]
-      )}/>
-      <h3 className={classes.card__title}>{title}</h3>
+      <img className={classes.card__img} alt={title} src={img} />
+      <h4 className={classes.card__title}>{title}</h4>
     </Link>
   </li>
 );
@@ -25,7 +21,7 @@ GoodsCathegoryCard.propTypes = {
 GoodsCathegoryCard.defaultProps = {
   link: '/',
   title: 'Корм и лакомства',
-  img: 'feed-goodies'
+  img: feedImg
 };
 
 export default GoodsCathegoryCard;

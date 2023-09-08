@@ -5,7 +5,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 4px;
     text-decoration: none;
     text-align: center;
     transition: .5s;
@@ -19,35 +19,14 @@
   &__img {
     width: 100%;
     height: 200px;
-    transition: .5s;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-  }
-  &__img-feed-goodies {
-    background-image: url('../../assets/images/images/goods-cathegories-catalog/feed-goodies.svg');
-  }
-  &__img-toys-ammunition {
-    background-image: url('../../assets/images/images/goods-cathegories-catalog/toys-ammunition.svg');
-  }
-  &__img-toilet {
-    background-image: url('../../assets/images/images/goods-cathegories-catalog/toilet.svg');
-  }
-  &__img-hygiene {
-    background-image: url('../../assets/images/images/goods-cathegories-catalog/hygiene.svg');
-  }
-  &__img-bowls-beds-houses {
-    background-image: url('../../assets/images/images/goods-cathegories-catalog/bowls-beds-houses.svg');
-  }
-  &__img-vetpharmacy {
-    background-image: url('../../assets/images/images/goods-cathegories-catalog/vetpharmacy.svg');
+    border-radius: 10px;
   }
   &__title {
     color: var(--primary-text-color);
     font-size: 20px;
     font-weight: 700;
     line-height: 30px;
-    letter-spacing: 1.2px;
+    letter-spacing: 1px;
     margin: 0 auto;
     padding: 0 20px;
     transition: .5s;

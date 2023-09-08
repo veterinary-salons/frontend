@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types';
 import classes from './style.module.scss';
 import GoodsCathegoryCard from '../GoodsCathegoryCard';
 import { filterData } from '../../assets/constants/filters';
@@ -13,7 +12,7 @@ const GoodsCathegoryCardList = () => {
         key={item.value}
         link='/goods'
         title={item.label}
-        img={item.value}
+        img={item.img}
       />
     ))}
   </ul>

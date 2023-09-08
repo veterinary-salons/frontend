@@ -10,19 +10,26 @@ import BreadCrumbs from '../../modules/breadCrumbs';
 import Button from '../../ui/buttons/originButton/Button';
 
 //  TODO: Роуты при которых не должны отображаться крошки, добавлять по мере разработки, потом вынести в отдельный файл
-const dataPathWithoutCrumbs = ['/', '/signin', '/signup'];
-const dataPathWithoutHeader = ['/signin'];
-const dataPathWithoutFooter = ['/signin'];
+const dataPathWithoutCrumbs = [
+  '/',
+  '/signin',
+  '/signup',
+  '/recovery',
+  '/signup',
+];
+const dataPathWithOnlyLogoHeader = ['/signin', '/recovery', '/signup'];
+const dataPathWithoutFooter = ['/signin', '/recovery', '/signup'];
 
 function Root() {
+  const auth = localStorage.getItem('auth');
   const location = useLocation();
   const crumbsPath = dataPathWithoutCrumbs.includes(location.pathname);
-  const isRenderHeader = dataPathWithoutHeader.includes(location.pathname);
+  const isOnlyLogoHeader = dataPathWithOnlyLogoHeader.includes(location.pathname);
   const isRenderFooter = dataPathWithoutFooter.includes(location.pathname);
 
   return (
     <div className={classes.root}>
-      {!isRenderHeader ? <Header authorization /> : null}
+      <Header authorization={auth} onlyLogo={isOnlyLogoHeader} />
       <main
         className={classNames(
           classes.main,
