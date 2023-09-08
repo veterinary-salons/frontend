@@ -10,14 +10,14 @@ function ErrorBoundary({errorType404}) {
         <ErrorPageMessage
           width='350px'
           title='Ошибка 404'
-          msg='Такой страницы не&nbsp;существует
+          message='Такой страницы не&nbsp;существует
           Зато существуют другие &#40;:'
           error404
         />
       :
         <ErrorPageMessage
           title='Не удаётся подключиться'
-          msg='Браузер не&nbsp;может отобразить веб-страницу, потому что компьютер не&nbsp;подключен к&nbsp;Интернету'
+          message='Браузер не&nbsp;может отобразить веб-страницу, потому что компьютер не&nbsp;подключен к&nbsp;Интернету'
         />
       }
     </>
@@ -29,7 +29,7 @@ ErrorBoundary.propTypes = {
 };
 
 ErrorBoundary.defaultProps = {
-  errorType404: true,
+  errorType404: false,
 }
 
 export default ErrorBoundary;

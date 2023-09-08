@@ -39,11 +39,11 @@ const router = createBrowserRouter(
           <Root />
         </Online>
         <Offline>
-          <ErrorBoundary errorType404={false} />
+          <ErrorBoundary />
         </Offline>
         </>
       }
-      errorElement={<ErrorBoundary />}
+      errorElement={<ErrorBoundary errorType404 />}
     >
       <Route index element={<Main />} />
       <Route

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
-function ErrorPageMessage({ width, title, msg, error404}) {
+function ErrorPageMessage({ width, title, message, error404}) {
   function refreshPage() {
     window.location.reload();
   };
@@ -13,8 +13,8 @@ function ErrorPageMessage({ width, title, msg, error404}) {
       <div
         className={classes.error__image}
       />
-      <h1 className={classes.error__title}>{title}</h1>
-      <p className={classes.error__message}>{msg}</p>
+      <h2 className={classes.error__title}>{title}</h2>
+      <p className={classes.error__message}>{message}</p>
       {error404 ?
         <ul className={classes.error__links}>
           <li>
@@ -59,14 +59,14 @@ function ErrorPageMessage({ width, title, msg, error404}) {
 ErrorPageMessage.propTypes = {
   width: PropTypes.string,
   title: PropTypes.string,
-  msg: PropTypes.string,
+  message: PropTypes.string,
   error404: PropTypes.bool,
 };
 
 ErrorPageMessage.defaultProps = {
   width: '620px',
   title: '',
-  msg: '',
+  message: '',
   error404: false,
 }
 
