@@ -4,7 +4,7 @@ import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
 
-function EnterForm() {
+function SignInForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
   const [values, setValues] = useState({});
@@ -14,12 +14,17 @@ function EnterForm() {
       ...values,
       ...value,
     });
-    console.log(values, isValid);
   };
 
   const handleFormValidChange = (e) => {
     setIsValid(e.target.closest('form').checkValidity());
   };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    localStorage.setItem('auth', true);
+    navigate('/')
+  }
 
   return (
     <form
@@ -61,7 +66,7 @@ function EnterForm() {
       </fieldset>
       <div className={classes['form__button-wrapper']}>
         <Button
-          onClick={() => {}}
+          onClick={handleFormSubmit}
           variant="purple-filled"
           size="medium"
           type="submit"
@@ -73,7 +78,7 @@ function EnterForm() {
         <div className={classes.form__navbox}>
           <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
           <Button
-            onClick={() => navigate('/signup')}
+            onClick={() => {}}
             variant="outlined"
             size="medium"
             type="button"
@@ -87,4 +92,4 @@ function EnterForm() {
   );
 }
 
-export default EnterForm;
+export default SignInForm;

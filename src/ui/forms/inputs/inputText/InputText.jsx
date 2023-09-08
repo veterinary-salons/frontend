@@ -32,7 +32,6 @@ const InputText = ({
     }
     // eslint-disable-next-line
   }, []);
-
   useEffect(() => {
     getInput(values);
     // eslint-disable-next-line
@@ -43,13 +42,13 @@ const InputText = ({
   const getClassItem = cn(
     style.input,
     {
-      [style['input-default']]: validateInput(type, name, values[name]).default,
+      [style.input_default]: validateInput(type, name, values[name]).default,
     },
     {
-      [style['input-error']]: !validateInput(type, name, values[name]).invalid,
+      [style.input_error]: !validateInput(type, name, values[name]).invalid,
     },
     {
-      [style['input-success']]: validateInput(type, name, values[name]).invalid,
+      [style.input_success]: validateInput(type, name, values[name]).invalid,
     },
   );
   const getClassSpan = cn(
