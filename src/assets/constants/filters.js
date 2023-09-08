@@ -25,7 +25,8 @@ const animals = [
   }
 ];
 
-const filterData = {
+// фильтр для товаров
+const filterGoodsData = {
   deliveryTime: {
     legend: 'Сроки доставки',
     checkboxType: 'radio',
@@ -184,52 +185,78 @@ const filterData = {
         }
       ],
   },
+  // Добавьте другие типы фильтров по аналогии
+};
+
+
+// фильтр для услуг
+const filterServicesData = {
   specialists: {
     legend: 'Выберите специалиста',
     checkboxType: 'radio',
     options: [
       {
-          name: 'test',
-          label: 'Ветеринар',
-          value: 'vet'
-        },
+        name: 'test',
+        label: 'Ветеринар',
+        value: 'vet'
+      },
       {
-          name: 'test',
-          label: 'Грумер',
-          value: 'groomer'
-        },
+        name: 'test',
+        label: 'Грумер',
+        value: 'groomer'
+      },
       {
-          name: 'test',
-          label: 'Кинолог',
-          value: 'cynologist'
-        },
+        name: 'test',
+        label: 'Кинолог',
+        value: 'cynologist'
+      },
       {
-          name: 'test',
-          label: 'Зоо-няня',
-          value: 'pet-sitter'
-        }
-      ],
+        name: 'test',
+        label: 'Зоо-няня',
+        value: 'pet-sitter'
+      }
+    ],
   },
   servicePlace: {
     legend: 'Где хотите получить услугу',
     checkboxType: 'checkbox',
     options: [
-        {
-          label: 'Я приеду к специалисту',
-          value: 'specialists-place'
-        },
-        {
-          label: 'Специалист приедет ко мне',
-          value: 'my-place'
-        }
-      ],
+      {
+        label: 'Я приеду к специалисту',
+        value: 'specialists-place'
+      },
+      {
+        label: 'Специалист приедет ко мне',
+        value: 'my-place'
+      }
+    ],
   },
-  // Добавьте другие типы фильтров по аналогии
+  petType: {
+    legend: 'Какой у вас питомец',
+    checkboxType: 'checkbox',
+    options: ['собака', 'грызуны', 'птицы', 'рептилии', 'куньи', 'рыбки', 'другое'],
+  },
+  serviceType: {
+    legend: 'Какая услуга вам нужна',
+    checkboxType: 'checkbox',
+    options: ['консультация', 'Дрессировка с передержкой', 'Гигиенический', 'Выставочный', 'Коррекция проблемного поведения', 'Занятия в мини-группе', 'Групповые занятия'],
+  },
+  date: {
+    legend: 'Когда вам нужна услуга',
+    checkboxType: 'checkbox',
+    options: ['выбрать дату'],
+  },
+  price: {
+    legend: 'Цена',
+    checkboxType: 'checkbox',
+    options: ['от 0 ₽', 'до 0 ₽'],
+  },
 };
 
 
 export {
   animals,
-  filterData
+  filterGoodsData,
+  filterServicesData
 }
 
