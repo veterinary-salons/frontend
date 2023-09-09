@@ -18,11 +18,6 @@
     transition: visibility 0s, opacity 0.3s linear;
   }
 
-  &__container {
-    position: absolute;
-    top: 300px;
-  }
-
   &__form {
     background: var(--purple-pale-color, #F9F7FC);
     border-radius: 8px;

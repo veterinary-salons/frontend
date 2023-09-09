@@ -19,12 +19,10 @@ const PopupWithForm = ({ title, children, isOpen, onClose }) => {
 
   return (
     <section className={getPopupClasses}>
-      <div className={classes.popup__container}>
-        <form className={classes.popup__form}>
-          <h2 className={classes.popup__title}>{title}</h2>
+        <div className={classes.popup__form}>
+          <p className={classes.popup__title}>{title}</p>
           {children}
-        </form>
-      </div>
+        </div>
     </section>
   );
 };
