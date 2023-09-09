@@ -1,10 +1,11 @@
+import { Offline, Online } from 'react-detect-offline';
 import {
   Route,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
 import Root from './root';
-import ErrorBoundary from './errorPages/PageNotFound';
+import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
@@ -31,9 +32,20 @@ import SectionTitle from '../components/SectionTitle';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Root />} errorElement={<ErrorBoundary />}>
-
-      {/* Main */}
+    <Route
+      path="/"
+      element={
+        <>
+        <Online>
+          <Root />
+        </Online>
+        <Offline>
+          <ErrorBoundary />
+        </Offline>
+        </>
+      }
+      errorElement={<ErrorBoundary errorType404 />}
+    >
       <Route index element={<Main />} />
 
       {/* Profile */}
