@@ -18,7 +18,7 @@ const SpecialistsCard = ({
   const cn = classNames(classes['specialists-card']);
 
   return (
-    <div className={cn}>
+    <li className={cn}>
       <img
         src={img}
         alt="специалиста"
@@ -50,7 +50,7 @@ const SpecialistsCard = ({
           <Link to="/">{numReviews} отзыва</Link>
         </div>
       </div>
-    </div>
+    </li>
   );
 };
 

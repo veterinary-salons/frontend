@@ -16,20 +16,21 @@ import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
 import Login from '../pages/Login';
-import SpecialistsCard from '../modules/specialistsCard';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
 import SelectedProducts from '../pages/SelectedProducts';
-import SelectedServices from '../pages/SelectedServices/index';
+import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
+import ServicesList from '../pages/ServicesList';
+import SectionTitle from '../components/SectionTitle';
+import Catalog from '../pages/Catalog';
 
 import {
   dataSelectedProducts,
   dataArticle,
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
-import SectionTitle from '../components/SectionTitle';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -64,8 +65,12 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route path="services" element={<SectionTitle title='Наши услуги'/>}>
-        <Route element={<h2>Здесь будут услуги</h2>} />
+      <Route 
+        path="services" 
+        element={<Catalog title='Наши услуги'/>}
+      >
+        <Route index element={<ServicesList />} />
+        <Route path=":service" element={<Service />} />
       </Route>
 
       {/* Goods */}
@@ -85,7 +90,7 @@ const router = createBrowserRouter(
           path="goods"
           element={<SelectedProducts dataProducts={dataSelectedProducts} />}
         />
-        <Route path="services" element={<SelectedServices />} />
+        <Route path="services"  element={<h1>избранные услуги</h1>} />
         <Route
           path="articles"
           element={<SelectedArticles dataArticle={dataArticle} />}
@@ -109,16 +114,8 @@ const router = createBrowserRouter(
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route 
-        path="test"   // element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-        element={<SpecialistsCard 
-          // img='https://avatars.mds.yandex.net/i?id=2df3575db13ac51b990cca3baa3b9c985c0bb5ce-7758910-images-thumbs&n=13'
-          name='Юлия'
-          profession='Грумер на дом, стрижка, вычес'
-          price='2 000'
-          workedWith=' лошадьми'
-          description='Предоставляю услуги груминга собак с выездом на дом. Кошек не стригу! Шпиц от 2000р, пудель от 3000р. Воскресенье - выходной!'
-          numReviews={2}
-          scoreReview='5.0'/>}
+        path="test"  
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
         />
         </Route>,
   ),

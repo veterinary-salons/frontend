@@ -53,21 +53,29 @@
     background-color: var(--blue-color);
   }
 
-  &__price{
+  &__price {
     margin: 0;
     font-size: 20px;
     line-height: 30px;
   }
 
-  &__worked-with{
-    margin: 0;
-  }
-  
-  &__description{
+  &__worked-with {
     margin: 0;
   }
 
-  &__review{
+  &__description {
+    margin: 0;
+    max-height: 100%;
+    overflow: hidden;
+    display: -webkit-box;
+    /* Скрывает текст, который не помещается в контейнер */
+    text-overflow: ellipsis;
+    /* Добавляет троеточие (...) к скрытому тексту */
+    -webkit-line-clamp: 3; /* Ограничение на количество отображаемых строк (здесь 3 строки) */
+    -webkit-box-orient: vertical;
+  }
+
+  &__review {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -76,7 +84,7 @@
     justify-content: flex-start;
   }
 
-  &__name{
+  &__name {
     margin: 0 0 8px;
   }
 }

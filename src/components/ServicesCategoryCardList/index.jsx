@@ -25,7 +25,7 @@ ServicesCategoryCardList.propTypes = {
     PropTypes.shape({
       label: PropTypes.string,
       value: PropTypes.string,
-      color: 'blue',
+      color: PropTypes.string,
       img: PropTypes.string,
     }),
   ),
