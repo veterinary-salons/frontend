@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import classes from './style.module.scss';
 import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
 
-const SpecialistCard = ({ link, color, title, img, disable }) => {
+const SpecialistCardMainPage = ({ link, color, title, img, disable }) => {
   const getCardBackground = classnames(
     classes[`card__background_${color}`],
     classes.card__background,
@@ -26,7 +26,7 @@ const SpecialistCard = ({ link, color, title, img, disable }) => {
   );
 };
 
-SpecialistCard.propTypes = {
+SpecialistCardMainPage.propTypes = {
   link: PropTypes.string,
   color: PropTypes.oneOf(['blue', 'yellow', 'green', 'violet']),
   title: PropTypes.string,
@@ -34,7 +34,7 @@ SpecialistCard.propTypes = {
   disable: PropTypes.bool,
 };
 
-SpecialistCard.defaultProps = {
+SpecialistCardMainPage.defaultProps = {
   link: '/',
   color: 'blue',
   title: 'Грумеры',
@@ -42,4 +42,4 @@ SpecialistCard.defaultProps = {
   disable: false,
 };
 
-export default SpecialistCard;
+export default SpecialistCardMainPage;
