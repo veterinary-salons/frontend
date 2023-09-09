@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import classes from './Main.module.scss';
-import SpecialistCardList from '../../modules/mainPage/specialistCardList/SpecialistCardList';
-import ServiceCardList from '../../modules/mainPage/serviceCardList/ServiceCardList';
+import SpecialistCardList from '../../modules/mainPage/specialistCardList';
+import GoodsCardMainPageList from '../../modules/mainPage/goodsCardList/index';
 import Facts from '../../modules/mainPage/facts/Facts';
 import Button from '../../ui/buttons/originButton/Button';
 
@@ -20,7 +20,7 @@ function Main() {
       </section>
       <SpecialistCardList />
       <Facts />
-      <ServiceCardList />
+      <GoodsCardMainPageList />
     </>
   );
 }

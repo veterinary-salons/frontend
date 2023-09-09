@@ -9,6 +9,7 @@ const CartProductQuantityBox = ({ variant, counter, getCounterNum }) => {
 
   useEffect(() => {
     getCounterNum(count);
+    // eslint-disable-next-line
   }, [count]);
 
   return (
