@@ -35,7 +35,18 @@
     font-style: normal;
     font-weight: 600;
     line-height: 14px;
-    margin: 0 0 40px;
+    margin: 0;
+  }
+
+  &__placeholder {
+    color: var(--text-grey-color, #9C9C9C);
+    text-align: center;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+    margin: 30px 0 0;
   }
 
   &__button-wrap {
@@ -43,5 +54,6 @@
     width: 100%;
     justify-content: center;
     column-gap: 40px;
+    margin-top: 40px;
   }
 }
