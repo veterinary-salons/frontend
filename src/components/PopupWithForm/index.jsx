@@ -30,12 +30,7 @@ const PopupWithForm = ({ title, children, isOpen, onClose }) => {
 };
 
 PopupWithForm.propTypes = {
-  title: PropTypes.oneOf([
-    'Ничего, будем рады помочь вам в другой раз',
-    'Вы связались с заказчиком и договорились о встрече?',
-    'Вы уверены, что хотите снять объявление с публикации?',
-    'Вы уверены, что хотите отменить бронирование?',
-  ]),
+  title: PropTypes.string,
   children: PropTypes.node,
   isOpen: PropTypes.bool,
   onClose: PropTypes.bool,

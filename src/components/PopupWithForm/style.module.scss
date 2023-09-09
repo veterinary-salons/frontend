@@ -21,8 +21,6 @@
   &__container {
     position: absolute;
     top: 300px;
-    width: 600px;
-    box-sizing: border-box;
   }
 
   &__form {
@@ -32,6 +30,7 @@
     width: 100%;
     padding: 60px 55px;
     box-sizing: border-box;
+    width: 600px;
   }
 
   &__title {
