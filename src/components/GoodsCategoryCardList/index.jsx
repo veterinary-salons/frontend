@@ -1,14 +1,14 @@
 import classes from './style.module.scss';
-import GoodsCathegoryCard from '../GoodsCathegoryCard';
+import GoodsCategoryCard from '../GoodsCategoryCard';
 import { filterData } from '../../assets/constants/filters';
 
-const GoodsCathegoryCardList = () => {
-  const goodsCatList = filterData.TypeForAll.options;
+const GoodsCategoryCardList = () => {
+  const goodsCatList = filterData.Categories.options;
 
   return(
   <ul className={classes.goods}>
     {goodsCatList.map((item) => (
-      <GoodsCathegoryCard
+      <GoodsCategoryCard
         key={item.value}
         link='/goods'
         title={item.label}
@@ -19,4 +19,4 @@ const GoodsCathegoryCardList = () => {
   )
 };
 
-export default GoodsCathegoryCardList;
+export default GoodsCategoryCardList;

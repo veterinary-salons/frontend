@@ -52,19 +52,19 @@ const filterData = {
       { value: 'elderly', label: 'Для пожилых' },
     ],
   },
-  TypeForAll: {
-    legend: 'Тип',
-    checkboxType: 'checkbox',
+  Categories: {
+    legend: 'Категория',
+    checkboxType: 'radio',
     options: [
-      { value: 'feed-goodies', label: 'Корм и лакомства', img: feedImg },
-      { value: 'toys-ammunition', label: 'Игрушки и амуниция', img: toysImg },
-      { value: 'toilet', label: 'Для туалета', img: toiletImg },
-      { value: 'hygiene', label: 'Гигиена и уход', img: hygieneImg },
-      { value: 'bowls-beds-houses', label: 'Миски, лежанки, домики', img: bowlsImg },
-      { value: 'vetpharmacy', label: 'Ветаптека', img: vetImg },
+      { name: 'category', value: 'feed-goodies', label: 'Корм и лакомства', img: feedImg },
+      { name: 'category', value: 'toys-ammunition', label: 'Игрушки и амуниция', img: toysImg },
+      { name: 'category', value: 'toilet', label: 'Для туалета', img: toiletImg },
+      { name: 'category', value: 'hygiene', label: 'Гигиена и уход', img: hygieneImg },
+      { name: 'category', value: 'bowls-beds-houses', label: 'Миски, лежанки, домики', img: bowlsImg },
+      { name: 'category', value: 'vetpharmacy', label: 'Ветаптека', img: vetImg },
     ],
   },
-  TypeForFood: {
+  'Type-feed-goodies': {
     legend: 'Тип',
     checkboxType: 'checkbox',
     options: [
@@ -73,21 +73,18 @@ const filterData = {
       { value: 'goodies', label: 'Лакомства' },
     ],
   },
-  TypeForCare: {
+  'Type-toys-ammunition': {
     legend: 'Тип',
     checkboxType: 'checkbox',
     options: [
-      { value: 'shampoos-conditioners', label: 'Шампуни и бальзамы' },
-      { value: 'lotions-sprays', label: 'Лосьоны и спреи' },
-      { value: 'brushes-combs', label: 'Расчески и дешеддеры' },
-      { value: 'clippers', label: 'Машинки для стрижки' },
-      { value: 'grooming-kits', label: 'Наборы для груминга' },
-      { value: 'toothbrushes', label: 'Зубные щётки' },
-      { value: 'nail-clippers', label: 'Ножницы для стрижки когтей' },
-      { value: 'view-all', label: 'Посмотреть все' },
+      { value: 'teasers', label: 'Дразнилки' },
+      { value: 'food-dispensing-toys', label: 'Игры с едой' },
+      { value: 'clothes', label: 'Одежда' },
+      { value: 'leashes-collars', label: 'Поводки и ошейники' },
+      { value: 'accessories', label: 'Аксессуары' },
     ],
   },
-  TypeForToilet: {
+  'Type-toilet': {
     legend: 'Тип',
     checkboxType: 'checkbox',
     options: [
@@ -99,15 +96,39 @@ const filterData = {
       { value: 'potty-training', label: 'Средства приучения' },
     ],
   },
-  TypeForToysAndClothes: {
+  'Type-hygiene': {
     legend: 'Тип',
     checkboxType: 'checkbox',
     options: [
-      { value: 'teasers', label: 'Дразнилки' },
-      { value: 'food-dispensing-toys', label: 'Игры с едой' },
-      { value: 'clothes', label: 'Одежда' },
-      { value: 'leashes-collars', label: 'Поводки и ошейники' },
-      { value: 'accessories', label: 'Аксессуары' },
+      { value: 'shampoos-conditioners', label: 'Шампуни и бальзамы' },
+      { value: 'lotions-sprays', label: 'Лосьоны и спреи' },
+      { value: 'brushes-combs', label: 'Расчески и дешеддеры' },
+      { value: 'clippers', label: 'Машинки для стрижки' },
+      { value: 'grooming-kits', label: 'Наборы для груминга' },
+      { value: 'toothbrushes', label: 'Зубные щётки' },
+      { value: 'nail-clippers', label: 'Ножницы для стрижки когтей' },
+    ],
+  },
+  'Type-bowls-beds-houses': {
+    legend: 'Тип',
+    checkboxType: 'checkbox',
+    options: [
+      { value: 'bowls', label: 'Миски, поилки' },
+      { value: 'beds', label: 'Лежанки' },
+      { value: 'scratching-posts', label: 'Когтеточки' },
+      { value: 'play-complexes', label: 'Игровые комплексы' },
+    ],
+  },
+  'Type-vetpharmacy': {
+    legend: 'Тип',
+    checkboxType: 'checkbox',
+    options: [
+      { value: 'from-fleas-ticks', label: 'От блох и клещей' },
+      { value: 'from-helminths', label: 'От гельминтов' },
+      { value: 'vitamins', label: 'Витамины' },
+      { value: 'antibiotics', label: 'Антибиотики' },
+      { value: 'for-eyes', label: 'Для глаз' },
+      { value: 'for-skin', label: 'Для кожи' },
     ],
   },
   brands: {
@@ -144,24 +165,6 @@ const filterData = {
         {
           label: 'Для взрослых и пожилых',
           value: 'Adult'
-        }
-      ],
-  },
-  feedTypes: {
-    legend: 'Тип корма',
-    checkboxType: 'checkbox',
-    options: [
-        {
-          label: 'Сухой',
-          value: 'dry'
-        },
-        {
-          label: 'Влажный',
-          value: 'wet'
-        },
-        {
-          label: 'Лакомства',
-          value: 'goodies'
         }
       ],
   },

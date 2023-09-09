@@ -1,12 +1,13 @@
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { useState, useCallback } from 'react';
-import CheckboxFilter from '../../CheckboxFilter';
+import CheckboxFilter from '../CheckboxFilter';
 import classes from './style.module.scss';
-import Checkbox from '../../../../ui/forms/checkboxes/checkbox/checkbox';
-import { animals } from '../../../../assets/constants/filters';
-import InputPrice from '../../../../ui/forms/inputs/inputPrice';
+import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
+import { animals } from '../../../assets/constants/filters';
+import InputPrice from '../../../ui/forms/inputs/inputPrice';
 
-function GoodsFilterMain() {
+function GoodsFilter({category}) {
   const [values, setValues] = useState({});
 
   const handleFormChange = useCallback(
@@ -21,6 +22,11 @@ function GoodsFilterMain() {
 
   return (
     <form className={classes.filter} id='goods-filter'>
+      <CheckboxFilter
+        type="Categories"
+        getCheckbox={handleFormChange}
+        values={values}
+      />
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>Животное</legend>
         {animals.map((item) => (
@@ -35,41 +41,45 @@ function GoodsFilterMain() {
         values={values}
       />
       <CheckboxFilter
-        type='age'
+        type={`Type-${category}`}
         getCheckbox={handleFormChange}
         values={values}
+        isActiveShowAllButton={category === 'vetpharmacy' || category === 'hygiene'}
       />
-      <CheckboxFilter
-        type="TypeForAll"
-        getCheckbox={handleFormChange}
-        values={values}
-      />
-      <CheckboxFilter
-        type="brands"
-        getCheckbox={handleFormChange}
-        values={values}
-        isActiveShowAllButton
-      />
-      <Checkbox
-        type="switch"
-        checked={false}
-        htmlType="checkbox"
-        value="holistics"
-        name="holistics"
-        getCheckbox={handleFormChange}
-      >
-        Холистики
-      </Checkbox>
-      <CheckboxFilter
-        type="needs"
-        getCheckbox={handleFormChange}
-        values={values}
-      />
-      <CheckboxFilter
-        type="feedTypes"
-        getCheckbox={handleFormChange}
-        values={values}
-      />
+      {category !== 'bowls-beds-houses' &&
+        <CheckboxFilter
+          type="brands"
+          getCheckbox={handleFormChange}
+          values={values}
+          isActiveShowAllButton
+        />
+      }
+      {category === 'feed-goodies' &&
+        <Checkbox
+          type="switch"
+          checked={false}
+          htmlType="checkbox"
+          value="holistics"
+          name="holistics"
+          getCheckbox={handleFormChange}
+        >
+          Холистики
+        </Checkbox>
+      }
+      {(category === 'toilet' || category === 'hygiene' || category === 'vetpharmacy') &&
+        <CheckboxFilter
+          type='age'
+          getCheckbox={handleFormChange}
+          values={values}
+        />
+      }
+      {category === 'feed-goodies' &&
+        <CheckboxFilter
+          type="needs"
+          getCheckbox={handleFormChange}
+          values={values}
+        />
+      }
       <CheckboxFilter
         type="petSize"
         getCheckbox={handleFormChange}
@@ -101,6 +111,21 @@ function GoodsFilterMain() {
       </fieldset>
     </form>
   );
-}
+};
 
-export default GoodsFilterMain;
+GoodsFilter.propTypes = {
+  category: PropTypes.oneOf([
+    'feed-goodies',
+    'toys-ammunition',
+    'toilet',
+    'hygiene',
+    'bowls-beds-houses',
+    'vetpharmacy'
+  ]),
+};
+
+GoodsFilter.defaultProps = {
+  category: 'feed-goodies',
+};
+
+export default GoodsFilter;

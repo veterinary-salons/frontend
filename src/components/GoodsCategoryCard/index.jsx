@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classes from './style.module.scss';
 import feedImg from '../../assets/images/images/goods-cathegories-catalog/feed-goodies.svg';
 
-const GoodsCathegoryCard = ({ link, title, img }) => (
+const GoodsCategoryCard = ({ link, title, img }) => (
   <li className={classes.card}>
     <Link to={link} className={classes.card__container}>
       <img className={classes.card__img} alt={title} src={img} />
@@ -12,16 +12,16 @@ const GoodsCathegoryCard = ({ link, title, img }) => (
   </li>
 );
 
-GoodsCathegoryCard.propTypes = {
+GoodsCategoryCard.propTypes = {
   link: PropTypes.string,
   title: PropTypes.string,
   img: PropTypes.string
 };
 
-GoodsCathegoryCard.defaultProps = {
+GoodsCategoryCard.defaultProps = {
   link: '/',
   title: 'Корм и лакомства',
   img: feedImg
 };
 
-export default GoodsCathegoryCard;
+export default GoodsCategoryCard;

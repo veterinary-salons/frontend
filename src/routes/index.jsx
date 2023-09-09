@@ -29,6 +29,7 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import SectionTitle from '../components/SectionTitle';
+import Goods from '../pages/Goods';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -68,9 +69,7 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Goods */}
-      <Route path="goods" element={<SectionTitle title='Товары'/>}>
-        <Route element={<h2>Здесь будут товары</h2>} />
-      </Route>
+      <Route path="goods" element={<Goods/>} />
 
       {/* Articles */}
       <Route
