@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import classes from './style.module.scss';
 import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
-import { filterData } from '../../../assets/constants/filters';
+import { filterGoodsData } from '../../../assets/constants/filters';
 
-// Получить доступные значения для type из объекта filterData
-const availableTypes = [...Object.keys(filterData)];
+// Получить доступные значения для type из объекта filterGoodsData
+const availableTypes = [...Object.keys(filterGoodsData)];
 
 function CheckboxFilter({
   // selectedFilters,
@@ -14,7 +14,7 @@ function CheckboxFilter({
   getCheckbox,
   values,
 }) {
-  const { legend, checkboxType, options } = filterData[type] || {};
+  const { legend, checkboxType, options } = filterGoodsData[type] || {};
   // const [selectedOptions, setSelectedOptions] = useState(selectedFilters);
 
   // TODO: отработать выделение чекбокса и событие "показать все"

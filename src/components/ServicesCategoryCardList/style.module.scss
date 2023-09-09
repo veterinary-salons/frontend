@@ -1,9 +1,28 @@
-.goods {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(fit-content);
-  gap: 30px 20px;
-  margin: 0 auto;
-  padding: 0;
-  width: fit-content;
+.specialists {
+  padding: 120px 100px 120px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--text-white-color);
+  margin-top: -20px;
+  width: 100%;
+  
+  &__title {
+      color: var(--primary-text-color, #0F0F0F);
+      font-family: Century Gothic;
+      font-size: 44px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 66px;
+      max-width: 670px;
+      margin: 0 auto 60px 0;
+  }
+
+  &__cards {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      column-gap: 20px;
+      padding: 0;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  }
 }
