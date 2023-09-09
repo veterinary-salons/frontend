@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
 import ArticleCard from '../../components/ArticleCard/index';
 import classes from './style.module.scss';
+import SectionTitle from '../../components/SectionTitle';
 
 const Articles = ({ dataArticle }) => (
   <section className={classes.articles}>
-    <h2 className={classes.articles__title}>Purrfect журнал</h2>
+    <SectionTitle title='Purrfect журнал'/>
     <p className={classes.articles__paragraph}>
       Тут мы собираем самые полезные и интересные статьи про питомцев
     </p>
