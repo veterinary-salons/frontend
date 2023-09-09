@@ -27,7 +27,8 @@ import SelectedArticles from '../pages/SelectedArticles';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
 // import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
 // import QuitInfotoolPopup from '../components/QuitInfotoolPopup/index';
-import EditAvatarPopup from '../components/EditAvatarPopup/index';
+// import EditAvatarPopup from '../components/EditAvatarPopup/index';
+import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
 
 
 import {
@@ -108,7 +109,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет регистрация</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<EditAvatarPopup />} />
+      <Route path="test" element={<EditAvatarConfirmationPopup />} />
     </Route>,
   ),
 );

@@ -3,7 +3,7 @@ import classes from '../PopupWithForm/style.module.scss';
 import PopupWithForm from '../PopupWithForm';
 import Button from '../../ui/buttons/originButton/Button';
 
-const QuitConfirmationPopup = ({ isOpen, onClose }) => (
+const EditAvatarPopup = ({ isOpen, onClose }) => (
   <PopupWithForm
     title="Загрузка новой фотографии"
     isOpen={isOpen}
@@ -20,14 +20,14 @@ const QuitConfirmationPopup = ({ isOpen, onClose }) => (
   </PopupWithForm>
 );
 
-QuitConfirmationPopup.propTypes = {
+EditAvatarPopup.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.bool,
 };
 
-QuitConfirmationPopup.defaultProps = {
+EditAvatarPopup.defaultProps = {
   isOpen: true,
   onClose: false,
 };
 
-export default QuitConfirmationPopup;
+export default EditAvatarPopup;
