@@ -1,4 +1,4 @@
-import SpecialistCard from './SpecialistCard';
+import SpecialistCard from './index';
 import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
 import imgVets from '../../../assets/images/icon/specialists/vets.svg';
 import imgPetSitters from '../../../assets/images/icon/specialists/pet-sitters.svg';
