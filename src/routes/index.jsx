@@ -22,7 +22,9 @@ import SelectedServices from '../pages/SelectedServices/index';
 import SelectedArticles from '../pages/SelectedArticles';
 
 // import PopupWithForm from '../components/PopupWithForm';
-import QuitConfirmationPopup from '../components/QuitConfirmationPopup';
+// import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
+// import QuitConfirmationPopup from '../components/QuitConfirmationPopup';
+
 
 import {
   dataSelectedProducts,
@@ -70,7 +72,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<QuitConfirmationPopup />}
+        element={<h2>TEST</h2>}
       />
     </Route>,
   ),
