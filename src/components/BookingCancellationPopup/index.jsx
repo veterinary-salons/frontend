@@ -13,11 +13,7 @@ const BookingCancellationPopup = ({ isOpen, onClose }) => (
       <Button variant="outlined" size="medium" type="button">
         Назад
       </Button>
-      <Button
-        variant="purple-filled"
-        size="medium"
-        type="submit"
-      >
+      <Button variant="purple-filled" size="medium" type="submit">
         Отменить бронирование
       </Button>
     </div>

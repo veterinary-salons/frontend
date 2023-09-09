@@ -4,17 +4,10 @@ import PopupWithForm from '../PopupWithForm';
 import Button from '../../ui/buttons/originButton/Button';
 
 const QuitConfirmationPopup = ({ isOpen, onClose }) => (
-  <PopupWithForm
-    title="Вы уверены что хотите выйти из аккаунта?"
-    isOpen={isOpen}
-    onClose={onClose}
-  >
+  <PopupWithForm title="Вы вышли из аккаунта" isOpen={isOpen} onClose={onClose}>
     <div className={classes['popup__button-wrap']}>
-      <Button variant="outlined" size="medium" type="button">
-        Да
-      </Button>
       <Button variant="purple-filled" size="medium" type="submit">
-        Нет
+        Понятно
       </Button>
     </div>
   </PopupWithForm>

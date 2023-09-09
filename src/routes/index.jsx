@@ -23,7 +23,8 @@ import SelectedArticles from '../pages/SelectedArticles';
 
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
-// import QuitConfirmationPopup from '../components/QuitConfirmationPopup';
+// import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
+import QuitInfotoolPopup from '../components/QuitInfotoolPopup/index'
 
 
 import {
@@ -72,7 +73,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>TEST</h2>}
+        element={<QuitInfotoolPopup />}
       />
     </Route>,
   ),
