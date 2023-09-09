@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import classes from './style.module.scss';
-import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
+import imgGroomer from '../../../assets/images/images/category-specialist-card/groomers.svg';
 
 const SpecialistCardMainPage = ({ link, color, title, img, disable }) => {
   const getCardBackground = classnames(

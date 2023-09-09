@@ -1,9 +1,9 @@
 import classes from './style.module.scss';
 import GoodsCardMainPage from '../goodsCard/index';
-import toysImg from '../../../assets/images/images/services-card/toys.png';
-import foodImg from '../../../assets/images/images/services-card/food.png';
-import treatsImg from '../../../assets/images/images/services-card/treats.png';
-import pillsImg from '../../../assets/images/images/services-card/pills.png';
+import toysImg from '../../../assets/images/images/category-good-main-card/toys.png';
+import foodImg from '../../../assets/images/images/category-good-main-card/food.png';
+import treatsImg from '../../../assets/images/images/category-good-main-card/treats.png';
+import pillsImg from '../../../assets/images/images/category-good-main-card/pills.png';
 
 const GoodsCardListMainPage = () => (
   <section className={classes.goods}>
