@@ -9,7 +9,7 @@ const SelectedProducts = ({ dataProducts }) =>
       <NotificationMessage
         imageNumber="10"
         title="Тут пусто как в миске этого котика"
-        text="Неужели вы ещё не видели как много у нас 
+        text="Неужели вы ещё не видели как много y нас 
         полезного и интересного?"
         to="/goods"
         buttonText="Выбрать товары"
