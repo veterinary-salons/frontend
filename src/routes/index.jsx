@@ -29,7 +29,7 @@ import Catalog from '../pages/Catalog';
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
 // import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
-import QuitInfotooltipPopup from '../components/QuitInfotooltipPopup';
+// import QuitInfotooltipPopup from '../components/QuitInfotooltipPopup';
 // import EditAvatarPopup from '../components/EditAvatarPopup/index';
 // import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
