@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import classes from './style.module.scss';
-import toysImg from '../../../assets/images/images/services-card/toys.png';
+import toysImg from '../../../assets/images/images/category-good-main-card/toys.png';
 
 const GoodsCardMainPage = ({ link, color, title, img, disable }) => {
   const getCardServiceBackground = classnames(
