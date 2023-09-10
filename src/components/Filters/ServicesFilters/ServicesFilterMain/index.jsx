@@ -1,4 +1,5 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom/dist';
 import CheckboxFilter from '../../CheckboxFilter';
 import classes from './style.module.scss';
 import Dropdown from '../../../../ui/forms/dropdowns/Dropdown';
@@ -11,6 +12,7 @@ import InputPrice from '../../../../ui/forms/inputs/inputPrice';
 
 function ServicesFilterMain() {
   const [values, setValues] = useState({});
+  const navigation = useNavigate();
 
   const handleFormChange = useCallback(
     (value) => {
@@ -22,7 +24,13 @@ function ServicesFilterMain() {
     [setValues, values],
   );
 
-  console.log(values);
+  useEffect(()=>{
+    if (values.specialist) {
+      navigation(`/services/${values.specialist}`);
+    }
+  }, [values.specialist]);
+
+  console.log('filters=', values);
 
   return (
     <form className={classes.filter} id="services-filter">

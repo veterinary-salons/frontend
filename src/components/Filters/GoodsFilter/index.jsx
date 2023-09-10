@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import { useState, useCallback } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState, useCallback, useEffect } from 'react';
 import CheckboxFilter from '../CheckboxFilter';
 import classes from './style.module.scss';
 import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
 import { animals } from '../../../assets/constants/filters';
 import InputPrice from '../../../ui/forms/inputs/inputPrice';
 
-function GoodsFilter({category}) {
-  const [values, setValues] = useState({});
+function GoodsFilter({ category }) {
+  const [values, setValues] = useState({
+    category,
+  });
+  const navigation = useNavigate();
 
   const handleFormChange = useCallback(
     (value) => {
@@ -20,17 +23,27 @@ function GoodsFilter({category}) {
     [setValues, values],
   );
 
+  useEffect(() => {
+    if (values.category) {
+      navigation(`/goods/${values.category}`);
+    }
+  }, [values.category]);
+
   return (
-    <form className={classes.filter} id='goods-filter'>
+    <form className={classes.filter} id="goods-filter">
       <CheckboxFilter
-        type="Categories"
+        type="сategories"
         getCheckbox={handleFormChange}
         values={values}
       />
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>Животное</legend>
         {animals.map((item) => (
-          <Link key={item.value} to="/" className={classes.filter__link}>
+          <Link
+            key={item.value}
+            to={item.value}
+            className={classes.filter__link}
+          >
             {item.label}
           </Link>
         ))}
@@ -44,17 +57,19 @@ function GoodsFilter({category}) {
         type={`Type-${category}`}
         getCheckbox={handleFormChange}
         values={values}
-        isActiveShowAllButton={category === 'vetpharmacy' || category === 'hygiene'}
+        isActiveShowAllButton={
+          category === 'vetpharmacy' || category === 'hygiene'
+        }
       />
-      {category !== 'bowls-beds-houses' &&
+      {category !== 'bowls-beds-houses' && (
         <CheckboxFilter
           type="brands"
           getCheckbox={handleFormChange}
           values={values}
           isActiveShowAllButton
         />
-      }
-      {category === 'feed-goodies' &&
+      )}
+      {category === 'feed-goodies' && (
         <Checkbox
           type="switch"
           checked={false}
@@ -65,21 +80,23 @@ function GoodsFilter({category}) {
         >
           Холистики
         </Checkbox>
-      }
-      {(category === 'toilet' || category === 'hygiene' || category === 'vetpharmacy') &&
+      )}
+      {(category === 'toilet' ||
+        category === 'hygiene' ||
+        category === 'vetpharmacy') && (
         <CheckboxFilter
-          type='age'
+          type="age"
           getCheckbox={handleFormChange}
           values={values}
         />
-      }
-      {category === 'feed-goodies' &&
+      )}
+      {category === 'feed-goodies' && (
         <CheckboxFilter
           type="needs"
           getCheckbox={handleFormChange}
           values={values}
         />
-      }
+      )}
       <CheckboxFilter
         type="petSize"
         getCheckbox={handleFormChange}
@@ -88,8 +105,8 @@ function GoodsFilter({category}) {
       <fieldset className={classes.filter__fieldset}>
         <legend className={classes.filter__legend}>Цена</legend>
         <div className={classes.filter__inputs}>
-          <InputPrice/>
-          <InputPrice prefix='до'/>
+          <InputPrice />
+          <InputPrice prefix="до" />
         </div>
         <Checkbox
           type="checkbox"
@@ -111,7 +128,7 @@ function GoodsFilter({category}) {
       </fieldset>
     </form>
   );
-};
+}
 
 GoodsFilter.propTypes = {
   category: PropTypes.oneOf([
@@ -120,7 +137,7 @@ GoodsFilter.propTypes = {
     'toilet',
     'hygiene',
     'bowls-beds-houses',
-    'vetpharmacy'
+    'vetpharmacy',
   ]),
 };
 
