@@ -32,7 +32,7 @@ PopupWithForm.propTypes = {
   children: PropTypes.node,
   isOpen: PropTypes.bool,
   onClose: PropTypes.bool,
-  onSubmit: PropTypes.bool,
+  onSubmit: PropTypes.func,
 };
 
 PopupWithForm.defaultProps = {
@@ -40,7 +40,7 @@ PopupWithForm.defaultProps = {
   children: null,
   isOpen: false,
   onClose: true,
-  onSubmit: false,
+  onSubmit: null,
 };
 
 export default PopupWithForm;
