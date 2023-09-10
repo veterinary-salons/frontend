@@ -35,6 +35,7 @@ import Catalog from '../pages/Catalog';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
+import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
 import {
   dataSelectedProducts,
@@ -123,7 +124,7 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h1>TEST</h1>} />
+      <Route path="test" element={<SpecialistCardListMainPage />} />
     </Route>,
   ),
 );
