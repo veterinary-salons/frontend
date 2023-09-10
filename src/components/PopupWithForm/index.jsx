@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import classes from './style.module.scss';
 
-const PopupWithForm = ({ title, children, isOpen, onClose }) => {
+const PopupWithForm = ({ title, children, isOpen, onClose, onSubmit }) => {
   const getPopupClasses = classnames(classes.popup, {
     [classes.popup_opened]: isOpen,
   });
@@ -19,7 +19,7 @@ const PopupWithForm = ({ title, children, isOpen, onClose }) => {
 
   return (
     <section className={getPopupClasses}>
-      <div className={classes.popup__form}>
+      <div className={classes.popup__form} onSubmit={onSubmit}>
         <p className={classes.popup__title}>{title}</p>
         {children}
       </div>
@@ -32,13 +32,15 @@ PopupWithForm.propTypes = {
   children: PropTypes.node,
   isOpen: PropTypes.bool,
   onClose: PropTypes.bool,
+  onSubmit: PropTypes.bool,
 };
 
 PopupWithForm.defaultProps = {
   title: 'Ничего, будем рады помочь вам в другой раз',
   children: null,
-  isOpen: true,
-  onClose: false,
+  isOpen: false,
+  onClose: true,
+  onSubmit: false,
 };
 
 export default PopupWithForm;
