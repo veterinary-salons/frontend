@@ -26,6 +26,16 @@ import ServicesList from '../pages/ServicesList';
 import SectionTitle from '../components/SectionTitle';
 import Catalog from '../pages/Catalog';
 
+// import PopupWithForm from '../components/PopupWithForm';
+// import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
+// import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
+// import QuitInfotooltipPopup from '../components/QuitInfotooltipPopup';
+// import EditAvatarPopup from '../components/EditAvatarPopup/index';
+// import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
+// import AdRemovingPopup from '../components/AdRemovingPopup';
+// import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
+// import BookingRevokePopup from '../components/BookingRevokePopup';
+
 import {
   dataSelectedProducts,
   dataArticle,
@@ -110,14 +120,11 @@ const router = createBrowserRouter(
       <Route
         path="recovery"
         element={<h2>Здесь будет восстановление аккаунта</h2>}
-        />
+      />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route 
-        path="test"  
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-        />
-        </Route>,
+      <Route path="test" element={<h1>TEST</h1>} />
+    </Route>,
   ),
 );
 
