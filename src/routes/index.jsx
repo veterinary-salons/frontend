@@ -26,12 +26,12 @@ import SelectedArticles from '../pages/SelectedArticles';
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
 // import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
-// import QuitInfotoolPopup from '../components/QuitInfotoolPopup/index';
+import QuitInfotooltipPopup from '../components/QuitInfotooltipPopup';
 // import EditAvatarPopup from '../components/EditAvatarPopup/index';
 // import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
-import BookingRevokePopup from '../components/BookingRevokePopup';
+// import BookingRevokePopup from '../components/BookingRevokePopup';
 
 import {
   dataSelectedProducts,
@@ -111,7 +111,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет регистрация</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<BookingRevokePopup />} />
+      <Route path="test" element={<QuitInfotooltipPopup />} />
     </Route>,
   ),
 );
