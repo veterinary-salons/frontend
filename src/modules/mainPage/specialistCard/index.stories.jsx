@@ -1,8 +1,8 @@
 import SpecialistCard from './index';
-import imgGroomer from '../../../assets/images/icon/specialists/groomers.svg';
-import imgVets from '../../../assets/images/icon/specialists/vets.svg';
-import imgPetSitters from '../../../assets/images/icon/specialists/pet-sitters.svg';
-import imgDogHandlers from '../../../assets/images/icon/specialists/dog-handlers.svg';
+import imgGroomer from '../../../assets/images/images/category-specialist-card/groomers.svg';
+import imgVets from '../../../assets/images/images/category-specialist-card/vets.svg';
+import imgPetSitters from '../../../assets/images/images/category-specialist-card/pet-sitters.svg';
+import imgDogHandlers from '../../../assets/images/images/category-specialist-card/dog-handlers.svg';
 
 export default {
   title: 'Modules/Mainpage/Card',
