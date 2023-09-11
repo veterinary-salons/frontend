@@ -23,8 +23,9 @@ import SelectedProducts from '../pages/SelectedProducts';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
-import SectionTitle from '../components/SectionTitle';
+// import SectionTitle from '../components/SectionTitle';
 import Catalog from '../pages/Catalog';
+import GoodsList from '../pages/GoodsList';
 
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
@@ -41,6 +42,7 @@ import {
   dataArticle,
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
+import Goods from '../pages/Goods';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -48,12 +50,12 @@ const router = createBrowserRouter(
       path="/"
       element={
         <>
-        <Online>
-          <Root />
-        </Online>
-        <Offline>
-          <ErrorBoundary />
-        </Offline>
+          <Online>
+            <Root />
+          </Online>
+          <Offline>
+            <ErrorBoundary />
+          </Offline>
         </>
       }
       errorElement={<ErrorBoundary errorType404 />}
@@ -75,17 +77,15 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route 
-        path="services" 
-        element={<Catalog title='Наши услуги'/>}
-      >
+      <Route path="services" element={<Catalog title="Наши услуги" />}>
         <Route index element={<ServicesList />} />
         <Route path=":service" element={<Service />} />
       </Route>
 
       {/* Goods */}
-      <Route path="goods" element={<SectionTitle title='Товары'/>}>
-        <Route element={<h2>Здесь будут товары</h2>} />
+      <Route path="goods" element={<Catalog title="Товары" />}>
+        <Route index element={<GoodsList />} />
+        <Route path=":category" element={<Goods />} />
       </Route>
 
       {/* Articles */}
@@ -100,7 +100,7 @@ const router = createBrowserRouter(
           path="goods"
           element={<SelectedProducts dataProducts={dataSelectedProducts} />}
         />
-        <Route path="services"  element={<h1>избранные услуги</h1>} />
+        <Route path="services" element={<h1>избранные услуги</h1>} />
         <Route
           path="articles"
           element={<SelectedArticles dataArticle={dataArticle} />}
@@ -123,7 +123,10 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h1>TEST</h1>} />
+      <Route
+        path="test"
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+      />
     </Route>,
   ),
 );
