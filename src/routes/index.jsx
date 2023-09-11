@@ -80,7 +80,7 @@ const router = createBrowserRouter(
         path="services" 
         element={<Catalog title='Наши услуги'/>}
       >
-        <Route index element={<ServicesList />} />
+        <Route index element={<ServicesList isServicesPage/>} />
         <Route path=":service" element={<Service />} />
       </Route>
 
