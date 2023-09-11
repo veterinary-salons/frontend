@@ -36,6 +36,7 @@ import GoodsList from '../pages/GoodsList';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
+// import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
 import {
   dataSelectedProducts,
@@ -77,8 +78,11 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route path="services" element={<Catalog title="Наши услуги" />}>
-        <Route index element={<ServicesList />} />
+      <Route 
+        path="services" 
+        element={<Catalog title='Наши услуги'/>}
+      >
+        <Route index element={<ServicesList isServicesPage/>} />
         <Route path=":service" element={<Service />} />
       </Route>
 
