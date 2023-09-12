@@ -28,8 +28,8 @@ $ npm run start //запускаем приложение на локально�
 ## Команда
 
 Команда frontend-разработчиков сервиса:
-@AlinaLvova
-@Anton-Laid
-@vivan1992
-@MariaTsay
-@Polina-KHV
+* [@AlinaLvova](https://github.com/AlinaLvova)
+* [@Anton-Laid](https://github.com/Anton-Laid)
+* [@vivan1992](https://github.com/vivan1992)
+* [@MariaTsay](https://github.com/MariaTsay)
+* [@Polina-KHV](https://github.com/Polina-KHV)
