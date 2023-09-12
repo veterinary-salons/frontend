@@ -1,12 +1,17 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.65243396.css",
-    "main.js": "/frontend/static/js/main.54d0a47f.js",
+    "main.css": "/frontend/static/css/main.2f47ba27.css",
+    "main.js": "/frontend/static/js/main.44aace9e.js",
     "static/media/7.svg": "/frontend/static/media/7.fbd4fd4318357b4b7a79.svg",
     "static/media/1.svg": "/frontend/static/media/1.f0f8dfa7cbcee4eb4c1b.svg",
+    "static/media/toilet.svg": "/frontend/static/media/toilet.22cd1fa9537a8e1cc70887136cb136dc.svg",
+    "static/media/vetpharmacy.svg": "/frontend/static/media/vetpharmacy.946fb0467c1c08697207e9f1e18ccb21.svg",
     "static/media/10.svg": "/frontend/static/media/10.215da926fbbd5da0bf0d.svg",
     "static/media/2.svg": "/frontend/static/media/2.9eb7f10cac60c29f4b5c.svg",
+    "static/media/hygiene.svg": "/frontend/static/media/hygiene.0d7e834c018f0dc96ba36113380a97b2.svg",
     "static/media/pet-sitters.svg": "/frontend/static/media/pet-sitters.571934acc5cd4f4abe797e87e45f47b2.svg",
+    "static/media/feed-goodies.svg": "/frontend/static/media/feed-goodies.cb6021f4a5516a1148dfa873cf036b0d.svg",
+    "static/media/bowls-beds-houses.svg": "/frontend/static/media/bowls-beds-houses.c0c97d1e52ee71a0c47ce25dc748c8ed.svg",
     "static/media/groomers.svg": "/frontend/static/media/groomers.035c5910531d611c6dd6c415015ee309.svg",
     "static/media/vets.svg": "/frontend/static/media/vets.f1a03348a7af9e36724b642154ad7667.svg",
     "static/media/dog-handlers.svg": "/frontend/static/media/dog-handlers.8a85b26a333260280a533242f8c3ec48.svg",
@@ -26,6 +31,7 @@
     "static/media/12.svg": "/frontend/static/media/12.578fa8f840ff12d824f3.svg",
     "static/media/9.svg": "/frontend/static/media/9.875281533f766694ee36.svg",
     "static/media/CenturyGothic-Bold.woff2": "/frontend/static/media/CenturyGothic-Bold.361b706beb8be12d1b24.woff2",
+    "static/media/toys-ammunition.svg": "/frontend/static/media/toys-ammunition.9e9506dc3c5dde4320c87ba3a052415c.svg",
     "static/media/4.svg": "/frontend/static/media/4.f7e21362b788ad822b70.svg",
     "static/media/img-avatar.svg": "/frontend/static/media/img-avatar.db70c39f77df0a5a2b70424e9bf50e41.svg",
     "static/media/dog.jpg": "/frontend/static/media/dog.fed6bc1ee81482346559.jpg",
@@ -60,12 +66,14 @@
     "static/media/minus-black.svg": "/frontend/static/media/minus-black.02b6f094e2bacf9837d0.svg",
     "static/media/minus-alternativ.svg": "/frontend/static/media/minus-alternativ.604937441d4046be727b.svg",
     "static/media/arrow-right.svg": "/frontend/static/media/arrow-right.465b0ab81f756e685743.svg",
+    "static/media/arrow-up.svg": "/frontend/static/media/arrow-up.2f4d92e323e8849df0c8b749369da5f1.svg",
+    "static/media/arrow-down.svg": "/frontend/static/media/arrow-down.9de4cd594b932d97adf5298acbe111be.svg",
     "static/media/btn-plus-white.svg": "/frontend/static/media/btn-plus-white.b500de69657c3e269e07.svg",
-    "main.65243396.css.map": "/frontend/static/css/main.65243396.css.map",
-    "main.54d0a47f.js.map": "/frontend/static/js/main.54d0a47f.js.map"
+    "main.2f47ba27.css.map": "/frontend/static/css/main.2f47ba27.css.map",
+    "main.44aace9e.js.map": "/frontend/static/js/main.44aace9e.js.map"
   },
   "entrypoints": [
-    "static/css/main.65243396.css",
-    "static/js/main.54d0a47f.js"
+    "static/css/main.2f47ba27.css",
+    "static/js/main.44aace9e.js"
   ]
 }
