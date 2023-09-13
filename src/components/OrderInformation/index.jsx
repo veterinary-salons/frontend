@@ -4,7 +4,7 @@ import classnames from 'classnames';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
-const OrderInformation = ({ price, discount, cost, arr, textBtn }) => {
+const OrderInformation = ({ price, discount, cost, array, textBtn }) => {
   const navigate = useNavigate();
   const getClassTextgrey = classnames(
     classes.card__text,
@@ -12,8 +12,8 @@ const OrderInformation = ({ price, discount, cost, arr, textBtn }) => {
   );
 
   return (
-    <article className={classnames(classes.card)}>
-      {arr.map((i) => (
+    <article className={classes.card}>
+      {array.map((i) => (
         <div className={classes.card__container}>
           <h3 className={classes.card__title}>{i.title}</h3>
           <p className={getClassTextgrey}>{i.products}</p>
@@ -59,7 +59,7 @@ const OrderInformation = ({ price, discount, cost, arr, textBtn }) => {
 };
 
 OrderInformation.propTypes = {
-  arr: PropTypes.arrayOf(
+  array: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string,
       products: PropTypes.string,
@@ -72,10 +72,10 @@ OrderInformation.propTypes = {
 };
 
 OrderInformation.defaultProps = {
-  arr: [
+  array: [
     { title: 'Ваш заказ', products: '2 товара, 5,55 кг' },
-    { title: 'Доставка', products: 'Курьером' },
-    { title: 'Оплата', products: 'При получении' },
+    // { title: 'Доставка', products: 'Курьером' },
+    // { title: 'Оплата', products: 'При получении' },
   ],
   textBtn: 'Оформить заказ',
   price: '1 040',
