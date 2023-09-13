@@ -47,7 +47,7 @@ const SpecialistsCard = ({
         <div className={classes['specialists-card__review']}>
           <p className={classes['specialists-card__name']}>{name}</p>
           <StarsBox rating={scoreReview}/>
-          <Link to="/">{numReviews} отзыва</Link>
+          <Link className={classes['specialists-card__link']} to="/">{numReviews} отзыва</Link>
         </div>
       </div>
     </li>

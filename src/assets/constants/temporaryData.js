@@ -9,7 +9,7 @@ const dataSelectedProducts = [
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '3.2',
     counter: 0,
-    likes: true,
+    isLiked: true,
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const dataSelectedProducts = [
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.4',
     counter: 0,
-    likes: true,
+    isLiked: true,
   },
   {
     id: 3,
@@ -33,7 +33,7 @@ const dataSelectedProducts = [
     image: '',
     rating: '5.0',
     counter: 0,
-    likes: true,
+    isLiked: true,
   },
   {
     id: 4,
@@ -45,7 +45,7 @@ const dataSelectedProducts = [
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.8',
     counter: 0,
-    likes: true,
+    isLiked: true,
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const dataSelectedProducts = [
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.7',
     counter: 0,
-    likes: true,
+    isLiked: true,
   },
   {
     id: 6,
@@ -69,7 +69,122 @@ const dataSelectedProducts = [
     image: '',
     rating: '4.0',
     counter: 0,
-    likes: true,
+    isLiked: true,
+  },
+];
+
+const dataGoodsForCatalog = [
+  {
+    id: 1,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Сухой корм для кошек Royal Conin для Стерилизованных Индейка для взрослых',
+    reviews: 12,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '3.2',
+    counter: 0,
+    isLiked: false,
+    category: 'feed-goodies',
+    animal: 'cat'
+  },
+  {
+    id: 2,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Лоток для собак',
+    reviews: 46,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '4.4',
+    counter: 0,
+    isLiked: true,
+    category: 'toilet',
+    animal: 'dog'
+  },
+  {
+    id: 3,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Лосьен для глаз',
+    reviews: 46,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '5.0',
+    counter: 0,
+    isLiked: false,
+    category: 'hygiene',
+    animal: 'cat'
+  },
+  {
+    id: 4,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Миска для хорька',
+    reviews: 46,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '4.8',
+    counter: 0,
+    isLiked: false,
+    category: 'bowls-beds-houses',
+    animal: 'rodent'
+  },
+  {
+    id: 5,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Витамины для собак',
+    reviews: 46,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '4.7',
+    counter: 0,
+    isLiked: false,
+    category: 'vetpharmacy',
+    animal: 'cat'
+  },
+  {
+    id: 6,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Игрушка клубок',
+    reviews: 46,
+    image: '',
+    rating: '4.0',
+    counter: 0,
+    isLiked: false,
+    category: 'toys-ammunition',
+    animal: 'cat'
+  },
+  {
+    id: 7,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Корм для рыб',
+    reviews: 46,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '4.4',
+    counter: 0,
+    isLiked: true,
+    category: 'feed-goodies',
+    animal: 'fish'
+  },
+  {
+    id: 8,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Сухой корм для слонов',
+    reviews: 46,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '4.7',
+    counter: 0,
+    isLiked: false,
+    category: 'feed-goodies',
+    animal: 'exotic'
   },
 ];
 
@@ -175,4 +290,4 @@ const professionals = [
   },
 ];
 
-export { professionals, dataSelectedProducts, dataArticle };
+export { professionals, dataSelectedProducts, dataArticle, dataGoodsForCatalog };

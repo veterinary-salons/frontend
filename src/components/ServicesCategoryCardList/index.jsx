@@ -5,7 +5,7 @@ import classes from './style.module.scss';
 import ServicesCategoryCard from '../ServicesCategoryCard';
 import imgPetSitters from '../../assets/images/images/category-specialist-card/pet-sitters.svg';
 
-const ServicesCategoryCardList = ({ specialistsList, marginT }) => (
+const ServicesCategoryCardList = ({ specialistsList, marginT, isServicesPage }) => (
   <ul className={classes.specialists__cards} style={{marginTop: marginT}}>
     {specialistsList.map((item) => (
       <ServicesCategoryCard
@@ -13,8 +13,8 @@ const ServicesCategoryCardList = ({ specialistsList, marginT }) => (
         color={item.color}
         title={item.label}
         img={item.img}
-        link={`${item.value}`}
-        isServicesPage
+        link={isServicesPage ? `${item.value}` : `/services/${item.value}`}
+        isServicesPage={isServicesPage}
       />
     ))}
   </ul>
@@ -30,6 +30,7 @@ ServicesCategoryCardList.propTypes = {
     }),
   ),
   marginT: PropTypes.string,
+  isServicesPage: PropTypes.bool,
 };
 
 ServicesCategoryCardList.defaultProps = {
@@ -39,7 +40,8 @@ ServicesCategoryCardList.defaultProps = {
     color: 'violet',
     img: imgPetSitters,
   },
-  marginT: '0px'
+  marginT: '0px',
+  isServicesPage: false,
 };
 
 export default ServicesCategoryCardList;

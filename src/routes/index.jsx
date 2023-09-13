@@ -23,8 +23,9 @@ import SelectedProducts from '../pages/SelectedProducts';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
-import SectionTitle from '../components/SectionTitle';
+// import SectionTitle from '../components/SectionTitle';
 import Catalog from '../pages/Catalog';
+import GoodsList from '../pages/GoodsList';
 
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
@@ -35,13 +36,14 @@ import Catalog from '../pages/Catalog';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
-import OrderInformation from '../components/OrderInformation';
+// import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
 import {
   dataSelectedProducts,
   dataArticle,
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
+import Goods from '../pages/Goods';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -76,14 +78,18 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route path="services" element={<Catalog title="Наши услуги" />}>
-        <Route index element={<ServicesList />} />
+      <Route 
+        path="services" 
+        element={<Catalog title='Наши услуги'/>}
+      >
+        <Route index element={<ServicesList isServicesPage/>} />
         <Route path=":service" element={<Service />} />
       </Route>
 
       {/* Goods */}
-      <Route path="goods" element={<SectionTitle title="Товары" />}>
-        <Route element={<h2>Здесь будут товары</h2>} />
+      <Route path="goods" element={<Catalog title="Товары" />}>
+        <Route index element={<GoodsList />} />
+        <Route path=":category" element={<Goods />} />
       </Route>
 
       {/* Articles */}
@@ -121,7 +127,10 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<OrderInformation />} />
+      <Route
+        path="test"
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+      />
     </Route>,
   ),
 );
