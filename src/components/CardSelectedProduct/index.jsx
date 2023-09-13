@@ -6,28 +6,27 @@ import CartProductQuantityBox from '../../ui/buttons/cartProductQuantityBox';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
 import defaltImg from '../../assets/images/images/card-selected-product/img-default.svg';
-import Heart from '../../ui/buttons/heart/Heart';
 
 const CardSelectedProduct = ({
   productDescription,
   weight,
   img,
-  isLiked,
   discount,
+  funcBtn,
 }) => {
-  const [isLike, setIsLike] = useState(isLiked);
-
-  const handleClickLike = () => {
-    setIsLike((state) => !state);
-  };
+  const [checked, setChecked] = useState(false);
+  console.log(typeof checked);
+  console.log(checked);
 
   return (
     <article className={classes.card}>
       <Checkbox
         type="checkbox"
         htmlType="checkbox"
-        value=""
-        name="checkbox-card-product"
+        value="checb"
+        name="checkbox-product"
+        getCheckbox={setChecked}
+        checked={checked['checkbox-product']}
       />
       <img
         className={classes.card__img}
@@ -56,13 +55,7 @@ const CardSelectedProduct = ({
         </div>
 
         <div className={classes['card__container-btn-heart']}>
-          <Heart isActive={isLike} onClick={handleClickLike} />
-          <Button
-            size="small"
-            variant="outlined"
-            onClick={() => {}}
-            isMaxWidth="true"
-          >
+          <Button size="small" variant="outlined" onClick={funcBtn} isMaxWidth>
             Удалить
           </Button>
         </div>
@@ -73,19 +66,19 @@ const CardSelectedProduct = ({
 
 CardSelectedProduct.propTypes = {
   img: PropTypes.string,
-  isLiked: PropTypes.bool,
   discount: PropTypes.number,
   productDescription: PropTypes.string,
   weight: PropTypes.string,
+  funcBtn: PropTypes.func,
 };
 
 CardSelectedProduct.defaultProps = {
   img: '',
-  isLiked: false,
   discount: 353,
   productDescription:
     'Влажный корм для кошек Гурмэ Натуральные рецепты, с курицей и морковью, 75 г x 26 шт',
   weight: '1,95',
+  funcBtn: () => {},
 };
 
 export default CardSelectedProduct;

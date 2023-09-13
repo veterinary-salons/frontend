@@ -1,6 +1,6 @@
 .card {
   font-family: 'Montserrat', Arial, sans-serif;
-  max-width: 866px;
+  max-width: 812px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -19,7 +19,7 @@
   }
 
   &__container-price {
-    width: 183px;
+    width: 128px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
