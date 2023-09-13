@@ -10,11 +10,7 @@
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 16px;
-
-  &_gap {
-    gap: 17px;
-  }
+  gap: 20px;
 
   &__title {
     margin: 0;
@@ -25,7 +21,7 @@
 
   &__text {
     width: 100%;
-    margin: 0 auto;
+    margin: 2px auto;
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
@@ -33,42 +29,24 @@
       color: var(--text-grey-color);
     }
     &_discount {
-      margin-bottom: 30px;
+      margin: 10px auto 25px;
       color: var(--purple-pushed-color);
     }
-    &_price-top {
-      margin: 40px 0 15px;
-    }
-    &_black {
-      margin-top: 2px;
-      font-weight: 700;
-    }
-    &_delivery {
-      margin-top: 15px;
-    }
-    &_delivery-discount {
-      margin-top: 15px;
-    }
+
     &_price {
-      margin: 27px 0 5px;
+      margin-top: 25px;
+    }
+
+    &_sum {
+      margin-bottom: 0;
     }
   }
 
   &__container {
-    &_delivery {
-      padding: 15px 0;
-      display: flex;
-      gap: 7px;
-      flex-direction: column;
-    }
-    &_payment {
-      gap: 5px;
-      flex-direction: column;
-    }
     &_price {
       display: flex;
       flex-direction: column;
-      margin: 8px auto;
+      margin: 0 auto;
     }
   }
 

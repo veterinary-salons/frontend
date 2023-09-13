@@ -4,16 +4,7 @@ import classnames from 'classnames';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
-const OrderInformation = ({
-  delivery,
-  products,
-  weightProducts,
-  courier,
-  payment,
-  price,
-  discount,
-  cost,
-}) => {
+const OrderInformation = ({ price, discount, cost, arr, textBtn }) => {
   const navigate = useNavigate();
   const getClassTextgrey = classnames(
     classes.card__text,
@@ -21,45 +12,23 @@ const OrderInformation = ({
   );
 
   return (
-    <article
-      className={classnames(classes.card, { [classes.card_gap]: delivery })}
-    >
-      <div className={classes.card__container}>
-        <h3 className={classes.card__title}>Ваш заказ</h3>
-        <p className={getClassTextgrey}>{`${products}, ${weightProducts}`}</p>
-      </div>
-
-      {delivery && (
-        <>
-          <div className={classes.card__container_delivery}>
-            <h3 className={classes.card__title}>Доставка</h3>
-            <p className={getClassTextgrey}>{courier}</p>
-          </div>
-          <div className={classes.card__container_payment}>
-            <h3 className={classes.card__title}>Оплата</h3>
-            <p className={getClassTextgrey}>{payment}</p>
-          </div>
-        </>
-      )}
+    <article className={classnames(classes.card)}>
+      {arr.map((i) => (
+        <div className={classes.card__container}>
+          <h3 className={classes.card__title}>{i.title}</h3>
+          <p className={getClassTextgrey}>{i.products}</p>
+        </div>
+      ))}
 
       <div className={classes.card__container_price}>
         <span className={classes.card__span}>{}</span>
         <p
-          className={classnames(
-            classes.card__text,
-            {
-              [classes.card__text_price]: !delivery,
-            },
-            {
-              [classes['card__text_price-top']]: delivery,
-            },
-          )}
+          className={classnames(classes.card__text, classes.card__text_price)}
         >{`Всего: ${price} ₽`}</p>
         <p
           className={classnames(
             classes.card__text,
             classes.card__text_discount,
-            { [classes['card__text_delivery-bottom']]: delivery },
           )}
         >
           {`Скидка: ${discount === '' ? 0 : discount} ₽`}
@@ -68,14 +37,10 @@ const OrderInformation = ({
       </div>
 
       <div className={classes.card__container}>
-        <p className={classes.card__text}>К оплате:</p>
-        <p
-          className={classnames(classes.card__text, classes.card__text_black, {
-            [classes.card__text_delivery]: delivery,
-          })}
-        >
-          {`${cost} ₽`}
+        <p className={classnames(classes.card__text, classes.card__text_sum)}>
+          К оплате:
         </p>
+        <p className={classes.card__title}>{`${cost} ₽`}</p>
       </div>
 
       <div className={classes.card__container}>
@@ -86,7 +51,7 @@ const OrderInformation = ({
             navigate('/');
           }}
         >
-          {delivery ? 'Оформить заказ' : 'К оформлению'}
+          {textBtn}
         </Button>
       </div>
     </article>
@@ -94,22 +59,25 @@ const OrderInformation = ({
 };
 
 OrderInformation.propTypes = {
-  delivery: PropTypes.bool,
-  products: PropTypes.string,
-  weightProducts: PropTypes.string,
-  courier: PropTypes.string,
-  payment: PropTypes.string,
+  arr: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      products: PropTypes.string,
+    }),
+  ),
+  textBtn: PropTypes.oneOf(['Оформить заказ', 'К оформлению']),
   price: PropTypes.string,
   discount: PropTypes.string,
   cost: PropTypes.string,
 };
 
 OrderInformation.defaultProps = {
-  delivery: true,
-  products: '2 товара',
-  weightProducts: '5,55 кг',
-  courier: 'Курьером',
-  payment: 'При получении',
+  arr: [
+    { title: 'Ваш заказ', products: '2 товара, 5,55 кг' },
+    { title: 'Доставка', products: 'Курьером' },
+    { title: 'Оплата', products: 'При получении' },
+  ],
+  textBtn: 'Оформить заказ',
   price: '1 040',
   discount: '340',
   cost: '700',

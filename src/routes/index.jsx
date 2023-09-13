@@ -35,6 +35,7 @@ import Catalog from '../pages/Catalog';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
+import OrderInformation from '../components/OrderInformation';
 
 import {
   dataSelectedProducts,
@@ -48,12 +49,12 @@ const router = createBrowserRouter(
       path="/"
       element={
         <>
-        <Online>
-          <Root />
-        </Online>
-        <Offline>
-          <ErrorBoundary />
-        </Offline>
+          <Online>
+            <Root />
+          </Online>
+          <Offline>
+            <ErrorBoundary />
+          </Offline>
         </>
       }
       errorElement={<ErrorBoundary errorType404 />}
@@ -75,16 +76,13 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route 
-        path="services" 
-        element={<Catalog title='Наши услуги'/>}
-      >
+      <Route path="services" element={<Catalog title="Наши услуги" />}>
         <Route index element={<ServicesList />} />
         <Route path=":service" element={<Service />} />
       </Route>
 
       {/* Goods */}
-      <Route path="goods" element={<SectionTitle title='Товары'/>}>
+      <Route path="goods" element={<SectionTitle title="Товары" />}>
         <Route element={<h2>Здесь будут товары</h2>} />
       </Route>
 
@@ -100,7 +98,7 @@ const router = createBrowserRouter(
           path="goods"
           element={<SelectedProducts dataProducts={dataSelectedProducts} />}
         />
-        <Route path="services"  element={<h1>избранные услуги</h1>} />
+        <Route path="services" element={<h1>избранные услуги</h1>} />
         <Route
           path="articles"
           element={<SelectedArticles dataArticle={dataArticle} />}
@@ -123,7 +121,7 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h1>TEST</h1>} />
+      <Route path="test" element={<OrderInformation />} />
     </Route>,
   ),
 );
