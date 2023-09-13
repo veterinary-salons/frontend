@@ -1,0 +1,50 @@
+.card {
+  font-family: 'Montserrat', Arial, sans-serif;
+  width: 812px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  &__img {
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+  }
+
+  &__container-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__container-price {
+    width: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__text {
+    width: 366px;
+    margin: 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+
+    &_grey {
+      color: var(--text-grey-color);
+    }
+
+    &_price {
+      margin: 0;
+      text-align: end;
+      font-size: 26px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 28px;
+      letter-spacing: 0.78px;
+      color: var(--purple-pushed-color);
+    }
+  }
+}
