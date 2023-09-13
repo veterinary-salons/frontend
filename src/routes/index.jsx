@@ -35,7 +35,7 @@ import Catalog from '../pages/Catalog';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
-import CadSelectedProduct from '../components/CadSelectedProduct';
+import CardSelectedProduct from '../components/CardSelectedProduct';
 
 import {
   dataSelectedProducts,
@@ -121,7 +121,7 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<CadSelectedProduct />} />
+      <Route path="test" element={<CardSelectedProduct />} />
     </Route>,
   ),
 );

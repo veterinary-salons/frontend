@@ -1,9 +1,9 @@
 .card {
   font-family: 'Montserrat', Arial, sans-serif;
-  width: 812px;
+  max-width: 866px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 
   &__img {
     object-fit: cover;
@@ -12,16 +12,25 @@
   }
 
   &__container-info {
+    width: 399px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  &__container-price {
+    width: 183px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
   }
 
-  &__container-price {
-    width: 130px;
+  &__container-btn-heart {
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 20px;
+    margin-bottom: 10px;
   }
 
   &__text {
@@ -37,7 +46,7 @@
     }
 
     &_price {
-      margin: 0;
+      margin: 12px 0 0;
       text-align: end;
       font-size: 26px;
       font-style: normal;
@@ -45,6 +54,14 @@
       line-height: 28px;
       letter-spacing: 0.78px;
       color: var(--purple-pushed-color);
+    }
+    &_discount {
+      width: 100%;
+      font-weight: 800;
+      margin-top: 10px;
+      text-align: end;
+      text-decoration: line-through;
+      color: var(--purple-disabled-color);
     }
   }
 }
