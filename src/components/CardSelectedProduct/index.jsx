@@ -15,18 +15,20 @@ const CardSelectedProduct = ({
   funcBtn,
 }) => {
   const [checked, setChecked] = useState(false);
-  console.log(typeof checked);
-  console.log(checked);
+
+  const handleCheckbox = () => {
+    setChecked(!checked);
+  };
 
   return (
     <article className={classes.card}>
       <Checkbox
         type="checkbox"
         htmlType="checkbox"
-        value="checb"
+        value="checkbox-product"
         name="checkbox-product"
-        getCheckbox={setChecked}
-        checked={checked['checkbox-product']}
+        getCheckbox={handleCheckbox}
+        checked={checked}
       />
       <img
         className={classes.card__img}
