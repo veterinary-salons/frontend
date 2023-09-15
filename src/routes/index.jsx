@@ -21,6 +21,8 @@ import SelectedProducts from '../pages/SelectedProducts';
 import SelectedServices from '../pages/SelectedServices/index';
 import SelectedArticles from '../pages/SelectedArticles';
 
+import PetCard from '../pages/PetCard';
+
 import {
   dataSelectedProducts,
   dataArticle,
@@ -65,10 +67,7 @@ const router = createBrowserRouter(
       <Route path="signup" element={<h2>Здесь будет вход</h2>} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
-        path="test"
-        element={<h2>TEST</h2>}
-      />
+      <Route path="test" element={<PetCard />} />
     </Route>,
   ),
 );

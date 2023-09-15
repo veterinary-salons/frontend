@@ -1,15 +1,21 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import styleClass from './Dropdown.module.scss';
 import ArrowUp from '../../icons/arrows/arrowUp/ArrowUp';
 import ArrowDown from '../../icons/arrows/arrowDown/ArrowDown';
 import { arrayAnimals } from '../../../assets/constants/constants';
 
-const Dropdown = ({ array, width }) => {
+const Dropdown = ({ array, width, getValue, name }) => {
   const [dropdownClick, setDropdownClick] = useState(false);
 
   const [text, setText] = useState(array[0].text);
+
+  useEffect(() => {
+    if (getValue) {
+      getValue({ [name]: text });
+    }
+  }, [text]);
 
   const handelOpenDropdown = () => {
     setDropdownClick(!dropdownClick);
@@ -60,11 +66,15 @@ const Dropdown = ({ array, width }) => {
 Dropdown.propTypes = {
   width: PropTypes.string,
   array: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
+  getValue: PropTypes.func,
+  name: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
   width: '500px',
   array: arrayAnimals,
+  getValue: () => {},
+  name: '',
 };
 
 export default Dropdown;

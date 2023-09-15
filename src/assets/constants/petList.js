@@ -5,13 +5,13 @@ const petList = [
         id: '1',
         src: dog,
         title: 'Чарли',
-        age: 4,
+        years: 4,
         months: 5
     },
     {
         id: '2',
         title: 'Пирожок',
-        age: 0,
+        years: 0,
         months: 3
     }
 ];
