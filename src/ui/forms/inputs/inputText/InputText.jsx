@@ -18,6 +18,7 @@ const InputText = ({
   position,
   autoComplete,
   initialValue,
+  getValid,
 }) => {
   const [values, setValues] = useState({ [name]: '' });
   const [isClick, setIsClick] = useState(false);
@@ -32,6 +33,14 @@ const InputText = ({
     }
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    getValid((state) => ({
+      ...state,
+      [name]: validateInput(type, name, values[name]).invalid,
+    }));
+  }, [validateInput(type, name, values[name]).invalid]);
+
   useEffect(() => {
     getInput(values);
     // eslint-disable-next-line
@@ -108,6 +117,7 @@ InputText.propTypes = {
   position: PropTypes.string,
   autoComplete: PropTypes.string,
   initialValue: PropTypes.objectOf(PropTypes.string),
+  getValid: PropTypes.func,
 };
 
 InputText.defaultProps = {
@@ -123,6 +133,7 @@ InputText.defaultProps = {
   position: 'button-eye_position',
   autoComplete: '',
   initialValue: null,
+  getValid: () => {},
 };
 
 export default InputText;

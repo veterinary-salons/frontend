@@ -7,7 +7,11 @@ import classes from './style.module.scss';
 function SignInForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
+  const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
+
+  const isActive =
+    Object.values(isValidateInput).every((item) => item) && isValid;
 
   const handleFormChange = (value) => {
     setValues({
@@ -23,8 +27,8 @@ function SignInForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('auth', true);
-    navigate('/')
-  }
+    navigate('/');
+  };
 
   return (
     <form
@@ -44,6 +48,7 @@ function SignInForm() {
           getInput={handleFormChange}
           id="email-input"
           autoComplete="email"
+          getValid={setIsValidateInput}
         />
         <InputText
           type="password"
@@ -55,6 +60,7 @@ function SignInForm() {
           getInput={handleFormChange}
           id="password-input"
           autoComplete="current-password"
+          getValid={setIsValidateInput}
         />
         <Link
           to="purrfectcare.ru"
@@ -71,7 +77,7 @@ function SignInForm() {
           size="medium"
           type="submit"
           isMaxWidth
-          active={isValid}
+          active={isActive}
         >
           Войти
         </Button>
