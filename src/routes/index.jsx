@@ -38,6 +38,9 @@ import GoodsList from '../pages/GoodsList';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
+import AdType from '../components/AdCreation/AdType/index';
+// import AdForm from '../components/AdCreation/AdForm';
+
 import {
   dataSelectedProducts,
   dataArticle,
@@ -129,7 +132,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<AdType />}
       />
     </Route>,
   ),
