@@ -38,8 +38,10 @@ import GoodsList from '../pages/GoodsList';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
-import AdType from '../components/AdCreation/AdType/index';
+// import AdType from '../components/AdCreation/AdType/index';
 // import AdForm from '../components/AdCreation/AdForm';
+// import AdTitle from '../components/AdCreation/AdTitle';
+import AdDogHandler from '../components/AdCreation/AdDogHandler';
 
 import {
   dataSelectedProducts,
@@ -132,7 +134,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<AdType />}
+        element={<AdDogHandler />}
       />
     </Route>,
   ),
