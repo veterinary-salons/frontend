@@ -16,6 +16,7 @@ import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
 import Login from '../pages/Login';
+import Registration from '../pages/Registration';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
@@ -23,7 +24,6 @@ import SelectedProducts from '../pages/SelectedProducts';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
-// import SectionTitle from '../components/SectionTitle';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
 
@@ -118,7 +118,7 @@ const router = createBrowserRouter(
       <Route path="signin" element={<Login />} />
 
       {/* SignUp */}
-      <Route path="signup" element={<h2>Здесь будет регистрация</h2>} />
+      <Route path="signup" element={<Registration/>} />
 
       {/* Recovery */}
       <Route

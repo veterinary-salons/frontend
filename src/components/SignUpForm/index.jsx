@@ -1,18 +1,23 @@
 import { useNavigate, Link } from 'react-router-dom';
 import classNames from 'classnames';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
 
-function RegistrationForm() {
+function SignUpForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
+  const [userRole, setUserRole] = useState('');
+  const [buttonText, setButtonText] = useState('Зарегистрироваться');
   const [values, setValues] = useState({});
 
   const handleFormChange = (value) => {
+    if(value["registration-subject"]) {
+      setUserRole(value["registration-subject"])
+    }
     setValues({
       ...values,
       ...value,
@@ -20,8 +25,25 @@ function RegistrationForm() {
     console.log(values, isValid);
   };
 
+  useEffect(() => {
+    if (userRole === "specialist") {
+      setButtonText('Далее')
+    } else {
+      setButtonText('Зарегистрироваться')
+    }
+  }, [userRole]);
+
   const handleFormValidChange = (e) => {
     setIsValid(e.target.closest('form').checkValidity());
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if(userRole === "specialist") {
+      console.log("specialist")
+    } else if(userRole === "user") {
+      console.log("user")
+    }
   };
 
   return (
@@ -47,23 +69,23 @@ function RegistrationForm() {
         </legend>
         <Checkbox
           type="radio"
-          checked
+          checked={values["registration-subject"] === "user"}
           htmlType="radio"
-          value="consumer-registration"
+          value="user"
           name="registration-subject"
-          gap="8px"
           getCheckbox={handleFormChange}
+          required
         >
           Пользоваться услугами
         </Checkbox>
         <Checkbox
           type="radio"
-          checked={false}
+          checked={values["registration-subject"] === "specialist"}
           htmlType="radio"
-          value="provider-registration"
+          value="specialist"
           name="registration-subject"
-          gap="8px"
           getCheckbox={handleFormChange}
+          required
         >
           Предлагать услуги
         </Checkbox>
@@ -124,11 +146,10 @@ function RegistrationForm() {
       </fieldset>
       <Checkbox
         type="checkbox"
-        checked={false}
+        checked={values["registration-agreement"] === "registration-agreement"}
         htmlType="checkbox"
         value="registration-agreement"
         name="registration-agreement"
-        gap="8px"
         agreement
         required
         getCheckbox={handleFormChange}
@@ -163,17 +184,17 @@ function RegistrationForm() {
           На главную
         </Button>
         <Button
-          onClick={() => {}}
+          onClick={handleFormSubmit}
           variant="purple-filled"
           size="medium"
           type="submit"
           active={isValid}
         >
-          Зарегистрироваться
+          {buttonText}
         </Button>
       </div>
     </form>
   );
 }
 
-export default RegistrationForm;
+export default SignUpForm;

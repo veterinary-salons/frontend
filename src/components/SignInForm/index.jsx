@@ -24,7 +24,7 @@ function SignInForm() {
     e.preventDefault();
     localStorage.setItem('auth', true);
     navigate('/')
-  }
+  };
 
   return (
     <form
@@ -78,7 +78,7 @@ function SignInForm() {
         <div className={classes.form__navbox}>
           <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
           <Button
-            onClick={() => {}}
+            onClick={() => navigate('/signup')}
             variant="outlined"
             size="medium"
             type="button"
