@@ -56,7 +56,8 @@ const AdSchedule = () => {
       <div className={classes['schedule__container-btn']}>
         <Button
           variant="outlined"
-          size="small"
+          size="medium"
+          type="button"
           onClick={() => {
             navigate('/back', { replace: true });
           }}
@@ -64,7 +65,8 @@ const AdSchedule = () => {
           Назад
         </Button>
         <Button
-          size="small"
+          size="medium"
+          type="button"
           onClick={() => {
             navigate('/next', { replace: true });
           }}
