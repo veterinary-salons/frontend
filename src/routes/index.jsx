@@ -78,11 +78,8 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route 
-        path="services" 
-        element={<Catalog title='Наши услуги'/>}
-      >
-        <Route index element={<ServicesList isServicesPage/>} />
+      <Route path="services" element={<Catalog title="Наши услуги" />}>
+        <Route index element={<ServicesList isServicesPage />} />
         <Route path=":service" element={<Service />} />
       </Route>
 

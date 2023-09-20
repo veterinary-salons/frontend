@@ -6,7 +6,7 @@ import ArrowUp from '../../icons/arrows/arrowUp/ArrowUp';
 import ArrowDown from '../../icons/arrows/arrowDown/ArrowDown';
 import { arrayAnimals } from '../../../assets/constants/constants';
 
-const Dropdown = ({ array, width, getDropdown, disabled }) => {
+const Dropdown = ({ array, value, width, getValue, disabled, name }) => {
   const [text, setText] = useState(array[0].text);
 
   const hanelListSelection = (item) => {
@@ -14,8 +14,16 @@ const Dropdown = ({ array, width, getDropdown, disabled }) => {
   };
 
   useEffect(() => {
-    getDropdown(text);
-    // eslint-disable-next-line
+    if (value) {
+      setText(value);
+    }
+  }, [value]);
+
+  useEffect(() => {
+    if (getValue) {
+      getValue({ [name]: text });
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
   return (
@@ -57,15 +65,19 @@ const Dropdown = ({ array, width, getDropdown, disabled }) => {
 Dropdown.propTypes = {
   width: PropTypes.string,
   array: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
-  getDropdown: PropTypes.func,
+  getValue: PropTypes.func,
   disabled: PropTypes.bool,
+  value: PropTypes.string,
+  name: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
   width: '500px',
   array: arrayAnimals,
-  getDropdown: () => {},
+  getValue: () => {},
   disabled: false,
+  value: '',
+  name: '',
 };
 
 export default Dropdown;
