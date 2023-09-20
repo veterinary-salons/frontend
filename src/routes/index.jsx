@@ -38,6 +38,8 @@ import GoodsList from '../pages/GoodsList';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
+import AdSchedule from '../components/AdCreation/AdSchedule';
+
 import {
   dataSelectedProducts,
   dataArticle,
@@ -78,11 +80,8 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route 
-        path="services" 
-        element={<Catalog title='Наши услуги'/>}
-      >
-        <Route index element={<ServicesList isServicesPage/>} />
+      <Route path="services" element={<Catalog title="Наши услуги" />}>
+        <Route index element={<ServicesList isServicesPage />} />
         <Route path=":service" element={<Service />} />
       </Route>
 
@@ -127,10 +126,7 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
-        path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-      />
+      <Route path="test" element={<AdSchedule />} />
     </Route>,
   ),
 );

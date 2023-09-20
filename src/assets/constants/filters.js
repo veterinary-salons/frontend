@@ -62,12 +62,42 @@ const filterGoodsData = {
     legend: 'Категория',
     checkboxType: 'radio',
     options: [
-      { name: 'category', value: 'feed-goodies', label: 'Корм и лакомства', img: feedImg },
-      { name: 'category', value: 'toys-ammunition', label: 'Игрушки и амуниция', img: toysImg },
-      { name: 'category', value: 'toilet', label: 'Для туалета', img: toiletImg },
-      { name: 'category', value: 'hygiene', label: 'Гигиена и уход', img: hygieneImg },
-      { name: 'category', value: 'bowls-beds-houses', label: 'Миски, лежанки, домики', img: bowlsImg },
-      { name: 'category', value: 'vetpharmacy', label: 'Ветаптека', img: vetImg },
+      {
+        name: 'category',
+        value: 'feed-goodies',
+        label: 'Корм и лакомства',
+        img: feedImg,
+      },
+      {
+        name: 'category',
+        value: 'toys-ammunition',
+        label: 'Игрушки и амуниция',
+        img: toysImg,
+      },
+      {
+        name: 'category',
+        value: 'toilet',
+        label: 'Для туалета',
+        img: toiletImg,
+      },
+      {
+        name: 'category',
+        value: 'hygiene',
+        label: 'Гигиена и уход',
+        img: hygieneImg,
+      },
+      {
+        name: 'category',
+        value: 'bowls-beds-houses',
+        label: 'Миски, лежанки, домики',
+        img: bowlsImg,
+      },
+      {
+        name: 'category',
+        value: 'vetpharmacy',
+        label: 'Ветаптека',
+        img: vetImg,
+      },
     ],
   },
   'Type-feed-goodies': {
@@ -178,19 +208,19 @@ const filterGoodsData = {
     legend: 'Тип корма',
     checkboxType: 'checkbox',
     options: [
-        {
-          label: 'Сухой',
-          value: 'dry'
-        },
-        {
-          label: 'Влажный',
-          value: 'wet'
-        },
-        {
-          label: 'Лакомства',
-          value: 'goodies'
-        }
-      ],
+      {
+        label: 'Сухой',
+        value: 'dry',
+      },
+      {
+        label: 'Влажный',
+        value: 'wet',
+      },
+      {
+        label: 'Лакомства',
+        value: 'goodies',
+      },
+    ],
   },
   petSize: {
     legend: 'Размер питомца',
@@ -309,4 +339,282 @@ const filterServicesData = {
   },
 };
 
-export { animals, filterGoodsData, filterServicesData };
+const filterScheduleData = {
+  monday: {
+    checkbox: {
+      name: 'checkbox-monday',
+      value: 'monday',
+      label: 'понедельник',
+    },
+    dropDownOne: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    dropDownTwo: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    checkboxSwitch: {
+      name: 'switch-monday',
+      value: 'monday',
+      label: 'круглосуточно',
+    },
+  },
+  tuesday: {
+    checkbox: {
+      name: 'checkbox-tuesday',
+      value: 'tuesday',
+      label: 'вторник',
+    },
+    dropDownOne: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    dropDownTwo: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    checkboxSwitch: {
+      switchType: 'switch',
+      name: 'switch-tuesday',
+      value: 'tuesday',
+      label: 'круглосуточно',
+    },
+  },
+  wednesday: {
+    checkbox: {
+      name: 'checkbox-wednesday',
+      value: 'wednesday',
+      label: 'среда',
+    },
+    dropDownOne: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    dropDownTwo: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    checkboxSwitch: {
+      switchType: 'switch',
+      name: 'switch-tuesday',
+      value: 'monday',
+      label: 'круглосуточно',
+    },
+  },
+  thursday: {
+    checkbox: {
+      name: 'checkbox-wednesday',
+      value: 'wednesday',
+      label: 'четверг',
+    },
+    dropDownOne: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    dropDownTwo: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    checkboxSwitch: {
+      switchType: 'switch',
+      name: 'switch-thursday',
+      value: 'thursday',
+      label: 'круглосуточно',
+    },
+  },
+  friday: {
+    checkbox: {
+      name: 'checkbox-friday',
+      value: 'friday',
+      label: 'пятница',
+    },
+    dropDownOne: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    dropDownTwo: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    checkboxSwitch: {
+      switchType: 'switch',
+      name: 'switch-friday',
+      value: 'friday',
+      label: 'круглосуточно',
+    },
+  },
+  saturday: {
+    checkbox: {
+      name: 'checkbox-saturday',
+      value: 'saturday',
+      label: 'суббота',
+    },
+    dropDownOne: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    dropDownTwo: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    checkboxSwitch: {
+      switchType: 'switch',
+      name: 'switch-saturday',
+      value: 'saturday',
+      label: 'круглосуточно',
+    },
+  },
+  sunday: {
+    checkbox: {
+      name: 'checkbox-sunday',
+      value: 'sunday',
+      label: 'воскресенье',
+    },
+    dropDownOne: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    dropDownTwo: [
+      { id: 1, text: '13:00' },
+      { id: 2, text: '14:00' },
+      { id: 3, text: '15:00' },
+      { id: 4, text: '16:00' },
+      { id: 5, text: '17:00' },
+      { id: 6, text: '18:00' },
+      { id: 7, text: '19:00' },
+      { id: 8, text: '20:00' },
+    ],
+    checkboxSwitch: {
+      switchType: 'switch',
+      name: 'switch-sundayy',
+      value: 'sunday',
+      label: 'круглосуточно',
+    },
+  },
+  checkboxTime: {
+    checkboxType: 'radio',
+    options: [
+      {
+        id: 1,
+        label: '30 мин',
+        name: 'checkbox-session',
+        value: '30 мин',
+      },
+      {
+        id: 2,
+        label: '1 час',
+        name: 'checkbox-session',
+        value: '1 час',
+      },
+      {
+        id: 3,
+        label: '1,5 часа',
+        name: 'checkbox-session',
+        value: 'hour-half',
+      },
+      {
+        id: 4,
+        label: '2 часа',
+        name: 'checkbox-session',
+        value: '2 часа',
+      },
+    ],
+  },
+};
+
+const arrAdSchedule = [
+  { id: 1, type: 'monday' },
+  { id: 2, type: 'tuesday' },
+  { id: 3, type: 'wednesday' },
+  { id: 4, type: 'thursday' },
+  { id: 5, type: 'friday' },
+  { id: 6, type: 'saturday' },
+  { id: 7, type: 'sunday' },
+];
+
+export {
+  animals,
+  filterGoodsData,
+  filterServicesData,
+  filterScheduleData,
+  arrAdSchedule,
+};
