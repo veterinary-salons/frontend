@@ -58,7 +58,7 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
           },
     );
     // eslint-disable-next-line
-  }, [checkedDate, switchDate, startReception, endReception]);
+  }, [checkedDate]);
 
   return (
     <div className={classes.graph}>
@@ -105,14 +105,13 @@ ScheduleDay.propTypes = {
   type: PropTypes.string,
   labelCheckbox: PropTypes.string,
   getGraph: PropTypes.func,
-  value: PropTypes.shape(),
+  value: PropTypes.shape().isRequired,
 };
 
 ScheduleDay.defaultProps = {
   type: 'monday',
   labelCheckbox: 'круглосуточно',
   getGraph: () => {},
-  value: {},
 };
 
 export default ScheduleDay;

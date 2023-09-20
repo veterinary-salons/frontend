@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ScheduleDay from '../../ScheduleDay';
 import ReceptionSelectionBlock from '../../ReceptionSelectionBlock';
@@ -7,21 +7,29 @@ import Button from '../../../ui/buttons/originButton/Button';
 import { arrAdSchedule } from '../../../assets/constants/filters';
 
 const AdSchedule = () => {
-  const [data, setData] = useState({});
   const navigate = useNavigate();
-  const [values, setValues] = useState({});
+  const [days, setDays] = useState({});
+  const [session, setSession] = useState({});
+  const [infoSchedule, setInfoSchedule] = useState({});
+
+  console.log(infoSchedule);
 
   const handleFormChange = useCallback(
     (value) => {
-      setValues({
-        ...values,
+      setSession({
+        ...session,
         ...value,
       });
     },
-    [setValues, values],
+    [session],
   );
 
-  console.log(data);
+  useEffect(() => {
+    setInfoSchedule({
+      session,
+      days,
+    });
+  }, [session, days]);
 
   return (
     <div className={classes.schedule}>
@@ -32,8 +40,8 @@ const AdSchedule = () => {
             <ScheduleDay
               key={i.id}
               type={i.type}
-              value={data}
-              getGraph={setData}
+              value={days}
+              getGraph={setDays}
             />
           ))}
         </div>
@@ -42,7 +50,7 @@ const AdSchedule = () => {
         <ReceptionSelectionBlock
           category="checkboxTime"
           getCheckbox={handleFormChange}
-          values={values}
+          values={session}
         />
       </div>
       <div className={classes['schedule__container-btn']}>

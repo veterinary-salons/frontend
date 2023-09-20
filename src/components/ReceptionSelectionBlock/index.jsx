@@ -12,7 +12,7 @@ const ReceptionSelectionBlock = ({ values, category, getCheckbox }) => {
       <div className={classes['selection-block__checkbox-conteiner']}>
         {options.map((item) => (
           <Checkbox
-            key={item.label}
+            key={item.value}
             type={checkboxType}
             htmlType={checkboxType}
             checked={
@@ -24,7 +24,7 @@ const ReceptionSelectionBlock = ({ values, category, getCheckbox }) => {
             name={item.name ? item.name : item.value}
             getCheckbox={getCheckbox}
           >
-            {item.label}
+            {item.value}
           </Checkbox>
         ))}
       </div>
@@ -34,13 +34,12 @@ const ReceptionSelectionBlock = ({ values, category, getCheckbox }) => {
 
 ReceptionSelectionBlock.propTypes = {
   category: PropTypes.string,
-  values: PropTypes.objectOf(PropTypes.string),
+  values: PropTypes.shape().isRequired,
   getCheckbox: PropTypes.func.isRequired,
 };
 
 ReceptionSelectionBlock.defaultProps = {
   category: 'checkboxTime',
-  values: {},
 };
 
 export default ReceptionSelectionBlock;

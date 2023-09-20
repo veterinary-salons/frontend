@@ -575,26 +575,22 @@ const filterScheduleData = {
     options: [
       {
         id: 1,
-        label: '30 мин',
-        name: 'checkbox-session',
+        name: 'session',
         value: '30 мин',
       },
       {
         id: 2,
-        label: '1 час',
-        name: 'checkbox-session',
+        name: 'session',
         value: '1 час',
       },
       {
         id: 3,
-        label: '1,5 часа',
-        name: 'checkbox-session',
-        value: 'hour-half',
+        name: 'session',
+        value: '1,5 часа',
       },
       {
         id: 4,
-        label: '2 часа',
-        name: 'checkbox-session',
+        name: 'session',
         value: '2 часа',
       },
     ],

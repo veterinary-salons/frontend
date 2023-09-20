@@ -126,7 +126,8 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<AdSchedule />} />
+      <Route path="test" element={<h1>Тесты</h1>} />
+      <Route path="advert" element={<AdSchedule />} />
     </Route>,
   ),
 );
