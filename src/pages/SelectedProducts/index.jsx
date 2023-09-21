@@ -3,22 +3,27 @@ import CardGood from '../../components/CardGood/index';
 import NotificationMessage from '../../components/NotificationMessage/index';
 import classes from './style.module.scss';
 
-const SelectedProducts = ({ dataProducts }) => (
-  <section className={classes['selected-products']}>
-    {dataProducts.length === 0 ? (
+const SelectedProducts = ({ dataProducts }) =>
+  dataProducts.length === 0 ? (
+    <div className={classes['selected-products']}>
       <NotificationMessage
         imageNumber="10"
         title="Тут пусто как в миске этого котика"
-        text="Неужели вы ещё не видели как много у нас 
+        text="Неужели вы ещё не видели как много y нас 
         полезного и интересного?"
         to="/goods"
         buttonText="Выбрать товары"
       />
-    ) : (
-      dataProducts.map((i) => <CardGood {...i} key={i.id} />)
-    )}
-  </section>
-);
+    </div>
+  ) : (
+    <ul className={classes['selected-products']}>
+      {dataProducts.map((i) => (
+        <li key={i.id}>
+          <CardGood {...i} />
+        </li>
+      ))}
+    </ul>
+  );
 
 SelectedProducts.propTypes = {
   dataProducts: PropTypes.arrayOf(

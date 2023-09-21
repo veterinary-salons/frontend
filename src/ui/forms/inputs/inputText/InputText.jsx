@@ -18,6 +18,8 @@ const InputText = ({
   position,
   autoComplete,
   initialValue,
+  getValid,
+  max,
 }) => {
   const [values, setValues] = useState({ [name]: '' });
   const [isClick, setIsClick] = useState(false);
@@ -28,28 +30,34 @@ const InputText = ({
 
   useEffect(() => {
     if (initialValue) {
-      setValues(initialValue);
+      setValues({ ...values, ...initialValue });
     }
     // eslint-disable-next-line
   }, []);
 
   useEffect(() => {
+    getValid(validateInput(type, name, values[name]).invalid);
+  }, [validateInput(type, name, values[name]).invalid]);
+
+  useEffect(() => {
     getInput(values);
     // eslint-disable-next-line
   }, [values]);
-
   const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
   const getType = type === 'password' ? handleEyePassword(isClick, type) : type;
   const getClassItem = cn(
     style.input,
     {
-      [style['input-default']]: validateInput(type, name, values[name]).default,
+      [style.input_default]: validateInput(type, name, values[name]).default,
     },
     {
-      [style['input-error']]: !validateInput(type, name, values[name]).invalid,
+      [style.input_error]: !validateInput(type, name, values[name]).invalid,
     },
     {
-      [style['input-success']]: validateInput(type, name, values[name]).invalid,
+      [style.input_success]: validateInput(type, name, values[name]).invalid,
+    },
+    {
+      [style['input_text-center']]: type === 'number',
     },
   );
   const getClassSpan = cn(
@@ -64,11 +72,22 @@ const InputText = ({
     },
   );
 
+  useEffect(() => {
+    if (type === 'number' && values[name]) {
+      setValues({
+        ...values,
+        [name]: +values[name].toString().replace(/\D/g, ''),
+      });
+    }
+  }, [values[name]]);
+
+  console.log(name, initialValue[name]);
+
   return (
     <div className={style.container}>
       <input
         className={getClassItem}
-        type={getType}
+        type={getType === 'number' ? 'text' : getType}
         placeholder={placeholder}
         name={name}
         maxLength={maxLength}
@@ -79,6 +98,7 @@ const InputText = ({
         disabled={disabled}
         id={id}
         autoComplete={autoComplete}
+        max={max}
       />
       {type === 'password' && (
         <BtnEye
@@ -108,7 +128,10 @@ InputText.propTypes = {
   id: PropTypes.string,
   position: PropTypes.string,
   autoComplete: PropTypes.string,
-  initialValue: PropTypes.objectOf(PropTypes.string),
+  // eslint-disable-next-line react/forbid-prop-types
+  initialValue: PropTypes.objectOf(PropTypes.any),
+  getValid: PropTypes.func,
+  max: PropTypes.string,
 };
 
 InputText.defaultProps = {
@@ -124,6 +147,8 @@ InputText.defaultProps = {
   position: 'button-eye_position',
   autoComplete: '',
   initialValue: null,
+  getValid: () => {},
+  max: null,
 };
 
 export default InputText;

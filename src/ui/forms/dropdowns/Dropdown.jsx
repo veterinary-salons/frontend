@@ -6,10 +6,16 @@ import ArrowUp from '../../icons/arrows/arrowUp/ArrowUp';
 import ArrowDown from '../../icons/arrows/arrowDown/ArrowDown';
 import { arrayAnimals } from '../../../assets/constants/constants';
 
-const Dropdown = ({ array, width, getValue, name }) => {
+const Dropdown = ({ array, value, width, getValue, name }) => {
   const [dropdownClick, setDropdownClick] = useState(false);
 
   const [text, setText] = useState(array[0].text);
+
+  useEffect(() => {
+    if (value) {
+      setText(value);
+    }
+  }, [value]);
 
   useEffect(() => {
     if (getValue) {
@@ -68,6 +74,7 @@ Dropdown.propTypes = {
   array: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
   getValue: PropTypes.func,
   name: PropTypes.string,
+  value: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
@@ -75,6 +82,7 @@ Dropdown.defaultProps = {
   array: arrayAnimals,
   getValue: () => {},
   name: '',
+  value: '',
 };
 
 export default Dropdown;

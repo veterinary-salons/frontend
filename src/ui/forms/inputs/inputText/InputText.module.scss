@@ -18,28 +18,35 @@
   line-height: 20px;
   color: var(--primary-text-color, #0f0f0f);
   outline: 0;
-}
 
-.input:hover {
-  border: 2px solid var(--primary-purple-color, #9384b7);
-  opacity: 0.8;
-}
+  &:hover {
+    border: 2px solid var(--primary-purple-color, #9384b7);
+    opacity: 0.8;
+  }
+  &:focus-visible {
+    border: 2px solid var(--primary-purple-color, #9384b7);
+    background: var(--purple-pale-color, #f9f7fc);
+  }
 
-.input:focus-visible {
-  border: 2px solid var(--primary-purple-color, #9384b7);
-  background: var(--purple-pale-color, #f9f7fc);
-}
+  &:disabled {
+    border: 2px solid var(--purple-pushed-color, #615779);
+  }
 
-.input:disabled {
-  border: 2px solid var(--purple-pushed-color, #615779);
-}
+  &_error {
+    border: 2px solid var(--error-color, #d80000);
+  }
+  &_success {
+    border: 2px solid var(--success-color, #03a600);
+  }
 
-.input-success {
-  border: 2px solid var(--success-color, #03a600);
-}
+  &_default {
+    border: 2px solid var(--grey-color, #8fd6bf);
+    color: var(--primary-text-color, #0f0f0f);
+  }
 
-.input-error {
-  border: 2px solid var(--error-color, #d80000);
+  &_text-center {
+    text-align: center;
+  }
 }
 
 .input-span-error {
@@ -63,16 +70,23 @@
   height: 18px;
 }
 
-.input-default {
-  border: 2px solid var(--grey-color, #8fd6bf);
-  color: var(--primary-text-color, #0f0f0f);
-}
-
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
+input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-text-fill-color: inherit;
   -webkit-box-shadow: none;
-  transition: background-color 5000s ease-in-out 0s; 
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+  appearance: none;
+  -moz-appearance: textfield;
 }

@@ -12,12 +12,12 @@ const PetCardList = ({ petList }) => {
 
   // })
 
-  const createPetList = petList.map(({ id, src, title, years, months }) => (
+  const createPetList = petList.map(({ id, src, petName, years, months }) => (
     <PetCard
       key={id}
       id={id}
       src={src}
-      title={title}
+      title={petName}
       years={years}
       months={months}
       onClick={() => navigate(`/${id}`)}

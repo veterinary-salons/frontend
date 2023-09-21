@@ -28,7 +28,12 @@ const ProfileUserData = ({
         Изменить мои данные
       </Button>
     </div>
-    <Button onClick={handleExitProfile} size="medium" variant="outlined">
+    <Button
+      onClick={handleExitProfile}
+      size="medium"
+      variant="outlined"
+      isMaxWidth
+    >
       Выйти из профиля
     </Button>
   </section>

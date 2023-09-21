@@ -21,3 +21,9 @@
 .mt40 {
   margin-top: 40px !important;
 }
+
+@media screen and (max-width: 1280px) {
+  .padding100 {
+    padding: 0 80px;
+  }
+}

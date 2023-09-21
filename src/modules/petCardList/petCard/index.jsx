@@ -45,7 +45,7 @@ const PetCard = ({ src, title, years, months, add, id }) => {
         <>
           {src ? (
             <img
-              className={classes['pet-card__imYears']}
+              className={classes['pet-card__image']}
               src={src}
               alt={`тут должно быть фото ${title}, но оно не загрузилось`}
             />
