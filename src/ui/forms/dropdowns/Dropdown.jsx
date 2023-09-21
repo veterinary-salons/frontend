@@ -1,15 +1,17 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { useState, useEffect } from 'react';
-import styleClass from './Dropdown.module.scss';
+import { useEffect, useState } from 'react';
+import classes from './Dropdown.module.scss';
 import ArrowUp from '../../icons/arrows/arrowUp/ArrowUp';
 import ArrowDown from '../../icons/arrows/arrowDown/ArrowDown';
 import { arrayAnimals } from '../../../assets/constants/constants';
 
-const Dropdown = ({ array, value, width, getValue, name }) => {
-  const [dropdownClick, setDropdownClick] = useState(false);
-
+const Dropdown = ({ array, value, width, getValue, disabled, name }) => {
   const [text, setText] = useState(array[0].text);
+
+  const hanelListSelection = (item) => {
+    setText(item);
+  };
 
   useEffect(() => {
     if (value) {
@@ -21,51 +23,42 @@ const Dropdown = ({ array, value, width, getValue, name }) => {
     if (getValue) {
       getValue({ [name]: text });
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [text]);
 
-  const handelOpenDropdown = () => {
-    setDropdownClick(!dropdownClick);
-  };
-
-  const hanelListSelection = (item) => {
-    setText(item);
-    handelOpenDropdown();
-  };
-
   return (
-    <section className={styleClass.dropdown} style={{ width }}>
-      <button
-        style={{ width }}
-        className={cn(styleClass.select, {
-          [styleClass.select_action]: dropdownClick,
-        })}
-        onClick={handelOpenDropdown}
-        type="button"
-      >
-        <span className={styleClass.selected}>{text}</span>
-      </button>
-      <ul
-        className={cn(styleClass.menu, {
-          [styleClass['menu-open']]: dropdownClick,
-        })}
-      >
-        {array.map(
-          (item) =>
-            item.text !== text && (
-              <button
-                className={styleClass['menu-btn']}
-                key={item.id}
-                onClick={() => hanelListSelection(item.text)}
-                type="button"
-              >
-                {item.text}
-              </button>
-            ),
-        )}
-      </ul>
-      <ArrowUp positionDropdown="true" />
-      <ArrowDown positionDropdown="true" dropdownClick={dropdownClick} />
-    </section>
+    <ul className={classes.dropdown}>
+      {disabled ? (
+        <div className={classes['dropdown__disabled-block']}>
+          <p className={classes['dropdown__disabled-text']}>-</p>
+          <ArrowUp positionDropdown />
+          <ArrowDown />
+        </div>
+      ) : (
+        <li className={cn(classes.dropdown__block)}>
+          {text}
+          <ul className={classes.dropdown__container}>
+            {array.map(
+              (item) =>
+                item.text !== text && (
+                  <li className={classes.dropdown__li} key={item.id}>
+                    <button
+                      style={{ width }}
+                      className={classes.dropdown__button}
+                      onClick={() => hanelListSelection(item.text)}
+                      type="button"
+                    >
+                      {item.text}
+                    </button>
+                  </li>
+                ),
+            )}
+          </ul>
+          <ArrowUp positionDropdown />
+          <ArrowDown classes={classes.opacity} />
+        </li>
+      )}
+    </ul>
   );
 };
 
@@ -73,16 +66,18 @@ Dropdown.propTypes = {
   width: PropTypes.string,
   array: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.object])),
   getValue: PropTypes.func,
-  name: PropTypes.string,
+  disabled: PropTypes.bool,
   value: PropTypes.string,
+  name: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
   width: '500px',
   array: arrayAnimals,
   getValue: () => {},
-  name: '',
+  disabled: false,
   value: '',
+  name: '',
 };
 
 export default Dropdown;

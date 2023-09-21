@@ -19,7 +19,6 @@ const InputText = ({
   autoComplete,
   initialValue,
   getValid,
-  max,
 }) => {
   const [values, setValues] = useState({ [name]: '' });
   const [isClick, setIsClick] = useState(false);
@@ -36,7 +35,10 @@ const InputText = ({
   }, []);
 
   useEffect(() => {
-    getValid(validateInput(type, name, values[name]).invalid);
+    getValid((state) => ({
+      ...state,
+      [name]: validateInput(type, name, values[name]).invalid,
+    }));
   }, [validateInput(type, name, values[name]).invalid]);
 
   useEffect(() => {
@@ -98,7 +100,6 @@ const InputText = ({
         disabled={disabled}
         id={id}
         autoComplete={autoComplete}
-        max={max}
       />
       {type === 'password' && (
         <BtnEye
@@ -131,7 +132,6 @@ InputText.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   initialValue: PropTypes.objectOf(PropTypes.any),
   getValid: PropTypes.func,
-  max: PropTypes.string,
 };
 
 InputText.defaultProps = {
@@ -148,7 +148,6 @@ InputText.defaultProps = {
   autoComplete: '',
   initialValue: null,
   getValid: () => {},
-  max: null,
 };
 
 export default InputText;

@@ -7,8 +7,11 @@ import classes from './style.module.scss';
 function SignInForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
-  const [isValidateInput, setIsValidateInput] = useState(false);
+  const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
+
+  const isActive =
+    Object.values(isValidateInput).every((item) => item) && isValid;
 
   const handleFormChange = (value) => {
     setValues({
@@ -74,7 +77,7 @@ function SignInForm() {
           size="medium"
           type="submit"
           isMaxWidth
-          active={isValid && isValidateInput}
+          active={isActive}
         >
           Войти
         </Button>

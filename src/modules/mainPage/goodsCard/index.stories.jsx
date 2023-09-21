@@ -1,8 +1,8 @@
 import GoodsCardMainPage from './index';
-import toysImg from '../../../assets/images/images/services-card/toys.png';
-import foodImg from '../../../assets/images/images/services-card/food.png';
-import treatsImg from '../../../assets/images/images/services-card/treats.png';
-import pillsImg from '../../../assets/images/images/services-card/pills.png';
+import toysImg from '../../../assets/images/images/category-good-main-card/toys.png';
+import foodImg from '../../../assets/images/images/category-good-main-card/food.png';
+import treatsImg from '../../../assets/images/images/category-good-main-card/treats.png';
+import pillsImg from '../../../assets/images/images/category-good-main-card/pills.png';
 
 export default {
   title: 'Modules/Mainpage/Card',
@@ -39,32 +39,32 @@ export default {
   },
 };
 
-const Template = (args) => <GoodsCardMainPage {...args} />
+const Template = (args) => <GoodsCardMainPage {...args} />;
 
 export const DefaultToys = () => Template.bind({});
 DefaultToys.args = {
   title: 'Игрушки',
   color: 'blue',
-  img: toysImg
-}
+  img: toysImg,
+};
 
 export const Food = () => Template.bind({});
 Food.args = {
   title: 'Корм',
   color: 'violet',
-  img: foodImg
-}
+  img: foodImg,
+};
 
 export const Treats = () => Template.bind({});
 Treats.args = {
   title: 'Вкусняшки',
   color: 'green',
-  img: treatsImg
-}
+  img: treatsImg,
+};
 
 export const Pills = () => Template.bind({});
 Pills.args = {
   title: 'Лекарства',
   color: 'yellow',
-  img: pillsImg
-}
+  img: pillsImg,
+};
