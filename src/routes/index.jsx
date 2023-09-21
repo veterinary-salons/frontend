@@ -37,6 +37,8 @@ import GoodsList from '../pages/GoodsList';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
+import CheckboxList from '../components/CheckboxList';
+
 
 import {
   dataSelectedProducts,
@@ -129,7 +131,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<CheckboxList />}
       />
     </Route>,
   ),

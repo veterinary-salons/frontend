@@ -38,8 +38,8 @@ const groomerServiceData = {
         value: 'decorative',
       },
     ],
-  }
-}
+  },
+};
 
 const dogHandlerServiceData = {
   services: {
@@ -109,8 +109,8 @@ const dogHandlerServiceData = {
         value: 'training-and-pet-sitting',
       },
     ],
-  }
-}
+  },
+};
 
 const vetServiceData = {
   petType: {
@@ -180,8 +180,8 @@ const vetServiceData = {
         value: 'euthanasia',
       },
     ],
-  }
-}
+  },
+};
 
 const petSitterServiceData = {
   petType: {
@@ -218,6 +218,11 @@ const petSitterServiceData = {
       },
     ],
   },
-}
+};
 
-export { groomerServiceData, dogHandlerServiceData, vetServiceData, petSitterServiceData };
+export {
+  groomerServiceData,
+  dogHandlerServiceData,
+  vetServiceData,
+  petSitterServiceData,
+};
