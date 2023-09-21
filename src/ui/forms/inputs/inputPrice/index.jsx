@@ -21,7 +21,8 @@ const InputPrice = ({ prefix, name, initialValue, disabled, getInput }) => {
   );
 
   useEffect(() => {
-    getInput(values);
+    getInput({ name: values });
+    // eslint-disable-next-line
   }, [values]);
 
   return (

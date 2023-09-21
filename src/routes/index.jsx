@@ -44,6 +44,7 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
+import CreationPriceCervices from '../pages/CreationAdvertPrice';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -78,11 +79,8 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route 
-        path="services" 
-        element={<Catalog title='Наши услуги'/>}
-      >
-        <Route index element={<ServicesList isServicesPage/>} />
+      <Route path="services" element={<Catalog title="Наши услуги" />}>
+        <Route index element={<ServicesList isServicesPage />} />
         <Route path=":service" element={<Service />} />
       </Route>
 
@@ -131,6 +129,7 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
+      <Route path="cost-service" element={<CreationPriceCervices />} />
     </Route>,
   ),
 );

@@ -146,7 +146,7 @@ const arrayServicesDate = [
   {
     id: 5,
     text: 'выбрать дату',
-  }
+  },
 ];
 
 const arrayTimeList = [
@@ -222,6 +222,17 @@ const dataArticlePage = [
   },
 ];
 
+const datapPrice = [
+  {
+    id: 1,
+    title: 'Стерилизация',
+  },
+  {
+    id: 2,
+    title: 'Консультация',
+  },
+];
+
 export {
   regexEmail,
   regexText,
@@ -237,6 +248,7 @@ export {
   arrayTimeList,
   arrImgOrderCard,
   dataArticlePage,
+  datapPrice,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/
