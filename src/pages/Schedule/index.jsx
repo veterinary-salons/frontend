@@ -1,18 +1,22 @@
+import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ScheduleDay from '../../ScheduleDay';
-import ReceptionSelectionBlock from '../../ReceptionSelectionBlock';
+import ScheduleDay from '../../components/ScheduleDay';
+import ReceptionSelectionBlock from '../../components/ReceptionSelectionBlock';
 import classes from './style.module.scss';
-import Button from '../../../ui/buttons/originButton/Button';
-import { arrAdSchedule } from '../../../assets/constants/filters';
+import Button from '../../ui/buttons/originButton/Button';
+import { arrAdSchedule } from '../../assets/constants/filters';
 
-const AdSchedule = () => {
+const AdSchedule = ({ getSchedule }) => {
   const navigate = useNavigate();
   const [days, setDays] = useState({});
   const [session, setSession] = useState({});
   const [infoSchedule, setInfoSchedule] = useState({});
 
-  console.log(infoSchedule);
+  const handleSchedule = () => {
+    getSchedule(infoSchedule);
+    navigate('/advert-price', { replace: true });
+  };
 
   const handleFormChange = useCallback(
     (value) => {
@@ -64,18 +68,20 @@ const AdSchedule = () => {
         >
           Назад
         </Button>
-        <Button
-          size="medium"
-          type="button"
-          onClick={() => {
-            navigate('/next', { replace: true });
-          }}
-        >
+        <Button size="medium" type="button" onClick={handleSchedule}>
           Далее
         </Button>
       </div>
     </div>
   );
+};
+
+AdSchedule.propTypes = {
+  getSchedule: PropTypes.func,
+};
+
+AdSchedule.defaultProps = {
+  getSchedule: () => {},
 };
 
 export default AdSchedule;

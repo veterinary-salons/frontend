@@ -37,8 +37,7 @@ import GoodsList from '../pages/GoodsList';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
-
-import AdSchedule from '../components/AdCreation/AdSchedule';
+import AdSchedule from '../pages/Schedule';
 
 import {
   dataSelectedProducts,
@@ -127,7 +126,7 @@ const router = createBrowserRouter(
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route path="test" element={<h1>Тесты</h1>} />
-      <Route path="advert" element={<AdSchedule />} />
+      <Route path="advert-schedule" element={<AdSchedule />} />
     </Route>,
   ),
 );

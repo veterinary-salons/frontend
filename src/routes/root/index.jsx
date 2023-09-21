@@ -16,10 +16,15 @@ const dataPathWithoutCrumbs = [
   '/signup',
   '/recovery',
   '/signup',
-  '/advert',
+  '/advert-schedule',
 ];
 const dataPathWithOnlyLogoHeader = ['/signin', '/recovery', '/signup'];
-const dataPathWithoutFooter = ['/signin', '/recovery', '/signup', '/advert'];
+const dataPathWithoutFooter = [
+  '/signin',
+  '/recovery',
+  '/signup',
+  '/advert-schedule',
+];
 
 function Root() {
   const auth = localStorage.getItem('auth');
