@@ -1,32 +1,34 @@
+import { useState, useCallback } from 'react';
 import classes from '../AdForm/style.module.scss';
 import AdForm from '../AdForm';
 import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
 
-const AdDogHandler = () => 
+const AdDogHandler = () => {
+  const [values, setValues] = useState({});
 
-   (
+  const handleFormChange = useCallback(
+    (value) => {
+      setValues({
+        ...values,
+        ...value,
+      });
+    },
+    [setValues, values],
+  );
+
+
+   return (
     <AdForm title="С какими задачами вы работаете">
       <div className={classes['af__checkbox-container']}>
-        {/* {options.map((item) => (
-          <Checkbox
-            key={item.value}
-            type={checkboxType}
-            htmlType={checkboxType}
-            checked={
-              item.name
-                ? values[item.name] === item.value
-                : values[item.value] === item.value
-            }
-            // checked={!checked}
-            value={item.value}
-            name={item.name ? item.name : item.value}
-            getCheckbox={getCheckbox}
-            onCkeckboxChange={() => setChecked(checked)}
-          >
-            {item.label}
-          </Checkbox>
-        ))} */}
-        <Checkbox type="checkbox">Коррекция проблемного поведения</Checkbox>
+        <Checkbox 
+        type="checkbox"
+        checked={false}
+        htmlType="checkbox"
+        value='services'
+        name='services'
+        getCheckbox={handleFormChange}
+        >Коррекция проблемного поведения
+        </Checkbox>
         <Checkbox type="checkbox">Воспитательная дрессировка щенка</Checkbox>
         <Checkbox type="checkbox">Обучение командам</Checkbox>
         <Checkbox type="checkbox">Дрессировка служебных собак</Checkbox>
@@ -41,7 +43,7 @@ const AdDogHandler = () =>
         </Checkbox>
       </div>
     </AdForm>
-  )
-;
+  );
+}
 
 export default AdDogHandler;

@@ -41,7 +41,7 @@ import GoodsList from '../pages/GoodsList';
 // import AdType from '../components/AdCreation/AdType/index';
 // import AdForm from '../components/AdCreation/AdForm';
 // import AdTitle from '../components/AdCreation/AdTitle';
-// import AdDogHandler from '../components/AdCreation/AdDogHandler';
+import AdDogHandler from '../components/AdCreation/AdDogHandler';
 // import AdDogHandlerStepTwo from '../components/AdCreation/AdDogHandler/AdDogHandlerStepTwo';
 
 import {
@@ -135,7 +135,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<AdDogHandler />}
       />
     </Route>,
   ),
