@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdPrice from '../../components/AdCreation/AdPrice';
@@ -5,14 +6,14 @@ import classes from './style.module.scss';
 import datapPrice from '../../assets/constants/DadaPrice';
 import Button from '../../ui/buttons/originButton/Button';
 
-const CreationPriceCervices = () => {
+const CreationPriceCervices = ({ getPrice }) => {
   const navigate = useNavigate();
   const [price, setPrice] = useState({});
 
-  /**
-   * здесь будет отправка price на сервер
-   */
-  console.log(price);
+  const handlePrice = () => {
+    getPrice({ price });
+    navigate('/advert-description', { replace: true });
+  };
 
   return (
     <section className={classes.price}>
@@ -34,23 +35,25 @@ const CreationPriceCervices = () => {
           size="medium"
           type="button"
           onClick={() => {
-            navigate('/back', { replace: true });
+            navigate('/advert-schedule', { replace: true });
           }}
         >
           Назад
         </Button>
-        <Button
-          size="medium"
-          type="button"
-          onClick={() => {
-            navigate('/next', { replace: true });
-          }}
-        >
+        <Button size="medium" type="button" onClick={handlePrice}>
           Далее
         </Button>
       </div>
     </section>
   );
+};
+
+CreationPriceCervices.propTypes = {
+  getPrice: PropTypes.func,
+};
+
+CreationPriceCervices.defaultProps = {
+  getPrice: () => {},
 };
 
 export default CreationPriceCervices;
