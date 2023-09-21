@@ -20,11 +20,16 @@ function validateEmail(value) {
   return { invalid: true, message: '' };
 }
 
-function validateText(value) {
+function validateText(value, type) {
   if (value === '') {
     return { default: true, invalid: false };
   }
   if (value !== undefined) {
+    if (type === 'textarea') {
+      if (value.length > 200) {
+        return { textarea: true };
+      }
+    }
     if (value.length === 0) {
       return { invalid: true, message: 'Это поле не должно быть пустым' };
     }
@@ -118,8 +123,8 @@ const validateInput = (type, name, value) => {
   if (type === 'text' && (name === 'userName' || name === 'userSurname')) {
     return validateUserName(value);
   }
-  if (type === 'text') {
-    return validateText(value);
+  if (type === 'text' || type === 'textarea') {
+    return validateText(value, type);
   }
   if (type === 'password') {
     return validatePassword(value);

@@ -1,16 +1,19 @@
-import { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import cn from 'classnames';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
+import validateInput from '../../assets/constants/validation';
 
-const DescriptionService = () => {
+const DescriptionService = ({ getDescription }) => {
   const navigate = useNavigate();
-  const [value, setValue] = useState(0);
+  const [value, setValue] = useState('');
 
-  useEffect(() => {
-    setValue();
-  }, [value]);
+  const handleButton = () => {
+    navigate('/next', { replace: true });
+    getDescription({ descriptionServes: value });
+  };
 
   return (
     <section className={classes.description}>
@@ -18,7 +21,15 @@ const DescriptionService = () => {
         Расскажите о вашем опыте и деталях услуг(и)
       </h2>
       <textarea
-        className={classes.description__textarea}
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        className={cn(classes.description__textarea, {
+          [classes.description__textarea_focus]: validateInput(
+            'textarea',
+            'name',
+            value,
+          ).textarea,
+        })}
         maxLength={1000}
         name="description-textarea"
         id="textarea"
@@ -26,9 +37,9 @@ const DescriptionService = () => {
       />
       <p
         className={cn(classes.description__validation, {
-          [classes.description__validation_success]: true,
+          [classes.description__validation_success]: value.length === 1000,
         })}
-      >{`Символов: ${0}/1000`}</p>
+      >{`Символов: ${value.length === undefined ? 0 : value.length}/1000`}</p>
       <div className={classes['description__conteiner-btn']}>
         <Button
           variant="outlined"
@@ -40,18 +51,20 @@ const DescriptionService = () => {
         >
           Назад
         </Button>
-        <Button
-          size="medium"
-          type="button"
-          onClick={() => {
-            navigate('/next', { replace: true });
-          }}
-        >
+        <Button size="medium" type="button" onClick={handleButton}>
           Далее
         </Button>
       </div>
     </section>
   );
+};
+
+DescriptionService.propTypes = {
+  getDescription: PropTypes.func,
+};
+
+DescriptionService.defaultProps = {
+  getDescription: () => {},
 };
 
 export default DescriptionService;
