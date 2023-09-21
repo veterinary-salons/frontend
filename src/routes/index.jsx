@@ -129,7 +129,7 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
-      <Route path="cost-service" element={<CreationPriceCervices />} />
+      <Route path="advert-price" element={<CreationPriceCervices />} />
     </Route>,
   ),
 );

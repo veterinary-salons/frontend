@@ -16,14 +16,14 @@ const dataPathWithoutCrumbs = [
   '/signup',
   '/recovery',
   '/signup',
-  '/cost-service',
+  '/advert-price',
 ];
 const dataPathWithOnlyLogoHeader = ['/signin', '/recovery', '/signup'];
 const dataPathWithoutFooter = [
   '/signin',
   '/recovery',
   '/signup',
-  '/cost-service',
+  '/advert-price',
 ];
 
 function Root() {
