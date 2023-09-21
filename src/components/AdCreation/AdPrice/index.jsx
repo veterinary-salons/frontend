@@ -1,61 +1,41 @@
-import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
-import { datapPrice } from '../../../assets/constants/constants';
 import InputPrice from '../../../ui/forms/inputs/inputPrice';
-import Button from '../../../ui/buttons/originButton/Button';
 
-const AdPrice = () => {
-  const navigate = useNavigate();
-  const [from, setFrom] = useState('');
-  const [before, setBefor] = useState('');
-  const [price, setPrice] = useState({});
+const AdPrice = ({ title, name, getPrice, value }) => {
+  const [form, setForm] = useState('');
+  const [befor, setBefor] = useState('');
 
   useEffect(() => {
-    setPrice({
-      ...price,
-      from,
-      before,
+    getPrice({
+      ...value,
+      [name]: {
+        form,
+        befor,
+      },
     });
     // eslint-disable-next-line
-  }, [from, before]);
-  console.log(price);
+  }, [form, befor]);
 
   return (
-    <>
-      <h2 className={classes.questionnaire__title}>Стоимость услуг(и)</h2>
-      <div className={classes.questionnaire__box}>
-        {datapPrice.map((item) => (
-          <div className={classes.questionnaire__container} key={item.id}>
-            <p className={classes.questionnaire__text}>{item.title}</p>
-            <InputPrice getInput={setFrom} />
-            <InputPrice prefix="до" getInput={setBefor} />
-          </div>
-        ))}
-      </div>
-      <div className={classes['questionnaire__container-btn']}>
-        <Button
-          variant="outlined"
-          size="medium"
-          type="button"
-          onClick={() => {
-            navigate('/back', { replace: true });
-          }}
-        >
-          Назад
-        </Button>
-        <Button
-          size="medium"
-          type="button"
-          onClick={() => {
-            navigate('/next', { replace: true });
-          }}
-        >
-          Далее
-        </Button>
-      </div>
-    </>
+    <div className={classes['form-prices__container']}>
+      <p className={classes['form-prices__text']}>{title}</p>
+      <InputPrice getInput={setForm} name={name} />
+      <InputPrice prefix="до" getInput={setBefor} name={name} />
+    </div>
   );
+};
+
+AdPrice.propTypes = {
+  title: PropTypes.string,
+  name: PropTypes.string.isRequired,
+  getPrice: PropTypes.func.isRequired,
+  value: PropTypes.shape().isRequired,
+};
+
+AdPrice.defaultProps = {
+  title: 'Стерилизация',
 };
 
 export default AdPrice;

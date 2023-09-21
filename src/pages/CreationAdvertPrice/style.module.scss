@@ -1,4 +1,22 @@
-.page {
+.price {
   width: 766px;
   margin: 60px auto;
+
+  &__title {
+    margin: 0;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+  }
+
+  &__box {
+    width: 100%;
+    margin: 46px auto 40px;
+  }
+
+  &__container-btn {
+    display: flex;
+    justify-content: space-between;
+  }
 }

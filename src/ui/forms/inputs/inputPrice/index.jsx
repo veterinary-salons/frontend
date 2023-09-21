@@ -16,7 +16,7 @@ const InputPrice = ({ prefix, name, initialValue, disabled, getInput }) => {
       [classes.input_color]: validateInput('price', values).invalid,
     },
     {
-      [classes.input_success]: validateInput('price', values).invalid,
+      [classes.input_success]: validateInput('price', name, values).invalid,
     },
   );
 
