@@ -4,7 +4,7 @@ import classes from './style.module.scss';
 import SectionTitle from '../../SectionTitle';
 import Button from '../../../ui/buttons/originButton/Button';
 
-const AdForm = ({ title, children }) => {
+const AdForm = ({ title, children, step }) => {
   const navigate = useNavigate();
 
   return (
@@ -24,8 +24,8 @@ const AdForm = ({ title, children }) => {
           <Button
             variant="purple-filled"
             size="medium"
-            type="submit"
-            onClick={() => {}}
+            type="button"
+            onClick={() => navigate(`/adform/${step}`)}
           >
             Далее
           </Button>
@@ -38,11 +38,13 @@ const AdForm = ({ title, children }) => {
 AdForm.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
+  step: PropTypes.string,
 };
 
 AdForm.defaultProps = {
   title: 'Заголовок',
   children: null,
+  step: ''
 };
 
 export default AdForm;

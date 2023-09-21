@@ -3,7 +3,14 @@ import InputText from '../../../ui/forms/inputs/inputText/InputText';
 import AdForm from '../AdForm';
 
 const AdTitle = () => (
-  <AdForm title="Как назвать ваше объявление?">
+  <AdForm
+   title="Как назвать ваше объявление?" 
+   step={
+    'step-three/groomer' ||
+    'step-three/dog-handler' ||
+    'step-three/vet' ||
+    'step-three/pet-sitter'
+    }>
     <div className={classes['af__input-container']}>
       <InputText 
       type='text'

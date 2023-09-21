@@ -4,22 +4,26 @@ const adTypeOptions = [
     options: [
       {
         label: 'груминг',
-        value: 'grooming'
+        value: 'grooming',
+        name: 'serviceType',
       }, 
 
       {
         label: 'ветеринария',
-        value: 'pet-health'
+        value: 'pet-health',
+        name: 'serviceType',
       },
 
       {
         label: 'передержка',
-        value: 'pet-sitting'
+        value: 'pet-sitting',
+        name: 'serviceType',
       },
 
       {
         label: 'кинология',
-        value: 'cynology'
+        value: 'cynology',
+        name: 'serviceType',
       },
     ]
   }
