@@ -15,8 +15,13 @@ import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
+
 import Login from '../pages/Login';
+import LoginNoAccount from '../pages/LoginNoAccount';
+import LoginWithAccount from '../pages/LoginWithAccount';
+
 import Registration from '../pages/Registration';
+import SuccessfulSignup from '../pages/SuccessfulSignup';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
@@ -44,6 +49,10 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
+import Recovery from '../pages/Recovery';
+import RecoveryCode from '../pages/RecoveryCode';
+import RecoveryPassword from '../pages/RecoveryPassword';
+import SuccessfulRecovery from '../pages/SuccessfulRecovery';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -61,6 +70,8 @@ const router = createBrowserRouter(
       }
       errorElement={<ErrorBoundary errorType404 />}
     >
+
+      {/* Main Page */}
       <Route index element={<Main />} />
 
       {/* Profile */}
@@ -116,20 +127,23 @@ const router = createBrowserRouter(
 
       {/* Login */}
       <Route path="signin" element={<Login />} />
+      <Route path="signin-no-account" element={<LoginNoAccount />} />
+      <Route path="signin-with-account" element={<LoginWithAccount />} />
 
       {/* SignUp */}
-      <Route path="signup" element={<Registration/>} />
+      <Route path="signup" element={<Registration />} />
+      <Route path="successful-signup" element={<SuccessfulSignup />} />
 
       {/* Recovery */}
-      <Route
-        path="recovery"
-        element={<h2>Здесь будет восстановление аккаунта</h2>}
-      />
+      <Route path="recovery" element={<Recovery />} />
+      <Route path="recovery-code" element={<RecoveryCode />} />
+      <Route path="recovery-password" element={<RecoveryPassword />} />
+      <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<h1>TEST</h1>}
       />
     </Route>,
   ),

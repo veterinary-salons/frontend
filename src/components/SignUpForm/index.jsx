@@ -1,6 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import classNames from 'classnames';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
@@ -11,7 +11,6 @@ function SignUpForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
   const [userRole, setUserRole] = useState('');
-  const [buttonText, setButtonText] = useState('Зарегистрироваться');
   const [values, setValues] = useState({});
 
   const handleFormChange = (value) => {
@@ -25,25 +24,19 @@ function SignUpForm() {
     console.log(values, isValid);
   };
 
-  useEffect(() => {
-    if (userRole === "specialist") {
-      setButtonText('Далее')
-    } else {
-      setButtonText('Зарегистрироваться')
-    }
-  }, [userRole]);
-
   const handleFormValidChange = (e) => {
     setIsValid(e.target.closest('form').checkValidity());
   };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    if(userRole === "specialist") {
-      console.log("specialist")
-    } else if(userRole === "user") {
-      console.log("user")
-    }
+    localStorage.setItem('auth', true);
+    navigate('/successful-signup', {state: {userRole}});
+    // if(userRole === "specialist") {
+    //   navigate('/successful-signup');
+    // } else if(userRole === "user") {
+    //   navigate('/successful-signup');
+    // }
   };
 
   return (
@@ -190,7 +183,7 @@ function SignUpForm() {
           type="submit"
           active={isValid}
         >
-          {buttonText}
+          Зарегистрироваться
         </Button>
       </div>
     </form>

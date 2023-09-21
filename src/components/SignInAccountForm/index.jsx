@@ -3,8 +3,9 @@ import { useState } from 'react';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
+import MailAccount from '../MailAccount';
 
-function SignInForm() {
+function SignInAccountForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
   const [isValidateInput, setIsValidateInput] = useState({});
@@ -34,9 +35,10 @@ function SignInForm() {
     <form
       onChange={handleFormValidChange}
       className={classes.form}
-      id="signin-form"
+      id="account-signin-form"
     >
       <h2 className={classes.form__title}>Войдите в аккаунт</h2>
+      <MailAccount to='/signin' />
       <fieldset className={classes.form__fieldset}>
         <InputText
           type="email"
@@ -49,6 +51,7 @@ function SignInForm() {
           id="email-input"
           autoComplete="email"
           getValid={setIsValidateInput}
+          initialValue={{email: "asya1995cat@mail.ru"}}
         />
         <InputText
           type="password"
@@ -62,39 +65,34 @@ function SignInForm() {
           autoComplete="current-password"
           getValid={setIsValidateInput}
         />
-        <Link
-          to="/recovery"
-          className={classes.form__link}
-        >
-          Забыли пароль?
-        </Link>
       </fieldset>
+      <Link
+        to="/recovery"
+        className={classes.form__link}
+      >
+        Забыли пароль?
+      </Link>
       <div className={classes['form__button-wrapper']}>
+      <Button
+          onClick={() => navigate(-1)}
+          variant="outlined"
+          size="medium"
+          type="button"
+        >
+          Назад
+        </Button>
         <Button
           onClick={handleFormSubmit}
           variant="purple-filled"
           size="medium"
           type="submit"
-          isMaxWidth
           active={isActive}
         >
           Войти
         </Button>
-        <div className={classes.form__navbox}>
-          <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
-          <Button
-            onClick={() => navigate('/signup')}
-            variant="outlined"
-            size="medium"
-            type="button"
-            isMaxWidth
-          >
-            Зарегистрироваться
-          </Button>
-        </div>
       </div>
     </form>
   );
 }
 
-export default SignInForm;
+export default SignInAccountForm;

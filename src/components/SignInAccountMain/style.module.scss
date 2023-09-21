@@ -1,0 +1,37 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 500px;
+  margin: auto;
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    margin: 0 0 8px;
+  }
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__subtitle {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0;
+  }
+  &__navbox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__navtext {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
+  }
+}
