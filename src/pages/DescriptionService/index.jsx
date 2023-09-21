@@ -11,7 +11,7 @@ const DescriptionService = ({ getDescription }) => {
   const [value, setValue] = useState('');
 
   const handleButton = () => {
-    navigate('/next', { replace: true });
+    navigate('/advert-final', { replace: true });
     getDescription({ descriptionServes: value });
   };
 
@@ -46,7 +46,7 @@ const DescriptionService = ({ getDescription }) => {
           size="medium"
           type="button"
           onClick={() => {
-            navigate('/back', { replace: true });
+            navigate('/advert-price', { replace: true });
           }}
         >
           Назад
