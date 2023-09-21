@@ -15,17 +15,17 @@ const ArrowDown = ({ positionDropdown, classes }) => (
       classes,
     )}
     src={imgArrowDown}
-    alt="стрелка вниз"
+    alt="стрелка вверх"
   />
 );
 
 ArrowDown.propTypes = {
-  positionDropdown: PropTypes.bool,
+  positionDropdown: PropTypes.string,
   classes: PropTypes.string,
 };
 
 ArrowDown.defaultProps = {
-  positionDropdown: true,
+  positionDropdown: 'ture',
   classes: '',
 };
 
