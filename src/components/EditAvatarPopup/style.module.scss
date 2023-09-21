@@ -1,0 +1,22 @@
+.input {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+}
+
+.lable {
+  display: flex;
+  min-width: 117px;
+  min-height: 44px;
+  padding: 12px 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: var(--primary-purple-color, #9384b7);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--background-white-color, #fff);
+  cursor: pointer;
+}
