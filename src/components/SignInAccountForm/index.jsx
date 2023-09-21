@@ -37,7 +37,7 @@ function SignInAccountForm() {
       className={classes.form}
       id="account-signin-form"
     >
-      <h2 className={classes.form__title}>Войдите в аккаунт</h2>
+      <h3 className={classes.form__title}>Войдите в аккаунт</h3>
       <MailAccount to='/signin' />
       <fieldset className={classes.form__fieldset}>
         <InputText

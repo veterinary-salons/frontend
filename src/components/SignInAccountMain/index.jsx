@@ -9,9 +9,9 @@ function SignInAccountMain() {
 
   return (
     <div className={classes.auth}>
-      <h2 className={classes.auth__title}>Войдите в аккаунт</h2>
+      <h3 className={classes.auth__title}>Войдите в аккаунт</h3>
       <div className={classes.auth__group}>
-        <h3 className={classes.auth__subtitle}>Вы вышли из аккаунта:</h3>
+        <p className={classes.auth__subtitle}>Вы вышли из аккаунта:</p>
         <MailAccount to='/signin-with-account' />
       </div>
       <MailAccountAddition />
