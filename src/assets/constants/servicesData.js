@@ -1,5 +1,5 @@
 const groomerServiceData = {
-  petType: {
+  petTypeGroomer: {
     legend: 'С какими животными вы работаете',
     checkboxType: 'checkbox',
     options: [
@@ -21,7 +21,7 @@ const groomerServiceData = {
       },
     ],
   },
-  serviceType: {
+  serviceTypeGroomer: {
     legend: 'Какой груминг вы можете сделать',
     checkboxType: 'checkbox',
     options: [
@@ -42,7 +42,7 @@ const groomerServiceData = {
 };
 
 const dogHandlerServiceData = {
-  services: {
+  servicesDogHandler: {
     legend: 'С какими задачами вы работаете',
     checkboxType: 'checkbox',
     options: [
@@ -88,7 +88,7 @@ const dogHandlerServiceData = {
       },
     ],
   },
-  serviceType: {
+  serviceTypeDogHandler: {
     legend: 'Какие форматы работы вы используете',
     checkboxType: 'checkbox',
     options: [
@@ -113,7 +113,7 @@ const dogHandlerServiceData = {
 };
 
 const vetServiceData = {
-  petType: {
+  petTypeVet: {
     legend: 'С какими животными вы работаете',
     checkboxType: 'checkbox',
     options: [
@@ -147,7 +147,7 @@ const vetServiceData = {
       },
     ],
   },
-  serviceType: {
+  serviceTypeVet: {
     legend: 'Какие именно услуги оказываете',
     checkboxType: 'checkbox',
     options: [
@@ -184,7 +184,7 @@ const vetServiceData = {
 };
 
 const petSitterServiceData = {
-  petType: {
+  petTypePetSitter: {
     legend: 'С какими животными вы работаете',
     checkboxType: 'checkbox',
     options: [

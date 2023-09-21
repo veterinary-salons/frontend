@@ -15,10 +15,9 @@ const availableTypes = [
   ...Object.keys(vetServiceData),
   ...Object.keys(petSitterServiceData),
 ];
+console.log(availableTypes);
 
 function CheckboxList({
-  // selectedFilters,
-  // onFilterChange,
   type,
   getCheckbox,
   values,
@@ -29,32 +28,11 @@ function CheckboxList({
     vetServiceData[type] ||
     petSitterServiceData[type] ||
     {};
-  // const [selectedOptions, setSelectedOptions] = useState(selectedFilters);
 
-  // TODO: отработать выделение чекбокса и событие "показать все"
-  // const handleOptionChange = (value) => {
-  //   // let updatedOptions;
-
-  //   // if (value === 'show-all') {
-  //   //   updatedOptions = options.map((item) => item.value);
-  //   // } else {
-  //   //   updatedOptions = selectedOptions.includes(value)
-  //   //     ? selectedOptions.filter((option) => option !== value)
-  //   //     : [...selectedOptions, value];
-  //   // }
-
-  //   const updatedOptions = selectedOptions.includes(value)
-  //     ? selectedOptions.filter((option) => option !== value)
-  //     : [...selectedOptions, value];
-
-  //   setSelectedOptions(updatedOptions);
-  //   onFilterChange(updatedOptions);
-  //   console.log(selectedOptions)
-  // };
-
+    console.log(options);
   return (
     <fieldset className={classes.checkbox__fieldset}>
-      <legend className={classes.checkbox__legend}>{legend}</legend>
+      <legend className={classes.checkbox__legend}>{legend}</legend> 
       {options.map((item) => (
         <Checkbox
           key={item.value}
@@ -77,17 +55,13 @@ function CheckboxList({
 }
 
 CheckboxList.propTypes = {
-  // selectedFilters: PropTypes.arrayOf(PropTypes.string),
-  // onFilterChange: PropTypes.func,
   type: PropTypes.oneOf(availableTypes).isRequired, // Пропс для выбора типа типа
   getCheckbox: PropTypes.func.isRequired,
   values: PropTypes.objectOf(PropTypes.string),
 };
 
 CheckboxList.defaultProps = {
-  // selectedFilters: [],
   values: {},
-  // onFilterChange: () => {},
 };
 
 export default CheckboxList;
