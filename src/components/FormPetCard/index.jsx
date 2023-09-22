@@ -83,6 +83,8 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
     setData({ ...data, src: avatar });
   };
 
+  console.log(data);
+
   return (
     <>
       <form
@@ -158,7 +160,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             value={dataPet['my-type']}
             width="100%"
             getValue={getInputValue}
-            name="type"
+            name="my-type"
           />
         </label>
         {data.type === 'другое' ? (
