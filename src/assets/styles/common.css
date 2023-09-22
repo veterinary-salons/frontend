@@ -1,36 +1,38 @@
 :root {
-    /* // Основные цвета */
-    --primary-purple-color: #9384B7;
-    --primary-purple-color-rgba: rgba(143, 129, 177, 0.20);
-    --purple-light-color: #B8ACD4;
-    --purple-pale-color: #F9F7FC;
-    --purple-pushed-color: #615779;
-    --purple-disabled-color: #D2C9E8;
-    --green-color: #8FD6BF;
-    --green-light-color: #BCE6D9;
-    --yellow-color: #F9D279;
-    --yellow-light-color: #FBE4AF;
-    --blue-color: #BED2EA;
-    --blue-light-color: #D8E4F2;
+  /* // Основные цвета */
+  --primary-purple-color: #9384b7;
+  --primary-purple-color-rgba: rgba(143, 129, 177, 0.2);
+  --purple-light-color: #b8acd4;
+  --purple-pale-color: #f9f7fc;
+  --purple-pushed-color: #615779;
+  --purple-disabled-color: #d2c9e8;
+  --green-color: #8fd6bf;
+  --green-light-color: #bce6d9;
+  --yellow-color: #f9d279;
+  --yellow-light-color: #fbe4af;
+  --blue-color: #bed2ea;
+  --blue-light-color: #d8e4f2;
 
-    /* // Цвет текста */
-    --primary-text-color: #0F0F0F;
-    --primary-text-color-opacity-7: rgba(15, 15, 15, .7);
-    --text-grey-color: #9C9C9C;
-    --text-white-color: #FFF;
-    --text-button-color: var(--purple-pushed-color);
+  /* // Цвет текста */
+  --primary-text-color: #0f0f0f;
+  --primary-text-color-opacity-7: rgba(15, 15, 15, 0.7);
+  --text-grey-color: #9c9c9c;
+  --text-white-color: #fff;
+  --text-light-grey-color: #3c3c3c;
+  --text-button-color: var(--purple-pushed-color);
 
-    /* //Дополнительные цвета */
-    --background-white-color: #FFF;
-    --background-white-color-opacity-7: rgba(255, 255, 255, 0.7);
+  /* //Дополнительные цвета */
+  --background-white-color: #fff;
+  --background-white-color-opacity-7: rgba(255, 255, 255, 0.7);
+  --shadow-gray-rgba: rgba(147, 132, 183, 0.3);
 
-    --link-color: var(--primary-purple-color);
-    --reverse-color: var(--background-white-color);
+  --link-color: var(--primary-purple-color);
+  --reverse-color: var(--background-white-color);
 
-    --grey-search-color: #BEBEBE;
-    --grey-light-color: #F8F8F8;
-    --grey-color: #D4D4D4;
+  --grey-search-color: #bebebe;
+  --grey-light-color: #f8f8f8;
+  --grey-color: #d4d4d4;
 
-    --error-color: #D80000;
-    --success-color: #03A600;
+  --error-color: #d80000;
+  --success-color: #03a600;
 }
