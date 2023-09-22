@@ -28,6 +28,7 @@ import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
 
 import PetCard from '../pages/PetCard';
+import Dropdown from '../ui/forms/dropdowns/Dropdown';
 
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
@@ -46,6 +47,7 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
+import AdvertSuccess from '../pages/AdvertSuccess';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -126,7 +128,9 @@ const router = createBrowserRouter(
       />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<PetCard />} />
+      <Route path="test" element={<Dropdown />} />
+
+      <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),
 );

@@ -44,6 +44,7 @@ const Dropdown = ({ array, value, width, getValue, disabled, name }) => {
                   <li className={classes.dropdown__li} key={item.id}>
                     <button
                       style={{ width }}
+                      key={item.id}
                       className={classes.dropdown__button}
                       onClick={() => hanelListSelection(item.text)}
                       type="button"
@@ -76,7 +77,7 @@ Dropdown.defaultProps = {
   array: arrayAnimals,
   getValue: () => {},
   disabled: false,
-  value: '',
+  value: null,
   name: '',
 };
 

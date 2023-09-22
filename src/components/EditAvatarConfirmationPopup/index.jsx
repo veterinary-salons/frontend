@@ -51,7 +51,7 @@ const EditAvatarConfirmationPopup = ({
           style={{ height: '100%', width: '100%' }}
           viewMode={1}
           initialAspectRatio={round ? 1 : 295 / 350}
-          aspectRatio={1}
+          // aspectRatio={1}
           autoCropArea={round ? 0.63 : 0.8}
           cropBoxMovable={false}
           cropBoxResizable={false}
@@ -95,7 +95,7 @@ EditAvatarConfirmationPopup.defaultProps = {
   imgSrc: UploadProfileAvatar,
   onBack: () => {},
   onSave: () => {},
-  round: true,
+  round: false,
 };
 
 export default EditAvatarConfirmationPopup;

@@ -7,24 +7,17 @@ import Button from '../../ui/buttons/originButton/Button';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import { arrayAnimals } from '../../assets/constants/constants';
-import Portal from '../Portal/index';
-import EditAvatarConfirmationPopup from '../EditAvatarConfirmationPopup';
-import EditAvatarPopup from '../EditAvatarPopup';
+
+import ImageUpload from '../ImageUpload';
 
 const FormPetCard = ({ dataPet, setDataPet }) => {
   const isDataPet = Object.keys(dataPet).length !== 0;
-  const { petName, src } = dataPet;
   const [data, setData] = useState({ ...dataPet });
-  const [isValid, setIsValid] = useState(false);
+  const [isValid, setIsValid] = useState(isDataPet);
   const [isValidInput, setIsValidInput] = useState(false);
   const [isOpenPopup, setIsOpenPopup] = useState(false);
-  const [upFile, setUpFile] = useState(true);
 
-  const handleClick = () => {
-    setUpFile((state) => !state);
-  };
-
-  console.log(upFile);
+  const isActive = Object.values(isValidInput).every((item) => item) && isValid;
 
   const getInputValue = (value) => {
     setData({
@@ -46,44 +39,9 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
     setIsOpenPopup((state) => !state);
   };
 
-  const [fileInput, setFileInput] = useState();
-  const [fileName, setFileName] = useState('');
-
-  console.log(fileInput, fileName);
-
-  function getBase64(file) {
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
-    reader.onload = function () {
-      console.log(reader.result);
-      setFileInput(reader.result);
-    };
-    reader.onerror = function (error) {
-      console.log('Error: ', error);
-    };
-
-    return reader.result;
-  }
-
-  const handleFile = async (e) => {
-    const file = e.currentTarget.files[0];
-    // if(sizeLimit && file.size > props.sizeLimit)
-    // {
-    //     setStatusMessage("File is too large.");
-    // }
-    // else
-    // {
-    console.log(file);
-    setFileName(file.name);
-    getBase64(file);
-    // }
+  const handleDeleteAvatar = () => {
+    setData({ ...data, src: '' });
   };
-
-  const handleChangeAvatar = (avatar) => {
-    setData({ ...data, src: avatar });
-  };
-
-  console.log(data);
 
   return (
     <>
@@ -95,7 +53,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
         <h2 className={classes.form__title}>
           {isDataPet ? (
             <>
-              {petName}
+              {data.petName}
               <span className={classes['form__title-explanation']}>
                 &nbsp;(редактирование карточки)
               </span>
@@ -111,16 +69,16 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
           )}
         >
           <div className={classes['form__wrapper-image']}>
-            {src || data.src ? (
+            {data.src ? (
               <img
-                src={src && data.src}
+                src={data.src}
                 alt="фото питомца"
                 className={classes.form__image}
               />
             ) : null}
           </div>
           <div className={classes['form__wrapper-button']}>
-            {src ? (
+            {data.src ? (
               <>
                 <Button
                   onClick={handleOpenPopup}
@@ -131,7 +89,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
                   Сменить фото
                 </Button>
                 <Button
-                  onClick={() => {}}
+                  onClick={handleDeleteAvatar}
                   size="medium"
                   variant="outlined"
                   isMaxWidth
@@ -151,7 +109,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             )}
           </div>
         </fieldset>
-        <label
+        <div
           className={classNames(classes.form__lable, classes.form__lable_pb8)}
         >
           У меня
@@ -162,7 +120,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             getValue={getInputValue}
             name="my-type"
           />
-        </label>
+        </div>
         {data.type === 'другое' ? (
           <label className={classes.form__lable}>
             Укажите вид питомца
@@ -352,29 +310,16 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
           type="submit"
           size="medium"
           variant="outlined"
-          active={isValid && isValidInput}
+          active={isActive}
         >
           Сохранить данные
         </Button>
       </form>
-      <Portal isOpened={isOpenPopup}>
-        {!fileInput ? (
-          <EditAvatarPopup
-            onClick={handleClick}
-            isOpen={isOpenPopup}
-            onClose={handleOpenPopup}
-            handleFile={handleFile}
-          />
-        ) : (
-          <EditAvatarConfirmationPopup
-            isOpen={isOpenPopup}
-            onBack={handleClick}
-            imgSrc={fileInput}
-            onClose={handleOpenPopup}
-            onSave={handleChangeAvatar}
-          />
-        )}
-      </Portal>
+      <ImageUpload
+        getImage={setData}
+        isOpen={isOpenPopup}
+        onClose={handleOpenPopup}
+      />
     </>
   );
 };
