@@ -44,6 +44,7 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
+import AdvertSuccess from '../pages/AdvertSuccess';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -128,6 +129,8 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
+
+      <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),
 );
