@@ -1,0 +1,15 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 100%;
+  width: fit-content;
+  text-decoration: none;
+  &__title {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 24px;
+    margin: 0;
+    color: var(--primary-text-color);
+  }
+}
