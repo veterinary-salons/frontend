@@ -34,7 +34,7 @@ const InputPrice = ({ prefix, name, initialValue, disabled, getInput }) => {
       prefix={`${prefix} `}
       suffix=" ₽"
       maxLength={6}
-      defaultValue={0}
+      defaultValue=''
       decimalsLimit={1}
       onValueChange={(value) => setValues(value)}
       disabled={disabled}
