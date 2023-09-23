@@ -130,7 +130,7 @@ const router = createBrowserRouter(
         path="test"
         element={<ServiceBookingCard
           type='fromMe'
-          status='done'
+          status='canceled'
         />}
       />
 

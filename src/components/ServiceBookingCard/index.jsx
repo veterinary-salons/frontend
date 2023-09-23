@@ -4,6 +4,81 @@ import classnames from 'classnames';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
+const statusDataMapping = [
+  {
+    type: 'forMe',
+    status: 'inProgress',
+    data: {
+      title: '',
+      subjectSubtitle: 'Исполнитель',
+      dateSubtitle: 'Дата исполнения',
+      buttonText: 'Отменить услугу',
+      buttonLink: '/',
+      cardLink: '/',
+    },
+  },
+  {
+    type: 'forMe',
+    status: 'done',
+    data: {
+      title: 'Исполнено',
+      subjectSubtitle: 'Исполнитель',
+      dateSubtitle: 'Дата исполнения',
+      buttonText: 'Оценить услугу',
+      buttonLink: '/',
+      cardLink: '/',
+    },
+  },
+  {
+    type: 'forMe',
+    status: 'canceled',
+    data: {
+      title: 'Отменено',
+      subjectSubtitle: 'Исполнитель',
+      dateSubtitle: 'Дата отмены',
+      buttonText: 'Оценить услугу',
+      buttonLink: '/',
+      cardLink: '/',
+    },
+  },
+  {
+    type: 'fromMe',
+    status: 'inProgress',
+    data: {
+      title: '',
+      subjectSubtitle: 'Заказчик',
+      dateSubtitle: 'Дата исполнения',
+      buttonText: 'Отменить бронирование',
+      buttonLink: '/',
+      cardLink: '/',
+    },
+  },
+  {
+    type: 'fromMe',
+    status: 'done',
+    data: {
+      title: 'Исполнено',
+      subjectSubtitle: 'Заказчик',
+      dateSubtitle: 'Дата исполнения',
+      buttonText: 'Посмотреть отзыв',
+      buttonLink: '/',
+      cardLink: '/',
+    },
+  },
+  {
+    type: 'fromMe',
+    status: 'canceled',
+    data: {
+      title: 'Отменено',
+      subjectSubtitle: 'Заказчик',
+      dateSubtitle: 'Дата отмены',
+      buttonText: 'Посмотреть отзыв',
+      buttonLink: '/',
+      cardLink: '/',
+    },
+  },
+];
+
 const ServiceBookingCard = ({
   type,
   status,
@@ -11,75 +86,27 @@ const ServiceBookingCard = ({
   subjectName,
   serviceName,
   serviceDate,
-  price
+  price,
 }) => {
-  const [statusData, setStatusData] = useState({});
+  const [statusData, setStatusData] = useState({
+    type: 'fromMe',
+    status: 'canceled',
+    data: {
+      title: 'Отменено',
+      subjectSubtitle: 'Заказчик',
+      dateSubtitle: 'Дата отмены',
+      buttonText: 'Посмотреть отзыв',
+      buttonLink: '/',
+      cardLink: '/',
+    },
+  },);
 
   useEffect(() => {
-    if (type === 'forMe') {
-      if (status === 'inProgress') {
-        setStatusData({
-          title: '',
-          subjectSubtitle: 'Исполнитель',
-          dateSubtitle: 'Дата исполнения',
-          buttonText: 'Отменить услугу',
-          buttonLink: '/',
-          cardLink: '/'
-        })
-      }
-      if (status === 'done') {
-        setStatusData({
-          title: 'Исполнено',
-          subjectSubtitle: 'Исполнитель',
-          dateSubtitle: 'Дата исполнения',
-          buttonText: 'Оценить услугу',
-          buttonLink: '/',
-          cardLink: '/'
-        })
-      }
-      if (status === 'canceled') {
-        setStatusData({
-          title: 'Отменено',
-          subjectSubtitle: 'Исполнитель',
-          dateSubtitle: 'Дата отмены',
-          buttonText: 'Оценить услугу',
-          buttonLink: '/',
-          cardLink: '/'
-        })
-      }
-    }
-    if (type === 'fromMe') {
-      if (status === 'inProgress') {
-        setStatusData({
-          title: '',
-          subjectSubtitle: 'Заказчик',
-          dateSubtitle: 'Дата исполнения',
-          buttonText: 'Отменить бронирование',
-          buttonLink: '/',
-          cardLink: '/'
-        })
-      }
-      if (status === 'done') {
-        setStatusData({
-          title: 'Исполнено',
-          subjectSubtitle: 'Заказчик',
-          dateSubtitle: 'Дата исполнения',
-          buttonText: 'Посмотреть отзыв',
-          buttonLink: '/',
-          cardLink: '/'
-        })
-      }
-      if (status === 'canceled') {
-        setStatusData({
-          title: 'Отменено',
-          subjectSubtitle: 'Заказчик',
-          dateSubtitle: 'Дата отмены',
-          buttonText: 'Посмотреть отзыв',
-          buttonLink: '/',
-          cardLink: '/'
-        })
-      }
-    }
+    setStatusData(
+      statusDataMapping.find(
+        (item) => item.type === type && item.status === status,
+      ),
+    );
   }, []);
 
   const getClassTitle = classnames(
@@ -94,48 +121,40 @@ const ServiceBookingCard = ({
 
   return (
     <article className={classes.card}>
-      {status !== 'inProgress' &&
-        <h3 className={getClassTitle}>{statusData.title}</h3>
-      }
+      {status !== 'inProgress' && (
+        <h3 className={getClassTitle}>{statusData.data.title}</h3>
+      )}
 
       <div className={classes.card__subject}>
-        {subjectImage === undefined ?
-          <div className={classes['card__default-img']}/>
-        :
-          <img
-            src={subjectImage}
-            alt="Аватар"
-            className={classes.card__img}
-          />
-        }
+        {subjectImage === undefined ? (
+          <div className={classes['card__default-img']} />
+        ) : (
+          <img src={subjectImage} alt="Аватар" className={classes.card__img} />
+        )}
         <div className={classes.card__container}>
           <p className={(classes.card__text, classes.card__text_color)}>
-            {statusData.subjectSubtitle}
+            {statusData.data.subjectSubtitle}
           </p>
           <p className={classes.card__text}>{subjectName}</p>
         </div>
       </div>
-      
+
       <div className={classes.card__container}>
-        <p
-          className={(classes.card__text, classes.card__text_color)}
-        >Вид услуги</p>
+        <p className={(classes.card__text, classes.card__text_color)}>
+          Вид услуги
+        </p>
         <p className={classes.card__text}>{serviceName}</p>
       </div>
 
       <div className={classes.card__container}>
         <p className={(classes.card__text, classes.card__text_color)}>
-          {statusData.dateSubtitle}
+          {statusData.data.dateSubtitle}
         </p>
-        <p className={classes.card__text}>
-          {serviceDate}
-        </p>
+        <p className={classes.card__text}>{serviceDate}</p>
       </div>
 
       <div className={classes.card__container}>
-        <p className={(classes.card__text, classes.card__text_color)}>
-          Сумма
-        </p>
+        <p className={(classes.card__text, classes.card__text_color)}>Сумма</p>
         <p className={classes.card__text}>{`${price} ₽`}</p>
       </div>
 
@@ -147,7 +166,7 @@ const ServiceBookingCard = ({
         onClick={() => {}}
         active={status !== 'canceled'}
       >
-        {statusData.buttonText}
+        {statusData.data.buttonText}
       </Button>
     </article>
   );
@@ -160,10 +179,10 @@ ServiceBookingCard.propTypes = {
   subjectImage: PropTypes.string,
   subjectName: PropTypes.string,
   type: PropTypes.oneOf(['forMe', 'fromMe']).isRequired,
-  status: PropTypes.oneOf(['inProgress', 'done', 'canceled']).isRequired,
+  status: PropTypes.oneOf(['inProgress', 'done', 'cancelled']).isRequired,
   serviceName: PropTypes.string,
   serviceDate: PropTypes.string,
-  price: PropTypes.string
+  price: PropTypes.string,
 };
 
 ServiceBookingCard.defaultProps = {
@@ -171,7 +190,7 @@ ServiceBookingCard.defaultProps = {
   subjectName: 'Герасимова Алла',
   serviceName: 'Плановая прививка',
   serviceDate: '26.07.2023',
-  price: '5 980'
+  price: '5 980',
 };
 
 export default ServiceBookingCard;
