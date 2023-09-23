@@ -8,7 +8,7 @@ import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import { arrayAnimals } from '../../assets/constants/constants';
 
-import ImageUpload from '../ImageUpload';
+import ImageUploadPopup from '../ImageUploadPopup';
 
 const FormPetCard = ({ dataPet, setDataPet }) => {
   const isDataPet = Object.keys(dataPet).length !== 0;
@@ -110,7 +110,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
           </div>
         </fieldset>
         <div
-          className={classNames(classes.form__lable, classes.form__lable_pb8)}
+          className={classNames(classes.form__label, classes.form__label_pb8)}
         >
           У меня
           <Dropdown
@@ -122,7 +122,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
           />
         </div>
         {data.type === 'другое' ? (
-          <label className={classes.form__lable}>
+          <label className={classes.form__label}>
             Укажите вид питомца
             <InputText
               getInput={getInputValue}
@@ -135,7 +135,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             />
           </label>
         ) : null}
-        <label className={classes.form__lable}>
+        <label className={classes.form__label}>
           Порода
           <InputText
             getInput={getInputValue}
@@ -147,7 +147,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             getValid={setIsValidInput}
           />
         </label>
-        <label className={classes.form__lable}>
+        <label className={classes.form__label}>
           Имя питомца
           <InputText
             className={classes.form__input}
@@ -160,7 +160,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             getValid={setIsValidInput}
           />
         </label>
-        <label className={classes.form__lable}>
+        <label className={classes.form__label}>
           Возраст
           <div className={classes['form__age-wrapper']}>
             <InputText
@@ -191,7 +191,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             <span className={classes.form__age}>мес</span>
           </div>
         </label>
-        <label className={classes.form__lable}>
+        <label className={classes.form__label}>
           Размер
           <div className={classes['form__radio-wrapper']}>
             <Checkbox
@@ -236,7 +236,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             </Checkbox>
           </div>
         </label>
-        <label className={classes.form__lable}>
+        <label className={classes.form__label}>
           Ваш питомец стерилизован/кастрирован?
           <div className={classes['form__radio-wrapper']}>
             <Checkbox
@@ -271,7 +271,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             </Checkbox>
           </div>
         </label>
-        <label className={classes.form__lable}>
+        <label className={classes.form__label}>
           Ваш питомец имеет все необходимые вакцинации?
           <div className={classes['form__radio-wrapper']}>
             <Checkbox
@@ -315,7 +315,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
           Сохранить данные
         </Button>
       </form>
-      <ImageUpload
+      <ImageUploadPopup
         getImage={setData}
         isOpen={isOpenPopup}
         onClose={handleOpenPopup}

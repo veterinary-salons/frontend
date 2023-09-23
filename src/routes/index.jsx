@@ -74,7 +74,7 @@ const router = createBrowserRouter(
       >
         <Route element={<Profile />}>
           <Route index element={<PetCardList petList={petList} />} />
-          <Route path="addpet" element={<PetCard />} />
+          <Route path="add-pet" element={<PetCard />} />
           <Route path=":id" element={<PetCard />} />
         </Route>
         <Route path="services" element={<ProfileServices />} />

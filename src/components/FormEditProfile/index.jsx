@@ -7,7 +7,7 @@ import InputText from '../../ui/forms/inputs/inputText/InputText';
 import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import ProfileAvatar from '../../ui/profileAvatar';
 import Button from '../../ui/buttons/originButton/Button';
-import ImageUpload from '../ImageUpload';
+import ImageUploadPopup from '../ImageUploadPopup';
 
 const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
   const isDataUser = Object.keys(userData).length !== 0;
@@ -145,7 +145,7 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
           Сохранить
         </Button>
       </form>
-      <ImageUpload
+      <ImageUploadPopup
         getImage={setUserData}
         isOpen={isOpenPopup}
         onClose={handleOpenPopup}
