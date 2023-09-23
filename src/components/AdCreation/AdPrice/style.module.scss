@@ -2,14 +2,15 @@
   width: 766px;
   margin: 60px auto;
   font-family: 'Montserrat', Arial, sans-serif;
-
+  
   &__container {
     display: flex;
     gap: 20px;
-    margin-bottom: 12px;
+    align-items: center;
   }
 
   &__text {
     width: 442px;
+    margin: 0;
   }
 }
