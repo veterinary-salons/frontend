@@ -243,9 +243,9 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
               htmlType="radio"
               getCheckbox={getInputValue}
               type="radio"
-              name="unsex"
+              name="sterilized"
               value="Да"
-              checked={data.unsex === 'Да'}
+              checked={data.sterilized === 'Да'}
             >
               Да
             </Checkbox>
@@ -253,9 +253,9 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
               htmlType="radio"
               getCheckbox={getInputValue}
               type="radio"
-              name="unsex"
+              name="sterilized"
               value="Нет"
-              checked={data.unsex === 'Нет'}
+              checked={data.sterilized === 'Нет'}
             >
               Нет
             </Checkbox>
@@ -263,9 +263,9 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
               htmlType="radio"
               getCheckbox={getInputValue}
               type="radio"
-              name="unsex"
+              name="sterilized"
               value="Не знаю"
-              checked={data.unsex === 'Не знаю'}
+              checked={data.sterilized === 'Не знаю'}
             >
               Не знаю
             </Checkbox>

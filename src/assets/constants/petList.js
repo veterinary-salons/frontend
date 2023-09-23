@@ -10,7 +10,7 @@ const petList = [
         breed: 'Корги',
         'my-type': 'собака',
         size: 'более 20 кг',
-        unsex: 'Нет',
+        sterilized: 'Нет',
         vaccinated: 'Да',
     },
     {
@@ -21,7 +21,7 @@ const petList = [
         breed: 'Мэйн-кун',
         'my-type': 'кот',
         size: 'До 5 кг',
-        unsex: 'Да',
+        sterilized: 'Да',
         vaccinated: 'Да',
     }
 ];
