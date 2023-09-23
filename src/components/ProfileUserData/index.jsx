@@ -4,7 +4,6 @@ import classes from './style.module.scss';
 import ProfileAvatar from '../../ui/profileAvatar';
 import UserContacts from '../../ui/userContacts';
 import Button from '../../ui/buttons/originButton/Button';
-import avatar from '../../assets/images/icon/avatar/img-avatar.svg';
 
 const ProfileUserData = ({
   handleEditProfile,
@@ -14,7 +13,7 @@ const ProfileUserData = ({
   <section className={classes.profile}>
     <div className={classes['profile__data-wrapper']}>
       <div className={classes['profile__avatar-wrapper']}>
-        <ProfileAvatar src={avatar} />
+        <ProfileAvatar src={userData.src} />
         <h2 className={classes['profile__data-title']}>
           {userData.name} {userData.surname}
         </h2>

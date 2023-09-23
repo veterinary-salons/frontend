@@ -83,8 +83,6 @@ const InputText = ({
     }
   }, [values[name]]);
 
-  console.log(name, initialValue[name]);
-
   return (
     <div className={style.container}>
       <input

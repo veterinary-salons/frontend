@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Outlet, useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
+import img from '../../assets/images/icon/avatar/img-avatar.svg';
 
 import ProfileUserData from '../../components/ProfileUserData';
 import FormEditProfile from '../../components/FormEditProfile';
@@ -16,6 +17,7 @@ const Profile = () => {
     address: 'г. Москва, ул. Гагарина, д. 6, кв. 145',
     email: 'asyam1998cat@mail.ru',
     password: '1234567f',
+    src: img,
   });
 
   const handleEditProfile = () => {
@@ -27,7 +29,8 @@ const Profile = () => {
     navigate('/', { replace: true });
   };
 
-  const handleSubmitForm = () => {
+  const handleSubmitForm = (e) => {
+    e.preventDefault();
     setIsEditProfile(false);
   };
 
