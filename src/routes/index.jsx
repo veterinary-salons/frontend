@@ -23,6 +23,11 @@ import LoginWithAccount from '../pages/LoginWithAccount';
 import Registration from '../pages/Registration';
 import SuccessfulSignup from '../pages/SuccessfulSignup';
 
+import Recovery from '../pages/Recovery';
+import RecoveryCode from '../pages/RecoveryCode';
+import RecoveryPassword from '../pages/RecoveryPassword';
+import SuccessfulRecovery from '../pages/SuccessfulRecovery';
+
 import { dataLinksProfile } from '../assets/constants/dataPath';
 import { dataArticlePage } from '../assets/constants/constants';
 import SelectedProducts from '../pages/SelectedProducts';
@@ -49,10 +54,7 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
-import Recovery from '../pages/Recovery';
-import RecoveryCode from '../pages/RecoveryCode';
-import RecoveryPassword from '../pages/RecoveryPassword';
-import SuccessfulRecovery from '../pages/SuccessfulRecovery';
+import AdvertSuccess from '../pages/AdvertSuccess';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -142,6 +144,8 @@ const router = createBrowserRouter(
         path="test"
         element={<h1>TEST</h1>}
       />
+
+      <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),
 );

@@ -20,7 +20,8 @@ const dataPathWithoutCrumbs = [
   '/recovery',
   '/recovery-code',
   '/recovery-password',
-  '/successful-recovery'
+  '/successful-recovery',
+  '/advert-success'
 ];
 const dataPathWithOnlyLogoHeader = [
   '/signin',
@@ -47,7 +48,9 @@ function Root() {
   const auth = localStorage.getItem('auth');
   const location = useLocation();
   const crumbsPath = dataPathWithoutCrumbs.includes(location.pathname);
-  const isOnlyLogoHeader = dataPathWithOnlyLogoHeader.includes(location.pathname);
+  const isOnlyLogoHeader = dataPathWithOnlyLogoHeader.includes(
+    location.pathname,
+  );
   const isRenderFooter = dataPathWithoutFooter.includes(location.pathname);
 
   return (
