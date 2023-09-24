@@ -22,5 +22,17 @@
     display: flex;
     gap: 22px;
     align-items: center;
+    width: 307px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    padding-left: 80px;
+    padding-right: 80px;
+
+    &__container-btn {
+      gap: 20px;
+    }
   }
 }

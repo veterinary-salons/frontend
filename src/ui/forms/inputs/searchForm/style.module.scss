@@ -72,3 +72,9 @@ input[type='search']::-webkit-search-results-decoration {
 .disabled {
   opacity: 0.5;
 }
+
+@media screen and (max-width: 1280px) {
+  .search-container {
+    width: 250px;
+  }
+}

@@ -58,7 +58,7 @@
 
   &__img {
     display: flex;
-    margin: auto;
+    margin: 0 auto;
     height: 100%;
   }
 
@@ -78,5 +78,23 @@
       line-height: 30px;
       margin-top: 5px;
     }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .card {
+    width: 268px;
+    height: 309px;
+
+    &__background {
+      height: 254px;
+      padding: 21px 18px 0;
+    }
+
+    &__img {
+      width: 233px;
+      height: 233px;
+    }
+
   }
 }

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import classes from './Main.module.scss';
-import SpecialistCardList from '../../modules/mainPage/specialistCardList';
+// import SpecialistCardList from '../../modules/mainPage/specialistCardList/index';
+import ServicesList from '../ServicesList';
 import GoodsCardMainPageList from '../../modules/mainPage/goodsCardList/index';
 import Facts from '../../modules/mainPage/facts/Facts';
 import Button from '../../ui/buttons/originButton/Button';
@@ -18,7 +19,10 @@ function Main() {
           <Button>Найти специалиста</Button>
         </Link>
       </section>
-      <SpecialistCardList />
+      <section className={classes.specialists}>
+      <h2 className={classes.specialists__title}>Они любят и знают своё дело</h2>
+      <ServicesList />
+      </section>
       <Facts />
       <GoodsCardMainPageList />
     </>

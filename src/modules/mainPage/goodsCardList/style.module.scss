@@ -1,7 +1,7 @@
 .goods {
-    max-width: 1240px;
+    max-width: 100%;
     column-gap: 20px;
-    padding: 120px 0;
+    padding: 120px 100px;
     margin: 0 auto;
 
     &__title {
@@ -18,9 +18,19 @@
     &__cards {
         display: flex;
         flex-direction: row;
-        max-width: 1240px;
+        max-width: 100%s;
         column-gap: 20px;
         padding: 0;
         margin: 0 auto;
     }
 }
+
+@media screen and (max-width: 1280px) {
+    .goods {
+        padding: 100px 80px;
+
+        &__cards {
+            column-gap: 16px;
+        }
+    }
+  }
