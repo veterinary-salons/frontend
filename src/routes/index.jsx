@@ -37,6 +37,7 @@ import GoodsList from '../pages/GoodsList';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingRevokePopup from '../components/BookingRevokePopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
+import AdvertFinal from '../pages/AdvertFinal';
 
 import {
   dataSelectedProducts,
@@ -78,11 +79,8 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Services */}
-      <Route 
-        path="services" 
-        element={<Catalog title='Наши услуги'/>}
-      >
-        <Route index element={<ServicesList isServicesPage/>} />
+      <Route path="services" element={<Catalog title="Наши услуги" />}>
+        <Route index element={<ServicesList isServicesPage />} />
         <Route path=":service" element={<Service />} />
       </Route>
 
@@ -131,6 +129,7 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
+      <Route path="advert-final" element={<AdvertFinal />} />
     </Route>,
   ),
 );

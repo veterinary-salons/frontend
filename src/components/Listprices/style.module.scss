@@ -1,0 +1,36 @@
+.list {
+  width: 100%;
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 60px auto 40px;
+
+  &__container-title {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 32px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  &__container-services {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--grey-color);
+    margin-bottom: 20px;
+  }
+}
