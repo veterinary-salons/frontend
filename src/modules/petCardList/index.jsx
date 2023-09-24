@@ -43,7 +43,7 @@ const PetCardList = ({ petList }) => {
           <p className={classes['pets__subtitle-no-pet']}>
             Но они, наверняка, есть.
           </p>
-          <Link to="add-pet">
+          <Link to="addpet">
             <Button shape="round" size="small" variant="add" />
           </Link>
           <p
