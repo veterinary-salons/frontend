@@ -36,7 +36,7 @@ const PetCard = ({ src, title, years, months, add, id }) => {
     <div className={classNames(classes['pet-card'], add ? classes.add : null)}>
       {add ? (
         <>
-          <Link to="addpet">
+          <Link to="add-pet">
             <Button shape="round" size="small" variant="add" />
           </Link>
           <p className={classes.add__title}>Добавить питомца</p>
