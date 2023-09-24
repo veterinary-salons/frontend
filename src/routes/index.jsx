@@ -37,6 +37,8 @@ import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
 
+import PetCard from '../pages/PetCard';
+
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
 // import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
@@ -72,7 +74,6 @@ const router = createBrowserRouter(
       }
       errorElement={<ErrorBoundary errorType404 />}
     >
-
       {/* Main Page */}
       <Route index element={<Main />} />
 
@@ -83,8 +84,8 @@ const router = createBrowserRouter(
       >
         <Route element={<Profile />}>
           <Route index element={<PetCardList petList={petList} />} />
-          <Route path="addpet" element={<p>тут будет добавление питомца</p>} />
-          <Route path=":id" element={<p>тут будет редактирование питомца</p>} />
+          <Route path="add-pet" element={<PetCard />} />
+          <Route path=":id" element={<PetCard />} />
         </Route>
         <Route path="services" element={<ProfileServices />} />
         <Route path="goods" element={<ProfileGoods />} />
@@ -140,10 +141,7 @@ const router = createBrowserRouter(
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
-        path="test"
-        element={<h1>TEST</h1>}
-      />
+      <Route path="test" element={<h1>TEST</h1>} />
 
       <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,

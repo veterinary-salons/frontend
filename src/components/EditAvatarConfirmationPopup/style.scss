@@ -1,0 +1,12 @@
+.round .cropper-crop-box,
+.round .cropper-view-box {
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.37);
+  outline: none;
+}
+
+.rect .cropper-crop-box,
+.rect .cropper-view-box {
+  background-color: rgba(0, 0, 0, 0.37);
+  outline: none;
+}
