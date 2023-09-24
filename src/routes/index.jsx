@@ -89,7 +89,10 @@ const router = createBrowserRouter(
           <Route path=":id" element={<p>тут будет редактирование питомца</p>} />
         </Route>
         <Route path="services" element={<ProfileServices />}>
-          <Route index element={<BookingRevoke dataBooking={dataBooking} />} />
+          <Route
+            path="revoke"
+            element={<BookingRevoke dataBooking={dataBooking} />}
+          />
         </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
