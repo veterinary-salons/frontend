@@ -49,16 +49,6 @@
     align-items: center;
   }
 
-  &__default-img {
-    width: 100px;
-    height: 100px;
-    background-image: url('../../assets/images/icon/avatar/big-avatar.svg');
-    background-color: var(--background-white-color);
-    background-repeat: no-repeat;
-    background-position: center;
-    border-radius: 50%;
-  }
-
   &__img {
     min-width: 100px;
     width: 100px;

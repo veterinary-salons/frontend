@@ -55,7 +55,6 @@ import {
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
 import AdvertSuccess from '../pages/AdvertSuccess';
-import ServiceBookingCard from '../components/ServiceBookingCard';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -143,10 +142,7 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<ServiceBookingCard
-          type='fromMe'
-          status='canceled'
-        />}
+        element={<h1>TEST</h1>}
       />
 
       <Route path="advert-success" element={<AdvertSuccess />} />

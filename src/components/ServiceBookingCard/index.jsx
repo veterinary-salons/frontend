@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import classnames from 'classnames';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
+import ProfileAvatar from '../../ui/profileAvatar';
 
 const statusDataMapping = [
   {
@@ -126,11 +127,7 @@ const ServiceBookingCard = ({
       )}
 
       <div className={classes.card__subject}>
-        {subjectImage === undefined ? (
-          <div className={classes['card__default-img']} />
-        ) : (
-          <img src={subjectImage} alt="Аватар" className={classes.card__img} />
-        )}
+        <ProfileAvatar src={subjectImage} forCards />
         <div className={classes.card__container}>
           <p className={(classes.card__text, classes.card__text_color)}>
             {statusData.data.subjectSubtitle}
