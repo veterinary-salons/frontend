@@ -38,6 +38,8 @@ import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
 import BookingRevoke from '../components/BookingRevoke';
 
+import PetCard from '../pages/PetCard';
+
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
 // import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
@@ -85,8 +87,8 @@ const router = createBrowserRouter(
       >
         <Route element={<Profile />}>
           <Route index element={<PetCardList petList={petList} />} />
-          <Route path="addpet" element={<p>тут будет добавление питомца</p>} />
-          <Route path=":id" element={<p>тут будет редактирование питомца</p>} />
+          <Route path="add-pet" element={<PetCard />} />
+          <Route path=":id" element={<PetCard />} />
         </Route>
         <Route path="services" element={<ProfileServices />}>
           <Route

@@ -31,7 +31,7 @@ const Checkbox = ({
 
   return (
     // eslint-disable-next-line jsx-a11y/label-has-associated-control
-    <label className={wrapperCN} style={{width}}>
+    <label className={wrapperCN} style={{ width }}>
       <input
         onChange={handleCheckboxChange}
         checked={checked}
@@ -57,7 +57,7 @@ Checkbox.defaultProps = {
   disabled: false,
   agreement: false,
   children: null,
-  required: false
+  required: false,
 };
 
 Checkbox.propTypes = {
@@ -72,7 +72,7 @@ Checkbox.propTypes = {
   agreement: PropTypes.bool,
   children: PropTypes.node,
   required: PropTypes.bool,
-  getCheckbox: PropTypes.func.isRequired
+  getCheckbox: PropTypes.func.isRequired,
 };
 
 export default Checkbox;
