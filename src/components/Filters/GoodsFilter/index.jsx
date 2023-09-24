@@ -19,6 +19,7 @@ function GoodsFilter({ category }) {
         ...values,
         ...value,
       });
+      console.log(values)
     },
     [setValues, values],
   );
@@ -110,7 +111,7 @@ function GoodsFilter({ category }) {
         </div>
         <Checkbox
           type="checkbox"
-          checked={false}
+          checked={values.sales === "sales"}
           htmlType="checkbox"
           value="sales"
           name="sales"

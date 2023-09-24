@@ -13,13 +13,36 @@ import Button from '../../ui/buttons/originButton/Button';
 const dataPathWithoutCrumbs = [
   '/',
   '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
+  '/signup',
+  '/successful-signup',
+  '/recovery',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery',
+  '/advert-success'
+];
+const dataPathWithOnlyLogoHeader = [
+  '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
   '/signup',
   '/recovery',
-  '/signup',
-  '/advert-success',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery'
 ];
-const dataPathWithOnlyLogoHeader = ['/signin', '/recovery', '/signup'];
-const dataPathWithoutFooter = ['/signin', '/recovery', '/signup'];
+const dataPathWithoutFooter = [
+  '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
+  '/signup',
+  '/recovery',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery'
+];
 
 function Root() {
   const auth = localStorage.getItem('auth');
