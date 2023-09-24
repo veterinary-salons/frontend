@@ -36,6 +36,7 @@ import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
+import BookingCancellation from '../components/BookingCancellation';
 
 import PetCard from '../pages/PetCard';
 
@@ -47,7 +48,7 @@ import PetCard from '../pages/PetCard';
 // import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
-// import BookingRevokePopup from '../components/BookingRevokePopup';
+// import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
 import {
@@ -57,6 +58,8 @@ import {
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
 import AdvertSuccess from '../pages/AdvertSuccess';
+
+import dataBooking from '../assets/constants/dataBooking';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -87,7 +90,12 @@ const router = createBrowserRouter(
           <Route path="add-pet" element={<PetCard />} />
           <Route path=":id" element={<PetCard />} />
         </Route>
-        <Route path="services" element={<ProfileServices />} />
+        <Route path="services" element={<ProfileServices />}>
+          <Route
+            path="revoke"
+            element={<BookingCancellation dataBooking={dataBooking} />}
+          />
+        </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
 
