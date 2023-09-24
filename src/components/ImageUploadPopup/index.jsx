@@ -4,7 +4,7 @@ import Portal from '../Portal/index';
 import EditAvatarConfirmationPopup from '../EditAvatarConfirmationPopup';
 import EditAvatarPopup from '../EditAvatarPopup';
 
-const ImageUpload = ({ getImage, isOpen, onClose, round }) => {
+const ImageUploadPopup = ({ getImage, isOpen, onClose, round }) => {
   const [fileInput, setFileInput] = useState('');
 
   const getBase64 = (file) => {
@@ -19,6 +19,8 @@ const ImageUpload = ({ getImage, isOpen, onClose, round }) => {
 
     return reader.result;
   };
+
+  console.log(fileInput);
 
   const handleFile = async (e) => {
     const file = e.currentTarget.files[0];
@@ -63,18 +65,18 @@ const ImageUpload = ({ getImage, isOpen, onClose, round }) => {
   );
 };
 
-ImageUpload.propTypes = {
+ImageUploadPopup.propTypes = {
   getImage: PropTypes.func,
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   round: PropTypes.bool,
 };
 
-ImageUpload.defaultProps = {
+ImageUploadPopup.defaultProps = {
   getImage: () => {},
   isOpen: false,
   onClose: () => {},
   round: false,
 };
 
-export default ImageUpload;
+export default ImageUploadPopup;

@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 610px;
+  text-decoration: none;
+  &__image {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  &__title {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
+    color: var(--primary-text-color);
+  }
+  &__email {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    margin: 0;
+    color: var(--text-grey-color)
+  }
+}

@@ -37,9 +37,9 @@ const PetCardList = ({ petList }) => {
         </div>
       ) : (
         <div className={classes['pets__no-pet']}>
-          <h3 className={classes['pets__title-no-pet']}>
+          <p className={classes['pets__title-no-pet']}>
             У вас пока нет питомцев
-          </h3>
+          </p>
           <p className={classes['pets__subtitle-no-pet']}>
             Но они, наверняка, есть.
           </p>
