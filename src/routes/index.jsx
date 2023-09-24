@@ -36,7 +36,7 @@ import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
-import BookingRevoke from '../components/BookingRevoke';
+import BookingCancellation from '../components/BookingCancellation';
 
 import PetCard from '../pages/PetCard';
 
@@ -48,7 +48,7 @@ import PetCard from '../pages/PetCard';
 // import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
-// import BookingRevokePopup from '../components/BookingRevokePopup';
+// import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 
 import {
@@ -93,7 +93,7 @@ const router = createBrowserRouter(
         <Route path="services" element={<ProfileServices />}>
           <Route
             path="revoke"
-            element={<BookingRevoke dataBooking={dataBooking} />}
+            element={<BookingCancellation dataBooking={dataBooking} />}
           />
         </Route>
         <Route path="goods" element={<ProfileGoods />} />
