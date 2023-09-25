@@ -4,6 +4,7 @@
     max-width: 1440px;
     min-height: 671px;
     background-image: url(../../assets/images/images/main-page-background/background-dog.png);
+    background-repeat: no-repeat;
     margin-top: -100px;
     padding: 0 100px 153px;
 
@@ -61,7 +62,7 @@
     }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1440px) {
     .promo {
         padding: 0 80px 87px;
         background-size: 100%;
@@ -84,6 +85,7 @@
     border-radius: 20px 20px 0px 0px;
     background-color: var(--text-white-color);
     margin-top: -20px;
+    max-width: 100%;
   
     &__title {
       color: var(--primary-text-color, #0f0f0f);
@@ -99,20 +101,15 @@
     &__cards {
       display: flex;
       flex-direction: row;
-      width: 100%;
-      column-gap: 20px;
+      justify-content: space-between;
       padding: 0;
       margin: 0;
     }
   }
   
-  @media screen and (max-width: 1280px) {
+  @media screen and (max-width: 1440px) {
     .specialists {
       padding: 100px 80px;
-  
-      &__cards {
-        column-gap: 16px;
-      }
     }
   }
   
