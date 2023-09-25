@@ -6,13 +6,13 @@ import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import { filterScheduleData } from '../../assets/constants/filters';
 
 const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
-  const { checkbox, dropDownOne, dropDownTwo, checkboxSwitch } =
+  const { checkbox, dropDownOne, dropDownTwo, checkboxSwitch, day } =
     filterScheduleData[type];
 
   const [checkedDate, setCheckedDate] = useState(false);
   const [switchDate, setSwitchDate] = useState(false);
-  const [startReception, setStartReception] = useState('');
-  const [endReception, setEndReception] = useState('');
+  const [begin, setBegin] = useState(dropDownOne[0].text);
+  const [end, setEnd] = useState(dropDownTwo[0].text);
 
   const handleCheckbox = () => {
     setCheckedDate(!checkedDate);
@@ -23,17 +23,18 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
   };
 
   useEffect(() => {
-    if (switchDate === true) {
-      handleCheckbox();
-    }
-    // eslint-disable-next-line
-  }, [switchDate]);
-
-  useEffect(() => {
     if (checkedDate === false) {
       setSwitchDate(false);
     }
+    // eslint-disable-next-line
   }, [checkedDate]);
+
+  useEffect(() => {
+    if (switchDate === true) {
+      setCheckedDate(true);
+    }
+    // eslint-disable-next-line
+  }, [switchDate, value]);
 
   useEffect(() => {
     getGraph(
@@ -41,24 +42,26 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
         ? {
             ...value,
             [type]: {
+              day,
               checkedDate,
               switchDate,
-              startReception: '-',
-              endReception: '-',
+              begin,
+              end,
             },
           }
         : {
             ...value,
             [type]: {
+              day,
               checkedDate,
               switchDate,
-              startReception,
-              endReception,
+              begin,
+              end,
             },
           },
     );
     // eslint-disable-next-line
-  }, [checkedDate]);
+  }, [checkedDate, switchDate, begin, end]);
 
   return (
     <div className={classes.graph}>
@@ -77,13 +80,13 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
         <Dropdown
           width="119px"
           array={dropDownOne}
-          getDropdown={setStartReception}
+          getDropdown={setBegin}
           disabled={switchDate}
         />
         <Dropdown
           width="119px"
           array={dropDownTwo}
-          getDropdown={setEndReception}
+          getDropdown={setEnd}
           disabled={switchDate}
         />
       </div>

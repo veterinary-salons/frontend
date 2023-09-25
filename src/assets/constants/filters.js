@@ -346,6 +346,7 @@ const filterScheduleData = {
       value: 'monday',
       label: 'понедельник',
     },
+    day: 'Пн',
     dropDownOne: [
       { id: 1, text: '13:00' },
       { id: 2, text: '14:00' },
@@ -378,6 +379,7 @@ const filterScheduleData = {
       value: 'tuesday',
       label: 'вторник',
     },
+    day: 'Вт',
     dropDownOne: [
       { id: 1, text: '13:00' },
       { id: 2, text: '14:00' },
@@ -411,6 +413,7 @@ const filterScheduleData = {
       value: 'wednesday',
       label: 'среда',
     },
+    day: 'Ср',
     dropDownOne: [
       { id: 1, text: '13:00' },
       { id: 2, text: '14:00' },
@@ -444,6 +447,7 @@ const filterScheduleData = {
       value: 'wednesday',
       label: 'четверг',
     },
+    day: 'Чт',
     dropDownOne: [
       { id: 1, text: '13:00' },
       { id: 2, text: '14:00' },
@@ -477,6 +481,7 @@ const filterScheduleData = {
       value: 'friday',
       label: 'пятница',
     },
+    day: 'Пт',
     dropDownOne: [
       { id: 1, text: '13:00' },
       { id: 2, text: '14:00' },
@@ -510,6 +515,7 @@ const filterScheduleData = {
       value: 'saturday',
       label: 'суббота',
     },
+    day: 'Сб',
     dropDownOne: [
       { id: 1, text: '13:00' },
       { id: 2, text: '14:00' },
@@ -543,6 +549,7 @@ const filterScheduleData = {
       value: 'sunday',
       label: 'воскресенье',
     },
+    day: 'Вс',
     dropDownOne: [
       { id: 1, text: '13:00' },
       { id: 2, text: '14:00' },

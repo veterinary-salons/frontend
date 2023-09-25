@@ -7,7 +7,7 @@ import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 import { arrAdSchedule } from '../../assets/constants/filters';
 
-const AdSchedule = ({ getSchedule }) => {
+const AdSchedule = ({ getSchedule, serviceTime }) => {
   const navigate = useNavigate();
   const [days, setDays] = useState({});
   const [session, setSession] = useState({});
@@ -50,13 +50,15 @@ const AdSchedule = ({ getSchedule }) => {
           ))}
         </div>
       </fieldset>
-      <div>
-        <ReceptionSelectionBlock
-          category="checkboxTime"
-          getCheckbox={handleFormChange}
-          values={session}
-        />
-      </div>
+      {serviceTime && (
+        <div>
+          <ReceptionSelectionBlock
+            category="checkboxTime"
+            getCheckbox={handleFormChange}
+            values={session}
+          />
+        </div>
+      )}
       <div className={classes['schedule__container-btn']}>
         <Button
           variant="outlined"
@@ -78,10 +80,12 @@ const AdSchedule = ({ getSchedule }) => {
 
 AdSchedule.propTypes = {
   getSchedule: PropTypes.func,
+  serviceTime: PropTypes.bool,
 };
 
 AdSchedule.defaultProps = {
   getSchedule: () => {},
+  serviceTime: true,
 };
 
 export default AdSchedule;
