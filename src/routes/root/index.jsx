@@ -13,8 +13,30 @@ import Button from '../../ui/buttons/originButton/Button';
 const dataPathWithoutCrumbs = [
   '/',
   '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
+  '/signup',
+  '/successful-signup',
+  '/recovery',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery',
+  '/advert-success'
+];
+const dataPathWithOnlyLogoHeader = [
+  '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
   '/signup',
   '/recovery',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery'
+];
+const dataPathWithoutFooter = [
+  '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
   '/signup',
   '/advert-schedule',
 ];
@@ -24,6 +46,10 @@ const dataPathWithoutFooter = [
   '/recovery',
   '/signup',
   '/advert-schedule',
+  '/recovery',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery'
 ];
 
 function Root() {
