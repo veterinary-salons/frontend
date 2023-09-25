@@ -37,7 +37,8 @@ const Tabs = ({ dataLinks, style, marginT }) => {
         >
           {createTabs}
         </nav>
-        {location.pathname.includes('profile/services')
+        {location.pathname.endsWith('profile/services') ||
+        location.pathname.endsWith('services/history')
           ? createHistoryButton()
           : null}
       </div>
