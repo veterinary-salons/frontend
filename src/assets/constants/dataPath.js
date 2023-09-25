@@ -31,6 +31,7 @@ export const dataLinksFavourites = [
 export const breadcrumbNameMap = {
   '/profile': 'Профиль',
   '/profile/services': 'Услуги',
+  '/profile/services/history': 'История',
   '/profile/goods': 'Товары',
   '/services': 'Услуги',
   '/services/vet': 'Ветеринары',

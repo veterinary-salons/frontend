@@ -87,7 +87,9 @@ const router = createBrowserRouter(
           <Route path="add-pet" element={<PetCard />} />
           <Route path=":id" element={<PetCard />} />
         </Route>
-        <Route path="services" element={<ProfileServices />} />
+        <Route path="services" element={<ProfileServices />}>
+          <Route path="history" element={<ProfileServices />} />
+        </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
 
