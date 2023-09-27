@@ -3,6 +3,7 @@ import {
   regexUserName,
   regexPassword,
   regexPhone,
+  regexTextarea,
 } from './constants';
 
 function validateEmail(value) {
@@ -21,15 +22,23 @@ function validateEmail(value) {
 }
 
 function validateText(value, type) {
+  if (type === 'textarea') {
+    if (value === '') {
+      return { message: 'Это поле не должно быть пустым' };
+    }
+    if (!regexTextarea.test(value)) {
+      return {
+        invalid: false,
+        message: 'Используйте русские, латинские буквы, цифры, . и -',
+      };
+    }
+  }
+
   if (value === '') {
     return { default: true, invalid: false };
   }
+
   if (value !== undefined) {
-    if (type === 'textarea') {
-      if (value.length > 200) {
-        return { textarea: true };
-      }
-    }
     if (value.length === 0) {
       return { invalid: true, message: 'Это поле не должно быть пустым' };
     }
