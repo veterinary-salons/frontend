@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root';
+import Root from './root'
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
