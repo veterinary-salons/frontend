@@ -9,16 +9,30 @@ const PopupWithForm = ({ title, children, isOpen, onClose, onSubmit }) => {
   });
 
   useEffect(() => {
-    if (!isOpen) return;
+    function handleEscClose(evt) {
+      if (evt.key === 'Escape') {
+        onClose();
+      }
+    }
 
-    const handleEscBtn = (e) => {
-      if (e.keyCode === 27) onClose();
+    if (isOpen) {
+      document.addEventListener('keydown', handleEscClose);
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscClose);
     };
-    document.addEventListener('keydown', handleEscBtn);
-  }, [isOpen, onClose]);
+  }, [isOpen]);
+
+  const handleCloseByOverlay = (e) => {
+    if (e.target.classList.contains(classes.popup)) {
+      onClose();
+    }
+  };
 
   return (
-    <section className={getPopupClasses}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <section className={getPopupClasses} onClick={handleCloseByOverlay}>
       <div className={classes.popup__form} onSubmit={onSubmit}>
         <p className={classes.popup__title}>{title}</p>
         {children}
@@ -31,7 +45,7 @@ PopupWithForm.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
   isOpen: PropTypes.bool,
-  onClose: PropTypes.bool,
+  onClose: PropTypes.func,
   onSubmit: PropTypes.func,
 };
 
@@ -39,7 +53,7 @@ PopupWithForm.defaultProps = {
   title: 'Ничего, будем рады помочь вам в другой раз',
   children: null,
   isOpen: false,
-  onClose: true,
+  onClose: null,
   onSubmit: null,
 };
 

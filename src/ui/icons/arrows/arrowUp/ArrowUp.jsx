@@ -14,11 +14,11 @@ const ArrowUp = ({ positionDropdown }) => (
 );
 
 ArrowUp.propTypes = {
-  positionDropdown: PropTypes.string,
+  positionDropdown: PropTypes.bool,
 };
 
 ArrowUp.defaultProps = {
-  positionDropdown: 'true',
+  positionDropdown: true,
 };
 
 export default ArrowUp;
