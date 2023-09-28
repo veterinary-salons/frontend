@@ -29,7 +29,7 @@ const InputText = ({
 
   useEffect(() => {
     if (initialValue) {
-      setValues(initialValue);
+      setValues({ ...values, ...initialValue });
     }
     // eslint-disable-next-line
   }, []);
@@ -46,7 +46,6 @@ const InputText = ({
     getInput(values);
     // eslint-disable-next-line
   }, [values]);
-
   const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
   const getType = type === 'password' ? handleEyePassword(isClick, type) : type;
   const getClassItem = cn(
@@ -59,6 +58,9 @@ const InputText = ({
     },
     {
       [style.input_success]: validateInput(type, name, values[name]).invalid,
+    },
+    {
+      [style['input_text-center']]: type === 'number',
     },
   );
   const getClassSpan = cn(
@@ -73,11 +75,20 @@ const InputText = ({
     },
   );
 
+  useEffect(() => {
+    if (type === 'number' && values[name]) {
+      setValues({
+        ...values,
+        [name]: +values[name].toString().replace(/\D/g, ''),
+      });
+    }
+  }, [values[name]]);
+
   return (
     <div className={style.container}>
       <input
         className={getClassItem}
-        type={getType}
+        type={getType === 'number' ? 'text' : getType}
         placeholder={placeholder}
         name={name}
         maxLength={maxLength}
@@ -117,7 +128,8 @@ InputText.propTypes = {
   id: PropTypes.string,
   position: PropTypes.string,
   autoComplete: PropTypes.string,
-  initialValue: PropTypes.objectOf(PropTypes.string),
+  // eslint-disable-next-line react/forbid-prop-types
+  initialValue: PropTypes.objectOf(PropTypes.any),
   getValid: PropTypes.func,
 };
 

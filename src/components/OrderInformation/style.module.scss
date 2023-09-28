@@ -1,0 +1,58 @@
+.card {
+  font-family: 'Montserrat', Arial, sans-serif;
+  margin: 0;
+  max-width: 295px;
+  border-radius: 10px;
+  background: var(--purple-pale-color);
+  box-shadow: 0px 4px 10px 0px var(--primary-purple-color);
+  padding: 25px 0;
+  line-height: 30px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+  }
+
+  &__text {
+    width: 100%;
+    margin: 2px auto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    &_grey {
+      color: var(--text-grey-color);
+    }
+    &_discount {
+      margin: 7px auto 30px;
+      color: var(--purple-pushed-color);
+    }
+
+    &_price {
+      margin-top: 34px;
+    }
+
+    &_sum {
+      margin-bottom: 0;
+    }
+  }
+
+  &__container {
+    &_price {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+    }
+  }
+
+  &__span {
+    margin: 0 auto;
+    width: 146px;
+    border: 1.5px solid var(--purple-light-color);
+  }
+}

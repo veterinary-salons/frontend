@@ -1,9 +1,10 @@
 import {
   regexEmail,
-  regexUserName,
+  regexCyrillic,
   regexPassword,
   regexPhone,
   regexTextarea,
+  regexPetName,
 } from './constants';
 
 function validateEmail(value) {
@@ -42,11 +43,11 @@ function validateText(value, type) {
     if (value.length === 0) {
       return { invalid: true, message: 'Это поле не должно быть пустым' };
     }
-    if (value.length > 2) {
-      return { invalid: true, message: '' };
+    if (value.length < 2) {
+      return { invalid: false, message: 'Поле должно содержать более 2 символов' };
     }
   }
-  return '';
+  return { invalid: true, message: 'Поле должно содержать более 2 символов' };
 }
 
 function validateUserName(value) {
@@ -54,7 +55,7 @@ function validateUserName(value) {
     return { default: true, invalid: false };
   }
   if (value !== undefined) {
-    if (!regexUserName.test(value)) {
+    if (!regexCyrillic.test(value)) {
       return {
         err: true,
         message: 'Используйте только кириллицу, пробел и -',
@@ -125,6 +126,76 @@ function validatePrice(value) {
   return { invalid: false };
 }
 
+function validatePetName(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
+  if (value !== undefined) {
+    if (!regexPetName.test(value)) {
+      return {
+        err: true,
+        message: 'Используйте кириллицу, латиницу, пробел и -',
+      };
+    }
+    if (value.length < 2 || value.length > 15) {
+      return {
+        err: false,
+        message: 'Поле должно содержать от 2 до 15 символов',
+      };
+    }
+  }
+  return { invalid: true, message: '' };
+}
+
+function validatePetBreed(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
+  if (value !== undefined) {
+    if (!regexCyrillic.test(value)) {
+      return {
+        err: true,
+        message: 'Используйте только кириллицу, пробел и -',
+      };
+    }
+    if (value.length < 2 || value.length > 40) {
+      return {
+        err: false,
+        message: 'Поле должно содержать от 2 до 40 символов',
+      };
+    }
+  }
+  return { invalid: true, message: '' };
+}
+
+function validatePetType(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
+  if (value !== undefined) {
+    if (!regexCyrillic.test(value)) {
+      return {
+        err: true,
+        message: 'Используйте только кириллицу, пробел и -',
+      };
+    }
+    if (value.length < 2 || value.length > 20) {
+      return {
+        err: false,
+        message: 'Поле должно содержать от 2 до 20 символов',
+      };
+    }
+  }
+  return { invalid: true, message: '' };
+}
+
+function validatePetAge(value) {
+  if (value === '') {
+    return { default: true, invalid: false };
+  }
+  return { invalid: true, message: '' };
+}
+
 const validateInput = (type, name, value) => {
   if (type === 'email') {
     return validateEmail(value);
@@ -134,6 +205,17 @@ const validateInput = (type, name, value) => {
   }
   if (type === 'text' || type === 'textarea') {
     return validateText(value, type);
+  if (name === 'petName') {
+    return validatePetName(value);
+  }
+  if (name === 'breed') {
+    return validatePetBreed(value);
+  }
+  if (name === 'my-type') {
+    return validatePetType(value);
+  }
+  if (type === 'number') {
+    return validatePetAge(value);
   }
   if (type === 'password') {
     return validatePassword(value);

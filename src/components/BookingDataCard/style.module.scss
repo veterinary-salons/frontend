@@ -1,0 +1,37 @@
+.booking-remove {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  gap: 43px;
+  &__item {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    width: 100%;
+    // justify-content: space-between;
+  }
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal; /* 125% */
+    color: var(--primary-text-color, #0f0f0f);
+    min-width: 172px;
+  }
+  &__descr {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal; /* 120% */
+    color: var(--primary-text-color, #0f0f0f);
+    margin: 0;
+    max-width: 725px;
+  }
+}
+
+.button-wrapper {
+  margin-top: 40px;
+}
