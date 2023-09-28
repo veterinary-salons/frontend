@@ -3,17 +3,22 @@ import classes from '../PopupWithForm/style.module.scss';
 import PopupWithForm from '../PopupWithForm';
 import Button from '../../ui/buttons/originButton/Button';
 
-const BookingCancellationPopup = ({ isOpen, onClose }) => (
+const BookingCancellationPopup = ({ isOpen, onClose, onSubmit }) => (
   <PopupWithForm
-    title="Ничего, будем рады помочь вам в другой раз"
+    title="Вы уверены, что хотите отменить бронирование?"
     isOpen={isOpen}
     onClose={onClose}
   >
     <div className={classes['popup__button-wrap']}>
-      <Button variant="outlined" size="medium" type="button">
+      <Button onClick={onClose} variant="outlined" size="medium" type="button">
         Назад
       </Button>
-      <Button variant="purple-filled" size="medium" type="submit">
+      <Button
+        onClick={onSubmit}
+        variant="purple-filled"
+        size="medium"
+        type="submit"
+      >
         Отменить бронирование
       </Button>
     </div>
@@ -22,12 +27,14 @@ const BookingCancellationPopup = ({ isOpen, onClose }) => (
 
 BookingCancellationPopup.propTypes = {
   isOpen: PropTypes.bool,
-  onClose: PropTypes.bool,
+  onClose: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 BookingCancellationPopup.defaultProps = {
   isOpen: true,
-  onClose: false,
+  onClose: () => {},
+  onSubmit: () => {},
 };
 
 export default BookingCancellationPopup;

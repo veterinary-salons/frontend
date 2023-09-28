@@ -15,13 +15,15 @@
   &_opened {
     visibility: visible;
     opacity: 1;
-    transition: visibility 0s, opacity 0.3s linear;
+    transition:
+      visibility 0s,
+      opacity 0.3s linear;
   }
 
   &__form {
-    background: var(--purple-pale-color, #F9F7FC);
+    background: var(--purple-pale-color, #f9f7fc);
     border-radius: 8px;
-    color: var(--primary-text-color, #0F0F0F);
+    color: var(--primary-text-color, #0f0f0f);
     padding: 52px 55px;
     box-sizing: border-box;
     width: 600px;
@@ -38,7 +40,7 @@
   }
 
   &__placeholder {
-    color: var(--text-grey-color, #9C9C9C);
+    color: var(--text-grey-color, #9c9c9c);
     text-align: center;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 19px;
@@ -49,33 +51,45 @@
   }
 
   &__photo-wrap {
-    position: relative;
-    width: 300px;
-    height: 300px;
     margin: 40px auto 0;
+    &_round {
+      width: 300px;
+      height: 300px;
+    }
+    &_rect {
+      width: 295px;
+      height: 350px;
+    }
   }
 
-  &__photo-crop {
+  &__photo-wrap .popup__photo-boundary {
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__photo-wrap .popup__photo-viewport {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    box-shadow: 0 0 217px 217px rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+
+  &__photo {
+    display: none;
+  }
+
+  &__photo-viewport {
     width: 190px;
     height: 190px;
     border-radius: 50%;
-    margin: auto;
-    position: absolute;
-    top: 55px;
-    left: 55px;
-    z-index: 1;
-  }
-
-  &__photo-overlay {
-    visibility: visible;
-    position: fixed;
-    background: rgb(0, 0, 0, 0.5);
-    top: 465px;
-    left: 570px;
-    width: 300px;
-    height: 300px;
-    opacity: 0;
-    transition: visibility 0s 0.3s, opacity 0.3s linear;
   }
 
   &__button-wrap {

@@ -9,7 +9,7 @@ import {
   placeholderPhone,
 } from '../../../../assets/constants/constants';
 
-const InputPhone = ({ getInput, initialValue }) => {
+const InputPhone = ({ getInput, initialValue, getValid }) => {
   const typeTel = 'tel';
   const [tel, setTel] = useState(initialValue);
   const styleInput = cn(
@@ -39,6 +39,13 @@ const InputPhone = ({ getInput, initialValue }) => {
     // eslint-disable-next-line
   }, [tel]);
 
+  useEffect(() => {
+    getValid((state) => ({
+      ...state,
+      [typeTel]: validateInput(typeTel, undefined, tel.tel).invalid,
+    }));
+  }, [validateInput(typeTel, undefined, tel.tel).invalid]);
+
   return (
     <div className={style.container}>
       <TextMaskInput
@@ -59,11 +66,13 @@ const InputPhone = ({ getInput, initialValue }) => {
 InputPhone.propTypes = {
   getInput: PropTypes.func,
   initialValue: PropTypes.objectOf(PropTypes.string),
+  getValid: PropTypes.func,
 };
 
 InputPhone.defaultProps = {
   getInput: () => {},
   initialValue: {},
+  getValid: () => {},
 };
 
 export default InputPhone;

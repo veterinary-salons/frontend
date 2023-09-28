@@ -1,6 +1,7 @@
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
-const regexUserName = /^[а-яА-Я\sё-]+$/;
+const regexCyrillic = /^[а-яА-Я\sё-]+$/;
+const regexPetName = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexPassword = /^[A-Za-z\d-.]+$/;
 const regexPhone =
   /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
@@ -225,7 +226,7 @@ const dataArticlePage = [
 export {
   regexEmail,
   regexText,
-  regexUserName,
+  regexCyrillic,
   regexPassword,
   regexPhone,
   maskPhone,
@@ -237,6 +238,7 @@ export {
   arrayTimeList,
   arrImgOrderCard,
   dataArticlePage,
+  regexPetName,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/

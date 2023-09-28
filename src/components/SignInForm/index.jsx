@@ -34,7 +34,7 @@ function SignInForm() {
     <form
       onChange={handleFormValidChange}
       className={classes.form}
-      id="enter-form"
+      id="signin-form"
     >
       <h2 className={classes.form__title}>Войдите в аккаунт</h2>
       <fieldset className={classes.form__fieldset}>
@@ -63,8 +63,7 @@ function SignInForm() {
           getValid={setIsValidateInput}
         />
         <Link
-          to="purrfectcare.ru"
-          target="_blank"
+          to="/recovery"
           className={classes.form__link}
         >
           Забыли пароль?
@@ -84,7 +83,7 @@ function SignInForm() {
         <div className={classes.form__navbox}>
           <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
           <Button
-            onClick={() => {}}
+            onClick={() => navigate('/signup')}
             variant="outlined"
             size="medium"
             type="button"
