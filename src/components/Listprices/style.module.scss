@@ -1,12 +1,12 @@
 .list {
   width: 100%;
   font-family: 'Montserrat', Arial, sans-serif;
-  margin: 60px auto 40px;
+  margin: 23px auto 40px;
 
   &__container-title {
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 100%;
     margin-bottom: 32px;
   }
 
@@ -16,6 +16,10 @@
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
+
+    &_position {
+      margin-right: 192px;
+    }
   }
 
   &__text {
