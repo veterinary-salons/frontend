@@ -45,6 +45,7 @@ const dataPathWithoutFooter = [
   '/recovery-password',
   '/successful-recovery',
   '/advert-description',
+  '/advert-schedule',
 ];
 
 function Root() {

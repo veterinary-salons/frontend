@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root';
+import Root from './root'
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
@@ -50,6 +50,7 @@ import PetCard from '../pages/PetCard';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
+import AdSchedule from '../pages/Schedule';
 
 import {
   dataSelectedProducts,
@@ -149,14 +150,11 @@ const router = createBrowserRouter(
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-
-      <Route
-        path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-      />
+      <Route path="test" element={<h1>Тесты</h1>} />
+      <Route path="advert-schedule" element={<AdSchedule />} />
       <Route path="advert-description" element={<DescriptionService />} />
-
       <Route path="advert-success" element={<AdvertSuccess />} />
+        
     </Route>,
   ),
 );
