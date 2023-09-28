@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdPrice from '../../components/AdCreation/AdPrice';
 import classes from './style.module.scss';
-import datapPrice from '../../assets/constants/DadaPrice';
+import { dataServicePriceFilter } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
 
 const CreationPriceCervices = ({ getPrice }) => {
@@ -17,9 +17,9 @@ const CreationPriceCervices = ({ getPrice }) => {
 
   return (
     <section className={classes.price}>
-      <h2 className={classes.price__title}>Стоимость услуг(и)</h2>
+      <h3 className={classes.price__title}>Стоимость услуг(и)</h3>
       <div className={classes.price__box}>
-        {datapPrice.map((i) => (
+        {dataServicePriceFilter.map((i) => (
           <AdPrice
             title={i.title}
             key={i.id}

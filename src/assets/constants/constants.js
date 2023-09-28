@@ -222,6 +222,19 @@ const dataArticlePage = [
   },
 ];
 
+const dataServicePriceFilter = [
+  {
+    id: 1,
+    title: 'Стерилизация',
+    name: 'price-sterilization',
+  },
+  {
+    id: 2,
+    title: 'Консультация',
+    name: 'price-consultation',
+  },
+];
+
 export {
   regexEmail,
   regexText,
@@ -237,6 +250,7 @@ export {
   arrayTimeList,
   arrImgOrderCard,
   dataArticlePage,
+  dataServicePriceFilter,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/
