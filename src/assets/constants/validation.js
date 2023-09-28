@@ -205,6 +205,7 @@ const validateInput = (type, name, value) => {
   }
   if (type === 'text' || type === 'textarea') {
     return validateText(value, type);
+  }
   if (name === 'petName') {
     return validatePetName(value);
   }
