@@ -29,8 +29,10 @@ const AdvertFinal = ({
             {session ? 'Ваше объявление' : 'Предпросмотр объявления'}
           </h2>
           <h4 className={classes.final__name}>{`${specialization} ${name}`}</h4>
-          <p className={classes.final__description}>{specialistInformation}</p>
-          <p className={classes.final__description}>{descriptionSpecialist}</p>
+          <div className={classes.final__info}>
+            <p className={classes.final__text}>{specialistInformation}</p>
+            <p className={classes.final__text}>{descriptionSpecialist}</p>
+          </div>
         </div>
         <img className={classes.final__img} alt="фото" src={img || imgAvatar} />
       </div>
@@ -38,8 +40,8 @@ const AdvertFinal = ({
       <OpenHours array={dataFinalSchedule} />
       {session && (
         <p
-          className={classes.final__description}
-        >{`Длительность одной услуги —  ${sessionInfo}`}</p>
+          className={classes.final__text}
+        >{`Длительность одной услуги - ${sessionInfo}`}</p>
       )}
       <div className={classes['final__container-btn']}>
         <Button

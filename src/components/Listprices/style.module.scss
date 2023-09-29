@@ -1,7 +1,5 @@
 .list {
   width: 100%;
-  font-family: 'Montserrat', Arial, sans-serif;
-  margin: 23px auto 40px;
 
   &__container-title {
     display: flex;
@@ -16,10 +14,10 @@
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
+  }
 
-    &_position {
-      margin-right: 192px;
-    }
+  &__position-right {
+    width: 280px;
   }
 
   &__text {
@@ -31,10 +29,15 @@
   }
 
   &__container-services {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__service {
     width: 100%;
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid var(--grey-color);
-    margin-bottom: 20px;
   }
 }

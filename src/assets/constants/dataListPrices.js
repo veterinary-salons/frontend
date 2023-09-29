@@ -2,8 +2,8 @@ const dataListPrices = [
   {
     id: 1,
     text: '1 день передержки',
-    form: '1000',
-    befor: '10 000',
+    from: '1000',
+    before: '10 000',
   },
   // {
   // id: 2,

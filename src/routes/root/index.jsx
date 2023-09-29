@@ -21,6 +21,7 @@ const dataPathWithoutCrumbs = [
   '/recovery-code',
   '/recovery-password',
   '/successful-recovery',
+  '/advert-final',
   '/advert-success'
 ];
 const dataPathWithOnlyLogoHeader = [
