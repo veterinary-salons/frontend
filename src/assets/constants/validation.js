@@ -25,12 +25,18 @@ function validateEmail(value) {
 function validateText(value, type) {
   if (type === 'textarea') {
     if (value === '') {
-      return { message: 'Это поле не должно быть пустым' };
+      return { invalid: false, message: 'Это поле не должно быть пустым' };
     }
     if (!regexTextarea.test(value)) {
       return {
         invalid: false,
         message: 'Используйте русские, латинские буквы, цифры, . и -',
+      };
+    }
+    if (regexTextarea.test(value)) {
+      return {
+        invalid: true,
+        message: 'Все верно',
       };
     }
   }
@@ -44,7 +50,10 @@ function validateText(value, type) {
       return { invalid: true, message: 'Это поле не должно быть пустым' };
     }
     if (value.length < 2) {
-      return { invalid: false, message: 'Поле должно содержать более 2 символов' };
+      return {
+        invalid: false,
+        message: 'Поле должно содержать более 2 символов',
+      };
     }
   }
   return { invalid: true, message: 'Поле должно содержать более 2 символов' };

@@ -1,13 +1,27 @@
 import PropTypes from 'prop-types';
+import { useEffect } from 'react';
 import cn from 'classnames';
 import classes from './style.module.scss';
 import validateInput from '../../../../assets/constants/validation';
 
-const Textarea = ({ value, setValue, placeholder, maxLength, name, id }) => {
+const Textarea = ({
+  value,
+  setValue,
+  placeholder,
+  maxLength,
+  name,
+  id,
+  setIsValid,
+}) => {
   const getClassSpan = cn(classes['input-span-error'], {
     [classes['input-error_activ']]: !validateInput('textarea', undefined, value)
       .invalid,
   });
+
+  useEffect(() => {
+    setIsValid(validateInput('textarea', undefined, value).invalid);
+    // eslint-disable-next-line
+  }, [value]);
 
   return (
     <>
@@ -41,6 +55,7 @@ Textarea.propTypes = {
   maxLength: PropTypes.number,
   name: PropTypes.string,
   id: PropTypes.string,
+  setIsValid: PropTypes.func,
 };
 
 Textarea.defaultProps = {
@@ -50,6 +65,7 @@ Textarea.defaultProps = {
   maxLength: 1000,
   name: 'description-textarea',
   id: 'textarea',
+  setIsValid: () => {},
 };
 
 export default Textarea;

@@ -8,6 +8,7 @@ import classes from './style.module.scss';
 const DescriptionService = ({ getDescription }) => {
   const navigate = useNavigate();
   const [value, setValue] = useState('');
+  const [isValid, setIsValid] = useState(false);
 
   const handleButton = () => {
     navigate('/advert-final', { replace: true });
@@ -19,7 +20,7 @@ const DescriptionService = ({ getDescription }) => {
       <h2 className={classes.description__title}>
         Расскажите о вашем опыте и деталях услуг(и)
       </h2>
-      <Textarea value={value} setValue={setValue} />
+      <Textarea value={value} setValue={setValue} setIsValid={setIsValid} />
 
       <div className={classes['description__conteiner-btn']}>
         <Button
@@ -32,7 +33,12 @@ const DescriptionService = ({ getDescription }) => {
         >
           Назад
         </Button>
-        <Button size="medium" type="button" onClick={handleButton}>
+        <Button
+          size="medium"
+          type="button"
+          onClick={handleButton}
+          active={isValid}
+        >
           Далее
         </Button>
       </div>
