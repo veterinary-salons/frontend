@@ -50,6 +50,7 @@ import PetCard from '../pages/PetCard';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
+import AdvertFinal from '../pages/AdvertFinal';
 import AdSchedule from '../pages/Schedule';
 
 import {
@@ -150,10 +151,14 @@ const router = createBrowserRouter(
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
+      <Route
+        path="test"
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+      />
+      <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="test" element={<h1>Тесты</h1>} />
       <Route path="advert-schedule" element={<AdSchedule />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
-        
     </Route>,
   ),
 );
