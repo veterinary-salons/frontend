@@ -1,0 +1,36 @@
+.schedule {
+  width: 100%;
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  &__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0 0 32px;
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__box {
+    min-width: 132px;
+    height: 78px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--purple-pale-color);
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+}
