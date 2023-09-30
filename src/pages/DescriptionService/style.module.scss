@@ -1,0 +1,20 @@
+.description {
+  font-family: 'Montserrat', Arial, sans-serif;
+  width: 800px;
+  margin: 60px auto;
+
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    margin: 0 0 48px;
+  }
+
+  &__conteiner-btn {
+    margin: 40px auto 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}

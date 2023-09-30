@@ -21,6 +21,8 @@ const dataPathWithoutCrumbs = [
   '/recovery-code',
   '/recovery-password',
   '/successful-recovery',
+  '/advert-description',
+  '/advert-schedule',
   '/advert-final',
   '/advert-success'
 ];
@@ -35,9 +37,10 @@ const dataPathWithOnlyLogoHeader = [
   '/successful-recovery'
 ];
 const dataPathWithoutFooter = [
-  '/signin',
-  '/signin-no-account',
+    '/signin-no-account',
   '/signin-with-account',
+  '/signin',
+  '/recovery',
   '/signup',
   '/advert-final',
   '/recovery',
@@ -46,6 +49,7 @@ const dataPathWithoutFooter = [
   '/advert-price',
   '/signin',
   '/successful-recovery',
+  '/advert-description',
   '/advert-schedule',
 ];
 

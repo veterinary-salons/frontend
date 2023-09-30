@@ -60,6 +60,7 @@ import {
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
 import CreationPriceCervices from '../pages/CreationAdvertPrice';
+import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 
@@ -160,6 +161,7 @@ const router = createBrowserRouter(
       <Route path="advert-price" element={<CreationPriceCervices />} />
       <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="advert-schedule" element={<AdSchedule />} />
+      <Route path="advert-description" element={<DescriptionService />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),
