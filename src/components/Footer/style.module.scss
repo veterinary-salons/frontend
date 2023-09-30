@@ -48,34 +48,8 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1280px) {
   .footer {
-    padding: 40px 80px;
+    padding: 40px 80px 51px;
   }
 }
-
-// @media screen and (max-width: 992px) {
-//   .footer {
-//     padding: 32px 60px;
-//   }
-// }
-
-// @media screen and (max-width: 576px) {
-//   .footer {
-//     padding: 32px 60px;
-//     align-items: center;
-//     &__title {
-//       font-size: 12px;
-//       flex-direction: column;
-//     }
-//     &__links {
-//       width: 100%;
-//       justify-content: center;
-//     }
-//     &__link {
-//       font-size: 10px;
-//       line-height: normal;
-//       margin-right: 10px;
-//     }
-//   }
-// }

@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root';
+import Root from './root'
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
@@ -36,6 +36,9 @@ import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
+import BookingCancellation from '../components/BookingCancellation';
+
+import PetCard from '../pages/PetCard';
 
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
@@ -45,8 +48,10 @@ import GoodsList from '../pages/GoodsList';
 // import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
-// import BookingRevokePopup from '../components/BookingRevokePopup';
+// import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
+import AdvertFinal from '../pages/AdvertFinal';
+import AdSchedule from '../pages/Schedule';
 
 import {
   dataSelectedProducts,
@@ -55,6 +60,8 @@ import {
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
 import AdvertSuccess from '../pages/AdvertSuccess';
+
+import dataBooking from '../assets/constants/dataBooking';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -72,7 +79,6 @@ const router = createBrowserRouter(
       }
       errorElement={<ErrorBoundary errorType404 />}
     >
-
       {/* Main Page */}
       <Route index element={<Main />} />
 
@@ -83,10 +89,15 @@ const router = createBrowserRouter(
       >
         <Route element={<Profile />}>
           <Route index element={<PetCardList petList={petList} />} />
-          <Route path="addpet" element={<p>тут будет добавление питомца</p>} />
-          <Route path=":id" element={<p>тут будет редактирование питомца</p>} />
+          <Route path="add-pet" element={<PetCard />} />
+          <Route path=":id" element={<PetCard />} />
         </Route>
-        <Route path="services" element={<ProfileServices />} />
+        <Route path="services" element={<ProfileServices />}>
+          <Route
+            path="revoke"
+            element={<BookingCancellation dataBooking={dataBooking} />}
+          />
+        </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
 
@@ -142,9 +153,11 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h1>TEST</h1>}
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
-
+      <Route path="advert-final" element={<AdvertFinal />} />
+      <Route path="test" element={<h1>Тесты</h1>} />
+      <Route path="advert-schedule" element={<AdSchedule />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),

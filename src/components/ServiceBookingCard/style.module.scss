@@ -1,0 +1,59 @@
+.card {
+  font-family: 'Montserrat', Arial, sans-serif;
+  max-width: 400px;
+  background-color: var(--purple-pale-color);
+  border-radius: 10px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+
+    &_green {
+      color: var(--success-color);
+    }
+
+    &_red {
+      color: var(--error-color);
+    }
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+  }
+
+  &__text_color {
+    font-size: 20px;
+    margin: 0;
+    color: var(--text-grey-color);
+  }
+
+  &__subject {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  &__img {
+    min-width: 100px;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
