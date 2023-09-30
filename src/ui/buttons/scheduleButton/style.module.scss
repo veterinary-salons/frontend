@@ -1,0 +1,36 @@
+.schedule-buttons {
+  background-color: rgba(0, 0, 0, 0);
+  width: 132px;
+  height: 52px;
+  border-radius: 8px;
+  border: 1px solid var(--grey-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &_disabled {
+    border: 1px solid var(--grey-color);
+    background: var(--grey-light-color);
+    color: var(--text-grey-color);
+  }
+
+  &_action {
+    border: 2px solid var(--primary-purple-color);
+    background: var(--purple-pale-color);
+  }
+}
