@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root'
+import Root from './root';
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
@@ -156,7 +156,6 @@ const router = createBrowserRouter(
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
       <Route path="advert-final" element={<AdvertFinal />} />
-      <Route path="test" element={<h1>Тесты</h1>} />
       <Route path="advert-schedule" element={<AdSchedule />} />
       <Route path="advert-description" element={<DescriptionService />} />
       <Route path="advert-success" element={<AdvertSuccess />} />

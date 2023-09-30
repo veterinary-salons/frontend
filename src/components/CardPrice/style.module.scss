@@ -1,0 +1,19 @@
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--grey-color);
+
+  &__text {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__position-right {
+    width: 280px;
+  }
+}

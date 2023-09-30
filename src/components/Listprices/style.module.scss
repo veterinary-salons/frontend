@@ -16,28 +16,9 @@
     line-height: 30px;
   }
 
-  &__position-right {
-    width: 280px;
-  }
-
-  &__text {
-    margin: 0;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 24px;
-  }
-
   &__container-services {
     display: flex;
     flex-direction: column;
     gap: 20px;
-  }
-
-  &__service {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid var(--grey-color);
   }
 }

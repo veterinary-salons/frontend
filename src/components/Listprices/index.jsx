@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import classes from './style.module.scss';
+import CardPrice from '../CardPrice';
 
 const ListPrices = ({ array }) => (
   <div className={classes.list}>
@@ -12,15 +13,9 @@ const ListPrices = ({ array }) => (
     </div>
     <div className={classes['list__container-services']}>
       {array.map((i) => (
-        <div className={classes.list__service} key={i.id}>
-          <p className={classes.list__text}>{i.text}</p>
-          <p
-            className={cn(classes.list__text, classes['list__position-right'])}
-          >{`от ${i.from} до ${i.before} ₽/усл.`}</p>
-        </div>
+        <CardPrice key={i} {...i} />
       ))}
     </div>
-    
   </div>
 );
 
