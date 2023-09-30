@@ -1,0 +1,60 @@
+.card-services {
+    display: flex;
+    flex-direction: row;
+    flex-direction: column;
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        margin: 32px 0 0;
+        padding: 0;
+        gap: 22px;
+        list-style-type: none;
+
+        &_booking{
+            gap: 32px;
+        }
+    }
+
+    &__item {
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--grey-color, #D4D4D4);
+        font-family: Montserrat;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+
+        & > p{
+            padding: 0;
+            margin: 0;
+        }
+
+        &_booking {
+            padding: 16px;
+            border: 2px solid;
+            border-color: var(--grey-color, #D4D4D4);
+            border-radius: 8px;
+            transition: border-color 0.3s ease; /* Плавный переход в течение 0.3 секунды */
+            
+            &:hover{
+                border-color: var(--primary-purple-color,  #9384b7);
+                cursor: pointer;
+            }
+
+            &:active{
+                background-color: var(--purple-pale-color, #f9f7fc);
+            }
+        }
+
+        &_active {
+            border-color: var(--primary-purple-color,  #9384b7);
+            background-color: var(--purple-pale-color, #f9f7fc);
+        }
+    }
+
+}

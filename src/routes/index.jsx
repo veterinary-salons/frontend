@@ -37,6 +37,7 @@ import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
 import BookingCancellation from '../components/BookingCancellation';
+import SpecialistAdvertCardFullInfo from '../pages/SpecialistAdvertCardFullInfo';
 
 import PetCard from '../pages/PetCard';
 
@@ -60,6 +61,8 @@ import Goods from '../pages/Goods';
 import AdvertSuccess from '../pages/AdvertSuccess';
 
 import dataBooking from '../assets/constants/dataBooking';
+import SpecialistAdvertCard from '../pages/SpecialistAdvertCard';
+import BookingService from '../pages/BookingService';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -102,7 +105,11 @@ const router = createBrowserRouter(
       {/* Services */}
       <Route path="services" element={<Catalog title="Наши услуги" />}>
         <Route index element={<ServicesList isServicesPage />} />
-        <Route path=":service" element={<Service />} />
+        <Route path=":service" element={<Service />}/>
+      </Route>
+      <Route path="services/:service/:id" element={<SpecialistAdvertCard />} >
+        <Route index element={<SpecialistAdvertCardFullInfo />} />
+        <Route path="service-booking" element={<BookingService />} />
       </Route>
 
       {/* Goods */}
