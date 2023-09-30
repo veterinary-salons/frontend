@@ -3,6 +3,7 @@ import {
   regexCyrillic,
   regexPassword,
   regexPhone,
+  regexTextarea,
   regexPetName,
 } from './constants';
 
@@ -21,16 +22,38 @@ function validateEmail(value) {
   return { invalid: true, message: '' };
 }
 
-function validateText(value) {
+function validateText(value, type) {
+  if (type === 'textarea') {
+    if (value === '') {
+      return { invalid: false, message: 'Это поле не должно быть пустым' };
+    }
+    if (!regexTextarea.test(value)) {
+      return {
+        invalid: false,
+        message: 'Используйте русские, латинские буквы, цифры, . и -',
+      };
+    }
+    if (regexTextarea.test(value)) {
+      return {
+        invalid: true,
+        message: 'Все верно',
+      };
+    }
+  }
+
   if (value === '') {
     return { default: true, invalid: false };
   }
+
   if (value !== undefined) {
     if (value.length === 0) {
       return { invalid: true, message: 'Это поле не должно быть пустым' };
     }
     if (value.length < 2) {
-      return { invalid: false, message: 'Поле должно содержать более 2 символов' };
+      return {
+        invalid: false,
+        message: 'Поле должно содержать более 2 символов',
+      };
     }
   }
   return { invalid: true, message: 'Поле должно содержать более 2 символов' };
@@ -189,6 +212,9 @@ const validateInput = (type, name, value) => {
   if (type === 'text' && (name === 'userName' || name === 'userSurname')) {
     return validateUserName(value);
   }
+  if (type === 'text' || type === 'textarea') {
+    return validateText(value, type);
+  }
   if (name === 'petName') {
     return validatePetName(value);
   }
@@ -200,9 +226,6 @@ const validateInput = (type, name, value) => {
   }
   if (type === 'number') {
     return validatePetAge(value);
-  }
-  if (type === 'text') {
-    return validateText(value);
   }
   if (type === 'password') {
     return validatePassword(value);
