@@ -29,8 +29,10 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1439px) {
   .goods {
+    padding: 100px 80px;
+
     &__content {
       width: 1120px;
     }
@@ -38,11 +40,5 @@
     &__cards {
       column-gap: 16px;
     }
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .goods {
-    padding: 100px 80px;
   }
 }

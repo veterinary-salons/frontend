@@ -30,20 +30,13 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1439px) {
   .header {
     padding: 20px 80px;
 
     &__content {
       width: 1120px;
     }
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .header {
-    padding-left: 80px;
-    padding-right: 80px;
 
     &__container-btn {
       gap: 20px;

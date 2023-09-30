@@ -60,6 +60,7 @@
     display: flex;
     margin: 0 auto;
     height: 100%;
+    width: 280px;
   }
 
   &__header {
@@ -81,7 +82,7 @@
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1439px) {
   .card {
     width: 268px;
     height: 309px;

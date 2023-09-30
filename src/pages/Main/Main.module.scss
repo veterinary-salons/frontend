@@ -10,7 +10,7 @@
 
   &__content {
     width: 1240px;
-    margin: auto;
+    margin: 0 auto;
   }
 
   &__title {
@@ -67,18 +67,14 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
-  .promo {
-    &__content {
-      width: 1120px;
-    }
-  }
-}
-
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1439px) {
   .promo {
     padding: 0 80px 87px;
     background-size: 100%;
+
+    &__content {
+      width: 1120px;
+    }
 
     &__title {
       margin-bottom: 50px;
@@ -100,7 +96,7 @@
 
   &__content {
     width: 1240px;
-    margin: auto;
+    margin: 0 auto;
   }
 
   &__title {
@@ -123,8 +119,10 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1439px) {
   .specialists {
+    padding: 100px 80px;
+
     &__content {
       width: 1120px;
     }
@@ -132,11 +130,5 @@
     &__cards {
       column-gap: 16px;
     }
-  }
-}
-
-@media screen and (max-width: 1440px) {
-  .specialists {
-    padding: 100px 80px;
   }
 }
