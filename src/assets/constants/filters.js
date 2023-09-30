@@ -294,10 +294,12 @@ const filterServicesData = {
       {
         label: 'Я приеду к специалисту',
         value: 'specialists-place',
+        name: 'specialist-place',
       },
       {
         label: 'Специалист приедет ко мне',
         value: 'my-place',
+        name: 'client-place',
       },
     ],
   },
@@ -305,37 +307,112 @@ const filterServicesData = {
     legend: 'Какой у вас питомец',
     checkboxType: 'checkbox',
     options: [
-      'собака',
-      'грызуны',
-      'птицы',
-      'рептилии',
-      'куньи',
-      'рыбки',
-      'другое',
+      {
+        name: 'pet-dog',
+        value: 'dog',
+        label: 'собака',
+      },
+      {
+        name: 'pet-rodents',
+        value: 'rodents',
+        label: 'грызуны',
+      },
+      {
+        name: 'pet-birds',
+        value: 'birds',
+        label: 'птицы',
+      },
+      {
+        name: 'pet-rodents',
+        value: 'rodents',
+        label: 'рептилии',
+      },
+      {
+        name: 'pet-mustelidae',
+        value: 'mustelidae',
+        label: 'куньи',
+      },
+      {
+        name: 'pet-fish',
+        value: 'fish',
+        label: 'рыбки',
+      },
+      {
+        name: 'another-pet',
+        value: 'another',
+        label: 'другое',
+      },
     ],
   },
   serviceType: {
     legend: 'Какая услуга вам нужна',
     checkboxType: 'checkbox',
     options: [
-      'консультация',
-      'Дрессировка с передержкой',
-      'Гигиенический',
-      'Выставочный',
-      'Коррекция проблемного поведения',
-      'Занятия в мини-группе',
-      'Групповые занятия',
+      {
+        name: 'service-consultation',
+        value: 'consultation',
+        label: 'консультация',
+      },
+      {
+        name: 'service-training-petsitting',
+        value: 'training-petsitting',
+        label: 'Дрессировка с передержкой',
+      },
+      {
+        name: 'service-hygienic',
+        value: 'hygienic',
+        label: 'Гигиенический',
+      },
+      {
+        name: 'service-exhibition',
+        value: 'exhibition',
+        label: 'Выставочный',
+      },
+      {
+        name: 'service-behavior',
+        value: 'behavior',
+        label: 'Коррекция проблемного поведения',
+      },
+      {
+        name: 'service-mini-group',
+        value: 'mini-group',
+        label: 'Занятия в мини-группе',
+      },
+      {
+        name: 'service-group',
+        value: 'group',
+        label: 'Групповые занятия',
+      },
     ],
   },
   date: {
     legend: 'Когда вам нужна услуга',
     checkboxType: 'checkbox',
-    options: ['выбрать дату'],
+    options: [
+      {
+        name: 'date-calendar',
+        value: 'calendar',
+        label: 'выбрать дату',
+      },
+    ],
   },
   price: {
     legend: 'Цена',
     checkboxType: 'checkbox',
-    options: ['от 0 ₽', 'до 0 ₽'],
+    options: [
+      {
+        name: 'price-from',
+        value: 'price-from',
+        label: 'от 0 ₽',
+
+      },
+      {
+        name: 'price-to',
+        value: 'price-to',
+        label: 'до 0 ₽'
+
+      },
+    ],
   },
 };
 
