@@ -9,79 +9,81 @@ import classes from './style.module.scss';
 
 const Header = ({ authorization, onlyLogo }) => (
   <header className={classes.header}>
-    {onlyLogo ?
-      <Link className={classes.header__link} to="/">
-        <Logo />
-      </Link>
-    :
-      <>
-        <div className={[classes.header__container]}>
-          <Link className={classes.header__link} to="/">
-            <Logo />
-          </Link>
-          <SearchForm />
-        </div>
-
-        <div className={[classes.header__container]}>
-          <NavigationPages />
-        </div>
-
-        {authorization ? 
-          <div className={[classes['header__container-btn']]}>
-            <Link to="/favourites/goods">
-              <NavigationLink variant="wishlist" />
+    <div className={classes.header__content}>
+      {onlyLogo ? (
+        <Link className={classes.header__link} to="/">
+          <Logo />
+        </Link>
+      ) : (
+        <>
+          <div className={[classes.header__container]}>
+            <Link className={classes.header__link} to="/">
+              <Logo />
             </Link>
-
-            <Link to="/basket">
-              <NavigationLink variant="basket" />
-            </Link>
-
-            <Link to="/profile">
-              <NavigationLink variant="profile" />
-            </Link>
+            <SearchForm />
           </div>
-        : 
-          <div className={[classes['header__container-btn']]}>
-            <Link to="/signin">
-              <Button
-                variant="outlined"
-                size="medium"
-                type="button"
-                shape="square"
-                label="Вход"
-                onClick={() => {}}
-              >
-                Вход
-              </Button>
-            </Link>
 
-            <Link to="/signup">
-              <Button
-                variant="outlined"
-                size="medium"
-                type="button"
-                shape="square"
-                label="Регистрация"
-                onClick={() => {}}
-              >
-                Регистрация
-              </Button>
-            </Link>
+          <div className={[classes.header__container]}>
+            <NavigationPages />
           </div>
-        }
-      </>
-    }
+
+          {authorization ? (
+            <div className={[classes['header__container-btn']]}>
+              <Link to="/favourites/goods">
+                <NavigationLink variant="wishlist" />
+              </Link>
+
+              <Link to="/basket">
+                <NavigationLink variant="basket" />
+              </Link>
+
+              <Link to="/profile">
+                <NavigationLink variant="profile" />
+              </Link>
+            </div>
+          ) : (
+            <div className={[classes['header__container-btn']]}>
+              <Link to="/signin">
+                <Button
+                  variant="outlined"
+                  size="medium"
+                  type="button"
+                  shape="square"
+                  label="Вход"
+                  onClick={() => {}}
+                >
+                  Вход
+                </Button>
+              </Link>
+
+              <Link to="/signup">
+                <Button
+                  variant="outlined"
+                  size="medium"
+                  type="button"
+                  shape="square"
+                  label="Регистрация"
+                  onClick={() => {}}
+                >
+                  Регистрация
+                </Button>
+              </Link>
+            </div>
+          )}
+        </>
+      )}
+    </div>
   </header>
 );
 
 Header.propTypes = {
   authorization: PropTypes.string,
-  onlyLogo: PropTypes.bool
+  onlyLogo: PropTypes.bool,
 };
 
 Header.defaultProps = {
   authorization: '',
-  onlyLogo: false
+  onlyLogo: false,
 };
 
 export default Header;

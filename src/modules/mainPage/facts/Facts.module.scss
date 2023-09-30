@@ -1,12 +1,14 @@
 .facts {
   padding: 0 100px;
 
+  &__content {
+    width: 1240px;
+    margin: auto;
+  }
+
   &__title {
     color: var(--primary-text-color, #0f0f0f);
-    font-family:
-      'Century Gothic',
-      Arial,
-      sans-serif;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-size: 44px;
     font-style: normal;
     font-weight: 700;
@@ -45,10 +47,7 @@
   }
   &__heading {
     text-align: center;
-    font-family:
-      'Century Gothic',
-      Arial,
-      sans-serif;
+    font-family: 'Century Gothic', Arial, sans-serif;
     font-size: 60px;
     font-style: normal;
     font-weight: 700;
@@ -79,6 +78,14 @@
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .facts {
+    &__content {
+      width: 1120px;
+    }
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .facts {
     padding: 0 80px;
@@ -88,8 +95,8 @@
     }
 
     &__table {
-        width: 715px;
-        margin-right: 18px;
-      }
+      width: 715px;
+      margin-right: 18px;
+    }
   }
 }

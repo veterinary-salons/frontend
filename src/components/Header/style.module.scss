@@ -1,11 +1,16 @@
 .header {
   width: 100%;
   padding: 20px 100px;
-  display: flex;
-  justify-content: space-between;
   background-color: transparent;
   height: 100px;
   z-index: 1;
+
+  &__content {
+    width: 1240px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
 
   &__link {
     display: flex;
@@ -28,6 +33,10 @@
 @media screen and (max-width: 1280px) {
   .header {
     padding: 20px 80px;
+
+    &__content {
+      width: 1120px;
+    }
   }
 }
 

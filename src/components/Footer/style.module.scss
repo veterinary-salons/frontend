@@ -1,11 +1,17 @@
 .footer {
   width: 100%;
   padding: 40px 100px 51px;
-  display: flex;
-  justify-content: space-between;
+
   border-radius: 20px 20px 0px 0px;
   background-color: var(--primary-purple-color);
   color: var(--text-white-color);
+
+  &__content {
+    width: 1240px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
 
   &__info {
     display: flex;
@@ -49,6 +55,15 @@
 }
 
 @media screen and (max-width: 1280px) {
+  .footer {
+
+    &__content {
+      width: 1120px;
+    }
+  }
+}
+
+@media screen and (max-width: 1440px) {
   .footer {
     padding: 40px 80px 51px;
   }
