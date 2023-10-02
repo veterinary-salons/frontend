@@ -5,6 +5,7 @@
   min-height: 671px;
   background-image: url(../../assets/images/images/main-page-background/background-dog.png);
   background-repeat: no-repeat;
+  background-size: 100%;
   margin-top: -100px;
   padding: 0 100px 153px;
 
@@ -21,7 +22,8 @@
     font-weight: 700;
     line-height: 66px;
     max-width: 578px;
-    margin: 220px auto 32px 0;
+    margin-top: 220px;
+    margin-bottom: 48px;
   }
 
   &__text {
@@ -30,9 +32,10 @@
     font-size: 20px;
     font-style: normal;
     font-weight: 500;
-    line-height: 30px;
+    line-height: 24px;
     max-width: 498px;
-    margin: 0 auto 54px 0;
+    margin-top: 0px;
+    margin-bottom: 54px;
   }
 
   &__button {
@@ -67,10 +70,10 @@
   }
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1430px) {
   .promo {
     padding: 0 80px 87px;
-    background-size: 100%;
+    
 
     &__content {
       width: 1120px;
@@ -119,7 +122,7 @@
   }
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1430px) {
   .specialists {
     padding: 100px 80px;
 

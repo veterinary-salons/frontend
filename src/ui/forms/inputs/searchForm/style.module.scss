@@ -73,8 +73,12 @@ input[type='search']::-webkit-search-results-decoration {
   opacity: 0.5;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1430px) {
   .search-container {
     width: 250px;
+  }
+
+  .auth {
+    width: 300px;
   }
 }

@@ -1,6 +1,7 @@
 .footer {
   width: 100%;
-  padding: 40px 100px 51px;
+  padding-top: 40px;
+  padding-bottom: 52px;
 
   border-radius: 20px 20px 0px 0px;
   background-color: var(--primary-purple-color);
@@ -54,9 +55,9 @@
   }
 }
 
-@media screen and (max-width: 1439px) {
+@media screen and (max-width: 1430px) {
   .footer {
-    padding: 40px 80px 51px;
+    padding-bottom: 40px;
 
     &__content {
       width: 1120px;

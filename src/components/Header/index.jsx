@@ -20,7 +20,7 @@ const Header = ({ authorization, onlyLogo }) => (
             <Link className={classes.header__link} to="/">
               <Logo />
             </Link>
-            <SearchForm />
+            <SearchForm authorization />
           </div>
 
           <div className={[classes.header__container]}>

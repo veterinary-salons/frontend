@@ -67,13 +67,17 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1430px) {
   .card {
     width: 268px;
     height: 309px;
 
     &__service-background {
       height: 254px;
+    }
+
+    &__img {
+      scale: .9;
     }
 
     &__header {
