@@ -1,7 +1,7 @@
 // список карточек специалиста на главной страницы услуг
 
 import PropTypes from 'prop-types';
-import classes from './style.module.scss';
+import classes from '../../pages/Main/Main.module.scss';
 import ServicesCategoryCard from '../ServicesCategoryCard';
 import imgPetSitters from '../../assets/images/images/category-specialist-card/pet-sitters.svg';
 
