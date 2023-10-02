@@ -15,11 +15,11 @@ export default {
         type: 'radio',
       },
     },
-    action: {
+    active: {
       type: 'boolean',
       description: 'Активность кнопки',
       control: { type: 'boolean' },
-      defaultValue: true,
+      defaultValue: false,
     },
     disabled: {
       type: 'boolean',
@@ -47,7 +47,7 @@ const Template = (arg) => <ScheduleButton {...arg} />;
 export const ButtonTime = Template.bind({});
 ButtonTime.args = {
   disabled: false,
-  action: false,
+  active: false,
   variant: 'time',
   time: '11:00',
 };

@@ -5,7 +5,7 @@ import ArrowDown from '../../icons/arrows/arrowDown/ArrowDown';
 import ArrowUp from '../../icons/arrows/arrowUp/ArrowUp';
 
 const ScheduleButton = ({
-  action,
+  active,
   disabled,
   variant,
   time,
@@ -15,7 +15,7 @@ const ScheduleButton = ({
 }) => {
   const getClassBtn = cn(classes['schedule-buttons'], {
     [classes['schedule-buttons_disabled']]: disabled,
-    [classes['schedule-buttons_active']]: action,
+    [classes['schedule-buttons_active']]: active,
   });
 
   return (
@@ -46,7 +46,7 @@ ScheduleButton.propTypes = {
   time: PropTypes.string,
   dayWeek: PropTypes.string,
   dayMonth: PropTypes.string,
-  action: PropTypes.bool,
+  active: PropTypes.bool,
   onClick: PropTypes.func,
 };
 
@@ -56,7 +56,7 @@ ScheduleButton.defaultProps = {
   time: '11:00',
   dayWeek: 'Пт',
   dayMonth: '1 сент',
-  action: false,
+  active: false,
   onClick: () => {},
 };
 
