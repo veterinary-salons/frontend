@@ -2,8 +2,9 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import classes from './style.module.scss';
 import ArrowDown from '../../icons/arrows/arrowDown/ArrowDown';
+import ArrowUp from '../../icons/arrows/arrowUp/ArrowUp';
 
-const ScheduleButtons = ({
+const ScheduleButton = ({
   action,
   disabled,
   variant,
@@ -12,19 +13,17 @@ const ScheduleButtons = ({
   dayMonth,
   onClick,
 }) => {
-  const getClassBtn = cn(
-    classes['schedule-buttons'],
-    {
-      [classes['schedule-buttons_disabled']]: disabled,
-    },
-    { [classes['schedule-buttons_action']]: action },
-  );
+  const getClassBtn = cn(classes['schedule-buttons'], {
+    [classes['schedule-buttons_disabled']]: disabled,
+    [classes['schedule-buttons_active']]: action,
+  });
 
   return (
     <button
       disabled={disabled}
-      onClick={() => onClick(action)}
+      onClick={onClick}
       className={getClassBtn}
+      type="button"
     >
       {variant === 'dayMonth' && (
         <div className={classes['schedule-buttons__box-text']}>
@@ -35,13 +34,14 @@ const ScheduleButtons = ({
       {variant === 'time' && (
         <p className={classes['schedule-buttons__text']}>{time}</p>
       )}
-      {variant === 'arrow' && <ArrowDown positionDropdown={false} />}
+      {variant === 'openMore' && <ArrowDown positionDropdown={false} />}
+      {variant === 'close' && <ArrowUp positionDropdown={false} />}
     </button>
   );
 };
 
-ScheduleButtons.propTypes = {
-  variant: PropTypes.oneOf(['time', 'dayMonth', 'arrow']),
+ScheduleButton.propTypes = {
+  variant: PropTypes.oneOf(['time', 'dayMonth', 'close', 'openMore']),
   disabled: PropTypes.bool,
   time: PropTypes.string,
   dayWeek: PropTypes.string,
@@ -50,7 +50,7 @@ ScheduleButtons.propTypes = {
   onClick: PropTypes.func,
 };
 
-ScheduleButtons.defaultProps = {
+ScheduleButton.defaultProps = {
   disabled: false,
   variant: 'dayMonth',
   time: '11:00',
@@ -60,4 +60,4 @@ ScheduleButtons.defaultProps = {
   onClick: () => {},
 };
 
-export default ScheduleButtons;
+export default ScheduleButton;

@@ -20,12 +20,12 @@ const ArrowDown = ({ positionDropdown, classes }) => (
 );
 
 ArrowDown.propTypes = {
-  positionDropdown: PropTypes.string,
+  positionDropdown: PropTypes.bool,
   classes: PropTypes.string,
 };
 
 ArrowDown.defaultProps = {
-  positionDropdown: 'ture',
+  positionDropdown: true,
   classes: '',
 };
 

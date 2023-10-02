@@ -10,7 +10,7 @@ export default {
       variant: 'Вид кнопки',
       type: 'string',
       defaultValue: 'dayMonth',
-      options: ['time', 'dayMonth', 'arrow'],
+      options: ['time', 'dayMonth', 'close', 'openMore'],
       control: {
         type: 'radio',
       },
@@ -60,9 +60,14 @@ ButtonMonth.args = {
   dayMonth: '1 сент',
 };
 
-export const ButtonArrow = Template.bind({});
-ButtonArrow.args = {
-  variant: 'arrow',
+export const ButtonClose = Template.bind({});
+ButtonClose.args = {
+  variant: 'openMore',
+};
+
+export const ButtonOpenMore = Template.bind({});
+ButtonOpenMore.args = {
+  variant: 'close',
 };
 
 export const ButtonDisabled = Template.bind({});
