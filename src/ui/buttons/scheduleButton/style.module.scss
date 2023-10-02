@@ -3,7 +3,7 @@
   width: 132px;
   height: 52px;
   border-radius: 8px;
-  border: 1px solid var(--grey-color);
+  border: 1px solid var(--grey-color, #d4d4d4);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,13 +11,13 @@
   position: relative;
 
   &_active {
-    border: 2px solid var(--primary-purple-color);
-    background: var(--purple-pale-color);
+    border: 2px solid var(--primary-purple-color, #9384b7);
+    background: var(--purple-pale-color, #9384b7);
   }
 
   &:hover {
     opacity: 0.8;
-    box-shadow: 4px 4px 8px 0px var(--primary-purple-color-rgba);
+    box-shadow: 4px 4px 8px 0px var(--primary-purple-color-rgba, rgba(143, 129, 177, 0.2));
   }
 
   &__text {
@@ -30,8 +30,8 @@
   }
 
   &_disabled {
-    border: 1px solid var(--grey-color);
-    background: var(--grey-light-color);
-    color: var(--text-grey-color);
+    border: 1px solid var(--grey-color, #d4d4d4);
+    background: var(--grey-light-color, #f8f8f8);
+    color: var(--text-grey-color, #9c9c9c);
   }
 }
