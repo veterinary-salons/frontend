@@ -29,7 +29,7 @@ import RecoveryPassword from '../pages/RecoveryPassword';
 import SuccessfulRecovery from '../pages/SuccessfulRecovery';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import { dataArticlePage } from '../assets/constants/constants';
+import dataArticlePage from '../assets/constants/dataArticles';
 import SelectedProducts from '../pages/SelectedProducts';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
@@ -62,6 +62,7 @@ import Goods from '../pages/Goods';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
+import ArticlePage from '../pages/Article';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -116,8 +117,13 @@ const router = createBrowserRouter(
       {/* Articles */}
       <Route
         path="magazine"
-        element={<Articles dataArticle={dataArticlePage} />}
-      />
+      >
+        <Route index element={<Articles dataArticle={dataArticlePage} />} />
+        <Route
+          path=":id"
+          element={<ArticlePage />}
+        />
+      </Route>
 
       {/* Favourites */}
       <Route path="favourites" element={<Favourites />}>
