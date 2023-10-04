@@ -3,6 +3,7 @@ const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexCyrillic = /^[а-яА-Я\sё-]+$/;
 const regexPetName = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexPassword = /^[A-Za-z\d-.]+$/;
+const regexTextArea = /^[а-яА-Яa-zA-Z0-9\s.,]+$/;
 const regexPhone =
   /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
 const maskPhone = [
@@ -147,7 +148,7 @@ const arrayServicesDate = [
   {
     id: 5,
     text: 'выбрать дату',
-  }
+  },
 ];
 
 const arrayTimeList = [
@@ -198,6 +199,7 @@ export {
   arrayServicesDate,
   arrayTimeList,
   arrImgOrderCard,
+  regexTextArea,
   regexPetName,
 };
 

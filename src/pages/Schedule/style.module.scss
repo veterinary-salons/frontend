@@ -1,0 +1,33 @@
+.schedule {
+  width: 726px;
+  margin: 0 auto;
+  margin: 60px auto 139px;
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  &__title {
+    margin: 0 auto 48px;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+  }
+
+  &__fieldset {
+    margin: 0 auto;
+    padding: 0;
+    border: none;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  &__container-btn {
+    width: 100%;
+    display: flex;
+    margin-top: 40px;
+    justify-content: space-between;
+  }
+}

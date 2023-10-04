@@ -1,26 +1,44 @@
 .goods {
-    max-width: 1240px;
-    column-gap: 20px;
-    padding: 120px 0;
-    margin: 0 auto;
+  max-width: 100%;
+  column-gap: 20px;
+  padding: 120px 100px;
 
-    &__title {
-        color: var(--primary-text-color, #0F0F0F);
-        font-family: Century Gothic;
-        font-size: 44px;
-        font-style: normal;
-        font-weight: 700;
-        line-height: 66px;
-        max-width: 670px;
-        margin: 0 auto 60px 0;
+  &__content {
+    width: 1240px;
+    margin: auto;
+  }
+
+  &__title {
+    color: var(--primary-text-color, #0f0f0f);
+    font-family: Century Gothic;
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 66px;
+    max-width: 670px;
+    margin: 0 auto 60px 0;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    column-gap: 20px;
+    padding: 0;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 1430px) {
+  .goods {
+    padding: 100px 80px;
+
+    &__content {
+      width: 1120px;
     }
 
     &__cards {
-        display: flex;
-        flex-direction: row;
-        max-width: 1240px;
-        column-gap: 20px;
-        padding: 0;
-        margin: 0 auto;
+      column-gap: 16px;
     }
+  }
 }
