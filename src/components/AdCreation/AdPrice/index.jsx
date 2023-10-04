@@ -7,6 +7,9 @@ const AdPrice = ({ title, name, getPrice, value }) => {
   const [form, setForm] = useState('');
   const [befor, setBefor] = useState('');
 
+
+  // TODO: сделать валидацию полей. Значение 'от' не должно быть больше 'до'
+
   useEffect(() => {
     getPrice({
       ...value,
