@@ -59,7 +59,7 @@ SearchForm.propTypes = {
   minLength: PropTypes.number,
   disabled: PropTypes.bool,
   getInput: PropTypes.func,
-  authorization: PropTypes.string,
+  authorization: PropTypes.bool,
 };
 
 SearchForm.defaultProps = {
@@ -69,7 +69,7 @@ SearchForm.defaultProps = {
   minLength: 2,
   disabled: false,
   getInput: () => {},
-  authorization: '',
+  authorization: false,
 };
 
 export default SearchForm;
