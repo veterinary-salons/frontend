@@ -32,3 +32,17 @@
     transition: .5s;
   }
 }
+
+@media screen and (max-width: 1430px) {
+  .card {
+    width: 268px;
+
+    &__container {
+      gap: 6px;
+    }
+
+    &__title {
+      padding: 0;
+    }
+  }
+}
