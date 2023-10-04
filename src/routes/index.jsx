@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root';
+import Root from './root'
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
@@ -29,7 +29,7 @@ import RecoveryPassword from '../pages/RecoveryPassword';
 import SuccessfulRecovery from '../pages/SuccessfulRecovery';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import { dataArticlePage } from '../assets/constants/constants';
+import dataArticlePage from '../assets/constants/dataArticles';
 import SelectedProducts from '../pages/SelectedProducts';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
@@ -51,6 +51,8 @@ import PetCard from '../pages/PetCard';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
+import AdvertFinal from '../pages/AdvertFinal';
+import AdSchedule from '../pages/Schedule';
 
 import {
   dataSelectedProducts,
@@ -58,11 +60,12 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
+import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
-
 import dataBooking from '../assets/constants/dataBooking';
 import SpecialistAdvertCard from '../pages/SpecialistAdvertCard';
 import BookingService from '../pages/BookingService';
+import ArticlePage from '../pages/Article';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -121,8 +124,13 @@ const router = createBrowserRouter(
       {/* Articles */}
       <Route
         path="magazine"
-        element={<Articles dataArticle={dataArticlePage} />}
-      />
+      >
+        <Route index element={<Articles dataArticle={dataArticlePage} />} />
+        <Route
+          path=":id"
+          element={<ArticlePage />}
+        />
+      </Route>
 
       {/* Favourites */}
       <Route path="favourites" element={<Favourites />}>
@@ -156,8 +164,14 @@ const router = createBrowserRouter(
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<h1>TEST</h1>} />
-
+      <Route
+        path="test"
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+      />
+      <Route path="advert-final" element={<AdvertFinal />} />
+      <Route path="test" element={<h1>Тесты</h1>} />
+      <Route path="advert-schedule" element={<AdSchedule />} />
+      <Route path="advert-description" element={<DescriptionService />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),

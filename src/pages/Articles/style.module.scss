@@ -1,6 +1,7 @@
 .articles {
   font-family: 'Montserrat', Arial, sans-serif;
-  padding-top: 42px;
+  padding-top: 48px;
+  width: 1240px;
 
   &__paragraph {
     margin: 12px 0 48px;
@@ -13,15 +14,26 @@
 
   &__container {
     display: flex;
-    width: 1250px;
+    justify-content: space-between;
+    width: 100%;
     margin: auto;
     padding: 0;
     margin-bottom: 100px;
     flex-wrap: wrap;
-    gap: 40px 20px;
+    row-gap: 40px;
   }
 
   &__li {
     list-style-type: none;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .articles {
+    width: 1120px;
+
+    &__container {
+      row-gap: 20px;
+    }
   }
 }

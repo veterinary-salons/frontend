@@ -62,7 +62,7 @@ SpecialistsCard.defaultProps = {
 };
 
 SpecialistsCard.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   img: PropTypes.string,
   profession: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
