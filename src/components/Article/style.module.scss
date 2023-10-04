@@ -1,0 +1,45 @@
+.article {
+  width: 820px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  &__margins {
+    margin: 48px auto 100px;
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-family: 'Century Gothic', Arial, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 0;
+  }
+
+  &__prop-text {
+    color: var(--text-grey-color);
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  &__link {
+    color: inherit;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  &__like {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    height: 40px;
+  }
+}

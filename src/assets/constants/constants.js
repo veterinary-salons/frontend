@@ -3,6 +3,7 @@ const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexCyrillic = /^[а-яА-Я\sё-]+$/;
 const regexPetName = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexPassword = /^[A-Za-z\d-.]+$/;
+const regexTextArea = /^[а-яА-Яa-zA-Z0-9\s.,]+$/;
 const regexPhone =
   /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
 const maskPhone = [
@@ -147,7 +148,7 @@ const arrayServicesDate = [
   {
     id: 5,
     text: 'выбрать дату',
-  }
+  },
 ];
 
 const arrayTimeList = [
@@ -184,45 +185,6 @@ const arrImgOrderCard = [
   { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
 ];
 
-const dataArticlePage = [
-  {
-    id: 1,
-    img: '',
-    title: 'Как подружить питомцев?',
-    isActive: false,
-  },
-  {
-    id: 2,
-    img: 'https://i.ibb.co/vwgFKzz/photo-2.png',
-    title: 'Как приучить котёнка к лотку без скандалов?',
-    isActive: true,
-  },
-  {
-    id: 3,
-    img: 'https://i.ibb.co/K0SsRXN/photo-3.png',
-    title: '25 фактов о попугаях',
-    isActive: false,
-  },
-  {
-    id: 4,
-    img: 'https://i.ibb.co/X5t6qvh/photo-4.png',
-    title: 'Готовимся к путешествию',
-    isActive: false,
-  },
-  {
-    id: 5,
-    img: 'https://i.ibb.co/Jxxfyfq/photo-5.png',
-    title: 'Советы начинающим собаководам',
-    isActive: false,
-  },
-  {
-    id: 6,
-    img: 'https://i.ibb.co/wgBHjgb/photo-6.png',
-    title: 'Морские свинки не так просты как вы думали',
-    isActive: false,
-  },
-];
-
 export {
   regexEmail,
   regexText,
@@ -237,7 +199,7 @@ export {
   arrayServicesDate,
   arrayTimeList,
   arrImgOrderCard,
-  dataArticlePage,
+  regexTextArea,
   regexPetName,
 };
 

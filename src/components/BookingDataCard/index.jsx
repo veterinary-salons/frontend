@@ -41,13 +41,13 @@ const BookingDataCard = ({ dataBooking, isNotSpecialist }) => {
 
 BookingDataCard.propTypes = {
   dataBooking: PropTypes.shape({
-    specialist: PropTypes.string,
-    service: PropTypes.string,
-    price: PropTypes.arrayOf(PropTypes.number),
-    date: PropTypes.string,
-    place: PropTypes.string,
-    pet: PropTypes.string,
-    wishes: PropTypes.string,
+    specialist: PropTypes.string.isRequired,
+    service: PropTypes.string.isRequired,
+    price: PropTypes.arrayOf(PropTypes.number).isRequired,
+    date: PropTypes.string.isRequired,
+    place: PropTypes.string.isRequired,
+    pet: PropTypes.string.isRequired,
+    wishes: PropTypes.string.isRequired,
   }).isRequired,
   isNotSpecialist: PropTypes.bool,
 };

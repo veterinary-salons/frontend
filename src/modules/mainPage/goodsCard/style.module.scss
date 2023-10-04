@@ -66,3 +66,22 @@
     margin: 24px auto 0;
   }
 }
+
+@media screen and (max-width: 1430px) {
+  .card {
+    width: 268px;
+    height: 309px;
+
+    &__service-background {
+      height: 254px;
+    }
+
+    &__img {
+      scale: .9;
+    }
+
+    &__header {
+      margin-top: 20px;
+    }
+  }
+}

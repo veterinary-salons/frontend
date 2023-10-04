@@ -39,6 +39,7 @@ const InputText = ({
       ...state,
       [name]: validateInput(type, name, values[name]).invalid,
     }));
+    // eslint-disable-next-line
   }, [validateInput(type, name, values[name]).invalid]);
 
   useEffect(() => {
