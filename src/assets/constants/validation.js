@@ -3,7 +3,7 @@ import {
   regexCyrillic,
   regexPassword,
   regexPhone,
-  regexTextarea,
+  regexTextArea,
   regexPetName,
 } from './constants';
 
@@ -27,13 +27,13 @@ function validateText(value, type) {
     if (value === '') {
       return { invalid: false, message: 'Это поле не должно быть пустым' };
     }
-    if (!regexTextarea.test(value)) {
+    if (!regexTextArea.test(value)) {
       return {
         invalid: false,
         message: 'Используйте русские, латинские буквы, цифры, . и -',
       };
     }
-    if (regexTextarea.test(value)) {
+    if (regexTextArea.test(value)) {
       return {
         invalid: true,
         message: 'Все верно',
