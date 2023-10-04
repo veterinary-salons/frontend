@@ -59,7 +59,7 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
-import CreationPriceCervices from '../pages/CreationAdvertPrice';
+import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
@@ -164,7 +164,7 @@ const router = createBrowserRouter(
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
 
-      <Route path="advert-price" element={<CreationPriceCervices />} />
+      <Route path="advert-price" element={<CreationPriceServices />} />
       <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="advert-schedule" element={<AdSchedule />} />
       <Route path="advert-description" element={<DescriptionService />} />

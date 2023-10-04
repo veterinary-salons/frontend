@@ -6,7 +6,7 @@ import classes from './style.module.scss';
 import { dataServicePriceFilter } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
 
-const CreationPriceCervices = ({ getPrice }) => {
+const CreationPriceServices = ({ getPrice }) => {
   const navigate = useNavigate();
   const [price, setPrice] = useState({});
 
@@ -48,12 +48,12 @@ const CreationPriceCervices = ({ getPrice }) => {
   );
 };
 
-CreationPriceCervices.propTypes = {
+CreationPriceServices.propTypes = {
   getPrice: PropTypes.func,
 };
 
-CreationPriceCervices.defaultProps = {
+CreationPriceServices.defaultProps = {
   getPrice: () => {},
 };
 
-export default CreationPriceCervices;
+export default CreationPriceServices;
