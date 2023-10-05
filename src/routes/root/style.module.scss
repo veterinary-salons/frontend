@@ -1,6 +1,5 @@
 .root {
   width: 100%;
-  max-width: 1430;
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
@@ -22,7 +21,7 @@
   margin-top: 40px !important;
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1430px) {
   .main-with-margins {
     width: 1120px;
   }

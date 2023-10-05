@@ -1,7 +1,7 @@
 .goods {
   max-width: 100%;
   column-gap: 20px;
-  padding: 120px 100px;
+  padding: 120px 0;
 
   &__content {
     width: 1240px;
@@ -31,7 +31,7 @@
 
 @media screen and (max-width: 1430px) {
   .goods {
-    padding: 100px 80px;
+    padding: 100px 0;
 
     &__content {
       width: 1120px;
