@@ -46,6 +46,8 @@ const dataPathWithoutFooter = [
   '/recovery',
   '/recovery-code',
   '/recovery-password',
+  '/advert-price',
+  '/signin',
   '/successful-recovery',
   '/advert-description',
   '/advert-schedule',
