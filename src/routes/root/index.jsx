@@ -66,7 +66,7 @@ function Root() {
       <main
         className={classNames(
           classes.main,
-          location.pathname !== '/' ? classes.padding100 : null,
+          location.pathname !== '/' ? classes['main-with-margins'] : null,
         )}
       >
         {!crumbsPath ? <BreadCrumbs className={classes.mt40} /> : null}
