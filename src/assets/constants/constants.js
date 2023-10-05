@@ -185,6 +185,13 @@ const arrImgOrderCard = [
   { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
 ];
 
+const variantVeterinarians = {
+  zoonyanya: 'Зооняня',
+  cynologist: 'Кинолог',
+  groomer: 'Грумер',
+  veterinarian: 'Ветеринар',
+};
+
 export {
   regexEmail,
   regexText,
@@ -201,6 +208,7 @@ export {
   arrImgOrderCard,
   regexTextArea,
   regexPetName,
+  variantVeterinarians,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/

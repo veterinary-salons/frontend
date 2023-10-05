@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root'
+import Root from './root';
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
@@ -51,7 +51,7 @@ import PetCard from '../pages/PetCard';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 import AdvertFinal from '../pages/AdvertFinal';
-import AdSchedule from '../pages/Schedule';
+import FillingSchedule from '../pages/FillingSchedule';
 
 import {
   dataSelectedProducts,
@@ -63,6 +63,7 @@ import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
+import MeService from '../components/MeService';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -115,14 +116,9 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Articles */}
-      <Route
-        path="magazine"
-      >
+      <Route path="magazine">
         <Route index element={<Articles dataArticle={dataArticlePage} />} />
-        <Route
-          path=":id"
-          element={<ArticlePage />}
-        />
+        <Route path=":id" element={<ArticlePage />} />
       </Route>
 
       {/* Favourites */}
@@ -157,13 +153,13 @@ const router = createBrowserRouter(
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
+      {/* <Route
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-      />
+      /> */}
       <Route path="advert-final" element={<AdvertFinal />} />
-      <Route path="test" element={<h1>Тесты</h1>} />
-      <Route path="advert-schedule" element={<AdSchedule />} />
+      <Route path="test" element={<MeService />} />
+      <Route path="advert-schedule" element={<FillingSchedule />} />
       <Route path="advert-description" element={<DescriptionService />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
