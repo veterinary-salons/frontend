@@ -1,8 +1,6 @@
 .facts {
-  padding: 0 100px;
-
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     margin: auto;
   }
 
@@ -80,10 +78,8 @@
 
 @media screen and (max-width: 1430px) {
   .facts {
-    padding: 0 80px;
-
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
 
     &__title {

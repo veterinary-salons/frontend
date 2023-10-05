@@ -8,7 +8,7 @@
   color: var(--text-white-color);
 
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     display: flex;
     justify-content: space-between;
     margin: auto;
@@ -60,7 +60,7 @@
     padding-bottom: 40px;
 
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
   }
 }
