@@ -63,6 +63,7 @@ import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
+import CardRewiew from '../components/CardReview';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -159,7 +160,13 @@ const router = createBrowserRouter(
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
       <Route
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<CardRewiew
+          stars='4.4'
+          published='13 августа 2023'
+          name='Дарья'
+          serviceType='Услуга: гигиенический груминг'
+          text='Все очень понравилось. Быстро, качественно, а главное - с любовью!'
+        />}
       />
       <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="test" element={<h1>Тесты</h1>} />
