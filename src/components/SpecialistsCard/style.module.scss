@@ -12,6 +12,7 @@
   font-weight: 500;
   line-height: 22px;
   margin: 0;
+  width: 925px;
 
   &__image {
     width: 180px;
@@ -93,12 +94,18 @@
     color: var(--text-grey-color);
     text-decoration: none;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
 
   &__name {
     margin: 0 0 8px;
+  }
+}
+
+@media screen and (max-width: 1430px) {
+  .specialists-card {
+    width: 809px;
   }
 }
