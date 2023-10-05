@@ -1,7 +1,7 @@
 .articles {
   font-family: 'Montserrat', Arial, sans-serif;
   padding-top: 48px;
-  width: 1240px;
+  width: var(--content-width-for-screen-1440);
 
   &__paragraph {
     margin: 12px 0 48px;
@@ -30,7 +30,7 @@
 
 @media screen and (max-width: 1430px) {
   .articles {
-    width: 1120px;
+    width: var(--content-width-for-screen-1280);
 
     &__container {
       row-gap: 20px;

@@ -4,7 +4,7 @@
   padding: 120px 0;
 
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     margin: auto;
   }
 
@@ -34,7 +34,7 @@
     padding: 100px 0;
 
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
 
     &__cards {

@@ -14,7 +14,7 @@
 }
 
 .main-with-margins {
-  width: 1240px;
+  width: var(--content-width-for-screen-1440);
 }
 
 .mt40 {
@@ -23,6 +23,6 @@
 
 @media screen and (max-width: 1430px) {
   .main-with-margins {
-    width: 1120px;
+    width: var(--content-width-for-screen-1280);
   }
 }

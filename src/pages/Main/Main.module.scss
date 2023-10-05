@@ -10,7 +10,7 @@
   padding-bottom: 153px;
 
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     margin: 0 auto;
   }
 
@@ -76,7 +76,7 @@
     
 
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
 
     &__title {
@@ -98,7 +98,7 @@
   width: 100%;
 
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     margin: 0 auto;
   }
 
@@ -127,7 +127,7 @@
     padding: 100px 0;
 
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
 
     &__cards {
