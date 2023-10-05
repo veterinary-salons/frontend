@@ -14,8 +14,8 @@
   flex: 1 0 auto;
 }
 
-.padding100 {
-  padding: 0 100px;
+.main-with-margins {
+  width: 1240px;
 }
 
 .mt40 {
@@ -23,7 +23,7 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .padding100 {
-    padding: 0 80px;
+  .main-with-margins {
+    width: 1120px;
   }
 }

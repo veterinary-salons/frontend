@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom/dist';
 import classes from './style.module.scss';
 import ServicesFilterMain from '../../components/Filters/ServicesFilters/ServicesFilterMain';
 import { professionals } from '../../assets/constants/temporaryData';
-import SpecialistsCard from '../../components/SpecialistsCard';
+import SpecialistsCard from '../../components/specialistsCard';
 import Button from '../../ui/buttons/originButton/Button';
 
 const Service = () => {
