@@ -804,7 +804,7 @@ const ArticleContent = ({id, imgContent}) => {
 
 ArticleContent.propTypes = {
   id: PropTypes.string,
-  imgContent: PropTypes.arrayOf,
+  imgContent: PropTypes.arrayOf(PropTypes.string),
 };
 
 ArticleContent.defaultProps = {
