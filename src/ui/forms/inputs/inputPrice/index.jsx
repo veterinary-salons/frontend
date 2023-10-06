@@ -5,7 +5,14 @@ import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import validateInput from '../../../../assets/constants/validation';
 
-const InputPrice = ({ prefix, name, initialValue, disabled, getInput }) => {
+const InputPrice = ({
+  prefix,
+  name,
+  initialValue,
+  disabled,
+  getInput,
+  placeholder,
+}) => {
   const [values, setValues] = useState(initialValue);
   const getClassContainer = classNames(
     classes.input,
@@ -29,14 +36,13 @@ const InputPrice = ({ prefix, name, initialValue, disabled, getInput }) => {
       className={getClassContainer}
       id="input-example"
       name={name}
-      placeholder={`${prefix} 0 ₽`}
+      placeholder={`${prefix} ${placeholder} ₽`}
       prefix={`${prefix} `}
       suffix=" ₽"
       maxLength={6}
       defaultValue={0}
       decimalsLimit={1}
       onValueChange={(value) => setValues(value)}
-      disabled={disabled}
     />
   );
 };
@@ -47,6 +53,7 @@ InputPrice.propTypes = {
   name: PropTypes.string,
   initialValue: PropTypes.objectOf(PropTypes.string),
   getInput: PropTypes.func,
+  placeholder: PropTypes.string,
 };
 
 InputPrice.defaultProps = {
@@ -55,6 +62,7 @@ InputPrice.defaultProps = {
   name: 'input-price',
   initialValue: {},
   getInput: () => {},
+  placeholder: '0',
 };
 
 export default InputPrice;

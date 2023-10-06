@@ -1,6 +1,9 @@
 .service-changes {
-  margin: 0 auto;
+  margin: 0 auto 100px;
   width: 1090px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 
   &__title {
     margin: 60px 0 48px 0;
@@ -15,6 +18,7 @@
   }
 
   &__block-name {
-    width: 342px;
+    min-width: 342px;
+    max-width: 342px;
   }
 }

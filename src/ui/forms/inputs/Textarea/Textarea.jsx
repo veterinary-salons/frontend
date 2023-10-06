@@ -24,7 +24,7 @@ const Textarea = ({
   }, [value]);
 
   return (
-    <>
+    <div className={classes.constiner}>
       <textarea
         value={value}
         onChange={(e) => setValue(e.target.value)}
@@ -44,7 +44,7 @@ const Textarea = ({
           })}
         >{`Символов: ${value.length === undefined ? 0 : value.length}/1000`}</p>
       </div>
-    </>
+    </div>
   );
 };
 
