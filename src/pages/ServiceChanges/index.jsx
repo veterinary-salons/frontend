@@ -7,6 +7,7 @@ import AdSchedule from '../../components/AdSchedule';
 import AdPrice from '../../components/AdCreation/AdPrice';
 import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
+import ChecboksList from '../../components/ChecboksList';
 
 const ServiceChanges = ({ variant }) => {
   const [info, setInfo] = useState('');
@@ -24,7 +25,7 @@ const ServiceChanges = ({ variant }) => {
     },
     {
       id: 3,
-      text: 'ветеринар',
+      text: 'грумер',
     },
     {
       id: 4,
@@ -48,6 +49,7 @@ const ServiceChanges = ({ variant }) => {
           <h3 className={classes['service-changes__block-name']}>
             С какими животными вы работаете?
           </h3>
+          <ChecboksList />
         </div>
       )}
 
