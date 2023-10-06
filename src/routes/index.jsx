@@ -63,7 +63,7 @@ import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
-import MeService from '../components/MeService';
+import ServiceChanges from '../pages/ServiceChanges';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -158,7 +158,7 @@ const router = createBrowserRouter(
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       /> */}
       <Route path="advert-final" element={<AdvertFinal />} />
-      <Route path="test" element={<MeService />} />
+      <Route path="test" element={<ServiceChanges />} />
       <Route path="advert-schedule" element={<FillingSchedule />} />
       <Route path="advert-description" element={<DescriptionService />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
