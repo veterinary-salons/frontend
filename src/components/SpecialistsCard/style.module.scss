@@ -6,7 +6,7 @@
   align-items: flex-start;
   padding: 20px;
   gap: 16px;
-  font-family: Montserrat;
+  font-family: 'Montserrat', Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -20,6 +20,7 @@
     background-color: var(--purple-pale-color, #f9f7fc);
     position: relative;
     box-sizing: border-box;
+    border-radius: 8px;
   }
 
   &__content {
@@ -32,7 +33,8 @@
     max-width: 529px;
     display: flex;
     flex-direction: column;
-    height: 170px;
+    gap: 4px;
+    max-height: 100%;
     justify-content: space-between;
   }
 
@@ -41,7 +43,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0;
   }
 
   &__profession {
@@ -57,7 +58,6 @@
   &__price {
     margin: 0;
     font-size: 20px;
-    line-height: 30px;
   }
 
   &__worked-with {
@@ -65,7 +65,7 @@
   }
 
   &__description {
-    margin: 0;
+    margin: 4px 0 0;
     max-height: 100%;
     overflow: hidden;
     display: -webkit-box;
@@ -78,10 +78,11 @@
   }
 
   &__review {
-    margin: 0;
+    min-width: 140px;
+    width: 140px;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 10px;
     height: max-content;
     justify-content: flex-start;
   }
@@ -100,6 +101,7 @@
   }
 
   &__name {
+    font-size: 20px;
     margin: 0 0 8px;
   }
 }
