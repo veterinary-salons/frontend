@@ -4,41 +4,26 @@ import classes from './style.module.scss';
 import StarsBox from '../../ui/icons/starsBox/StarsBox';
 import ProfileAvatar from '../../ui/profileAvatar';
 
-const CardRewiew = ({
-  stars,
-  published,
-  avatar,
-  name,
-  serviceType,
-  text
-}) => (
+const CardRewiew = ({ stars, published, avatar, name, serviceType, text }) => (
   <div className={classes.review}>
     <div className={classes.review__rating}>
-      <StarsBox
-        rating={stars}
-        starsOnly
-      />
-      <p className={classes.review__date}>
-        {published}
-      </p>
+      <StarsBox rating={stars} starsOnly />
+      <p className={classes.review__date}>{published}</p>
     </div>
     <div className={classes.review__info}>
       <div className={classes.review__client}>
         <ProfileAvatar src={avatar} smallSize />
-        <p className={classes.review__text}>
-          {name}
-        </p>
+        <p className={classes.review__text}>{name}</p>
       </div>
-      <p 
+      <p
         className={classNames(
           classes.review__text,
-          classes.review__text_type_bold
-      )}>
+          classes.review__text_type_bold,
+        )}
+      >
         {serviceType}
       </p>
-      <p className={classes.review__text}>
-        {text}
-      </p>
+      <p className={classes.review__text}>{text}</p>
     </div>
   </div>
 );
@@ -53,12 +38,12 @@ CardRewiew.propTypes = {
 };
 
 CardRewiew.defaultProps = {
-  stars: '0',
-  published: '',
   avatar: '',
-  name: '',
-  serviceType: '',
-  text: '',
+  stars: '4.4',
+  published: '13 августа 2023',
+  name: 'Дарья',
+  serviceType: 'Услуга: гигиенический груминг',
+  text: 'Все очень понравилось. Быстро, качественно, а главное - с любовью!',
 };
 
 export default CardRewiew;

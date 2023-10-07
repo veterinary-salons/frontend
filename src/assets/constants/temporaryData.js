@@ -434,6 +434,16 @@ const professionals = [
     isHomeVisit: true,
     services: [
       {
+        title: 'Передержка сутки',
+        price: [1000, 10000],
+      },
+      {
+        title: 'Передержка неделя',
+        price: [1000, 10000],
+      },
+    ],
+    schedule: [
+      {
         day: 'Пн',
         time: {
           start: '9:00',
@@ -498,6 +508,16 @@ const professionals = [
     specialist: 'cynologist',
     services: [
       {
+        title: 'Дрессировка взрослой собаки',
+        price: [1000, 10000],
+      },
+      {
+        title: 'Дрессировка щенка',
+        price: [1000, 10000],
+      },
+    ],
+    schedule: [
+      {
         day: 'Пн',
         time: {
           start: '9:00',
@@ -560,8 +580,17 @@ const professionals = [
     numReviews: 3,
     scoreReview: '4.9',
     specialist: 'groomer',
-
     services: [
+      {
+        title: 'Выставочный груминг',
+        price: [1500, 5000],
+      },
+      {
+        title: 'Гигиеничный груминг',
+        price: [1000, 3000],
+      },
+    ],
+    schedule: [
       {
         day: 'Пн',
         time: {

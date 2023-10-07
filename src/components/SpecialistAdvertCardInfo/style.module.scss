@@ -11,14 +11,14 @@
 
     &__img {
         min-width: 354px;
-        height: 254px;
+        height: 266px;
         background-color: var(--grey-color, #D4D4D4);
         object-fit: cover;
         transition: min-width 1.6s, height 1.6s;
 
-        &_small{
+        &_small {
             min-width: 252px;
-            height: 180px;
+            height: 190px;
         }
     }
 
