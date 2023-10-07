@@ -86,105 +86,98 @@ const dataGoodsForCatalog = [
     counter: 0,
     isLiked: false,
     category: 'feed-goodies',
-    animal: 'cat'
+    animal: 'cat',
   },
   {
     id: 2,
     price: '353',
     weightProduct: '600',
-    descriptionProduct:
-      'Лоток для собак',
+    descriptionProduct: 'Лоток для собак',
     reviews: 46,
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.4',
     counter: 0,
     isLiked: true,
     category: 'toilet',
-    animal: 'dog'
+    animal: 'dog',
   },
   {
     id: 3,
     price: '353',
     weightProduct: '600',
-    descriptionProduct:
-      'Лосьен для глаз',
+    descriptionProduct: 'Лосьен для глаз',
     reviews: 46,
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '5.0',
     counter: 0,
     isLiked: false,
     category: 'hygiene',
-    animal: 'cat'
+    animal: 'cat',
   },
   {
     id: 4,
     price: '353',
     weightProduct: '600',
-    descriptionProduct:
-      'Миска для хорька',
+    descriptionProduct: 'Миска для хорька',
     reviews: 46,
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.8',
     counter: 0,
     isLiked: false,
     category: 'bowls-beds-houses',
-    animal: 'rodent'
+    animal: 'rodent',
   },
   {
     id: 5,
     price: '353',
     weightProduct: '600',
-    descriptionProduct:
-      'Витамины для собак',
+    descriptionProduct: 'Витамины для собак',
     reviews: 46,
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.7',
     counter: 0,
     isLiked: false,
     category: 'vetpharmacy',
-    animal: 'cat'
+    animal: 'cat',
   },
   {
     id: 6,
     price: '353',
     weightProduct: '600',
-    descriptionProduct:
-      'Игрушка клубок',
+    descriptionProduct: 'Игрушка клубок',
     reviews: 46,
     image: '',
     rating: '4.0',
     counter: 0,
     isLiked: false,
     category: 'toys-ammunition',
-    animal: 'cat'
+    animal: 'cat',
   },
   {
     id: 7,
     price: '353',
     weightProduct: '600',
-    descriptionProduct:
-      'Корм для рыб',
+    descriptionProduct: 'Корм для рыб',
     reviews: 46,
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.4',
     counter: 0,
     isLiked: true,
     category: 'feed-goodies',
-    animal: 'fish'
+    animal: 'fish',
   },
   {
     id: 8,
     price: '353',
     weightProduct: '600',
-    descriptionProduct:
-      'Сухой корм для слонов',
+    descriptionProduct: 'Сухой корм для слонов',
     reviews: 46,
     image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
     rating: '4.7',
     counter: 0,
     isLiked: false,
     category: 'feed-goodies',
-    animal: 'exotic'
+    animal: 'exotic',
   },
 ];
 
@@ -277,7 +270,7 @@ const professionals = [
           end: '14:00',
         },
       },
-    ]    
+    ],
   },
   {
     id: '2',
@@ -304,31 +297,52 @@ const professionals = [
     schedule: [
       {
         day: 'Пн',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Вт',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Ср',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Чт',
-        time: 'выходной',
+        time: {
+          start: 'выходной',
+          end: 'выходной',
+        },
       },
       {
         day: 'Пт',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Сб',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Вс',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
     ],
   },
@@ -357,31 +371,52 @@ const professionals = [
     schedule: [
       {
         day: 'Пн',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Вт',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Ср',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Чт',
-        time: 'выходной',
+        time: {
+          start: 'выходной',
+          end: 'выходной',
+        },
       },
       {
         day: 'Пт',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Сб',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Вс',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
     ],
   },
@@ -399,42 +434,53 @@ const professionals = [
     isHomeVisit: true,
     services: [
       {
-        title: 'Передержка сутки',
-        price: [1000, 10000],
-      },
-      {
-        title: 'Передержка неделя',
-        price: [1000, 10000],
-      },
-    ],
-    schedule: [
-      {
         day: 'Пн',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Вт',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Ср',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Чт',
-        time: 'выходной',
+        time: {
+          start: 'выходной',
+          end: 'выходной',
+        },
       },
       {
         day: 'Пт',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Сб',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Вс',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
     ],
   },
@@ -452,42 +498,53 @@ const professionals = [
     specialist: 'cynologist',
     services: [
       {
-        title: 'Дрессировка взрослой собаки',
-        price: [1000, 10000],
-      },
-      {
-        title: 'Дрессировка щенка',
-        price: [1000, 10000],
-      },
-    ],
-    schedule: [
-      {
         day: 'Пн',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Вт',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Ср',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Чт',
-        time: 'выходной',
+        time: {
+          start: 'выходной',
+          end: 'выходной',
+        },
       },
       {
         day: 'Пт',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Сб',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Вс',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
     ],
   },
@@ -503,48 +560,64 @@ const professionals = [
     numReviews: 3,
     scoreReview: '4.9',
     specialist: 'groomer',
-    
+
     services: [
       {
-        title: 'Выставочный груминг',
-        price: [1500, 5000],
-      },
-      {
-        title: 'Гигиеничный груминг',
-        price: [1000, 3000],
-      },
-    ],
-    schedule: [
-      {
         day: 'Пн',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Вт',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Ср',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Чт',
-        time: 'выходной',
+        time: {
+          start: 'выходной',
+          end: 'выходной',
+        },
       },
       {
         day: 'Пт',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
       {
         day: 'Сб',
-        time: 'круглосуточно',
+        time: {
+          start: 'круглосуточно',
+          end: 'круглосуточно',
+        },
       },
       {
         day: 'Вс',
-        time: '10:00 - 16:00',
+        time: {
+          start: '9:00',
+          end: '14:00',
+        },
       },
     ],
   },
 ];
 
-export { professionals, dataSelectedProducts, dataArticle, dataGoodsForCatalog };
+export {
+  professionals,
+  dataSelectedProducts,
+  dataArticle,
+  dataGoodsForCatalog,
+};

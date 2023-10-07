@@ -1,10 +1,9 @@
 // Страница карточки специалиста
 import { useParams } from 'react-router-dom';
 import { professionals } from '../../assets/constants/temporaryData';
-// import classes from './style.module.scss';
+import classes from './style.module.scss';
 import SectionSubtitle from '../../components/SectionSubtitle';
 import SpecialistAdvertCardServices from '../../components/SpecialistAdvertCardServices';
-import ScheduleButton from '../../ui/buttons/scheduleButton';
 
 const SpecialistAdvertCardFullInfo = () => {
   const { id } = useParams();
@@ -13,10 +12,22 @@ const SpecialistAdvertCardFullInfo = () => {
 
   return (
     <>
-      <SpecialistAdvertCardServices SpecialistData={specialistInfo}/>
+      <SpecialistAdvertCardServices SpecialistData={specialistInfo} />
       <SectionSubtitle title="Расписание" />
-
-      <ScheduleButton variant='dayMonth'/>
+      <div className={classes['advert-card__schedule']}>
+        {specialistInfo.schedule.map((day) => (
+          <label className={classes['advert-card__schedule-label']}>
+            <p>{day.day}</p>
+            <p>
+              {day.time.start !== 'круглосуточно' &&
+              day.time.start !== 'выходной'
+                ? `${day.time.start} - ${day.time.end}`
+                : day.time.start}
+            </p>{' '}
+          </label>
+        ))}
+      </div>
+      
       <p>здесь еще раписание</p>
     </>
   );

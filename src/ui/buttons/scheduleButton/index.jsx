@@ -17,7 +17,7 @@ const ScheduleButton = ({
     [classes['schedule-buttons_disabled']]: disabled,
     [classes['schedule-buttons_active']]: active,
     [classes['schedule-buttons__time']]: time,
-    [classes['schedule-buttons__dayMonth']]: dayMonth,
+    [classes['schedule-buttons__day-month']]: dayMonth,
   });
 
   const classesP = cn(
