@@ -3,7 +3,7 @@ import { useCallback, useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 
-const ChecboksList = ({ array }) => {
+const ChecboxList = ({ array, getInfo, inputActive }) => {
   const [chekboxInput, setChekboxInput] = useState(false);
   const [infoInput, setInfoInput] = useState('');
   const [values, setValues] = useState({});
@@ -18,12 +18,15 @@ const ChecboksList = ({ array }) => {
         ...values,
         ...value,
       });
-      console.log(values);
     },
     [setValues, values],
   );
   // const [obj, setObj] = useState('');
-  console.log(infoInput);
+
+  useEffect(() => {
+    getInfo(values);
+    // eslint-disable-next-line
+  }, [values]);
 
   useEffect(() => {
     setInfoInput('');
@@ -36,48 +39,50 @@ const ChecboksList = ({ array }) => {
 
   return (
     <div className={classes.list}>
-      {array.map((i) => {
-        console.log(i);
-
-        return (
-          <Checkbox
-            key={Math.random()}
-            name={i}
-            value={i}
-            checked={values[i]}
-            htmlType="checkbox"
-            getCheckbox={handleFormChange}
-          >
-            {i}
-          </Checkbox>
-        );
-      })}
-      <div className={classes.list__container}>
+      {array.map((i) => (
         <Checkbox
+          key={Math.random()}
+          name={i}
+          value={i}
+          checked={values[i]}
           htmlType="checkbox"
-          name="checkbox-input"
-          checked={chekboxInput}
-          getCheckbox={handleCheckbox}
-          value="value"
+          getCheckbox={handleFormChange}
         >
-          <input
-            className={classes.list__input}
-            placeholder="Другое"
-            onChange={(e) => setInfoInput(e.target.value)}
-            value={infoInput}
-          />
+          {i}
         </Checkbox>
-      </div>
+      ))}
+      {inputActive && (
+        <div className={classes.list__container}>
+          <Checkbox
+            htmlType="checkbox"
+            name="checkbox-input"
+            checked={chekboxInput}
+            getCheckbox={handleCheckbox}
+            value="value"
+          >
+            <input
+              className={classes.list__input}
+              placeholder="Другое"
+              onChange={(e) => setInfoInput(e.target.value)}
+              value={infoInput}
+            />
+          </Checkbox>
+        </div>
+      )}
     </div>
   );
 };
 
-ChecboksList.propTypes = {
+ChecboxList.propTypes = {
   array: PropTypes.arrayOf(PropTypes.string),
+  getInfo: PropTypes.func,
+  inputActive: PropTypes.bool,
 };
 
-ChecboksList.defaultProps = {
+ChecboxList.defaultProps = {
   array: ['зооняня', 'кинолог', 'грумер', 'ветеринар'],
+  getInfo: () => {},
+  inputActive: true,
 };
 
-export default ChecboksList;
+export default ChecboxList;

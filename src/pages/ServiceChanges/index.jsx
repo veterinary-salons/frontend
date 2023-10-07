@@ -1,37 +1,37 @@
 import PropTypes from 'prop-types';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
-import { variantVeterinarians } from '../../assets/constants/constants';
+import {
+  variantVeterinarians,
+  dateSevriceVeterinarians,
+} from '../../assets/constants/constants';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import AdSchedule from '../../components/AdSchedule';
 import AdPrice from '../../components/AdCreation/AdPrice';
 import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
-import ChecboksList from '../../components/ChecboksList';
+import ChecboxList from '../../components/ChecboksList';
 
 const ServiceChanges = ({ variant }) => {
-  const [info, setInfo] = useState('');
+  const [dateDropdown, setDateoDropdown] = useState({});
+  const [dateChecboxList, setDateChecboxListn] = useState({});
+  const [dateScheduleDay, setDateScheduleDay] = useState({});
+  const [datePrice, setDatePrice] = useState({});
+  const [dateTextarea, setDataTextarea] = useState('');
+  const [dates, setDates] = useState({});
 
-  console.log(info, setInfo);
+  useEffect(() => {
+    setDates({
+      veterinarians: dateDropdown,
+      animals: dateChecboxList === undefined ? null : dateChecboxList,
+      schedule: dateScheduleDay,
+      price: datePrice,
+      textarea: dateTextarea,
+    });
+    // eslint-disable-next-line
+  }, [dateDropdown, dateChecboxList, dateScheduleDay, dateTextarea]);
 
-  const arrayVeterinarians = [
-    {
-      id: 1,
-      text: 'зооняня',
-    },
-    {
-      id: 2,
-      text: 'кинолог',
-    },
-    {
-      id: 3,
-      text: 'грумер',
-    },
-    {
-      id: 4,
-      text: 'ветеринар',
-    },
-  ];
+  console.log(dates);
 
   return (
     <section className={classes['service-changes']}>
@@ -41,7 +41,12 @@ const ServiceChanges = ({ variant }) => {
 
       <div className={classes['service-changes__container']}>
         <h3 className={classes['service-changes__block-name']}>Поменять на</h3>
-        <Dropdown width="500px" array={arrayVeterinarians} />
+        <Dropdown
+          getValue={setDateoDropdown}
+          width="500px"
+          name="veterinarian"
+          array={dateSevriceVeterinarians.variantVeterinarians}
+        />
       </div>
 
       {variant === 'zoonyanya' && (
@@ -49,7 +54,10 @@ const ServiceChanges = ({ variant }) => {
           <h3 className={classes['service-changes__block-name']}>
             С какими животными вы работаете?
           </h3>
-          <ChecboksList />
+          <ChecboxList
+            array={dateSevriceVeterinarians.arrAnimalsZoonyanya}
+            getInfo={setDateChecboxListn}
+          />
         </div>
       )}
 
@@ -59,11 +67,19 @@ const ServiceChanges = ({ variant }) => {
             <h3 className={classes['service-changes__block-name']}>
               С какими задачами вы работаете?
             </h3>
+            <ChecboxList
+              array={dateSevriceVeterinarians.arrServiceList}
+              getInfo={setDateChecboxListn}
+            />
           </div>
           <div className={classes['service-changes__container']}>
             <h3 className={classes['service-changes__block-name']}>
               Какой формат работы вы используете?
             </h3>
+            <ChecboxList
+              array={dateSevriceVeterinarians.arrServiceFormat}
+              getInfo={setDateChecboxListn}
+            />
           </div>
         </>
       )}
@@ -74,11 +90,20 @@ const ServiceChanges = ({ variant }) => {
             <h3 className={classes['service-changes__block-name']}>
               С какими задачами вы работаете?
             </h3>
+            <ChecboxList
+              array={dateSevriceVeterinarians.arrAnimalsGroomer}
+              getInfo={setDateChecboxListn}
+            />
           </div>
           <div className={classes['service-changes__container']}>
             <h3 className={classes['service-changes__block-name']}>
               Какой формат работы вы используете?
             </h3>
+            <ChecboxList
+              array={dateSevriceVeterinarians.arrServiceGroomer}
+              getInfo={setDateChecboxListn}
+              inputActive={false}
+            />
           </div>
         </>
       )}
@@ -89,11 +114,19 @@ const ServiceChanges = ({ variant }) => {
             <h3 className={classes['service-changes__block-name']}>
               С какими задачами вы работаете?
             </h3>
+            <ChecboxList
+              array={dateSevriceVeterinarians.arrAnimalsVeterinarian}
+              getInfo={setDateChecboxListn}
+            />
           </div>
           <div className={classes['service-changes__container']}>
             <h3 className={classes['service-changes__block-name']}>
               Какой груминг вы можете делать?
             </h3>
+            <ChecboxList
+              array={dateSevriceVeterinarians.arrServiceVeterinarian}
+              getInfo={setDateChecboxListn}
+            />
           </div>
         </>
       )}
@@ -102,7 +135,11 @@ const ServiceChanges = ({ variant }) => {
         <h3 className={classes['service-changes__block-name']}>
           Укажите ваши рабочие часы
         </h3>
-        <AdSchedule serviceTime={false} />
+        <AdSchedule
+          serviceTime={false}
+          setDays={setDateScheduleDay}
+          days={dateScheduleDay}
+        />
       </div>
 
       <div className={classes['service-changes__container']}>
@@ -111,9 +148,9 @@ const ServiceChanges = ({ variant }) => {
         </h3>
         <AdPrice
           title="1 день передержки"
-          name="servis-name"
-          getPrice={() => {}}
-          value={{}}
+          name="price"
+          getPrice={setDatePrice}
+          value={datePrice}
         />
       </div>
 
@@ -121,7 +158,7 @@ const ServiceChanges = ({ variant }) => {
         <h3 className={classes['service-changes__block-name']}>
           Расскажите о вашем опыте и деталях услуги
         </h3>
-        <Textarea />
+        <Textarea value={dateTextarea} setValue={setDataTextarea} />
       </div>
 
       <Button type="button" size="small" variant="outlined" onClick={() => {}}>
