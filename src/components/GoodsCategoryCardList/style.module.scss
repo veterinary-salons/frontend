@@ -2,8 +2,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(fit-content);
-  gap: 30px 20px;
+  gap: 40px 20px;
   margin: 0 auto;
   padding: 0;
   width: fit-content;
+}
+
+@media screen and (max-width: 1430px) {
+  .goods {
+    gap: 32px 16px;
+  }
 }

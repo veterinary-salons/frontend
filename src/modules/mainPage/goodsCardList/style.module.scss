@@ -1,10 +1,10 @@
 .goods {
   max-width: 100%;
   column-gap: 20px;
-  padding: 120px 100px;
+  padding: 120px 0;
 
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     margin: auto;
   }
 
@@ -31,10 +31,10 @@
 
 @media screen and (max-width: 1430px) {
   .goods {
-    padding: 100px 80px;
+    padding: 100px 0;
 
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
 
     &__cards {
