@@ -12,8 +12,6 @@ const SpecialistAdvertCard = () => {
 
   const specialistInfo = professionals.find((item) => item.id === id);
 
-  console.log('specialistInfo=', specialistInfo);
-
   return (
     
       <section className={classes['advert-card']}>

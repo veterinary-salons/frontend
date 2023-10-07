@@ -21,7 +21,6 @@ function SignUpForm() {
       ...values,
       ...value,
     });
-    console.log(values, isValid);
   };
 
   const handleFormValidChange = (e) => {

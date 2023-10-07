@@ -33,7 +33,6 @@ const SpecialistAdvertCardInfo = ({ SpecialistData }) => {
 
   // eslint-disable-next-line no-unused-vars
   const img = '';
-  console.log(SpecialistData);
 
   return (
     <div className={classes['card-info']}>

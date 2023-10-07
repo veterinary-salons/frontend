@@ -9,8 +9,6 @@ const SpecialistAdvertCardFullInfo = () => {
 
   const specialistInfo = professionals.find((item) => item.id === id);
 
-  console.log('specialistInfo=', specialistInfo);
-
   return (
     <>
       <SpecialistAdvertCardServices SpecialistData={specialistInfo}/>

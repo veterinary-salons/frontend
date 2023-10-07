@@ -33,8 +33,6 @@ const EditAvatarConfirmationPopup = ({
     }
   }, [croppedImage]);
 
-  console.log(croppedImage);
-
   return (
     <PopupWithForm title="Новая фотография" isOpen={isOpen} onClose={onClose}>
       <p className={classes.popup__placeholder}>

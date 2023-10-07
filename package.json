@@ -16,6 +16,7 @@
     "react-simple-star-rating": "^5.1.7",
     "react-text-mask": "^5.5.0",
     "sass": "^1.65.1",
+    "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import classNames from 'classnames';
 import classes from './style.module.scss';
@@ -13,10 +14,10 @@ const SpecialistAdvertCardServices = ({ SpecialistData, isBooking }) => {
     setSelectedService(service);
   };
 
-  const itemClasses = (service) =>
+  const itemClasses = () =>
   classNames(classes['card-services__item'], {
     [classes['card-services__item_booking']]: isBooking,
-    [classes['card-services__item_active']]: selectedService === service,
+    // [classes['card-services__item_active']]: selectedService === service,
   });
 
   const listClasses = classNames(
@@ -26,7 +27,6 @@ const SpecialistAdvertCardServices = ({ SpecialistData, isBooking }) => {
 
   // eslint-disable-next-line no-unused-vars
   const img = '';
-  console.log(SpecialistData);
 
   const formatPrice = (price) => price.toLocaleString('ru-RU');
 
@@ -36,7 +36,7 @@ const SpecialistAdvertCardServices = ({ SpecialistData, isBooking }) => {
       <ul className={listClasses}>
       {!isBooking ? 
         SpecialistData.services.map((service) => (
-          <li className={itemClasses}>
+          <li key={uuidv4()} className={itemClasses()}>
             <p>{service.title}</p>
             <p>{`от ${formatPrice(
               service.price[0],
