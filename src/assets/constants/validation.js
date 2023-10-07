@@ -131,6 +131,7 @@ function validatePrice(value) {
     if (value.length > 1) {
       return { invalid: true };
     }
+    return { invalid: false };
   }
   return { invalid: false };
 }
