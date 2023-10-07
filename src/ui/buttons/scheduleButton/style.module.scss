@@ -1,6 +1,6 @@
 .schedule-buttons {
   background-color: rgba(0, 0, 0, 0);
-  width: 132px;
+  width: fit-content;
   height: 52px;
   border-radius: 8px;
   border: 1px solid var(--grey-color, #d4d4d4);
@@ -8,6 +8,17 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  padding: 15px;
+  box-sizing: unset;
+
+  &__time{
+    min-width: calc(132px - 2 * 15px);
+  }
+
+  &__dayMonth{
+    min-width: calc(126px - 2 * 15px);
+  }
+
 
   &_active {
     border: 2px solid var(--primary-purple-color, #9384b7);
