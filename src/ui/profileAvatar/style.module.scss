@@ -19,6 +19,11 @@
     height: 190px;
   }
 
+  &_small {
+    width: 40px;
+    height: 40px;
+  }
+
   &_white-back {
     background-color: var(--background-white-color, #fff);
   }
