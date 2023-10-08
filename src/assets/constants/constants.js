@@ -185,6 +185,7 @@ const arrImgOrderCard = [
   { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
 ];
 
+
 const variantVeterinarians = {
   zoonyanya: 'Зооняня',
   cynologist: 'Кинолог',
@@ -260,6 +261,59 @@ const dateSevriceVeterinarians = {
   ],
 };
 
+
+const dataArticlePage = [
+  {
+    id: 1,
+    img: '',
+    title: 'Как подружить питомцев?',
+    isActive: false,
+  },
+  {
+    id: 2,
+    img: 'https://i.ibb.co/vwgFKzz/photo-2.png',
+    title: 'Как приучить котёнка к лотку без скандалов?',
+    isActive: true,
+  },
+  {
+    id: 3,
+    img: 'https://i.ibb.co/K0SsRXN/photo-3.png',
+    title: '25 фактов о попугаях',
+    isActive: false,
+  },
+  {
+    id: 4,
+    img: 'https://i.ibb.co/X5t6qvh/photo-4.png',
+    title: 'Готовимся к путешествию',
+    isActive: false,
+  },
+  {
+    id: 5,
+    img: 'https://i.ibb.co/Jxxfyfq/photo-5.png',
+    title: 'Советы начинающим собаководам',
+    isActive: false,
+  },
+  {
+    id: 6,
+    img: 'https://i.ibb.co/wgBHjgb/photo-6.png',
+    title: 'Морские свинки не так просты как вы думали',
+    isActive: false,
+  },
+];
+
+const dataServicePriceFilter = [
+  {
+    id: 1,
+    title: 'Стерилизация',
+    name: 'price-sterilization',
+  },
+  {
+    id: 2,
+    title: 'Консультация',
+    name: 'price-consultation',
+  },
+];
+
 export {
   regexEmail,
   regexText,
@@ -274,7 +328,9 @@ export {
   arrayServicesDate,
   arrayTimeList,
   arrImgOrderCard,
+  dataArticlePage,
   regexTextArea,
+  dataServicePriceFilter,
   regexPetName,
   variantVeterinarians,
   dateSevriceVeterinarians,

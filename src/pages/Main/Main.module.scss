@@ -7,10 +7,10 @@
   background-repeat: no-repeat;
   background-size: 100%;
   margin-top: -100px;
-  padding: 0 100px 153px;
+  padding-bottom: 153px;
 
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     margin: 0 auto;
   }
 
@@ -72,11 +72,11 @@
 
 @media screen and (max-width: 1430px) {
   .promo {
-    padding: 0 80px 87px;
+    padding-bottom: 87px;
     
 
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
 
     &__title {
@@ -91,14 +91,14 @@
 }
 
 .specialists {
-  padding: 120px 100px;
+  padding: 120px 0;
   border-radius: 20px 20px 0px 0px;
   background-color: var(--text-white-color);
   margin-top: -20px;
   width: 100%;
 
   &__content {
-    width: 1240px;
+    width: var(--content-width-for-screen-1440);
     margin: 0 auto;
   }
 
@@ -124,10 +124,10 @@
 
 @media screen and (max-width: 1430px) {
   .specialists {
-    padding: 100px 80px;
+    padding: 100px 0;
 
     &__content {
-      width: 1120px;
+      width: var(--content-width-for-screen-1280);
     }
 
     &__cards {

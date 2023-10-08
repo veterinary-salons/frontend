@@ -2,10 +2,12 @@ import { Rating } from 'react-simple-star-rating';
 import PropTypes from 'prop-types';
 import style from './StarsBox.module.scss';
 
-const StarsBox = ({ action, rating, color, size }) =>
+const StarsBox = ({ action, rating, color, size, starsOnly }) =>
   action === 'filled' ? (
     <div className={style.stars}>
-      {rating > 0 && <p className={style.stars__text}>{rating}</p>}
+      {rating > 0 &&
+      !starsOnly &&
+      <p className={style.stars__text}>{rating}</p>}
       <Rating
         className={style.stars__rating}
         initialValue={rating}
@@ -24,6 +26,7 @@ StarsBox.propTypes = {
   rating: PropTypes.string,
   color: PropTypes.string,
   size: PropTypes.string,
+  starsOnly: PropTypes.bool,
 };
 
 StarsBox.defaultProps = {
@@ -31,6 +34,7 @@ StarsBox.defaultProps = {
   rating: '0',
   color: 'var(--yellow-color)',
   size: '20px',
+  starsOnly: false
 };
 
 export default StarsBox;
