@@ -24,7 +24,34 @@ const dayOfWeekMappings = {
   Sun: 'Вс',
 };
 
+const generateTimeIntervals = (startTime, endTime, interval) => {
+  const timeIntervals = [];
+  const [startHour, startMinute] = startTime.split('-').map(Number);
+  const [endHour, endMinute] = endTime.split('-').map(Number);
+
+  let currentHour = startHour;
+  let currentMinute = startMinute;
+
+  while (currentHour < endHour || (currentHour === endHour && currentMinute <= endMinute)) {
+    const formattedHour = currentHour.toString().padStart(2, '0');
+    const formattedMinute = currentMinute.toString().padStart(2, '0');
+    timeIntervals.push(`${formattedHour}-${formattedMinute}`);
+    
+    // Увеличиваем текущее время на указанный интервал (в минутах)
+    currentMinute += interval;
+    if (currentMinute >= 60) {
+      currentHour += Math.floor(currentMinute / 60);
+      currentMinute %= 60;
+    }
+  }
+
+  return timeIntervals;
+};
+
 const BookingService = () => {
+  // временная переменная интервала времени
+  
+
   const { id } = useParams();
   const specialistInfo = professionals.find((item) => item.id === id);
 
@@ -40,11 +67,20 @@ const BookingService = () => {
 
   const initialVisibleDates = 14; // Изначально видимы две строки с датами
   const [visibleDates, setVisibleDates] = useState(initialVisibleDates);
+  const [visibleTimeSlots, setVisibleTimeSlots] = useState(initialVisibleDates);
   const [activeDateIndex, setActiveDateIndex] = useState(null); // Индекс активной даты
+  const [activeTimeIndex, setActiveTimeIndex] = useState(null); // Индекс активной даты
 
   const handleDateButtonClick = (index) => {
     setActiveDateIndex(index);
   };
+
+  const handleTimeButtonClick = (index) => {
+    setActiveTimeIndex(index);
+  };
+
+  const timeSlots = generateTimeIntervals ('10-00', '19-30', 15);
+  
   return (
     <>
       <SpecialistAdvertCardServices SpecialistData={specialistInfo} isBooking />
@@ -88,6 +124,38 @@ const BookingService = () => {
       </div>
       <div>
         <SectionSubtitle title="Выберите время" />
+        <div className={classes['advert-card']}>
+          <ul className={classes['advert-card__schedule-day']}>
+            {timeSlots.slice(0, visibleTimeSlots).map((time, index) => (
+              <li key={time}>
+                <ScheduleButton
+                  variant='time'
+                  time={time}
+                  active={activeTimeIndex === index} // Подсветка активной даты
+                  onClick={() => handleTimeButtonClick(index)}
+                />
+              </li>
+            ))}
+          </ul>
+          <div className={`${classes['advert-card__options-buttons']} ${
+              visibleTimeSlots > timeSlots.length
+                ? classes['advert-card__options-buttons_align-bottom']
+                : ''
+            }`}>
+            {visibleTimeSlots < timeSlots.length && ( // Показываем кнопку "Open" только если есть еще даты для отображения
+              <ScheduleButton
+                variant="openMore"
+                onClick={() => setVisibleTimeSlots(visibleTimeSlots + 14)}
+              />
+            )}
+            {visibleTimeSlots > 14 && ( // Показываем кнопку "Close" только если видимых строк больше 14
+              <ScheduleButton
+                variant="close"
+                onClick={() => setVisibleTimeSlots(visibleTimeSlots - 14)}
+              />
+            )}
+          </div>
+        </div>
       </div>
     </>
   );
