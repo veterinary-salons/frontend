@@ -25,6 +25,7 @@
     opacity: 0.5;
   }
   &_success {
+    color: var(--primary-text-color, #0f0f0f);
     border: 1px solid var(--success-color, #03a600);
   }
 }

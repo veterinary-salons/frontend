@@ -13,24 +13,29 @@ const BreadCrumbs = ({ className }) => {
   const articleTitle = useSelector((state) => state.articleTitle);
   const [crumbs, setCrumbs] = useState([]);
 
-  const createCrumbs = pathnames.map((_value, index) => {
-    const to = `/${pathnames.slice(0, index + 1).join('/')}`;
-    return breadcrumbNameMap[to] ? (
-      <LinkCrumb to={to} key={to} title={breadcrumbNameMap[to]} />
-    ) : null;
-  });
+  useEffect(() => {
+    const createCrumbs = pathnames.map((_value, index) => {
+      const to = `/${pathnames.slice(0, index + 1).join('/')}`;
+      return breadcrumbNameMap[to] ? (
+        <LinkCrumb to={to} key={to} title={breadcrumbNameMap[to]} />
+      ) : null;
+    });
+
+    setCrumbs(createCrumbs);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (articleTitle) {
-      createCrumbs.push(
+      const updatedCrumbs = [...crumbs]; // Создаем копию текущего массива crumbs
+      updatedCrumbs.push(
         <LinkCrumb
           to={location.pathname}
           key={articleTitle}
           title={articleTitle}
         />,
       );
+      setCrumbs(updatedCrumbs); // Обновляем состояние массива crumbs
     }
-    setCrumbs(createCrumbs);
   }, [articleTitle]);
 
   return (
