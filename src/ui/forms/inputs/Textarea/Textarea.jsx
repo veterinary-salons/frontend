@@ -12,6 +12,7 @@ const Textarea = ({
   name,
   id,
   setIsValid,
+  height,
 }) => {
   const getClassSpan = cn(classes['input-span-error'], {
     [classes['input-error_activ']]: !validateInput('textarea', undefined, value)
@@ -33,6 +34,7 @@ const Textarea = ({
         name={name}
         id={id}
         placeholder={placeholder}
+        style={{ height }}
       />
       <div className={classes['textarea__container-span']}>
         <span className={getClassSpan}>
@@ -56,6 +58,7 @@ Textarea.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,
   setIsValid: PropTypes.func,
+  height: PropTypes.string,
 };
 
 Textarea.defaultProps = {
@@ -66,6 +69,7 @@ Textarea.defaultProps = {
   name: 'description-textarea',
   id: 'textarea',
   setIsValid: () => {},
+  height: '',
 };
 
 export default Textarea;

@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
+// import rusToLat from '../../assets/constants/rusToLat';
 
 const ChecboxList = ({ array, getInfo, inputActive }) => {
   const [chekboxInput, setChekboxInput] = useState(false);
@@ -21,10 +22,9 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
     },
     [setValues, values],
   );
-  // const [obj, setObj] = useState('');
 
   useEffect(() => {
-    getInfo(values);
+    getInfo(Object.values(values));
     // eslint-disable-next-line
   }, [values]);
 

@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import {
   variantVeterinarians,
@@ -13,25 +14,44 @@ import Button from '../../ui/buttons/originButton/Button';
 import ChecboxList from '../../components/ChecboksList';
 
 const ServiceChanges = ({ variant }) => {
-  const [dateDropdown, setDateoDropdown] = useState({});
-  const [dateChecboxList, setDateChecboxListn] = useState({});
-  const [dateScheduleDay, setDateScheduleDay] = useState({});
-  const [datePrice, setDatePrice] = useState({});
-  const [dateTextarea, setDataTextarea] = useState('');
-  const [dates, setDates] = useState({});
+  const navigate = useNavigate();
+  const [dataDropdown, setDataDropdown] = useState({});
+  const [dataAnimals, setDataAnimals] = useState({});
+  const [dataTasks, setDataTasks] = useState({});
+  const [dataFormatWork, setDataFormatWork] = useState({});
+  const [dataScheduleDay, setDataScheduleDay] = useState({});
+  const [dataGrooming, setDataGrooming] = useState({});
+  const [dataPrice, setDataPrice] = useState({});
+  const [dataTextarea, setDataTextarea] = useState('');
+  const [datas, setDatas] = useState({});
+
+  const handleButton = () => {
+    navigate('/next', { replace: true });
+  };
 
   useEffect(() => {
-    setDates({
-      veterinarians: dateDropdown,
-      animals: dateChecboxList === undefined ? null : dateChecboxList,
-      schedule: dateScheduleDay,
-      price: datePrice,
-      textarea: dateTextarea,
+    setDatas({
+      specialistType: dataDropdown.veterinarian,
+      petType: dataAnimals,
+      serviceType: dataFormatWork || dataTasks,
+      grooming: dataGrooming,
+      schedule: dataScheduleDay,
+      price: dataPrice.price,
+      description: dataTextarea,
     });
     // eslint-disable-next-line
-  }, [dateDropdown, dateChecboxList, dateScheduleDay, dateTextarea]);
+  }, [
+    dataDropdown,
+    dataAnimals,
+    dataScheduleDay,
+    dataTextarea,
+    dataFormatWork,
+    dataGrooming,
+    dataPrice,
+    dataTasks,
+  ]);
 
-  console.log(dates);
+  console.log(datas);
 
   return (
     <section className={classes['service-changes']}>
@@ -39,131 +59,144 @@ const ServiceChanges = ({ variant }) => {
         className={classes['service-changes__title']}
       >{`Мои услуги - ${variantVeterinarians[variant]} - (редактирование)`}</h2>
 
-      <div className={classes['service-changes__container']}>
-        <h3 className={classes['service-changes__block-name']}>Поменять на</h3>
-        <Dropdown
-          getValue={setDateoDropdown}
-          width="500px"
-          name="veterinarian"
-          array={dateSevriceVeterinarians.variantVeterinarians}
-        />
-      </div>
-
-      {variant === 'zoonyanya' && (
+      <div className={classes['service-changes__box']}>
         <div className={classes['service-changes__container']}>
           <h3 className={classes['service-changes__block-name']}>
-            С какими животными вы работаете?
+            Поменять на
           </h3>
-          <ChecboxList
-            array={dateSevriceVeterinarians.arrAnimalsZoonyanya}
-            getInfo={setDateChecboxListn}
+          <Dropdown
+            getValue={setDataDropdown}
+            width="500px"
+            name="veterinarian"
+            array={dateSevriceVeterinarians.variantVeterinarians}
           />
         </div>
-      )}
 
-      {variant === 'cynologist' && (
-        <>
+        {variant === 'zoonyanya' && (
           <div className={classes['service-changes__container']}>
             <h3 className={classes['service-changes__block-name']}>
-              С какими задачами вы работаете?
+              С какими животными вы работаете?
             </h3>
             <ChecboxList
-              array={dateSevriceVeterinarians.arrServiceList}
-              getInfo={setDateChecboxListn}
+              array={dateSevriceVeterinarians.arrAnimalsZoonyanya}
+              getInfo={setDataAnimals}
             />
           </div>
-          <div className={classes['service-changes__container']}>
-            <h3 className={classes['service-changes__block-name']}>
-              Какой формат работы вы используете?
-            </h3>
-            <ChecboxList
-              array={dateSevriceVeterinarians.arrServiceFormat}
-              getInfo={setDateChecboxListn}
-            />
-          </div>
-        </>
-      )}
+        )}
 
-      {variant === 'groomer' && (
-        <>
-          <div className={classes['service-changes__container']}>
-            <h3 className={classes['service-changes__block-name']}>
-              С какими задачами вы работаете?
-            </h3>
-            <ChecboxList
-              array={dateSevriceVeterinarians.arrAnimalsGroomer}
-              getInfo={setDateChecboxListn}
-            />
-          </div>
-          <div className={classes['service-changes__container']}>
-            <h3 className={classes['service-changes__block-name']}>
-              Какой формат работы вы используете?
-            </h3>
-            <ChecboxList
-              array={dateSevriceVeterinarians.arrServiceGroomer}
-              getInfo={setDateChecboxListn}
-              inputActive={false}
-            />
-          </div>
-        </>
-      )}
+        {variant === 'cynologist' && (
+          <>
+            <div className={classes['service-changes__container']}>
+              <h3 className={classes['service-changes__block-name']}>
+                С какими задачами вы работаете?
+              </h3>
+              <ChecboxList
+                array={dateSevriceVeterinarians.arrServiceList}
+                getInfo={setDataTasks}
+              />
+            </div>
+            <div className={classes['service-changes__container']}>
+              <h3 className={classes['service-changes__block-name']}>
+                Какой формат работы вы используете?
+              </h3>
+              <ChecboxList
+                array={dateSevriceVeterinarians.arrServiceFormat}
+                getInfo={setDataFormatWork}
+              />
+            </div>
+          </>
+        )}
 
-      {variant === 'veterinarian' && (
-        <>
-          <div className={classes['service-changes__container']}>
-            <h3 className={classes['service-changes__block-name']}>
-              С какими задачами вы работаете?
-            </h3>
-            <ChecboxList
-              array={dateSevriceVeterinarians.arrAnimalsVeterinarian}
-              getInfo={setDateChecboxListn}
-            />
-          </div>
-          <div className={classes['service-changes__container']}>
-            <h3 className={classes['service-changes__block-name']}>
-              Какой груминг вы можете делать?
-            </h3>
-            <ChecboxList
-              array={dateSevriceVeterinarians.arrServiceVeterinarian}
-              getInfo={setDateChecboxListn}
-            />
-          </div>
-        </>
-      )}
+        {variant === 'groomer' && (
+          <>
+            <div className={classes['service-changes__container']}>
+              <h3 className={classes['service-changes__block-name']}>
+                С какими задачами вы работаете?
+              </h3>
+              <ChecboxList
+                array={dateSevriceVeterinarians.arrAnimalsGroomer}
+                getInfo={setDataAnimals}
+              />
+            </div>
+            <div className={classes['service-changes__container']}>
+              <h3 className={classes['service-changes__block-name']}>
+                Какой формат работы вы используете?
+              </h3>
+              <ChecboxList
+                array={dateSevriceVeterinarians.arrServiceGroomer}
+                getInfo={setDataGrooming}
+                inputActive={false}
+              />
+            </div>
+          </>
+        )}
 
-      <div className={classes['service-changes__container']}>
-        <h3 className={classes['service-changes__block-name']}>
-          Укажите ваши рабочие часы
-        </h3>
-        <AdSchedule
-          serviceTime={false}
-          setDays={setDateScheduleDay}
-          days={dateScheduleDay}
-        />
+        {variant === 'veterinarian' && (
+          <>
+            <div className={classes['service-changes__container']}>
+              <h3 className={classes['service-changes__block-name']}>
+                С какими задачами вы работаете?
+              </h3>
+              <ChecboxList
+                array={dateSevriceVeterinarians.arrAnimalsVeterinarian}
+                getInfo={setDataAnimals}
+              />
+            </div>
+            <div className={classes['service-changes__container']}>
+              <h3 className={classes['service-changes__block-name']}>
+                Какой груминг вы можете делать?
+              </h3>
+              <ChecboxList
+                array={dateSevriceVeterinarians.arrServiceVeterinarian}
+                getInfo={setDataTasks}
+              />
+            </div>
+          </>
+        )}
+
+        <div className={classes['service-changes__container']}>
+          <h3 className={classes['service-changes__block-name']}>
+            Укажите ваши рабочие часы
+          </h3>
+          <AdSchedule
+            serviceTime={false}
+            setDays={setDataScheduleDay}
+            days={dataScheduleDay}
+          />
+        </div>
+
+        <div className={classes['service-changes__container']}>
+          <h3 className={classes['service-changes__block-name']}>
+            Укажите стоимость услуг(и)
+          </h3>
+          <AdPrice
+            title="1 день передержки"
+            name="price"
+            getPrice={setDataPrice}
+            value={dataPrice}
+          />
+        </div>
+
+        <div className={classes['service-changes__container']}>
+          <h3 className={classes['service-changes__block-name']}>
+            Расскажите о вашем опыте и деталях услуги
+          </h3>
+          <Textarea
+            value={dataTextarea}
+            setValue={setDataTextarea}
+            height="305px"
+          />
+        </div>
+
+        <Button
+          type="button"
+          size="medium"
+          variant="outlined"
+          onClick={handleButton}
+        >
+          Сохранить данные
+        </Button>
       </div>
-
-      <div className={classes['service-changes__container']}>
-        <h3 className={classes['service-changes__block-name']}>
-          Укажите стоимость услуг(и)
-        </h3>
-        <AdPrice
-          title="1 день передержки"
-          name="price"
-          getPrice={setDatePrice}
-          value={datePrice}
-        />
-      </div>
-
-      <div className={classes['service-changes__container']}>
-        <h3 className={classes['service-changes__block-name']}>
-          Расскажите о вашем опыте и деталях услуги
-        </h3>
-        <Textarea value={dateTextarea} setValue={setDataTextarea} />
-      </div>
-
-      <Button type="button" size="small" variant="outlined" onClick={() => {}}>
-        Сохранить данные
-      </Button>
     </section>
   );
 };
