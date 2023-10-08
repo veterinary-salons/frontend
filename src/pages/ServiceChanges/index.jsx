@@ -29,12 +29,36 @@ const ServiceChanges = ({ variant }) => {
     navigate('/next', { replace: true });
   };
 
+  const version = (name) => {
+    switch (name) {
+      case 'zoonyanya': {
+        return dataTasks;
+      }
+
+      case 'cynologist': {
+        return dataFormatWork;
+      }
+
+      case 'groomer': {
+        return dataGrooming;
+      }
+
+      case 'veterinarian': {
+        return dataTasks;
+      }
+
+      default: {
+        return '';
+      }
+    }
+  };
+
   useEffect(() => {
     setDatas({
       specialistType: dataDropdown.veterinarian,
       petType: dataAnimals,
-      serviceType: dataFormatWork || dataTasks,
-      grooming: dataGrooming,
+      serviceType: dataTasks,
+      servList: version(variant),
       schedule: dataScheduleDay,
       price: dataPrice.price,
       description: dataTextarea,
@@ -211,7 +235,7 @@ ServiceChanges.propTypes = {
 };
 
 ServiceChanges.defaultProps = {
-  variant: 'zoonyanya',
+  variant: 'veterinarian',
 };
 
 export default ServiceChanges;

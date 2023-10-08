@@ -160,9 +160,12 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       /> */}
-      <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="test" element={<ServiceChanges />} />
+      <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="advert-schedule" element={<FillingSchedule />} />
+      <Route path="advert-price" element={<CreationPriceServices />} />
+      <Route path="advert-description" element={<DescriptionService />} />
+      <Route path="advert-success" element={<AdvertSuccess />} />
 
       {/*  <Route
         path="test"
@@ -175,9 +178,6 @@ const router = createBrowserRouter(
         />}
       />
 */}
-      <Route path="advert-price" element={<CreationPriceServices />} />
-      <Route path="advert-description" element={<DescriptionService />} />
-      <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),
 );
