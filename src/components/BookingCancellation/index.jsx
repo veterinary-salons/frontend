@@ -42,7 +42,15 @@ const BookingCancellation = ({ dataBooking }) => {
 };
 
 BookingCancellation.propTypes = {
-  dataBooking: PropTypes.objectOf(PropTypes.string).isRequired,
+  dataBooking: PropTypes.shape({
+    specialist: PropTypes.string.isRequired,
+    service: PropTypes.string.isRequired,
+    price: PropTypes.arrayOf(PropTypes.number).isRequired,
+    date: PropTypes.string.isRequired,
+    place: PropTypes.string.isRequired,
+    pet: PropTypes.string.isRequired,
+    wishes: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BookingCancellation;

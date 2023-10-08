@@ -29,7 +29,7 @@ import RecoveryPassword from '../pages/RecoveryPassword';
 import SuccessfulRecovery from '../pages/SuccessfulRecovery';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import { dataArticlePage } from '../assets/constants/constants';
+import dataArticlePage from '../assets/constants/dataArticles';
 import SelectedProducts from '../pages/SelectedProducts';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
@@ -59,11 +59,14 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
+import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
+import ArticlePage from '../pages/Article';
 
 import ProfileServiceCard from '../modules/profileServiceCard';
+import ProfileServiceCardAdd from '../modules/profileServiceCardAdd';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -116,10 +119,10 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Articles */}
-      <Route
-        path="magazine"
-        element={<Articles dataArticle={dataArticlePage} />}
-      />
+      <Route path="magazine">
+        <Route index element={<Articles dataArticle={dataArticlePage} />} />
+        <Route path=":id" element={<ArticlePage />} />
+      </Route>
 
       {/* Favourites */}
       <Route path="favourites" element={<Favourites />}>
@@ -153,8 +156,17 @@ const router = createBrowserRouter(
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route path="test" element={<ProfileServiceCard />} />
 
+      <Route
+        path="test"
+        element={
+          <>
+            <ProfileServiceCard /> <ProfileServiceCardAdd />
+          </>
+        }
+      />
+
+      <Route path="advert-price" element={<CreationPriceServices />} />
       <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="advert-schedule" element={<AdSchedule />} />
       <Route path="advert-description" element={<DescriptionService />} />

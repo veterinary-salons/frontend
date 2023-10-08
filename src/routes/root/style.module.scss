@@ -1,6 +1,5 @@
 .root {
   width: 100%;
-  max-width: 1440px;
   min-height: 100vh;
   margin: 0 auto;
   display: flex;
@@ -14,16 +13,16 @@
   flex: 1 0 auto;
 }
 
-.padding100 {
-  padding: 0 100px;
+.main-with-margins {
+  width: var(--content-width-for-screen-1440);
 }
 
 .mt40 {
   margin-top: 40px !important;
 }
 
-@media screen and (max-width: 1440px) {
-  .padding100 {
-    padding: 0 80px;
+@media screen and (max-width: 1430px) {
+  .main-with-margins {
+    width: var(--content-width-for-screen-1280);
   }
 }

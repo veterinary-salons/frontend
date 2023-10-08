@@ -1,43 +1,49 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import Heart from '../../ui/buttons/heart/Heart';
 import classes from './style.module.scss';
-import defaultImg from '../../assets/images/images/article-card/article-img.png';
+import defaultImg from '../../assets/images/images/article-card/1.png';
 
-const ArticleCard = ({ img, title, isActive }) => {
-  const [isLike, setIsLike] = useState(isActive);
+const ArticleCard = ({ id, imgCover, title, isLiked }) => {
+  const [isLikedCard, setIsLikedCard] = useState(isLiked);
 
   const handleClickLike = () => {
-    setIsLike((state) => !state);
+    setIsLikedCard((state) => !state);
   };
 
   return (
-    <div className={classes['article-card']}>
+    <Link
+      to={`/magazine/${id}`}
+      className={classes['article-card']}
+    >
       <img
         className={classes['article-card__img']}
-        src={img || defaultImg}
+        src={imgCover || defaultImg}
         alt="статьи"
       />
       <div className={classes['article-card__container']}>
         <h4 className={classes['article-card__title']}>{title}</h4>
         <div className={classes['article-card__container-heart']}>
-          <Heart isActive={isLike} onClick={handleClickLike} />
+          <Heart isActive={isLikedCard} onClick={handleClickLike} />
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
 ArticleCard.propTypes = {
-  img: PropTypes.string,
+  id: PropTypes.string,
+  imgCover: PropTypes.string,
   title: PropTypes.string,
-  isActive: PropTypes.bool,
+  isLiked: PropTypes.bool,
 };
 
 ArticleCard.defaultProps = {
-  img: '',
+  id: '',
+  imgCover: '',
   title: 'Как подружить питомцев?',
-  isActive: false,
+  isLiked: false,
 };
 
 export default ArticleCard;
