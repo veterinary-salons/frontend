@@ -12,7 +12,7 @@ const AdVetStepTwo = ({getInfo}) => {
   useEffect(() => {getInfo(values)}, [values])
   
   return (
-  <AdForm title='Какие форматы работы вы используете'>
+  <AdForm title='Какие именно услуги оказываете'>
     <div className={classes['af__checkbox-container']}>
       <CheckboxList 
       array={dateSevriceCheckboxList.arrServiceVeterinarian}

@@ -12,7 +12,7 @@ const AdGroomerStepTwo = ({getInfo}) => {
   useEffect(() => {getInfo(values)}, [values])
   
   return (
-  <AdForm title='Какие форматы работы вы используете'>
+  <AdForm title='Какой груминг вы можете сделать'>
     <div className={classes['af__checkbox-container']}>
       <CheckboxList 
       array={dateSevriceCheckboxList.arrServiceGroomer}
