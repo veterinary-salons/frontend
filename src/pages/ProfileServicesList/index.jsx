@@ -14,7 +14,7 @@ const dataBooking = [
     subjectName: 'Морозова Елена',
     serviceName: 'Груминг',
     serviceDate: '13.04.2023',
-    price: '4 000',
+    price: '1 000',
   },
   {
     id: '2',
@@ -23,7 +23,7 @@ const dataBooking = [
     subjectName: 'Морозова Елена',
     serviceName: 'Груминг',
     serviceDate: '13.04.2023',
-    price: '4 000',
+    price: '2 000',
   },
   {
     id: '3',
@@ -32,7 +32,7 @@ const dataBooking = [
     subjectName: 'Морозова Елена',
     serviceName: 'Груминг',
     serviceDate: '13.04.2023',
-    price: '4 000',
+    price: '3 000',
   },
   {
     id: '4',
