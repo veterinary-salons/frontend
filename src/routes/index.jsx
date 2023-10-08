@@ -50,14 +50,20 @@ import PetCard from '../pages/PetCard';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
-// import AdvertFinal from '../pages/AdvertFinal';
-// import FillingSchedule from '../pages/FillingSchedule';
+import AdvertFinal from '../pages/AdvertFinal';
+import FillingSchedule from '../pages/FillingSchedule';
 
 // import AdType from '../components/AdCreation/AdType/index';
 // import AdForm from '../components/AdCreation/AdForm';
 // import AdTitle from '../components/AdCreation/AdTitle';
 // import AdDogHandler from '../components/AdCreation/AdDogHandler';
-import AdDogHandlerStepTwo from '../components/AdCreation/AdDogHandler/AdDogHandlerStepTwo';
+// import AdDogHandlerStepTwo from '../components/AdCreation/AdDogHandler/AdDogHandlerStepTwo';
+// import AdGroomer from '../components/AdCreation/adGroomer';
+// import AdGroomerStepTwo from '../components/AdCreation/adGroomer/AdGroomerStepTwo';
+// import AdVet from '../components/AdCreation/adVet';
+// import AdVetStepTwo from '../components/AdCreation/adVet/AdVetStepTwo';
+import AdPetSitter from '../components/AdCreation/adPetSitter';
+
 
 import {
   dataSelectedProducts,
@@ -65,9 +71,9 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
-// import CreationPriceServices from '../pages/CreationAdvertPrice';
-// import DescriptionService from '../pages/DescriptionService';
-// import AdvertSuccess from '../pages/AdvertSuccess';
+import CreationPriceServices from '../pages/CreationAdvertPrice';
+import DescriptionService from '../pages/DescriptionService';
+import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
 // import ServiceChanges from '../pages/ServiceChanges';
@@ -162,11 +168,11 @@ const router = createBrowserRouter(
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
 
-      <Route
+      {/* <Route
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       /> */}
-      <Route path="test" element={<ServiceChanges />} />
+      <Route path="test" element={<AdPetSitter />} />
       <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="advert-schedule" element={<FillingSchedule />} />
       <Route path="advert-price" element={<CreationPriceServices />} />

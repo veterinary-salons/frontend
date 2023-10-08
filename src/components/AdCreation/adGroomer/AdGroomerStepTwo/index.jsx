@@ -5,7 +5,7 @@ import AdForm from '../../AdForm';
 import CheckboxList from '../../../ChecboksList/index';
 import { dateSevriceCheckboxList } from '../../../../assets/constants/constants';
 
-const AdDogHandlerStepTwo = ({getInfo}) => {
+const AdGroomerStepTwo = ({getInfo}) => {
   const [values, setValues] = useState({});
   console.log(values);
 
@@ -15,8 +15,9 @@ const AdDogHandlerStepTwo = ({getInfo}) => {
   <AdForm title='Какие форматы работы вы используете'>
     <div className={classes['af__checkbox-container']}>
       <CheckboxList 
-      array={dateSevriceCheckboxList.arrServiceFormat}
+      array={dateSevriceCheckboxList.arrServiceGroomer}
       getInfo={setValues}
+      inputActive={false}
       />
 
     </div>
@@ -24,12 +25,12 @@ const AdDogHandlerStepTwo = ({getInfo}) => {
 );
 };
 
-AdDogHandlerStepTwo.propTypes = {
+AdGroomerStepTwo.propTypes = {
   getInfo: PropTypes.func,
 };
 
-AdDogHandlerStepTwo.defaultProps = {
+AdGroomerStepTwo.defaultProps = {
   getInfo: () => {},
 };
 
-export default AdDogHandlerStepTwo;
+export default AdGroomerStepTwo;

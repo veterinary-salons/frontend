@@ -192,7 +192,7 @@ const variantVeterinarians = {
   veterinarian: 'Ветеринар',
 };
 
-const dateSevriceVeterinarians = {
+const dateSevriceCheckboxList = {
   variantVeterinarians: [
     {
       text: 'зооняня',
@@ -634,7 +634,7 @@ export {
   dataServicePriceFilter,
   regexPetName,
   variantVeterinarians,
-  dateSevriceVeterinarians,
+  dateSevriceCheckboxList,
   dogHandlerServiceOptions,
   groomerServiceOptions,
   vetServiceOptions, 

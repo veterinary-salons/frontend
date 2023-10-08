@@ -5,7 +5,7 @@ import AdForm from '../AdForm';
 import CheckboxList from '../../ChecboksList/index';
 import { dateSevriceCheckboxList } from '../../../assets/constants/constants';
 
-const AdDogHandler = ({getInfo}) => {
+const AdVet = ({getInfo}) => {
   const [values, setValues] = useState({});
   console.log(values);
 
@@ -15,7 +15,7 @@ const AdDogHandler = ({getInfo}) => {
     <AdForm title="С какими задачами вы работаете">
       <div className={classes['af__checkbox-container']}>
         <CheckboxList
-          array={dateSevriceCheckboxList.arrServiceList}
+          array={dateSevriceCheckboxList.arrAnimalsVeterinarian}
           getInfo={setValues}
         />
       </div>
@@ -23,12 +23,12 @@ const AdDogHandler = ({getInfo}) => {
   );
 };
 
-AdDogHandler.propTypes = {
+AdVet.propTypes = {
   getInfo: PropTypes.func,
 };
 
-AdDogHandler.defaultProps = {
+AdVet.defaultProps = {
   getInfo: () => {},
 };
 
-export default AdDogHandler;
+export default AdVet;
