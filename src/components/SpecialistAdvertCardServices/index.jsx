@@ -14,10 +14,10 @@ const SpecialistAdvertCardServices = ({ SpecialistData, isBooking }) => {
     setSelectedService(service);
   };
 
-  const itemClasses = () =>
+  const itemClasses = (service) =>
   classNames(classes['card-services__item'], {
     [classes['card-services__item_booking']]: isBooking,
-    // [classes['card-services__item_active']]: selectedService === service,
+    [classes['card-services__item_active']]: selectedService === service,
   });
 
   const listClasses = classNames(
@@ -36,7 +36,7 @@ const SpecialistAdvertCardServices = ({ SpecialistData, isBooking }) => {
       <ul className={listClasses}>
       {!isBooking ? 
         SpecialistData.services.map((service) => (
-          <li key={uuidv4()} className={itemClasses()}>
+          <li key={uuidv4()} className={itemClasses(service)}>
             <p>{service.title}</p>
             <p>{`от ${formatPrice(
               service.price[0],
