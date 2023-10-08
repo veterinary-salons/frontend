@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
-// import rusToLat from '../../assets/constants/rusToLat';
 
 const ChecboxList = ({ array, getInfo, inputActive }) => {
   const [chekboxInput, setChekboxInput] = useState(false);
@@ -31,7 +30,12 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
   useEffect(() => {
     setInfoInput('');
     if (chekboxInput && infoInput.length > 2) {
-      array.push(infoInput);
+      array.push({
+        name: infoInput,
+        value: infoInput,
+        lebel: infoInput,
+        id: Math.random() * 10,
+      });
     }
     setChekboxInput(false);
     // eslint-disable-next-line
@@ -41,14 +45,16 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
     <div className={classes.list}>
       {array.map((i) => (
         <Checkbox
-          key={Math.random()}
-          name={i}
-          value={i}
-          checked={values[i]}
+          key={i.id}
+          name={i.name}
+          value={i.value}
+          checked={
+            i.name ? values[i.name] === i.value : values[i.value] === i.value
+          }
           htmlType="checkbox"
           getCheckbox={handleFormChange}
         >
-          {i}
+          {i.lebel}
         </Checkbox>
       ))}
       {inputActive && (
@@ -74,13 +80,19 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
 };
 
 ChecboxList.propTypes = {
-  array: PropTypes.arrayOf(PropTypes.string),
+  array: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string,
+      value: PropTypes.string,
+      lebele: PropTypes.string,
+      id: PropTypes.number,
+    }),
+  ).isRequired,
   getInfo: PropTypes.func,
   inputActive: PropTypes.bool,
 };
 
 ChecboxList.defaultProps = {
-  array: ['зооняня', 'кинолог', 'грумер', 'ветеринар'],
   getInfo: () => {},
   inputActive: true,
 };

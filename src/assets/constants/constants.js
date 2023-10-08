@@ -185,7 +185,6 @@ const arrImgOrderCard = [
   { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
 ];
 
-
 const variantVeterinarians = {
   zoonyanya: 'Зооняня',
   cynologist: 'Кинолог',
@@ -213,13 +212,55 @@ const dateSevriceVeterinarians = {
     },
   ],
   arrAnimalsZoonyanya: [
-    'Собаки',
-    'Кошки',
-    'Кролики',
-    'Птицы',
-    'Хорьки',
-    'Грызуны',
-    'Рептилии',
+    {
+      name: 'Собаки',
+      value: 'Собаки',
+      lebel: 'Собаки',
+      id: 1,
+    },
+    {
+      name: 'Кошки',
+      value: 'Кошки',
+      lebel: 'Кошки',
+      id: 2,
+    },
+    {
+      name: 'Кролики',
+      value: 'Кролики',
+      lebel: 'Кролики',
+      id: 3,
+    },
+    {
+      name: 'Птицы',
+      value: 'Птицы',
+      lebel: 'Птицы',
+      id: 4,
+    },
+    {
+      name: 'Хорьки',
+      value: 'Хорьки',
+      lebel: 'Хорьки',
+      id: 5,
+    },
+    {
+      name: 'Грызуны',
+      value: 'Грызуны',
+      lebel: 'Грызуны',
+      id: 6,
+    },
+    {
+      name: 'Рептилии',
+      value: 'Рептилии',
+      lebel: 'Рептилии',
+      id: 7,
+    },
+    // 'Собаки',
+    // 'Кошки',
+    //  'Кролики',
+    // 'Птицы',
+    // 'Хорьки',
+    // 'Грызуны',
+    // 'Рептилии',
   ],
   arrServiceList: [
     'Коррекция проблемного поведения',
@@ -260,7 +301,6 @@ const dateSevriceVeterinarians = {
     'Усыпление',
   ],
 };
-
 
 const dataArticlePage = [
   {

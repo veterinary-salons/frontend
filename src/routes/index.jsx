@@ -65,7 +65,7 @@ import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
 import ServiceChanges from '../pages/ServiceChanges';
-import CardRewiew from '../components/CardReview';
+// import CardRewiew from '../components/CardReview';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -164,8 +164,7 @@ const router = createBrowserRouter(
       <Route path="test" element={<ServiceChanges />} />
       <Route path="advert-schedule" element={<FillingSchedule />} />
 
-
-    {/*  <Route
+      {/*  <Route
         path="test"
         element={<CardRewiew
           stars='4.4'
