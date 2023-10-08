@@ -54,7 +54,7 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
           htmlType="checkbox"
           getCheckbox={handleFormChange}
         >
-          {i.lebel}
+          {i.name}
         </Checkbox>
       ))}
       {inputActive && (
