@@ -164,8 +164,26 @@ const router = createBrowserRouter(
 
       <Route
         path="test"
-        element={<AdDogHandlerStepTwo />}
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+      /> */}
+      <Route path="test" element={<ServiceChanges />} />
+      <Route path="advert-final" element={<AdvertFinal />} />
+      <Route path="advert-schedule" element={<FillingSchedule />} />
+      <Route path="advert-price" element={<CreationPriceServices />} />
+      <Route path="advert-description" element={<DescriptionService />} />
+      <Route path="advert-success" element={<AdvertSuccess />} />
+
+      {/*  <Route
+        path="test"
+        element={<CardRewiew
+          stars='4.4'
+          published='13 августа 2023'
+          name='Дарья'
+          serviceType='Услуга: гигиенический груминг'
+          text='Все очень понравилось. Быстро, качественно, а главное - с любовью!'
+        />}
       />
+*/}
     </Route>,
 
     // <Route path="advert-final" element={<AdvertFinal />} />
