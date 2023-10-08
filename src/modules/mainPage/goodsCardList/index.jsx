@@ -7,13 +7,35 @@ import pillsImg from '../../../assets/images/images/category-good-main-card/pill
 
 const GoodsCardListMainPage = () => (
   <section className={classes.goods}>
-    <h2 className={classes.goods__title}>Товары для питомцев</h2>
-    <ul className={classes.goods__cards}>
-      <GoodsCardMainPage color="blue" title="Игрушки" img={toysImg} link='/goods'/>
-      <GoodsCardMainPage title="Корм" color="violet" img={foodImg} link='/goods'/>
-      <GoodsCardMainPage color="green" title="Вкусняшки" img={treatsImg} link='/goods'/>
-      <GoodsCardMainPage color="yellow" title="Лекарства" img={pillsImg} link='/goods'/>
-    </ul>
+    <div className={classes.goods__content}>
+      <h2 className={classes.goods__title}>Товары для питомцев</h2>
+      <ul className={classes.goods__cards}>
+        <GoodsCardMainPage
+          color="blue"
+          title="Игрушки"
+          img={toysImg}
+          link="/goods"
+        />
+        <GoodsCardMainPage
+          title="Корм"
+          color="violet"
+          img={foodImg}
+          link="/goods"
+        />
+        <GoodsCardMainPage
+          color="green"
+          title="Вкусняшки"
+          img={treatsImg}
+          link="/goods"
+        />
+        <GoodsCardMainPage
+          color="yellow"
+          title="Лекарства"
+          img={pillsImg}
+          link="/goods"
+        />
+      </ul>
+    </div>
   </section>
 );
 

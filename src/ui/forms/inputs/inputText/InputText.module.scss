@@ -43,6 +43,10 @@
     border: 2px solid var(--grey-color, #8fd6bf);
     color: var(--primary-text-color, #0f0f0f);
   }
+
+  &_text-center {
+    text-align: center;
+  }
 }
 
 .input-span-error {
@@ -73,4 +77,16 @@ input:-webkit-autofill:active {
   -webkit-text-fill-color: inherit;
   -webkit-box-shadow: none;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+  appearance: none;
+  -moz-appearance: textfield;
 }

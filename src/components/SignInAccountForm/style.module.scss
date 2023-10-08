@@ -1,0 +1,48 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 500px;
+  margin: auto;
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    margin: 0 0 8px;
+  }
+  &__fieldset {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+  &__link {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+    color: inherit;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+  &__button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__navbox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &__navtext {
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0;
+  }
+}

@@ -22,7 +22,7 @@ const Articles = ({ dataArticle }) => (
 Articles.propTypes = {
   dataArticle: PropTypes.arrayOf(
     PropTypes.shape({
-      id: PropTypes.number,
+      id: PropTypes.string,
       img: PropTypes.string,
       title: PropTypes.string,
       isActive: PropTypes.bool,

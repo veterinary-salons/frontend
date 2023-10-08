@@ -1,0 +1,18 @@
+.filling-schedule {
+  width: 726px;
+  margin: 60px auto 139px;
+  font-family: 'Montserrat', Arial, sans-serif;
+
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px;
+    margin-bottom: 50px;
+  }
+
+  &__container-btn {
+    display: flex;
+    justify-content: space-between;
+  }
+}

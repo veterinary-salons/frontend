@@ -1,7 +1,9 @@
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
-const regexUserName = /^[а-яА-Я\sё-]+$/;
+const regexCyrillic = /^[а-яА-Я\sё-]+$/;
+const regexPetName = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexPassword = /^[A-Za-z\d-.]+$/;
+const regexTextArea = /^[а-яА-Яa-zA-Z0-9\s.,]+$/;
 const regexPhone =
   /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
 const maskPhone = [
@@ -146,7 +148,7 @@ const arrayServicesDate = [
   {
     id: 5,
     text: 'выбрать дату',
-  }
+  },
 ];
 
 const arrayTimeList = [
@@ -182,6 +184,123 @@ const arrImgOrderCard = [
   { img: 'https://i.ibb.co/yYDpgb2/Rectangle-8.png', id: 2 },
   { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
 ];
+
+const variantVeterinarians = {
+  zoonyanya: 'Зооняня',
+  cynologist: 'Кинолог',
+  groomer: 'Грумер',
+  veterinarian: 'Ветеринар',
+};
+
+const dateSevriceVeterinarians = {
+  variantVeterinarians: [
+    {
+      text: 'зооняня',
+      id: 1,
+    },
+    {
+      text: 'кинолог',
+      id: 2,
+    },
+    {
+      text: 'грумер',
+      id: 3,
+    },
+    {
+      text: 'ветеринар',
+      id: 4,
+    },
+  ],
+  arrAnimalsZoonyanya: [
+    {
+      name: 'Собаки',
+      value: 'Собаки',
+      lebel: 'Собаки',
+      id: 1,
+    },
+    {
+      name: 'Кошки',
+      value: 'Кошки',
+      lebel: 'Кошки',
+      id: 2,
+    },
+    {
+      name: 'Кролики',
+      value: 'Кролики',
+      lebel: 'Кролики',
+      id: 3,
+    },
+    {
+      name: 'Птицы',
+      value: 'Птицы',
+      lebel: 'Птицы',
+      id: 4,
+    },
+    {
+      name: 'Хорьки',
+      value: 'Хорьки',
+      lebel: 'Хорьки',
+      id: 5,
+    },
+    {
+      name: 'Грызуны',
+      value: 'Грызуны',
+      lebel: 'Грызуны',
+      id: 6,
+    },
+    {
+      name: 'Рептилии',
+      value: 'Рептилии',
+      lebel: 'Рептилии',
+      id: 7,
+    },
+    // 'Собаки',
+    // 'Кошки',
+    //  'Кролики',
+    // 'Птицы',
+    // 'Хорьки',
+    // 'Грызуны',
+    // 'Рептилии',
+  ],
+  arrServiceList: [
+    'Коррекция проблемного поведения',
+    'Воспитательная дрессировка щенка',
+    'Обучение командам',
+    'Дрессировка служебных собак',
+    'Дрессировка охотничьих собак',
+    'Подготовка к экзамену ОКД',
+    'Спортивная дрессировка',
+    'Адаптация собаки из приюта',
+    'Подготовка к участию на выставке',
+    'Консультация',
+  ],
+  arrServiceFormat: [
+    'Индивидуальные занятия',
+    'Занятия в мини-группе',
+    'Групповые занятия',
+    'Дрессировка с передержкой у кинолога',
+  ],
+  arrAnimalsGroomer: ['Собаки', 'Кошки', 'Кролики', 'Морские свинки'],
+  arrServiceGroomer: ['Гигиенический', 'Выставочный', 'Декоративный'],
+  arrAnimalsVeterinarian: [
+    'Собаки',
+    'Кошки',
+    'Кролики',
+    'Птицы',
+    'Хорьки',
+    'Грызуны',
+    'Рептилии',
+  ],
+  arrServiceVeterinarian: [
+    'Консультации',
+    'Диагностика заболевания и лечение',
+    'Введение инъекций',
+    'Вакцинация',
+    'Стерилизация',
+    'Оформление ветпаспорта',
+    'Усыпление',
+  ],
+};
 
 const dataArticlePage = [
   {
@@ -222,10 +341,23 @@ const dataArticlePage = [
   },
 ];
 
+const dataServicePriceFilter = [
+  {
+    id: 1,
+    title: 'Стерилизация',
+    name: 'price-sterilization',
+  },
+  {
+    id: 2,
+    title: 'Консультация',
+    name: 'price-consultation',
+  },
+];
+
 export {
   regexEmail,
   regexText,
-  regexUserName,
+  regexCyrillic,
   regexPassword,
   regexPhone,
   maskPhone,
@@ -237,9 +369,15 @@ export {
   arrayTimeList,
   arrImgOrderCard,
   dataArticlePage,
+  regexTextArea,
+  dataServicePriceFilter,
+  regexPetName,
+  variantVeterinarians,
+  dateSevriceVeterinarians,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/
+
 
 // const adTypeOptions = [
 //   {

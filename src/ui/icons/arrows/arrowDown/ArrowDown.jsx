@@ -5,14 +5,14 @@ import cn from 'classnames';
 import imgArrowDown from '../../../../assets/images/icon/arrow-down/arrow-down.svg';
 import style from './ArrowDown.module.scss';
 
-const ArrowDown = ({ positionDropdown, dropdownClick }) => (
+const ArrowDown = ({ positionDropdown, classes }) => (
   <img
     className={cn(
       style['arrow-down'],
       {
         [style['arrow-down_position']]: positionDropdown,
       },
-      { [style['arrow-down_none']]: dropdownClick },
+      classes,
     )}
     src={imgArrowDown}
     alt="стрелка вверх"
@@ -20,13 +20,13 @@ const ArrowDown = ({ positionDropdown, dropdownClick }) => (
 );
 
 ArrowDown.propTypes = {
-  positionDropdown: PropTypes.string,
-  dropdownClick: PropTypes.bool,
+  positionDropdown: PropTypes.bool,
+  classes: PropTypes.string,
 };
 
 ArrowDown.defaultProps = {
-  positionDropdown: 'ture',
-  dropdownClick: true,
+  positionDropdown: true,
+  classes: '',
 };
 
 export default ArrowDown;

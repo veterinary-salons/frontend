@@ -1,11 +1,16 @@
 .header {
   width: 100%;
-  padding: 20px 100px;
-  display: flex;
-  justify-content: space-between;
+  padding: 20px 0;
   background-color: transparent;
   height: 100px;
   z-index: 1;
+
+  &__content {
+    width: var(--content-width-for-screen-1440);
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
 
   &__link {
     display: flex;
@@ -22,5 +27,17 @@
     display: flex;
     gap: 22px;
     align-items: center;
+  }
+}
+
+@media screen and (max-width: 1430px) {
+  .header {
+    &__content {
+      width: var(--content-width-for-screen-1280);
+    }
+
+    &__container-btn {
+      gap: 20px;
+    }
   }
 }

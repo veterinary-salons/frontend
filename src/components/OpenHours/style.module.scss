@@ -1,0 +1,18 @@
+.schedule {
+  &__box {
+    min-width: 132px;
+    height: 78px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: var(--purple-pale-color);
+  }
+
+  &__text {
+    margin: 0;
+    text-align: center;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+}

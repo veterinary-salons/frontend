@@ -1,0 +1,15 @@
+.form-prices {
+    width: 766px;
+    margin: 60px auto;
+    
+    &__container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  
+    &__text {
+      width: 442px;
+      margin: 0;
+    }
+}

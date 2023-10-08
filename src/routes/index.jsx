@@ -15,17 +15,30 @@ import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
+
 import Login from '../pages/Login';
+import LoginNoAccount from '../pages/LoginNoAccount';
+import LoginWithAccount from '../pages/LoginWithAccount';
+
+import Registration from '../pages/Registration';
+import SuccessfulSignup from '../pages/SuccessfulSignup';
+
+import Recovery from '../pages/Recovery';
+import RecoveryCode from '../pages/RecoveryCode';
+import RecoveryPassword from '../pages/RecoveryPassword';
+import SuccessfulRecovery from '../pages/SuccessfulRecovery';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import { dataArticlePage } from '../assets/constants/constants';
+import dataArticlePage from '../assets/constants/dataArticles';
 import SelectedProducts from '../pages/SelectedProducts';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
-// import SectionTitle from '../components/SectionTitle';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
+import BookingCancellation from '../components/BookingCancellation';
+
+import PetCard from '../pages/PetCard';
 
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
@@ -35,8 +48,10 @@ import GoodsList from '../pages/GoodsList';
 // import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
 // import AdRemovingPopup from '../components/AdRemovingPopup';
 // import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
-// import BookingRevokePopup from '../components/BookingRevokePopup';
+// import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
+import AdvertFinal from '../pages/AdvertFinal';
+import FillingSchedule from '../pages/FillingSchedule';
 
 import AdType from '../components/AdCreation/AdType/index';
 // import AdForm from '../components/AdCreation/AdForm';
@@ -50,6 +65,13 @@ import {
 } from '../assets/constants/temporaryData';
 import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
+import CreationPriceServices from '../pages/CreationAdvertPrice';
+import DescriptionService from '../pages/DescriptionService';
+import AdvertSuccess from '../pages/AdvertSuccess';
+import dataBooking from '../assets/constants/dataBooking';
+import ArticlePage from '../pages/Article';
+import ServiceChanges from '../pages/ServiceChanges';
+// import CardRewiew from '../components/CardReview';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -67,6 +89,7 @@ const router = createBrowserRouter(
       }
       errorElement={<ErrorBoundary errorType404 />}
     >
+      {/* Main Page */}
       <Route index element={<Main />} />
 
       {/* Profile */}
@@ -76,19 +99,21 @@ const router = createBrowserRouter(
       >
         <Route element={<Profile />}>
           <Route index element={<PetCardList petList={petList} />} />
-          <Route path="addpet" element={<p>тут будет добавление питомца</p>} />
-          <Route path=":id" element={<p>тут будет редактирование питомца</p>} />
+          <Route path="add-pet" element={<PetCard />} />
+          <Route path=":id" element={<PetCard />} />
         </Route>
-        <Route path="services" element={<ProfileServices />} />
+        <Route path="services" element={<ProfileServices />}>
+          <Route
+            path="revoke"
+            element={<BookingCancellation dataBooking={dataBooking} />}
+          />
+        </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
 
       {/* Services */}
-      <Route 
-        path="services" 
-        element={<Catalog title='Наши услуги'/>}
-      >
-        <Route index element={<ServicesList isServicesPage/>} />
+      <Route path="services" element={<Catalog title="Наши услуги" />}>
+        <Route index element={<ServicesList isServicesPage />} />
         <Route path=":service" element={<Service />} />
       </Route>
 
@@ -99,10 +124,10 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Articles */}
-      <Route
-        path="magazine"
-        element={<Articles dataArticle={dataArticlePage} />}
-      />
+      <Route path="magazine">
+        <Route index element={<Articles dataArticle={dataArticlePage} />} />
+        <Route path=":id" element={<ArticlePage />} />
+      </Route>
 
       {/* Favourites */}
       <Route path="favourites" element={<Favourites />}>
@@ -122,20 +147,24 @@ const router = createBrowserRouter(
 
       {/* Login */}
       <Route path="signin" element={<Login />} />
+      <Route path="signin-no-account" element={<LoginNoAccount />} />
+      <Route path="signin-with-account" element={<LoginWithAccount />} />
 
       {/* SignUp */}
-      <Route path="signup" element={<h2>Здесь будет регистрация</h2>} />
+      <Route path="signup" element={<Registration />} />
+      <Route path="successful-signup" element={<SuccessfulSignup />} />
 
       {/* Recovery */}
-      <Route
-        path="recovery"
-        element={<h2>Здесь будет восстановление аккаунта</h2>}
-      />
+      <Route path="recovery" element={<Recovery />} />
+      <Route path="recovery-code" element={<RecoveryCode />} />
+      <Route path="recovery-password" element={<RecoveryPassword />} />
+      <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
       {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
-      <Route
+
+      {/* <Route
         path="test"
-        element={<AdType />}
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
     </Route>,
   ),

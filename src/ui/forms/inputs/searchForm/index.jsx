@@ -10,6 +10,7 @@ const SearchForm = ({
   minLength,
   disabled,
   getInput,
+  authorization
 }) => {
   const [value, setValue] = useState('');
 
@@ -23,6 +24,7 @@ const SearchForm = ({
       className={classNames(
         classStyle['search-container'],
         disabled ? classStyle.disabled : null,
+        authorization ? classStyle.auth : null,
       )}
       onSubmit={handelSubmit}
     >
@@ -57,6 +59,7 @@ SearchForm.propTypes = {
   minLength: PropTypes.number,
   disabled: PropTypes.bool,
   getInput: PropTypes.func,
+  authorization: PropTypes.bool,
 };
 
 SearchForm.defaultProps = {
@@ -66,6 +69,7 @@ SearchForm.defaultProps = {
   minLength: 2,
   disabled: false,
   getInput: () => {},
+  authorization: false,
 };
 
 export default SearchForm;
