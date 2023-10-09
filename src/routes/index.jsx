@@ -4,7 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root'
+import Root from './root';
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
@@ -64,7 +64,9 @@ import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
-import CardRewiew from '../components/CardReview';
+
+import ProfileServiceCard from '../modules/profileServiceCard';
+import ProfileServiceCardAdd from '../modules/profileServiceCardAdd';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -117,14 +119,9 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Articles */}
-      <Route
-        path="magazine"
-      >
+      <Route path="magazine">
         <Route index element={<Articles dataArticle={dataArticlePage} />} />
-        <Route
-          path=":id"
-          element={<ArticlePage />}
-        />
+        <Route path=":id" element={<ArticlePage />} />
       </Route>
 
       {/* Favourites */}
@@ -162,13 +159,12 @@ const router = createBrowserRouter(
 
       <Route
         path="test"
-        element={<CardRewiew
-          stars='4.4'
-          published='13 августа 2023'
-          name='Дарья'
-          serviceType='Услуга: гигиенический груминг'
-          text='Все очень понравилось. Быстро, качественно, а главное - с любовью!'
-        />}
+        element={
+          <>
+            <ProfileServiceCard />
+            <ProfileServiceCardAdd />
+          </>
+        }
       />
 
       <Route path="advert-price" element={<CreationPriceServices />} />
