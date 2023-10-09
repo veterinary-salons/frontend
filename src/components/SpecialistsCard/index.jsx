@@ -33,11 +33,11 @@ const SpecialistsCard = ({
             <Heart />
           </div>
           <p className={classes['specialists-card__price']}>
-            от {price} &#8381;/усл
+            от {price} ₽/усл
           </p>
           {workedWith && (
             <p className={classes['specialists-card__worked-with']}>
-              работает с {workedWith}
+              Работает с {workedWith}
             </p>
           )}
           <p className={classes['specialists-card__description']}>

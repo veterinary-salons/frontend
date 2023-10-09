@@ -20,7 +20,6 @@ const BookingCancellation = ({ dataBooking }) => {
   };
 
   const handleSuccessRevoke = () => {
-    console.log('Отменен');
     navigate('../canceled');
     setIsOpenPopup(false);
   };
