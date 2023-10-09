@@ -25,6 +25,19 @@ const dataPathWithoutCrumbs = [
   '/advert-schedule',
   '/advert-final',
   '/advert-success',
+  '/advert',
+  '/advert-groomer',
+  '/advert-veterinary',
+  '/advert-petSitting',
+  '/advert-cynology',
+  '/advert-cynology-pet',
+  '/advert-cynology-services',
+  '/advert-groomer-pet',
+  '/advert-groomer-services',
+  '/advert-veterinary-pet',
+  '/advert-price',
+  '/advert-veterinary-services',
+  '/advert-petSitting-pet',
 ];
 const dataPathWithOnlyLogoHeader = [
   '/signin',
@@ -51,6 +64,18 @@ const dataPathWithoutFooter = [
   '/successful-recovery',
   '/advert-description',
   '/advert-schedule',
+  '/advert',
+  '/advert-groomer',
+  '/advert-veterinary',
+  '/advert-petSitting',
+  '/advert-cynology',
+  '/advert-cynology-pet',
+  '/advert-cynology-services',
+  '/advert-groomer-pet',
+  '/advert-groomer-services',
+  '/advert-veterinary-pet',
+  '/advert-veterinary-services',
+  '/advert-petSitting-pet',
 ];
 
 function Root() {

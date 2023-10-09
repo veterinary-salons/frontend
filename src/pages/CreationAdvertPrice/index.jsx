@@ -35,7 +35,7 @@ const CreationPriceServices = ({ getPrice }) => {
           size="medium"
           type="button"
           onClick={() => {
-            navigate('/advert-schedule', { replace: true });
+            navigate(navigate('/advert-schedule'), { replace: true });
           }}
         >
           Назад

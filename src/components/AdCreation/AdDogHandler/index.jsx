@@ -3,19 +3,23 @@ import { useEffect, useState } from 'react';
 import classes from '../AdForm/style.module.scss';
 import AdForm from '../AdForm';
 import CheckboxList from '../../ChecboksList/index';
-import { dateSevriceCheckboxList } from '../../../assets/constants/constants';
+import { dateServiceCheckboxList } from '../../../assets/constants/constants';
 
-const AdDogHandler = ({getInfo}) => {
-  const [values, setValues] = useState({});
+const AdDogHandler = ({ getInfo }) => {
+  const [values, setValues] = useState([]);
   console.log(values);
+  const path = JSON.parse(localStorage.getItem('veterinarian'));
 
-  useEffect(() => {getInfo(values)}, [values])
+  useEffect(() => {
+    getInfo(values);
+    // eslint-disable-next-line
+  }, [values]);
 
   return (
-    <AdForm title="С какими задачами вы работаете">
+    <AdForm title="С какими задачами вы работаете" step={path.category}>
       <div className={classes['af__checkbox-container']}>
         <CheckboxList
-          array={dateSevriceCheckboxList.arrServiceList}
+          array={dateServiceCheckboxList.arrServiceList}
           getInfo={setValues}
         />
       </div>

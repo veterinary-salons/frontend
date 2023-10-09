@@ -53,17 +53,16 @@ import PetCard from '../pages/PetCard';
 import AdvertFinal from '../pages/AdvertFinal';
 import FillingSchedule from '../pages/FillingSchedule';
 
-// import AdType from '../components/AdCreation/AdType/index';
+import AdType from '../components/AdCreation/AdType/index';
 // import AdForm from '../components/AdCreation/AdForm';
-// import AdTitle from '../components/AdCreation/AdTitle';
-// import AdDogHandler from '../components/AdCreation/AdDogHandler';
-// import AdDogHandlerStepTwo from '../components/AdCreation/AdDogHandler/AdDogHandlerStepTwo';
-// import AdGroomer from '../components/AdCreation/adGroomer';
-// import AdGroomerStepTwo from '../components/AdCreation/adGroomer/AdGroomerStepTwo';
-// import AdVet from '../components/AdCreation/adVet';
-// import AdVetStepTwo from '../components/AdCreation/adVet/AdVetStepTwo';
-import AdPetSitter from '../components/AdCreation/adPetSitter';
-
+import AdTitle from '../components/AdCreation/AdTitle';
+import AdDogHandler from '../components/AdCreation/AdDogHandler';
+import AdDogHandlerStepTwo from '../components/AdCreation/AdDogHandler/AdDogHandlerStepTwo';
+import AdGroomer from '../components/AdCreation/adGroomer';
+import AdGroomerStepTwo from '../components/AdCreation/adGroomer/AdGroomerStepTwo';
+import AdVet from '../components/AdCreation/adVet';
+// import AdPetSitter from '../components/AdCreation/adPetSitter';
+import AdVetStepTwo from '../components/AdCreation/adVet/AdVetStepTwo';
 
 import {
   dataSelectedProducts,
@@ -76,7 +75,7 @@ import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
-// import ServiceChanges from '../pages/ServiceChanges';
+import ServiceChanges from '../pages/ServiceChanges';
 // import CardRewiew from '../components/CardReview';
 
 const router = createBrowserRouter(
@@ -172,12 +171,7 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       /> */}
-      <Route path="test" element={<AdPetSitter />} />
-      <Route path="advert-final" element={<AdvertFinal />} />
-      <Route path="advert-schedule" element={<FillingSchedule />} />
-      <Route path="advert-price" element={<CreationPriceServices />} />
-      <Route path="advert-description" element={<DescriptionService />} />
-      <Route path="advert-success" element={<AdvertSuccess />} />
+      <Route path="test" element={<ServiceChanges />} />
 
       {/*  <Route
         path="test"
@@ -190,14 +184,28 @@ const router = createBrowserRouter(
         />}
       />
 */}
-    </Route>,
+      <Route path="advert" element={<AdType />} />
+      <Route path="advert-groomer" element={<AdTitle />} />
+      <Route path="advert-veterinary" element={<AdTitle />} />
+      <Route path="advert-petSitting" element={<AdTitle />} />
+      <Route path="advert-cynology" element={<AdTitle />} />
+      <Route path="advert-cynology-pet" element={<AdDogHandler />} />
+      <Route
+        path="advert-cynology-services"
+        element={<AdDogHandlerStepTwo />}
+      />
+      <Route path="advert-groomer-pet" element={<AdGroomer />} />
+      <Route path="advert-groomer-services" element={<AdGroomerStepTwo />} />
+      <Route path="advert-veterinary-pet" element={<AdVet />} />
+      <Route path="advert-veterinary-services" element={<AdVetStepTwo />} />
+      <Route path="advert-petSitting-pet" element={<AdVet />} />
 
-    // <Route path="advert-final" element={<AdvertFinal />} />
-    //   <Route path="advert-schedule" element={<FillingSchedule />} />
-    //   <Route path="advert-price" element={<CreationPriceServices />} />
-    //   <Route path="advert-description" element={<DescriptionService />} />
-    //   <Route path="advert-success" element={<AdvertSuccess />} />
-    // </Route>
+      <Route path="advert-schedule" element={<FillingSchedule />} />
+      <Route path="advert-price" element={<CreationPriceServices />} />
+      <Route path="advert-description" element={<DescriptionService />} />
+      <Route path="advert-final" element={<AdvertFinal />} />
+      <Route path="advert-success" element={<AdvertSuccess />} />
+    </Route>,
   ),
 );
 

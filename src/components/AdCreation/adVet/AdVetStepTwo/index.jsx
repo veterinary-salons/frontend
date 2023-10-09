@@ -3,26 +3,29 @@ import { useEffect, useState } from 'react';
 import classes from '../../AdForm/style.module.scss';
 import AdForm from '../../AdForm';
 import CheckboxList from '../../../ChecboksList/index';
-import { dateSevriceCheckboxList } from '../../../../assets/constants/constants';
+import { dateServiceCheckboxList } from '../../../../assets/constants/constants';
 
-const AdVetStepTwo = ({getInfo}) => {
+const AdVetStepTwo = ({ getInfo }) => {
   const [values, setValues] = useState({});
   console.log(values);
+  const path = JSON.parse(localStorage.getItem('veterinarian'));
 
-  useEffect(() => {getInfo(values)}, [values])
-  
+  useEffect(() => {
+    getInfo(values);
+    // eslint-disable-next-line
+  }, [values]);
+
   return (
-  <AdForm title='Какие именно услуги оказываете'>
-    <div className={classes['af__checkbox-container']}>
-      <CheckboxList 
-      array={dateSevriceCheckboxList.arrServiceVeterinarian}
-      getInfo={setValues}
-      inputActive={false}
-      />
-
-    </div>
-  </AdForm>
-);
+    <AdForm title="Какие именно услуги оказываете" step={path.category}>
+      <div className={classes['af__checkbox-container']}>
+        <CheckboxList
+          array={dateServiceCheckboxList.arrServiceVeterinarian}
+          getInfo={setValues}
+          inputActive={false}
+        />
+      </div>
+    </AdForm>
+  );
 };
 
 AdVetStepTwo.propTypes = {

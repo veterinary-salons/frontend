@@ -45,7 +45,7 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
     <div className={classes.list}>
       {array.map((i) => (
         <Checkbox
-          key={i.id}
+          key={i.name}
           name={i.name}
           value={i.value}
           checked={

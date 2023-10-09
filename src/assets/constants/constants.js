@@ -192,7 +192,7 @@ const variantVeterinarians = {
   veterinarian: 'Ветеринар',
 };
 
-const dateSevriceCheckboxList = {
+const dateServiceCheckboxList = {
   variantVeterinarians: [
     {
       text: 'зооняня',
@@ -215,191 +215,165 @@ const dateSevriceCheckboxList = {
     {
       name: 'Собаки',
       value: 'Собаки',
-      id: 1,
     },
     {
       name: 'Кошки',
       value: 'Кошки',
-      id: 2,
     },
     {
       name: 'Кролики',
       value: 'Кролики',
-      id: 3,
     },
     {
       name: 'Птицы',
       value: 'Птицы',
-      id: 4,
     },
     {
       name: 'Хорьки',
       value: 'Хорьки',
-      id: 5,
     },
     {
       name: 'Грызуны',
       value: 'Грызуны',
-      id: 6,
     },
     {
       name: 'Рептилии',
       value: 'Рептилии',
-      id: 7,
     },
   ],
+  arrGroomRadio: {
+    options: [
+      { name: 'category', value: 'groomer', label: 'груминг' },
+      { name: 'category', value: 'veterinary', label: 'ветеринария' },
+      { name: 'category', value: 'petSitting', label: 'передержка' },
+      { name: 'category', value: 'cynology', label: 'кинология' },
+    ],
+  },
   arrServiceList: [
     {
       name: 'Коррекция проблемного поведения',
       value: 'Коррекция проблемного поведения',
-      id: 1,
     },
     {
       name: 'Воспитательная дрессировка щенка',
       value: 'Воспитательная дрессировка щенка',
-      id: 2,
     },
     {
       name: 'Дрессировка служебных собак',
       value: 'Дрессировка служебных собак',
-      id: 3,
     },
     {
       name: 'Дрессировка охотничьих собак',
       value: 'Дрессировка охотничьих собак',
-      id: 4,
     },
     {
       name: 'Подготовка к экзамену ОКД',
       value: 'Подготовка к экзамену ОКД',
-      id: 5,
     },
     {
       name: 'Спортивная дрессировка',
       value: 'Спортивная дрессировка',
-      id: 6,
     },
     {
       name: 'Адаптация собаки из приюта',
       value: 'Адаптация собаки из приюта',
-      id: 7,
     },
     {
       name: 'Подготовка к участию на выставке',
       value: 'Подготовка к участию на выставке',
-      id: 8,
     },
     {
       name: 'Консультация',
       value: 'Консультация',
-      id: 9,
     },
   ],
   arrServiceFormat: [
     {
       name: 'Индивидуальные занятия',
       value: 'Индивидуальные занятия',
-      id: 1,
     },
     {
       name: 'Занятия в мини-группе',
       value: 'Занятия в мини-группе',
-      id: 2,
     },
     {
       name: 'Групповые занятия',
       value: 'Групповые занятия',
-      id: 3,
     },
     {
       name: 'Дрессировка с передержкой у кинолога',
       value: 'Дрессировка с передержкой у кинолога',
-      id: 4,
     },
   ],
   arrAnimalsGroomer: [
-    { name: 'Собаки', value: 'Собаки', id: 1 },
-    { name: 'Кошки', value: 'Кошки', id: 2 },
-    { name: 'Кролики', value: 'Кролики', id: 3 },
-    { name: 'Морские свинки', value: 'Морские свинки', id: 4 },
+    { name: 'Собаки', value: 'Собаки' },
+    { name: 'Кошки', value: 'Кошки' },
+    { name: 'Кролики', value: 'Кролики' },
+    { name: 'Морские свинки', value: 'Морские свинки' },
   ],
   arrServiceGroomer: [
-    { name: 'Гигиенический', value: 'Гигиенический', id: 1 },
-    { name: 'Выставочный', value: 'Выставочный', id: 2 },
-    { name: 'Декоративный', value: 'Декоративный', id: 3 },
+    { name: 'Гигиенический', value: 'Гигиенический' },
+    { name: 'Выставочный', value: 'Выставочный' },
+    { name: 'Декоративный', value: 'Декоративный' },
   ],
   arrAnimalsVeterinarian: [
     {
       name: 'Собаки',
       value: 'Собаки',
-      id: 1,
     },
     {
       name: 'Кошки',
       value: 'Кошки',
-      id: 2,
     },
     {
       name: 'Кролики',
       value: 'Кролики',
-      id: 3,
     },
     {
       name: 'Птицы',
       value: 'Птицы',
-      id: 4,
     },
     {
       name: 'Хорьки',
       value: 'Хорьки',
-      id: 5,
     },
     {
       name: 'Грызуны',
       value: 'Грызуны',
-      id: 6,
     },
     {
       name: 'Рептилии',
       value: 'Рептилии',
-      id: 7,
     },
   ],
   arrServiceVeterinarian: [
     {
       name: 'Консультации',
       value: 'Консультации',
-      id: 1,
     },
     {
       name: 'Диагностика заболевания и лечение',
       value: 'Диагностика заболевания и лечение',
-      id: 2,
     },
     {
       name: 'Введение инъекций',
       value: 'Введение инъекций',
-      id: 3,
     },
     {
       name: 'Вакцинация',
       value: 'Вакцинация',
-      id: 4,
     },
     {
       name: 'Стерилизация',
       value: 'Стерилизация',
-      id: 5,
     },
     {
       name: 'Оформление ветпаспорта',
       value: 'Оформление ветпаспорта',
-      id: 6,
     },
     {
       name: 'Усыпление',
       value: 'Усыпление',
-      id: 7,
     },
   ],
 };
@@ -530,7 +504,7 @@ const dogHandlerServiceOptions = {
       value: 'Дрессировка с передержкой у кинолога',
       id: 4,
     },
-  ]
+  ],
 };
 
 const groomerServiceOptions = {
@@ -572,7 +546,7 @@ const groomerServiceOptions = {
       value: 'Декоративный',
       id: 3,
     },
-  ]
+  ],
 };
 
 const vetServiceOptions = {
@@ -612,7 +586,7 @@ const vetServiceOptions = {
       value: 'Усыпление',
       id: 3,
     },
-  ]
+  ],
 };
 
 export {
@@ -634,10 +608,10 @@ export {
   dataServicePriceFilter,
   regexPetName,
   variantVeterinarians,
-  dateSevriceCheckboxList,
+  dateServiceCheckboxList,
   dogHandlerServiceOptions,
   groomerServiceOptions,
-  vetServiceOptions, 
+  vetServiceOptions,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/
@@ -672,5 +646,3 @@ export {
 //     ],
 //   },
 // ];
-
-

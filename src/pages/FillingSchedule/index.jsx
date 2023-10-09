@@ -25,7 +25,12 @@ const FillingSchedule = ({ getSchedule }) => {
     [session],
   );
 
-  console.log(infoSchedule.days);
+  const path = JSON.parse(localStorage.getItem('veterinarian'));
+
+  const routeBack =
+    path.category === 'petSitting'
+      ? `/advert-${path.category}-pet`
+      : `/advert-${path.category}-services`;
 
   const handleSchedule = () => {
     handleFormChange();
@@ -64,7 +69,9 @@ const FillingSchedule = ({ getSchedule }) => {
           size="medium"
           type="button"
           onClick={() => {
-            navigate('/back', { replace: true });
+            navigate(navigate(routeBack), {
+              replace: true,
+            });
           }}
         >
           Назад

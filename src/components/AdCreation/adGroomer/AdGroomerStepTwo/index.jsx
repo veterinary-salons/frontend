@@ -3,26 +3,29 @@ import { useEffect, useState } from 'react';
 import classes from '../../AdForm/style.module.scss';
 import AdForm from '../../AdForm';
 import CheckboxList from '../../../ChecboksList/index';
-import { dateSevriceCheckboxList } from '../../../../assets/constants/constants';
+import { dateServiceCheckboxList } from '../../../../assets/constants/constants';
 
-const AdGroomerStepTwo = ({getInfo}) => {
+const AdGroomerStepTwo = ({ getInfo }) => {
   const [values, setValues] = useState({});
   console.log(values);
+  const path = JSON.parse(localStorage.getItem('veterinarian'));
 
-  useEffect(() => {getInfo(values)}, [values])
-  
+  useEffect(() => {
+    getInfo(values);
+    // eslint-disable-next-line
+  }, [values]);
+
   return (
-  <AdForm title='Какой груминг вы можете сделать'>
-    <div className={classes['af__checkbox-container']}>
-      <CheckboxList 
-      array={dateSevriceCheckboxList.arrServiceGroomer}
-      getInfo={setValues}
-      inputActive={false}
-      />
-
-    </div>
-  </AdForm>
-);
+    <AdForm title="Какие форматы работы вы используете" step={path.category}>
+      <div className={classes['af__checkbox-container']}>
+        <CheckboxList
+          array={dateServiceCheckboxList.arrServiceGroomer}
+          getInfo={setValues}
+          inputActive={false}
+        />
+      </div>
+    </AdForm>
+  );
 };
 
 AdGroomerStepTwo.propTypes = {

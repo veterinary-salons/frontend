@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import {
   variantVeterinarians,
-  dateSevriceVeterinarians,
+  dateServiceCheckboxList,
 } from '../../assets/constants/constants';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import AdSchedule from '../../components/AdSchedule';
@@ -92,7 +92,7 @@ const ServiceChanges = ({ variant }) => {
             getValue={setDataDropdown}
             width="500px"
             name="veterinarian"
-            array={dateSevriceVeterinarians.variantVeterinarians}
+            array={dateServiceCheckboxList.variantVeterinarians}
           />
         </div>
 
@@ -102,7 +102,7 @@ const ServiceChanges = ({ variant }) => {
               С какими животными вы работаете?
             </h3>
             <ChecboxList
-              array={dateSevriceVeterinarians.arrAnimalsZoonyanya}
+              array={dateServiceCheckboxList.arrAnimalsZoonyanya}
               getInfo={setDataAnimals}
             />
           </div>
@@ -115,7 +115,7 @@ const ServiceChanges = ({ variant }) => {
                 С какими задачами вы работаете?
               </h3>
               <ChecboxList
-                array={dateSevriceVeterinarians.arrServiceList}
+                array={dateServiceCheckboxList.arrServiceList}
                 getInfo={setDataTasks}
               />
             </div>
@@ -124,7 +124,7 @@ const ServiceChanges = ({ variant }) => {
                 Какой формат работы вы используете?
               </h3>
               <ChecboxList
-                array={dateSevriceVeterinarians.arrServiceFormat}
+                array={dateServiceCheckboxList.arrServiceFormat}
                 getInfo={setDataFormatWork}
               />
             </div>
@@ -138,7 +138,7 @@ const ServiceChanges = ({ variant }) => {
                 С какими задачами вы работаете?
               </h3>
               <ChecboxList
-                array={dateSevriceVeterinarians.arrAnimalsGroomer}
+                array={dateServiceCheckboxList.arrAnimalsGroomer}
                 getInfo={setDataAnimals}
               />
             </div>
@@ -147,7 +147,7 @@ const ServiceChanges = ({ variant }) => {
                 Какой формат работы вы используете?
               </h3>
               <ChecboxList
-                array={dateSevriceVeterinarians.arrServiceGroomer}
+                array={dateServiceCheckboxList.arrServiceGroomer}
                 getInfo={setDataGrooming}
                 inputActive={false}
               />
@@ -162,7 +162,7 @@ const ServiceChanges = ({ variant }) => {
                 С какими задачами вы работаете?
               </h3>
               <ChecboxList
-                array={dateSevriceVeterinarians.arrAnimalsVeterinarian}
+                array={dateServiceCheckboxList.arrAnimalsVeterinarian}
                 getInfo={setDataAnimals}
               />
             </div>
@@ -171,7 +171,7 @@ const ServiceChanges = ({ variant }) => {
                 Какой груминг вы можете делать?
               </h3>
               <ChecboxList
-                array={dateSevriceVeterinarians.arrServiceVeterinarian}
+                array={dateServiceCheckboxList.arrServiceVeterinarian}
                 getInfo={setDataTasks}
               />
             </div>
