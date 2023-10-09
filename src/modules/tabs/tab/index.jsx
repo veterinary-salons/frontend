@@ -8,7 +8,11 @@ const Tab = ({ pathname, children }) => {
   const isActiveLink = ({ isActive }) => (isActive ? activeLink : classes.tab);
 
   return (
-    <NavLink end to={pathname} className={isActiveLink}>
+    <NavLink
+      end={pathname === '/profile'}
+      to={pathname}
+      className={isActiveLink}
+    >
       {children}
     </NavLink>
   );
