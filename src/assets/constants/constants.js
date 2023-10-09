@@ -3,7 +3,7 @@ const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexCyrillic = /^[а-яА-Я\sё-]+$/;
 const regexPetName = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexPassword = /^[A-Za-z\d-.]+$/;
-const regexTextarea = /^[а-яА-Яa-zA-Z0-9\s.,]+$/;
+const regexTextArea = /^[а-яА-Яa-zA-Z0-9\s.,]+$/;
 const regexPhone =
   /^(\+7|7|8)?[\s-]?\(?[489][0-9]{2}\)?[\s-]?[0-9]{3}[\s-]?[0-9]{2}[\s-]?[0-9]{2}$/;
 const maskPhone = [
@@ -185,6 +185,7 @@ const arrImgOrderCard = [
   { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
 ];
 
+
 const dataArticlePage = [
   {
     id: 1,
@@ -224,6 +225,19 @@ const dataArticlePage = [
   },
 ];
 
+const dataServicePriceFilter = [
+  {
+    id: 1,
+    title: 'Стерилизация',
+    name: 'price-sterilization',
+  },
+  {
+    id: 2,
+    title: 'Консультация',
+    name: 'price-consultation',
+  },
+];
+
 export {
   regexEmail,
   regexText,
@@ -239,7 +253,8 @@ export {
   arrayTimeList,
   arrImgOrderCard,
   dataArticlePage,
-  regexTextarea,
+  regexTextArea,
+  dataServicePriceFilter,
   regexPetName,
 };
 

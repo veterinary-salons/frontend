@@ -24,7 +24,7 @@ const dataPathWithoutCrumbs = [
   '/advert-description',
   '/advert-schedule',
   '/advert-final',
-  '/advert-success'
+  '/advert-success',
 ];
 const dataPathWithOnlyLogoHeader = [
   '/signin',
@@ -34,10 +34,10 @@ const dataPathWithOnlyLogoHeader = [
   '/recovery',
   '/recovery-code',
   '/recovery-password',
-  '/successful-recovery'
+  '/successful-recovery',
 ];
 const dataPathWithoutFooter = [
-    '/signin-no-account',
+  '/signin-no-account',
   '/signin-with-account',
   '/signin',
   '/recovery',
@@ -46,6 +46,8 @@ const dataPathWithoutFooter = [
   '/recovery',
   '/recovery-code',
   '/recovery-password',
+  '/advert-price',
+  '/signin',
   '/successful-recovery',
   '/advert-description',
   '/advert-schedule',
@@ -66,7 +68,7 @@ function Root() {
       <main
         className={classNames(
           classes.main,
-          location.pathname !== '/' ? classes.padding100 : null,
+          location.pathname !== '/' ? classes['main-with-margins'] : null,
         )}
       >
         {!crumbsPath ? <BreadCrumbs className={classes.mt40} /> : null}

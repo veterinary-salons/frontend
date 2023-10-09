@@ -35,4 +35,8 @@
 
   --error-color: #d80000;
   --success-color: #03a600;
+
+  /* Ширина контента на разных разрешениях экрана */
+  --content-width-for-screen-1440: 1240px;
+  --content-width-for-screen-1280: 1120px;
 }
