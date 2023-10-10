@@ -13,6 +13,11 @@ import Favourites from '../pages/Favourites';
 import Main from '../pages/Main/Main';
 import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
+import ProfileServicesList from '../pages/ProfileServicesList';
+import ProfileServicesHistoryList from '../pages/ProfileServicesHistoryList';
+import ProfileBookingCancellation from '../pages/ProfileBookingCancellation';
+import ProfileBokingCanceled from '../pages/ProfileBokingCanceled';
+import BookingFeedback from '../pages/BookingFeedback';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
 
@@ -36,7 +41,6 @@ import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
-import BookingCancellation from '../components/BookingCancellation';
 
 import PetCard from '../pages/PetCard';
 
@@ -73,10 +77,15 @@ import Goods from '../pages/Goods';
 import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
-import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
+
 import ServiceChanges from '../pages/ServiceChanges';
 // import CardRewiew from '../components/CardReview';
+
+
+import ProfileServiceCard from '../modules/profileServiceCard';
+import ProfileServiceCardAdd from '../modules/profileServiceCardAdd';
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -108,10 +117,11 @@ const router = createBrowserRouter(
           <Route path=":id" element={<PetCard />} />
         </Route>
         <Route path="services" element={<ProfileServices />}>
-          <Route
-            path="revoke"
-            element={<BookingCancellation dataBooking={dataBooking} />}
-          />
+          <Route index element={<ProfileServicesList />} />
+          <Route path="history" element={<ProfileServicesHistoryList />} />
+          <Route path="cancellation" element={<ProfileBookingCancellation />} />
+          <Route path="canceled" element={<ProfileBokingCanceled />} />
+          <Route path="feedback" element={<BookingFeedback />} />
         </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
@@ -175,13 +185,12 @@ const router = createBrowserRouter(
 
       {/*  <Route
         path="test"
-        element={<CardRewiew
-          stars='4.4'
-          published='13 августа 2023'
-          name='Дарья'
-          serviceType='Услуга: гигиенический груминг'
-          text='Все очень понравилось. Быстро, качественно, а главное - с любовью!'
-        />}
+        element={
+          <>
+            <ProfileServiceCard />
+            <ProfileServiceCardAdd />
+          </>
+        }
       />
 */}
       <Route path="advert" element={<AdType />} />
