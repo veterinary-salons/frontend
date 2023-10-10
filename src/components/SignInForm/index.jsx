@@ -7,7 +7,11 @@ import classes from './style.module.scss';
 function SignInForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
+  const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
+
+  const isActive =
+    Object.values(isValidateInput).every((item) => item) && isValid;
 
   const handleFormChange = (value) => {
     setValues({
@@ -23,14 +27,14 @@ function SignInForm() {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     localStorage.setItem('auth', true);
-    navigate('/')
-  }
+    navigate('/');
+  };
 
   return (
     <form
       onChange={handleFormValidChange}
       className={classes.form}
-      id="enter-form"
+      id="signin-form"
     >
       <h2 className={classes.form__title}>Войдите в аккаунт</h2>
       <fieldset className={classes.form__fieldset}>
@@ -44,6 +48,7 @@ function SignInForm() {
           getInput={handleFormChange}
           id="email-input"
           autoComplete="email"
+          getValid={setIsValidateInput}
         />
         <InputText
           type="password"
@@ -55,10 +60,10 @@ function SignInForm() {
           getInput={handleFormChange}
           id="password-input"
           autoComplete="current-password"
+          getValid={setIsValidateInput}
         />
         <Link
-          to="purrfectcare.ru"
-          target="_blank"
+          to="/recovery"
           className={classes.form__link}
         >
           Забыли пароль?
@@ -71,14 +76,14 @@ function SignInForm() {
           size="medium"
           type="submit"
           isMaxWidth
-          active={isValid}
+          active={isActive}
         >
           Войти
         </Button>
         <div className={classes.form__navbox}>
           <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
           <Button
-            onClick={() => {}}
+            onClick={() => navigate('/signup')}
             variant="outlined"
             size="medium"
             type="button"

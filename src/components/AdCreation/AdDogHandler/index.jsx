@@ -1,49 +1,38 @@
-import { useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
+import { useEffect, useState } from 'react';
 import classes from '../AdForm/style.module.scss';
 import AdForm from '../AdForm';
-import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
+import CheckboxList from '../../ChecboksList/index';
+import { dateServiceCheckboxList } from '../../../assets/constants/constants';
 
-const AdDogHandler = () => {
-  const [values, setValues] = useState({});
+const AdDogHandler = ({ getInfo }) => {
+  const [values, setValues] = useState([]);
+  console.log(values);
+  const path = JSON.parse(localStorage.getItem('veterinarian'));
 
-  const handleFormChange = useCallback(
-    (value) => {
-      setValues({
-        ...values,
-        ...value,
-      });
-    },
-    [setValues, values],
-  );
+  useEffect(() => {
+    getInfo(values);
+    // eslint-disable-next-line
+  }, [values]);
 
-
-   return (
-    <AdForm title="С какими задачами вы работаете">
+  return (
+    <AdForm title="С какими задачами вы работаете" step={path.category}>
       <div className={classes['af__checkbox-container']}>
-        <Checkbox 
-        type="checkbox"
-        checked={false}
-        htmlType="checkbox"
-        value='services'
-        name='services'
-        getCheckbox={handleFormChange}
-        >Коррекция проблемного поведения
-        </Checkbox>
-        <Checkbox type="checkbox">Воспитательная дрессировка щенка</Checkbox>
-        <Checkbox type="checkbox">Обучение командам</Checkbox>
-        <Checkbox type="checkbox">Дрессировка служебных собак</Checkbox>
-        <Checkbox type="checkbox">Дрессировка охотничьих собак</Checkbox>
-        <Checkbox type="checkbox">Подготовка к экзамену ОКД</Checkbox>
-        <Checkbox type="checkbox">Спортивная дрессировка</Checkbox>
-        <Checkbox type="checkbox">Адаптация собаки из приюта</Checkbox>
-        <Checkbox type="checkbox">Подготовка к участию на выставке</Checkbox>
-        <Checkbox type="checkbox">Консультация</Checkbox>
-        <Checkbox type="checkbox">
-          <input className={classes.af__input} placeholder="Другие" />
-        </Checkbox>
+        <CheckboxList
+          array={dateServiceCheckboxList.arrServiceList}
+          getInfo={setValues}
+        />
       </div>
     </AdForm>
   );
-}
+};
+
+AdDogHandler.propTypes = {
+  getInfo: PropTypes.func,
+};
+
+AdDogHandler.defaultProps = {
+  getInfo: () => {},
+};
 
 export default AdDogHandler;

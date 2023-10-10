@@ -1,14 +1,21 @@
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import classes from './style.module.scss';
 import SectionTitle from '../../SectionTitle';
 import Button from '../../../ui/buttons/originButton/Button';
+import { routeNext, routeBack } from '../../../assets/constants/getRoutes';
 
-const AdForm = ({ title, children, step }) => {
+const AdForm = ({ title, children, step, activBtn }) => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    navigate(routeNext(location.pathname, step));
+  };
 
   return (
-    <div className={classes.af}>
+    <form className={classes.af}>
       <SectionTitle title={title} />
       <div className={classes['af__content-wrap']}>
         {children}
@@ -17,21 +24,22 @@ const AdForm = ({ title, children, step }) => {
             variant="outlined"
             size="medium"
             type="button"
-            onClick={() => navigate(-1)}
+            onClick={() => navigate(routeBack(location.pathname, step))}
           >
             Назад
           </Button>
           <Button
             variant="purple-filled"
             size="medium"
-            type="button"
-            onClick={() => navigate(`/adform/${step}`)}
+            type="submit"
+            onClick={handleFormSubmit}
+            active={activBtn}
           >
             Далее
           </Button>
         </div>
       </div>
-    </div>
+    </form>
   );
 };
 
@@ -39,12 +47,14 @@ AdForm.propTypes = {
   title: PropTypes.string,
   children: PropTypes.node,
   step: PropTypes.string,
+  activBtn: PropTypes.bool,
 };
 
 AdForm.defaultProps = {
   title: 'Заголовок',
   children: null,
-  step: ''
+  step: '',
+  activBtn: true,
 };
 
 export default AdForm;

@@ -13,18 +13,78 @@ import Button from '../../ui/buttons/originButton/Button';
 const dataPathWithoutCrumbs = [
   '/',
   '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
+  '/signup',
+  '/successful-signup',
+  '/recovery',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery',
+  '/advert-description',
+  '/advert-schedule',
+  '/advert-final',
+  '/advert-success',
+  '/advert',
+  '/advert-groomer',
+  '/advert-veterinary',
+  '/advert-petSitting',
+  '/advert-cynology',
+  '/advert-cynology-pet',
+  '/advert-cynology-services',
+  '/advert-groomer-pet',
+  '/advert-groomer-services',
+  '/advert-veterinary-pet',
+  '/advert-price',
+  '/advert-veterinary-services',
+  '/advert-petSitting-pet',
+];
+const dataPathWithOnlyLogoHeader = [
+  '/signin',
+  '/signin-no-account',
+  '/signin-with-account',
   '/signup',
   '/recovery',
-  '/signup',
+  '/recovery-code',
+  '/recovery-password',
+  '/successful-recovery',
 ];
-const dataPathWithOnlyLogoHeader = ['/signin', '/recovery', '/signup'];
-const dataPathWithoutFooter = ['/signin', '/recovery', '/signup'];
+const dataPathWithoutFooter = [
+  '/signin-no-account',
+  '/signin-with-account',
+  '/signin',
+  '/recovery',
+  '/signup',
+  '/advert-final',
+  '/recovery',
+  '/recovery-code',
+  '/recovery-password',
+  '/advert-price',
+  '/signin',
+  '/successful-recovery',
+  '/advert-description',
+  '/advert-schedule',
+  '/advert',
+  '/advert-groomer',
+  '/advert-veterinary',
+  '/advert-petSitting',
+  '/advert-cynology',
+  '/advert-cynology-pet',
+  '/advert-cynology-services',
+  '/advert-groomer-pet',
+  '/advert-groomer-services',
+  '/advert-veterinary-pet',
+  '/advert-veterinary-services',
+  '/advert-petSitting-pet',
+];
 
 function Root() {
   const auth = localStorage.getItem('auth');
   const location = useLocation();
   const crumbsPath = dataPathWithoutCrumbs.includes(location.pathname);
-  const isOnlyLogoHeader = dataPathWithOnlyLogoHeader.includes(location.pathname);
+  const isOnlyLogoHeader = dataPathWithOnlyLogoHeader.includes(
+    location.pathname,
+  );
   const isRenderFooter = dataPathWithoutFooter.includes(location.pathname);
 
   return (
@@ -33,7 +93,7 @@ function Root() {
       <main
         className={classNames(
           classes.main,
-          location.pathname !== '/' ? classes.padding100 : null,
+          location.pathname !== '/' ? classes['main-with-margins'] : null,
         )}
       >
         {!crumbsPath ? <BreadCrumbs className={classes.mt40} /> : null}

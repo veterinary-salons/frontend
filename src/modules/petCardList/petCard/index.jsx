@@ -5,8 +5,8 @@ import classes from './style.module.scss';
 
 import Button from '../../../ui/buttons/originButton/Button';
 
-const PetCard = ({ src, title, age, months, add, id }) => {
-  const unitAgeArr = ['год', 'года', 'лет'];
+const PetCard = ({ src, title, years, months, add, id }) => {
+  const unitYearsArr = ['год', 'года', 'лет'];
   const unitMonthsArr = ['месяц', 'месяца', 'месяцев'];
 
   const createUnit = (num, textArr) => {
@@ -24,19 +24,19 @@ const PetCard = ({ src, title, age, months, add, id }) => {
     return textArr[2];
   };
 
-  const unitAge = createUnit(age, unitAgeArr);
+  const unitYears = createUnit(years, unitYearsArr);
   const unitMonths = createUnit(months, unitMonthsArr);
-  const createAgeWithText = age ? `${age} ${unitAge}` : null;
+  const createYearsWithText = years ? `${years} ${unitYears}` : null;
   const createMonthsWithText = months ? `${months} ${unitMonths}` : null;
-  const createSubtitle = age
-    ? `${createAgeWithText} ${months} мес`
+  const createSubtitle = years
+    ? `${createYearsWithText} ${months} мес`
     : createMonthsWithText;
 
   return (
     <div className={classNames(classes['pet-card'], add ? classes.add : null)}>
       {add ? (
         <>
-          <Link to="addpet">
+          <Link to="add-pet">
             <Button shape="round" size="small" variant="add" />
           </Link>
           <p className={classes.add__title}>Добавить питомца</p>
@@ -64,7 +64,7 @@ const PetCard = ({ src, title, age, months, add, id }) => {
 PetCard.defaultProps = {
   src: null,
   title: 'Чарли',
-  age: 4,
+  years: 4,
   months: 5,
   add: false,
   id: null,
@@ -73,7 +73,7 @@ PetCard.defaultProps = {
 PetCard.propTypes = {
   src: PropTypes.string,
   title: PropTypes.string,
-  age: PropTypes.number,
+  years: PropTypes.number,
   months: PropTypes.number,
   add: PropTypes.bool,
   id: PropTypes.string,

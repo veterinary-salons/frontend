@@ -1,0 +1,14 @@
+.component {
+  &__title {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 30px;
+    margin: 0 0 32px;
+  }
+
+  &__container {
+    display: flex;
+    gap: 16px;
+  }
+}

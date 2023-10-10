@@ -18,6 +18,7 @@ const InputText = ({
   position,
   autoComplete,
   initialValue,
+  getValid,
 }) => {
   const [values, setValues] = useState({ [name]: '' });
   const [isClick, setIsClick] = useState(false);
@@ -28,10 +29,19 @@ const InputText = ({
 
   useEffect(() => {
     if (initialValue) {
-      setValues(initialValue);
+      setValues({ ...values, ...initialValue });
     }
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    getValid((state) => ({
+      ...state,
+      [name]: validateInput(type, name, values[name]).invalid,
+    }));
+    // eslint-disable-next-line
+  }, [validateInput(type, name, values[name]).invalid]);
+
   useEffect(() => {
     getInput(values);
     // eslint-disable-next-line
@@ -50,6 +60,9 @@ const InputText = ({
     {
       [style.input_success]: validateInput(type, name, values[name]).invalid,
     },
+    {
+      [style['input_text-center']]: type === 'number',
+    },
   );
   const getClassSpan = cn(
     style['input-span-error'],
@@ -63,11 +76,21 @@ const InputText = ({
     },
   );
 
+  useEffect(() => {
+    if (type === 'number' && values[name]) {
+      setValues({
+        ...values,
+        [name]: +values[name].toString().replace(/\D/g, ''),
+      });
+    }
+    // eslint-disable-next-line
+  }, [values[name]]);
+
   return (
     <div className={style.container}>
       <input
         className={getClassItem}
-        type={getType}
+        type={getType === 'number' ? 'text' : getType}
         placeholder={placeholder}
         name={name}
         maxLength={maxLength}
@@ -107,7 +130,9 @@ InputText.propTypes = {
   id: PropTypes.string,
   position: PropTypes.string,
   autoComplete: PropTypes.string,
-  initialValue: PropTypes.objectOf(PropTypes.string),
+  // eslint-disable-next-line react/forbid-prop-types
+  initialValue: PropTypes.objectOf(PropTypes.any),
+  getValid: PropTypes.func,
 };
 
 InputText.defaultProps = {
@@ -123,6 +148,7 @@ InputText.defaultProps = {
   position: 'button-eye_position',
   autoComplete: '',
   initialValue: null,
+  getValid: () => {},
 };
 
 export default InputText;
