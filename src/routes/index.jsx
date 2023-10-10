@@ -4,14 +4,13 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import Root from './root'
+import Root from './root';
 import ErrorBoundary from './ErrorBoundary';
 
 import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
 import Main from '../pages/Main/Main';
-import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileServicesList from '../pages/ProfileServicesList';
 import ProfileServicesHistoryList from '../pages/ProfileServicesHistoryList';
@@ -61,13 +60,14 @@ import {
   dataSelectedProducts,
   dataArticle,
 } from '../assets/constants/temporaryData';
-import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
 import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import ArticlePage from '../pages/Article';
 import CardRewiew from '../components/CardReview';
+
+import CardListInProfile from '../pages/CardListInProfile';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -94,7 +94,7 @@ const router = createBrowserRouter(
         element={<Tabs dataLinks={dataLinksProfile} marginT />}
       >
         <Route element={<Profile />}>
-          <Route index element={<PetCardList petList={petList} />} />
+          <Route index element={<CardListInProfile />} />
           <Route path="add-pet" element={<PetCard />} />
           <Route path=":id" element={<PetCard />} />
         </Route>
@@ -121,14 +121,9 @@ const router = createBrowserRouter(
       </Route>
 
       {/* Articles */}
-      <Route
-        path="magazine"
-      >
+      <Route path="magazine">
         <Route index element={<Articles dataArticle={dataArticlePage} />} />
-        <Route
-          path=":id"
-          element={<ArticlePage />}
-        />
+        <Route path=":id" element={<ArticlePage />} />
       </Route>
 
       {/* Favourites */}
@@ -166,13 +161,15 @@ const router = createBrowserRouter(
 
       <Route
         path="test"
-        element={<CardRewiew
-          stars='4.4'
-          published='13 августа 2023'
-          name='Дарья'
-          serviceType='Услуга: гигиенический груминг'
-          text='Все очень понравилось. Быстро, качественно, а главное - с любовью!'
-        />}
+        element={
+          <CardRewiew
+            stars="4.4"
+            published="13 августа 2023"
+            name="Дарья"
+            serviceType="Услуга: гигиенический груминг"
+            text="Все очень понравилось. Быстро, качественно, а главное - с любовью!"
+          />
+        }
       />
 
       <Route path="advert-price" element={<CreationPriceServices />} />

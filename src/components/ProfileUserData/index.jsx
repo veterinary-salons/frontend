@@ -22,6 +22,12 @@ const ProfileUserData = ({
         <UserContacts title="Адрес:" subtitle={userData.address} />
         <UserContacts title="Номер телефона:" subtitle={userData.tel} />
         <UserContacts title="Почта:" subtitle={userData.email} />
+        {userData.outcall ? (
+          <UserContacts
+            title="Выезд к клиентам:"
+            subtitle={userData.outcall?.join(' ')}
+          />
+        ) : null}
       </div>
       <Button onClick={handleEditProfile} size="medium" variant="outlined">
         Изменить мои данные
@@ -41,7 +47,17 @@ const ProfileUserData = ({
 ProfileUserData.propTypes = {
   handleEditProfile: PropTypes.func.isRequired,
   handleExitProfile: PropTypes.func.isRequired,
-  userData: PropTypes.objectOf(PropTypes.string).isRequired,
+  // userData: PropTypes.objectOf(PropTypes.string).isRequired,
+  userData: PropTypes.shape({
+    name: PropTypes.string,
+    surname: PropTypes.string,
+    tel: PropTypes.string,
+    address: PropTypes.string,
+    email: PropTypes.string,
+    password: PropTypes.string,
+    src: PropTypes.string,
+    outcall: PropTypes.arrayOf(PropTypes.string),
+  }).isRequired,
 };
 
 export default ProfileUserData;

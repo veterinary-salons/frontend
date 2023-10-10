@@ -24,6 +24,7 @@ const Profile = () => {
     email: 'asyam1998cat@mail.ru',
     password: '1234567f',
     src: img,
+    outcall: ['выезжаю к клиентам', 'принимаю у себя'],
   });
 
   const handleEditProfile = () => {
