@@ -83,8 +83,8 @@ import ServiceChanges from '../pages/ServiceChanges';
 // import CardRewiew from '../components/CardReview';
 
 
-import ProfileServiceCard from '../modules/profileServiceCard';
-import ProfileServiceCardAdd from '../modules/profileServiceCardAdd';
+// import ProfileServiceCard from '../modules/profileServiceCard';
+// import ProfileServiceCardAdd from '../modules/profileServiceCardAdd';
 
 
 const router = createBrowserRouter(
@@ -181,7 +181,7 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       /> */}
-      <Route path="test" element={<ServiceChanges />} />
+      <Route path="test" element={<ServiceChanges variant='cynologist'/>} />
 
       {/*  <Route
         path="test"
