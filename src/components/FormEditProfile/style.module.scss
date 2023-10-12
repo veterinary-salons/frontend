@@ -34,4 +34,20 @@
     width: 140px;
     justify-content: center;
   }
+
+  &__delete {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 125% */
+    color: var(--primary-text-color, #0f0f0f);
+    width: fit-content;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-top: 20px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 }

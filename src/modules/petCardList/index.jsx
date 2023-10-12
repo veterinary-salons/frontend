@@ -4,14 +4,9 @@ import { useNavigate, Link } from 'react-router-dom';
 import PetCard from './petCard';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
-// import { useEffect } from 'react';
 
 const PetCardList = ({ petList }) => {
   const navigate = useNavigate();
-
-  // useEffect(() => {
-
-  // })
 
   const createPetList = petList
     ? petList.map(({ id, src, petName, years, months }) => (
@@ -27,36 +22,29 @@ const PetCardList = ({ petList }) => {
       ))
     : null;
 
-  return (
-    <section className={classes.pets}>
-      <h2 className={classes.pets__title}>Мои питомцы</h2>
-      {petList ? (
-        <div className={classes['pets__card-wrapper']}>
-          {createPetList}
-          <PetCard add />
-        </div>
-      ) : (
-        <div className={classes['pets__no-pet']}>
-          <p className={classes['pets__title-no-pet']}>
-            У вас пока нет питомцев
-          </p>
-          <p className={classes['pets__subtitle-no-pet']}>
-            Но они, наверняка, есть.
-          </p>
-          <Link to="add-pet">
-            <Button shape="round" size="small" variant="add" />
-          </Link>
-          <p
-            className={classNames(
-              classes['pets__subtitle-no-pet'],
-              classes['pets__subtitle-no-pet_black'],
-            )}
-          >
-            Добавить информацию
-          </p>
-        </div>
-      )}
-    </section>
+  return petList || petList?.length === 0 ? (
+    <div className={classes['pets__card-wrapper']}>
+      {createPetList}
+      <PetCard add />
+    </div>
+  ) : (
+    <div className={classes['pets__no-pet']}>
+      <p className={classes['pets__title-no-pet']}>У вас пока нет питомцев</p>
+      <p className={classes['pets__subtitle-no-pet']}>
+        Но они, наверняка, есть.
+      </p>
+      <Link to="add-pet">
+        <Button shape="round" size="small" variant="add" />
+      </Link>
+      <p
+        className={classNames(
+          classes['pets__subtitle-no-pet'],
+          classes['pets__subtitle-no-pet_black'],
+        )}
+      >
+        Добавить информацию
+      </p>
+    </div>
   );
 };
 

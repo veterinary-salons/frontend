@@ -65,7 +65,9 @@ import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import ArticlePage from '../pages/Article';
-import CardRewiew from '../components/CardReview';
+
+import ProfileServiceCard from '../modules/profileServiceCard';
+import ProfileServiceCardAdd from '../modules/profileServiceCardAdd';
 
 import CardListInProfile from '../pages/CardListInProfile';
 
@@ -162,13 +164,10 @@ const router = createBrowserRouter(
       <Route
         path="test"
         element={
-          <CardRewiew
-            stars="4.4"
-            published="13 августа 2023"
-            name="Дарья"
-            serviceType="Услуга: гигиенический груминг"
-            text="Все очень понравилось. Быстро, качественно, а главное - с любовью!"
-          />
+          <>
+            <ProfileServiceCard />
+            <ProfileServiceCardAdd />
+          </>
         }
       />
 
