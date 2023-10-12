@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { handleAuthorization } from '../../utils';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
@@ -10,6 +11,7 @@ function SignInAccountForm() {
   const [isValid, setIsValid] = useState(false);
   const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
+  const [submitError, setSubmitError] = useState('');
 
   const isActive =
     Object.values(isValidateInput).every((item) => item) && isValid;
@@ -25,10 +27,15 @@ function SignInAccountForm() {
     setIsValid(e.target.closest('form').checkValidity());
   };
 
+  const successfulNav = () => {
+    navigate('/', {replace: true});
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('auth', true);
-    navigate('/');
+
+    const {email, password} = values;
+    handleAuthorization(email, password, successfulNav, setSubmitError);
   };
 
   return (
@@ -72,24 +79,29 @@ function SignInAccountForm() {
       >
         Забыли пароль?
       </Link>
-      <div className={classes['form__button-wrapper']}>
-      <Button
-          onClick={() => navigate(-1)}
-          variant="outlined"
-          size="medium"
-          type="button"
-        >
-          Назад
-        </Button>
-        <Button
-          onClick={handleFormSubmit}
-          variant="purple-filled"
-          size="medium"
-          type="submit"
-          active={isActive}
-        >
-          Войти
-        </Button>
+      <div>
+        <div className={classes['form__button-wrapper']}>
+          <Button
+            onClick={() => navigate(-1)}
+            variant="outlined"
+            size="medium"
+            type="button"
+          >
+            Назад
+          </Button>
+          <Button
+            onClick={handleFormSubmit}
+            variant="purple-filled"
+            size="medium"
+            type="submit"
+            active={isActive}
+          >
+            Войти
+          </Button>
+        </div>
+        <span className={classes.form__error}>
+          {submitError}
+        </span>
       </div>
     </form>
   );

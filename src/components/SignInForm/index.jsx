@@ -1,5 +1,6 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { handleAuthorization } from '../../utils';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
@@ -9,6 +10,7 @@ function SignInForm() {
   const [isValid, setIsValid] = useState(false);
   const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
+  const [submitError, setSubmitError] = useState('');
 
   const isActive =
     Object.values(isValidateInput).every((item) => item) && isValid;
@@ -24,10 +26,15 @@ function SignInForm() {
     setIsValid(e.target.closest('form').checkValidity());
   };
 
+  const successfulNav = () => {
+    navigate('/', {replace: true});
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('auth', true);
-    navigate('/');
+
+    const {email, password} = values;
+    handleAuthorization(email, password, successfulNav, setSubmitError);
   };
 
   return (
@@ -69,29 +76,34 @@ function SignInForm() {
           Забыли пароль?
         </Link>
       </fieldset>
-      <div className={classes['form__button-wrapper']}>
-        <Button
-          onClick={handleFormSubmit}
-          variant="purple-filled"
-          size="medium"
-          type="submit"
-          isMaxWidth
-          active={isActive}
-        >
-          Войти
-        </Button>
-        <div className={classes.form__navbox}>
-          <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
+      <div>
+        <div className={classes['form__button-wrapper']}>
           <Button
-            onClick={() => navigate('/signup')}
-            variant="outlined"
+            onClick={handleFormSubmit}
+            variant="purple-filled"
             size="medium"
-            type="button"
+            type="submit"
             isMaxWidth
+            active={isActive}
           >
-            Зарегистрироваться
+            Войти
           </Button>
+          <div className={classes.form__navbox}>
+            <h3 className={classes.form__navtext}>Нет аккаунта?</h3>
+            <Button
+              onClick={() => navigate('/signup')}
+              variant="outlined"
+              size="medium"
+              type="button"
+              isMaxWidth
+            >
+              Зарегистрироваться
+            </Button>
+          </div>
         </div>
+        <span className={classes.form__error}>
+          {submitError}
+        </span>
       </div>
     </form>
   );

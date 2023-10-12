@@ -1,6 +1,9 @@
+/* eslint-disable camelcase */
 import { useNavigate, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { handleRegistration } from '../../utils';
+import { numberRegex } from '../../assets/constants/constants';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
@@ -10,33 +13,47 @@ import classes from './style.module.scss';
 function SignUpForm() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
-  const [userRole, setUserRole] = useState('');
   const [values, setValues] = useState({});
+  const [submitError, setSubmitError] = useState('');
 
   const handleFormChange = (value) => {
-    if(value["registration-subject"]) {
-      setUserRole(value["registration-subject"])
-    }
     setValues({
       ...values,
       ...value,
     });
-    console.log(values, isValid);
   };
 
   const handleFormValidChange = (e) => {
     setIsValid(e.target.closest('form').checkValidity());
   };
 
+  const successfulNav = () => {
+    navigate('/successful-signup', {state: {userRole: values.profile_type}, replace: true});
+  }
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('auth', true);
-    navigate('/successful-signup', {state: {userRole}});
-    // if(userRole === "specialist") {
-    //   navigate('/successful-signup');
-    // } else if(userRole === "user") {
-    //   navigate('/successful-signup');
-    // }
+    const {
+      profile_type,
+      first_name,
+      last_name,
+      tel,
+      email,
+      password
+    } = values;
+
+    const phone_number = tel.match(numberRegex).join('');
+    setSubmitError('')
+    handleRegistration(
+      profile_type,
+      first_name,
+      last_name,
+      phone_number,
+      email,
+      password,
+      successfulNav,
+      setSubmitError,
+    )
   };
 
   return (
@@ -62,10 +79,10 @@ function SignUpForm() {
         </legend>
         <Checkbox
           type="radio"
-          checked={values["registration-subject"] === "user"}
+          checked={values.profile_type === "customer"}
           htmlType="radio"
-          value="user"
-          name="registration-subject"
+          value="customer"
+          name="profile_type"
           getCheckbox={handleFormChange}
           required
         >
@@ -73,10 +90,10 @@ function SignUpForm() {
         </Checkbox>
         <Checkbox
           type="radio"
-          checked={values["registration-subject"] === "specialist"}
+          checked={values.profile_type === "supplier"}
           htmlType="radio"
-          value="specialist"
-          name="registration-subject"
+          value="supplier"
+          name="profile_type"
           getCheckbox={handleFormChange}
           required
         >
@@ -88,7 +105,7 @@ function SignUpForm() {
         <InputText
           type="text"
           placeholder="Имя"
-          name="userName"
+          name="first_name"
           maxLength={15}
           minLength={2}
           required
@@ -98,7 +115,7 @@ function SignUpForm() {
         <InputText
           type="text"
           placeholder="Фамилия"
-          name="userSurname"
+          name="last_name"
           maxLength={15}
           minLength={2}
           required
@@ -167,25 +184,31 @@ function SignUpForm() {
           </Link>
         </p>
       </Checkbox>
-      <div className={classes.form__buttons}>
-        <Button
-          onClick={() => navigate('/')}
-          variant="outlined"
-          size="medium"
-          type="button"
-        >
-          На главную
-        </Button>
-        <Button
-          onClick={handleFormSubmit}
-          variant="purple-filled"
-          size="medium"
-          type="submit"
-          active={isValid}
-        >
-          Зарегистрироваться
-        </Button>
+      <div>
+        <div className={classes.form__buttons}>
+          <Button
+            onClick={() => navigate('/')}
+            variant="outlined"
+            size="medium"
+            type="button"
+          >
+            На главную
+          </Button>
+          <Button
+            onClick={handleFormSubmit}
+            variant="purple-filled"
+            size="medium"
+            type="submit"
+            active={isValid}
+          >
+            Зарегистрироваться
+          </Button>
+        </div>
+        <span className={classes.form__error}>
+          {submitError}
+        </span>
       </div>
+      
     </form>
   );
 }
