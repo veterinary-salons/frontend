@@ -2,6 +2,8 @@
 import { useNavigate, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUserType } from '../../app/store/userSlise';
 import { handleRegistration } from '../../utils';
 import { numberRegex } from '../../assets/constants/constants';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
@@ -12,6 +14,7 @@ import classes from './style.module.scss';
 
 function SignUpForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [isValid, setIsValid] = useState(false);
   const [values, setValues] = useState({});
   const [submitError, setSubmitError] = useState('');
@@ -29,6 +32,10 @@ function SignUpForm() {
 
   const successfulNav = () => {
     navigate('/successful-signup', {state: {userRole: values.profile_type}, replace: true});
+  }
+
+  const handleUserType = (profileType) => {
+    dispatch(setUserType(profileType));
   }
 
   const handleFormSubmit = (e) => {
@@ -53,6 +60,7 @@ function SignUpForm() {
       password,
       successfulNav,
       setSubmitError,
+      handleUserType
     )
   };
 

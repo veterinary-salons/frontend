@@ -1,13 +1,14 @@
 /* eslint-disable camelcase */
 import { register, authorize } from '../api/Auth';
 
-function handleAuthorization(email, password, successfulNav, setSubmitError) {
+function handleAuthorization(email, password, successfulNav, setSubmitError, handleUserType) {
   if (!email || !password){
     return;
   }
   authorize(email, password)
   .then((res) => {
     localStorage.setItem('userData', JSON.stringify(res.profile_data));
+    handleUserType(res.profile_data.profile_type);
     localStorage.setItem('auth', 'true');
     successfulNav();
     setSubmitError('');
@@ -34,7 +35,8 @@ function handleRegistration(
   email,
   password,
   successfulNav,
-  setSubmitError
+  setSubmitError,
+  handleUserType
 ) {
   register(
     profile_type,
@@ -45,7 +47,7 @@ function handleRegistration(
     password
   )
     .then(() => {
-      handleAuthorization(email, password, successfulNav, setSubmitError);
+      handleAuthorization(email, password, successfulNav, setSubmitError, handleUserType);
     })
     .catch((err) => {
       console.log(`Ошибка: ${err.status}`);
