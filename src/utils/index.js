@@ -7,7 +7,7 @@ function handleAuthorization(email, password, successfulNav, setSubmitError) {
   }
   authorize(email, password)
   .then((res) => {
-    localStorage.setItem('userData', res);
+    localStorage.setItem('userData', JSON.stringify(res.profile_data));
     localStorage.setItem('auth', 'true');
     successfulNav();
     setSubmitError('');
