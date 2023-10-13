@@ -11,7 +11,6 @@ import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
 import Main from '../pages/Main/Main';
-import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileServicesList from '../pages/ProfileServicesList';
 import ProfileServicesHistoryList from '../pages/ProfileServicesHistoryList';
@@ -61,12 +60,13 @@ import {
   dataSelectedProducts,
   dataArticle,
 } from '../assets/constants/temporaryData';
-import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
 import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import ArticlePage from '../pages/Article';
+
+import CardListInProfile from '../pages/CardListInProfile';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -93,7 +93,7 @@ const router = createBrowserRouter(
         element={<Tabs dataLinks={dataLinksProfile} marginT />}
       >
         <Route element={<Profile />}>
-          <Route index element={<PetCardList petList={petList} />} />
+          <Route index element={<CardListInProfile />} />
           <Route path="add-pet" element={<PetCard />} />
           <Route path=":id" element={<PetCard />} />
         </Route>
