@@ -35,7 +35,7 @@ function SignInForm() {
 
   const handleUserType = (profileType) => {
     dispatch(setUserType(profileType));
-  }
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();

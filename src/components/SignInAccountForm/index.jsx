@@ -1,5 +1,7 @@
 import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setUserType } from '../../app/store/userSlise';
 import { handleAuthorization } from '../../utils';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
@@ -8,6 +10,7 @@ import MailAccount from '../MailAccount';
 
 function SignInAccountForm() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const [isValid, setIsValid] = useState(false);
   const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
@@ -31,11 +34,15 @@ function SignInAccountForm() {
     navigate('/', {replace: true});
   };
 
+  const handleUserType = (profileType) => {
+    dispatch(setUserType(profileType));
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
     const {email, password} = values;
-    handleAuthorization(email, password, successfulNav, setSubmitError);
+    handleAuthorization(email, password, successfulNav, setSubmitError, handleUserType);
   };
 
   return (
