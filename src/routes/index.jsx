@@ -68,9 +68,6 @@ import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
 import ArticlePage from '../pages/Article';
 
-import ProfileServiceCard from '../modules/profileServiceCard';
-import ProfileServiceCardAdd from '../modules/profileServiceCardAdd';
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
@@ -163,12 +160,7 @@ const router = createBrowserRouter(
 
       <Route
         path="test"
-        element={
-          <>
-            <ProfileServiceCard />
-            <ProfileServiceCardAdd />
-          </>
-        }
+        element={<h1>TEST</h1>}
       />
 
       <Route path="advert-price" element={<CreationPriceServices />} />
