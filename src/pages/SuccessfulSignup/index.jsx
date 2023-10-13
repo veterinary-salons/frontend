@@ -9,26 +9,26 @@ const SuccessfulSignup = () => {
   const [messageData, setMessageData] = useState({});
 
   useEffect(() => {
-    if (location.state.userRole === "user") {
+    if (location.state.userRole === 'user') {
       setMessageData({
         imageNumber: '4',
         title: 'Ура! Теперь мы с вами официально друзья',
         text: 'Добавляйте своих питомцев и ищите подходящие услуги',
         to: '/profile',
-        buttonText: 'Добавить питомца'
+        buttonText: 'Добавить питомца',
       });
-    } else if (location.state.userRole === "specialist") {
+    } else if (location.state.userRole === 'specialist') {
       setMessageData({
         imageNumber: '13',
         title: 'Ура! Теперь вы можете разместить вашу услугу',
         text: 'Вы можете оказывать сразу несколько услуг. Для каждой услуги вам необходимо создать новое объявление.',
-        to: '/profile',
-        buttonText: 'Разместить услугу'
+        to: '/advert',
+        buttonText: 'Разместить услугу',
       });
     }
   }, []);
-  
-    return (
+
+  return (
     <section className={classes['successful-message']}>
       <NotificationMessage
         imageNumber={messageData.imageNumber}
@@ -36,9 +36,9 @@ const SuccessfulSignup = () => {
         text={messageData.text}
         to={messageData.to}
         buttonText={messageData.buttonText}
-      />      
+      />
     </section>
-  )
+  );
 };
 
 export default SuccessfulSignup;
