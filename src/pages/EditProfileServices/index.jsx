@@ -13,8 +13,9 @@ import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
 import ChecboxList from '../../components/ChecboksList';
 
-const ServiceChanges = ({ variant }) => {
+const EditProfileServices = ({ variant }) => {
   const navigate = useNavigate();
+  const [veterinars, setVeterinars] = useState(variant);
   const [dataDropdown, setDataDropdown] = useState({});
   const [dataAnimals, setDataAnimals] = useState({});
   const [dataTasks, setDataTasks] = useState({});
@@ -29,29 +30,18 @@ const ServiceChanges = ({ variant }) => {
     navigate('/next', { replace: true });
   };
 
-  const version = (name) => {
-    switch (name) {
-      case 'zoonyanya': {
-        return dataTasks;
-      }
+  useEffect(() => {
+    setVeterinars(dataDropdown);
+  }, [dataDropdown]);
 
-      case 'cynologist': {
-        return dataFormatWork;
-      }
-
-      case 'groomer': {
-        return dataGrooming;
-      }
-
-      case 'veterinarian': {
-        return dataTasks;
-      }
-
-      default: {
-        return '';
-      }
-    }
+  const versionData = {
+    zoonyanya: dataTasks,
+    cynologist: dataFormatWork,
+    groomer: dataGrooming,
+    veterinarian: dataTasks,
   };
+
+  const version = (name) => versionData[name] || '';
 
   useEffect(() => {
     setDatas({
@@ -96,7 +86,7 @@ const ServiceChanges = ({ variant }) => {
           />
         </div>
 
-        {variant === 'zoonyanya' && (
+        {veterinars.veterinarian === 'зооняня' && (
           <div className={classes['service-changes__container']}>
             <h3 className={classes['service-changes__block-name']}>
               С какими животными вы работаете?
@@ -108,7 +98,7 @@ const ServiceChanges = ({ variant }) => {
           </div>
         )}
 
-        {variant === 'cynologist' && (
+        {veterinars.veterinarian === 'кинолог' && (
           <>
             <div className={classes['service-changes__container']}>
               <h3 className={classes['service-changes__block-name']}>
@@ -131,7 +121,7 @@ const ServiceChanges = ({ variant }) => {
           </>
         )}
 
-        {variant === 'groomer' && (
+        {veterinars.veterinarian === 'грумер' && (
           <>
             <div className={classes['service-changes__container']}>
               <h3 className={classes['service-changes__block-name']}>
@@ -155,7 +145,7 @@ const ServiceChanges = ({ variant }) => {
           </>
         )}
 
-        {variant === 'veterinarian' && (
+        {veterinars.veterinarian === 'ветеринар' && (
           <>
             <div className={classes['service-changes__container']}>
               <h3 className={classes['service-changes__block-name']}>
@@ -225,17 +215,12 @@ const ServiceChanges = ({ variant }) => {
   );
 };
 
-ServiceChanges.propTypes = {
-  variant: PropTypes.oneOf([
-    'zoonyanya',
-    'cynologist',
-    'groomer',
-    'veterinarian',
-  ]),
+EditProfileServices.propTypes = {
+  variant: PropTypes.oneOf(['зооняня', 'кинолог', 'грумер', 'ветеринар']),
 };
 
-ServiceChanges.defaultProps = {
-  variant: 'veterinarian',
+EditProfileServices.defaultProps = {
+  variant: 'ветеринар',
 };
 
-export default ServiceChanges;
+export default EditProfileServices;

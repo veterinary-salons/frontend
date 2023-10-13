@@ -1,25 +1,45 @@
 import { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import classes from '../AdForm/style.module.scss';
 import InputText from '../../../ui/forms/inputs/inputText/InputText';
 import AdForm from '../AdForm';
+import { addServies } from '../../../app/store/addServise/servies-action';
 
 const AdTitle = () => {
   const [info, setInfo] = useState('');
-  console.log(info);
-  const path = JSON.parse(localStorage.getItem('veterinarian'));
+  const dispatch = useDispatch();
+  const veterinarInfo = JSON.parse(localStorage.getItem('veterinarian'));
+  localStorage.setItem(
+    'serviseName',
+    JSON.stringify({ text: info['ad-title'] }),
+  );
+  const [validate, setValidate] = useState({});
+  veterinarInfo.text = info;
+
+  const handleSubmit = () => {
+    dispatch(addServies(info['ad-title'], 'specialistInformation'));
+  };
+
+  const title = useSelector((state) => state.addServies.specialistInformation);
 
   return (
-    <AdForm title="Как назвать ваше объявление?" step={path.category}>
+    <AdForm
+      title="Как назвать ваше объявление?"
+      step={veterinarInfo.category}
+      activBtn={validate['ad-title']}
+      onClick={handleSubmit}
+    >
       <div className={classes['af__input-container']}>
         <InputText
           type="text"
-          placeholder="Ветеринар-хирург"
-          name="text"
+          placeholder={title || 'Ветеринар-хирург'}
+          name="ad-title"
           maxLength={20}
           minLength={2}
           required
           autoComplete="off"
           getInput={setInfo}
+          getValid={setValidate}
         />
       </div>
     </AdForm>

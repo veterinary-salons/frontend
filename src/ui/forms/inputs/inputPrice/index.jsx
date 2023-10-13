@@ -20,7 +20,7 @@ const InputPrice = ({
       [classes.input_disabel]: disabled,
     },
     {
-      [classes.input_color]: validateInput('price', values).invalid,
+      [classes.input_color]: validateInput('price', null, values).invalid,
     },
     {
       [classes.input_success]: validateInput('price', name, values).invalid,
@@ -28,7 +28,7 @@ const InputPrice = ({
   );
 
   useEffect(() => {
-    getInput({ name: values });
+    getInput(values);
     // eslint-disable-next-line
   }, [values]);
 
@@ -41,7 +41,7 @@ const InputPrice = ({
       prefix={`${prefix} `}
       suffix=" ₽"
       maxLength={6}
-      defaultValue=''
+      defaultValue=""
       decimalsLimit={1}
       onValueChange={(value) => setValues(value)}
     />

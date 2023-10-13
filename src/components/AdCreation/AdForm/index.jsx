@@ -5,12 +5,13 @@ import SectionTitle from '../../SectionTitle';
 import Button from '../../../ui/buttons/originButton/Button';
 import { routeNext, routeBack } from '../../../assets/constants/getRoutes';
 
-const AdForm = ({ title, children, step, activBtn }) => {
+const AdForm = ({ title, children, step, activBtn, onClick }) => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    onClick();
     navigate(routeNext(location.pathname, step));
   };
 
@@ -48,6 +49,7 @@ AdForm.propTypes = {
   children: PropTypes.node,
   step: PropTypes.string,
   activBtn: PropTypes.bool,
+  onClick: PropTypes.func,
 };
 
 AdForm.defaultProps = {
@@ -55,6 +57,7 @@ AdForm.defaultProps = {
   children: null,
   step: '',
   activBtn: true,
+  onClick: () => {},
 };
 
 export default AdForm;

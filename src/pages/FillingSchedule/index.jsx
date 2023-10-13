@@ -1,31 +1,23 @@
-import PropTypes from 'prop-types';
-import { useCallback, useEffect, useState } from 'react';
+// import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import ScheduleDay from '../../components/ScheduleDay';
-// import ReceptionSelectionBlock from '../../components/ReceptionSelectionBlock';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
-// import { arrAdSchedule } from '../../assets/constants/filters';
 import AdSchedule from '../../components/AdSchedule';
+import { addServies } from '../../app/store/addServise/servies-action';
 
-const FillingSchedule = ({ getSchedule }) => {
+const FillingSchedule = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [days, setDays] = useState({});
   const [session, setSession] = useState({});
   const [durationService, setDurationService] = useState({});
   const [infoSchedule, setInfoSchedule] = useState({});
 
-  const handleFormChange = useCallback(
-    (value) => {
-      setSession({
-        ...session,
-        ...value,
-      });
-    },
-    [session],
-  );
-
   const path = JSON.parse(localStorage.getItem('veterinarian'));
+
+  localStorage.setItem('workingHours', JSON.stringify(infoSchedule));
 
   const routeBack =
     path.category === 'petSitting'
@@ -33,21 +25,16 @@ const FillingSchedule = ({ getSchedule }) => {
       : `/advert-${path.category}-services`;
 
   const handleSchedule = () => {
-    handleFormChange();
+    dispatch(addServies(infoSchedule, 'workingHours'));
     navigate('/advert-price', { replace: true });
   };
 
   useEffect(() => {
     setInfoSchedule({
-      session,
+      session: '1 час',
       days,
     });
-  }, [session, days]);
-
-  useEffect(() => {
-    getSchedule(infoSchedule.days);
-    // eslint-disable-next-line
-  }, [infoSchedule]);
+  }, [days]);
 
   return (
     <section className={classes['filling-schedule']}>
@@ -84,12 +71,8 @@ const FillingSchedule = ({ getSchedule }) => {
   );
 };
 
-FillingSchedule.propTypes = {
-  getSchedule: PropTypes.func,
-};
+FillingSchedule.propTypes = {};
 
-FillingSchedule.defaultProps = {
-  getSchedule: () => {},
-};
+FillingSchedule.defaultProps = {};
 
 export default FillingSchedule;

@@ -24,5 +24,13 @@
     &:focus {
       color: #000;
     }
+
+    &_error {
+      border: 2px solid var(--error-color, #d80000);
+    }
+
+    &_success {
+      border: 2px solid var(--success-color, #03a600);
+    }
   }
 }

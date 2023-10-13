@@ -1,12 +1,30 @@
 import PropTypes from 'prop-types';
 import { useCallback, useEffect, useState } from 'react';
+import cn from 'classnames';
 import classes from './style.module.scss';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
+import validateInput from '../../assets/constants/validation';
 
-const ChecboxList = ({ array, getInfo, inputActive }) => {
+const ChecboxList = ({ array, getInfo, inputActive, setText }) => {
   const [chekboxInput, setChekboxInput] = useState(false);
   const [infoInput, setInfoInput] = useState('');
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState([]);
+
+  const getClasseInput = cn(
+    classes.list__input,
+    {
+      [classes.list__input_error]: validateInput('checkbox', null, {
+        array,
+        infoInput,
+      }).error,
+    },
+    {
+      [classes.list__input_success]: validateInput('checkbox', null, {
+        array,
+        infoInput,
+      }).invalid,
+    },
+  );
 
   const handleCheckbox = () => {
     setChekboxInput(!chekboxInput);
@@ -23,6 +41,11 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
   );
 
   useEffect(() => {
+    setText(infoInput);
+    // eslint-disable-next-line
+  }, [infoInput]);
+
+  useEffect(() => {
     getInfo(Object.values(values));
     // eslint-disable-next-line
   }, [values]);
@@ -34,7 +57,6 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
         name: infoInput,
         value: infoInput,
         lebel: infoInput,
-        id: Math.random() * 10,
       });
     }
     setChekboxInput(false);
@@ -67,7 +89,7 @@ const ChecboxList = ({ array, getInfo, inputActive }) => {
             value="value"
           >
             <input
-              className={classes.list__input}
+              className={getClasseInput}
               placeholder="Другое"
               onChange={(e) => setInfoInput(e.target.value)}
               value={infoInput}
@@ -90,11 +112,13 @@ ChecboxList.propTypes = {
   ).isRequired,
   getInfo: PropTypes.func,
   inputActive: PropTypes.bool,
+  setText: PropTypes.func,
 };
 
 ChecboxList.defaultProps = {
   getInfo: () => {},
   inputActive: true,
+  setText: () => {},
 };
 
 export default ChecboxList;

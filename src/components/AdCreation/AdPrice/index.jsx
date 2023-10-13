@@ -3,11 +3,9 @@ import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import InputPrice from '../../../ui/forms/inputs/inputPrice';
 
-const AdPrice = ({ title, name, getPrice, value }) => {
-  const [form, setForm] = useState('');
-  const [befor, setBefor] = useState('');
-
-  // TODO: сделать валидацию полей. Значение 'от' не должно быть больше 'до'
+const AdPrice = ({ title, name, getPrice, value, getValidate }) => {
+  const [form, setForm] = useState('0');
+  const [befor, setBefor] = useState('0');
 
   useEffect(() => {
     getPrice({
@@ -17,6 +15,7 @@ const AdPrice = ({ title, name, getPrice, value }) => {
         befor,
       },
     });
+    getValidate(form.name < befor.name);
     // eslint-disable-next-line
   }, [form, befor]);
 
@@ -34,10 +33,12 @@ AdPrice.propTypes = {
   name: PropTypes.string.isRequired,
   getPrice: PropTypes.func.isRequired,
   value: PropTypes.shape().isRequired,
+  getValidate: PropTypes.func,
 };
 
 AdPrice.defaultProps = {
   title: 'Стерилизация',
+  getValidate: () => {},
 };
 
 export default AdPrice;
