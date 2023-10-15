@@ -1,18 +1,21 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
+import { addService } from '../../app/store/addService/service-action';
 
-const DescriptionService = ({ getDescription }) => {
+const DescriptionService = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [value, setValue] = useState('');
   const [isValid, setIsValid] = useState(false);
 
   const handleButton = () => {
     navigate('/advert-final', { replace: true });
-    getDescription({ descriptionServes: value });
+    dispatch(addService(value, 'descriptionServes'));
   };
 
   return (
@@ -47,11 +50,11 @@ const DescriptionService = ({ getDescription }) => {
 };
 
 DescriptionService.propTypes = {
-  getDescription: PropTypes.func,
+  //  getDescription: PropTypes.func,
 };
 
 DescriptionService.defaultProps = {
-  getDescription: () => {},
+  // getDescription: () => {},
 };
 
 export default DescriptionService;

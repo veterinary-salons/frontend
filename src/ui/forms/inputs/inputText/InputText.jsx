@@ -46,6 +46,7 @@ const InputText = ({
     getInput(values);
     // eslint-disable-next-line
   }, [values]);
+
   const handleEyePassword = (bool, typeInput) => (bool ? 'text' : typeInput);
   const getType = type === 'password' ? handleEyePassword(isClick, type) : type;
   const getClassItem = cn(
@@ -82,6 +83,7 @@ const InputText = ({
         [name]: +values[name].toString().replace(/\D/g, ''),
       });
     }
+    // eslint-disable-next-line
   }, [values[name]]);
 
   return (

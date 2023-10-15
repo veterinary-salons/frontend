@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import classnames from 'classnames';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
@@ -15,7 +14,7 @@ const statusDataMapping = [
       subjectSubtitle: 'Исполнитель',
       dateSubtitle: 'Дата исполнения',
       buttonText: 'Отменить услугу',
-      buttonLink: 'cancellation',
+      buttonLink: '/',
       cardLink: '/',
     },
   },
@@ -27,7 +26,7 @@ const statusDataMapping = [
       subjectSubtitle: 'Исполнитель',
       dateSubtitle: 'Дата исполнения',
       buttonText: 'Оценить услугу',
-      buttonLink: '../feedback',
+      buttonLink: '/',
       cardLink: '/',
     },
   },
@@ -39,7 +38,7 @@ const statusDataMapping = [
       subjectSubtitle: 'Исполнитель',
       dateSubtitle: 'Дата отмены',
       buttonText: 'Оценить услугу',
-      buttonLink: '../feedback',
+      buttonLink: '/',
       cardLink: '/',
     },
   },
@@ -51,7 +50,7 @@ const statusDataMapping = [
       subjectSubtitle: 'Заказчик',
       dateSubtitle: 'Дата исполнения',
       buttonText: 'Отменить бронирование',
-      buttonLink: 'cancellation',
+      buttonLink: '/',
       cardLink: '/',
     },
   },
@@ -63,7 +62,7 @@ const statusDataMapping = [
       subjectSubtitle: 'Заказчик',
       dateSubtitle: 'Дата исполнения',
       buttonText: 'Посмотреть отзыв',
-      buttonLink: '../feedback',
+      buttonLink: '/',
       cardLink: '/',
     },
   },
@@ -75,7 +74,7 @@ const statusDataMapping = [
       subjectSubtitle: 'Заказчик',
       dateSubtitle: 'Дата отмены',
       buttonText: 'Посмотреть отзыв',
-      buttonLink: '../feedback',
+      buttonLink: '/',
       cardLink: '/',
     },
   },
@@ -101,7 +100,7 @@ const ServiceBookingCard = ({
       buttonLink: '/',
       cardLink: '/',
     },
-  });
+  },);
 
   useEffect(() => {
     setStatusData(
@@ -155,18 +154,17 @@ const ServiceBookingCard = ({
         <p className={(classes.card__text, classes.card__text_color)}>Сумма</p>
         <p className={classes.card__text}>{`${price} ₽`}</p>
       </div>
-      <Link to={statusData.data.buttonLink}>
-        <Button
-          variant="outlined"
-          size="medium"
-          type="button"
-          isMaxWidth
-          onClick={() => {}}
-          active={status !== 'canceled'}
-        >
-          {statusData.data.buttonText}
-        </Button>
-      </Link>
+
+      <Button
+        variant="outlined"
+        size="medium"
+        type="button"
+        isMaxWidth
+        onClick={() => {}}
+        active={status !== 'canceled'}
+      >
+        {statusData.data.buttonText}
+      </Button>
     </article>
   );
 };
@@ -178,7 +176,7 @@ ServiceBookingCard.propTypes = {
   subjectImage: PropTypes.string,
   subjectName: PropTypes.string,
   type: PropTypes.oneOf(['forMe', 'fromMe']).isRequired,
-  status: PropTypes.oneOf(['inProgress', 'done', 'canceled']).isRequired,
+  status: PropTypes.oneOf(['inProgress', 'done', 'cancelled']).isRequired,
   serviceName: PropTypes.string,
   serviceDate: PropTypes.string,
   price: PropTypes.string,

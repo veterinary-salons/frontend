@@ -1,0 +1,36 @@
+.list {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  &__container {
+    display: flex;
+    gap: 8px;
+  }
+
+  &__input {
+    width: 400px;
+    height: 34px;
+    padding: 10px;
+    font-size: 16px;
+    line-height: 20px;
+    color: #9c9c9c;
+    border-radius: 8px;
+    background: #f8f8f8;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+
+    &:focus {
+      color: #000;
+    }
+
+    &_error {
+      border: 2px solid var(--error-color, #d80000);
+    }
+
+    &_success {
+      border: 2px solid var(--success-color, #03a600);
+    }
+  }
+}

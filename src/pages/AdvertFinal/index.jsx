@@ -7,8 +7,8 @@ import {
   dataListPrices,
   dataFinalSchedule,
 } from '../../assets/constants/dataListPrices';
-import OpenHours from '../../components/OpenHours';
 import Button from '../../ui/buttons/originButton/Button';
+import ContainerOpenHours from '../../components/ContainerOpenHours';
 
 const AdvertFinal = ({
   img,
@@ -37,7 +37,9 @@ const AdvertFinal = ({
         <img className={classes.final__img} alt="фото" src={img || imgAvatar} />
       </div>
       <ListPrices array={dataListPrices} />
-      <OpenHours array={dataFinalSchedule} />
+      {dataFinalSchedule.map((i) => (
+        <ContainerOpenHours object={i} key={i.monday.id} />
+      ))}
       {session && (
         <p
           className={classes.final__text}
