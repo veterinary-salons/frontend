@@ -5,7 +5,7 @@ import classes from '../AdForm/style.module.scss';
 import AdForm from '../AdForm';
 import CheckboxList from '../../ChecboksList/index';
 import { dateServiceCheckboxList } from '../../../assets/constants/constants';
-import { addServies } from '../../../app/store/addServise/servies-action';
+import { addService } from '../../../app/store/addService/service-action';
 
 const AdGroomer = ({ getInfo }) => {
   const dispatch = useDispatch();
@@ -23,10 +23,10 @@ const AdGroomer = ({ getInfo }) => {
     }
     // eslint-disable-next-line
   }, [values]);
-  const date = useSelector((state) => state.addServies);
+  const date = useSelector((state) => state.addService);
 
   const handleSubmit = () => {
-    dispatch(addServies(values, 'petType', date, text));
+    dispatch(addService(values, 'petType', date, text));
   };
 
   return (

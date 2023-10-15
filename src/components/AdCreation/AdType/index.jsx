@@ -4,7 +4,7 @@ import classes from '../AdForm/style.module.scss';
 import AdForm from '../AdForm';
 import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
 import { dateServiceCheckboxList } from '../../../assets/constants/constants';
-import { addServies } from '../../../app/store/addServise/servies-action';
+import { addService } from '../../../app/store/addService/service-action';
 
 const AdType = () => {
   const [values, setValues] = useState({});
@@ -16,7 +16,7 @@ const AdType = () => {
   );
 
   const handleSubmit = () => {
-    dispatch(addServies(values.category, 'specialization', veterinarInfo));
+    dispatch(addService(values.category, 'specialization', veterinarInfo));
   };
 
   return (

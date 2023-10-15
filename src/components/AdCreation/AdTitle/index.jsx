@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import classes from '../AdForm/style.module.scss';
 import InputText from '../../../ui/forms/inputs/inputText/InputText';
 import AdForm from '../AdForm';
-import { addServies } from '../../../app/store/addServise/servies-action';
+import { addService } from '../../../app/store/addService/service-action';
 
 const AdTitle = () => {
   const [info, setInfo] = useState('');
@@ -17,10 +17,10 @@ const AdTitle = () => {
   veterinarInfo.text = info;
 
   const handleSubmit = () => {
-    dispatch(addServies(info['ad-title'], 'specialistInformation'));
+    dispatch(addService(info['ad-title'], 'specialistInformation'));
   };
 
-  const title = useSelector((state) => state.addServies.specialistInformation);
+  const title = useSelector((state) => state.addService.specialistInformation);
 
   return (
     <AdForm

@@ -6,21 +6,21 @@ import AdPrice from '../../components/AdCreation/AdPrice';
 import classes from './style.module.scss';
 // import { dataServicePriceFilter } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
-import { addServies } from '../../app/store/addServise/servies-action';
+import { addService } from '../../app/store/addService/service-action';
 
 const CreationPriceServices = ({ getPrice }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [price, setPrice] = useState({});
   const [validate, setValidate] = useState(false);
-  // const date = useSelector((state) => state.addServies);
+  // const date = useSelector((state) => state.addService);
   // console.log(date.serviceType);
 
   const array = JSON.parse(localStorage.getItem('serviceType'));
 
   const handlePrice = () => {
     getPrice({ price });
-    dispatch(addServies(price, 'price'));
+    dispatch(addService(price, 'price'));
     navigate('/advert-description', { replace: true });
   };
   console.log(array.serviceType);

@@ -1,3 +1,5 @@
+const baseUrl = 'http://purrfect-care.acceleratorpracticum.ru/api/v1';
+
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexCyrillic = /^[а-яА-Я\sё-]+$/;
@@ -25,6 +27,8 @@ const maskPhone = [
   /\d/,
 ];
 const placeholderPhone = '8(___)___-__-__';
+const numberRegex = /\d/g;
+
 const arrayAnimals = [
   {
     id: 1,
@@ -185,7 +189,7 @@ const arrImgOrderCard = [
   { img: 'https://i.ibb.co/YL804BL/Rectangle-9.png', id: 3 },
 ];
 
-const variantVeterinarians = {
+const specialisation = {
   zoonyanya: 'Зооняня',
   cynologist: 'Кинолог',
   groomer: 'Грумер',
@@ -193,7 +197,7 @@ const variantVeterinarians = {
 };
 
 const dateServiceCheckboxList = {
-  variantVeterinarians: [
+  specialisation: [
     {
       text: 'зооняня',
       id: 1,
@@ -590,6 +594,7 @@ const vetServiceOptions = {
 };
 
 export {
+  baseUrl,
   regexEmail,
   regexText,
   regexCyrillic,
@@ -597,6 +602,7 @@ export {
   regexPhone,
   maskPhone,
   placeholderPhone,
+  numberRegex,
   arrayAnimals,
   arrayFilterList,
   arrayServicesVet,
@@ -607,7 +613,7 @@ export {
   regexTextArea,
   dataServicePriceFilter,
   regexPetName,
-  variantVeterinarians,
+  specialisation,
   dateServiceCheckboxList,
   dogHandlerServiceOptions,
   groomerServiceOptions,

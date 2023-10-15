@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
-import { addServies } from '../../app/store/addServise/servies-action';
+import { addService } from '../../app/store/addService/service-action';
 
 const DescriptionService = () => {
   const dispatch = useDispatch();
@@ -15,7 +15,7 @@ const DescriptionService = () => {
 
   const handleButton = () => {
     navigate('/advert-final', { replace: true });
-    dispatch(addServies(value, 'descriptionServes'));
+    dispatch(addService(value, 'descriptionServes'));
   };
 
   return (

@@ -11,7 +11,6 @@ import Tabs from '../modules/tabs';
 import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
 import Main from '../pages/Main/Main';
-import PetCardList from '../modules/petCardList';
 import ProfileServices from '../pages/ProfileServices';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
@@ -68,7 +67,6 @@ import {
   dataSelectedProducts,
   dataArticle,
 } from '../assets/constants/temporaryData';
-import petList from '../assets/constants/petList';
 import Goods from '../pages/Goods';
 import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
@@ -78,6 +76,8 @@ import ArticlePage from '../pages/Article';
 import EditProfileServices from '../pages/EditProfileServices';
 // import CardRewiew from '../components/CardReview';
 
+
+import CardListInProfile from '../pages/CardListInProfile';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -104,7 +104,7 @@ const router = createBrowserRouter(
         element={<Tabs dataLinks={dataLinksProfile} marginT />}
       >
         <Route element={<Profile />}>
-          <Route index element={<PetCardList petList={petList} />} />
+          <Route index element={<CardListInProfile />} />
           <Route path="add-pet" element={<PetCard />} />
           <Route path=":id" element={<PetCard />} />
         </Route>
@@ -166,7 +166,7 @@ const router = createBrowserRouter(
       <Route path="recovery-password" element={<RecoveryPassword />} />
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
-      {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
+      {/*  Роут для проверки своих компонентов в адресной строке ввести /test */}
 
       {/* <Route
         path="test"

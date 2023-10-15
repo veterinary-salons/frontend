@@ -5,7 +5,7 @@ import classes from '../../AdForm/style.module.scss';
 import AdForm from '../../AdForm';
 import CheckboxList from '../../../ChecboksList/index';
 import { dateServiceCheckboxList } from '../../../../assets/constants/constants';
-import { addServies } from '../../../../app/store/addServise/servies-action';
+import { addService } from '../../../../app/store/addService/service-action';
 
 const AdGroomerStepTwo = ({ getInfo }) => {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const AdGroomerStepTwo = ({ getInfo }) => {
   localStorage.setItem('serviceType', JSON.stringify(values));
 
   const handleSubmit = () => {
-    dispatch(addServies(values, 'serviceType'));
+    dispatch(addService(values, 'serviceType'));
   };
 
   return (

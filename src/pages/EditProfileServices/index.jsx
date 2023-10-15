@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import {
-  variantVeterinarians,
+  specialisation,
   dateServiceCheckboxList,
 } from '../../assets/constants/constants';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
@@ -71,7 +71,7 @@ const EditProfileServices = ({ variant }) => {
     <section className={classes['service-changes']}>
       <h2
         className={classes['service-changes__title']}
-      >{`Мои услуги - ${variantVeterinarians[variant]} - (редактирование)`}</h2>
+      >{`Мои услуги - ${specialisation[variant]} - (редактирование)`}</h2>
 
       <div className={classes['service-changes__box']}>
         <div className={classes['service-changes__container']}>
@@ -82,7 +82,7 @@ const EditProfileServices = ({ variant }) => {
             getValue={setDataDropdown}
             width="500px"
             name="veterinarian"
-            array={dateServiceCheckboxList.variantVeterinarians}
+            array={dateServiceCheckboxList.specialisation}
           />
         </div>
 

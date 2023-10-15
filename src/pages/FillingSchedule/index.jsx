@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 import AdSchedule from '../../components/AdSchedule';
-import { addServies } from '../../app/store/addServise/servies-action';
+import { addService } from '../../app/store/addService/service-action';
 
 const FillingSchedule = () => {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ const FillingSchedule = () => {
       : `/advert-${path.category}-services`;
 
   const handleSchedule = () => {
-    dispatch(addServies(infoSchedule, 'workingHours'));
+    dispatch(addService(infoSchedule, 'workingHours'));
     navigate('/advert-price', { replace: true });
   };
 
