@@ -12,11 +12,6 @@ import Profile from '../pages/Profile';
 import Favourites from '../pages/Favourites';
 import Main from '../pages/Main/Main';
 import ProfileServices from '../pages/ProfileServices';
-import ProfileServicesList from '../pages/ProfileServicesList';
-import ProfileServicesHistoryList from '../pages/ProfileServicesHistoryList';
-import ProfileBookingCancellation from '../pages/ProfileBookingCancellation';
-import ProfileBokingCanceled from '../pages/ProfileBokingCanceled';
-import BookingFeedback from '../pages/BookingFeedback';
 import ProfileGoods from '../pages/ProfileGoods';
 import Articles from '../pages/Articles/index';
 
@@ -40,6 +35,7 @@ import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
+import BookingCancellation from '../components/BookingCancellation';
 
 import PetCard from '../pages/PetCard';
 
@@ -54,7 +50,18 @@ import PetCard from '../pages/PetCard';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup';
 // import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 import AdvertFinal from '../pages/AdvertFinal';
-import AdSchedule from '../pages/Schedule';
+import FillingSchedule from '../pages/FillingSchedule';
+
+import AdType from '../components/AdCreation/AdType/index';
+// import AdForm from '../components/AdCreation/AdForm';
+import AdTitle from '../components/AdCreation/AdTitle';
+import AdDogHandler from '../components/AdCreation/AdDogHandler';
+import AdDogHandlerStepTwo from '../components/AdCreation/AdDogHandler/AdDogHandlerStepTwo';
+import AdGroomer from '../components/AdCreation/adGroomer';
+import AdGroomerStepTwo from '../components/AdCreation/adGroomer/AdGroomerStepTwo';
+import AdVet from '../components/AdCreation/adVet';
+// import AdPetSitter from '../components/AdCreation/adPetSitter';
+import AdVetStepTwo from '../components/AdCreation/adVet/AdVetStepTwo';
 
 import {
   dataSelectedProducts,
@@ -64,7 +71,11 @@ import Goods from '../pages/Goods';
 import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
+import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
+import EditProfileServices from '../pages/EditProfileServices';
+// import CardRewiew from '../components/CardReview';
+
 
 import CardListInProfile from '../pages/CardListInProfile';
 
@@ -98,11 +109,10 @@ const router = createBrowserRouter(
           <Route path=":id" element={<PetCard />} />
         </Route>
         <Route path="services" element={<ProfileServices />}>
-          <Route index element={<ProfileServicesList />} />
-          <Route path="history" element={<ProfileServicesHistoryList />} />
-          <Route path="cancellation" element={<ProfileBookingCancellation />} />
-          <Route path="canceled" element={<ProfileBokingCanceled />} />
-          <Route path="feedback" element={<BookingFeedback />} />
+          <Route
+            path="revoke"
+            element={<BookingCancellation dataBooking={dataBooking} />}
+          />
         </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
@@ -158,15 +168,33 @@ const router = createBrowserRouter(
 
       {/*  Роут для проверки своих компонентов в адресной строке ввести /test */}
 
-      <Route
+      {/* <Route
         path="test"
-        element={<h1>TEST</h1>}
-      />
+        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+      /> */}
+      <Route path="test" element={<EditProfileServices />} />
 
+   
+      <Route path="advert" element={<AdType />} />
+      <Route path="advert-groomer" element={<AdTitle />} />
+      <Route path="advert-veterinary" element={<AdTitle />} />
+      <Route path="advert-petSitting" element={<AdTitle />} />
+      <Route path="advert-cynology" element={<AdTitle />} />
+      <Route path="advert-cynology-pet" element={<AdDogHandler />} />
+      <Route
+        path="advert-cynology-services"
+        element={<AdDogHandlerStepTwo />}
+      />
+      <Route path="advert-groomer-pet" element={<AdGroomer />} />
+      <Route path="advert-groomer-services" element={<AdGroomerStepTwo />} />
+      <Route path="advert-veterinary-pet" element={<AdVet />} />
+      <Route path="advert-veterinary-services" element={<AdVetStepTwo />} />
+      <Route path="advert-petSitting-pet" element={<AdVet />} />
+
+      <Route path="advert-schedule" element={<FillingSchedule />} />
       <Route path="advert-price" element={<CreationPriceServices />} />
-      <Route path="advert-final" element={<AdvertFinal />} />
-      <Route path="advert-schedule" element={<AdSchedule />} />
       <Route path="advert-description" element={<DescriptionService />} />
+      <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,
   ),

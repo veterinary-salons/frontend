@@ -1,0 +1,42 @@
+.af {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 60px auto 0;
+  width: 606px;
+
+  &__content-wrap {
+    max-width: 452px;
+  }
+
+  &__checkbox-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin: 48px 0 40px;
+  }
+
+  &__input-container {
+    display: flex;
+    flex-direction: column;
+    margin: 48px 0 14px;
+  }
+
+  &__input {
+    display: flex;
+    width: 420px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    background: var(--additional-colors-light-grey, #f8f8f8);
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+    border: 0;
+  }
+
+  &__button-wrap {
+    display: flex;
+    justify-content: space-between;
+  }
+}

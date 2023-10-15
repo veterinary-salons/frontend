@@ -206,6 +206,12 @@ function validatePetAge(value) {
   return { invalid: true, message: '' };
 }
 
+function validateCheckbox({ array, infoInput }) {
+  return array.map((i) =>
+    i.name === infoInput ? { error: true } : { invalid: true },
+  );
+}
+
 const validateInput = (type, name, value) => {
   if (type === 'email') {
     return validateEmail(value);
@@ -236,6 +242,9 @@ const validateInput = (type, name, value) => {
   }
   if (type === 'price') {
     return validatePrice(value);
+  }
+  if (type === 'checkbox') {
+    return validateCheckbox(value);
   }
   return '';
 };
