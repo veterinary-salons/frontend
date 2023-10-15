@@ -75,7 +75,8 @@ function Root() {
         <Outlet />
       </main>
 
-      {location.pathname === '/' ? (
+      {/* Чтобы включить кнопку тестового компонента, нужно сделать location.pathname === '/' */}
+      {location.pathname === '///' ? (
         <Link to="/test" style={{ margin: '50px', flex: '0 0 auto' }}>
           <Button size="large">Страница с тестовым компонентом</Button>
         </Link>
