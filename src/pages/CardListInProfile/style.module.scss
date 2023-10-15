@@ -1,0 +1,15 @@
+.list {
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+
+  &__title {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 35px; /* 125% */
+    color: var(--primary-text-color, #0f0f0f);
+    margin: 0;
+  }
+}

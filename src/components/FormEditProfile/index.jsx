@@ -8,8 +8,17 @@ import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import ProfileAvatar from '../../ui/profileAvatar';
 import Button from '../../ui/buttons/originButton/Button';
 import ImageUploadPopup from '../ImageUploadPopup';
+import CheckboxWithIcon from '../../ui/forms/checkboxes/checkboxWithIcon';
 
-const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
+import iconHome from '../../assets/images/icon/home-outline/home.svg';
+import iconCar from '../../assets/images/icon/car-outline/car-outline.svg';
+
+const FormEditProfile = ({
+  handleSubmitForm,
+  userData,
+  setUserData,
+  profileType,
+}) => {
   const isDataUser = Object.keys(userData).length !== 0;
   const [isOpenPopup, setIsOpenPopup] = useState(false);
   const [isValid, setIsValid] = useState(isDataUser);
@@ -35,6 +44,8 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
   const handleFormValidChange = (e) => {
     setIsValid(e.target.closest('form').checkValidity());
   };
+
+  const isCustomer = profileType === 'customer';
 
   return (
     <>
@@ -135,6 +146,31 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
             getValid={setIsValidInput}
           />
         </fieldset>
+        {!isCustomer ? (
+          <fieldset className={classes.form__fieldset}>
+            <legend className={classes.form__legend}>Выезд к клиентам</legend>
+            <CheckboxWithIcon
+              getCheckbox={setUserData}
+              checked={userData.exit.some((item) => item.clientPlace)}
+              label="Выезжаю к клиентам"
+              value="Выезжаю к клиентам"
+              name="clientPlace"
+              parentName="exit"
+            >
+              <img src={iconCar} alt="car" />
+            </CheckboxWithIcon>
+            <CheckboxWithIcon
+              getCheckbox={setUserData}
+              checked={userData.exit.some((item) => item.specialistPlace)}
+              label="Принимаю клиентов у себя"
+              value="Принимаю клиентов у себя"
+              name="specialistPlace"
+              parentName="exit"
+            >
+              <img src={iconHome} alt="home" />
+            </CheckboxWithIcon>
+          </fieldset>
+        ) : null}
         <Button
           onClick={() => {}}
           size="medium"
@@ -144,6 +180,7 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
         >
           Сохранить
         </Button>
+        <button className={classes.form__delete}>Удалить профиль</button>
       </form>
       <ImageUploadPopup
         getImage={setUserData}
@@ -157,8 +194,25 @@ const FormEditProfile = ({ handleSubmitForm, userData, setUserData }) => {
 
 FormEditProfile.propTypes = {
   handleSubmitForm: PropTypes.func.isRequired,
-  userData: PropTypes.objectOf(PropTypes.string).isRequired,
+  // userData: PropTypes.objectOf(PropTypes.string).isRequired,
   setUserData: PropTypes.func.isRequired,
+  userData: PropTypes.shape({
+    name: PropTypes.string,
+    surname: PropTypes.string,
+    tel: PropTypes.string,
+    address: PropTypes.string,
+    email: PropTypes.string,
+    password: PropTypes.string,
+    src: PropTypes.string,
+    exit: PropTypes.arrayOf(
+      PropTypes.shape({
+        clientPlace: PropTypes.bool,
+        text: PropTypes.string,
+        specialistPlace: PropTypes.bool,
+      }),
+    ),
+  }).isRequired,
+  profileType: PropTypes.string.isRequired,
 };
 
 export default FormEditProfile;
