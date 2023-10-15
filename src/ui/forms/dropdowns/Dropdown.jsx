@@ -27,7 +27,7 @@ const Dropdown = ({ array, value, width, getValue, disabled, name }) => {
   }, [text]);
 
   return (
-    <ul className={classes.dropdown}>
+    <ul className={classes.dropdown} style={{ width }}>
       {disabled ? (
         <div className={classes['dropdown__disabled-block']}>
           <p className={classes['dropdown__disabled-text']}>-</p>
