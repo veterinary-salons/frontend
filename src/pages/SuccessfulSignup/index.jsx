@@ -9,7 +9,7 @@ const SuccessfulSignup = () => {
   const [messageData, setMessageData] = useState({});
 
   useEffect(() => {
-    if (location.state.userRole === "user") {
+    if (location.state.userRole === "customer") {
       setMessageData({
         imageNumber: '4',
         title: 'Ура! Теперь мы с вами официально друзья',
@@ -17,7 +17,7 @@ const SuccessfulSignup = () => {
         to: '/profile',
         buttonText: 'Добавить питомца'
       });
-    } else if (location.state.userRole === "specialist") {
+    } else if (location.state.userRole === "supplier") {
       setMessageData({
         imageNumber: '13',
         title: 'Ура! Теперь вы можете разместить вашу услугу',

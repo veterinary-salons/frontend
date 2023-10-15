@@ -156,7 +156,7 @@ const router = createBrowserRouter(
       <Route path="recovery-password" element={<RecoveryPassword />} />
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
 
-      {/*  Роут для проверки своих компонентов в адресной строке ввест /test */}
+      {/*  Роут для проверки своих компонентов в адресной строке ввести /test */}
 
       <Route
         path="test"

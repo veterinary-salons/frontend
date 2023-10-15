@@ -1,3 +1,5 @@
+const baseUrl = 'http://purrfect-care.acceleratorpracticum.ru/api/v1';
+
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
 const regexCyrillic = /^[а-яА-Я\sё-]+$/;
@@ -25,6 +27,8 @@ const maskPhone = [
   /\d/,
 ];
 const placeholderPhone = '8(___)___-__-__';
+const numberRegex = /\d/g;
+
 const arrayAnimals = [
   {
     id: 1,
@@ -239,6 +243,7 @@ const dataServicePriceFilter = [
 ];
 
 export {
+  baseUrl,
   regexEmail,
   regexText,
   regexCyrillic,
@@ -246,6 +251,7 @@ export {
   regexPhone,
   maskPhone,
   placeholderPhone,
+  numberRegex,
   arrayAnimals,
   arrayFilterList,
   arrayServicesVet,
@@ -257,5 +263,3 @@ export {
   dataServicePriceFilter,
   regexPetName,
 };
-
-// /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/
