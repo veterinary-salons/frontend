@@ -18,6 +18,13 @@ const DescriptionService = () => {
     dispatch(addService(value, 'descriptionServes'));
   };
 
+  const local = JSON.parse(localStorage.getItem('veterinarian'));
+
+  localStorage.setItem(
+    'veterinarian',
+    JSON.stringify({ ...local, description: value }),
+  );
+
   return (
     <section className={classes.description}>
       <h2 className={classes.description__title}>

@@ -1,39 +1,44 @@
 // import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+// import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 import AdSchedule from '../../components/AdSchedule';
-import { addService } from '../../app/store/addService/service-action';
+// import { dataArticle } from '../../assets/constants/temporaryData';
+// import { addService } from '../../app/store/addService/service-action';
 
 const FillingSchedule = () => {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const [days, setDays] = useState({});
   const [session, setSession] = useState({});
   const [durationService, setDurationService] = useState({});
   const [infoSchedule, setInfoSchedule] = useState({});
 
-  const path = JSON.parse(localStorage.getItem('veterinarian'));
+  const local = JSON.parse(localStorage.getItem('veterinarian'));
 
-  localStorage.setItem('workingHours', JSON.stringify(infoSchedule));
+  localStorage.setItem(
+    'veterinarian',
+    JSON.stringify({ ...local, workingHours: infoSchedule }),
+  );
 
   const routeBack =
-    path.category === 'petSitting'
-      ? `/advert-${path.category}-pet`
-      : `/advert-${path.category}-services`;
+    local.category === 'petSitting'
+      ? `/advert-${local.category}-pet`
+      : `/advert-${local.category}-services`;
 
   const handleSchedule = () => {
-    dispatch(addService(infoSchedule, 'workingHours'));
+    // dispatch(addService(infoSchedule, 'workingHours'));
     navigate('/advert-price', { replace: true });
   };
 
   useEffect(() => {
-    setInfoSchedule({
-      session: '1 час',
-      days,
-    });
+    setInfoSchedule([
+      {
+        workingHours: days,
+      },
+    ]);
   }, [days]);
 
   return (

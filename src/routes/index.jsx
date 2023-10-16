@@ -76,8 +76,8 @@ import ArticlePage from '../pages/Article';
 import EditProfileServices from '../pages/EditProfileServices';
 // import CardRewiew from '../components/CardReview';
 
-
 import CardListInProfile from '../pages/CardListInProfile';
+import AdImage from '../components/AdCreation/AdImage';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -174,7 +174,6 @@ const router = createBrowserRouter(
       /> */}
       <Route path="test" element={<EditProfileServices />} />
 
-   
       <Route path="advert" element={<AdType />} />
       <Route path="advert-groomer" element={<AdTitle />} />
       <Route path="advert-veterinary" element={<AdTitle />} />
@@ -194,6 +193,7 @@ const router = createBrowserRouter(
       <Route path="advert-schedule" element={<FillingSchedule />} />
       <Route path="advert-price" element={<CreationPriceServices />} />
       <Route path="advert-description" element={<DescriptionService />} />
+      <Route path="advert-image" element={<AdImage />} />
       <Route path="advert-final" element={<AdvertFinal />} />
       <Route path="advert-success" element={<AdvertSuccess />} />
     </Route>,

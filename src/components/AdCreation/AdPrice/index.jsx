@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import InputPrice from '../../../ui/forms/inputs/inputPrice';
 
-const AdPrice = ({ title, name, getPrice, value, getValidate }) => {
+const AdPrice = ({ title, name, getPrice, value }) => {
   const [form, setForm] = useState('0');
   const [befor, setBefor] = useState('0');
 
@@ -11,11 +11,11 @@ const AdPrice = ({ title, name, getPrice, value, getValidate }) => {
     getPrice({
       ...value,
       [name]: {
+        text: name,
         form,
         befor,
       },
     });
-    getValidate(form.name < befor.name);
     // eslint-disable-next-line
   }, [form, befor]);
 
@@ -33,12 +33,10 @@ AdPrice.propTypes = {
   name: PropTypes.string.isRequired,
   getPrice: PropTypes.func.isRequired,
   value: PropTypes.shape().isRequired,
-  getValidate: PropTypes.func,
 };
 
 AdPrice.defaultProps = {
   title: 'Стерилизация',
-  getValidate: () => {},
 };
 
 export default AdPrice;
