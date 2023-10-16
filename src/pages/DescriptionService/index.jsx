@@ -14,7 +14,7 @@ const DescriptionService = () => {
   const [isValid, setIsValid] = useState(false);
 
   const handleButton = () => {
-    navigate('/advert-final', { replace: true });
+    navigate('/advert-image', { replace: true });
     dispatch(addService(value, 'descriptionServes'));
   };
 

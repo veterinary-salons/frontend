@@ -1,0 +1,43 @@
+.form {
+  margin: auto;
+
+  &__container {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+
+    &_position {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__title {
+    margin: 40px auto 32px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 22px;
+  }
+
+  &__add-image {
+    margin: 32px auto 40px;
+    width: 400px;
+    height: 287px;
+    border-radius: 8px;
+    border: 1px dashed var(--primary-purple-color, #9384b7);
+    background: var(--grey-light-color, #f8f8f8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    margin: 32px auto 40px;
+    width: 100%;
+    height: 287px;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+}

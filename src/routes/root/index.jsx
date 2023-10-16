@@ -38,6 +38,7 @@ const dataPathWithoutCrumbs = [
   '/advert-price',
   '/advert-veterinary-services',
   '/advert-petSitting-pet',
+  '/advert-image',
 ];
 const dataPathWithOnlyLogoHeader = [
   '/signin',
@@ -76,6 +77,7 @@ const dataPathWithoutFooter = [
   '/advert-veterinary-pet',
   '/advert-veterinary-services',
   '/advert-petSitting-pet',
+  '/advert-image',
 ];
 
 function Root() {

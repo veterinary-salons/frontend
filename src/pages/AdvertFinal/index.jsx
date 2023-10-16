@@ -51,7 +51,7 @@ const AdvertFinal = ({
           size="medium"
           type="button"
           onClick={() => {
-            navigate('/advert-description', { replace: true });
+            navigate('/advert-image', { replace: true });
           }}
         >
           Назад

@@ -15,6 +15,9 @@ const routeNext = (path, step) => {
     case `/advert-${step}-services`:
       return `/advert-schedule`;
 
+    case '/advert-image':
+      return '/advert-final';
+
     default: {
       return '';
     }
@@ -31,6 +34,9 @@ const routeBack = (path, step) => {
 
     case `/advert-${step}-services`:
       return `/advert-${step}-pet`;
+
+    case '/advert-image':
+      return '/advert-description';
 
     default: {
       return '';
