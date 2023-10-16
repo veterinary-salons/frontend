@@ -5,12 +5,15 @@
     width: 90%;
     margin: 0 auto;
     position: relative;
+  }
 
-    &_position {
-      position: absolute;
-      top: 0;
-      right: 0;
-    }
+  &__btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+    cursor: pointer;
   }
 
   &__title {
@@ -34,7 +37,7 @@
   }
 
   &__img {
-    margin: 32px auto 40px;
+    margin: 0 auto 40px;
     width: 100%;
     height: 287px;
     border-radius: 8px;

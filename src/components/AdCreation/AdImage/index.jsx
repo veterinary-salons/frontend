@@ -3,7 +3,7 @@ import classes from './style.module.scss';
 import AdForm from '../AdForm';
 import Button from '../../../ui/buttons/originButton/Button';
 import ImageUploadPopup from '../../ImageUploadPopup';
-import CrossIcon from '../../../ui/icons/cross/CrossIcon';
+import btnDeleteImg from '../../../assets/images/icon/btn-delete-img/btn-deleete-img.svg';
 
 const AdImage = () => {
   const [isAction, setIsAction] = useState(false);
@@ -13,8 +13,15 @@ const AdImage = () => {
     setIsAction((state) => !state);
   };
 
+  const handleDeleteimg = () => {
+    setIMage('');
+  };
+
   const local = JSON.parse(localStorage.getItem('veterinarian'));
-  localStorage.setItem('veterinarian', JSON.stringify({ ...local, image: '' }));
+  localStorage.setItem(
+    'veterinarian',
+    JSON.stringify({ ...local, image: image.src }),
+  );
 
   return (
     <section className={classes.form}>
@@ -26,9 +33,9 @@ const AdImage = () => {
         {image.src !== undefined ? (
           <div className={classes.form__container}>
             <img src={image.src} alt="фото" className={classes.form__img} />
-            <div className={classes.form__container_position}>
-              <CrossIcon />
-            </div>
+            <button className={classes.form__btn} onClick={handleDeleteimg}>
+              <img src={btnDeleteImg} alt="удалить фото" />
+            </button>
           </div>
         ) : (
           <div className={classes['form__add-image']}>

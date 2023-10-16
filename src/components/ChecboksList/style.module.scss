@@ -26,11 +26,30 @@
     }
 
     &_error {
+      animation: animError 0.47s;
       border: 2px solid var(--error-color, #d80000);
     }
 
     &_success {
       border: 2px solid var(--success-color, #03a600);
     }
+  }
+}
+
+@keyframes animError {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(0.98);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(0.98);
+  }
+  100% {
+    transform: scale(1);
   }
 }

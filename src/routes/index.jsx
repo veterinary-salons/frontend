@@ -168,7 +168,7 @@ const router = createBrowserRouter(
 
       {/*  Роут для проверки своих компонентов в адресной строке ввести /test */}
 
-      {/* <Route
+      {/* <Routemax-width: 452px;
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       /> */}

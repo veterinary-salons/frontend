@@ -1,33 +1,30 @@
-import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import AdPrice from '../../components/AdCreation/AdPrice';
 import classes from './style.module.scss';
-// import { dataServicePriceFilter } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
-// import { addService } from '../../app/store/addService/service-action';
+import { checkArray } from '../../assets/constants/checkArray';
 
-const CreationPriceServices = ({ getPrice }) => {
-  // const dispatch = useDispatch();
+const CreationPriceServices = () => {
   const navigate = useNavigate();
   const [price, setPrice] = useState({});
-  const [validate, setValidate] = useState(false);
-  // const date = useSelector((state) => state.addService);
-  // console.log(date.serviceType);
+  const [validate, setValidate] = useState({});
+  const [boolArr, setBoolArr] = useState(null);
 
   const array = JSON.parse(localStorage.getItem('veterinarian'));
 
   localStorage.setItem(
     'veterinarian',
-    JSON.stringify({ ...array, price: [Object.values(price)] }),
+    JSON.stringify({ ...array, price: Object.values(price) }),
   );
 
   const handlePrice = () => {
-    getPrice({ price });
-    //  dispatch(addService(price, 'price'));
     navigate('/advert-description', { replace: true });
   };
+
+  useEffect(() => {
+    setBoolArr(Object.values(validate));
+  }, [validate]);
 
   return (
     <section className={classes.price}>
@@ -63,21 +60,13 @@ const CreationPriceServices = ({ getPrice }) => {
           size="medium"
           type="button"
           onClick={handlePrice}
-          // active={validate}
+          active={checkArray(boolArr)}
         >
           Далее
         </Button>
       </div>
     </section>
   );
-};
-
-CreationPriceServices.propTypes = {
-  getPrice: PropTypes.func,
-};
-
-CreationPriceServices.defaultProps = {
-  getPrice: () => {},
 };
 
 export default CreationPriceServices;

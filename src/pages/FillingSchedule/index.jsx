@@ -34,11 +34,9 @@ const FillingSchedule = () => {
   };
 
   useEffect(() => {
-    setInfoSchedule([
-      {
-        workingHours: days,
-      },
-    ]);
+    setInfoSchedule({
+      days,
+    });
   }, [days]);
 
   return (

@@ -31,7 +31,7 @@ OpenHours.propTypes = {
 };
 
 OpenHours.defaultProps = {
-  work: true,
+  work: false,
   day: 'Пн',
   aroundClock: true,
   begin: '9:00',

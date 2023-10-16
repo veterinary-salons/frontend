@@ -4,19 +4,19 @@ import cn from 'classnames';
 import classes from './style.module.scss';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import validateInput from '../../assets/constants/validation';
+import { checkErrorinput } from '../../assets/constants/checkArray';
 
 const ChecboxList = ({ array, getInfo, inputActive, setText }) => {
   const [chekboxInput, setChekboxInput] = useState(false);
   const [infoInput, setInfoInput] = useState('');
   const [values, setValues] = useState([]);
 
+  const arrBool = Object.values(values).map((i) => i === infoInput);
+
   const getClasseInput = cn(
     classes.list__input,
     {
-      [classes.list__input_error]: validateInput('checkbox', null, {
-        array,
-        infoInput,
-      }).error,
+      [classes.list__input_error]: checkErrorinput(arrBool),
     },
     {
       [classes.list__input_success]: validateInput('checkbox', null, {
@@ -87,6 +87,7 @@ const ChecboxList = ({ array, getInfo, inputActive, setText }) => {
             checked={chekboxInput}
             getCheckbox={handleCheckbox}
             value="value"
+            disabled={checkErrorinput(arrBool)}
           >
             <input
               className={getClasseInput}
