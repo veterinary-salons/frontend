@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
 import classNames from 'classnames';
+import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
@@ -15,6 +16,7 @@ const ProfileServiceCard = ({
   add,
 }) => {
   console.log(id);
+  const navigate = useNavigate();
 
   return (
     <article className={classes.card}>
@@ -103,7 +105,11 @@ const ProfileServiceCard = ({
             {description}
           </p>
           <div className={classes['card__button-wrapper']}>
-            <Button size="medium" isMaxWidth>
+            <Button
+              size="medium"
+              isMaxWidth
+              onClick={() => navigate('/profile/edit', { replace: true })}
+            >
               Внести изменения
             </Button>
             <Button size="medium" variant="outlined" isMaxWidth>
@@ -113,7 +119,11 @@ const ProfileServiceCard = ({
         </>
       ) : (
         <div className={classes.card__add}>
-          <Button variant="add" shape="round" />
+          <Button
+            variant="add"
+            shape="round"
+            onClick={() => navigate('/advert', { replace: true })}
+          />
           <p className={classes['card__add-title']}>Добавить информацию</p>
         </div>
       )}

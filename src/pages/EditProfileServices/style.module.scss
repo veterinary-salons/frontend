@@ -2,11 +2,17 @@
   margin: 0 auto 100px;
   width: 1090px;
 
+  &__image {
+    width: 355px;
+    height: 254px;
+    object-fit: cover;
+  }
+
   &__box {
     margin-top: 60px;
     display: flex;
     flex-direction: column;
-    gap: 45px;
+    gap: 40px;
   }
 
   &__title {
@@ -19,6 +25,20 @@
   &__container {
     display: flex;
     gap: 20px;
+
+    &-img {
+      margin: 40px 0;
+      width: 561px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-price {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
   }
 
   &__block-name {

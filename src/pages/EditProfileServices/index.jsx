@@ -2,16 +2,15 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
-import {
-  specialisation,
-  dateServiceCheckboxList,
-} from '../../assets/constants/constants';
+import { dateServiceCheckboxList } from '../../assets/constants/constants';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import AdSchedule from '../../components/AdSchedule';
 import AdPrice from '../../components/AdCreation/AdPrice';
 import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
 import ChecboxList from '../../components/ChecboksList';
+import imgServise from '../../assets/images/icon/avatar/imgEditing.svg';
+import ImageUploadPopup from '../../components/ImageUploadPopup';
 
 const EditProfileServices = ({ variant }) => {
   const navigate = useNavigate();
@@ -24,54 +23,86 @@ const EditProfileServices = ({ variant }) => {
   const [dataGrooming, setDataGrooming] = useState({});
   const [dataPrice, setDataPrice] = useState({});
   const [dataTextarea, setDataTextarea] = useState('');
-  const [datas, setDatas] = useState({});
+  const [image, setImage] = useState('');
+  const [isAction, setIsAction] = useState(false);
+
+  const local = JSON.parse(localStorage.getItem('veterinarian'));
+
+  const versionData = {
+    кинолог: dataFormatWork,
+    грумер: dataGrooming,
+    ветеринар: dataTasks,
+    зооняня: dataAnimals,
+  };
+
+  const petData = {
+    зооняня: dataAnimals,
+    кинолог: dataTasks,
+    грумер: dataAnimals,
+    ветеринар: dataAnimals,
+  };
+
+  const actionBtn = () => {
+    const action =
+      local.petType &&
+      local.serviceType &&
+      local.workingHours &&
+      local.price &&
+      local.description &&
+      true;
+
+    return action !== '';
+  };
+
+  const version = (name, service) =>
+    service === 'pet' ? versionData[name] || '' : petData[name];
+
+  localStorage.setItem(
+    'veterinarian',
+    JSON.stringify({
+      ...local,
+      category: dataDropdown.veterinarian,
+      petType: version(local?.category, 'pet') || dataAnimals,
+      serviceType: version(local?.category) || dataTasks,
+      workingHours: dataScheduleDay,
+      price: dataPrice,
+      description: dataTextarea,
+    }),
+  );
 
   const handleButton = () => {
-    navigate('/next', { replace: true });
+    navigate('/profile', { replace: true });
+  };
+
+  const handleBtn = () => {
+    setIsAction((state) => !state);
   };
 
   useEffect(() => {
     setVeterinars(dataDropdown);
   }, [dataDropdown]);
 
-  const versionData = {
-    zoonyanya: dataTasks,
-    cynologist: dataFormatWork,
-    groomer: dataGrooming,
-    veterinarian: dataTasks,
-  };
-
-  const version = (name) => versionData[name] || '';
-
-  useEffect(() => {
-    setDatas({
-      specialistType: dataDropdown.veterinarian,
-      petType: dataAnimals,
-      serviceType: dataTasks,
-      servList: version(variant),
-      schedule: dataScheduleDay,
-      price: dataPrice.price,
-      description: dataTextarea,
-    });
-    // eslint-disable-next-line
-  }, [
-    dataDropdown,
-    dataAnimals,
-    dataScheduleDay,
-    dataTextarea,
-    dataFormatWork,
-    dataGrooming,
-    dataPrice,
-    dataTasks,
-  ]);
-
-  console.log(datas);
-
   return (
     <section className={classes['service-changes']}>
       <h2
         className={classes['service-changes__title']}
-      >{`Мои услуги - ${specialisation[variant]} - (редактирование)`}</h2>
+      >{`Мои услуги - ${local.category} - (редактирование)`}</h2>
+
+      <div className={classes['service-changes__container-img']}>
+        <img
+          className={classes['service-changes__image']}
+          src={image.src || imgServise}
+          alt="фото"
+        />
+        <Button
+          size="small"
+          type="button"
+          variant="outlined"
+          onClick={handleBtn}
+        >
+          Добавить фото
+        </Button>
+      </div>
 
       <div className={classes['service-changes__box']}>
         <div className={classes['service-changes__container']}>
@@ -179,17 +210,28 @@ const EditProfileServices = ({ variant }) => {
           />
         </div>
 
-        <div className={classes['service-changes__container']}>
-          <h3 className={classes['service-changes__block-name']}>
-            Укажите стоимость услуг(и)
-          </h3>
-          <AdPrice
-            title="1 день передержки"
-            name="price"
-            getPrice={setDataPrice}
-            value={dataPrice}
-          />
-        </div>
+        {local.serviceType.length > 0 && (
+          <div className={classes['service-changes__container']}>
+            <h3 className={classes['service-changes__block-name']}>
+              Укажите стоимость услуг(и)
+            </h3>
+            <div className={classes['service-changes__container-price']}>
+              {local.serviceType.map((i) =>
+                i !== null ? (
+                  <AdPrice
+                    title={i}
+                    name={i}
+                    key={i}
+                    getPrice={setDataPrice}
+                    value={dataPrice}
+                  />
+                ) : (
+                  ''
+                ),
+              )}
+            </div>
+          </div>
+        )}
 
         <div className={classes['service-changes__container']}>
           <h3 className={classes['service-changes__block-name']}>
@@ -207,10 +249,17 @@ const EditProfileServices = ({ variant }) => {
           size="medium"
           variant="outlined"
           onClick={handleButton}
+          active={actionBtn()}
         >
           Сохранить данные
         </Button>
       </div>
+
+      <ImageUploadPopup
+        isOpen={isAction}
+        getImage={setImage}
+        onClose={handleBtn}
+      />
     </section>
   );
 };

@@ -17,7 +17,7 @@ const AdPrice = ({ title, name, getPrice, value, getValidate, validate }) => {
         befor,
       },
     });
-    setValid(Number(from) > Number(befor));
+    setValid(Number(from) >= Number(befor));
     getValidate({ ...validate, [name]: Number(from) < Number(befor) });
     // eslint-disable-next-line
   }, [from, befor]);

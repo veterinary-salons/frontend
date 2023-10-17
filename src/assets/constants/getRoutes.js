@@ -26,6 +26,9 @@ const routeNext = (path, step) => {
 
 const routeBack = (path, step) => {
   switch (path) {
+    case '/advert':
+      return '/profile';
+
     case `/advert-${step}`:
       return `/advert`;
 

@@ -107,7 +107,9 @@ const router = createBrowserRouter(
           <Route index element={<CardListInProfile />} />
           <Route path="add-pet" element={<PetCard />} />
           <Route path=":id" element={<PetCard />} />
+          <Route path="edit" element={<EditProfileServices />} />
         </Route>
+
         <Route path="services" element={<ProfileServices />}>
           <Route
             path="revoke"
@@ -172,7 +174,6 @@ const router = createBrowserRouter(
         path="test"
         element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       /> */}
-      <Route path="test" element={<EditProfileServices />} />
 
       <Route path="advert" element={<AdType />} />
       <Route path="advert-groomer" element={<AdTitle />} />
