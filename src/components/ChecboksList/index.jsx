@@ -11,7 +11,7 @@ const ChecboxList = ({ array, getInfo, inputActive, setText }) => {
   const [infoInput, setInfoInput] = useState('');
   const [values, setValues] = useState([]);
 
-  const arrBool = Object.values(values).map((i) => i === infoInput);
+  const arrBool = array.map((i) => i.name === infoInput);
 
   const getClasseInput = cn(
     classes.list__input,

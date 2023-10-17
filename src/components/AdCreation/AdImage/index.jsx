@@ -1,11 +1,14 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import classes from './style.module.scss';
 import AdForm from '../AdForm';
 import Button from '../../../ui/buttons/originButton/Button';
 import ImageUploadPopup from '../../ImageUploadPopup';
 import btnDeleteImg from '../../../assets/images/icon/btn-delete-img/btn-deleete-img.svg';
+import { setImgService } from '../../../app/store/saveImgService/addImage';
 
 const AdImage = () => {
+  const dispathc = useDispatch();
   const [isAction, setIsAction] = useState(false);
   const [image, setIMage] = useState('');
 
@@ -18,14 +21,18 @@ const AdImage = () => {
   };
 
   const local = JSON.parse(localStorage.getItem('veterinarian'));
-  localStorage.setItem(
-    'veterinarian',
-    JSON.stringify({ ...local, image: image.src }),
-  );
+
+  const handleBtn = () => {
+    dispathc(setImgService(image.src ? image.src : ''));
+  };
 
   return (
     <section className={classes.form}>
-      <AdForm title="Загрузите фото объявления" step={local.category}>
+      <AdForm
+        title="Загрузите фото объявления"
+        step={local.category}
+        onClick={handleBtn}
+      >
         <h2 className={classes.form__title}>
           Клиенты чаще выбирают объявления с фото
         </h2>

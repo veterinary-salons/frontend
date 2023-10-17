@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import classes from './style.module.scss';
 import imgAvatar from '../../assets/images/icon/avatar/avatar-advert-final.svg';
 import ListPrices from '../../components/ListPrices';
@@ -9,7 +10,7 @@ import ContainerOpenHours from '../../components/ContainerOpenHours';
 
 const AdvertFinal = ({ session, sessionInfo, name }) => {
   const navigate = useNavigate();
-
+  const img = useSelector((state) => state.getImageService);
   const local = JSON.parse(localStorage.getItem('veterinarian'));
 
   return (
@@ -30,7 +31,7 @@ const AdvertFinal = ({ session, sessionInfo, name }) => {
         <img
           className={classes.final__img}
           alt="фото"
-          src={local.image || imgAvatar}
+          src={img || local.image || imgAvatar}
         />
       </div>
       <ListPrices array={local.price} />

@@ -190,10 +190,10 @@ const arrImgOrderCard = [
 ];
 
 const specialisation = {
-  zoonyanya: 'Зооняня',
-  cynologist: 'Кинолог',
+  petSitting: 'Зооняня',
+  cynology: 'Кинолог',
   groomer: 'Грумер',
-  veterinarian: 'Ветеринар',
+  veterinary: 'Ветеринар',
 };
 
 const dateServiceCheckboxList = {

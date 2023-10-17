@@ -1,21 +1,17 @@
 // import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
-import { addService } from '../../app/store/addService/service-action';
 
 const DescriptionService = () => {
-  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [value, setValue] = useState('');
   const [isValid, setIsValid] = useState(false);
 
   const handleButton = () => {
     navigate('/advert-image', { replace: true });
-    dispatch(addService(value, 'descriptionServes'));
   };
 
   const local = JSON.parse(localStorage.getItem('veterinarian'));
@@ -54,14 +50,6 @@ const DescriptionService = () => {
       </div>
     </section>
   );
-};
-
-DescriptionService.propTypes = {
-  //  getDescription: PropTypes.func,
-};
-
-DescriptionService.defaultProps = {
-  // getDescription: () => {},
 };
 
 export default DescriptionService;
