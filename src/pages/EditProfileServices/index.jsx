@@ -2,7 +2,10 @@ import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
-import { dateServiceCheckboxList } from '../../assets/constants/constants';
+import {
+  dateServiceCheckboxList,
+  vaterinars,
+} from '../../assets/constants/constants';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import AdSchedule from '../../components/AdSchedule';
 import AdPrice from '../../components/AdCreation/AdPrice';
@@ -17,10 +20,8 @@ const EditProfileServices = ({ variant }) => {
   const [veterinars, setVeterinars] = useState(variant);
   const [dataDropdown, setDataDropdown] = useState({});
   const [dataAnimals, setDataAnimals] = useState({});
-  const [dataTasks, setDataTasks] = useState({});
-  const [dataFormatWork, setDataFormatWork] = useState({});
+  const [dataService, setDataService] = useState({});
   const [dataScheduleDay, setDataScheduleDay] = useState({});
-  const [dataGrooming, setDataGrooming] = useState({});
   const [dataPrice, setDataPrice] = useState({});
   const [dataTextarea, setDataTextarea] = useState('');
   const [image, setImage] = useState('');
@@ -29,17 +30,7 @@ const EditProfileServices = ({ variant }) => {
   const local = JSON.parse(localStorage.getItem('veterinarian'));
 
   const versionData = {
-    кинолог: dataFormatWork,
-    грумер: dataGrooming,
-    ветеринар: dataTasks,
-    зооняня: dataAnimals,
-  };
-
-  const petData = {
-    зооняня: dataAnimals,
-    кинолог: dataTasks,
-    грумер: dataAnimals,
-    ветеринар: dataAnimals,
+    зооняня: dataService,
   };
 
   const actionBtn = () => {
@@ -54,18 +45,17 @@ const EditProfileServices = ({ variant }) => {
     return action !== '';
   };
 
-  const version = (name, service) =>
-    service === 'pet' ? versionData[name] || '' : petData[name];
+  const version = (name) => versionData[name];
 
   localStorage.setItem(
     'veterinarian',
     JSON.stringify({
       ...local,
-      category: dataDropdown.veterinarian,
-      petType: version(local?.category, 'pet') || dataAnimals,
-      serviceType: version(local?.category) || dataTasks,
+      category: vaterinars[dataDropdown.veterinarian],
+      petType: version(local?.category) || dataAnimals,
+      serviceType: dataService,
       workingHours: dataScheduleDay,
-      price: dataPrice,
+      price: Object.values(dataPrice),
       description: dataTextarea,
     }),
   );
@@ -124,7 +114,7 @@ const EditProfileServices = ({ variant }) => {
             </h3>
             <ChecboxList
               array={dateServiceCheckboxList.arrAnimalsZoonyanya}
-              getInfo={setDataAnimals}
+              getInfo={setDataService}
             />
           </div>
         )}
@@ -137,7 +127,7 @@ const EditProfileServices = ({ variant }) => {
               </h3>
               <ChecboxList
                 array={dateServiceCheckboxList.arrServiceList}
-                getInfo={setDataTasks}
+                getInfo={setDataAnimals}
               />
             </div>
             <div className={classes['service-changes__container']}>
@@ -146,7 +136,7 @@ const EditProfileServices = ({ variant }) => {
               </h3>
               <ChecboxList
                 array={dateServiceCheckboxList.arrServiceFormat}
-                getInfo={setDataFormatWork}
+                getInfo={setDataService}
               />
             </div>
           </>
@@ -169,7 +159,7 @@ const EditProfileServices = ({ variant }) => {
               </h3>
               <ChecboxList
                 array={dateServiceCheckboxList.arrServiceGroomer}
-                getInfo={setDataGrooming}
+                getInfo={setDataService}
                 inputActive={false}
               />
             </div>
@@ -193,7 +183,7 @@ const EditProfileServices = ({ variant }) => {
               </h3>
               <ChecboxList
                 array={dateServiceCheckboxList.arrServiceVeterinarian}
-                getInfo={setDataTasks}
+                getInfo={setDataService}
               />
             </div>
           </>

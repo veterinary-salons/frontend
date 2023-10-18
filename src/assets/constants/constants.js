@@ -196,6 +196,13 @@ const specialisation = {
   veterinary: 'Ветеринар',
 };
 
+const vaterinars = {
+  кинолог: 'cynology',
+  зооняня: 'petSitting',
+  грумер: 'groomer',
+  ветеринар: 'veterinary',
+};
+
 const dateServiceCheckboxList = {
   specialisation: [
     {
@@ -618,6 +625,7 @@ export {
   dogHandlerServiceOptions,
   groomerServiceOptions,
   vetServiceOptions,
+  vaterinars,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/
