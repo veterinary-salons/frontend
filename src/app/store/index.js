@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import articleTitleReducer from './articleTitle';
 import addImgService from './saveImgService/addImage';
-import { userSlice } from './userSlise';
+import { userSlice } from './userSlice';
 
 const store = configureStore({
   reducer: {

@@ -11,7 +11,7 @@ import Portal from '../../components/Portal';
 import QuitConfirmationPopup from '../../components/QuitConfirmationPopup';
 import QuitInfotooltipPopup from '../../components/QuitInfotooltipPopup';
 
-import { setUser } from '../../app/store/userSlise';
+import { setUser } from '../../app/store/userSlice';
 
 const Profile = () => {
   const dispatch = useDispatch();
