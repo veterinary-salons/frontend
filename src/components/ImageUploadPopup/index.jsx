@@ -20,8 +20,6 @@ const ImageUploadPopup = ({ getImage, isOpen, onClose, round }) => {
     return reader.result;
   };
 
-  console.log(fileInput);
-
   const handleFile = async (e) => {
     const file = e.currentTarget.files[0];
     // if(sizeLimit && file.size > props.sizeLimit)

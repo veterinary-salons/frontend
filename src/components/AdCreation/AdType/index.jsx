@@ -1,30 +1,18 @@
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
 import classes from '../AdForm/style.module.scss';
 import AdForm from '../AdForm';
 import Checkbox from '../../../ui/forms/checkboxes/checkbox/checkbox';
 import { dateServiceCheckboxList } from '../../../assets/constants/constants';
-import { addService } from '../../../app/store/addService/service-action';
 
 const AdType = () => {
   const [values, setValues] = useState({});
-  const dispatch = useDispatch();
-
-  const veterinarInfo = localStorage.setItem(
-    'veterinarian',
-    JSON.stringify(values),
-  );
-
-  const handleSubmit = () => {
-    dispatch(addService(values.category, 'specialization', veterinarInfo));
-  };
+  localStorage.setItem('veterinarian', JSON.stringify(values));
 
   return (
     <AdForm
       title="Какую услугу вы хотите оказать?"
       step={values.category}
       activBtn={values.category !== undefined}
-      onClick={handleSubmit}
     >
       <div className={classes['af__checkbox-container']}>
         {dateServiceCheckboxList.arrGroomRadio.options.map((i) => (

@@ -190,10 +190,17 @@ const arrImgOrderCard = [
 ];
 
 const specialisation = {
-  zoonyanya: 'Зооняня',
-  cynologist: 'Кинолог',
+  petSitting: 'Зооняня',
+  cynology: 'Кинолог',
   groomer: 'Грумер',
-  veterinarian: 'Ветеринар',
+  veterinary: 'Ветеринар',
+};
+
+const vaterinars = {
+  кинолог: 'cynology',
+  зооняня: 'petSitting',
+  грумер: 'groomer',
+  ветеринар: 'veterinary',
 };
 
 const dateServiceCheckboxList = {
@@ -618,6 +625,7 @@ export {
   dogHandlerServiceOptions,
   groomerServiceOptions,
   vetServiceOptions,
+  vaterinars,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/

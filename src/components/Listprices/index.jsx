@@ -12,15 +12,18 @@ const ListPrices = ({ array }) => (
     </div>
     <div className={classes['list__container-services']}>
       {array.map((i) => (
-        <div className={classes.list__service} key={i.id}>
+        <div className={classes.list__service} key={Math.random()}>
           <p className={classes.list__text}>{i.text}</p>
           <p
             className={cn(classes.list__text, classes['list__position-right'])}
-          >{`от ${i.from} до ${i.before} ₽/усл.`}</p>
+          >
+            {`от ${i.from} до ${i.befor} ₽/усл.`}
+            {/* от <span className={classes.list__span}>{i.form}</span> до{' '}
+            <span className={classes.list__span}>{i.befor}</span> */}
+          </p>
         </div>
       ))}
     </div>
-    
   </div>
 );
 
@@ -36,3 +39,9 @@ ListPrices.propTypes = {
 };
 
 export default ListPrices;
+
+// {
+//   `от ${(<span className={classes.list__span}>i.form</span>)} до ${
+//     i.befor
+//   } ₽/усл.`;
+// }

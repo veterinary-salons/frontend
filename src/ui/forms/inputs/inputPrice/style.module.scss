@@ -28,4 +28,8 @@
     color: var(--primary-text-color, #0f0f0f);
     border: 1px solid var(--success-color, #03a600);
   }
+  &_error {
+    color: var(--primary-text-color, #0f0f0f);
+    border: 1px solid var(--error-color, #d80000);
+  }
 }
