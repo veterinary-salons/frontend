@@ -1,7 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 import articleTitleReducer from './articleTitle';
 import addServiceReducer from './addService/service-reducer';
-import {userSlice} from './userSlise';
+import {userSlice} from './userSlice';
 
 const store = configureStore({
   reducer: {

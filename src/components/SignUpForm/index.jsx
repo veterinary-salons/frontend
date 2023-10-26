@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { setUserType } from '../../app/store/userSlise';
+import { setUserType } from '../../app/store/userSlice';
 import { handleRegistration } from '../../utils';
 import { numberRegex } from '../../assets/constants/constants';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
