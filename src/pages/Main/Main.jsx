@@ -10,15 +10,17 @@ function Main() {
   return (
     <>
       <section className={classes.promo}>
+        
         <div className={classes.promo__content}>
           <h1 className={classes.promo__title}>Ваш питомец — наша забота</h1>
           <p className={classes.promo__text}>
-            Purrfect care&nbsp;&mdash; сервис подбора специалистов для ухода,
+            Purrfect care - сервис подбора специалистов для ухода,
             присмотра, лечения и&nbsp;воспитания ваших питомцев
           </p>
           <Link to="/services">
             <Button>Найти специалиста</Button>
           </Link>
+          <div className={classes.promo__img} />
         </div>
       </section>
       <section className={classes.specialists}>

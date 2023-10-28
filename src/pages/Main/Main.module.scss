@@ -1,17 +1,17 @@
 .promo {
   display: flex;
+  position: relative;
   flex-direction: column;
   width: 100%;
-  min-height: 671px;
-  background-image: url(../../assets/images/images/main-page-background/background-dog.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  margin-top: -100px;
-  padding-bottom: 153px;
+  min-height: 631px;
+  background: #F3EBBC;;
+  padding-bottom: 135px;
 
   &__content {
     width: var(--content-width-for-screen-1440);
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
   }
 
   &__title {
@@ -22,7 +22,7 @@
     font-weight: 700;
     line-height: 66px;
     max-width: 578px;
-    margin-top: 220px;
+    margin-top: 120px;
     margin-bottom: 48px;
   }
 
@@ -58,7 +58,6 @@
     line-height: 29px;
     letter-spacing: 0.78px;
     margin: 0 auto 135px 100px;
-    padding: 30px 20px;
     box-sizing: border-box;
     cursor: pointer;
   }
@@ -68,18 +67,32 @@
     color: var(--main-colors-purple, #9384b7);
     border: 3px solid var(--main-colors-purple, #9384b7);
   }
+
+  &__img {
+    position: absolute;
+    background-image: url(../../assets/images/images/main-page-background/background-dog.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 680px;
+    height: 681px;
+    background-position: right bottom;
+    right: 62px;
+    bottom: 0;
+    z-index: 1;
+  }
 }
 
 @media screen and (max-width: 1430px) {
   .promo {
-    padding-bottom: 87px;
-    
+    padding-bottom: 84px;
+    min-height: 565px;
 
     &__content {
       width: var(--content-width-for-screen-1280);
     }
 
     &__title {
+      margin-top: 105px;
       margin-bottom: 50px;
     }
 
@@ -87,14 +100,60 @@
       margin-bottom: 52px;
       line-height: 24px;
     }
+
+    &__img {
+      background-size: 612px 629px;
+      right: 53px;
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .promo {
+    padding-bottom: 84px;
+    min-height: 590px;
+
+    &__content {
+      width: var(--content-width-for-screen-360);
+    }
+
+    &__title {
+      margin: 32px 0;
+      font-size: 32px;
+      line-height: 44px;
+      width: 100%;
+    }
+
+    &__text {
+      margin-bottom: 24px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &__button {
+      height: 48px;
+      padding: 20px 20px;
+      font-size: 20px;
+      line-height: 28px;
+      letter-spacing: 0.6px;
+      margin: 0 auto 258px 0;
+      box-sizing: border-box;
+      cursor: pointer;
+    }
+
+    &__img {
+      background-size: 223px 278px;
+      background-position: right bottom;
+      right: 0;
+      bottom: 0;
+    }
   }
 }
 
 .specialists {
   padding: 120px 0;
-  border-radius: 20px 20px 0px 0px;
   background-color: var(--text-white-color);
-  margin-top: -20px;
+  border-radius: 20px 20px 0px 0px;
   width: 100%;
 
   &__content {

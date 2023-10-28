@@ -5,6 +5,10 @@
   height: 100px;
   z-index: 1;
 
+  &_main {
+    background-color: #F3EBBC;
+  }
+
   &__content {
     width: var(--content-width-for-screen-1440);
     display: flex;
