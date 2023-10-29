@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import classes from './style.module.scss';
 import imgAvatar from '../../assets/images/icon/avatar/avatar-advert-final.svg';
-import ListPrices from '../../components/ListPricesss';
+import ListPrices from '../../components/ListPrices';
 import { specialisation } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
 import ContainerOpenHours from '../../components/ContainerOpenHours';
