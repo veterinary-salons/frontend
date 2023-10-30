@@ -52,7 +52,7 @@ input[type='search']::-webkit-search-results-decoration {
     background: none;
     padding: 0;
     opacity: 0.5;
-    width: 24px;
+    min-width: 24px;
     height: 24px;
     background-image: url(../../../../assets/images/icon/magnifier/magnifier.svg);
     background-repeat: no-repeat;
@@ -80,5 +80,37 @@ input[type='search']::-webkit-search-results-decoration {
 
   .auth {
     width: 300px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .search-container {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .search-container {
+    padding: 10px 12px;
+
+    &__input {
+      font-size: 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .search-container {
+    padding: 8px 12px;
+
+    &__input {
+      font-size: 12px;
+    }
+
+    &__submit {
+      min-width: 20px;
+      height: 20px;
+    }
   }
 }

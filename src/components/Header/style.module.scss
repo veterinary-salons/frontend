@@ -2,14 +2,18 @@
   width: 100%;
   padding: 20px 0;
   background-color: transparent;
-  height: 100px;
+  min-height: 100px;
   z-index: 1;
 
-  &__content {
+  &__wrapper {
     width: var(--content-width-for-screen-1440);
+    margin: auto;
+  }
+
+  &__content {
+    width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: auto;
   }
 
   &__link {
@@ -28,16 +32,88 @@
     gap: 22px;
     align-items: center;
   }
+
+  &__burger-button {
+    border: none;
+    background-color: transparent;
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: 1430px) {
   .header {
-    &__content {
+    &__wrapper {
       width: var(--content-width-for-screen-1280);
     }
 
     &__container-btn {
       gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .header {
+    padding: 10px 0 0;
+
+    &__wrapper {
+      width: 100%;
+      margin: 0;
+      padding: 0 50px;
+    }
+
+    &__content {
+      margin-bottom: 10px;
+    }
+
+    &__container-btn {
+      gap: 1.6vw;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .header {
+    &__content {
+      margin-bottom: 6px;
+      height: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .header {
+    min-height: 80px;
+    padding: 0;
+
+    &__wrapper {
+      padding: 0 20px;
+    }
+
+    &__content {
+      margin-bottom: 4px;
+      height: 40px;
+    }
+
+    &__container-btn {
+      gap: 1.4vw;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .header {
+    &__wrapper {
+      padding: 0 20px;
+    }
+
+    &__content {
+      margin-bottom: 4px;
+      height: 40px;
+    }
+
+    &__container-btn {
+      gap: 2vw;
     }
   }
 }

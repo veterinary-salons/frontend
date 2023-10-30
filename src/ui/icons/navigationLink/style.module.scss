@@ -9,25 +9,28 @@
     opacity: 0.9;
   }
 
-  &__profile {
-    margin-top: 4px;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-repeat: no-repeat;
-  }
-
   &__wishlist {
     width: 100%;
     height: 100%;
     background: url(../../../assets/images/icon/favourite/favourite.svg)
       no-repeat;
+    background-size: contain;
   }
 
   &__basket {
     width: 100%;
     height: 100%;
     background: url(../../../assets/images/icon/basket/basket.svg) no-repeat;
+    background-position: center;
+    background-size: 110%;
+  }
+
+  &__menu {
+    width: 100%;
+    height: 100%;
+    background: url(../../../assets/images/icon/btn-burger/btn-burger.svg) no-repeat;
+    background-position: center;
+    background-size: 85%;
   }
 
   &__span {
@@ -55,5 +58,19 @@
     border-radius: 10px;
     bottom: 1px;
     right: 0px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .nav-link {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .nav-link {
+    width: 24px;
+    height: 24px;
   }
 }

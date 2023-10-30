@@ -170,10 +170,10 @@ const router = createBrowserRouter(
 
       {/*  Роут для проверки своих компонентов в адресной строке ввести /test */}
 
-      {/* <Routemax-width: 452px;
+      <Route 
         path="test"
-        element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-      /> */}
+        // element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+      />
 
       <Route path="advert" element={<AdType />} />
       <Route path="advert-groomer" element={<AdTitle />} />
