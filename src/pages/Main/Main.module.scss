@@ -78,6 +78,37 @@
   }
 }
 
+@media screen and (max-width: 990px) {
+  .promo {
+    padding-bottom: 258px;
+    min-height: 590px;
+
+    &__content {
+      width: var(--content-width-for-screen-990);
+    }
+
+    &__title {
+      margin: 32px 0;
+      font-size: 32px;
+      line-height: 44px;
+      width: 100%;
+    }
+
+    &__text {
+      margin-bottom: 24px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    &__img {
+      background-size: 223px 278px;
+      background-position: right bottom;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}
+
 @media screen and (max-width: 560px) {
   .promo {
     padding-bottom: 258px;
@@ -150,6 +181,29 @@
 
     &__cards {
       column-gap: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .specialists {
+    padding: 60px 0;
+
+    &__content {
+      width: var(--content-width-for-screen-990);
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      width: 100%;
+      margin: 0 auto 32px;
+    }
+
+    &__cards {
+      column-gap: 12px;
+      row-gap: 16px;
+      flex-wrap: wrap;
     }
   }
 }
