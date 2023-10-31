@@ -1,16 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit';
 import articleTitleReducer from './articleTitle';
-import addServiceReducer from './addService/service-reducer';
-import {userSlice} from './userSlise';
+import addImgService from './saveImgService/addImage';
+import { userSlice } from './userSlice';
 
 const store = configureStore({
   reducer: {
-    addService: addServiceReducer,
+    getImageService: addImgService,
     articleTitle: articleTitleReducer, // имя статьи для крошек
     user: userSlice.reducer, // данные пользователя
     // Другие редьюсеры
   },
-    devTools: process.env.NODE_ENV !== 'production',
+  devTools: process.env.NODE_ENV !== 'production',
 });
 
 export default store;

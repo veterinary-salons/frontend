@@ -12,6 +12,7 @@ const InputPrice = ({
   disabled,
   getInput,
   placeholder,
+  valid,
 }) => {
   const [values, setValues] = useState(initialValue);
   const getClassContainer = classNames(
@@ -23,7 +24,10 @@ const InputPrice = ({
       [classes.input_color]: validateInput('price', null, values).invalid,
     },
     {
-      [classes.input_success]: validateInput('price', name, values).invalid,
+      [classes.input_success]: validateInput('price', null, values).invalid,
+    },
+    {
+      [classes.input_error]: valid,
     },
   );
 
@@ -31,7 +35,7 @@ const InputPrice = ({
     getInput(values);
     // eslint-disable-next-line
   }, [values]);
-
+  //  validateInput('price', name, values).invalid
   return (
     <CurrencyInput
       className={getClassContainer}
@@ -55,6 +59,7 @@ InputPrice.propTypes = {
   initialValue: PropTypes.objectOf(PropTypes.string),
   getInput: PropTypes.func,
   placeholder: PropTypes.string,
+  valid: PropTypes.bool,
 };
 
 InputPrice.defaultProps = {
@@ -64,6 +69,7 @@ InputPrice.defaultProps = {
   initialValue: {},
   getInput: () => {},
   placeholder: '0',
+  valid: false,
 };
 
 export default InputPrice;

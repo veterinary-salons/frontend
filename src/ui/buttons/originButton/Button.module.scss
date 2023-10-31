@@ -187,3 +187,24 @@
 .round {
   border-radius: 25rem;
 }
+
+@media screen and (max-width: 990px) {
+  .button {
+    font-size: 14px;
+  }
+
+  .medium {
+    padding: 9px 23px;
+    min-width: fit-content;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .button {
+    font-size: 12px;
+  }
+
+  .medium {
+    padding: 6px 20px;
+  }
+}

@@ -3,27 +3,30 @@ import { useEffect, useState } from 'react';
 import classes from './style.module.scss';
 import InputPrice from '../../../ui/forms/inputs/inputPrice';
 
-const AdPrice = ({ title, name, getPrice, value, getValidate }) => {
-  const [form, setForm] = useState('0');
+const AdPrice = ({ title, name, getPrice, value, getValidate, validate }) => {
+  const [from, setFrom] = useState('0');
   const [befor, setBefor] = useState('0');
+  const [valid, setValid] = useState(null);
 
   useEffect(() => {
     getPrice({
       ...value,
       [name]: {
-        form,
+        text: name,
+        from,
         befor,
       },
     });
-    getValidate(form.name < befor.name);
+    setValid(Number(from) >= Number(befor));
+    getValidate({ ...validate, [name]: Number(from) < Number(befor) });
     // eslint-disable-next-line
-  }, [form, befor]);
+  }, [from, befor]);
 
   return (
     <div className={classes['form-prices__container']}>
       <p className={classes['form-prices__text']}>{title}</p>
-      <InputPrice getInput={setForm} name={name} />
-      <InputPrice prefix="до" getInput={setBefor} name={name} />
+      <InputPrice getInput={setFrom} name={name} valid={valid} />
+      <InputPrice prefix="до" getInput={setBefor} name={name} valid={valid} />
     </div>
   );
 };
@@ -34,11 +37,13 @@ AdPrice.propTypes = {
   getPrice: PropTypes.func.isRequired,
   value: PropTypes.shape().isRequired,
   getValidate: PropTypes.func,
+  validate: PropTypes.shape(),
 };
 
 AdPrice.defaultProps = {
   title: 'Стерилизация',
   getValidate: () => {},
+  validate: {},
 };
 
 export default AdPrice;
