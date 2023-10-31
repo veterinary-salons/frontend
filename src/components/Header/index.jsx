@@ -23,62 +23,82 @@ const Header = ({ authorization, onlyLogo }) => {
             <Logo />
           </Link>
         ) : (
-          <>
-            <div className={[classes.header__container]}>
-              <Link className={classes.header__link} to="/">
-                <Logo />
-              </Link>
-              <SearchForm authorization />
-            </div>
-  
-            <div className={[classes.header__container]}>
-              <NavigationPages />
-            </div>
-  
-            {authorization ? (
-              <div className={[classes['header__container-btn']]}>
-                <Link to="/favourites/goods">
-                  <NavigationLink variant="wishlist" />
+          <div>
+            <div className={classes.header__content}>
+              <div className={[classes.header__container]}>
+                <Link className={classes.header__link} to="/">
+                  <Logo />
                 </Link>
-  
-                <Link to="/basket">
-                  <NavigationLink variant="basket" />
-                </Link>
-  
-                <Link to="/profile">
-                  <NavigationLink variant="profile" />
-                </Link>
+                {screenType === 'pc' && <SearchForm authorization />}
               </div>
-            ) : (
-              <div className={[classes['header__container-btn']]}>
-                <Link to="/signin">
-                  <Button
-                    variant="outlined"
-                    size="medium"
-                    type="button"
-                    shape="square"
-                    label="Вход"
-                    onClick={() => {}}
-                  >
-                    Вход
-                  </Button>
-                </Link>
-  
-                <Link to="/signup">
-                  <Button
-                    variant="outlined"
-                    size="medium"
-                    type="button"
-                    shape="square"
-                    label="Регистрация"
-                    onClick={() => {}}
-                  >
-                    Регистрация
-                  </Button>
-                </Link>
-              </div>
-            )}
-          </>
+
+              {screenType !== 'mobile-vertical' && 
+                <div className={[classes.header__container]}>
+                  <NavigationPages />
+                </div>
+              }
+
+              {authorization ? (
+                <div className={[classes['header__container-btn']]}>
+                  <Link to="/favourites/goods">
+                    <NavigationLink variant="wishlist" />
+                  </Link>
+
+                  <Link to="/basket">
+                    <NavigationLink variant="basket" />
+                  </Link>
+
+                  <Link to="/profile">
+                    <NavigationLink variant="profile" />
+                  </Link>
+
+                  {screenType === 'mobile-vertical' &&
+                    <button className={[classes['header__burger-button']]}>
+                      <NavigationLink variant="menu" />
+                    </button>
+                  }
+                </div>
+              ) : (
+                <div className={[classes['header__container-btn']]}>
+                  <Link to="/signin">
+                    <Button
+                      variant="outlined"
+                      size="medium"
+                      type="button"
+                      shape="square"
+                      label="Вход"
+                      onClick={() => {}}
+                    >
+                      Вход
+                    </Button>
+                  </Link>
+
+                  {screenType !== 'mobile-vertical' &&
+                    <Link to="/signup">
+                      <Button
+                        variant="outlined"
+                        size="medium"
+                        type="button"
+                        shape="square"
+                        label="Регистрация"
+                        onClick={() => {}}
+                      >
+                        Регистрация
+                      </Button>
+                    </Link>
+                  }
+
+                  {screenType === 'mobile-vertical' &&
+                    <button className={[classes['header__burger-button']]}>
+                      <NavigationLink variant="menu" />
+                    </button>
+                  }
+                  
+                </div>
+              )}
+            </div>
+            {screenType !== 'pc' && <SearchForm authorization />}
+          </div>
         )}
       </div>
     </header>
