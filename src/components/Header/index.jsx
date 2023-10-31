@@ -106,6 +106,13 @@ const Header = ({ authorization, onlyLogo }) => {
                       </Button>
                     </Link>
                   }
+
+                  {screenType === 'mobile-vertical' &&
+                    <button className={[classes['header__burger-button']]}>
+                      <NavigationLink variant="menu" />
+                    </button>
+                  }
+                  
                 </div>
               )}
             </div>
