@@ -38,36 +38,6 @@
     margin-bottom: 54px;
   }
 
-  &__button {
-    display: inline-flex;
-    height: 70px;
-    min-width: 230px;
-    padding: 30px 20px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-    border-radius: 8px;
-    background: var(--main-colors-purple, #9384b7);
-    border: none;
-    color: var(--font-colors-white, #fff);
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 29px;
-    letter-spacing: 0.78px;
-    margin: 0 auto 135px 100px;
-    box-sizing: border-box;
-    cursor: pointer;
-  }
-
-  &__button:hover {
-    background-color: var(--background-white-color, #fff);
-    color: var(--main-colors-purple, #9384b7);
-    border: 3px solid var(--main-colors-purple, #9384b7);
-  }
-
   &__img {
     position: absolute;
     background-image: url(../../assets/images/images/main-page-background/background-dog.png);
@@ -108,9 +78,9 @@
   }
 }
 
-@media screen and (max-width: 360px) {
+@media screen and (max-width: 560px) {
   .promo {
-    padding-bottom: 84px;
+    padding-bottom: 258px;
     min-height: 590px;
 
     &__content {
@@ -128,17 +98,6 @@
       margin-bottom: 24px;
       font-size: 18px;
       font-weight: 600;
-    }
-
-    &__button {
-      height: 48px;
-      padding: 20px 20px;
-      font-size: 20px;
-      line-height: 28px;
-      letter-spacing: 0.6px;
-      margin: 0 auto 258px 0;
-      box-sizing: border-box;
-      cursor: pointer;
     }
 
     &__img {
@@ -191,6 +150,29 @@
 
     &__cards {
       column-gap: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .specialists {
+    padding: 60px 0;
+
+    &__content {
+      width: var(--content-width-for-screen-360);
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      width: 100%;
+      margin: 0 auto 32px;
+    }
+
+    &__cards {
+      column-gap: 12px;
+      row-gap: 16px;
+      flex-wrap: wrap;
     }
   }
 }

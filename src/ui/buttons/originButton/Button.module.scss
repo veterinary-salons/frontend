@@ -122,6 +122,14 @@
   padding: 18.33px 20px;
 }
 
+@media screen and (max-width: 560px) {
+  .large {
+    font-size: 20px;
+    line-height: 28px; /* 140% */
+    letter-spacing: 0.6px;
+  }
+}
+
 .medium {
   padding: 12px 30px;
   min-width: 117px;

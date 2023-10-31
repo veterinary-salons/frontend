@@ -90,11 +90,37 @@
     &__background {
       height: 254px;
       padding: 21px 18px 0;
+      border-radius: 20px 20px 4px 4px;
     }
 
     &__img {
       width: 233px;
       height: 233px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .card {
+    width: 154px;
+    height: 183px;
+
+    &__background {
+      height: 155px;
+      padding: 0;
+    }
+
+    &__img {
+      width: 154px;
+      height: 154px;
+    }
+
+    &__header {
+      font-size: 16px;
+      line-height: 20px;
+      display: flex;
+      justify-content: center;
+      margin: 8px auto 0;
     }
   }
 }

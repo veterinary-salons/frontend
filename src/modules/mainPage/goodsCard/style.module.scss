@@ -85,3 +85,27 @@
     }
   }
 }
+
+@media screen and (max-width: 560px) {
+  .card {
+    width: 154px;
+    height: 183px;
+
+    &__service-background {
+      height: 155px;
+    }
+
+    &__img {
+      width: 154px;
+      height: 155px;
+      scale: .6;
+    }
+
+    &__header {
+      margin-top: 8px;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.32px;
+    }
+  }
+}

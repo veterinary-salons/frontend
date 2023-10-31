@@ -42,3 +42,27 @@
     }
   }
 }
+
+
+@media screen and (max-width: 560px) {
+  .goods {
+    padding: 60px 0;
+
+    &__content {
+      width: var(--content-width-for-screen-360);
+    }
+
+    &__title {
+      font-size: 20px;
+      line-height: 28px;
+      width: 100%;
+      margin: 0 auto 32px 0;
+    }
+
+    &__cards {
+      column-gap: 12px;
+      row-gap: 16px;
+      flex-wrap: wrap;
+    }
+  }
+}
