@@ -1,4 +1,4 @@
-.big-avatar {
+.avatar {
   width: 100px;
   height: 100px;
   border-radius: 100%;
@@ -26,5 +26,25 @@
 
   &_white-back {
     background-color: var(--background-white-color, #fff);
+  }
+
+  &_header {
+    background-image: url('../../assets/images/icon/avatar/avatar.svg');
+    background-size: 100%;
+    background-color: transparent;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .avatar_header {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .avatar_header {
+    width: 24px;
+    height: 24px;
   }
 }

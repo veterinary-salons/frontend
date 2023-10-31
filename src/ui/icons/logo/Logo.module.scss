@@ -1,7 +1,19 @@
 .logo {
-  width: 157px;
+  // width: 157px;
   height: 59px;
   padding: 4px;
   cursor: pointer;
   opacity: 0.8;
+}
+
+@media screen and (max-width: 990px) {
+  .logo {
+    height: 50px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .logo {
+    height: 40px;
+  }
 }
