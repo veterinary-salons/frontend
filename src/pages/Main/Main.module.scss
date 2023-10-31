@@ -84,7 +84,9 @@
     min-height: 590px;
 
     &__content {
-      width: var(--content-width-for-screen-990);
+      width: 100%;
+      padding: 0 50px;
+      margin: 0 auto;
     }
 
     &__title {
@@ -115,7 +117,7 @@
     min-height: 590px;
 
     &__content {
-      width: var(--content-width-for-screen-360);
+      padding: 0 20px;
     }
 
     &__title {
@@ -190,7 +192,9 @@
     padding: 60px 0;
 
     &__content {
-      width: var(--content-width-for-screen-990);
+      width: 100%;
+      padding: 0 50px;
+      margin: 0 auto;
     }
 
     &__title {
@@ -213,7 +217,7 @@
     padding: 60px 0;
 
     &__content {
-      width: var(--content-width-for-screen-360);
+      padding: 0 20px;
     }
 
     &__title {
