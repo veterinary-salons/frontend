@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { utcToZonedTime } from 'date-fns-tz';
 // import classNames from 'classnames';
@@ -75,6 +75,19 @@ const BookingService = () => {
   const [visibleTimeSlots, setVisibleTimeSlots] = useState(initialVisibleDates);
   const [activeDateIndex, setActiveDateIndex] = useState(null); // Индекс активной даты
   const [activeTimeIndex, setActiveTimeIndex] = useState(null); // Индекс активной даты
+
+  const [values, setValues] = useState({
+  });
+
+  const handleFormChange = useCallback(
+    (value) => {
+      setValues({
+        ...values,
+        ...value,
+      });
+    },
+    [setValues, values],
+  );
 
   const handleDateButtonClick = (index) => {
     setActiveDateIndex(index);
@@ -169,20 +182,20 @@ const BookingService = () => {
         <SectionSubtitle title="Где хотите получить услугу" />
         <div className={classes['appointment-type']}>
           <Checkbox
-            checked={false}
+            checked={values.appointmentTypeToSpec === "me-to-spec"}
             htmlType="checkbox"
             value="me-to-spec"
-            name="appointmentType"
-            // getCheckbox={handleFormChange}
+            name="appointmentTypeToSpec"
+            getCheckbox={handleFormChange}
           >
             Я приеду к специалисту
           </Checkbox>
           <Checkbox
-            checked={false}
+            checked={values.appointmentTypeToMe === "spec-to-me"}
             htmlType="checkbox"
             value="spec-to-me"
-            name="appointmentType"
-            // getCheckbox={handleFormChange}
+            name="appointmentTypeToMe"
+            getCheckbox={handleFormChange}
           >
             Специалист приедет ко мне
           </Checkbox>
