@@ -120,7 +120,10 @@ const router = createBrowserRouter(
       </Route>
       <Route path="services/:service/:id" element={<SpecialistAdvertCard />} >
         <Route index element={<SpecialistAdvertCardFullInfo />} />
-        <Route path="service-booking" element={<BookingService />} />
+        <Route path="service-booking" element={<BookingService />} >
+          <Route path="pets" element={<h1>здесь страница с выбором питомца</h1>} />
+
+        </Route>
       </Route>
 
       {/* Goods */}

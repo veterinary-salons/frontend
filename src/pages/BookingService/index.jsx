@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
-import { useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { useParams, useNavigate} from 'react-router-dom';
 import { utcToZonedTime } from 'date-fns-tz';
 // import classNames from 'classnames';
 import {
@@ -16,6 +17,11 @@ import SectionSubtitle from '../../components/SectionSubtitle';
 import ScheduleButton from '../../ui/buttons/scheduleButton';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import Button from '../../ui/buttons/originButton/Button';
+import {
+  setBookingDate,
+  setBookingTime,
+  setAppointmentType,
+} from '../../app/actions/booking-params-action';
 
 const dayOfWeekMappings = {
   Mon: 'Пн',
@@ -55,6 +61,10 @@ const generateTimeIntervals = (startTime, endTime, interval) => {
 };
 
 const BookingService = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  // const bookingData = useSelector((state) => state.booking);
+
   // временная переменная интервала времени
 
   const { id } = useParams();
@@ -76,8 +86,7 @@ const BookingService = () => {
   const [activeDateIndex, setActiveDateIndex] = useState(null); // Индекс активной даты
   const [activeTimeIndex, setActiveTimeIndex] = useState(null); // Индекс активной даты
 
-  const [values, setValues] = useState({
-  });
+  const [values, setValues] = useState({});
 
   const handleFormChange = useCallback(
     (value) => {
@@ -97,11 +106,23 @@ const BookingService = () => {
     setActiveTimeIndex(index);
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Здесь можно диспатчить действия для сохранения данных в хранилище
+    dispatch(setBookingDate(activeDateIndex));
+    dispatch(setBookingTime(activeTimeIndex));
+    dispatch(setAppointmentType(values));
+
+    navigate('pets');
+  };
+
   const timeSlots = generateTimeIntervals('10-00', '19-30', 15);
 
   return (
     <form id="booking-service" className={classes['booking-form']}>
       <SpecialistAdvertCardServices SpecialistData={specialistInfo} isBooking />
+      {/* <Outlet/> */}
       <div>
         <SectionSubtitle title="Выберите дату" />
         <div className={classes['advert-card']}>
@@ -182,7 +203,7 @@ const BookingService = () => {
         <SectionSubtitle title="Где хотите получить услугу" />
         <div className={classes['appointment-type']}>
           <Checkbox
-            checked={values.appointmentTypeToSpec === "me-to-spec"}
+            checked={values.appointmentTypeToSpec === 'me-to-spec'}
             htmlType="checkbox"
             value="me-to-spec"
             name="appointmentTypeToSpec"
@@ -191,7 +212,7 @@ const BookingService = () => {
             Я приеду к специалисту
           </Checkbox>
           <Checkbox
-            checked={values.appointmentTypeToMe === "spec-to-me"}
+            checked={values.appointmentTypeToMe === 'spec-to-me'}
             htmlType="checkbox"
             value="spec-to-me"
             name="appointmentTypeToMe"
@@ -201,7 +222,9 @@ const BookingService = () => {
           </Checkbox>
         </div>
       </div>
-      <Button size="medium">Забронировать</Button>
+      <Button size="medium" type="submit" onClick={handleSubmit}>
+        Забронировать
+      </Button>
     </form>
   );
 };

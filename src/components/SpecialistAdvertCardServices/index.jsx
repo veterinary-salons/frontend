@@ -1,17 +1,22 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { useState } from 'react';
 import classNames from 'classnames';
 import classes from './style.module.scss';
 import SectionSubtitle from '../SectionSubtitle';
+import { setSelectedService as setSelService } from '../../app/actions/booking-params-action';
 
 const SpecialistAdvertCardServices = ({ SpecialistData, isBooking }) => {
   // const handleButtonClick = (e) => {
   //   e.preventDefault();
   // }
+  const dispatch = useDispatch();
+
   const [selectedService, setSelectedService] = useState('');
   const handleServiceClick = (service) => {
     setSelectedService(service);
+    dispatch(setSelService(service));
   };
 
   const itemClasses = (service) =>
