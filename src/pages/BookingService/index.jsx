@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { utcToZonedTime } from 'date-fns-tz';
+// import classNames from 'classnames';
 import {
   format,
   addMonths,
@@ -13,6 +14,8 @@ import { professionals } from '../../assets/constants/temporaryData';
 import SpecialistAdvertCardServices from '../../components/SpecialistAdvertCardServices';
 import SectionSubtitle from '../../components/SectionSubtitle';
 import ScheduleButton from '../../ui/buttons/scheduleButton';
+import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
+import Button from '../../ui/buttons/originButton/Button';
 
 const dayOfWeekMappings = {
   Mon: 'Пн',
@@ -32,11 +35,14 @@ const generateTimeIntervals = (startTime, endTime, interval) => {
   let currentHour = startHour;
   let currentMinute = startMinute;
 
-  while (currentHour < endHour || (currentHour === endHour && currentMinute <= endMinute)) {
+  while (
+    currentHour < endHour ||
+    (currentHour === endHour && currentMinute <= endMinute)
+  ) {
     const formattedHour = currentHour.toString().padStart(2, '0');
     const formattedMinute = currentMinute.toString().padStart(2, '0');
     timeIntervals.push(`${formattedHour}-${formattedMinute}`);
-    
+
     // Увеличиваем текущее время на указанный интервал (в минутах)
     currentMinute += interval;
     if (currentMinute >= 60) {
@@ -50,7 +56,6 @@ const generateTimeIntervals = (startTime, endTime, interval) => {
 
 const BookingService = () => {
   // временная переменная интервала времени
-  
 
   const { id } = useParams();
   const specialistInfo = professionals.find((item) => item.id === id);
@@ -79,10 +84,10 @@ const BookingService = () => {
     setActiveTimeIndex(index);
   };
 
-  const timeSlots = generateTimeIntervals ('10-00', '19-30', 15);
-  
+  const timeSlots = generateTimeIntervals('10-00', '19-30', 15);
+
   return (
-    <>
+    <form id="booking-service" className={classes['booking-form']}>
       <SpecialistAdvertCardServices SpecialistData={specialistInfo} isBooking />
       <div>
         <SectionSubtitle title="Выберите дату" />
@@ -97,16 +102,17 @@ const BookingService = () => {
                   disabled={currentDate >= endOfDay(date)}
                   active={activeDateIndex === index} // Подсветка активной даты
                   onClick={() => handleDateButtonClick(index)}
-                  
                 />
               </li>
             ))}
           </ul>
-          <div className={`${classes['advert-card__options-buttons']} ${
+          <div
+            className={`${classes['advert-card__options-buttons']} ${
               visibleDates > dateRange.length
                 ? classes['advert-card__options-buttons_align-bottom']
                 : ''
-            }`}>
+            }`}
+          >
             {visibleDates < dateRange.length && ( // Показываем кнопку "Open" только если есть еще даты для отображения
               <ScheduleButton
                 variant="openMore"
@@ -129,7 +135,7 @@ const BookingService = () => {
             {timeSlots.slice(0, visibleTimeSlots).map((time, index) => (
               <li key={time}>
                 <ScheduleButton
-                  variant='time'
+                  variant="time"
                   time={time}
                   active={activeTimeIndex === index} // Подсветка активной даты
                   onClick={() => handleTimeButtonClick(index)}
@@ -137,11 +143,13 @@ const BookingService = () => {
               </li>
             ))}
           </ul>
-          <div className={`${classes['advert-card__options-buttons']} ${
+          <div
+            className={`${classes['advert-card__options-buttons']} ${
               visibleTimeSlots > timeSlots.length
                 ? classes['advert-card__options-buttons_align-bottom']
                 : ''
-            }`}>
+            }`}
+          >
             {visibleTimeSlots < timeSlots.length && ( // Показываем кнопку "Open" только если есть еще даты для отображения
               <ScheduleButton
                 variant="openMore"
@@ -157,7 +165,31 @@ const BookingService = () => {
           </div>
         </div>
       </div>
-    </>
+      <div>
+        <SectionSubtitle title="Где хотите получить услугу" />
+        <div className={classes['appointment-type']}>
+          <Checkbox
+            checked={false}
+            htmlType="checkbox"
+            value="me-to-spec"
+            name="appointmentType"
+            // getCheckbox={handleFormChange}
+          >
+            Я приеду к специалисту
+          </Checkbox>
+          <Checkbox
+            checked={false}
+            htmlType="checkbox"
+            value="spec-to-me"
+            name="appointmentType"
+            // getCheckbox={handleFormChange}
+          >
+            Специалист приедет ко мне
+          </Checkbox>
+        </div>
+      </div>
+      <Button size="medium">Забронировать</Button>
+    </form>
   );
 };
 
