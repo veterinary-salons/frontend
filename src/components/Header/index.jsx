@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import { useState, useLayoutEffect, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from '../../ui/icons/logo/Logo';
 import Button from '../../ui/buttons/originButton/Button';
@@ -15,9 +16,34 @@ const Header = ({ authorization, onlyLogo }) => {
     {[classes.header_main]: location.pathname === "/"}
   )
 
+  const [width, setWidth] = useState('');
+  const [screenType, setScreenType] = useState('');
+
+  useLayoutEffect(() => {
+    function updateWidth() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', updateWidth);
+    updateWidth();
+    return () => window.removeEventListener('resize', updateWidth);
+  }, [width]);
+
+  useEffect(() => {
+    if(width <= 560) {
+      setScreenType('mobile-vertical');
+    } else if(width <= 760) {
+      setScreenType('mobile-horizontal');
+    } else if(width <= 1270) {
+      setScreenType('tablet');
+    } else {
+      setScreenType('pc');
+    }
+    // eslint-disable-next-line
+  }, [width]);
+
   return (
     <header className={headerCN}>
-      <div className={classes.header__content}>
+      <div className={classes.header__wrapper}>
         {onlyLogo ? (
           <Link className={classes.header__link} to="/">
             <Logo />
@@ -102,8 +128,8 @@ const Header = ({ authorization, onlyLogo }) => {
         )}
       </div>
     </header>
-  );
-} 
+    )
+  }; 
 
 Header.propTypes = {
   authorization: PropTypes.string,

@@ -39,5 +39,4 @@
   /* Ширина контента на разных разрешениях экрана */
   --content-width-for-screen-1440: 1240px;
   --content-width-for-screen-1280: 1120px;
-  --content-width-for-screen-360: 320px;
 }

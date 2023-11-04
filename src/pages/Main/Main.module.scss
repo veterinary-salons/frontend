@@ -68,7 +68,6 @@
 
     &__text {
       margin-bottom: 52px;
-      line-height: 24px;
     }
 
     &__img {
@@ -78,35 +77,91 @@
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1270px) {
   .promo {
-    padding-bottom: 258px;
-    min-height: 590px;
+    min-height: 460px;
 
     &__content {
-      width: 100%;
       padding: 0 50px;
-      margin: 0 auto;
+      width: 100%;
+    }
+
+    &__title {
+      margin: 40px 0;
+      font-size: 53px;
+      max-width: 435px;
+    }
+
+    &__text {
+      margin-bottom: 52px;
+      font-size: 18px;
+      line-height: 22px;
+      max-width: 435px;
+    }
+
+    &__img {
+      background-size: 430px 445px;
+      width: 430px;
+      height: 445px;
+      right: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .promo {
+    min-height: 400px;
+    padding-bottom: 50px;
+
+    &__title {
+      font-size: 48px;
+      line-height: 50px;
+      max-width: 435px;
+    }
+
+    &__text {
+      margin-bottom: 42px;
+      font-size: 18px;
+      line-height: 20px;
+      max-width: 390px;
+    }
+
+    &__img {
+      background-size: 340px 360px;
+      width: 340px;
+      height: 360px;
+      right: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .promo {
+    min-height: 352px;
+    padding-bottom: 40px;
+
+    &__content {
+      padding: 0 20px;
     }
 
     &__title {
       margin: 32px 0;
-      font-size: 32px;
-      line-height: 44px;
-      width: 100%;
+      font-size: 36px;
+      line-height: 40px;
+      max-width: 335px;
     }
 
     &__text {
       margin-bottom: 24px;
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 16px;
+      line-height: 18px;
+      max-width: 335px;
     }
 
     &__img {
       background-size: 223px 278px;
-      background-position: right bottom;
-      right: 0;
-      bottom: 0;
+      width: 223px;
+      height: 278px;
     }
   }
 }
@@ -160,7 +215,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 66px;
-    max-width: 670px;
+    width: 100%;
     margin: 0 auto 60px 0;
   }
 
@@ -187,7 +242,7 @@
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1024px) {
   .specialists {
     padding: 60px 0;
 
@@ -198,16 +253,26 @@
     }
 
     &__title {
-      font-size: 20px;
-      line-height: 28px;
+      font-size: 32px;
+      line-height: 40px;
       width: 100%;
-      margin: 0 auto 32px;
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .specialists {
+    &__title {
+      font-size: 26px;
+      line-height: 30px;
     }
 
     &__cards {
-      column-gap: 12px;
-      row-gap: 16px;
+      row-gap: 25px;
       flex-wrap: wrap;
+      width: 100%;
+      margin: 0 auto;
     }
   }
 }
@@ -223,14 +288,12 @@
     &__title {
       font-size: 20px;
       line-height: 28px;
-      width: 100%;
-      margin: 0 auto 32px;
     }
 
     &__cards {
       column-gap: 12px;
       row-gap: 16px;
-      flex-wrap: wrap;
+      max-width: 375px;
     }
   }
 }

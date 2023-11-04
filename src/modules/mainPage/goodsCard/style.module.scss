@@ -86,18 +86,58 @@
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 1024px) {
   .card {
-    width: 154px;
-    height: 183px;
+    width: 185px;
+    height: 220px;
 
     &__service-background {
-      height: 155px;
+      height: 185px;
     }
 
     &__img {
-      width: 154px;
-      height: 155px;
+      scale: .8;
+      margin: 0;
+      height: 100%;
+    }
+
+    &__header {
+      font-size: 20px;
+      line-height: 26px;
+      margin-top: 8px;
+    }
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .card {
+    width: 220px;
+    height: 254px;
+
+    &__service-background {
+      height: 220px;
+    }
+
+    &__img {
+      scale: .8;
+      margin: 0;
+      height: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .card {
+    width: 152px;
+    height: 183px;
+
+    &__service-background {
+      height: 152px;
+    }
+
+    &__img {
+      width: 152px;
+      height: 152px;
       scale: .6;
     }
 
