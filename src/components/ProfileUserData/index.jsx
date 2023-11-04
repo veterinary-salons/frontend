@@ -45,14 +45,16 @@ const ProfileUserData = ({
             Изменить мои данные
           </Button>
         </div>
-        <Button
-          onClick={handleExitProfile}
-          size="medium"
-          variant="outlined"
-          isMaxWidth
-        >
-          Выйти из профиля
-        </Button>
+        <div className={classes['profile__button-wrapper']}>
+          <Button
+            onClick={handleExitProfile}
+            size="medium"
+            variant="outlined"
+            isMaxWidth
+          >
+            Выйти из профиля
+          </Button>
+        </div>
       </section>
     )
   );

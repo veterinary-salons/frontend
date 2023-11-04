@@ -43,8 +43,12 @@
 }
 
 @media screen and (max-width: 760px) {
-  .avatar_header {
-    width: 24px;
-    height: 24px;
+  .avatar {
+    width: 80px;
+    height: 80px;
+    &_header {
+      width: 24px;
+      height: 24px;
+    }
   }
 }

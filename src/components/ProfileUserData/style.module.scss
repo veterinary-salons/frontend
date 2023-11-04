@@ -43,3 +43,36 @@
     }
   }
 }
+
+@media screen and (max-width: 560px) {
+  .profile {
+    grid-template-columns: 1fr;
+    &__button-wrapper {
+      display: none;
+    }
+
+    &__data-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    &__avatar-wrapper {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    &__data-title {
+      font-size: 20px;
+    }
+
+    &__contacts-wrapper {
+      padding-top: 8px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+  }
+}
