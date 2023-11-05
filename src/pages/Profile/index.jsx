@@ -68,6 +68,12 @@ const Profile = () => {
         />
       )}
       <Outlet />
+      <button
+        onClick={handleClickExitProfile}
+        className={classes.profile__exit}
+      >
+        Выйти из профиля
+      </button>
       <Portal isOpened={isOpenPopup}>
         {isLogin ? (
           <QuitConfirmationPopup

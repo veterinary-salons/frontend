@@ -31,6 +31,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
+  &__button-wrapper_edit {
+    width: fit-content;
+  }
 }
 
 @media screen and (max-width: 1430px) {
@@ -44,7 +47,15 @@
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 1070px) {
+  .profile {
+    &__contacts-wrapper {
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
   .profile {
     grid-template-columns: 1fr;
     &__button-wrapper {
@@ -52,9 +63,7 @@
     }
 
     &__data-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: 35px;
+      gap: 21px;
     }
 
     &__avatar-wrapper {
@@ -70,9 +79,17 @@
     &__contacts-wrapper {
       padding-top: 8px;
       width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 19px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .profile {
+    &__button-wrapper_edit {
+      width: 100%;
     }
   }
 }

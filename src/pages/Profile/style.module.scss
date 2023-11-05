@@ -1,5 +1,36 @@
 .profile {
   padding: 48px 0 100px;
+
+  &__exit {
+    display: none;
+    margin-top: 60px;
+    width: fit-content;
+    height: 40px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px; /* 142.857% */
+    color: var(--primary-text-color, #0f0f0f);
+    background: none;
+    border: none;
+    align-items: center;
+    gap: 8px;
+    &::before {
+      content: '';
+      width: 40px;
+      height: 40px;
+      background: url('../../assets/images/icon/exit-profile/exit.svg') center
+        no-repeat;
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .profile {
+    &__exit {
+      display: flex;
+    }
+  }
 }
 
 @media screen and (max-width: 560px) {

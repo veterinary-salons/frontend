@@ -41,9 +41,16 @@ const ProfileUserData = ({
               />
             ) : null}
           </div>
-          <Button onClick={handleEditProfile} size="medium" variant="outlined">
-            Изменить мои данные
-          </Button>
+          <div className={classes['profile__button-wrapper_edit']}>
+            <Button
+              onClick={handleEditProfile}
+              size="medium"
+              variant="outlined"
+              isMaxWidth
+            >
+              Изменить мои данные
+            </Button>
+          </div>
         </div>
         <div className={classes['profile__button-wrapper']}>
           <Button

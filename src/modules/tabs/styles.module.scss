@@ -12,9 +12,9 @@
   margin-top: 50px;
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 760px) {
   .nav {
-    width: 100%;
+    max-width: 100%;
   }
 
   .marginT {
