@@ -289,3 +289,11 @@
     }
   }
 }
+
+@media screen and (max-width: 358px) {
+  .specialists {
+    &__cards {
+      justify-content: center;
+    }
+  }
+}
