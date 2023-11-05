@@ -86,13 +86,13 @@
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1270px) {
   .card {
-    width: 185px;
-    height: 220px;
+    width: 210px;
+    height: 250px;
 
     &__service-background {
-      height: 185px;
+      height: 210px;
     }
 
     &__img {
@@ -109,19 +109,42 @@
   }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 990px) {
   .card {
-    width: 220px;
-    height: 254px;
+    width: 152px;
+    height: 183px;
 
     &__service-background {
-      height: 220px;
+      height: 152px;
+    }
+
+    &__header {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .card {
+    width: 152px;
+    height: 183px;
+
+    &__service-background {
+      height: 152px;
     }
 
     &__img {
-      scale: .8;
-      margin: 0;
-      height: 100%;
+      width: 152px;
+      height: 152px;
+      scale: .6;
+    }
+
+    &__header {
+      margin-top: 8px;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.32px;
     }
   }
 }

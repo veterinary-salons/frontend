@@ -235,14 +235,10 @@
     &__content {
       width: var(--content-width-for-screen-1280);
     }
-
-    &__cards {
-      column-gap: 16px;
-    }
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1270px) {
   .specialists {
     padding: 60px 0;
 
@@ -261,7 +257,16 @@
   }
 }
 
-@media screen and (max-width: 840px) {
+@media screen and (max-width: 990px) {
+  .specialists {
+    &__title {
+      font-size: 26px;
+      line-height: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
   .specialists {
     &__title {
       font-size: 26px;
