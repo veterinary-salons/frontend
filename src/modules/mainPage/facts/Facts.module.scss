@@ -177,6 +177,10 @@
       padding: 0 20px;
     }
 
+    &__wrap {
+      max-width: 570px;
+    }
+
     &__table {
       width: 220px;
       margin: 0;
@@ -207,6 +211,10 @@
     &__title {
       font-size: 20px;
       line-height: 28px;
+    }
+
+    &__wrap {
+      max-width: 420px;
     }
 
     &__cat {

@@ -141,7 +141,6 @@
     &__header {
       font-size: 18px;
       line-height: 24px;
-      margin: 8px auto 0;
     }
   
   }
@@ -149,25 +148,22 @@
 
 @media screen and (max-width: 760px) {
   .card {
-    width: 154px;
-    height: 183px;
+    width: 170px;
+    height: 200px;
 
     &__background {
-      height: 155px;
+      height: 170px;
       padding: 0;
     }
 
     &__img {
-      width: 154px;
-      height: 154px;
+      width: 170px;
+      height: 170px;
     }
 
     &__header {
       font-size: 16px;
       line-height: 20px;
-      display: flex;
-      justify-content: center;
-      margin: 8px auto 0;
     }
   }
 }
@@ -185,14 +181,6 @@
     &__img {
       width: 154px;
       height: 154px;
-    }
-
-    &__header {
-      font-size: 16px;
-      line-height: 20px;
-      display: flex;
-      justify-content: center;
-      margin: 8px auto 0;
     }
   }
 }

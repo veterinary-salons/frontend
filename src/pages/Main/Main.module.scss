@@ -268,6 +268,10 @@
 
 @media screen and (max-width: 760px) {
   .specialists {
+    &__content {
+      padding: 0 20px;
+    }
+
     &__title {
       font-size: 26px;
       line-height: 30px;
@@ -278,25 +282,19 @@
       flex-wrap: wrap;
       width: 100%;
       margin: 0 auto;
+      max-width: 410px;
     }
   }
 }
 
 @media screen and (max-width: 560px) {
   .specialists {
-    padding: 60px 0;
-
-    &__content {
-      padding: 0 20px;
-    }
-
     &__title {
       font-size: 20px;
       line-height: 28px;
     }
 
     &__cards {
-      column-gap: 12px;
       row-gap: 16px;
       max-width: 375px;
     }
