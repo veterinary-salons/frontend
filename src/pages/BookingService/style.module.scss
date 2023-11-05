@@ -1,0 +1,45 @@
+.advert-card {
+  margin: 32px 0 0;
+  flex-direction: row;
+  gap: 60px;
+  display: flex;
+  width: 100%;
+
+
+  &__schedule-day {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(7, auto);
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    justify-content: start;
+
+    & li {
+      width: fit-content;
+    }
+  }
+
+  &__options-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &_align-bottom {
+      justify-content: flex-end;
+    }
+  }
+}
+
+.booking-form {
+  display: flex;
+  gap: 60px;
+  flex-direction: column;
+}
+
+.appointment-type{
+  margin-top: 32px;
+  display: flex;
+  gap: 24px;
+  flex-direction: column;
+}

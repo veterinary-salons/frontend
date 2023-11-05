@@ -11,7 +11,6 @@ function RecoveryFormPassword() {
   const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
   const [isOnAccount, setIsOnAccount] = useState(true);
-  console.log(isOnAccount);
 
   useEffect(() => {
     if (localStorage.getItem('onAccount') !== true) {

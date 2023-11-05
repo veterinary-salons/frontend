@@ -35,6 +35,9 @@ import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
+import SpecialistAdvertCardFullInfo from '../pages/SpecialistAdvertCardFullInfo';
+import SpecialistAdvertCard from '../pages/SpecialistAdvertCard';
+import BookingService from '../pages/BookingService';
 import BookingCancellation from '../components/BookingCancellation';
 
 import PetCard from '../pages/PetCard';
@@ -122,7 +125,14 @@ const router = createBrowserRouter(
       {/* Services */}
       <Route path="services" element={<Catalog title="Наши услуги" />}>
         <Route index element={<ServicesList isServicesPage />} />
-        <Route path=":service" element={<Service />} />
+        <Route path=":service" element={<Service />}/>
+      </Route>
+      <Route path="services/:service/:id" element={<SpecialistAdvertCard />} >
+        <Route index element={<SpecialistAdvertCardFullInfo />} />
+        <Route path="service-booking" element={<BookingService />} >
+          <Route path="pets" element={<h1>здесь страница с выбором питомца</h1>} />
+
+        </Route>
       </Route>
 
       {/* Goods */}

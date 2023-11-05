@@ -6,6 +6,8 @@
     "@reduxjs/toolkit": "^1.9.5",
     "classnames": "^2.3.2",
     "cropperjs": "^1.6.1",
+    "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
     "nanoid": "^5.0.1",
     "react": "^18.2.0",
     "react-cropper": "^2.3.3",
@@ -17,6 +19,7 @@
     "react-simple-star-rating": "^5.1.7",
     "react-text-mask": "^5.5.0",
     "sass": "^1.65.1",
+    "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

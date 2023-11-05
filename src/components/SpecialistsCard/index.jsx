@@ -6,6 +6,7 @@ import StarsBox from '../../ui/icons/starsBox/StarsBox';
 import Heart from '../../ui/buttons/heart/Heart';
 
 const SpecialistsCard = ({
+  id,
   img,
   profession,
   price,
@@ -27,9 +28,9 @@ const SpecialistsCard = ({
       <div className={classes['specialists-card__content']}>
         <div className={classes['specialists-card__info']}>
           <div className={classes['specialists-card__title-container']}>
-            <p className={classes['specialists-card__profession']}>
+            <Link to={`${id}`} className={classes['specialists-card__profession']}>
               {profession}
-            </p>
+            </Link>
             <Heart />
           </div>
           <p className={classes['specialists-card__price']}>
@@ -61,6 +62,7 @@ SpecialistsCard.defaultProps = {
 };
 
 SpecialistsCard.propTypes = {
+  id: PropTypes.string.isRequired,
   img: PropTypes.string,
   profession: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,

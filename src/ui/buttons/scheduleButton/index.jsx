@@ -18,6 +18,8 @@ const ScheduleButton = ({
     [classes['schedule-buttons_active']]: active,
   });
 
+  const classesP = cn(classes['schedule-buttons__text']);
+
   return (
     <button
       disabled={disabled}
@@ -26,14 +28,12 @@ const ScheduleButton = ({
       type="button"
     >
       {variant === 'dayMonth' && (
-        <div className={classes['schedule-buttons__box-text']}>
-          <p className={classes['schedule-buttons__text']}>{dayWeek}</p>
-          <p className={classes['schedule-buttons__text']}>{dayMonth}</p>
+        <div>
+          <p className={classesP}>{dayWeek}</p>
+          <p className={classesP}>{dayMonth}</p>
         </div>
       )}
-      {variant === 'time' && (
-        <p className={classes['schedule-buttons__text']}>{time}</p>
-      )}
+      {variant === 'time' && <p className={classesP}>{time}</p>}
       {variant === 'openMore' && <ArrowDown positionDropdown={false} />}
       {variant === 'close' && <ArrowUp positionDropdown={false} />}
     </button>
