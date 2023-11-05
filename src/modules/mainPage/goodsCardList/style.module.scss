@@ -48,9 +48,10 @@
     padding: 60px 0;
 
     &__content {
+      max-width: none;
       width: 100%;
       padding: 0 50px;
-      margin: 0 auto;
+      margin: 0;
     }
 
     &__title {
@@ -58,6 +59,10 @@
       line-height: 40px;
       width: 100%;
       margin: 0 auto 32px 0;
+    }
+
+    &__cards {
+      column-gap: 10px;
     }
   }
 }

@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
 import { useState, useLayoutEffect, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import Logo from '../../ui/icons/logo/Logo';
 import Button from '../../ui/buttons/originButton/Button';
 import SearchForm from '../../ui/forms/inputs/searchForm/index';
@@ -10,11 +9,6 @@ import NavigationLink from '../../ui/icons/navigationLink/index';
 import classes from './style.module.scss';
 
 const Header = ({ authorization, onlyLogo }) => {
-  const location = useLocation();
-  const headerCN = classNames(
-    classes.header,
-    {[classes.header_main]: location.pathname === "/"}
-  )
 
   const [width, setWidth] = useState('');
   const [screenType, setScreenType] = useState('');
@@ -42,7 +36,7 @@ const Header = ({ authorization, onlyLogo }) => {
   }, [width]);
 
   return (
-    <header className={headerCN}>
+    <header className={classes.header}>
       <div className={classes.header__wrapper}>
         {onlyLogo ? (
           <Link className={classes.header__link} to="/">
@@ -94,6 +88,7 @@ const Header = ({ authorization, onlyLogo }) => {
                       shape="square"
                       label="Вход"
                       onClick={() => {}}
+                      isHeader
                     >
                       Вход
                     </Button>
@@ -108,6 +103,7 @@ const Header = ({ authorization, onlyLogo }) => {
                         shape="square"
                         label="Регистрация"
                         onClick={() => {}}
+                        isHeader
                       >
                         Регистрация
                       </Button>
