@@ -8,6 +8,7 @@
     "cropperjs": "^1.6.1",
     "date-fns": "^2.30.0",
     "date-fns-tz": "^2.0.0",
+    "nanoid": "^5.0.1",
     "react": "^18.2.0",
     "react-cropper": "^2.3.3",
     "react-detect-offline": "^2.4.5",

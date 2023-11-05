@@ -1,10 +1,9 @@
 .navigation-pages {
   font-family: 'Montserrat', Arial, sans-serif;
   display: flex;
-  gap: 36px;
+  gap: 37px;
   list-style-type: none;
   padding: 0;
-  width: 284px;
 
   &__link {
     text-decoration: none;
@@ -22,5 +21,37 @@
 
   &__link:hover {
     opacity: 0.8;
+  }
+}
+
+@media screen and (max-width: 1430px) {
+  .navigation-pages {
+    gap: 30px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .navigation-pages {
+    gap: 4vw;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .navigation-pages {
+    gap: 3.5vw;
+
+    &__link {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .navigation-pages {
+    gap: 2.8vw;
+
+    &__link {
+      font-size: 14px;
+    }
   }
 }

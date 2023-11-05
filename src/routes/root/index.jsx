@@ -25,6 +25,21 @@ const dataPathWithoutCrumbs = [
   '/advert-schedule',
   '/advert-final',
   '/advert-success',
+  '/advert',
+  '/advert-groomer',
+  '/advert-veterinary',
+  '/advert-petSitting',
+  '/advert-cynology',
+  '/advert-cynology-pet',
+  '/advert-cynology-services',
+  '/advert-groomer-pet',
+  '/advert-groomer-services',
+  '/advert-veterinary-pet',
+  '/advert-price',
+  '/advert-veterinary-services',
+  '/advert-petSitting-pet',
+  '/advert-image',
+  '/test'
 ];
 const dataPathWithOnlyLogoHeader = [
   '/signin',
@@ -51,6 +66,19 @@ const dataPathWithoutFooter = [
   '/successful-recovery',
   '/advert-description',
   '/advert-schedule',
+  '/advert',
+  '/advert-groomer',
+  '/advert-veterinary',
+  '/advert-petSitting',
+  '/advert-cynology',
+  '/advert-cynology-pet',
+  '/advert-cynology-services',
+  '/advert-groomer-pet',
+  '/advert-groomer-services',
+  '/advert-veterinary-pet',
+  '/advert-veterinary-services',
+  '/advert-petSitting-pet',
+  '/advert-image'
 ];
 
 function Root() {
@@ -75,7 +103,8 @@ function Root() {
         <Outlet />
       </main>
 
-      {location.pathname === '/' ? (
+      {/* Чтобы включить кнопку тестового компонента, нужно сделать location.pathname === '/' */}
+      {location.pathname === '///' ? (
         <Link to="/test" style={{ margin: '50px', flex: '0 0 auto' }}>
           <Button size="large">Страница с тестовым компонентом</Button>
         </Link>

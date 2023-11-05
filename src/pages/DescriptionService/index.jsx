@@ -1,19 +1,25 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Textarea from '../../ui/forms/inputs/Textarea/Textarea';
 import Button from '../../ui/buttons/originButton/Button';
 import classes from './style.module.scss';
 
-const DescriptionService = ({ getDescription }) => {
+const DescriptionService = () => {
   const navigate = useNavigate();
   const [value, setValue] = useState('');
   const [isValid, setIsValid] = useState(false);
 
   const handleButton = () => {
-    navigate('/advert-final', { replace: true });
-    getDescription({ descriptionServes: value });
+    navigate('/advert-image', { replace: true });
   };
+
+  const local = JSON.parse(localStorage.getItem('veterinarian'));
+
+  localStorage.setItem(
+    'veterinarian',
+    JSON.stringify({ ...local, description: value }),
+  );
 
   return (
     <section className={classes.description}>
@@ -44,14 +50,6 @@ const DescriptionService = ({ getDescription }) => {
       </div>
     </section>
   );
-};
-
-DescriptionService.propTypes = {
-  getDescription: PropTypes.func,
-};
-
-DescriptionService.defaultProps = {
-  getDescription: () => {},
 };
 
 export default DescriptionService;

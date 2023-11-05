@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import classes from './style.module.scss';
-import imgAvatar from '../../../assets/images/icon/avatar/avatar.svg';
+import ProfileAvatar from '../../profileAvatar';
+// import imgAvatar from '../../../assets/images/icon/avatar/avatar.svg';
 
-const NavigationLink = ({ variant, counter, img }) => {
+const NavigationLink = ({ variant, counter }) => {
   const variantAvatar = variant === 'profile';
   /**
    * @param (counter) number
@@ -28,11 +29,7 @@ const NavigationLink = ({ variant, counter, img }) => {
   return (
     <div className={classes['nav-link']}>
       {variantAvatar ? (
-        <img
-          className={classes[`nav-link__${variant}`]}
-          src={img || imgAvatar}
-          alt="icon-avatar"
-        />
+        <ProfileAvatar smallSize forHeader/>
       ) : (
         <div className={classes[`nav-link__${variant}`]}>
           {counter > 0 && (
@@ -47,13 +44,11 @@ const NavigationLink = ({ variant, counter, img }) => {
 NavigationLink.propTypes = {
   variant: PropTypes.string,
   counter: PropTypes.number,
-  img: PropTypes.string,
 };
 
 NavigationLink.defaultProps = {
   variant: 'profile',
   counter: 0,
-  img: '',
 };
 
 export default NavigationLink;

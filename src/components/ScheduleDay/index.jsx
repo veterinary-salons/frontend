@@ -42,21 +42,21 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
         ? {
             ...value,
             [type]: {
+              work: checkedDate,
               day,
-              checkedDate,
-              switchDate,
-              begin,
-              end,
+              aroundClock: switchDate,
+              begin: begin['dropdown-begin'],
+              end: end['dropdown-end'],
             },
           }
         : {
             ...value,
             [type]: {
+              work: checkedDate,
               day,
-              checkedDate,
-              switchDate,
-              begin,
-              end,
+              aroundClock: switchDate,
+              begin: begin['dropdown-begin'],
+              end: end['dropdown-end'],
             },
           },
     );
@@ -80,14 +80,16 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
         <Dropdown
           width="119px"
           array={dropDownOne}
-          getDropdown={setBegin}
+          getValue={setBegin}
           disabled={switchDate}
+          name="dropdown-begin"
         />
         <Dropdown
           width="119px"
           array={dropDownTwo}
-          getDropdown={setEnd}
+          getValue={setEnd}
           disabled={switchDate}
+          name="dropdown-end"
         />
       </div>
 
@@ -107,8 +109,8 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
 ScheduleDay.propTypes = {
   type: PropTypes.string,
   labelCheckbox: PropTypes.string,
-  getGraph: PropTypes.func,
   value: PropTypes.shape().isRequired,
+  getGraph: PropTypes.func,
 };
 
 ScheduleDay.defaultProps = {

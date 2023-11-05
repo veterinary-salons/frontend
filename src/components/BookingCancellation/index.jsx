@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 import Portal from '../Portal';
@@ -8,7 +7,6 @@ import BookingCancellationPopup from '../BookingCancellationPopup';
 import BookingDataCard from '../BookingDataCard';
 
 const BookingCancellation = ({ dataBooking }) => {
-  const navigate = useNavigate();
   const [isOpenPopup, setIsOpenPopup] = useState(false);
 
   const handleOpenPopup = () => {
@@ -20,13 +18,13 @@ const BookingCancellation = ({ dataBooking }) => {
   };
 
   const handleSuccessRevoke = () => {
-    navigate('../canceled');
+    console.log('Отменен');
     setIsOpenPopup(false);
   };
-
+  
   return (
     <>
-      <BookingDataCard dataBooking={dataBooking} />
+     <BookingDataCard dataBooking={dataBooking}/>
       <div className={classes['button-wrapper']}>
         <Button onClick={handleOpenPopup} size="medium" variant="outlined">
           Отменить бронирование

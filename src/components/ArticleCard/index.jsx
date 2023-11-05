@@ -8,7 +8,9 @@ import defaultImg from '../../assets/images/images/article-card/1.png';
 const ArticleCard = ({ id, imgCover, title, isLiked }) => {
   const [isLikedCard, setIsLikedCard] = useState(isLiked);
 
-  const handleClickLike = () => {
+  const handleClickLike = (evt) => {
+    evt.preventDefault();
+    evt.stopPropagation();
     setIsLikedCard((state) => !state);
   };
 

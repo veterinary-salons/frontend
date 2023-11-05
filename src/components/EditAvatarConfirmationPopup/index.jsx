@@ -23,7 +23,7 @@ const EditAvatarConfirmationPopup = ({
   const onCrop = () => {
     const cropper = cropperRef.current?.cropper;
     setCroppedImage(cropper.getCroppedCanvas().toDataURL());
-    console.dir(cropper);
+    // console.dir(cropper);
   };
 
   useEffect(() => {

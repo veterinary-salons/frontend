@@ -1,6 +1,8 @@
-# [PURRFECT CARE](https://veterinary-salons.github.io/frontend/)
+# [PURRFECT CARE](http://purrfect-care.acceleratorpracticum.ru/)
 
-Сервис онлайн бронирования товаров и услуг для домашних животных.
+Сервис онлайн бронирования товаров и услуг для домашних животных. http://purrfect-care.acceleratorpracticum.ru/
+
+Тестовая версия сайта доступна по ссылке https://veterinary-salons.github.io/frontend/. После перехода нажмите на логотип. 
 
 ## О проекте
 
