@@ -1,7 +1,7 @@
 .final {
   display: flex;
   flex-direction: column;
-  gap: clamp(32px, 10px, 40px);
+  gap: clamp(32px, 38px, 40px);
   width: clamp(300px, 90%, 1280px);
   margin-top: clamp(24px, 10%, 60px);
   margin-right: auto;
@@ -9,11 +9,11 @@
   margin-bottom: 0;
 
   &__container {
-    width: 100%;
+    width: 95%;
     display: grid;
     grid-template-columns: repeat(70vw 15vw);
     grid-template-rows: repeat(78px 45px 59px 26px);
-    margin-bottom: clamp(0px, 10%, 40px);
+    margin-bottom: clamp(0px, 10%, 0px);
   }
 
   &__title {
@@ -45,6 +45,8 @@
   }
 
   &__description {
+    margin-top: 35px;
+    margin-bottom: 0;
     font-size: clamp(16px, 4vw, 20px);
     font-style: normal;
     font-weight: 500;
@@ -78,8 +80,8 @@
     }
 
     &__description {
+      margin-top: 20px;
       font-size: 16px;
-      margin-top: 60px;
     }
 
     &__container-btn {
