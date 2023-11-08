@@ -1,14 +1,15 @@
 .filling-schedule {
-  width: 726px;
-  margin: 60px auto 139px;
-  font-family: 'Montserrat', Arial, sans-serif;
+  width: clamp(300px, 75vw, 726px);
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: clamp(100px, 10%, 60px);
 
   &__title {
-    font-size: 28px;
+    font-size: clamp(18px, 5vw, 28px);
     font-style: normal;
     font-weight: 600;
     line-height: 35px;
-    margin-bottom: 50px;
+    margin-bottom: clamp(24px, 5%, 50px);
   }
 
   &__container-btn {

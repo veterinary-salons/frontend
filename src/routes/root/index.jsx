@@ -39,7 +39,8 @@ const dataPathWithoutCrumbs = [
   '/advert-veterinary-services',
   '/advert-petSitting-pet',
   '/advert-image',
-  '/test'
+  '/test',
+  '/profile/edit',
 ];
 const dataPathWithOnlyLogoHeader = [
   '/signin',
@@ -78,7 +79,7 @@ const dataPathWithoutFooter = [
   '/advert-veterinary-pet',
   '/advert-veterinary-services',
   '/advert-petSitting-pet',
-  '/advert-image'
+  '/advert-image',
 ];
 
 function Root() {
@@ -93,7 +94,8 @@ function Root() {
   return (
     <div className={classes.root}>
       <Header authorization={auth} onlyLogo={isOnlyLogoHeader} />
-      <main style={{width: '100%'}}
+      <main
+        style={{ width: '100%' }}
         className={classNames(
           classes.main,
           location.pathname !== '/' ? classes['main-with-margins'] : null,
@@ -109,7 +111,6 @@ function Root() {
           <Button size="large">Страница с тестовым компонентом</Button>
         </Link>
       ) : null}
-
       {!isRenderFooter ? <Footer /> : null}
     </div>
   );

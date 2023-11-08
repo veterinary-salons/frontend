@@ -2,26 +2,35 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 60px auto 0;
-  width: 606px;
+  margin-top: clamp(20px, 5%, 60px);
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: clamp(100px, 10%, 70px);
+  width: clamp(310px, 80%, 506px);
 
   &__content-wrap {
-    max-width: 452px;
-    min-width: 452px;
+    width: 100%;
     margin: auto;
   }
 
   &__checkbox-container {
+    width: 100%;
     display: flex;
     flex-direction: column;
     row-gap: 20px;
-    margin: 48px 0 40px;
+    margin-top: clamp(32px, 10%, 48px);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: clamp(24px, 10vh, 40px);
   }
 
   &__input-container {
     display: flex;
     flex-direction: column;
-    margin: 48px 0 14px;
+    margin-top: clamp(32px, 5%, 48px);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 14px;
   }
 
   &__input {
@@ -40,5 +49,6 @@
   &__button-wrap {
     display: flex;
     justify-content: space-between;
+    width: 100%;
   }
 }

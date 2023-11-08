@@ -1,8 +1,6 @@
 .schedule {
-  width: 726px;
-  margin: 0 0;
+  width: clamp(320px, 65vw, 726px);
   margin: 60px auto 139px;
-  font-family: 'Montserrat', Arial, sans-serif;
 
   &__title {
     margin: 0 auto 48px;
@@ -13,7 +11,7 @@
   }
 
   &__fieldset {
-    margin: 0 auto 40px;
+    margin: 0 0 40px;
     padding: 0;
     border: none;
   }
@@ -21,7 +19,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 28px;
+    gap: clamp(38px, 1vh, 28px);
   }
 
   &__container-btn {

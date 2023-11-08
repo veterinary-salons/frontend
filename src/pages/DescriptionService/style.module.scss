@@ -1,14 +1,20 @@
 .description {
-  font-family: 'Montserrat', Arial, sans-serif;
-  width: 800px;
+  width: clamp(300px, 88vw, 800px);
   margin: 60px auto;
+  margin-top: clamp(24px, 10%, 60px);
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: clamp(100px, 10%, 0px);
 
   &__title {
-    font-size: 28px;
+    font-size: clamp(20px, 5vw, 28px);
     font-style: normal;
     font-weight: 600;
     line-height: 35px;
-    margin: 0 0 48px;
+    margin-top: 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: clamp(32px, 10%, 48px);
   }
 
   &__conteiner-btn {

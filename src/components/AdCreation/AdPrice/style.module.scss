@@ -1,15 +1,23 @@
 .form-prices {
-    width: 766px;
-    margin: 60px auto;
-    
+  width: 766px;
+  margin: 60px auto;
+
+  &__container {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+
+  &__text {
+    width: 442px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .form-prices {
     &__container {
-      display: flex;
-      gap: 20px;
-      align-items: center;
+      flex-wrap: wrap;
     }
-  
-    &__text {
-      width: 442px;
-      margin: 0;
-    }
+  }
 }

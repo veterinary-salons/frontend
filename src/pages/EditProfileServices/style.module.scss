@@ -1,23 +1,24 @@
 .service-changes {
   margin: 0 auto 100px;
-  width: 1090px;
+  width: clamp(300px, 88vw, 1090px);
 
   &__image {
-    width: 355px;
-    height: 254px;
+    width: clamp(96px, 26vw, 355px);
+    height: 100%;
     object-fit: cover;
+    border-radius: 10px;
   }
 
   &__box {
-    margin-top: 60px;
+    margin-top: clamp(32px, 10%, 60px);
     display: flex;
     flex-direction: column;
     gap: 40px;
   }
 
   &__title {
-    margin: 60px 0 0 0;
-    font-size: 28px;
+    margin: 0;
+    font-size: clamp(1.25rem, 0.893rem + 0.952vw, 1.75rem);
     font-weight: 600;
     line-height: 35px;
   }
@@ -25,16 +26,20 @@
   &__container {
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
 
     &-img {
-      margin: 40px 0;
-      width: 561px;
+      margin-top: clamp(32px, 10%, 40px);
+      margin-right: auto;
+      margin-left: auto;
+      width: 100%;
       display: flex;
       align-items: center;
       gap: 20px;
     }
 
     &-price {
+      width: 100%;
       display: flex;
       flex-direction: column;
       gap: 15px;
@@ -43,10 +48,17 @@
 
   &__block-name {
     margin: 0;
-    min-width: 342px;
-    max-width: 342px;
-    font-size: 24px;
+    font-size: clamp(1.125rem, 0.857rem + 0.714vw, 1.5rem);
+    width: clamp(300px, 90%, 342px);
     font-weight: 600;
     line-height: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-changes {
+    &__image {
+      height: 134px;
+    }
   }
 }

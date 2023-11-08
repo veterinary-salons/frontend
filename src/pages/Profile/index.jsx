@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Outlet, useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
-// import img from '../../assets/images/icon/avatar/img-avatar.svg';
 
 import ProfileUserData from '../../components/ProfileUserData';
 import FormEditProfile from '../../components/FormEditProfile';
