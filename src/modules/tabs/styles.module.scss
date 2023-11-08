@@ -8,16 +8,58 @@
   border-bottom: 1px solid var(----grey-color, #d4d4d4);
 }
 
+.wrapper-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+}
+
 .marginT {
   margin-top: 50px;
 }
 
-@media screen and (max-width: 760px) {
+.link {
+  text-decoration: none;
+}
+
+.button {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--primary-text-color, #0f0f0f);
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px; /* 142.857% */
+  cursor: pointer;
+  margin-top: 22px;
+  padding: 0;
+}
+
+@media screen and (max-width: 650px) {
   .nav {
     max-width: 100%;
   }
 
   .marginT {
     margin-top: 13px;
+  }
+
+  .wrapper-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .link {
+    align-self: end;
+  }
+
+  .button {
+    display: block;
+    &__wrapper {
+      display: none;
+    }
   }
 }
