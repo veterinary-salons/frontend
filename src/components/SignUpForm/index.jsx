@@ -1,15 +1,15 @@
 /* eslint-disable camelcase */
-import { useNavigate, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { setUserType } from '../../app/store/userSlice';
-import { handleRegistration } from '../../utils';
 import { numberRegex } from '../../assets/constants/constants';
+import Button from '../../ui/buttons/originButton/Button';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
-import Button from '../../ui/buttons/originButton/Button';
+import { handleRegistration } from '../../utils';
 import classes from './style.module.scss';
 
 function SignUpForm() {
@@ -155,7 +155,7 @@ function SignUpForm() {
           placeholder="Пароль"
           name="password"
           maxLength={20}
-          minLength={6}
+          minLength={8}
           required
           getInput={handleFormChange}
           id="password-input"

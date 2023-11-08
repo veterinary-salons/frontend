@@ -58,3 +58,46 @@
     justify-content: space-between;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .form {
+    gap: 24px;
+    width: 100%;
+    max-width: 380px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+      margin-bottom: 8px;
+    }
+    &__fieldset {
+      gap: 8px;
+      &_type_checkbox {
+        gap: 20px;
+      }
+    }
+    &__legend {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+      margin: 0 0 12px;
+      &_type_checkbox {
+        margin-bottom: 20px;
+      }
+    }
+    &__buttons {
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+  }
+}
+
+// @media screen and (max-width: 560px) {
+//   .form {
+//     &__buttons {
+//       flex-direction: column;
+//       // align-items: center;
+//       gap: 16px;
+//     }
+//   }
+// }

@@ -43,3 +43,30 @@
     justify-content: space-between;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .form {
+    gap: 24px;
+    width: 100%;
+    max-width: 380px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    &__fieldset {
+      gap: 12px;
+    }
+    &__text {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    &__input-wrapper {
+      gap: 8px;
+    }
+    &__label {
+      font-size: 14px;
+      line-height: 18px;
+    }
+  }
+}

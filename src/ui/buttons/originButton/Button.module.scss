@@ -202,12 +202,17 @@
     font-size: 12px;
     padding: 6px 20px;
   }
-}
 
-@media screen and (max-width: 560px) {
-  // .large {
-  //   font-size: 18px;
-  //   line-height: 28px; /* 140% */
-  //   letter-spacing: 0.6px;
-  // }
+  .add {
+    min-width: 60px !important;
+    &.medium {
+      padding: 10px !important;
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  .medium {
+    font-size: 14px;
+  }
 }

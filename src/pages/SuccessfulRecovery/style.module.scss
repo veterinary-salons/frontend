@@ -3,3 +3,11 @@
   width: 380px;
   margin: auto;
 }
+
+@media screen and (max-width: 760px) {
+  .successful-message {
+    padding: 32px 20px 60px;
+    max-width: 350px;
+    width: 100%;
+  }
+}

@@ -33,6 +33,11 @@ const Profile = () => {
 
   const confirmExitProfile = () => {
     localStorage.clear('auth');
+    localStorage.setItem('previousAccount', JSON.stringify({
+      name: user.data.name,
+      email: user.data.email,
+      src: user.data.src
+    }));
     setIsLogin(false);
   };
 

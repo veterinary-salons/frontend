@@ -1,12 +1,12 @@
-import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { setUserType } from '../../app/store/userSlice';
-import { handleAuthorization } from '../../utils';
-import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
-import classes from './style.module.scss';
+import InputText from '../../ui/forms/inputs/inputText/InputText';
+import { handleAuthorization } from '../../utils';
 import MailAccount from '../MailAccount';
+import classes from './style.module.scss';
 
 function SignInAccountForm() {
   const navigate = useNavigate();
@@ -15,6 +15,7 @@ function SignInAccountForm() {
   const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
   const [submitError, setSubmitError] = useState('');
+  const previosUser = JSON.parse(localStorage.getItem('previousAccount'));
 
   const isActive =
     Object.values(isValidateInput).every((item) => item) && isValid;
@@ -52,7 +53,12 @@ function SignInAccountForm() {
       id="account-signin-form"
     >
       <h3 className={classes.form__title}>Войдите в аккаунт</h3>
-      <MailAccount to='/signin' />
+      <MailAccount
+        image={previosUser.src}
+        title={previosUser.name}
+        email={previosUser.email}
+        to='/signin'
+      />
       <fieldset className={classes.form__fieldset}>
         <InputText
           type="email"
@@ -65,14 +71,14 @@ function SignInAccountForm() {
           id="email-input"
           autoComplete="email"
           getValid={setIsValidateInput}
-          initialValue={{email: "asya1995cat@mail.ru"}}
+          initialValue={{email: previosUser.email}}
         />
         <InputText
           type="password"
           placeholder="Пароль"
           name="password"
           maxLength={20}
-          minLength={6}
+          minLength={8}
           required
           getInput={handleFormChange}
           id="password-input"

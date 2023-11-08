@@ -29,3 +29,23 @@
     color: var(--text-grey-color)
   }
 }
+
+@media screen and (max-width: 760px) {
+  .card {
+    gap: 12px;
+    &__image {
+      height: 60px;
+      width: 60px;
+    }
+    &__info {
+      gap: 8px;
+    }
+    &__title {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    &__email {
+      font-size: 16px;
+    }
+  }
+}

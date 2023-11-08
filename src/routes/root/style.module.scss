@@ -26,3 +26,9 @@
     width: var(--content-width-for-screen-1280);
   }
 }
+
+@media screen and (max-width: 1270px) {
+  .main-with-margins {
+    width: 100%;
+  }
+}

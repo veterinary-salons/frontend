@@ -94,10 +94,10 @@ function validatePassword(value) {
         message: 'Используйте только латинские буквы, цифры, . и -',
       };
     }
-    if (value.length < 6 || value.length > 20) {
+    if (value.length < 8 || value.length > 20) {
       return {
         invalid: false,
-        message: 'Пароль должен содержать от 6 до 20 символов',
+        message: 'Пароль должен содержать от 8 до 20 символов',
       };
     }
     return { invalid: true, message: '' };
