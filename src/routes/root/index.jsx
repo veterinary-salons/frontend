@@ -94,8 +94,7 @@ function Root() {
   return (
     <div className={classes.root}>
       <Header authorization={auth} onlyLogo={isOnlyLogoHeader} />
-      <main
-        style={{ width: '100%' }}
+        <main style={{width: '100%'}}
         className={classNames(
           classes.main,
           location.pathname !== '/' ? classes['main-with-margins'] : null,

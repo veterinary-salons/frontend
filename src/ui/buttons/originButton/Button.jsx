@@ -15,6 +15,7 @@ const Button = ({
   loading,
   isChips,
   isMaxWidth,
+  isHeader
 }) => {
   const buttonClasses = classnames(
     cn.button,
@@ -29,6 +30,7 @@ const Button = ({
       [cn.button__container]: isChips,
     },
     cn[isMaxWidth ? 'max-width' : ''],
+    cn[isHeader ? 'header' : ''],
   );
 
   // Определение цвета на основе варианта с использованием объекта
@@ -80,6 +82,7 @@ Button.propTypes = {
   loading: PropTypes.bool,
   isChips: PropTypes.bool,
   isMaxWidth: PropTypes.bool,
+  isHeader: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -93,6 +96,7 @@ Button.defaultProps = {
   isMaxWidth: false,
   children: null,
   onClick: null,
+  isHeader: false,
 };
 
 export default Button;
