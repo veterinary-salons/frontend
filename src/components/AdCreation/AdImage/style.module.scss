@@ -1,8 +1,9 @@
 .form {
+  width: clamp(280px, 88vw, 506px);
   margin: auto;
 
   &__container {
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
   }
@@ -18,15 +19,23 @@
 
   &__title {
     margin: 40px auto 32px;
-    font-size: 18px;
+    margin-top: clamp(31px, 10%, 40px);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: clamp(16px, 10%, 32px);
+    font-size: clamp(14px, 2vw, 18px);
     font-style: normal;
     font-weight: 500;
     line-height: 22px;
+    text-align: start;
   }
 
   &__add-image {
-    margin: 32px auto 40px;
-    width: 400px;
+    margin-top: clamp(0px, 10%, 32px);
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: clamp(24px, 10%, 40px);
+    width: 100%;
     height: 287px;
     border-radius: 8px;
     border: 1px dashed var(--primary-purple-color, #9384b7);

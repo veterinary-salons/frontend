@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import {
   dateServiceCheckboxList,
+  specialisation,
   vaterinars,
 } from '../../assets/constants/constants';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
@@ -74,9 +75,9 @@ const EditProfileServices = ({ variant }) => {
 
   return (
     <section className={classes['service-changes']}>
-      <h2
-        className={classes['service-changes__title']}
-      >{`Мои услуги - ${local.category} - (редактирование)`}</h2>
+      <h2 className={classes['service-changes__title']}>{`Мои услуги - ${
+        specialisation[local.category]
+      } - (редактирование)`}</h2>
 
       <div className={classes['service-changes__container-img']}>
         <img

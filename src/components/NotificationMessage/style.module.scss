@@ -65,7 +65,27 @@
     font-weight: 500;
     line-height: 30px;
     margin: 0;
-    color: var(--text-grey-color)
+    color: var(--text-grey-color);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .notification {
+    gap: 18px;
+    max-width: 450px;
+    &__image {
+      width: 200px;
+      height: 200px;
+    }
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 28px;
+    }
+    &__message {
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
 }
 

@@ -1,18 +1,30 @@
 .graph {
-  width: 726px;
+  width: clamp(280px, 80vw, 680px);
   margin: 0 auto;
+  margin-left: 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
 
   &__container {
     display: flex;
     flex-direction: row;
     height: 47px;
     gap: 20px;
-    margin: 0 32px 0 40px;
+    margin-top: 0;
+    margin-right: clamp(0px, 1vh, 32px);
+    margin-left: 0;
+    margin-bottom: 0;
 
     &_checkbox {
       width: 180px;
       display: flex;
     }
+  }
+
+  &__span {
+    width: 100%;
+    border-bottom: 1px solid var(--main-colors-purple, #9384b7);
   }
 }

@@ -21,7 +21,7 @@
 
 .label-agreement {
   align-items: flex-start;
-  color: var(--text-grey-color, #9C9C9C);
+  color: var(--text-grey-color, #9c9c9c);
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
@@ -29,7 +29,7 @@
 }
 
 .label_disabled {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .checkboxButton {
@@ -68,6 +68,7 @@
 }
 
 .switch {
+  min-width: 48px;
   width: 48px;
   height: 24px;
   background: #d1d1d6;
@@ -106,5 +107,20 @@
     height: 10px;
     border-radius: 50%;
     transition: all 0.5s ease;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--primary-text-color, #0f0f0f);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    width: fit-content;
+    gap: 8px;
   }
 }

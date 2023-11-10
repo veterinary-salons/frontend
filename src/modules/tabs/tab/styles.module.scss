@@ -18,3 +18,21 @@
     border-bottom: 2px solid var(--primary-purple-color, #9384b7);
   }
 }
+
+@media screen and (max-width: 960px) {
+  .tab {
+    width: 150px;
+    padding: 12px 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .tab {
+    width: 104px;
+    padding: 12px 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

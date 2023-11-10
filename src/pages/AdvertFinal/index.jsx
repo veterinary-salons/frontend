@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import classes from './style.module.scss';
 import imgAvatar from '../../assets/images/icon/avatar/avatar-advert-final.svg';
 import ListPrices from '../../components/ListPrices';
-import { specialisation } from '../../assets/constants/constants';
+import { specialisation, windowWidth } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
 import ContainerOpenHours from '../../components/ContainerOpenHours';
 
@@ -15,25 +15,23 @@ const AdvertFinal = ({ session, sessionInfo, name }) => {
 
   return (
     <section className={classes.final}>
-      <div className={classes['final__container-description']}>
-        <div className={classes['final__container-text']}>
-          <h2 className={classes.final__title}>
-            {session ? 'Ваше объявление' : 'Предпросмотр объявления'}
-          </h2>
-          <h4 className={classes.final__name}>{`${
-            specialisation[local.category]
-          } ${name}`}</h4>
-          <div className={classes.final__info}>
-            <p className={classes.final__text}>{local.adTitle}</p>
-            <p className={classes.final__text}>{local.description}</p>
-          </div>
-        </div>
+      <div className={classes.final__container}>
+        <h2 className={classes.final__title}>
+          {session ? 'Ваше объявление' : 'Предпросмотр объявления'}
+        </h2>
+        <h4 className={classes.final__name}>{`${
+          specialisation[local.category]
+        } ${name}`}</h4>
+        <p className={classes.final__text}>{local.adTitle}</p>
+        <p className={classes.final__description}>{local.description}</p>
+
         <img
           className={classes.final__img}
           alt="фото"
           src={img || local.image || imgAvatar}
         />
       </div>
+
       <ListPrices array={local.price} />
       <ContainerOpenHours object={local.workingHours.days} />
       {session && (
@@ -46,6 +44,7 @@ const AdvertFinal = ({ session, sessionInfo, name }) => {
           variant="outlined"
           size="medium"
           type="button"
+          isMaxWidth={windowWidth <= 450}
           onClick={() => {
             navigate('/advert-image', { replace: true });
           }}
@@ -58,6 +57,7 @@ const AdvertFinal = ({ session, sessionInfo, name }) => {
           onClick={() => {
             navigate('/advert-success', { replace: true });
           }}
+          isMaxWidth={windowWidth <= 450}
         >
           Опубликовать объявление
         </Button>

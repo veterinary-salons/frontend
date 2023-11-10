@@ -1,6 +1,6 @@
 .profile {
   display: grid;
-  grid-template-columns: 3.6fr 1fr;
+  grid-template-columns: 1fr 220px;
   gap: 66px;
 
   &__data-wrapper {
@@ -31,15 +31,80 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
+  &__button-wrapper_edit {
+    width: fit-content;
+  }
 }
 
 @media screen and (max-width: 1430px) {
   .profile {
-    grid-template-columns: 3.4fr 1fr;
+    // grid-template-columns: 3.4fr 1fr;
     gap: 0;
 
     &__contacts-wrapper {
       gap: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 1070px) {
+  .profile {
+    &__contacts-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .profile {
+    &__button-wrapper {
+      // display: none;
+    }
+
+    &__data-wrapper {
+      gap: 21px;
+    }
+
+    &__avatar-wrapper {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    &__data-title {
+      font-size: 20px;
+    }
+
+    &__contacts-wrapper {
+      padding-top: 8px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 19px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .profile {
+    grid-template-columns: 1fr;
+    &__button-wrapper {
+      display: none;
+    }
+
+    // &__button-wrapper_edit {
+    //   width: 100%;
+    // }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .profile {
+    grid-template-columns: 1fr;
+
+    &__button-wrapper_edit {
+      width: 100%;
     }
   }
 }

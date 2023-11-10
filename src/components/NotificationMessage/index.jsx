@@ -12,14 +12,14 @@ function NotificationMessage({ imageNumber, title, text, to, buttonText }) {
       <div className={classNames(classes.notification__image, classes[`notification__image-${imageNumber}`])} />
       <h1 className={classes.notification__title}>{title}</h1>
       <p className={classes.notification__message}>{text}</p>
-        <Button
-          variant="purple-filled"
-          size="medium"
-          type="button"
-          onClick={() => navigate(to)}
-        >
-          {buttonText}
-        </Button>
+      <Button
+        variant="purple-filled"
+        size="medium"
+        type="button"
+        onClick={() => navigate(to)}
+      >
+        {buttonText}
+      </Button>
     </div>
   );
 }
