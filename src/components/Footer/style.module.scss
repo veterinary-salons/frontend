@@ -109,3 +109,27 @@
     }
   }
 }
+
+@media screen and (max-width: 560px) {
+  .footer {
+    &__content {
+      gap: 6px;
+    }
+
+    &__info {
+      gap: 6px;
+    }
+
+    &__title {
+      gap: 5px;
+    }
+  
+    &__copyright {
+      font-size: 14px;
+    }
+
+    &__links {
+      gap: 6px;
+    }
+  }
+}
