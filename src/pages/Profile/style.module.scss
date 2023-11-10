@@ -22,6 +22,10 @@
       background: url('../../assets/images/icon/exit-profile/exit.svg') center
         no-repeat;
     }
+    &:hover {
+      cursor: pointer;
+      opacity: .8;
+    }
   }
 }
 

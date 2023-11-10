@@ -1,4 +1,4 @@
-const baseUrl = 'http://purrfect-care.acceleratorpracticum.ru/api/v1';
+const baseUrl = 'http://purrfect-care.ddns.net/api/v1';
 
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
