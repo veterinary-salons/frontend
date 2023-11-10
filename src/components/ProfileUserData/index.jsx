@@ -41,27 +41,18 @@ const ProfileUserData = ({
               />
             ) : null}
           </div>
-          <div className={classes['profile__button-wrapper_edit']}>
-            <Button
-              onClick={handleEditProfile}
-              size="medium"
-              variant="outlined"
-              isMaxWidth
-            >
-              Изменить мои данные
-            </Button>
-          </div>
-        </div>
-        <div className={classes['profile__button-wrapper']}>
-          <Button
-            onClick={handleExitProfile}
-            size="medium"
-            variant="outlined"
-            isMaxWidth
-          >
-            Выйти из профиля
+          <Button onClick={handleEditProfile} size="medium" variant="outlined">
+            Изменить мои данные
           </Button>
         </div>
+        <Button
+          onClick={handleExitProfile}
+          size="medium"
+          variant="outlined"
+          isMaxWidth
+        >
+          Выйти из профиля
+        </Button>
       </section>
     )
   );

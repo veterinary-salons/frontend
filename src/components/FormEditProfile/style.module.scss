@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding-bottom: 40px;
 
   &__fieldset {
     border: none;
@@ -32,25 +33,6 @@
     gap: 16px;
     width: 140px;
     justify-content: center;
-    &_mobile {
-      display: none;
-      flex-direction: column;
-    }
-  }
-
-  &__avatar-button {
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px; /* 142.857% */
-    color: var(--primary-text-color, #0f0f0f);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-
-  &__button-save {
-    width: 117px;
   }
 
   &__delete {
@@ -66,51 +48,6 @@
     padding-top: 20px;
     &:hover {
       opacity: 0.7;
-    }
-  }
-
-  &__image {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .form {
-    gap: 24px;
-
-    &__fieldset {
-      width: 100%;
-      gap: 4px;
-
-      &_avatar {
-        flex-direction: row;
-        align-items: center;
-        gap: 20px;
-      }
-    }
-
-    &__legend {
-      margin-bottom: 12px;
-      font-size: 18px;
-      line-height: 24px; /* 133.333% */
-    }
-
-    &__wrapper-button {
-      display: none;
-      &_mobile {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-      }
-    }
-
-    &__delete {
-      font-size: 14px;
-    }
-
-    &__button-save {
-      width: 100%;
     }
   }
 }

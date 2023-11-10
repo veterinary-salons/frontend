@@ -1,25 +1,5 @@
 .card-wrapper {
-  // display: flex;
-  // gap: 20px;
-  // flex-wrap: wrap;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 20px;
-  &_carousel {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-  }
-}
-
-@media screen and (max-width: 760px) {
-  .card-wrapper {
-    grid-template-columns: 1fr;
-    &_carousel {
-      display: flex;
-      flex-wrap: nowrap;
-      width: fit-content;
-      gap: 8px;
-    }
-  }
+  flex-wrap: wrap;
 }

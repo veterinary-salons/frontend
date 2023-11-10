@@ -1,5 +1,4 @@
-// import { useSelector } from 'react-redux';
-import classNames from 'classnames';
+import { useSelector } from 'react-redux';
 import classes from './style.module.scss';
 // import PetCardList from '../../modules/petCardList';
 import petList from '../../assets/constants/petList';
@@ -118,9 +117,7 @@ const servicseList = [
 ];
 
 const CardListInProfile = () => {
-  const profileType = JSON.parse(localStorage.getItem('userData')).profile_type;
-
-  console.log(profileType);
+  const profileType = useSelector((state) => state.user.profileType);
   const isCustomer = profileType === 'customer';
   const createPetCard = () =>
     petList || petList?.length === 0 ? (
@@ -135,12 +132,9 @@ const CardListInProfile = () => {
         {isCustomer ? 'Мои питомцы' : 'Мои услуги'}
       </h2>
       {isCustomer ? (
-        <div className={classNames({ [classes.carusel]: isCustomer })}>
-          {createPetCard()}
-        </div>
+        createPetCard()
       ) : (
         <CreatorCardListInProfile
-          isCustomer
           list={servicseList}
           element={ProfileServiceCard}
         />
