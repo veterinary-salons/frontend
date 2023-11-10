@@ -6,9 +6,7 @@ const ListPrices = ({ array }) => (
   <div className={classes.list}>
     <div className={classes['list__container-title']}>
       <h4 className={classes.list__title}>Услуги</h4>
-      <h4 className={cn(classes.list__title, classes['list__position-right'])}>
-        Цена
-      </h4>
+      <h4 className={classes.list__title}>Цена</h4>
     </div>
     <div className={classes['list__container-services']}>
       {array.map((i) => (
@@ -18,8 +16,6 @@ const ListPrices = ({ array }) => (
             className={cn(classes.list__text, classes['list__position-right'])}
           >
             {`от ${i.from} до ${i.befor} ₽/усл.`}
-            {/* от <span className={classes.list__span}>{i.form}</span> до{' '}
-            <span className={classes.list__span}>{i.befor}</span> */}
           </p>
         </div>
       ))}

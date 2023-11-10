@@ -28,6 +28,7 @@ const maskPhone = [
 ];
 const placeholderPhone = '8(___)___-__-__';
 const numberRegex = /\d/g;
+const windowWidth = window.innerWidth;
 
 const arrayAnimals = [
   {
@@ -626,6 +627,7 @@ export {
   groomerServiceOptions,
   vetServiceOptions,
   vaterinars,
+  windowWidth,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/

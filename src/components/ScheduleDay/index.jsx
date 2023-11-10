@@ -4,6 +4,7 @@ import classes from './style.module.scss';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import Dropdown from '../../ui/forms/dropdowns/Dropdown';
 import { filterScheduleData } from '../../assets/constants/filters';
+import { windowWidth } from '../../assets/constants/constants';
 
 const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
   const { checkbox, dropDownOne, dropDownTwo, checkboxSwitch, day } =
@@ -76,32 +77,66 @@ const ScheduleDay = ({ labelCheckbox, type, getGraph, value }) => {
           {checkbox.label}
         </Checkbox>
       </div>
-      <div className={classes.graph__container}>
-        <Dropdown
-          width="119px"
-          array={dropDownOne}
-          getValue={setBegin}
-          disabled={switchDate}
-          name="dropdown-begin"
-        />
-        <Dropdown
-          width="119px"
-          array={dropDownTwo}
-          getValue={setEnd}
-          disabled={switchDate}
-          name="dropdown-end"
-        />
-      </div>
-
-      <Checkbox
-        type="switch"
-        getCheckbox={handleSwitch}
-        value={checkboxSwitch.value}
-        name={checkboxSwitch.name}
-        checked={switchDate}
-      >
-        {labelCheckbox}
-      </Checkbox>
+      {windowWidth <= 420 ? (
+        checkedDate && (
+          <>
+            <div className={classes.graph__container}>
+              <Dropdown
+                width="119px"
+                array={dropDownOne}
+                getValue={setBegin}
+                disabled={switchDate}
+                name="dropdown-begin"
+              />
+              <Dropdown
+                width="119px"
+                array={dropDownTwo}
+                getValue={setEnd}
+                disabled={switchDate}
+                name="dropdown-end"
+              />
+            </div>
+            <Checkbox
+              type="switch"
+              getCheckbox={handleSwitch}
+              value={checkboxSwitch.value}
+              name={checkboxSwitch.name}
+              checked={switchDate}
+            >
+              {labelCheckbox}
+            </Checkbox>
+            <span className={classes.graph__span}>{}</span>
+          </>
+        )
+      ) : (
+        <>
+          <div className={classes.graph__container}>
+            <Dropdown
+              width="119px"
+              array={dropDownOne}
+              getValue={setBegin}
+              disabled={switchDate}
+              name="dropdown-begin"
+            />
+            <Dropdown
+              width="119px"
+              array={dropDownTwo}
+              getValue={setEnd}
+              disabled={switchDate}
+              name="dropdown-end"
+            />
+          </div>
+          <Checkbox
+            type="switch"
+            getCheckbox={handleSwitch}
+            value={checkboxSwitch.value}
+            name={checkboxSwitch.name}
+            checked={switchDate}
+          >
+            {labelCheckbox}
+          </Checkbox>
+        </>
+      )}
     </div>
   );
 };

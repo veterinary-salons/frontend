@@ -1,5 +1,6 @@
 .profile {
-  padding: 48px 0 100px;
+  padding: 0px 0 100px;
+  padding-top: clamp(32px, 8%, 60px);
 
   &__exit {
     display: none;

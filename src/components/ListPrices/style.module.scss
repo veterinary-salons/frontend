@@ -6,24 +6,21 @@
     justify-content: space-between;
     width: 100%;
     margin-bottom: 32px;
+    margin-bottom: clamp(24px, 10%, 32px);
   }
 
   &__title {
     margin: 0;
-    font-size: 24px;
+    font-size: clamp(18px, 3vw, 24px);
     font-style: normal;
     font-weight: 600;
     line-height: 30px;
   }
 
-  &__position-right {
-    width: 280px;
-  }
-
   &__text {
     margin: 0;
     display: flex;
-    font-size: 20px;
+    font-size: clamp(16px, 3vw, 20px);
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
@@ -40,7 +37,9 @@
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    padding-bottom: 8px;
     border-bottom: 1px solid var(--grey-color);
   }
 

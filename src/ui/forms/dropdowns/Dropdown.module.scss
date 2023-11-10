@@ -7,7 +7,7 @@
   font-style: normal;
   font-weight: 500;
   line-height: 15px;
-  min-width: 119px;
+  width: 119px;
 
   &__disabled-block {
     position: relative;
@@ -91,5 +91,11 @@
     list-style: none;
     width: 100%;
     padding: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown {
+    width: 104px;
   }
 }

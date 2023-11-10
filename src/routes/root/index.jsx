@@ -40,6 +40,7 @@ const dataPathWithoutCrumbs = [
   '/advert-petSitting-pet',
   '/advert-image',
   '/test',
+  '/profile/edit',
 ];
 const dataPathWithOnlyLogoHeader = [
   '/signin',
@@ -109,7 +110,6 @@ function Root() {
           <Button size="large">Страница с тестовым компонентом</Button>
         </Link>
       ) : null}
-
       {!isRenderFooter ? <Footer /> : null}
     </div>
   );
