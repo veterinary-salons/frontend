@@ -26,3 +26,16 @@
     width: var(--content-width-for-screen-1280);
   }
 }
+
+@media screen and (max-width: 1270px) {
+  .main-with-margins {
+    width: 100%;
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .main-with-margins {
+    padding: 0 20px;
+  }
+}

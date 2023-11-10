@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 
-const CreatorCardListInProfile = ({ element: Component, list }) => {
+const CreatorCardListInProfile = ({ element: Component, list, isCustomer }) => {
   const navigate = useNavigate();
 
   const createList = list
@@ -16,7 +17,11 @@ const CreatorCardListInProfile = ({ element: Component, list }) => {
     : null;
 
   return (
-    <div className={classes['card-wrapper']}>
+    <div
+      className={classNames(classes['card-wrapper'], {
+        [classes['card-wrapper_carousel']]: !isCustomer,
+      })}
+    >
       {createList}
       <Component add />
     </div>
@@ -26,11 +31,13 @@ const CreatorCardListInProfile = ({ element: Component, list }) => {
 CreatorCardListInProfile.defaultProps = {
   list: null,
   element: null,
+  isCustomer: false,
 };
 
 CreatorCardListInProfile.propTypes = {
   element: PropTypes.func,
   list: PropTypes.arrayOf(PropTypes.objectOf(PropTypes.any)),
+  isCustomer: PropTypes.bool,
 };
 
 export default CreatorCardListInProfile;

@@ -27,7 +27,12 @@ const FormEditProfile = ({
   const isActive = Object.values(isValidInput).every((item) => item) && isValid;
 
   const handleOpenPopup = () => {
-    setIsOpenPopup((state) => !state);
+    setIsOpenPopup(true);
+    console.log('open');
+  };
+
+  const handleClosePopup = () => {
+    setIsOpenPopup(false);
   };
 
   const handleDeleteAvatar = () => {
@@ -46,6 +51,7 @@ const FormEditProfile = ({
   };
 
   const isCustomer = profileType === 'customer';
+  console.log('avatar');
 
   return (
     <>
@@ -79,6 +85,22 @@ const FormEditProfile = ({
             >
               Удалить
             </Button>
+          </div>
+          <div className={classes['form__wrapper-button_mobile']}>
+            <button
+              type="button"
+              className={classes['form__avatar-button']}
+              onClick={handleOpenPopup}
+            >
+              Сменить
+            </button>
+            <button
+              type="button"
+              className={classes['form__avatar-button']}
+              onClick={handleDeleteAvatar}
+            >
+              Удалить
+            </button>
           </div>
         </fieldset>
         <fieldset className={classes.form__fieldset}>
@@ -157,7 +179,7 @@ const FormEditProfile = ({
               name="clientPlace"
               parentName="exit"
             >
-              <img src={iconCar} alt="car" />
+              <img className={classes.form__image} src={iconCar} alt="car" />
             </CheckboxWithIcon>
             <CheckboxWithIcon
               getCheckbox={setUserData}
@@ -167,25 +189,29 @@ const FormEditProfile = ({
               name="specialistPlace"
               parentName="exit"
             >
-              <img src={iconHome} alt="home" />
+              <img className={classes.form__image} src={iconHome} alt="home" />
             </CheckboxWithIcon>
           </fieldset>
         ) : null}
-        <Button
-          onClick={() => {}}
-          size="medium"
-          variant="outlined"
-          type="submit"
-          active={isActive}
-        >
-          Сохранить
-        </Button>
+        <div className={classes['form__button-save']}>
+          <Button
+            onClick={() => {}}
+            size="medium"
+            variant="outlined"
+            type="submit"
+            active={isActive}
+            isMaxWidth
+          >
+            Сохранить
+          </Button>
+        </div>
+
         <button className={classes.form__delete}>Удалить профиль</button>
       </form>
       <ImageUploadPopup
         getImage={setUserData}
         isOpen={isOpenPopup}
-        onClose={handleOpenPopup}
+        onClose={handleClosePopup}
         round
       />
     </>
