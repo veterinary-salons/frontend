@@ -180,22 +180,33 @@
 }
 
 @media screen and (max-width: 990px) {
-  .button {
-    font-size: 14px;
+  .large {
+    font-size: 22px;
   }
 
-  // .medium {
-  //   padding: 9px 23px;
-  //   min-width: fit-content;
-  // }
+  .header {
+    font-size: 14px;
+    padding: 9px 23px;
+    min-width: fit-content;
+  }
 }
 
-// @media screen and (max-width: 760px) {
-//   .button {
-//     font-size: 12px;
-//   }
+@media screen and (max-width: 760px) {
+  .large {
+    font-size: 20px;
+    padding: 10px 20px;
+  }
 
-//   .medium {
-//     padding: 6px 20px;
-//   }
-// }
+  .header {
+    font-size: 12px;
+    padding: 6px 20px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  // .large {
+  //   font-size: 18px;
+  //   line-height: 28px; /* 140% */
+  //   letter-spacing: 0.6px;
+  // }
+}

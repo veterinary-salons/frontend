@@ -1,9 +1,14 @@
 .header {
+  position: relative;
   width: 100%;
   padding: 20px 0;
   background-color: transparent;
   min-height: 100px;
   z-index: 1;
+
+  &_main {
+    background-color: #F3EBBC;
+  }
 
   &__wrapper {
     width: var(--content-width-for-screen-1440);

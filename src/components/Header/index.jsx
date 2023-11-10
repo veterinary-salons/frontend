@@ -9,6 +9,7 @@ import NavigationLink from '../../ui/icons/navigationLink/index';
 import classes from './style.module.scss';
 
 const Header = ({ authorization, onlyLogo }) => {
+
   const [width, setWidth] = useState('');
   const [screenType, setScreenType] = useState('');
 
@@ -87,6 +88,7 @@ const Header = ({ authorization, onlyLogo }) => {
                       shape="square"
                       label="Вход"
                       onClick={() => {}}
+                      isHeader
                     >
                       Вход
                     </Button>
@@ -101,6 +103,7 @@ const Header = ({ authorization, onlyLogo }) => {
                         shape="square"
                         label="Регистрация"
                         onClick={() => {}}
+                        isHeader
                       >
                         Регистрация
                       </Button>
@@ -122,8 +125,7 @@ const Header = ({ authorization, onlyLogo }) => {
       </div>
     </header>
     )
-  };
-
+  }; 
 
 Header.propTypes = {
   authorization: PropTypes.string,
