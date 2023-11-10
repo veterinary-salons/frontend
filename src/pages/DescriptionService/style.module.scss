@@ -1,5 +1,5 @@
 .description {
-  width: clamp(300px, 88vw, 800px);
+  width: clamp(280px, 88vw, 800px);
   margin: 60px auto;
   margin-top: clamp(24px, 10%, 60px);
   margin-right: auto;
@@ -22,5 +22,16 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .description {
+    margin-top: 20px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
   }
 }

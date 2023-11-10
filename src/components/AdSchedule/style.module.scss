@@ -1,5 +1,5 @@
 .schedule {
-  width: clamp(320px, 65vw, 726px);
+  width: clamp(280px, 65vw, 726px);
   margin: 60px auto 139px;
 
   &__title {
@@ -19,7 +19,7 @@
   &__container {
     display: flex;
     flex-direction: column;
-    gap: clamp(38px, 1vh, 28px);
+    gap: clamp(28px, 1vh, 38px);
   }
 
   &__container-btn {
@@ -27,5 +27,13 @@
     display: flex;
     margin-top: 40px;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .schedule {
+    &__container {
+      gap: clamp(18px, 1vh, 28px);
+    }
   }
 }

@@ -21,11 +21,29 @@
   &__subtitle {
     color: var(--text-grey-color, #9c9c9c);
     font-size: 20px;
+    max-width: 250px;
   }
 }
 
 @media screen and (max-width: 1430px) {
   .contacts {
     padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .contacts {
+    &__title,
+    &__subtitle {
+      line-height: 20px;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__subtitle {
+      font-size: 16px;
+    }
   }
 }

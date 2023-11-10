@@ -1,5 +1,5 @@
 .price {
-  width: clamp(310px, 88vw, 766px);
+  width: clamp(280px, 88vw, 766px);
   margin: 60px auto;
   margin-top: clamp(0px, 10%, 60px);
   margin-right: auto;
@@ -29,5 +29,16 @@
   &__container-btn {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .price {
+    margin-top: 20px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
   }
 }

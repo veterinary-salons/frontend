@@ -1,3 +1,9 @@
 .services {
   padding: 40px 0 100px;
 }
+
+@media screen and (max-width: 760px) {
+  .services {
+    padding: 22px 0 100px;
+  }
+}

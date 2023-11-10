@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
-import cn from 'classnames';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 
@@ -10,9 +10,9 @@ function NotificationMessage({ imageNumber, title, text, to, buttonText }) {
   return (
     <div className={classes.notification}>
       <div
-        className={cn(
+        className={classNames(
           classes[`notification__image-${imageNumber}`],
-          classes['notification__image-size'],
+          classes.notification__image,
         )}
       />
       <h1 className={classes.notification__title}>{title}</h1>

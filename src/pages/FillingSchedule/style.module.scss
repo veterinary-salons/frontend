@@ -1,5 +1,5 @@
 .filling-schedule {
-  width: clamp(300px, 75vw, 726px);
+  width: clamp(280px, 75vw, 726px);
   margin-right: auto;
   margin-left: auto;
   margin-bottom: clamp(100px, 10%, 60px);
@@ -15,5 +15,16 @@
   &__container-btn {
     display: flex;
     justify-content: space-between;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .filling-schedule {
+    margin-top: 20px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
   }
 }
