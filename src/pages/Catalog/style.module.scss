@@ -6,3 +6,9 @@
   width: 100%;
   margin: auto;
 }
+
+@media screen and (max-width: 560px) {
+  .catalog {
+    padding: 23px 0 272px;
+  }
+}
