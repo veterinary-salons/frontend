@@ -53,6 +53,11 @@
     line-height: 30px;
     border-radius: 8px;
     background-color: var(--blue-color);
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 141px;
   }
 
   &__price {
@@ -112,7 +117,13 @@
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 990px) {
+  .specialists-card {
+    
+  }
+}
+
+@media screen and (max-width: 990px) {
   .specialists-card {
     width: 100%;
     padding: 10px;

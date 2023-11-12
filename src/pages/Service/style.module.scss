@@ -19,11 +19,18 @@
   }
 }
 
+@media screen and (max-width: 990px) {
+  .services {
+    &__list{
+      width: 100%;
+    }
+  }
+}
+
 @media screen and (max-width: 560px) {
   .services {
     &__list{
       gap: 24px;
-      width: 100%;
     }
   }
 }
