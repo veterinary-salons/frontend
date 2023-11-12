@@ -83,8 +83,8 @@
   }
 
   &__review {
-    min-width: 140px;
-    width: 140px;
+    max-width: 140px;
+    // width: 140px;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -117,19 +117,19 @@
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1270px) {
   .specialists-card {
-    
-  }
-}
+    width: 70%;
+    padding: 0;
 
-@media screen and (max-width: 990px) {
-  .specialists-card {
-    width: 100%;
-    padding: 10px;
+    &__image {
+      width: 160px;
+      height: 160px;
+    }
 
     &__content {
-      gap: 16px;
+      justify-content: space-between;
+      gap: 0;
     }
 
     &__profession {
@@ -147,6 +147,7 @@
 
     &__description {
       font-size: 14px;
+      margin: 0;
     }
 
     &__link {
@@ -163,19 +164,30 @@
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 760px) {
   .specialists-card {
+    gap: 10px;
     width: 100%;
-    padding: 0;
 
     &__image {
-      width: 134px;
-      height: 96px;
+      width: 140px;
+      height: 140px;
     }
 
     &__content {
       flex-direction: column;
       gap: 0;
+    }
+
+  }
+}
+
+
+@media screen and (max-width: 560px) {
+  .specialists-card {
+    &__image {
+      width: 134px;
+      height: 96px;
     }
 
     &__info {
