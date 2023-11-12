@@ -80,7 +80,7 @@ import CardListInProfile from '../pages/CardListInProfile';
 import AdImage from '../components/AdCreation/AdImage';
 
 // import MobileFilterMenuPopup from '../components/MobileFilterMenuPopup';
-import MobileFilterMenu from '../components/MobileFilterMenu';
+// import MobileFilterMenu from '../components/MobileFilterMenu';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -175,7 +175,7 @@ const router = createBrowserRouter(
 
       <Route 
         path="test"
-         element={<MobileFilterMenu />}
+         // element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
 
       <Route path="advert" element={<AdType />} />
