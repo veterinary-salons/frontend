@@ -10,9 +10,9 @@ const Login = () => {
 
   useEffect(() => {
     if (previosUser !== null) {
-      setIsOnAccount(true)
+      setIsOnAccount(true);
     } else {
-      navigate('/signin-no-account', {replace: true})
+      navigate('/signin-no-account', { replace: true });
     }
   }, []);
 

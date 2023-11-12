@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import classes from './style.module.scss';
+import { setUser } from '../../app/store/userSlice';
 
 import ProfileUserData from '../../components/ProfileUserData';
 import FormEditProfile from '../../components/FormEditProfile';
@@ -12,7 +13,7 @@ import QuitInfotooltipPopup from '../../components/QuitInfotooltipPopup';
 
 const Profile = () => {
   const { pathname } = useLocation();
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [isEditProfile, setIsEditProfile] = useState(false);
   const [isOpenPopup, setIsOpenPopup] = useState(false);
@@ -31,7 +32,14 @@ const Profile = () => {
 
   const confirmExitProfile = () => {
     localStorage.clear('auth');
-    // localStorage.setItem('previousAccount', JSON.stringify(user.data));
+    localStorage.setItem(
+      'previousAccount',
+      JSON.stringify({
+        name: user.data.name,
+        email: user.data.email,
+        src: user.data.src,
+      }),
+    );
     setIsLogin(false);
   };
 
@@ -46,7 +54,7 @@ const Profile = () => {
   const handleSubmitForm = (e) => {
     e.preventDefault();
     setIsEditProfile(false);
-    // dispatch(setUser(userData));
+    dispatch(setUser(userData));
   };
 
   return (

@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import classNames from 'classnames';
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { setUser, setUserType } from '../../app/store/userSlice';
+import { setUserType } from '../../app/store/userSlice';
 import { numberRegex } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
@@ -15,7 +15,6 @@ import classes from './style.module.scss';
 function SignUpForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.data);
   const [isValid, setIsValid] = useState(false);
   const [values, setValues] = useState({});
   const [submitError, setSubmitError] = useState('');
@@ -47,17 +46,6 @@ function SignUpForm() {
     const { profile_type, first_name, last_name, tel, email, password } =
       values;
 
-    const userDate = {
-      name: last_name,
-      surname: first_name,
-      tel,
-      address: user.address,
-      email,
-      password,
-      src: user.src,
-      exit: user.exit,
-    };
-
     const phone_number = tel.match(numberRegex).join('');
     setSubmitError('');
     handleRegistration(
@@ -71,8 +59,6 @@ function SignUpForm() {
       setSubmitError,
       handleUserType,
     );
-    localStorage.setItem('previousAccount', JSON.stringify(userDate));
-    dispatch(setUser(userDate));
   };
 
   return (
