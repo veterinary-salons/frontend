@@ -49,3 +49,14 @@
     }
   }
 }
+
+@media screen and (max-width: 560px) {
+  .filter {
+    width: 100%;
+
+    &__legend {
+      margin: 0 0 12px;
+      font-size: 16px;
+    }
+  }
+}
