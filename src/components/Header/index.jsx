@@ -2,16 +2,27 @@ import PropTypes from 'prop-types';
 import { useState, useLayoutEffect, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Logo from '../../ui/icons/logo/Logo';
+import Portal from '../Portal';
 import Button from '../../ui/buttons/originButton/Button';
 import SearchForm from '../../ui/forms/inputs/searchForm/index';
 import NavigationPages from '../../modules/navigation/navigatePages/index';
 import NavigationLink from '../../ui/icons/navigationLink/index';
 import classes from './style.module.scss';
+import SideNavBar from '../SideNavBar';
 
 const Header = ({ authorization, onlyLogo }) => {
 
   const [width, setWidth] = useState('');
   const [screenType, setScreenType] = useState('');
+  const [isOpenPopup, setIsOpenPopup] = useState(false);
+
+  const handleOpenPopup = () => {
+    setIsOpenPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsOpenPopup(false);
+  };
 
   useLayoutEffect(() => {
     function updateWidth() {
@@ -57,6 +68,14 @@ const Header = ({ authorization, onlyLogo }) => {
                   <NavigationPages />
                 </div>
               }
+              {screenType === 'mobile-vertical' && 
+                <Portal isOpened={isOpenPopup}>
+                  <SideNavBar
+                    isOpen={isOpenPopup}
+                    onClose={handleClosePopup}
+                  />
+                </Portal>
+              }
 
               {authorization ? (
                 <div className={[classes['header__container-btn']]}>
@@ -73,7 +92,10 @@ const Header = ({ authorization, onlyLogo }) => {
                   </Link>
 
                   {screenType === 'mobile-vertical' &&
-                    <button className={[classes['header__burger-button']]}>
+                    <button
+                      className={[classes['header__burger-button']]}
+                      onClick={handleOpenPopup}
+                    >
                       <NavigationLink variant="menu" />
                     </button>
                   }
@@ -111,7 +133,10 @@ const Header = ({ authorization, onlyLogo }) => {
                   }
 
                   {screenType === 'mobile-vertical' &&
-                    <button className={[classes['header__burger-button']]}>
+                    <button
+                      className={[classes['header__burger-button']]}
+                      onClick={handleOpenPopup}
+                    >
                       <NavigationLink variant="menu" />
                     </button>
                   }

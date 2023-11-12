@@ -1,0 +1,46 @@
+.sidenav {
+  visibility: hidden;
+  position: fixed;
+  display: flex;
+  background: rgb(0, 0, 0, 0.25);
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 12;
+
+  &_opened {
+    visibility: visible;
+    opacity: 1;
+    transition:
+      visibility 0s,
+      opacity 0.3s linear;
+  }
+
+  &__content {
+    background-color: #fff;
+    padding: 0 20px 0 60px;
+    box-sizing: border-box;
+    height: 100%;
+    margin-right: 0;
+    margin-left: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+  }
+
+  &__close-button {
+    width: 24px;
+    height: 24px;
+    margin: 13px 0;
+    padding: 0;
+    border: none;
+    background: url('../../assets/images/icon/cross-btn/cross-btn.svg') center center/80% no-repeat;
+    &:hover {
+      cursor: pointer;
+      opacity: .8;
+    }
+  }
+}
