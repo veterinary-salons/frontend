@@ -150,6 +150,9 @@
       gap: 24px;
       grid-template-columns: repeat(2, 2.7fr 1fr);
     }
+    &__fieldset {
+      width: 100%;
+    }
   }
 }
 
