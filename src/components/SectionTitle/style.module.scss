@@ -11,3 +11,9 @@
     line-height: 35px;
   }
 }
+
+@media screen and (max-width: 360px) {
+  .section-header {
+    display: none;
+  }
+}
