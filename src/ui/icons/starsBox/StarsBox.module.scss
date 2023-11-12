@@ -21,11 +21,19 @@
 
 @media screen and (max-width: 560px) {
   .stars {
+    display: grid;
+    grid-template-areas: 'star text';
     align-items: start;
-    gap: 0;
+    gap: 0; 
+
+    &__rating {
+      grid-area: star;
+      height: 18px;
+    }
 
     &__text {
       font-size: 12px;
+      grid-area: text;
     }
   }
 }

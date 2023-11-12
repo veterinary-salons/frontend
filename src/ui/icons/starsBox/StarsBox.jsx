@@ -14,7 +14,7 @@ const StarsBox = ({ action, rating, color, size, starsOnly }) =>
         fillColor={color || 'var(--primary-purple-color)'}
         allowFraction
         readonly
-        size={size || '22px'}
+        size={size || '22px'|| '18px'}
       />
     </div>
   ) : (
