@@ -37,7 +37,7 @@
   }
   &__link {
     text-decoration: none;
-    color: var(--link-color, #9384B7);
+    color: var(--link-color, #9384b7);
     &:hover {
       opacity: 0.6;
     }
@@ -88,6 +88,7 @@
     &__buttons {
       flex-wrap: wrap;
       gap: 16px;
+      justify-content: center;
     }
   }
 }

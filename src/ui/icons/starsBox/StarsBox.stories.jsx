@@ -30,6 +30,11 @@ export default {
       description: 'Размер звезд',
       type: 'string',
     },
+    iconsCount: {
+      defaultValue: 5,
+      description: 'Количество звезд',
+      type: 'number',
+    },
   },
 };
 

@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import classNames from 'classnames';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
-import { setUserType } from '../../app/store/userSlice';
+import { setUser, setUserType } from '../../app/store/userSlice';
 import { numberRegex } from '../../assets/constants/constants';
 import Button from '../../ui/buttons/originButton/Button';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
@@ -15,6 +15,7 @@ import classes from './style.module.scss';
 function SignUpForm() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.data);
   const [isValid, setIsValid] = useState(false);
   const [values, setValues] = useState({});
   const [submitError, setSubmitError] = useState('');
@@ -31,26 +32,34 @@ function SignUpForm() {
   };
 
   const successfulNav = () => {
-    navigate('/successful-signup', {state: {userRole: values.profile_type}, replace: true});
-  }
+    navigate('/successful-signup', {
+      state: { userRole: values.profile_type },
+      replace: true,
+    });
+  };
 
   const handleUserType = (profileType) => {
     dispatch(setUserType(profileType));
-  }
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const {
-      profile_type,
-      first_name,
-      last_name,
+    const { profile_type, first_name, last_name, tel, email, password } =
+      values;
+
+    const userDate = {
+      name: last_name,
+      surname: first_name,
       tel,
+      address: user.address,
       email,
-      password
-    } = values;
+      password,
+      src: user.src,
+      exit: user.exit,
+    };
 
     const phone_number = tel.match(numberRegex).join('');
-    setSubmitError('')
+    setSubmitError('');
     handleRegistration(
       profile_type,
       first_name,
@@ -60,8 +69,10 @@ function SignUpForm() {
       password,
       successfulNav,
       setSubmitError,
-      handleUserType
-    )
+      handleUserType,
+    );
+    localStorage.setItem('previousAccount', JSON.stringify(userDate));
+    dispatch(setUser(userDate));
   };
 
   return (
@@ -87,7 +98,7 @@ function SignUpForm() {
         </legend>
         <Checkbox
           type="radio"
-          checked={values.profile_type === "customer"}
+          checked={values.profile_type === 'customer'}
           htmlType="radio"
           value="customer"
           name="profile_type"
@@ -98,7 +109,7 @@ function SignUpForm() {
         </Checkbox>
         <Checkbox
           type="radio"
-          checked={values.profile_type === "supplier"}
+          checked={values.profile_type === 'supplier'}
           htmlType="radio"
           value="supplier"
           name="profile_type"
@@ -164,7 +175,7 @@ function SignUpForm() {
       </fieldset>
       <Checkbox
         type="checkbox"
-        checked={values["registration-agreement"] === "registration-agreement"}
+        checked={values['registration-agreement'] === 'registration-agreement'}
         htmlType="checkbox"
         value="registration-agreement"
         name="registration-agreement"
@@ -212,11 +223,8 @@ function SignUpForm() {
             Зарегистрироваться
           </Button>
         </div>
-        <span className={classes.form__error}>
-          {submitError}
-        </span>
+        <span className={classes.form__error}>{submitError}</span>
       </div>
-      
     </form>
   );
 }
