@@ -18,3 +18,14 @@
     font-weight: 500;
   }
 }
+
+@media screen and (max-width: 560px) {
+  .stars {
+    align-items: start;
+    gap: 0;
+
+    &__text {
+      font-size: 12px;
+    }
+  }
+}

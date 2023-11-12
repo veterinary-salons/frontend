@@ -111,3 +111,67 @@
     width: 809px;
   }
 }
+
+@media screen and (max-width: 560px) {
+  .specialists-card {
+    width: 100%;
+    padding: 0;
+
+    &__image {
+      width: 134px;
+      height: 96px;
+    }
+
+    &__content {
+      flex-direction: column;
+      gap: 0;
+    }
+
+    &__info {
+      gap: 0;
+      max-width: 178px;
+    }
+
+    &__profession {
+      margin: 0;
+      padding: 4px 8px;
+      font-size: 16px;
+      line-height: 20px;
+      border-radius: 8px;
+      background-color: var(--blue-color);
+    }
+
+    &__price {
+      font-size: 14px;
+    }
+
+    &__worked-with {
+      font-size: 14px;
+    }
+
+    &__description {
+      display: none;
+    }
+
+    &__review {
+      max-width: 178px;
+      flex-direction: row;
+      gap: 0;
+    }
+
+    &__link {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+  
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &__name {
+      font-size: 12px;
+      margin: 0;
+    }
+  }
+}
