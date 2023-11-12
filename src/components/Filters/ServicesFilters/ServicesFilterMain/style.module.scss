@@ -55,14 +55,19 @@
 
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 760px) {
   .filter {
-    display: none;
     width: 100%;
 
     &__legend {
       margin: 0 0 12px;
       font-size: 16px;
     }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .filter {
+    display: none;
   }
 }

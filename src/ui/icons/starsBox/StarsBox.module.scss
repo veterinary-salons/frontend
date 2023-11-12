@@ -19,6 +19,18 @@
   }
 }
 
+@media screen and (max-width: 760px) {
+  .stars {
+    &__rating {
+      height: 18px;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+  }
+}
+
 @media screen and (max-width: 560px) {
   .stars {
     display: grid;
@@ -28,11 +40,9 @@
 
     &__rating {
       grid-area: star;
-      height: 18px;
     }
 
     &__text {
-      font-size: 12px;
       grid-area: text;
     }
   }

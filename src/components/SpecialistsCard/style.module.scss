@@ -112,6 +112,46 @@
   }
 }
 
+@media screen and (max-width: 760px) {
+  .specialists-card {
+    width: 100%;
+    padding: 10px;
+
+    &__content {
+      gap: 16px;
+    }
+
+    &__profession {
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    &__price {
+      font-size: 14px;
+    }
+
+    &__worked-with {
+      font-size: 14px;
+    }
+
+    &__description {
+      font-size: 14px;
+    }
+
+    &__link {
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 18px;
+    }
+
+    &__name {
+      font-size: 12px;
+      margin: 0;
+    }
+    
+  }
+}
+
 @media screen and (max-width: 560px) {
   .specialists-card {
     width: 100%;
@@ -132,23 +172,6 @@
       max-width: 178px;
     }
 
-    &__profession {
-      margin: 0;
-      padding: 4px 8px;
-      font-size: 16px;
-      line-height: 20px;
-      border-radius: 8px;
-      background-color: var(--blue-color);
-    }
-
-    &__price {
-      font-size: 14px;
-    }
-
-    &__worked-with {
-      font-size: 14px;
-    }
-
     &__description {
       display: none;
     }
@@ -159,19 +182,5 @@
       gap: 0;
     }
 
-    &__link {
-      font-size: 12px;
-      font-weight: 400;
-      line-height: 18px;
-  
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    &__name {
-      font-size: 12px;
-      margin: 0;
-    }
   }
 }
