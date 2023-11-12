@@ -51,7 +51,7 @@
   font-weight: 400;
   line-height: 18px;
   display: block;
-  height: 18px;
+  min-height: 18px;
   margin: 8px 0 0;
   color: var(--error-color, #d80000);
   opacity: 0;

@@ -9,12 +9,7 @@ function NotificationMessage({ imageNumber, title, text, to, buttonText }) {
 
   return (
     <div className={classes.notification}>
-      <div
-        className={classNames(
-          classes[`notification__image-${imageNumber}`],
-          classes.notification__image,
-        )}
-      />
+      <div className={classNames(classes.notification__image, classes[`notification__image-${imageNumber}`])} />
       <h1 className={classes.notification__title}>{title}</h1>
       <p className={classes.notification__message}>{text}</p>
       <Button

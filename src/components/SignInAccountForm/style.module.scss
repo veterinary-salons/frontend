@@ -45,15 +45,20 @@
     margin: 8px auto 0;
     color: var(--error-color, #d80000);
   }
-  &__navbox {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  &__navtext {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 30px;
-    margin: 0;
+}
+
+@media screen and (max-width: 760px) {
+  .form {
+    gap: 24px;
+    width: 100%;
+    max-width: 380px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    &__fieldset {
+      gap: 12px;
+    }
   }
 }

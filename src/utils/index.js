@@ -53,6 +53,8 @@ function handleRegistration(
       console.log(`Ошибка: ${err.status}`);
       if(err.status === 404) {
         setSubmitError('Страница по указанному маршруту не найдена')
+      } else if(err.status === 400) {
+        setSubmitError('Пароль не соответствует требованиям к сложности. Придумайте уникальный пароль')
       } else if(err.status === 409) {
         setSubmitError('Пользователь с таким email уже существует')
       } else if(err.status === 500) {
@@ -65,6 +67,5 @@ function handleRegistration(
 
 export {
   handleAuthorization,
-  handleRegistration,
-
+  handleRegistration
 }

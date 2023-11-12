@@ -10,14 +10,12 @@ function RecoveryFormCode() {
   const [isValid, setIsValid] = useState(false);
   const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
-  const [isOnAccount, setIsOnAccount] = useState(true);
-  console.log(isOnAccount);
+  const [isOnAccount, setIsOnAccount] = useState(false);
+  const previosUser = JSON.parse(localStorage.getItem('previousAccount'));
 
   useEffect(() => {
-    if (localStorage.getItem('onAccount') !== true) {
+    if (previosUser !== null) {
       setIsOnAccount(true)
-    } else {
-      setIsOnAccount(false)
     }
   }, []);
 
@@ -39,7 +37,6 @@ function RecoveryFormCode() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('auth', true);
     navigate('/recovery-password');
   };
 
@@ -50,7 +47,13 @@ function RecoveryFormCode() {
       id="recovery-code-form"
     >
       <h2 className={classes.form__title}>Восстановление пароля</h2>
-      {isOnAccount && <MailAccount />}
+      {isOnAccount &&
+        <MailAccount
+          image={previosUser.src}
+          title={previosUser.name}
+          email={previosUser.email}
+        />
+      }
       <fieldset className={classes.form__fieldset}>
         <p className={classes.form__text}>
         Мы отправили на указанную вами почту письмо с кодом для восстановления пароля. Введите код из письма

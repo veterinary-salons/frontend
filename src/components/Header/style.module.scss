@@ -88,7 +88,7 @@
 
 @media screen and (max-width: 760px) {
   .header {
-    min-height: 80px;
+    min-height: fit-content;
     padding: 0;
 
     &__wrapper {

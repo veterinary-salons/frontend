@@ -1,23 +1,21 @@
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
-import classes from './style.module.scss';
+import InputText from '../../ui/forms/inputs/inputText/InputText';
 import MailAccount from '../MailAccount';
+import classes from './style.module.scss';
 
 function RecoveryFormPassword() {
   const navigate = useNavigate();
   const [isValid, setIsValid] = useState(false);
   const [isValidateInput, setIsValidateInput] = useState({});
   const [values, setValues] = useState({});
-  const [isOnAccount, setIsOnAccount] = useState(true);
-  console.log(isOnAccount);
+  const [isOnAccount, setIsOnAccount] = useState(false);
+  const previosUser = JSON.parse(localStorage.getItem('previousAccount'));
 
   useEffect(() => {
-    if (localStorage.getItem('onAccount') !== true) {
+    if (previosUser !== null) {
       setIsOnAccount(true)
-    } else {
-      setIsOnAccount(false)
     }
   }, []);
 
@@ -43,7 +41,6 @@ function RecoveryFormPassword() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('auth', true);
     navigate('/successful-recovery');
   };
 
@@ -54,7 +51,13 @@ function RecoveryFormPassword() {
       id="recovery-password-form"
     >
       <h2 className={classes.form__title}>Восстановление пароля</h2>
-      {isOnAccount && <MailAccount />}
+      {isOnAccount &&
+        <MailAccount
+          image={previosUser.src}
+          title={previosUser.name}
+          email={previosUser.email}
+        />
+      }
       <p className={classes.form__text}>
         Отлично, теперь придумайте новый пароль для завершения восстановления
       </p>
@@ -68,7 +71,7 @@ function RecoveryFormPassword() {
             placeholder="Новый пароль"
             name="password"
             maxLength={20}
-            minLength={6}
+            minLength={8}
             required
             getInput={handleFormChange}
             id="password-input"
@@ -82,7 +85,7 @@ function RecoveryFormPassword() {
             placeholder="Новый пароль ещё раз"
             name="password-repeat"
             maxLength={20}
-            minLength={6}
+            minLength={8}
             required
             getInput={handleFormChange}
             id="password-repeat-input"
