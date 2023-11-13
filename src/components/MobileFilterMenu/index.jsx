@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import classes from './style.module.scss';
-// import MobileFilterMenuPopup from '../MobileFilterMenuPopup';
+import MobileFilterMenuPopup from '../MobileFilterMenuPopup';
 
 function MobileFilterMenu() {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,9 +11,9 @@ function MobileFilterMenu() {
 
   console.log(isOpen);
 
-  // const closeFilterMenuPopup = () => {
-  //   setIsOpen(false);
-  // };
+  const closeFilterMenuPopup = () => {
+    setIsOpen(false);
+  };
 
   return (
     <div className={classes['mobile-filter']}>
@@ -23,7 +23,7 @@ function MobileFilterMenu() {
         aria-label="filter-btn"
         onClick={handleFilterMenuClick}
       />
-      {/* <MobileFilterMenuPopup isOpen={isOpen} onClose={closeFilterMenuPopup} /> */}
+      <MobileFilterMenuPopup isOpen={isOpen} onClose={closeFilterMenuPopup} />
     </div>
   );
 }

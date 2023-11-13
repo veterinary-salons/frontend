@@ -2,9 +2,9 @@ import { useEffect } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import classes from './style.module.scss';
-import ServicesFilterMain from '../Filters/ServicesFilters/ServicesFilterMain';
+import ServicesFilterMainMobile from "../Filters/ServicesFilters/ServicesFilterMainMobile";
 
-function MobileFilterMenuPopup(isOpen, onClose) {
+function MobileFilterMenuPopup({isOpen, onClose}) {
   const filterPopupCN = classNames(classes['mobile-filter-popup'], {
     [classes['mobile-filter-popup_opened']]: isOpen,
   });
@@ -27,8 +27,15 @@ function MobileFilterMenuPopup(isOpen, onClose) {
     };
   }, [isOpen]);
 
+  const handleCloseByOverlay = (e) => {
+    if (e.target.classList.contains(classes.popup)) {
+      onClose();
+    }
+  };
+
   return (
-    <div className={filterPopupCN}>
+    // eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions
+    <div className={filterPopupCN} onClick={handleCloseByOverlay}>
       <div className={classes['mobile-filter-popup__content']}>
         <div className={classes['mobile-filter-popup__container']}>
           <button
@@ -44,16 +51,14 @@ function MobileFilterMenuPopup(isOpen, onClose) {
             </button>
           </div>
         </div>
-        <ServicesFilterMain />
+        <ServicesFilterMainMobile />
       </div>
     </div>
   );
 }
 
 MobileFilterMenuPopup.propTypes = {
-  // eslint-disable-next-line react/no-unused-prop-types
   isOpen: PropTypes.bool,
-  // eslint-disable-next-line react/no-unused-prop-types
   onClose: PropTypes.func,
 };
 
