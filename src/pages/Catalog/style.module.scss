@@ -5,10 +5,29 @@
   flex-direction: column;
   width: 100%;
   margin: auto;
+
+  &__container{
+    display: none;
+  }
 }
 
 @media screen and (max-width: 560px) {
   .catalog {
     padding: 23px 0 272px;
+
+    &__container{
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__sorting {
+      display: flex;
+      width: 40px;
+      height: 40px;
+      padding: 7px 6px 6px 7px;
+      justify-content: center;
+      align-items: center;
+      background-image: url('../../assets/images/icon/btn-sorting-mobile/btn-sorting-mobile.svg');
+    }
   }
 }
