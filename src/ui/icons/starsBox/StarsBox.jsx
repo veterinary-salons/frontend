@@ -10,11 +10,13 @@ const StarsBox = ({ action, rating, color, size, starsOnly, iconsCount }) =>
       )}
       <Rating
         className={style.stars__rating}
-        initialValue={rating}
+        initialValue={
+          iconsCount === 1 ? rating / 5 : rating
+        }
         fillColor={color || 'var(--primary-purple-color)'}
         allowFraction
         readonly
-        size={size || '22px'}
+        size={size || '22px' || '18px'}
         iconsCount={iconsCount}
       />
     </div>

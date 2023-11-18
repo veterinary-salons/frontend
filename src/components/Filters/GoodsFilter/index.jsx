@@ -19,7 +19,6 @@ function GoodsFilter({ category }) {
         ...values,
         ...value,
       });
-      console.log(values)
     },
     [setValues, values],
   );

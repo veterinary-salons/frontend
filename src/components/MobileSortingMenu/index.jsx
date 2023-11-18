@@ -9,8 +9,6 @@ function MobileSortingMenu() {
     setIsOpen(true);
   };
 
-  // console.log(isOpen);
-
   const closeSortingMenuPopup = () => {
     setIsOpen(false);
   };

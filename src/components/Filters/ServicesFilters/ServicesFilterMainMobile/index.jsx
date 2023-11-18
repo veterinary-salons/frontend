@@ -30,8 +30,6 @@ function ServicesFilterMain() {
     }
   }, [values.specialist]);
 
-  console.log('filters=', values);
-
   return (
     <form className={classes.filter} id="services-filter">
       <CheckboxFilter

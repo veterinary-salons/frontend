@@ -19,31 +19,31 @@
   }
 }
 
-@media screen and (max-width: 990px) {
+@media screen and (max-width: 1270px) {
   .stars {
-    &__rating {
-      height: 18px;
-    }
+    gap: 6px;
 
     &__text {
-      font-size: 12px;
+      font-size: 18px;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .stars {   
+    flex-direction: row-reverse;
+    width: fit-content;
+
+    &__rating {
+      height: 18px;
     }
   }
 }
 
 @media screen and (max-width: 560px) {
   .stars {
-    display: grid;
-    grid-template-areas: 'star text';
-    align-items: start;
-    gap: 0; 
-
-    &__rating {
-      grid-area: star;
-    }
-
     &__text {
-      grid-area: text;
+      font-size: 14px;
     }
   }
 }

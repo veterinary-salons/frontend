@@ -2,8 +2,7 @@
   padding: 0;
   display: flex;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  flex-direction: row;
+  gap: 20px;
   width: 100%;
 
   &__list{
@@ -12,18 +11,36 @@
     padding: 0;
     margin: 0;
     gap: 40px;
+    width: 100%;
   }
 
   &__button{
-    padding: 0;
-    margin: 0 0 0 20px;
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .services {
+
+    &__button{
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .services {
+    gap: 10px;
+
+    &__button{
+      margin-left: 0;
+    }
   }
 }
 
 @media screen and (max-width: 560px) {
   .services {
     &__list{
-      width: 100%;
       gap: 24px;
     }
   }

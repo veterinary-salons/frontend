@@ -9,8 +9,6 @@ function MobileFilterMenu() {
     setIsOpen(true);
   };
 
-  console.log(isOpen);
-
   const closeFilterMenuPopup = () => {
     setIsOpen(false);
   };

@@ -11,10 +11,15 @@
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 760px) {
   .catalog {
     padding: 23px 0 272px;
+    gap: 20px;
+  }
+}
 
+@media screen and (max-width: 560px) {
+  .catalog {
     &__container{
       display: flex;
       justify-content: space-between;

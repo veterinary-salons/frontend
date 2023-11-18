@@ -1,5 +1,5 @@
 .specialists-card {
-  width: max-content;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -11,8 +11,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 22px;
-  margin: 0;
-  width: 925px;
 
   &__image {
     width: 180px;
@@ -25,12 +23,11 @@
 
   &__content {
     display: flex;
-    flex-direction: row;
     gap: 20px;
   }
 
   &__info {
-    max-width: 529px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -83,12 +80,18 @@
   }
 
   &__review {
-    max-width: 140px;
-    // width: 140px;
+    min-width: 140px;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: max-content;
+    justify-content: flex-start;
+  }
+
+  &__rating {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     justify-content: flex-start;
   }
 
@@ -96,7 +99,6 @@
     font-size: 16px;
     font-style: normal;
     font-weight: 500;
-    line-height: 20px;
     color: var(--text-grey-color);
     text-decoration: none;
 
@@ -108,19 +110,15 @@
   &__name {
     font-size: 20px;
     margin: 0 0 8px;
-  }
-}
-
-@media screen and (max-width: 1430px) {
-  .specialists-card {
-    width: 809px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 
 @media screen and (max-width: 1270px) {
   .specialists-card {
-    width: 70%;
-    padding: 0;
+    padding: 10px;
+    line-height: 20px;
 
     &__image {
       width: 160px;
@@ -128,8 +126,7 @@
     }
 
     &__content {
-      justify-content: space-between;
-      gap: 0;
+      gap: 10px;
     }
 
     &__profession {
@@ -147,7 +144,14 @@
 
     &__description {
       font-size: 14px;
-      margin: 0;
+    }
+
+    &__review {
+      gap: 6px;
+    }
+
+    &__rating {
+      gap: 6px;
     }
 
     &__link {
@@ -156,10 +160,46 @@
     }
 
     &__name {
-      font-size: 12px;
+      font-size: 16px;
       margin: 0;
     }
     
+  }
+}
+
+@media screen and (max-width: 1120px) {
+  .specialists-card {
+    &__review {
+      min-width: 80px;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .specialists-card {
+    &__content {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__description {
+      display: none;
+    }
+
+    &__review {
+      flex-direction: column;
+    }
+
+    &__rating {
+      flex-direction: row;
+      gap: 12px;
+    }
+
+    &__name {
+      max-width: 120px;
+      font-size: 16px;
+      margin: 0;
+    }
   }
 }
 
@@ -167,41 +207,67 @@
   .specialists-card {
     gap: 10px;
     width: 100%;
+    padding: 0;
+    line-height: 18px;
+
+    &__content {
+      justify-content: space-between;
+    }
 
     &__image {
       width: 140px;
       height: 140px;
     }
 
-    &__content {
-      flex-direction: column;
-      gap: 0;
-      width: 100%;
+    &__price {
+      font-size: 12px;
+    }
+
+    &__worked-with {
+      font-size: 12px;
     }
 
     &__review {
-      margin-top: 5px;
-      gap: 0;
+      gap: 4px;
     }
 
+    &__rating {
+      gap: 15px;
+    }
+
+    &__link {
+      font-size: 14px;
+      font-weight: 500;
+    }
   }
 }
 
 
 @media screen and (max-width: 560px) {
   .specialists-card {
+    gap: 8px;
+
     &__image {
-      width: 134px;
-      height: 96px;
+      width: 110px;
+      height: 110px;
     }
 
     &__info {
       gap: 0;
     }
 
-    &__description {
-      display: none;
+    &__review {
+      flex-direction: row;
     }
 
+    &__rating {
+      gap: 10px;
+    }
+
+    &__name {
+      min-width: 60px;
+      font-size: 14px;
+      margin: 0;
+    }
   }
 }

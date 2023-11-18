@@ -14,10 +14,12 @@ const Catalog = ({ title }) => {
   return (
     <section className={classes.catalog}>
       <SectionTitle title={title} withFilter={!isWithFilter} />
+      {!isWithFilter && 
       <div className={classes.catalog__container}>
         <MobileSortingMenu />
         <MobileFilterMenu />
       </div>
+      }
       <Outlet />
     </section>
   );
