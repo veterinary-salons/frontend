@@ -12,15 +12,38 @@
     line-height: 35px;
     text-align: start;
   }
+
+  &__dropdown {
+    width: 310px
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .section-header {
+    &__dropdown {
+      width: 270px
+    }
+  }
 }
 
 @media screen and (max-width: 760px) {
   .section-header {
     margin-top: 24px;
+
     &__title {
       font-size: 20px;
       font-weight: 700;
       line-height: 28px;
     }
+
+    &__dropdown {
+      width: 240px
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .section-header {
+    display: none;
   }
 }

@@ -16,7 +16,7 @@
     font-size: 20px;
     font-weight: 700;
     letter-spacing: 0.6px;
-    line-height: 33px;
+    line-height: 30px;
   }
   &__link {
     width: fit-content;
@@ -46,6 +46,16 @@
     &:hover {
       cursor: pointer;
       opacity: 0.8;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .filter {
+    &__legend {
+      margin: 0 0 12px;
+      font-size: 16px;
+      line-height: 26px;
     }
   }
 }

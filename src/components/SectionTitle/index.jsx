@@ -7,7 +7,9 @@ const SectionTitle = ({ title, withFilter, marginT }) => (
   <div className={classes['section-header']} style={{marginTop: marginT}}>
     <h3 className={classes['section-header__title']}>{title}</h3>
     {withFilter &&
-      <Dropdown array={arrayFilterList} width='310px' />
+      <div className={classes['section-header__dropdown']}>
+        <Dropdown array={arrayFilterList} width='100%' />
+      </div>
     }
   </div>
 );

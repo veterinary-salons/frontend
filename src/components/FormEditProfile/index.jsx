@@ -28,7 +28,6 @@ const FormEditProfile = ({
 
   const handleOpenPopup = () => {
     setIsOpenPopup(true);
-    console.log('open');
   };
 
   const handleClosePopup = () => {
@@ -51,7 +50,6 @@ const FormEditProfile = ({
   };
 
   const isCustomer = profileType === 'customer';
-  console.log('avatar');
 
   return (
     <>

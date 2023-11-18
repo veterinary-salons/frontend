@@ -207,7 +207,7 @@ const professionals = [
   {
     id: 1,
     name: 'Юлия',
-    profession: 'Грумер на дом, стрижка, вычес',
+    profession: 'Грумер',
     price: '2 000 ₽/усл',
     workedWith: 'лошадьми',
     description:

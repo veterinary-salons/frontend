@@ -23,7 +23,6 @@ const EditAvatarConfirmationPopup = ({
   const onCrop = () => {
     const cropper = cropperRef.current?.cropper;
     setCroppedImage(cropper.getCroppedCanvas().toDataURL());
-    // console.dir(cropper);
   };
 
   useEffect(() => {
@@ -32,8 +31,6 @@ const EditAvatarConfirmationPopup = ({
       onClose();
     }
   }, [croppedImage]);
-
-  // console.log(croppedImage);
 
   return (
     <PopupWithForm title="Новая фотография" isOpen={isOpen} onClose={onClose}>
