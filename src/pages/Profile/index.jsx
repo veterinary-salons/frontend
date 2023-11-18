@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Outlet, useNavigate, useLocation } from 'react-router-dom';
 import classes from './style.module.scss';
-// import img from '../../assets/images/icon/avatar/img-avatar.svg';
+import { setUser } from '../../app/store/userSlice';
 
 import ProfileUserData from '../../components/ProfileUserData';
 import FormEditProfile from '../../components/FormEditProfile';
@@ -11,9 +11,8 @@ import Portal from '../../components/Portal';
 import QuitConfirmationPopup from '../../components/QuitConfirmationPopup';
 import QuitInfotooltipPopup from '../../components/QuitInfotooltipPopup';
 
-import { setUser } from '../../app/store/userSlice';
-
 const Profile = () => {
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [isEditProfile, setIsEditProfile] = useState(false);
@@ -33,6 +32,14 @@ const Profile = () => {
 
   const confirmExitProfile = () => {
     localStorage.clear('auth');
+    localStorage.setItem(
+      'previousAccount',
+      JSON.stringify({
+        name: user.data.name,
+        email: user.data.email,
+        src: user.data.src,
+      }),
+    );
     setIsLogin(false);
   };
 
@@ -68,6 +75,15 @@ const Profile = () => {
         />
       )}
       <Outlet />
+      {pathname === '/profile' ? (
+        <button
+          type="button"
+          onClick={handleClickExitProfile}
+          className={classes.profile__exit}
+        >
+          Выйти из профиля
+        </button>
+      ) : null}
       <Portal isOpened={isOpenPopup}>
         {isLogin ? (
           <QuitConfirmationPopup

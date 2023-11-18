@@ -26,7 +26,6 @@ function RecoveryFormEmail() {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem('auth', true);
     navigate('/recovery-code');
   };
 

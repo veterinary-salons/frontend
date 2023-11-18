@@ -55,7 +55,7 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             <>
               {data.petName}
               <span className={classes['form__title-explanation']}>
-                &nbsp;(редактирование карточки)
+                &nbsp;(редактирование)
               </span>
             </>
           ) : (
@@ -106,6 +106,39 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
               >
                 Добавить фото
               </Button>
+            )}
+          </div>
+          <div
+            className={classNames(
+              classes['form__wrapper-button'],
+              classes['form__wrapper-button_mobile'],
+            )}
+          >
+            {data.src ? (
+              <>
+                <button
+                  type="button"
+                  className={classes['form__avatar-button']}
+                  onClick={handleOpenPopup}
+                >
+                  Сменить
+                </button>
+                <button
+                  type="button"
+                  className={classes['form__avatar-button']}
+                  onClick={handleDeleteAvatar}
+                >
+                  Удалить
+                </button>
+              </>
+            ) : (
+              <button
+                type="button"
+                className={classes['form__avatar-button']}
+                onClick={handleOpenPopup}
+              >
+                Добавить фото
+              </button>
             )}
           </div>
         </fieldset>
@@ -306,14 +339,17 @@ const FormPetCard = ({ dataPet, setDataPet }) => {
             </Checkbox>
           </div>
         </label>
-        <Button
-          type="submit"
-          size="medium"
-          variant="outlined"
-          active={isActive}
-        >
-          Сохранить данные
-        </Button>
+        <div className={classes['form__button-wrapper']}>
+          <Button
+            type="submit"
+            size="medium"
+            variant="outlined"
+            active={isActive}
+            isMaxWidth
+          >
+            Сохранить данные
+          </Button>
+        </div>
       </form>
       <ImageUploadPopup
         getImage={setData}

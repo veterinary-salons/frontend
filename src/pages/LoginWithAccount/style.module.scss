@@ -2,3 +2,10 @@
   max-width: 1430;
   margin: 60px auto 74px;
 }
+
+@media screen and (max-width: 760px) {
+  .login {
+    width: 100%;
+    margin: 24px 0 60px;
+  }
+}

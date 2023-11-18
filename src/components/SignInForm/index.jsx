@@ -1,10 +1,10 @@
-import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { setUserType } from '../../app/store/userSlice';
-import { handleAuthorization } from '../../utils';
-import InputText from '../../ui/forms/inputs/inputText/InputText';
 import Button from '../../ui/buttons/originButton/Button';
+import InputText from '../../ui/forms/inputs/inputText/InputText';
+import { handleAuthorization } from '../../utils';
 import classes from './style.module.scss';
 
 function SignInForm() {
@@ -69,7 +69,7 @@ function SignInForm() {
           placeholder="Пароль"
           name="password"
           maxLength={20}
-          minLength={6}
+          minLength={8}
           required
           getInput={handleFormChange}
           id="password-input"

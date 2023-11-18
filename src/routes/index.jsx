@@ -35,9 +35,15 @@ import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
-import BookingCancellation from '../components/BookingCancellation';
+// import BookingCancellation from '../components/BookingCancellation';
 
 import PetCard from '../pages/PetCard';
+
+import ProfileServicesList from '../pages/ProfileServicesList';
+import ProfileServicesHistoryList from '../pages/ProfileServicesHistoryList';
+import ProfileBookingCancellation from '../pages/ProfileBookingCancellation';
+import ProfileBokingCanceled from '../pages/ProfileBokingCanceled';
+import BookingFeedback from '../pages/BookingFeedback';
 
 // import PopupWithForm from '../components/PopupWithForm';
 // import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
@@ -71,7 +77,7 @@ import Goods from '../pages/Goods';
 import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
-import dataBooking from '../assets/constants/dataBooking';
+// import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
 import EditProfileServices from '../pages/EditProfileServices';
 // import CardRewiew from '../components/CardReview';
@@ -115,10 +121,11 @@ const router = createBrowserRouter(
         </Route>
 
         <Route path="services" element={<ProfileServices />}>
-          <Route
-            path="revoke"
-            element={<BookingCancellation dataBooking={dataBooking} />}
-          />
+          <Route index element={<ProfileServicesList />} />
+          <Route path="history" element={<ProfileServicesHistoryList />} />
+          <Route path="cancellation" element={<ProfileBookingCancellation />} />
+          <Route path="canceled" element={<ProfileBokingCanceled />} />
+          <Route path="feedback" element={<BookingFeedback />} />
         </Route>
         <Route path="goods" element={<ProfileGoods />} />
       </Route>
@@ -174,7 +181,7 @@ const router = createBrowserRouter(
 
       {/*  Роут для проверки своих компонентов в адресной строке ввести /test */}
 
-      <Route 
+      <Route
         path="test"
         element={<MobileSortingPopup />}
          // element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}

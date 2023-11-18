@@ -3,12 +3,25 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 42px;
+  width: 100%;
 
   &__title {
     margin: 0;
     font-size: 28px;
     font-weight: 600;
     line-height: 35px;
+    text-align: start;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .section-header {
+    margin-top: 24px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
   }
 }
 

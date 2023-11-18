@@ -9,7 +9,8 @@
   }
 
   &__input {
-    width: 400px;
+    width: clamp(248px, 60vw, 478px);
+
     height: 34px;
     padding: 10px;
     font-size: 16px;
@@ -51,5 +52,13 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .list {
+    &__input {
+      font-size: 12px;
+    }
   }
 }

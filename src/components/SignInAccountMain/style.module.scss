@@ -36,3 +36,31 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .auth {
+    gap: 24px;
+    max-width: 380px;
+    &__title {
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 28px;
+    }
+    &__group {
+      gap: 12px;
+    }
+    &__subtitle {
+      font-size: 18px;
+      line-height: 24px;
+    }
+    &__navbox {
+      align-items: center;
+      gap: 12px;
+    }
+    &__navtext {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+  }
+}

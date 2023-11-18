@@ -52,7 +52,7 @@ const EditAvatarConfirmationPopup = ({
         <Cropper
           src={imgSrc}
           style={{ height: '100%', width: '100%' }}
-          viewMode={1}
+          // viewMode={3}
           initialAspectRatio={round ? 1 : 295 / 350}
           aspectRatio={round ? 1 : NaN}
           autoCropArea={round ? 0.63 : 0.8}
@@ -62,22 +62,31 @@ const EditAvatarConfirmationPopup = ({
           toggleDragModeOnDblclick={false}
           center={false}
           highlight={false}
-          minCropBoxWidth={190}
+          // minCropBoxWidth={185}
           ref={cropperRef}
           dragMode="move"
+          background={false}
+          minCanvasWidth={150}
         />
       </div>
       <div className={classes['popup__button-wrap']}>
-        <Button variant="outlined" size="medium" type="button" onClick={onBack}>
+        <Button
+          isMaxWidth
+          variant="outlined"
+          size="medium"
+          type="button"
+          onClick={onBack}
+        >
           Назад
         </Button>
         <Button
+          isMaxWidth
           variant="purple-filled"
           size="medium"
           type="button"
           onClick={onCrop}
         >
-          Сохранить и продолжить
+          Сохранить
         </Button>
       </div>
     </PopupWithForm>

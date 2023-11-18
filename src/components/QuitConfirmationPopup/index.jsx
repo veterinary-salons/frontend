@@ -5,7 +5,7 @@ import Button from '../../ui/buttons/originButton/Button';
 
 const QuitConfirmationPopup = ({ isOpen, onClose, onExit }) => (
   <PopupWithForm
-    title="Вы уверены что хотите выйти из аккаунта?"
+    title="Вы&nbsp;уверены что хотите выйти из&nbsp;аккаунта?"
     isOpen={isOpen}
     onClose={onClose}
   >

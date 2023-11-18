@@ -1,4 +1,5 @@
-const baseUrl = 'http://purrfect-care.acceleratorpracticum.ru/api/v1';
+const baseUrl = 'http://purrfect-care.ddns.net/api/v1';
+// http://purrfect-care.acceleratorpracticum.ru/api/v1
 
 const regexEmail = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,10})+$/;
 const regexText = /^[a-zA-Zа-яА-Я\sё-]+$/;
@@ -28,6 +29,7 @@ const maskPhone = [
 ];
 const placeholderPhone = '8(___)___-__-__';
 const numberRegex = /\d/g;
+const windowWidth = window.innerWidth;
 
 const arrayAnimals = [
   {
@@ -626,6 +628,7 @@ export {
   groomerServiceOptions,
   vetServiceOptions,
   vaterinars,
+  windowWidth,
 };
 
 // /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]+$/

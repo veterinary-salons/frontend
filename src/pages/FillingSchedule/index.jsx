@@ -1,15 +1,10 @@
-// import PropTypes from 'prop-types';
-// import { useDispatch } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import classes from './style.module.scss';
 import Button from '../../ui/buttons/originButton/Button';
 import AdSchedule from '../../components/AdSchedule';
-// import { dataArticle } from '../../assets/constants/temporaryData';
-// import { addService } from '../../app/store/addService/service-action';
 
 const FillingSchedule = () => {
-  // const dispatch = useDispatch();
   const navigate = useNavigate();
   const [days, setDays] = useState({});
   const [session, setSession] = useState({});
@@ -29,7 +24,6 @@ const FillingSchedule = () => {
       : `/advert-${local.category}-services`;
 
   const handleSchedule = () => {
-    // dispatch(addService(infoSchedule, 'workingHours'));
     navigate('/advert-price', { replace: true });
   };
 

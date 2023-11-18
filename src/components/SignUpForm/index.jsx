@@ -1,15 +1,15 @@
 /* eslint-disable camelcase */
-import { useNavigate, Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import { setUserType } from '../../app/store/userSlice';
-import { handleRegistration } from '../../utils';
 import { numberRegex } from '../../assets/constants/constants';
+import Button from '../../ui/buttons/originButton/Button';
 import Checkbox from '../../ui/forms/checkboxes/checkbox/checkbox';
 import InputPhone from '../../ui/forms/inputs/inputPhone/InputPhone';
 import InputText from '../../ui/forms/inputs/inputText/InputText';
-import Button from '../../ui/buttons/originButton/Button';
+import { handleRegistration } from '../../utils';
 import classes from './style.module.scss';
 
 function SignUpForm() {
@@ -31,26 +31,23 @@ function SignUpForm() {
   };
 
   const successfulNav = () => {
-    navigate('/successful-signup', {state: {userRole: values.profile_type}, replace: true});
-  }
+    navigate('/successful-signup', {
+      state: { userRole: values.profile_type },
+      replace: true,
+    });
+  };
 
   const handleUserType = (profileType) => {
     dispatch(setUserType(profileType));
-  }
+  };
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const {
-      profile_type,
-      first_name,
-      last_name,
-      tel,
-      email,
-      password
-    } = values;
+    const { profile_type, first_name, last_name, tel, email, password } =
+      values;
 
     const phone_number = tel.match(numberRegex).join('');
-    setSubmitError('')
+    setSubmitError('');
     handleRegistration(
       profile_type,
       first_name,
@@ -60,8 +57,8 @@ function SignUpForm() {
       password,
       successfulNav,
       setSubmitError,
-      handleUserType
-    )
+      handleUserType,
+    );
   };
 
   return (
@@ -87,7 +84,7 @@ function SignUpForm() {
         </legend>
         <Checkbox
           type="radio"
-          checked={values.profile_type === "customer"}
+          checked={values.profile_type === 'customer'}
           htmlType="radio"
           value="customer"
           name="profile_type"
@@ -98,7 +95,7 @@ function SignUpForm() {
         </Checkbox>
         <Checkbox
           type="radio"
-          checked={values.profile_type === "supplier"}
+          checked={values.profile_type === 'supplier'}
           htmlType="radio"
           value="supplier"
           name="profile_type"
@@ -155,7 +152,7 @@ function SignUpForm() {
           placeholder="Пароль"
           name="password"
           maxLength={20}
-          minLength={6}
+          minLength={8}
           required
           getInput={handleFormChange}
           id="password-input"
@@ -164,7 +161,7 @@ function SignUpForm() {
       </fieldset>
       <Checkbox
         type="checkbox"
-        checked={values["registration-agreement"] === "registration-agreement"}
+        checked={values['registration-agreement'] === 'registration-agreement'}
         htmlType="checkbox"
         value="registration-agreement"
         name="registration-agreement"
@@ -212,11 +209,8 @@ function SignUpForm() {
             Зарегистрироваться
           </Button>
         </div>
-        <span className={classes.form__error}>
-          {submitError}
-        </span>
+        <span className={classes.form__error}>{submitError}</span>
       </div>
-      
     </form>
   );
 }
