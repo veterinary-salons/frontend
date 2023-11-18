@@ -7,7 +7,6 @@ import { dateServiceCheckboxList } from '../../../assets/constants/constants';
 
 const AdPetSitter = ({ getInfo }) => {
   const [values, setValues] = useState({});
-  console.log(values);
 
   useEffect(() => {
     getInfo(values);

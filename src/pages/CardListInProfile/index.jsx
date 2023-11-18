@@ -119,8 +119,6 @@ const servicseList = [
 
 const CardListInProfile = () => {
   const profileType = JSON.parse(localStorage.getItem('userData')).profile_type;
-
-  console.log(profileType);
   const isCustomer = profileType === 'customer';
   const createPetCard = () =>
     petList || petList?.length === 0 ? (

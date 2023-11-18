@@ -10,6 +10,7 @@ function handleAuthorization(email, password, successfulNav, setSubmitError, han
     localStorage.setItem('userData', JSON.stringify(res.profile_data));
     handleUserType(res.profile_data.profile_type);
     localStorage.setItem('auth', 'true');
+    localStorage.setItem('auth_token', res.token_data.access);
     successfulNav();
     setSubmitError('');
   })

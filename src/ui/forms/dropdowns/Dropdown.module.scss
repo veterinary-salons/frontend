@@ -1,13 +1,12 @@
 .dropdown {
-  font-family: 'Montserrat';
   list-style: none;
   margin: 0;
   padding: 0;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
-  line-height: 15px;
   width: 119px;
+  height: 47px;
 
   &__disabled-block {
     position: relative;
@@ -27,7 +26,6 @@
     width: 100%;
     list-style: none;
     padding: 14px 0 14px 16px;
-    height: 47px;
     border-radius: 8px;
     border: 1px solid var(--grey-color, #d4d4d4);
     cursor: pointer;
@@ -94,8 +92,18 @@
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .dropdown {
     width: 104px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .dropdown {
+    font-size: 14px;
+
+    &__button {
+      font-size: 14px;
+    }
   }
 }

@@ -85,6 +85,10 @@ import EditProfileServices from '../pages/EditProfileServices';
 import CardListInProfile from '../pages/CardListInProfile';
 import AdImage from '../components/AdCreation/AdImage';
 
+// import MobileFilterMenuPopup from '../components/MobileFilterMenuPopup';
+// import MobileFilterMenu from '../components/MobileFilterMenu';
+import MobileSortingPopup from '../components/MobileSortingPopup';
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
@@ -179,7 +183,8 @@ const router = createBrowserRouter(
 
       <Route
         path="test"
-        // element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
+        element={<MobileSortingPopup />}
+         // element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
       />
 
       <Route path="advert" element={<AdType />} />

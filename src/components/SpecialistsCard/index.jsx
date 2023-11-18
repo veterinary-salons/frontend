@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { useState, useLayoutEffect, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import classes from './style.module.scss';
@@ -16,6 +17,35 @@ const SpecialistsCard = ({
   scoreReview,
 }) => {
   const cn = classNames(classes['specialists-card']);
+  const [width, setWidth] = useState('');
+  const [iconsCount, setIconsCount] = useState(5);
+  const [reviewText, setReviewText] = useState(`${numReviews} отзыва`);
+
+  useLayoutEffect(() => {
+    function updateWidth() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', updateWidth);
+    updateWidth();
+    return () => window.removeEventListener('resize', updateWidth);
+  }, [width]);
+
+  useEffect(() => {
+    if(width < 760) {
+      setIconsCount(1);
+      setReviewText(`(${numReviews})`)
+    } else if(width < 990) {
+      setIconsCount(5);
+      setReviewText(`${numReviews} отзыва`)
+    } else if(width < 1120) {
+      setIconsCount(1);
+      setReviewText(`${numReviews} отзыва`)
+    } else {
+      setIconsCount(5);
+      setReviewText(`${numReviews} отзыва`)
+    }
+    // eslint-disable-next-line
+  }, [width]);
 
   return (
     <li className={cn}>
@@ -46,8 +76,12 @@ const SpecialistsCard = ({
         </div>
         <div className={classes['specialists-card__review']}>
           <p className={classes['specialists-card__name']}>{name}</p>
-          <StarsBox rating={scoreReview}/>
-          <Link className={classes['specialists-card__link']} to="/">{numReviews} отзыва</Link>
+          <div className={classes['specialists-card__rating']}>
+            <StarsBox rating={scoreReview} iconsCount={iconsCount} />
+            <Link className={classes['specialists-card__link']} to="/">
+              {reviewText}
+            </Link>
+          </div>
         </div>
       </div>
     </li>
