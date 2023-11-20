@@ -21,7 +21,6 @@
 
 @media screen and (max-width: 1270px) {
   .services {
-
     &__button{
       margin-left: 10px;
     }
@@ -35,11 +34,7 @@
     &__button{
       margin-left: 0;
     }
-  }
-}
 
-@media screen and (max-width: 560px) {
-  .services {
     &__list{
       gap: 24px;
     }

@@ -13,7 +13,9 @@ const Catalog = ({ title }) => {
 
   return (
     <section className={classes.catalog}>
-      <SectionTitle title={title} withFilter={!isWithFilter} />
+      <div className={classes.catalog__title}>
+        <SectionTitle title={title} withFilter={!isWithFilter} />
+      </div>
       {!isWithFilter && 
       <div className={classes.catalog__container}>
         <MobileSortingMenu />

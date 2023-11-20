@@ -6,7 +6,8 @@
   width: 400px;
   border-bottom: 1px solid var(--purple-light-color);
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  position: relative;
   cursor: pointer;
 
   &:hover {
@@ -20,7 +21,7 @@
   }
 
   &__title {
-    margin: 0;
+    margin: 5px 0 0;
     width: 300px;
     font-size: 24px;
     font-style: normal;
@@ -51,5 +52,69 @@
 @media screen and (max-width: 1430px) {
   .article-card {
     width: 360px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .article-card {
+    width: 100%;
+
+    &__title {
+      margin-top: 6px;
+      width: 80%;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    &__container-heart {
+      padding-right: 0;
+    }
+
+    &__container {
+      margin: 8px 0 10px;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .article-card {
+    &__title {
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 28px;
+    }
+
+    &__container-heart {
+      padding-right: 10px;
+    }
+
+    &__container {
+      margin: 10px 0 14px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .article-card {
+    &__title {
+      width: 100%;
+      margin: 0;
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 24px;
+    }
+
+    &__container-heart {
+      padding-right: 0;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+
+    &__container {
+      margin: 8px 0 10px;
+    }
   }
 }

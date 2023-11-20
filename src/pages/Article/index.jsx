@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom/dist';
-// import classes from './style.module.scss';
-import dataArticlePage from '../../assets/constants/dataArticles';
+import { dataArticlePage } from '../../assets/constants/dataArticles';
 import Article from '../../components/Article';
 
 const ArticlePage = () => {

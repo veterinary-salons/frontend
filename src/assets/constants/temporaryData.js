@@ -175,7 +175,7 @@ const dataGoodsForCatalog = [
   {
     id: 8,
     price: '353',
-    weightProduct: '600',
+    weightProduct: '1000',
     descriptionProduct:
       'Сухой корм для слонов',
     reviews: 46,
@@ -186,20 +186,33 @@ const dataGoodsForCatalog = [
     category: 'feed-goodies',
     animal: 'exotic'
   },
-];
-
-const dataArticle = [
   {
-    id: 1,
-    img: '',
-    title: 'Как подружить питомцев?',
-    isActive: true,
+    id: 9,
+    price: '353',
+    weightProduct: '600',
+    descriptionProduct:
+      'Сухой корм для кошек Royal Conin для Стерилизованных Индейка для взрослых',
+    reviews: 12,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '4.9',
+    counter: 0,
+    isLiked: false,
+    category: 'feed-goodies',
+    animal: 'cat'
   },
   {
-    id: 2,
-    img: 'https://i.ibb.co/VMF37w6/photo-1.png',
-    title: 'Как правильно стричь когти?',
-    isActive: true,
+    id: 10,
+    price: '353',
+    weightProduct: '1000',
+    descriptionProduct:
+      'Сухой корм для слонов',
+    reviews: 76,
+    image: 'https://i.ibb.co/3d8qZtD/Photo-with-like.png',
+    rating: '4.8',
+    counter: 0,
+    isLiked: false,
+    category: 'feed-goodies',
+    animal: 'exotic'
   },
 ];
 
@@ -290,4 +303,30 @@ const professionals = [
   },
 ];
 
-export { professionals, dataSelectedProducts, dataArticle, dataGoodsForCatalog };
+const dataSelectedServices=[
+  {
+    id: 1,
+    name: 'Юлия',
+    profession: 'Грумер',
+    price: '2 000 ₽/усл',
+    workedWith: 'собаками',
+    description:
+      'Предоставляю услуги груминга собак с выездом на дом. Кошек не стригу! Шпиц от 2000р, пудель от 3000р. Воскресенье - выходной!',
+    numReviews: 2,
+    scoreReview: '5.0',
+    specialist: 'groomer'
+  },
+  {
+    id: 2,
+    name: 'Антон',
+    profession: 'Ветеринар',
+    price: '1 000 ₽/усл',
+    description:
+      'Я ветеринарный врач со стажем 7 лет, имею большой опыт работы с собаками, делал около 137 полосных операций и очень люблю животных. Всегда внимательно изучаю анализы и назначаю лечение, которое всегда помогает питомцам.',
+    numReviews: 8,
+    scoreReview: '4.8',
+    specialist: 'vet'
+  },
+];
+
+export { professionals, dataSelectedServices, dataSelectedProducts, dataGoodsForCatalog };

@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 36px;
-  width: 290px;
+  min-width: 290px;
   &__fieldset {
     display: flex;
     flex-direction: column;
@@ -53,5 +53,46 @@
       opacity: .8;
     }
   }
+}
 
+@media screen and (max-width: 1430px) {
+  .filter {
+    min-width: 260px;
+    width: 260px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .filter {
+    min-width: 230px;
+    width: 230px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .filter {
+    min-width: 200px;
+    width: 200px;
+
+    &__legend {
+      margin: 0 0 12px;
+      font-size: 16px;
+      line-height: 26px;
+    }
+
+    &__link {
+      font-size: 12px;
+      line-height: normal;
+    }
+
+    &__add-btn {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .filter {
+    display: none;
+  }
 }

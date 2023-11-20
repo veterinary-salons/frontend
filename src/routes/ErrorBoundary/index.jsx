@@ -8,10 +8,9 @@ function ErrorBoundary({errorType404}) {
       <Header onlyLogo />
       {errorType404 ?
         <ErrorPageMessage
-          width='350px'
           title='Ошибка 404'
           message='Такой страницы не&nbsp;существует
-          Зато существуют другие &#40;:'
+          Зато&nbsp;существуют&nbsp;другие &#40;:'
           error404
         />
       :

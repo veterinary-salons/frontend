@@ -1,3 +1,9 @@
-.favourites{
+.favourites {
     padding-top: 42px;
+}
+
+@media screen and (max-width: 760px) {
+    .favourites {
+        padding-top: 23px;
+    }
 }

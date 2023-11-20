@@ -1,7 +1,11 @@
 .goods {
   display: flex;
   justify-content: space-between;
+  gap: 30px;
+  width: 100%;
+
   &__cards {
+    width: 100%;
     height: fit-content;
     list-style: none;
     padding: 0;
@@ -9,6 +13,56 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: min-content;
-    gap: 52px;
+    row-gap: 50px;
+    column-gap: calc((100% - 4*190px)/3);
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .goods {
+    &__cards {
+      max-width: 780px;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: calc((100% - 3*190px)/2);
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .goods {
+    gap: 3%;
+
+    &__cards {
+      max-width: 530px;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: calc(100% - 2*190px);
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .goods {
+    &__cards {
+      max-width: 100%;
+      grid-template-columns: repeat(1, 1fr);
+      justify-items: center;
+      row-gap: 24px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .goods {
+    &__cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .goods {
+    &__cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
