@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 import CardGood from '../../components/CardGood/index';
 import NotificationMessage from '../../components/NotificationMessage/index';
 import classes from './style.module.scss';
@@ -16,9 +17,12 @@ const SelectedProducts = ({ dataProducts }) =>
       />
     </div>
   ) : (
-    <ul className={classes['selected-products']}>
+    <ul className={classNames(
+      classes['selected-products'],
+      classes['selected-products__cards']
+    )}>
       {dataProducts.map((i) => (
-        <li key={i.id}>
+        <li className={classes['selected-products__card']} key={i.id}>
           <CardGood {...i} />
         </li>
       ))}

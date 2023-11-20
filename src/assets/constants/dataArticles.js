@@ -84,4 +84,27 @@ const dataArticlePage = [
   },
 ];
 
-export default dataArticlePage;
+const dataFavouriteArticles = [
+  // {
+  //   id: '1',
+  //   imgCover: articleImg1,
+  //   title: 'Как подружить питомцев?',
+  //   date: '24.09.2023',
+  //   link: 'kp.ru',
+  //   source: 'https://www.kp.ru/family/domashnie-zhivotnye/kak-podruzhit-domashnikh-pitomtsev/',
+  //   imgContent: [contentImg1, contentImg2],
+  //   isLiked: true,
+  // },
+  // {
+  //   id: '4',
+  //   imgCover: articleImg4,
+  //   title: 'Глисты у кошек',
+  //   date: '24.09.2023',
+  //   link: 'proplan.ru',
+  //   source: 'https://www.proplan.ru/cat/article/glisty-u-koshki/',
+  //   imgContent: [contentImg7, contentImg8],
+  //   isLiked: true,
+  // }
+];
+
+export {dataArticlePage, dataFavouriteArticles};

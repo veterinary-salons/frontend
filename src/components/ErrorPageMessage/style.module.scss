@@ -5,6 +5,7 @@
   gap: 20px;
   max-width: 620px;
   margin: 60px auto;
+  text-align: center;
   &__image {
     width: 300px;
     height: 300px;
@@ -46,6 +47,45 @@
     line-height: 22px;
     &:hover {
       opacity: 0.6;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .error {
+    gap: 18px;
+    max-width: 480px;
+    padding: 0 20px;
+    &__image {
+      width: 200px;
+      height: 200px;
+    }
+    &__title {
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 28px; /* 140% */
+      letter-spacing: 0.4px;
+    }
+    &__message {
+      font-size: 16px;
+      line-height: 20px;
+    }
+    &__links {
+      gap: 28px;
+    }
+    &__link {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .error {
+    max-width: 100%;
+    &__message {
+      max-width: 430px;
     }
   }
 }

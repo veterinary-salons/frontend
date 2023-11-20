@@ -28,7 +28,7 @@
 
 @media screen and (max-width: 760px) {
   .section-header {
-    margin-top: 24px;
+    margin-top: 23px;
 
     &__title {
       font-size: 20px;
@@ -39,11 +39,5 @@
     &__dropdown {
       width: 240px
     }
-  }
-}
-
-@media screen and (max-width: 560px) {
-  .section-header {
-    display: none;
   }
 }

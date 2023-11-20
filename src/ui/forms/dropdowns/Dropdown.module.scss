@@ -92,14 +92,9 @@
   }
 }
 
-@media screen and (max-width: 768px) {
-  .dropdown {
-    width: 104px;
-  }
-}
-
 @media screen and (max-width: 760px) {
   .dropdown {
+    width: 104px;
     font-size: 14px;
 
     &__button {

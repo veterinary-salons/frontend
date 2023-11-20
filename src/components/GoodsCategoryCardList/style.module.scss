@@ -5,11 +5,38 @@
   gap: 40px 20px;
   margin: 0 auto;
   padding: 0;
-  width: fit-content;
+  width: 100%;
 }
 
 @media screen and (max-width: 1430px) {
   .goods {
     gap: 32px 16px;
+  }
+}
+
+@media screen and (max-width: 1270px) {
+  .goods {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px 20px;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .goods {
+    row-gap: 30px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .goods {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .goods {
+    max-width: 320px;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 20px;
   }
 }

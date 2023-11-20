@@ -28,14 +28,17 @@ import RecoveryPassword from '../pages/RecoveryPassword';
 import SuccessfulRecovery from '../pages/SuccessfulRecovery';
 
 import { dataLinksProfile } from '../assets/constants/dataPath';
-import dataArticlePage from '../assets/constants/dataArticles';
+import {
+  dataArticlePage,
+  dataFavouriteArticles
+} from '../assets/constants/dataArticles';
 import SelectedProducts from '../pages/SelectedProducts';
+import SelectedServices from '../pages/SelectedServices';
 import Service from '../pages/Service';
 import SelectedArticles from '../pages/SelectedArticles';
 import ServicesList from '../pages/ServicesList';
 import Catalog from '../pages/Catalog';
 import GoodsList from '../pages/GoodsList';
-// import BookingCancellation from '../components/BookingCancellation';
 
 import PetCard from '../pages/PetCard';
 
@@ -45,49 +48,31 @@ import ProfileBookingCancellation from '../pages/ProfileBookingCancellation';
 import ProfileBokingCanceled from '../pages/ProfileBokingCanceled';
 import BookingFeedback from '../pages/BookingFeedback';
 
-// import PopupWithForm from '../components/PopupWithForm';
-// import BookingCancellationPopup from '../components/BookingCancellationPopup/index';
-// import QuitConfirmationPopup from '../components/QuitConfirmationPopup/index';
-// import QuitInfotooltipPopup from '../components/QuitInfotooltipPopup';
-// import EditAvatarPopup from '../components/EditAvatarPopup/index';
-// import EditAvatarConfirmationPopup from '../components/EditAvatarConfirmationPopup/index';
-// import AdRemovingPopup from '../components/AdRemovingPopup';
-// import BookingConfirmationPopup from '../components/BookingConfirmationPopup';
-// import BookingCancellationPopup from '../components/BookingCancellationPopup';
-// import SpecialistCardListMainPage from '../modules/mainPage/specialistCardList';
 import AdvertFinal from '../pages/AdvertFinal';
 import FillingSchedule from '../pages/FillingSchedule';
 
 import AdType from '../components/AdCreation/AdType/index';
-// import AdForm from '../components/AdCreation/AdForm';
 import AdTitle from '../components/AdCreation/AdTitle';
 import AdDogHandler from '../components/AdCreation/AdDogHandler';
 import AdDogHandlerStepTwo from '../components/AdCreation/AdDogHandler/AdDogHandlerStepTwo';
 import AdGroomer from '../components/AdCreation/adGroomer';
 import AdGroomerStepTwo from '../components/AdCreation/adGroomer/AdGroomerStepTwo';
 import AdVet from '../components/AdCreation/adVet';
-// import AdPetSitter from '../components/AdCreation/adPetSitter';
 import AdVetStepTwo from '../components/AdCreation/adVet/AdVetStepTwo';
 
 import {
+  dataSelectedServices,
   dataSelectedProducts,
-  dataArticle,
 } from '../assets/constants/temporaryData';
 import Goods from '../pages/Goods';
 import CreationPriceServices from '../pages/CreationAdvertPrice';
 import DescriptionService from '../pages/DescriptionService';
 import AdvertSuccess from '../pages/AdvertSuccess';
-// import dataBooking from '../assets/constants/dataBooking';
 import ArticlePage from '../pages/Article';
 import EditProfileServices from '../pages/EditProfileServices';
-// import CardRewiew from '../components/CardReview';
 
 import CardListInProfile from '../pages/CardListInProfile';
 import AdImage from '../components/AdCreation/AdImage';
-
-// import MobileFilterMenuPopup from '../components/MobileFilterMenuPopup';
-// import MobileFilterMenu from '../components/MobileFilterMenu';
-import MobileSortingPopup from '../components/MobileSortingPopup';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -154,10 +139,13 @@ const router = createBrowserRouter(
           path="goods"
           element={<SelectedProducts dataProducts={dataSelectedProducts} />}
         />
-        <Route path="services" element={<h1>избранные услуги</h1>} />
+        <Route
+          path="services"
+          element={<SelectedServices dataServices={dataSelectedServices} />}
+          />
         <Route
           path="articles"
-          element={<SelectedArticles dataArticle={dataArticle} />}
+          element={<SelectedArticles dataArticle={dataFavouriteArticles} />}
         />
       </Route>
 
@@ -178,14 +166,6 @@ const router = createBrowserRouter(
       <Route path="recovery-code" element={<RecoveryCode />} />
       <Route path="recovery-password" element={<RecoveryPassword />} />
       <Route path="successful-recovery" element={<SuccessfulRecovery />} />
-
-      {/*  Роут для проверки своих компонентов в адресной строке ввести /test */}
-
-      <Route
-        path="test"
-        element={<MobileSortingPopup />}
-         // element={<h2>Сюда можно вставлять свои компоненты для проверки</h2>}
-      />
 
       <Route path="advert" element={<AdType />} />
       <Route path="advert-groomer" element={<AdTitle />} />

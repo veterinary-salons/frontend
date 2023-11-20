@@ -7,7 +7,7 @@ const Articles = ({ dataArticle }) => (
   <section className={classes.articles}>
     <SectionTitle title='Purrfect журнал'/>
     <p className={classes.articles__paragraph}>
-      Тут мы собираем самые полезные и интересные статьи про питомцев
+    Тут мы&nbsp;собираем самые полезные и&nbsp;интересные статьи про&nbsp;питомцев
     </p>
     <ul className={classes.articles__container}>
       {dataArticle.map((i) => (

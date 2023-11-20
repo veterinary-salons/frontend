@@ -43,3 +43,43 @@
     height: 40px;
   }
 }
+
+@media screen and (max-width: 990px) {
+  .article {
+    width: 100%;
+
+    &__header {
+      gap: 8px;
+    }
+
+    &__title {
+      font-size: 40px;
+    }
+
+    &__prop-text {
+      font-size: 16px;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .article {
+    gap: 24px;
+
+    &__margins {
+      margin-top: 23px;
+    }
+
+    &__header {
+      margin-bottom: 0;
+    }
+
+    &__title {
+      font-size: 20px;
+    }
+
+    &__prop-text {
+      font-size: 14px;
+    }
+  }
+}

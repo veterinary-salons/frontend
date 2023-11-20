@@ -48,3 +48,32 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .article {
+    &__content {
+      gap: 24px;
+    }
+  
+    &__paragraph-title {
+      font-size: 18px;
+    }
+  
+    &__list-with-dots {
+      padding-left: 27px;
+    }
+  
+    &__paragraph-subtitle {
+      font-size: 16px;
+    }
+  
+    &__text-block {
+      gap: 12px;
+    }
+  
+    &__text {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}

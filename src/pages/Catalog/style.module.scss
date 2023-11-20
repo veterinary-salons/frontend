@@ -20,6 +20,10 @@
 
 @media screen and (max-width: 560px) {
   .catalog {
+    &__title {
+      display: none;
+    }
+    
     &__container{
       display: flex;
       justify-content: space-between;

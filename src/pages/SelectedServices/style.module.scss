@@ -1,0 +1,31 @@
+.selected-services {
+  padding: 48px 0 102px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  list-style-type: none;
+}
+
+@media screen and (max-width: 990px) {
+  .selected-services {
+    max-width: 450px;
+    margin: auto;
+
+    &__cards {
+      margin: 0;
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .selected-services {
+    max-width: 350px;
+    gap: 24px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .selected-services {
+    max-width: 320px;
+  }
+}
