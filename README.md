@@ -1,8 +1,8 @@
-# [PURRFECT CARE](http://purrfect-care.acceleratorpracticum.ru/)
+# [PURRFECT CARE](http://purrfect-care.ddns.net/)
 
-Сервис онлайн бронирования товаров и услуг для домашних животных. http://purrfect-care.acceleratorpracticum.ru/
+Сервис онлайн бронирования товаров и услуг для домашних животных.
 
-Тестовая версия сайта доступна по ссылке https://veterinary-salons.github.io/frontend/. После перехода нажмите на логотип. 
+http://purrfect-care.ddns.net/
 
 ## О проекте
 
